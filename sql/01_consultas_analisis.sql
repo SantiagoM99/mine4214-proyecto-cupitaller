@@ -35,26 +35,37 @@ WHERE q.es_texto_libre=1
 GROUP BY q.texto_pregunta,t.grupo_fuente;
 
 -- Análisis 1 (D1): tasa de inasistencia y proporción en cola por modalidad.
--- Inasistencia = No asistió / (Atendida + No asistió); cola = En cola + Cola cancelada por reservación.
+-- dim_estado.grupo_estado materializa D1: inasistencia = No asistió / (Atendida + No asistió).
 SELECT m.tipo_horario_original AS modalidad,
        COUNT(*) AS eventos,
-       ROUND(100.0*SUM(e.estado_original='No asistió')
-             /SUM(e.estado_analitico='Atendida' OR e.estado_original='No asistió'),1) AS inasistencia_pct,
-       ROUND(100.0*SUM(e.estado_original IN ('En cola','Cola cancelada por reservación'))/COUNT(*),1) AS cola_pct
+       ROUND(100.0*SUM(e.grupo_estado='No asistió')
+             /SUM(e.grupo_estado IN ('Atendida','No asistió')),1) AS inasistencia_pct,
+       ROUND(100.0*SUM(e.grupo_estado='Cola')/COUNT(*),1) AS cola_pct
 FROM hecho_reserva h
 JOIN dim_modalidad m USING(sk_modalidad)
 JOIN dim_estado e USING(sk_estado)
 GROUP BY m.tipo_horario_original
 ORDER BY eventos DESC;
 
--- Análisis 1 (D1): inasistencia por día de la semana.
-SELECT d.dia_semana_iso,
-       ROUND(100.0*SUM(e.estado_original='No asistió')
-             /SUM(e.estado_analitico='Atendida' OR e.estado_original='No asistió'),1) AS inasistencia_pct
+-- Análisis 1 (D1): inasistencia por día de la semana y franja horaria (jerarquías de Fecha y Hora).
+SELECT d.dia_semana_iso, d.nombre_dia, t.franja,
+       SUM(e.grupo_estado IN ('Atendida','No asistió')) AS citas_programadas,
+       ROUND(100.0*SUM(e.grupo_estado='No asistió')
+             /SUM(e.grupo_estado IN ('Atendida','No asistió')),1) AS inasistencia_pct
 FROM hecho_reserva h
 JOIN dim_fecha d ON d.sk_fecha=h.sk_fecha_inicio
+JOIN dim_hora t ON t.sk_hora=h.sk_hora_inicio
 JOIN dim_estado e USING(sk_estado)
-GROUP BY d.dia_semana_iso;
+GROUP BY d.dia_semana_iso, d.nombre_dia, t.franja
+ORDER BY d.dia_semana_iso, t.franja;
+
+-- Análisis 1: eventos y cola por tipo de período (jerarquía de Período).
+SELECT p.tipo_periodo, COUNT(*) AS eventos,
+       ROUND(100.0*SUM(e.grupo_estado='Cola')/COUNT(*),1) AS cola_pct
+FROM hecho_reserva h
+JOIN dim_periodo p USING(sk_periodo)
+JOIN dim_estado e USING(sk_estado)
+GROUP BY p.tipo_periodo;
 
 -- Análisis 2: proporción de calificaciones 1–3 por período (encuestas posteriores válidas).
 SELECT p.periodo_original,

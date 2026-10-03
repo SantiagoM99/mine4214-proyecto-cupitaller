@@ -73,12 +73,12 @@ def star(name,fact,measures,dims,extra=None,size=(13,8.5),extra_w=0):
 def stars():
     star('modelo_reserva.png','HECHO_RESERVA',
          ['Grano: un evento de reserva','id_reserva (degenerada)','evento_reserva = 1','minutos_programados','es_prioritaria'],
-         [('Fecha',['roles: inicio · fin · llegada','día → mes → año','día de la semana']),
-          ('Hora',['minuto → hora']),
-          ('Período',['código → año','sufijo 10 · 19 · 20']),
+         [('Fecha',['roles: inicio · fin · llegada','día → mes → año','nombre del día · fin de semana']),
+          ('Hora',['minuto → hora → franja']),
+          ('Período',['código → tipo → año','Semestre 1/2 · Intersemestral']),
           ('Servicio',['código + etiqueta original']),
           ('Modalidad',['tipo de horario','categoría original']),
-          ('Estado',['estado original →','estado analítico (R01)']),
+          ('Estado',['original → analítico (R01)','→ grupo (D1)']),
           ('Programa',['programa normalizado','0 = No informado'])])
 
     def detail(ax,cx,cy):
@@ -93,11 +93,11 @@ def stars():
          ['Grano: una encuesta válida','de una reserva (R02)','id_reserva (degenerada)','respuesta_encuesta = 1','calificación 1–5 (nullable)'],
          [('Tipo de encuesta',['grupo de fuente','etapa: previa / posterior']),
           ('Fecha',['fecha del evento reservado','día → mes → año']),
-          ('Hora',['minuto → hora']),
-          ('Período',['código → año','sufijo 10 · 19 · 20']),
+          ('Hora',['minuto → hora → franja']),
+          ('Período',['código → tipo → año']),
           ('Servicio',['conformada con Reserva']),
           ('Modalidad',['conformada con Reserva']),
-          ('Estado',['estado de la reserva','conformada (R01)']),
+          ('Estado',['estado de la reserva','conformada (R01, D1)']),
           ('Programa',['conformada con Reserva'])],
          extra=detail,size=(15,9.5),extra_w=4.8)
 

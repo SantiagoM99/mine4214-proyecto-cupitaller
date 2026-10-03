@@ -161,7 +161,7 @@ Las 508 citas que siguen «En ejecución» o «Reservada» después de su fecha 
 2. Normalizar la escritura del programa en una columna adicional, conservando el original.
 3. **R01** (aportada por la coordinación): Finalizada y Realizada → *Atendida*, conservando el estado original.
 4. **R02** (decisión del equipo): excluir de los análisis las 166 encuestas «Inválida», manteniéndolas en Silver para auditoría.
-5. **D1** (supuesto del equipo, por validar con la coordinación): la cola no ocupa cupo; la inasistencia se mide solo sobre citas que llegaron a la hora programada (Atendida + No asistió).
+5. **D1** (supuesto del equipo, por validar con la coordinación): la cola no ocupa cupo; la inasistencia se mide solo sobre citas que llegaron a la hora programada (Atendida + No asistió). Se materializa como el atributo `grupo_estado` de la dimensión Estado.
 6. Marcar con banderas los casos inconsistentes, sin corregirlos ni borrarlos.
 7. No imputar la fecha de devolución, la llegada ni las calificaciones faltantes.
 
@@ -215,11 +215,19 @@ Seguimos los cuatro pasos de diseño dimensional de Kimball.
 | **Fecha con roles** (inicio, fin, llegada) | Una sola tabla de calendario sirve tres significados y permite mostrar días sin eventos. |
 | **Dimensiones conformadas** entre reserva y encuesta | La encuesta toma servicio, modalidad, estado y programa de su reserva. Así un mismo filtro del tablero se aplica a ambos análisis. |
 | **Modalidad** = tipo de horario + categoría | Es una dimensión de combinaciones pequeña (24 miembros) que evita dos dimensiones casi vacías. |
-| **Estado** con jerarquía original → analítico | Permite contar Atendida (R01) sin perder las 12 etiquetas originales. |
+| **Estado** con jerarquía original → analítico → grupo | Las reglas de negocio viven en la dimensión, no en las consultas: `estado_analitico` aplica R01 y `grupo_estado` aplica D1 (Atendida, No asistió, Cola, Cancelada, Abierta). Si la coordinación cambia una regla, se modifica una fila de la dimensión y ninguna consulta. |
 | **Manejo de cambios (SCD)** | Servicio, Modalidad y Estado son **tipo 0**: se guarda la etiqueta tal como se registró y las `Deprecated` son miembros propios. Programa es **tipo 1**: las correcciones de escritura sobrescriben. No hay dimensión de personas porque los análisis no la requieren, y así se evita exponer datos personales. |
 | Sin dimensión de oferta | La fuente no exporta franjas ofrecidas ni capacidad; el modelo no las inventa. |
 
-**Jerarquías:** Fecha (día → mes → año; día de la semana), Hora (minuto → hora), Período (código → año; sufijo 10 = primer semestre, 20 = segundo semestre, 19 = intersemestral), Estado (original → analítico).
+**Jerarquías y atributos de agrupación** (todos materializados en Gold):
+
+| Dimensión | Jerarquía | Atributos descriptivos |
+|---|---|---|
+| Fecha | día → mes → año | `nombre_dia`, `nombre_mes`, `dia_semana_iso`, `es_fin_de_semana` |
+| Hora | minuto → hora → franja (Madrugada, Mañana, Tarde, Noche) | `etiqueta` (HH:MM) |
+| Período | código → tipo de período (Semestre 1 = sufijo 10, Semestre 2 = 20, Intersemestral = 19) → año | `sufijo_original` |
+| Estado | estado original (12) → estado analítico R01 (11) → grupo D1 (5) | — |
+| Servicio, Modalidad, Programa | sin jerarquía (catálogos planos) | código, etiqueta original, categoría |
 
 ### 4.5 Criterios de calidad del modelo
 
@@ -230,6 +238,7 @@ Seguimos los cuatro pasos de diseño dimensional de Kimball.
 | **Conservación (completitud del modelo)** | Silver = Gold + exclusiones documentadas, por fuente | 86.562 = 86.562; encuestas concilian (tabla 5.3) |
 | **Aditividad correcta** | Las medidas sumables son conteos al grano; las calificaciones solo se promedian; los porcentajes se recalculan a partir de numerador y denominador | Revisado en las consultas del tablero |
 | **Sin nulos en claves dimensionales** | Miembro «No informado» (sk = 0) en Programa | 333 reservas apuntan a sk = 0 |
+| **Dominios de atributos de agrupación** | CHECK sobre `grupo_estado`, `franja`, `es_fin_de_semana` | 0 violaciones |
 | **Aptitud para las preguntas** | Cada pregunta de 1.2–1.3 se responde con un `GROUP BY` sobre un solo hecho y sus dimensiones | Ver SQL en `sql/01_consultas_analisis.sql` |
 | **Trazabilidad** | Cada hecho conserva archivo, hoja y fila de Excel | 100% de las filas |
 
@@ -245,7 +254,7 @@ Estos criterios bastan para esta entrega porque cubren los tres modos de falla d
 |---:|---|---|---|
 | 1 | 5 CSV | Validar unicidad de ID y vínculo encuesta–reserva–período | — (falla si no cumple) |
 | 2 | Fechas de todas las fuentes | Calendario continuo y 1.440 minutos del día | `dim_fecha`, `dim_hora` |
-| 3 | `reservas.csv` | Catálogos distintos, sin equivalencias inventadas | `dim_periodo`, `dim_servicio`, `dim_modalidad`, `dim_estado`, `dim_programa` |
+| 3 | `reservas.csv` | Catálogos distintos, sin equivalencias inventadas; atributos de jerarquía (tipo de período, grupo de estado D1, franja, nombres de día y mes) | `dim_periodo`, `dim_servicio`, `dim_modalidad`, `dim_estado`, `dim_programa` |
 | 4 | Encabezados de las encuestas | Tipo y etapa de encuesta; texto completo de cada pregunta | `dim_tipo_encuesta`, `dim_pregunta` |
 | 5 | `reservas.csv` | Todas las reservas, con claves sustitutas y trazabilidad | `hecho_reserva` |
 | 6 | 4 CSV de encuestas | Solo las incluidas por R02; claves de segmentación tomadas de su reserva | `hecho_encuesta` |
@@ -350,8 +359,8 @@ El tablero `entregables/tablero_bookeau.html` funciona sin conexión y filtra po
 |---|---|
 | Cada indicador se calcula sobre un solo hecho, al grano correcto | Inasistencia y cola: `COUNT` sobre `hecho_reserva` agrupado por `dim_estado`. Calificaciones: `hecho_encuesta` filtrado a etapa posterior. Ningún indicador cruza dos hechos fila a fila. |
 | Los filtros son coherentes entre análisis | Período, servicio y modalidad son dimensiones conformadas, así que el mismo filtro significa lo mismo en ambas secciones. |
-| Los denominadores son explícitos | Las reglas R01, R02 y D1 se expresan como atributos de la dimensión Estado y como filtros documentados; el tablero muestra *n* junto a cada porcentaje. |
-| El análisis temporal es posible | Las dimensiones Fecha, Hora y Período permiten ver la tendencia por semestre y el patrón por día y hora. |
+| Los denominadores son explícitos | R01 y D1 son atributos de la dimensión Estado (`estado_analitico`, `grupo_estado`) y R02 es un filtro de carga; las consultas solo agrupan por esos atributos. El tablero muestra *n* junto a cada porcentaje. |
+| Se puede navegar por niveles (*drill-down*) | Las jerarquías permiten pasar de tipo de período a período, de franja a hora y de grupo de estado a estado original. Por ejemplo, la proporción en cola es 12,2% en intersemestrales frente a 16,9–17,5% en semestres. |
 | El tablero no tiene que corregir problemas de calidad | Las exclusiones e inconsistencias se resuelven en Silver y Gold; el tablero solo agrega. |
 | El modelo puede crecer | La oferta de franjas se incorporaría como un nuevo hecho conformado (Fecha, Hora, Servicio, Modalidad); el texto ya está en `hecho_respuesta`. |
 

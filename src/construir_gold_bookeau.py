@@ -12,6 +12,25 @@ from pathlib import Path
 from limpiar_bookeau import ROOT, GROUPS
 
 OUT=ROOT/'data/oro'
+TIPO_PERIODO={'10':'Semestre 1','20':'Semestre 2','19':'Intersemestral'}
+NOMBRE_DIA=['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo']
+NOMBRE_MES=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']
+
+
+def grupo_estado(original,analitico):
+    """D1, team assumption pending confirmation: queue never held a slot; open states are not closed outcomes."""
+    if analitico=='Atendida':return 'Atendida'
+    if original=='No asistió':return 'No asistió'
+    if original in ('En cola','Cola cancelada por reservación'):return 'Cola'
+    if original.startswith('Cancelada'):return 'Cancelada'
+    return 'Abierta'
+
+
+def franja(hora):
+    if hora<6:return 'Madrugada'
+    if hora<12:return 'Mañana'
+    if hora<18:return 'Tarde'
+    return 'Noche'
 DOCS=ROOT/'docs/transformacion'
 
 
@@ -51,14 +70,16 @@ def build():
     day,last=min(dates),max(dates)
     date_rows=[]
     while day<=last:
-        date_rows.append({'sk_fecha':int(day.strftime('%Y%m%d')),'fecha':day.isoformat(),'anio':day.year,'mes':day.month,'dia':day.day,'dia_semana_iso':day.isoweekday()})
+        date_rows.append({'sk_fecha':int(day.strftime('%Y%m%d')),'fecha':day.isoformat(),'anio':day.year,'mes':day.month,'dia':day.day,'dia_semana_iso':day.isoweekday(),'nombre_dia':NOMBRE_DIA[day.isoweekday()-1],'nombre_mes':NOMBRE_MES[day.month-1],'es_fin_de_semana':int(day.isoweekday()>5)})
         day+=timedelta(days=1)
     tables['dim_fecha']=date_rows
-    tables['dim_hora']=[{'sk_hora':h*60+m+1,'hora':h,'minuto':m,'etiqueta':f'{h:02d}:{m:02d}'} for h in range(24) for m in range(60)]
+    tables['dim_hora']=[{'sk_hora':h*60+m+1,'hora':h,'minuto':m,'etiqueta':f'{h:02d}:{m:02d}','franja':franja(h)} for h in range(24) for m in range(60)]
     periods=dimension('dim_periodo','sk_periodo',['periodo_original','anio_codigo','sufijo_original'],[(r['periodo_origen'],int(r['periodo_origen'][:4]),r['periodo_origen'][4:]) for r in reservations])
+    for row in tables['dim_periodo']:row['tipo_periodo']=TIPO_PERIODO.get(row['sufijo_original'],'Sin clasificar')
     services=dimension('dim_servicio','sk_servicio',['codigo_servicio','servicio_original'],[(r['codigo_servicio'],r['servicio']) for r in reservations])
     modes=dimension('dim_modalidad','sk_modalidad',['tipo_horario_original','categoria_original'],[(r['tipo_horario'],r['categoria']) for r in reservations])
     states=dimension('dim_estado','sk_estado',['estado_original','estado_analitico'],[(r['estado_reserva'],r['estado_reserva_analitico']) for r in reservations])
+    for row in tables['dim_estado']:row['grupo_estado']=grupo_estado(row['estado_original'],row['estado_analitico'])
     programs=dimension('dim_programa','sk_programa',['programa_normalizado'],[(r['programa_normalizado'] or 'No informado',) for r in reservations],unknown=('No informado',))
     survey_types=dimension('dim_tipo_encuesta','sk_tipo_encuesta',['grupo_fuente','etapa'],[(g,'posterior' if 'satisfaccion' in f else 'previa') for g,f in GROUPS.items() if g!='Reservas'])
     mapping=load(ROOT/'docs/limpieza/diccionario_columnas.csv')

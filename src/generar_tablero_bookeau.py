@@ -6,11 +6,6 @@ from pathlib import Path
 from limpiar_bookeau import ROOT
 
 OUT=ROOT/'entregables'
-# D1 (supuesto del equipo): la cola no es una reserva con cupo; inasistencia se mide sobre Atendida + No asistió.
-GRUPO_ESTADO='''CASE WHEN e.estado_analitico='Atendida' THEN 'Atendida'
-        WHEN e.estado_original='No asistió' THEN 'No asistió'
-        WHEN e.estado_original IN ('En cola','Cola cancelada por reservación') THEN 'Cola'
-        WHEN e.estado_original LIKE 'Cancelada%' THEN 'Cancelada' ELSE 'Abierta' END'''
 RESULTS=ROOT/'docs/analisis/resultados'
 
 
@@ -25,11 +20,11 @@ def generate():
         JOIN dim_modalidad m USING(sk_modalidad) JOIN dim_estado e USING(sk_estado)
         GROUP BY p.periodo_original,s.servicio_original,m.tipo_horario_original,e.estado_analitico,e.estado_original''')
     slots=query('''SELECT p.periodo_original periodo,s.servicio_original servicio,m.tipo_horario_original modalidad,
-        d.dia_semana_iso dia,t.hora hora,'''+GRUPO_ESTADO+''' grupo,COUNT(*) n FROM hecho_reserva h
+        d.dia_semana_iso dia,t.hora hora,e.grupo_estado grupo,COUNT(*) n FROM hecho_reserva h
         JOIN dim_periodo p USING(sk_periodo) JOIN dim_servicio s USING(sk_servicio) JOIN dim_modalidad m USING(sk_modalidad)
         JOIN dim_estado e USING(sk_estado)
         JOIN dim_fecha d ON d.sk_fecha=h.sk_fecha_inicio JOIN dim_hora t USING(sk_hora_inicio)
-        GROUP BY p.periodo_original,s.servicio_original,m.tipo_horario_original,d.dia_semana_iso,t.hora,grupo'''.replace('USING(sk_hora_inicio)','ON t.sk_hora=h.sk_hora_inicio'))
+        GROUP BY p.periodo_original,s.servicio_original,m.tipo_horario_original,d.dia_semana_iso,t.hora,e.grupo_estado'''.replace('USING(sk_hora_inicio)','ON t.sk_hora=h.sk_hora_inicio'))
     ratings=query('''SELECT p.periodo_original periodo,s.servicio_original servicio,m.tipo_horario_original modalidad,
         COUNT(*) encuestas,COUNT(h.calificacion_ayuda_tutor) calificaciones,
         COALESCE(SUM(h.calificacion_ayuda_tutor),0) suma,

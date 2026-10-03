@@ -122,3 +122,4 @@ El DDL ejecutable está en `sql/00_crear_modelo.sql`. CSV dimensionales y hechos
 - Fecha es una dimensión con roles (inicio, fin, llegada). Modalidad es una dimensión de combinaciones (tipo de horario × categoría).
 - SCD: Servicio, Modalidad y Estado tipo 0 (las etiquetas `Deprecated` son miembros propios); Programa tipo 1.
 - Diagramas en estrella: `img/modelo_reserva.png` e `img/modelo_encuesta.png`. Justificación completa en la sección 4 del informe.
+- Jerarquías materializadas en Gold: Fecha (día → mes → año; `nombre_dia`, `nombre_mes`, `es_fin_de_semana`), Hora (minuto → hora → `franja`), Período (código → `tipo_periodo` → año), Estado (original → `estado_analitico` R01 → `grupo_estado` D1). Las reglas de negocio quedan en las dimensiones y no en las consultas.

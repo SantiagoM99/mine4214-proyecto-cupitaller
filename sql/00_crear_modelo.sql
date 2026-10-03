@@ -1,10 +1,10 @@
 PRAGMA foreign_keys = ON;
-CREATE TABLE dim_fecha(sk_fecha INTEGER PRIMARY KEY, fecha TEXT UNIQUE NOT NULL, anio INTEGER, mes INTEGER, dia INTEGER, dia_semana_iso INTEGER);
-CREATE TABLE dim_hora(sk_hora INTEGER PRIMARY KEY, hora INTEGER, minuto INTEGER, etiqueta TEXT);
-CREATE TABLE dim_periodo(sk_periodo INTEGER PRIMARY KEY, periodo_original TEXT UNIQUE NOT NULL, anio_codigo INTEGER, sufijo_original TEXT);
+CREATE TABLE dim_fecha(sk_fecha INTEGER PRIMARY KEY, fecha TEXT UNIQUE NOT NULL, anio INTEGER, mes INTEGER, dia INTEGER, dia_semana_iso INTEGER CHECK(dia_semana_iso BETWEEN 1 AND 7), nombre_dia TEXT NOT NULL, nombre_mes TEXT NOT NULL, es_fin_de_semana INTEGER CHECK(es_fin_de_semana IN (0,1)));
+CREATE TABLE dim_hora(sk_hora INTEGER PRIMARY KEY, hora INTEGER, minuto INTEGER, etiqueta TEXT, franja TEXT NOT NULL CHECK(franja IN ('Madrugada','Mañana','Tarde','Noche')));
+CREATE TABLE dim_periodo(sk_periodo INTEGER PRIMARY KEY, periodo_original TEXT UNIQUE NOT NULL, anio_codigo INTEGER, sufijo_original TEXT, tipo_periodo TEXT NOT NULL);
 CREATE TABLE dim_servicio(sk_servicio INTEGER PRIMARY KEY, codigo_servicio TEXT, servicio_original TEXT, UNIQUE(codigo_servicio, servicio_original));
 CREATE TABLE dim_modalidad(sk_modalidad INTEGER PRIMARY KEY, tipo_horario_original TEXT, categoria_original TEXT, UNIQUE(tipo_horario_original,categoria_original));
-CREATE TABLE dim_estado(sk_estado INTEGER PRIMARY KEY, estado_original TEXT UNIQUE NOT NULL, estado_analitico TEXT NOT NULL);
+CREATE TABLE dim_estado(sk_estado INTEGER PRIMARY KEY, estado_original TEXT UNIQUE NOT NULL, estado_analitico TEXT NOT NULL, grupo_estado TEXT NOT NULL CHECK(grupo_estado IN ('Atendida','No asistió','Cola','Cancelada','Abierta')));
 CREATE TABLE dim_programa(sk_programa INTEGER PRIMARY KEY, programa_normalizado TEXT UNIQUE NOT NULL);
 CREATE TABLE dim_tipo_encuesta(sk_tipo_encuesta INTEGER PRIMARY KEY, grupo_fuente TEXT UNIQUE NOT NULL, etapa TEXT NOT NULL);
 CREATE TABLE dim_pregunta(sk_pregunta INTEGER PRIMARY KEY, columna_plata TEXT UNIQUE NOT NULL, texto_pregunta TEXT NOT NULL, es_texto_libre INTEGER CHECK(es_texto_libre IN (0,1)), es_calificacion_tutor INTEGER CHECK(es_calificacion_tutor IN (0,1)));
