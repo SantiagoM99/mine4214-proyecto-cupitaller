@@ -1,0 +1,1333 @@
+periodo,tipo_horario_original,servicio_original,estado_reserva_original,eventos_reserva
+201620,Normal,"Deprecated, APO 1",Cancelada,338
+201620,Normal,"Deprecated, APO 1",Cancelada con excusa,23
+201620,Normal,"Deprecated, APO 1",Cancelada por sanción,81
+201620,Normal,"Deprecated, APO 1",Cola cancelada por reservación,433
+201620,Normal,"Deprecated, APO 1",En cola,155
+201620,Normal,"Deprecated, APO 1",Finalizada,981
+201620,Normal,"Deprecated, APO 1",No asistió,101
+201620,Normal,"Deprecated, APO 1",Reservada,8
+201620,Normal,"Deprecated, APO 2",Cancelada,114
+201620,Normal,"Deprecated, APO 2",Cancelada con excusa,7
+201620,Normal,"Deprecated, APO 2",Cancelada por sanción,20
+201620,Normal,"Deprecated, APO 2",Cola cancelada por reservación,133
+201620,Normal,"Deprecated, APO 2",En cola,32
+201620,Normal,"Deprecated, APO 2",Finalizada,274
+201620,Normal,"Deprecated, APO 2",No asistió,35
+201620,Normal,"Deprecated, APO 2",Reservada,4
+201620,Normal,"Deprecated, Apoyo",Cancelada,8
+201620,Normal,"Deprecated, Apoyo",Cancelada con excusa,2
+201620,Normal,"Deprecated, Apoyo",Cola cancelada por reservación,10
+201620,Normal,"Deprecated, Apoyo",En cola,2
+201620,Normal,"Deprecated, Apoyo",Finalizada,26
+201620,Normal,"Deprecated, Apoyo",Reservada,1
+201620,Normal,"Deprecated, IP Nivelación",Cancelada,14
+201620,Normal,"Deprecated, IP Nivelación",Cancelada con excusa,2
+201620,Normal,"Deprecated, IP Nivelación",Cola cancelada por reservación,12
+201620,Normal,"Deprecated, IP Nivelación",En cola,2
+201620,Normal,"Deprecated, IP Nivelación",Finalizada,27
+201620,Normal,"Deprecated, IP Nivelación",No asistió,1
+201710,"Deprecated, Grupal","Deprecated, APO 1",Cancelada,13
+201710,"Deprecated, Grupal","Deprecated, APO 1",Cancelada por sanción,3
+201710,"Deprecated, Grupal","Deprecated, APO 1",Cola cancelada por reservación,6
+201710,"Deprecated, Grupal","Deprecated, APO 1",En cola,1
+201710,"Deprecated, Grupal","Deprecated, APO 1",Finalizada,60
+201710,"Deprecated, Grupal","Deprecated, APO 1",No asistió,4
+201710,"Deprecated, Nivelación IP","Deprecated, APO 2",Cancelada,19
+201710,"Deprecated, Nivelación IP","Deprecated, APO 2",Cancelada con excusa,3
+201710,"Deprecated, Nivelación IP","Deprecated, APO 2",Cola cancelada por reservación,10
+201710,"Deprecated, Nivelación IP","Deprecated, APO 2",En cola,3
+201710,"Deprecated, Nivelación IP","Deprecated, APO 2",Finalizada,45
+201710,"Deprecated, Nivelación IP","Deprecated, APO 2",No asistió,8
+201710,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",Cancelada con excusa,2
+201710,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",En cola,1
+201710,"Deprecated, Torre Séneca","Deprecated, APO 1",Cancelada,2
+201710,"Deprecated, Torre Séneca","Deprecated, APO 1",Finalizada,4
+201710,Express,"Deprecated, APO 1",Cancelada,247
+201710,Express,"Deprecated, APO 1",Cancelada con excusa,6
+201710,Express,"Deprecated, APO 1",Cancelada por sanción,31
+201710,Express,"Deprecated, APO 1",Cola cancelada por reservación,147
+201710,Express,"Deprecated, APO 1",En cola,35
+201710,Express,"Deprecated, APO 1",Finalizada,718
+201710,Express,"Deprecated, APO 1",No asistió,87
+201710,Express,"Deprecated, APO 2",Cancelada,31
+201710,Express,"Deprecated, APO 2",Cancelada con excusa,2
+201710,Express,"Deprecated, APO 2",Cancelada por sanción,1
+201710,Express,"Deprecated, APO 2",Cola cancelada por reservación,32
+201710,Express,"Deprecated, APO 2",En cola,8
+201710,Express,"Deprecated, APO 2",Finalizada,85
+201710,Express,"Deprecated, APO 2",No asistió,10
+201710,Express,"Deprecated, Apoyo",Cancelada,5
+201710,Express,"Deprecated, Apoyo",Cola cancelada por reservación,3
+201710,Express,"Deprecated, Apoyo",Finalizada,16
+201710,Express,"Deprecated, IP Nivelación",Cancelada,2
+201710,Express,"Deprecated, IP Nivelación",Cola cancelada por reservación,4
+201710,Express,"Deprecated, IP Nivelación",Finalizada,3
+201710,Express,"Deprecated, IP Nivelación",No asistió,1
+201710,Normal,"Deprecated, APO 1",Cancelada,269
+201710,Normal,"Deprecated, APO 1",Cancelada con excusa,14
+201710,Normal,"Deprecated, APO 1",Cancelada por sanción,67
+201710,Normal,"Deprecated, APO 1",Cola cancelada por reservación,348
+201710,Normal,"Deprecated, APO 1",En cola,57
+201710,Normal,"Deprecated, APO 1",Finalizada,1193
+201710,Normal,"Deprecated, APO 1",No asistió,69
+201710,Normal,"Deprecated, APO 2",Cancelada,24
+201710,Normal,"Deprecated, APO 2",Cancelada con excusa,2
+201710,Normal,"Deprecated, APO 2",Cancelada por sanción,2
+201710,Normal,"Deprecated, APO 2",Cola cancelada por reservación,38
+201710,Normal,"Deprecated, APO 2",En cola,14
+201710,Normal,"Deprecated, APO 2",Finalizada,115
+201710,Normal,"Deprecated, APO 2",No asistió,14
+201710,Normal,"Deprecated, Apoyo",Cancelada,9
+201710,Normal,"Deprecated, Apoyo",Cola cancelada por reservación,5
+201710,Normal,"Deprecated, Apoyo",En cola,2
+201710,Normal,"Deprecated, Apoyo",Finalizada,22
+201710,Normal,"Deprecated, Apoyo",No asistió,3
+201710,Normal,"Deprecated, IP Nivelación",Cancelada,1
+201710,Normal,"Deprecated, IP Nivelación",Finalizada,3
+201710,Normal,"Deprecated, IP Nivelación",No asistió,1
+201719,Express,"Deprecated, APO 1",Cancelada,3
+201719,Express,"Deprecated, APO 1",Cancelada y sancionada,1
+201719,Express,"Deprecated, APO 1",Finalizada,10
+201719,Express,"Deprecated, APO 1",No asistió,1
+201719,Express,"Deprecated, APO 2",Cancelada,2
+201719,Express,"Deprecated, APO 2",Cola cancelada por reservación,1
+201719,Express,"Deprecated, APO 2",No asistió,1
+201719,Normal,"Deprecated, APO 1",Cancelada,9
+201719,Normal,"Deprecated, APO 1",Cancelada y sancionada,2
+201719,Normal,"Deprecated, APO 1",Cola cancelada por reservación,1
+201719,Normal,"Deprecated, APO 1",Finalizada,26
+201719,Normal,"Deprecated, APO 1",No asistió,4
+201719,Normal,"Deprecated, APO 2",Cancelada,5
+201719,Normal,"Deprecated, APO 2",Cola cancelada por reservación,1
+201719,Normal,"Deprecated, APO 2",En cola,1
+201719,Normal,"Deprecated, APO 2",Finalizada,12
+201720,"Deprecated, Grupal","Deprecated, APO 1",Cancelada,8
+201720,"Deprecated, Grupal","Deprecated, APO 1",Cancelada a tiempo,2
+201720,"Deprecated, Grupal","Deprecated, APO 1",Cancelada por sanción,2
+201720,"Deprecated, Grupal","Deprecated, APO 1",Cancelada y sancionada,2
+201720,"Deprecated, Grupal","Deprecated, APO 1",Cola cancelada por reservación,7
+201720,"Deprecated, Grupal","Deprecated, APO 1",En cola,11
+201720,"Deprecated, Grupal","Deprecated, APO 1",Finalizada,48
+201720,"Deprecated, Grupal","Deprecated, APO 1",No asistió,12
+201720,"Deprecated, Grupal","Deprecated, Apoyo",Cancelada,1
+201720,"Deprecated, Nivelación IP","Deprecated, APO 2",Cancelada,2
+201720,"Deprecated, Nivelación IP","Deprecated, APO 2",Cancelada y sancionada,1
+201720,"Deprecated, Nivelación IP","Deprecated, APO 2",Cola cancelada por reservación,1
+201720,"Deprecated, Nivelación IP","Deprecated, APO 2",Finalizada,16
+201720,"Deprecated, Nivelación IP","Deprecated, APO 2",No asistió,3
+201720,"Deprecated, Torre Séneca","Deprecated, APO 1",Finalizada,9
+201720,"Deprecated, Torre Séneca","Deprecated, APO 1",No asistió,17
+201720,"Deprecated, Torre Séneca","Deprecated, IP Nivelación",Cancelada por sanción,1
+201720,Entrevistas,Entrevista,Cancelada,1
+201720,Entrevistas,Entrevista,Cancelada con excusa,1
+201720,Entrevistas,Entrevista,Finalizada,15
+201720,Entrevistas,Entrevista,No asistió,1
+201720,Express,"Deprecated, APO 1",Cancelada,80
+201720,Express,"Deprecated, APO 1",Cancelada a tiempo,53
+201720,Express,"Deprecated, APO 1",Cancelada con excusa,6
+201720,Express,"Deprecated, APO 1",Cancelada por sanción,36
+201720,Express,"Deprecated, APO 1",Cancelada y sancionada,33
+201720,Express,"Deprecated, APO 1",Cola cancelada por reservación,73
+201720,Express,"Deprecated, APO 1",En cola,91
+201720,Express,"Deprecated, APO 1",Finalizada,439
+201720,Express,"Deprecated, APO 1",No asistió,56
+201720,Express,"Deprecated, APO 2",Cancelada,13
+201720,Express,"Deprecated, APO 2",Cancelada a tiempo,2
+201720,Express,"Deprecated, APO 2",Cancelada y sancionada,1
+201720,Express,"Deprecated, APO 2",Cola cancelada por reservación,13
+201720,Express,"Deprecated, APO 2",En cola,12
+201720,Express,"Deprecated, APO 2",Finalizada,38
+201720,Express,"Deprecated, APO 2",No asistió,5
+201720,Express,"Deprecated, Apoyo",Cancelada,2
+201720,Express,"Deprecated, Apoyo",Cancelada a tiempo,2
+201720,Express,"Deprecated, Apoyo",En cola,2
+201720,Express,"Deprecated, Apoyo",Finalizada,9
+201720,Express,"Deprecated, Apoyo",No asistió,2
+201720,Express,"Deprecated, IP Nivelación",Cancelada,2
+201720,Express,"Deprecated, IP Nivelación",Cola cancelada por reservación,1
+201720,Express,"Deprecated, IP Nivelación",Finalizada,1
+201720,Normal,"Deprecated, APO 1",Cancelada,170
+201720,Normal,"Deprecated, APO 1",Cancelada a tiempo,67
+201720,Normal,"Deprecated, APO 1",Cancelada con excusa,22
+201720,Normal,"Deprecated, APO 1",Cancelada por sanción,111
+201720,Normal,"Deprecated, APO 1",Cancelada y sancionada,88
+201720,Normal,"Deprecated, APO 1",Cola cancelada por reservación,221
+201720,Normal,"Deprecated, APO 1",En cola,158
+201720,Normal,"Deprecated, APO 1",Finalizada,964
+201720,Normal,"Deprecated, APO 1",No asistió,107
+201720,Normal,"Deprecated, APO 2",Cancelada,23
+201720,Normal,"Deprecated, APO 2",Cancelada a tiempo,9
+201720,Normal,"Deprecated, APO 2",Cancelada por sanción,11
+201720,Normal,"Deprecated, APO 2",Cancelada y sancionada,13
+201720,Normal,"Deprecated, APO 2",Cola cancelada por reservación,33
+201720,Normal,"Deprecated, APO 2",En cola,38
+201720,Normal,"Deprecated, APO 2",Finalizada,119
+201720,Normal,"Deprecated, APO 2",No asistió,18
+201720,Normal,"Deprecated, Apoyo",Cancelada,4
+201720,Normal,"Deprecated, Apoyo",Cancelada a tiempo,1
+201720,Normal,"Deprecated, Apoyo",Cancelada por sanción,1
+201720,Normal,"Deprecated, Apoyo",Cola cancelada por reservación,2
+201720,Normal,"Deprecated, Apoyo",En cola,1
+201720,Normal,"Deprecated, Apoyo",Finalizada,24
+201720,Normal,"Deprecated, Apoyo",No asistió,1
+201720,Normal,"Deprecated, IP Nivelación",Cancelada,2
+201720,Normal,"Deprecated, IP Nivelación",Cancelada por sanción,1
+201720,Normal,"Deprecated, IP Nivelación",Cola cancelada por reservación,2
+201720,Normal,"Deprecated, IP Nivelación",En cola,5
+201720,Normal,"Deprecated, IP Nivelación",Finalizada,4
+201720,Sala,Sala,Cancelada,1
+201720,Sala,Sala,Cancelada a tiempo,2
+201720,Sala,Sala,Cancelada con excusa,2
+201720,Sala,Sala,Finalizada,5
+201720,Sala,Sala,No asistió,9
+201810,"Deprecated, Grupal","Deprecated, APO 1",Cancelada,14
+201810,"Deprecated, Grupal","Deprecated, APO 1",Cancelada a tiempo,3
+201810,"Deprecated, Grupal","Deprecated, APO 1",Cancelada con excusa,1
+201810,"Deprecated, Grupal","Deprecated, APO 1",Cancelada por sanción,8
+201810,"Deprecated, Grupal","Deprecated, APO 1",Cancelada y sancionada,4
+201810,"Deprecated, Grupal","Deprecated, APO 1",Cola cancelada por reservación,2
+201810,"Deprecated, Grupal","Deprecated, APO 1",En cola,10
+201810,"Deprecated, Grupal","Deprecated, APO 1",Finalizada,69
+201810,"Deprecated, Grupal","Deprecated, APO 1",No asistió,11
+201810,"Deprecated, Grupal","Deprecated, Apoyo",Finalizada,1
+201810,"Deprecated, Nivelación IP","Deprecated, APO 2",Cancelada,4
+201810,"Deprecated, Nivelación IP","Deprecated, APO 2",Cancelada a tiempo,1
+201810,"Deprecated, Nivelación IP","Deprecated, APO 2",Finalizada,19
+201810,"Deprecated, Nivelación IP","Deprecated, APO 2",No asistió,3
+201810,"Deprecated, Torre Séneca","Deprecated, APO 1",Cancelada con excusa,3
+201810,"Deprecated, Torre Séneca","Deprecated, APO 1",Cancelada por sanción,3
+201810,"Deprecated, Torre Séneca","Deprecated, APO 1",Finalizada,19
+201810,"Deprecated, Torre Séneca","Deprecated, APO 1",Realizada,5
+201810,"Deprecated, Torre Séneca","Deprecated, APO 2",Finalizada,1
+201810,"Deprecated, Torre Séneca","Deprecated, APO 2",Realizada,2
+201810,Entrevistas,Entrevista,Cancelada a tiempo,3
+201810,Entrevistas,Entrevista,Cancelada con excusa,3
+201810,Entrevistas,Entrevista,Cola cancelada por reservación,3
+201810,Entrevistas,Entrevista,En cola,3
+201810,Entrevistas,Entrevista,Finalizada,26
+201810,Entrevistas,Entrevista,Reservada,1
+201810,Express,"Deprecated, APO 1",Cancelada,93
+201810,Express,"Deprecated, APO 1",Cancelada a tiempo,50
+201810,Express,"Deprecated, APO 1",Cancelada con excusa,2
+201810,Express,"Deprecated, APO 1",Cancelada por sanción,123
+201810,Express,"Deprecated, APO 1",Cancelada y sancionada,37
+201810,Express,"Deprecated, APO 1",Cola cancelada por reservación,30
+201810,Express,"Deprecated, APO 1",En cola,124
+201810,Express,"Deprecated, APO 1",Finalizada,441
+201810,Express,"Deprecated, APO 1",No asistió,58
+201810,Express,"Deprecated, APO 1",Realizada,2
+201810,Express,"Deprecated, APO 2",Cancelada,12
+201810,Express,"Deprecated, APO 2",Cancelada a tiempo,3
+201810,Express,"Deprecated, APO 2",Cancelada con excusa,2
+201810,Express,"Deprecated, APO 2",Cancelada por sanción,11
+201810,Express,"Deprecated, APO 2",Cancelada y sancionada,4
+201810,Express,"Deprecated, APO 2",En cola,26
+201810,Express,"Deprecated, APO 2",Finalizada,46
+201810,Express,"Deprecated, APO 2",No asistió,12
+201810,Express,"Deprecated, Apoyo",Cancelada,2
+201810,Express,"Deprecated, Apoyo",Cancelada por sanción,1
+201810,Express,"Deprecated, Apoyo",Cancelada y sancionada,2
+201810,Express,"Deprecated, Apoyo",Finalizada,6
+201810,Express,"Deprecated, IP Nivelación",Cancelada por sanción,1
+201810,Express,"Deprecated, IP Nivelación",En cola,1
+201810,Express,"Deprecated, IP Nivelación",Finalizada,3
+201810,Normal,"Deprecated, APO 1",Cancelada,167
+201810,Normal,"Deprecated, APO 1",Cancelada a tiempo,106
+201810,Normal,"Deprecated, APO 1",Cancelada con excusa,9
+201810,Normal,"Deprecated, APO 1",Cancelada por sanción,252
+201810,Normal,"Deprecated, APO 1",Cancelada y sancionada,72
+201810,Normal,"Deprecated, APO 1",Cola cancelada por reservación,96
+201810,Normal,"Deprecated, APO 1",En cola,219
+201810,Normal,"Deprecated, APO 1",Finalizada,1089
+201810,Normal,"Deprecated, APO 1",No asistió,103
+201810,Normal,"Deprecated, APO 1",Realizada,5
+201810,Normal,"Deprecated, APO 2",Cancelada,24
+201810,Normal,"Deprecated, APO 2",Cancelada a tiempo,4
+201810,Normal,"Deprecated, APO 2",Cancelada por sanción,27
+201810,Normal,"Deprecated, APO 2",Cancelada y sancionada,13
+201810,Normal,"Deprecated, APO 2",Cola cancelada por reservación,3
+201810,Normal,"Deprecated, APO 2",En cola,79
+201810,Normal,"Deprecated, APO 2",Finalizada,131
+201810,Normal,"Deprecated, APO 2",No asistió,14
+201810,Normal,"Deprecated, APO 2",Realizada,2
+201810,Normal,"Deprecated, Apoyo",Cancelada,3
+201810,Normal,"Deprecated, Apoyo",Cancelada por sanción,10
+201810,Normal,"Deprecated, Apoyo",Cancelada y sancionada,4
+201810,Normal,"Deprecated, Apoyo",En cola,2
+201810,Normal,"Deprecated, Apoyo",Finalizada,13
+201810,Normal,"Deprecated, Apoyo",No asistió,1
+201810,Normal,"Deprecated, IP Nivelación",Cancelada,4
+201810,Normal,"Deprecated, IP Nivelación",Cancelada por sanción,2
+201810,Normal,"Deprecated, IP Nivelación",En cola,4
+201810,Normal,"Deprecated, IP Nivelación",Finalizada,8
+201810,Normal,"Deprecated, IP Nivelación",No asistió,1
+201810,Sala,Sala,Cancelada a tiempo,6
+201810,Sala,Sala,Cancelada con excusa,4
+201810,Sala,Sala,Finalizada,22
+201810,Sala,Sala,Reservada,8
+201819,Express,"Deprecated, APO 1",Cancelada,7
+201819,Express,"Deprecated, APO 1",Cancelada a tiempo,5
+201819,Express,"Deprecated, APO 1",Cancelada por sanción,4
+201819,Express,"Deprecated, APO 1",Cancelada y sancionada,1
+201819,Express,"Deprecated, APO 1",Finalizada,10
+201819,Express,"Deprecated, APO 1",No asistió,3
+201819,Express,"Deprecated, APO 2",Cancelada,1
+201819,Express,"Deprecated, APO 2",En cola,1
+201819,Express,"Deprecated, APO 2",Finalizada,7
+201819,Express,"Deprecated, APO 2",No asistió,1
+201819,Normal,"Deprecated, APO 1",Cancelada,4
+201819,Normal,"Deprecated, APO 1",Cancelada a tiempo,5
+201819,Normal,"Deprecated, APO 1",Cancelada con excusa,2
+201819,Normal,"Deprecated, APO 1",Cancelada por sanción,3
+201819,Normal,"Deprecated, APO 1",Cancelada y sancionada,5
+201819,Normal,"Deprecated, APO 1",Cola cancelada por reservación,4
+201819,Normal,"Deprecated, APO 1",En cola,5
+201819,Normal,"Deprecated, APO 1",Finalizada,31
+201819,Normal,"Deprecated, APO 1",No asistió,4
+201819,Normal,"Deprecated, APO 2",Cancelada,5
+201819,Normal,"Deprecated, APO 2",Cancelada por sanción,3
+201819,Normal,"Deprecated, APO 2",Cancelada y sancionada,3
+201819,Normal,"Deprecated, APO 2",Cola cancelada por reservación,1
+201819,Normal,"Deprecated, APO 2",En cola,2
+201819,Normal,"Deprecated, APO 2",Finalizada,13
+201819,Normal,"Deprecated, APO 2",No asistió,2
+201820,"Deprecated, Grupal","Deprecated, APO 1",Cancelada a tiempo,20
+201820,"Deprecated, Grupal","Deprecated, APO 1",Cancelada con excusa,1
+201820,"Deprecated, Grupal","Deprecated, APO 1",Cancelada por sanción,4
+201820,"Deprecated, Grupal","Deprecated, APO 1",Cola cancelada por reservación,2
+201820,"Deprecated, Grupal","Deprecated, APO 1",En cola,13
+201820,"Deprecated, Grupal","Deprecated, APO 1",Finalizada,35
+201820,"Deprecated, Grupal","Deprecated, APO 1",No asistió,5
+201820,"Deprecated, Grupal","Deprecated, APO 1",Realizada,2
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",Cancelada a tiempo,8
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",Cancelada por sanción,1
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",Cola cancelada por reservación,1
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",En cola,1
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",Finalizada,32
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",No asistió,10
+201820,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",No asistió,2
+201820,"Deprecated, Torre Séneca","Deprecated, APO 1",Cancelada a tiempo,1
+201820,"Deprecated, Torre Séneca","Deprecated, APO 1",En ejecución,1
+201820,"Deprecated, Torre Séneca","Deprecated, APO 1",Finalizada,20
+201820,"Deprecated, Torre Séneca","Deprecated, APO 1",Reservada,1
+201820,"Deprecated, Torre Séneca","Deprecated, APO 2",En ejecución,1
+201820,"Deprecated, Torre Séneca","Deprecated, APO 2",Finalizada,4
+201820,"Deprecated, Torre Séneca","Deprecated, IP Nivelación",Finalizada,1
+201820,Entrevistas,Entrevista,Cancelada a tiempo,6
+201820,Entrevistas,Entrevista,Cancelada con excusa,2
+201820,Entrevistas,Entrevista,Cola cancelada por reservación,3
+201820,Entrevistas,Entrevista,En cola,3
+201820,Entrevistas,Entrevista,Finalizada,46
+201820,Entrevistas,Entrevista,Reservada,1
+201820,Express,"Deprecated, APO 1",Cancelada a tiempo,225
+201820,Express,"Deprecated, APO 1",Cancelada con excusa,4
+201820,Express,"Deprecated, APO 1",Cancelada por sanción,63
+201820,Express,"Deprecated, APO 1",Cola cancelada por reservación,58
+201820,Express,"Deprecated, APO 1",En cola,165
+201820,Express,"Deprecated, APO 1",Finalizada,490
+201820,Express,"Deprecated, APO 1",No asistió,59
+201820,Express,"Deprecated, APO 1",Realizada,3
+201820,Express,"Deprecated, APO 1",Reservada,1
+201820,Express,"Deprecated, APO 2",Cancelada a tiempo,29
+201820,Express,"Deprecated, APO 2",Cancelada por sanción,14
+201820,Express,"Deprecated, APO 2",Cola cancelada por reservación,2
+201820,Express,"Deprecated, APO 2",En cola,22
+201820,Express,"Deprecated, APO 2",Finalizada,50
+201820,Express,"Deprecated, APO 2",No asistió,15
+201820,Express,"Deprecated, Apoyo",Cancelada a tiempo,4
+201820,Express,"Deprecated, Apoyo",Cancelada por sanción,2
+201820,Express,"Deprecated, Apoyo",En cola,4
+201820,Express,"Deprecated, Apoyo",Finalizada,14
+201820,Express,"Deprecated, IP Nivelación",Finalizada,1
+201820,Normal,"Deprecated, APO 1",Cancelada a tiempo,393
+201820,Normal,"Deprecated, APO 1",Cancelada con excusa,9
+201820,Normal,"Deprecated, APO 1",Cancelada por sanción,131
+201820,Normal,"Deprecated, APO 1",Cola cancelada por reservación,98
+201820,Normal,"Deprecated, APO 1",En cola,310
+201820,Normal,"Deprecated, APO 1",Finalizada,1086
+201820,Normal,"Deprecated, APO 1",No asistió,82
+201820,Normal,"Deprecated, APO 1",Realizada,4
+201820,Normal,"Deprecated, APO 1",Reservada,2
+201820,Normal,"Deprecated, APO 2",Cancelada a tiempo,50
+201820,Normal,"Deprecated, APO 2",Cancelada con excusa,1
+201820,Normal,"Deprecated, APO 2",Cancelada por sanción,29
+201820,Normal,"Deprecated, APO 2",Cola cancelada por reservación,21
+201820,Normal,"Deprecated, APO 2",En cola,84
+201820,Normal,"Deprecated, APO 2",Finalizada,111
+201820,Normal,"Deprecated, APO 2",No asistió,17
+201820,Normal,"Deprecated, Apoyo",Cancelada a tiempo,22
+201820,Normal,"Deprecated, Apoyo",Cancelada por sanción,11
+201820,Normal,"Deprecated, Apoyo",Cola cancelada por reservación,4
+201820,Normal,"Deprecated, Apoyo",En cola,16
+201820,Normal,"Deprecated, Apoyo",Finalizada,22
+201820,Normal,"Deprecated, Apoyo",No asistió,4
+201820,Normal,"Deprecated, IP Nivelación",En cola,4
+201820,Normal,"Deprecated, IP Nivelación",Finalizada,1
+201820,Sala,Sala,Cancelada a tiempo,1
+201820,Sala,Sala,En cola,1
+201820,Sala,Sala,Finalizada,22
+201820,Sala,Sala,Reservada,14
+201910,"Deprecated, Express grupal",IP,Cancelada a tiempo,48
+201910,"Deprecated, Express grupal",IP,Cancelada por sanción,3
+201910,"Deprecated, Express grupal",IP,Cola cancelada por reservación,2
+201910,"Deprecated, Express grupal",IP,Finalizada,68
+201910,"Deprecated, Express grupal",IP,No asistió,20
+201910,"Deprecated, Express grupal",IP,Realizada,16
+201910,"Deprecated, Grupal","Deprecated, APO 1",Cancelada a tiempo,11
+201910,"Deprecated, Grupal","Deprecated, APO 1",Cancelada por sanción,3
+201910,"Deprecated, Grupal","Deprecated, APO 1",Cola cancelada por reservación,1
+201910,"Deprecated, Grupal","Deprecated, APO 1",En cola,4
+201910,"Deprecated, Grupal","Deprecated, APO 1",Finalizada,26
+201910,"Deprecated, Grupal","Deprecated, APO 1",No asistió,4
+201910,"Deprecated, Grupal","Deprecated, APO 1",Realizada,2
+201910,"Deprecated, Torre Séneca","Deprecated, APO 1",Cancelada a tiempo,4
+201910,"Deprecated, Torre Séneca","Deprecated, APO 1",Cancelada con excusa,1
+201910,"Deprecated, Torre Séneca","Deprecated, APO 1",Finalizada,15
+201910,"Deprecated, Torre Séneca","Deprecated, APO 1",No asistió,17
+201910,"Deprecated, Torre Séneca","Deprecated, APO 2",Cancelada a tiempo,7
+201910,"Deprecated, Torre Séneca","Deprecated, APO 2",Finalizada,1
+201910,"Deprecated, Torre Séneca","Deprecated, APO 2",No asistió,2
+201910,Entrevistas,Entrevista,Cancelada a tiempo,3
+201910,Entrevistas,Entrevista,Cancelada con excusa,5
+201910,Entrevistas,Entrevista,Finalizada,23
+201910,Entrevistas,Entrevista,Reservada,1
+201910,Express,"Deprecated, APO 1",Cancelada a tiempo,289
+201910,Express,"Deprecated, APO 1",Cancelada con excusa,15
+201910,Express,"Deprecated, APO 1",Cancelada por sanción,116
+201910,Express,"Deprecated, APO 1",Cola cancelada por reservación,83
+201910,Express,"Deprecated, APO 1",En cola,193
+201910,Express,"Deprecated, APO 1",Finalizada,510
+201910,Express,"Deprecated, APO 1",No asistió,54
+201910,Express,"Deprecated, APO 1",Realizada,7
+201910,Express,"Deprecated, APO 2",Cancelada a tiempo,47
+201910,Express,"Deprecated, APO 2",Cancelada con excusa,1
+201910,Express,"Deprecated, APO 2",Cancelada por sanción,17
+201910,Express,"Deprecated, APO 2",Cola cancelada por reservación,5
+201910,Express,"Deprecated, APO 2",En cola,41
+201910,Express,"Deprecated, APO 2",Finalizada,50
+201910,Express,"Deprecated, APO 2",No asistió,15
+201910,Express,"Deprecated, Apoyo",Cancelada a tiempo,1
+201910,Express,"Deprecated, Apoyo",Cancelada por sanción,2
+201910,Express,"Deprecated, Apoyo",Cola cancelada por reservación,1
+201910,Express,"Deprecated, Apoyo",En cola,2
+201910,Express,"Deprecated, Apoyo",Finalizada,10
+201910,Express,"Deprecated, Apoyo",No asistió,1
+201910,Express,"Deprecated, IP Nivelación",Cancelada a tiempo,10
+201910,Express,"Deprecated, IP Nivelación",Cancelada por sanción,1
+201910,Express,"Deprecated, IP Nivelación",Cola cancelada por reservación,1
+201910,Express,"Deprecated, IP Nivelación",En cola,6
+201910,Express,"Deprecated, IP Nivelación",Finalizada,11
+201910,Express,"Deprecated, IP Nivelación",No asistió,1
+201910,Normal,"Deprecated, APO 1",Cancelada a tiempo,431
+201910,Normal,"Deprecated, APO 1",Cancelada con excusa,11
+201910,Normal,"Deprecated, APO 1",Cancelada por sanción,179
+201910,Normal,"Deprecated, APO 1",Cola cancelada por reservación,151
+201910,Normal,"Deprecated, APO 1",En cola,374
+201910,Normal,"Deprecated, APO 1",Finalizada,1022
+201910,Normal,"Deprecated, APO 1",No asistió,110
+201910,Normal,"Deprecated, APO 1",Realizada,7
+201910,Normal,"Deprecated, APO 2",Cancelada a tiempo,82
+201910,Normal,"Deprecated, APO 2",Cancelada con excusa,8
+201910,Normal,"Deprecated, APO 2",Cancelada por sanción,29
+201910,Normal,"Deprecated, APO 2",Cola cancelada por reservación,12
+201910,Normal,"Deprecated, APO 2",En cola,72
+201910,Normal,"Deprecated, APO 2",En ejecución,1
+201910,Normal,"Deprecated, APO 2",Finalizada,110
+201910,Normal,"Deprecated, APO 2",No asistió,12
+201910,Normal,"Deprecated, APO 2",Realizada,1
+201910,Normal,"Deprecated, Apoyo",Cancelada a tiempo,3
+201910,Normal,"Deprecated, Apoyo",Cancelada por sanción,1
+201910,Normal,"Deprecated, Apoyo",Cola cancelada por reservación,3
+201910,Normal,"Deprecated, Apoyo",En cola,17
+201910,Normal,"Deprecated, Apoyo",En ejecución,1
+201910,Normal,"Deprecated, Apoyo",Finalizada,5
+201910,Normal,"Deprecated, IP Nivelación",Cancelada a tiempo,10
+201910,Normal,"Deprecated, IP Nivelación",Cancelada por sanción,10
+201910,Normal,"Deprecated, IP Nivelación",Cola cancelada por reservación,5
+201910,Normal,"Deprecated, IP Nivelación",En cola,15
+201910,Normal,"Deprecated, IP Nivelación",Finalizada,14
+201910,Normal,"Deprecated, IP Nivelación",No asistió,3
+201910,Normal,IP,Cancelada a tiempo,2
+201910,Normal,IP,Cancelada con excusa,1
+201910,Normal,IP,Cancelada por sanción,1
+201910,Normal,IP,Finalizada,3
+201910,Sala,Sala,Cancelada con excusa,4
+201910,Sala,Sala,Finalizada,3
+201910,Sala,Sala,No asistió,3
+201910,Sala,Sala,Reservada,2
+201919,Express,"Deprecated, APO 1",Cancelada a tiempo,10
+201919,Express,"Deprecated, APO 1",Cancelada por sanción,2
+201919,Express,"Deprecated, APO 1",En cola,1
+201919,Express,"Deprecated, APO 1",En ejecución,1
+201919,Express,"Deprecated, APO 1",Finalizada,14
+201919,Express,"Deprecated, APO 1",No asistió,1
+201919,Express,"Deprecated, APO 1",Realizada,2
+201919,Express,"Deprecated, APO 2",Cancelada a tiempo,5
+201919,Express,"Deprecated, APO 2",Finalizada,4
+201919,Express,"Deprecated, APO 2",Realizada,1
+201919,Normal,"Deprecated, APO 1",Cancelada a tiempo,6
+201919,Normal,"Deprecated, APO 1",Cancelada por sanción,1
+201919,Normal,"Deprecated, APO 1",Cola cancelada por reservación,2
+201919,Normal,"Deprecated, APO 1",Finalizada,25
+201919,Normal,"Deprecated, APO 1",No asistió,1
+201919,Normal,"Deprecated, APO 1",Realizada,6
+201919,Normal,"Deprecated, APO 2",Cancelada a tiempo,5
+201919,Normal,"Deprecated, APO 2",Cancelada por sanción,1
+201919,Normal,"Deprecated, APO 2",Cola cancelada por reservación,2
+201919,Normal,"Deprecated, APO 2",En cola,3
+201919,Normal,"Deprecated, APO 2",Finalizada,7
+201919,Normal,"Deprecated, APO 2",No asistió,4
+201919,Normal,"Deprecated, APO 2",Realizada,2
+201920,"Deprecated, Grupal",IP,No asistió,1
+201920,"Deprecated, Torre Séneca","Deprecated, APO 1",Cancelada a tiempo,1
+201920,"Deprecated, Torre Séneca","Deprecated, APO 1",Cancelada con excusa,1
+201920,"Deprecated, Torre Séneca","Deprecated, APO 1",Finalizada,17
+201920,"Deprecated, Torre Séneca","Deprecated, APO 1",No asistió,3
+201920,Entrevistas,Entrevista,Cancelada con excusa,3
+201920,Entrevistas,Entrevista,Finalizada,17
+201920,Entrevistas,Entrevista,No asistió,6
+201920,Entrevistas,Entrevista,Reservada,2
+201920,Express,"Deprecated, APO 1",Cancelada a tiempo,222
+201920,Express,"Deprecated, APO 1",Cancelada con excusa,13
+201920,Express,"Deprecated, APO 1",Cancelada por sanción,36
+201920,Express,"Deprecated, APO 1",Cola cancelada por reservación,29
+201920,Express,"Deprecated, APO 1",En cola,81
+201920,Express,"Deprecated, APO 1",Finalizada,324
+201920,Express,"Deprecated, APO 1",No asistió,73
+201920,Express,"Deprecated, APO 1",Realizada,7
+201920,Express,"Deprecated, APO 2",Cancelada a tiempo,37
+201920,Express,"Deprecated, APO 2",Cancelada con excusa,1
+201920,Express,"Deprecated, APO 2",Cancelada por sanción,11
+201920,Express,"Deprecated, APO 2",Cola cancelada por reservación,4
+201920,Express,"Deprecated, APO 2",En cola,11
+201920,Express,"Deprecated, APO 2",Finalizada,48
+201920,Express,"Deprecated, APO 2",No asistió,9
+201920,Express,"Deprecated, APO 2",Realizada,2
+201920,Express,IP,Cancelada a tiempo,74
+201920,Express,IP,Cancelada con excusa,5
+201920,Express,IP,Cancelada por sanción,2
+201920,Express,IP,Cola cancelada por reservación,1
+201920,Express,IP,En cola,12
+201920,Express,IP,En ejecución,1
+201920,Express,IP,Finalizada,86
+201920,Express,IP,No asistió,10
+201920,Express,IP,Reservada,1
+201920,Normal,"Deprecated, APO 1",Cancelada a tiempo,350
+201920,Normal,"Deprecated, APO 1",Cancelada con excusa,30
+201920,Normal,"Deprecated, APO 1",Cancelada por sanción,106
+201920,Normal,"Deprecated, APO 1",Cola cancelada por reservación,100
+201920,Normal,"Deprecated, APO 1",En cola,196
+201920,Normal,"Deprecated, APO 1",Finalizada,692
+201920,Normal,"Deprecated, APO 1",No asistió,72
+201920,Normal,"Deprecated, APO 1",Realizada,9
+201920,Normal,"Deprecated, APO 2",Cancelada a tiempo,86
+201920,Normal,"Deprecated, APO 2",Cancelada con excusa,5
+201920,Normal,"Deprecated, APO 2",Cancelada por sanción,28
+201920,Normal,"Deprecated, APO 2",Cola cancelada por reservación,16
+201920,Normal,"Deprecated, APO 2",En cola,39
+201920,Normal,"Deprecated, APO 2",Finalizada,128
+201920,Normal,"Deprecated, APO 2",No asistió,26
+201920,Normal,"Deprecated, APO 2",Realizada,3
+201920,Normal,"Deprecated, DPOO",Cancelada a tiempo,7
+201920,Normal,"Deprecated, DPOO",Cancelada con excusa,11
+201920,Normal,"Deprecated, DPOO",Cancelada por sanción,1
+201920,Normal,"Deprecated, DPOO",Cola cancelada por reservación,1
+201920,Normal,"Deprecated, DPOO",En cola,2
+201920,Normal,"Deprecated, DPOO",En ejecución,2
+201920,Normal,"Deprecated, DPOO",Finalizada,13
+201920,Normal,"Deprecated, DPOO",No asistió,3
+201920,Normal,IP,Cancelada a tiempo,87
+201920,Normal,IP,Cancelada con excusa,8
+201920,Normal,IP,Cancelada por sanción,16
+201920,Normal,IP,Cola cancelada por reservación,13
+201920,Normal,IP,En cola,23
+201920,Normal,IP,En ejecución,1
+201920,Normal,IP,Finalizada,163
+201920,Normal,IP,No asistió,20
+201920,Sala,Sala,Cancelada a tiempo,4
+201920,Sala,Sala,Finalizada,2
+201920,Sala,Sala,No asistió,57
+202010,"Deprecated, Profesores IP","Deprecated, Profesores",Cancelada a tiempo,4
+202010,"Deprecated, Profesores IP","Deprecated, Profesores",Finalizada,2
+202010,"Deprecated, Profesores IP","Deprecated, Profesores",No asistió,3
+202010,"Deprecated, Torre Séneca",EDA,Cancelada a tiempo,1
+202010,"Deprecated, Torre Séneca",EDA,Cancelada por sanción,1
+202010,"Deprecated, Torre Séneca",EDA,Finalizada,3
+202010,"Deprecated, Torre Séneca",IP,Cancelada a tiempo,9
+202010,"Deprecated, Torre Séneca",IP,Cancelada con excusa,3
+202010,"Deprecated, Torre Séneca",IP,Cola cancelada por reservación,1
+202010,"Deprecated, Torre Séneca",IP,Finalizada,28
+202010,"Deprecated, Torre Séneca",IP,No asistió,4
+202010,"Deprecated, Torre Séneca",IP,Realizada,1
+202010,Entrevistas,Entrevista,Cancelada a tiempo,1
+202010,Entrevistas,Entrevista,Cancelada con excusa,2
+202010,Entrevistas,Entrevista,Finalizada,24
+202010,Entrevistas,Entrevista,No asistió,2
+202010,Express,"Deprecated, APO 2",Cancelada a tiempo,15
+202010,Express,"Deprecated, APO 2",Cancelada con excusa,1
+202010,Express,"Deprecated, APO 2",Cancelada por sanción,5
+202010,Express,"Deprecated, APO 2",Cola cancelada por reservación,1
+202010,Express,"Deprecated, APO 2",Finalizada,22
+202010,Express,"Deprecated, APO 2",No asistió,7
+202010,Express,"Deprecated, APO 2",Realizada,1
+202010,Express,IP,Cancelada a tiempo,353
+202010,Express,IP,Cancelada con excusa,3
+202010,Express,IP,Cancelada por sanción,87
+202010,Express,IP,Cola cancelada por reservación,74
+202010,Express,IP,En cola,219
+202010,Express,IP,En ejecución,1
+202010,Express,IP,Finalizada,590
+202010,Express,IP,No asistió,74
+202010,Express,IP,Realizada,25
+202010,Normal,"Deprecated, APO 2",Cancelada a tiempo,51
+202010,Normal,"Deprecated, APO 2",Cancelada por sanción,19
+202010,Normal,"Deprecated, APO 2",Cola cancelada por reservación,9
+202010,Normal,"Deprecated, APO 2",En cola,32
+202010,Normal,"Deprecated, APO 2",En ejecución,1
+202010,Normal,"Deprecated, APO 2",Finalizada,93
+202010,Normal,"Deprecated, APO 2",No asistió,25
+202010,Normal,"Deprecated, APO 2",Realizada,12
+202010,Normal,IP,Cancelada a tiempo,477
+202010,Normal,IP,Cancelada con excusa,8
+202010,Normal,IP,Cancelada por sanción,207
+202010,Normal,IP,Cola cancelada por reservación,138
+202010,Normal,IP,En cola,392
+202010,Normal,IP,En ejecución,4
+202010,Normal,IP,Finalizada,1032
+202010,Normal,IP,No asistió,117
+202010,Normal,IP,Realizada,37
+202010,Normal,IP,Reservada,1
+202010,Sala,Sala,Cancelada a tiempo,4
+202010,Sala,Sala,Cancelada con excusa,2
+202010,Sala,Sala,Finalizada,6
+202010,Sala,Sala,No asistió,52
+202010,Sala,Sala,Reservada,1
+202019,Entrevistas,Entrevista,Cancelada a tiempo,1
+202019,Entrevistas,Entrevista,Cancelada con excusa,1
+202019,Entrevistas,Entrevista,Finalizada,11
+202019,Express,"Deprecated, APO 2",Cancelada a tiempo,4
+202019,Express,"Deprecated, APO 2",Cancelada con excusa,1
+202019,Express,"Deprecated, APO 2",En cola,2
+202019,Express,"Deprecated, APO 2",Finalizada,6
+202019,Express,"Deprecated, APO 2",No asistió,2
+202019,Express,"Deprecated, APO 2",Realizada,1
+202019,Express,IP,Cancelada a tiempo,15
+202019,Express,IP,Cola cancelada por reservación,2
+202019,Express,IP,En cola,3
+202019,Express,IP,Finalizada,25
+202019,Express,IP,No asistió,2
+202019,Express,IP,Realizada,1
+202019,Normal,"Deprecated, APO 2",Cancelada a tiempo,17
+202019,Normal,"Deprecated, APO 2",Cancelada por sanción,3
+202019,Normal,"Deprecated, APO 2",Cola cancelada por reservación,1
+202019,Normal,"Deprecated, APO 2",En cola,3
+202019,Normal,"Deprecated, APO 2",En ejecución,1
+202019,Normal,"Deprecated, APO 2",Finalizada,19
+202019,Normal,"Deprecated, APO 2",No asistió,1
+202019,Normal,"Deprecated, APO 2",Realizada,3
+202019,Normal,IP,Cancelada a tiempo,18
+202019,Normal,IP,Cancelada con excusa,2
+202019,Normal,IP,Cancelada por sanción,2
+202019,Normal,IP,Cola cancelada por reservación,5
+202019,Normal,IP,En cola,8
+202019,Normal,IP,Finalizada,33
+202019,Normal,IP,No asistió,3
+202019,Normal,IP,Realizada,1
+202019,Normal pico,IP,Cancelada a tiempo,9
+202019,Normal pico,IP,Cancelada por sanción,1
+202019,Normal pico,IP,Cola cancelada por reservación,2
+202019,Normal pico,IP,En cola,1
+202019,Normal pico,IP,Finalizada,26
+202019,Normal pico,IP,No asistió,2
+202019,Normal pico,IP,Realizada,2
+202020,"Deprecated, Grupal",EDA,Cancelada a tiempo,29
+202020,"Deprecated, Grupal",EDA,Cancelada con excusa,3
+202020,"Deprecated, Grupal",EDA,Cancelada por sanción,1
+202020,"Deprecated, Grupal",EDA,En cola,1
+202020,"Deprecated, Grupal",EDA,Finalizada,73
+202020,"Deprecated, Grupal",EDA,No asistió,6
+202020,"Deprecated, Grupal",EDA,Realizada,9
+202020,"Deprecated, Grupal",EDA,Reservada,6
+202020,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",Cancelada a tiempo,4
+202020,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",Finalizada,14
+202020,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",No asistió,24
+202020,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",Realizada,3
+202020,Entrevistas,Entrevista,Cancelada a tiempo,2
+202020,Entrevistas,Entrevista,Cancelada con excusa,1
+202020,Entrevistas,Entrevista,Finalizada,35
+202020,Entrevistas,Entrevista,No asistió,2
+202020,Express,"Deprecated, APO 2",Cancelada a tiempo,10
+202020,Express,"Deprecated, APO 2",Cancelada por sanción,2
+202020,Express,"Deprecated, APO 2",Cola cancelada por reservación,2
+202020,Express,"Deprecated, APO 2",En cola,6
+202020,Express,"Deprecated, APO 2",Finalizada,10
+202020,Express,"Deprecated, APO 2",No asistió,1
+202020,Express,"Deprecated, APO 2",Realizada,1
+202020,Express,"Deprecated, APO 2",Reservada,1
+202020,Express,IP,Cancelada a tiempo,279
+202020,Express,IP,Cancelada con excusa,19
+202020,Express,IP,Cancelada por sanción,33
+202020,Express,IP,Cola cancelada por reservación,43
+202020,Express,IP,En cola,167
+202020,Express,IP,Finalizada,689
+202020,Express,IP,No asistió,42
+202020,Express,IP,Realizada,18
+202020,Normal,"Deprecated, APO 2",Cancelada a tiempo,17
+202020,Normal,"Deprecated, APO 2",Cancelada por sanción,1
+202020,Normal,"Deprecated, APO 2",Cola cancelada por reservación,1
+202020,Normal,"Deprecated, APO 2",En cola,13
+202020,Normal,"Deprecated, APO 2",Finalizada,31
+202020,Normal,"Deprecated, APO 2",No asistió,2
+202020,Normal,"Deprecated, APO 2",Realizada,1
+202020,Normal,IP,Cancelada a tiempo,438
+202020,Normal,IP,Cancelada con excusa,24
+202020,Normal,IP,Cancelada por sanción,75
+202020,Normal,IP,Cola cancelada por reservación,100
+202020,Normal,IP,En cola,227
+202020,Normal,IP,Finalizada,1385
+202020,Normal,IP,No asistió,72
+202020,Normal,IP,Realizada,27
+202020,Normal,IP,Reservada,1
+202020,Normal pico,IP,Cancelada a tiempo,310
+202020,Normal pico,IP,Cancelada con excusa,26
+202020,Normal pico,IP,Cancelada por sanción,31
+202020,Normal pico,IP,Cola cancelada por reservación,58
+202020,Normal pico,IP,En cola,90
+202020,Normal pico,IP,En ejecución,1
+202020,Normal pico,IP,Finalizada,673
+202020,Normal pico,IP,No asistió,41
+202020,Normal pico,IP,Realizada,54
+202020,Normal pico,IP,Reservada,13
+202110,"Deprecated, Grupal","Deprecated, DPOO",Cancelada a tiempo,23
+202110,"Deprecated, Grupal","Deprecated, DPOO",Cancelada con excusa,1
+202110,"Deprecated, Grupal","Deprecated, DPOO",En cola,7
+202110,"Deprecated, Grupal","Deprecated, DPOO",Finalizada,46
+202110,"Deprecated, Grupal","Deprecated, DPOO",No asistió,7
+202110,"Deprecated, Grupal","Deprecated, DPOO",Realizada,10
+202110,Entrevistas,Entrevista,Cancelada a tiempo,9
+202110,Entrevistas,Entrevista,Cancelada con excusa,3
+202110,Entrevistas,Entrevista,Finalizada,42
+202110,Entrevistas,Entrevista,No asistió,3
+202110,Express,EDA,Cancelada a tiempo,33
+202110,Express,EDA,Cancelada con excusa,2
+202110,Express,EDA,Cancelada por sanción,2
+202110,Express,EDA,Cola cancelada por reservación,1
+202110,Express,EDA,Finalizada,57
+202110,Express,EDA,No asistió,9
+202110,Express,EDA,Realizada,5
+202110,Express,EDA,Reservada,1
+202110,Express,IP,Cancelada a tiempo,331
+202110,Express,IP,Cancelada con excusa,9
+202110,Express,IP,Cancelada por sanción,15
+202110,Express,IP,Cola cancelada por reservación,57
+202110,Express,IP,En cola,263
+202110,Express,IP,En ejecución,1
+202110,Express,IP,Finalizada,683
+202110,Express,IP,No asistió,66
+202110,Express,IP,Realizada,60
+202110,Express,IP,Reservada,1
+202110,Normal,EDA,Cancelada a tiempo,84
+202110,Normal,EDA,Cancelada con excusa,2
+202110,Normal,EDA,Cancelada por sanción,4
+202110,Normal,EDA,Cola cancelada por reservación,3
+202110,Normal,EDA,En cola,7
+202110,Normal,EDA,En ejecución,2
+202110,Normal,EDA,Finalizada,161
+202110,Normal,EDA,No asistió,14
+202110,Normal,EDA,Realizada,15
+202110,Normal,IP,Cancelada a tiempo,602
+202110,Normal,IP,Cancelada con excusa,11
+202110,Normal,IP,Cancelada por sanción,27
+202110,Normal,IP,Cola cancelada por reservación,166
+202110,Normal,IP,En cola,364
+202110,Normal,IP,Finalizada,1394
+202110,Normal,IP,No asistió,94
+202110,Normal,IP,Realizada,155
+202110,Normal,IP,Reservada,1
+202110,Normal pico,IP,Cancelada a tiempo,233
+202110,Normal pico,IP,Cancelada con excusa,20
+202110,Normal pico,IP,Cancelada por sanción,25
+202110,Normal pico,IP,Cola cancelada por reservación,60
+202110,Normal pico,IP,En cola,147
+202110,Normal pico,IP,En ejecución,2
+202110,Normal pico,IP,Finalizada,621
+202110,Normal pico,IP,No asistió,58
+202110,Normal pico,IP,Realizada,55
+202110,Normal pico,IP,Reservada,3
+202119,Express,EDA,Finalizada,2
+202119,Express,IP,Cancelada a tiempo,7
+202119,Express,IP,Cola cancelada por reservación,1
+202119,Express,IP,Finalizada,11
+202119,Express,IP,No asistió,1
+202119,Express,IP,Realizada,1
+202119,Normal,EDA,Cancelada a tiempo,14
+202119,Normal,EDA,Finalizada,12
+202119,Normal,IP,Cancelada a tiempo,22
+202119,Normal,IP,Cancelada por sanción,1
+202119,Normal,IP,Cola cancelada por reservación,1
+202119,Normal,IP,En cola,3
+202119,Normal,IP,Finalizada,22
+202119,Normal,IP,No asistió,4
+202119,Normal pico,IP,Cancelada a tiempo,1
+202119,Normal pico,IP,En cola,1
+202119,Normal pico,IP,Finalizada,3
+202119,Normal pico,IP,No asistió,1
+202119,Normal pico,IP,Realizada,1
+202119,Normal pico,IP,Reservada,1
+202120,"Deprecated, Grupal","Deprecated, DPOO",Cancelada a tiempo,34
+202120,"Deprecated, Grupal","Deprecated, DPOO",Finalizada,66
+202120,"Deprecated, Grupal","Deprecated, DPOO",No asistió,10
+202120,"Deprecated, Grupal","Deprecated, DPOO",Realizada,8
+202120,Entrevistas,Entrevista,Cancelada a tiempo,9
+202120,Entrevistas,Entrevista,Cancelada con excusa,2
+202120,Entrevistas,Entrevista,Finalizada,34
+202120,Entrevistas,Entrevista,No asistió,2
+202120,Express,EDA,Cancelada a tiempo,33
+202120,Express,EDA,Cola cancelada por reservación,3
+202120,Express,EDA,En cola,27
+202120,Express,EDA,Finalizada,76
+202120,Express,EDA,No asistió,7
+202120,Express,EDA,Realizada,1
+202120,Express,IP,Cancelada a tiempo,298
+202120,Express,IP,Cancelada con excusa,11
+202120,Express,IP,Cancelada por sanción,8
+202120,Express,IP,Cola cancelada por reservación,26
+202120,Express,IP,En cola,120
+202120,Express,IP,En ejecución,3
+202120,Express,IP,Finalizada,596
+202120,Express,IP,No asistió,91
+202120,Express,IP,Realizada,57
+202120,Express,IP,Reservada,3
+202120,Normal,EDA,Cancelada a tiempo,57
+202120,Normal,EDA,Cancelada con excusa,2
+202120,Normal,EDA,Cola cancelada por reservación,16
+202120,Normal,EDA,En cola,96
+202120,Normal,EDA,Finalizada,168
+202120,Normal,EDA,No asistió,13
+202120,Normal,EDA,Realizada,9
+202120,Normal,IP,Cancelada a tiempo,426
+202120,Normal,IP,Cancelada con excusa,19
+202120,Normal,IP,Cancelada por sanción,22
+202120,Normal,IP,Cola cancelada por reservación,79
+202120,Normal,IP,En cola,187
+202120,Normal,IP,En ejecución,1
+202120,Normal,IP,Finalizada,978
+202120,Normal,IP,No asistió,95
+202120,Normal,IP,Realizada,152
+202120,Normal,IP,Reservada,3
+202120,Normal pico,IP,Cancelada a tiempo,161
+202120,Normal pico,IP,Cancelada con excusa,3
+202120,Normal pico,IP,Cancelada por sanción,10
+202120,Normal pico,IP,Cola cancelada por reservación,14
+202120,Normal pico,IP,En cola,55
+202120,Normal pico,IP,En ejecución,6
+202120,Normal pico,IP,Finalizada,366
+202120,Normal pico,IP,No asistió,38
+202120,Normal pico,IP,Realizada,85
+202120,Normal pico,IP,Reservada,10
+202210,Entrevistas,Entrevista,Cancelada a tiempo,9
+202210,Entrevistas,Entrevista,Cancelada con excusa,5
+202210,Entrevistas,Entrevista,Finalizada,35
+202210,Entrevistas,Entrevista,No asistió,4
+202210,Express,EDA,Cancelada a tiempo,37
+202210,Express,EDA,Cancelada con excusa,2
+202210,Express,EDA,Cancelada por sanción,1
+202210,Express,EDA,Cola cancelada por reservación,2
+202210,Express,EDA,En cola,9
+202210,Express,EDA,Finalizada,34
+202210,Express,EDA,No asistió,13
+202210,Express,EDA,Realizada,1
+202210,Express,IP,Cancelada a tiempo,273
+202210,Express,IP,Cancelada con excusa,15
+202210,Express,IP,Cancelada por sanción,20
+202210,Express,IP,Cola cancelada por reservación,20
+202210,Express,IP,En cola,100
+202210,Express,IP,Finalizada,380
+202210,Express,IP,No asistió,126
+202210,Express,IP,Realizada,25
+202210,Express,IP,Reservada,1
+202210,Normal,EDA,Cancelada a tiempo,126
+202210,Normal,EDA,Cancelada con excusa,5
+202210,Normal,EDA,Cancelada por sanción,4
+202210,Normal,EDA,Cola cancelada por reservación,6
+202210,Normal,EDA,En cola,99
+202210,Normal,EDA,Finalizada,186
+202210,Normal,EDA,No asistió,47
+202210,Normal,EDA,Realizada,9
+202210,Normal,IP,Cancelada a tiempo,711
+202210,Normal,IP,Cancelada con excusa,21
+202210,Normal,IP,Cancelada por sanción,50
+202210,Normal,IP,Cola cancelada por reservación,118
+202210,Normal,IP,En cola,467
+202210,Normal,IP,En ejecución,2
+202210,Normal,IP,Finalizada,1197
+202210,Normal,IP,No asistió,149
+202210,Normal,IP,Realizada,109
+202210,Normal pico,IP,Cancelada a tiempo,228
+202210,Normal pico,IP,Cancelada con excusa,9
+202210,Normal pico,IP,Cancelada por sanción,11
+202210,Normal pico,IP,Cola cancelada por reservación,7
+202210,Normal pico,IP,En cola,33
+202210,Normal pico,IP,En ejecución,8
+202210,Normal pico,IP,Finalizada,330
+202210,Normal pico,IP,No asistió,40
+202210,Normal pico,IP,Realizada,65
+202210,Normal pico,IP,Reservada,14
+202219,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",Cancelada a tiempo,2
+202219,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",Finalizada,10
+202219,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",Realizada,3
+202219,Normal,IP,Cancelada a tiempo,18
+202219,Normal,IP,En cola,22
+202219,Normal,IP,Finalizada,39
+202219,Normal,IP,No asistió,5
+202219,Normal,IP,Realizada,3
+202220,"Deprecated, Torre Séneca",IP,Cancelada a tiempo,17
+202220,"Deprecated, Torre Séneca",IP,Cancelada con excusa,3
+202220,"Deprecated, Torre Séneca",IP,Finalizada,17
+202220,"Deprecated, Torre Séneca",IP,No asistió,16
+202220,Entrevistas,Entrevista,Cancelada a tiempo,13
+202220,Entrevistas,Entrevista,Cancelada con excusa,2
+202220,Entrevistas,Entrevista,Finalizada,43
+202220,Entrevistas,Entrevista,No asistió,2
+202220,Express,EDA,Cancelada a tiempo,63
+202220,Express,EDA,Cancelada con excusa,3
+202220,Express,EDA,Cola cancelada por reservación,6
+202220,Express,EDA,En cola,31
+202220,Express,EDA,Finalizada,48
+202220,Express,EDA,No asistió,23
+202220,Express,EDA,Realizada,4
+202220,Express,IP,Cancelada a tiempo,422
+202220,Express,IP,Cancelada con excusa,16
+202220,Express,IP,Cancelada por sanción,8
+202220,Express,IP,Cola cancelada por reservación,66
+202220,Express,IP,En cola,311
+202220,Express,IP,En ejecución,2
+202220,Express,IP,Finalizada,482
+202220,Express,IP,No asistió,125
+202220,Express,IP,Realizada,89
+202220,Express,IP,Reservada,3
+202220,Normal,EDA,Cancelada a tiempo,126
+202220,Normal,EDA,Cancelada con excusa,6
+202220,Normal,EDA,Cancelada por sanción,2
+202220,Normal,EDA,Cola cancelada por reservación,12
+202220,Normal,EDA,En cola,117
+202220,Normal,EDA,Finalizada,148
+202220,Normal,EDA,No asistió,41
+202220,Normal,EDA,Realizada,8
+202220,Normal,EDA,Reservada,2
+202220,Normal,IP,Cancelada a tiempo,687
+202220,Normal,IP,Cancelada con excusa,15
+202220,Normal,IP,Cancelada por sanción,25
+202220,Normal,IP,Cola cancelada por reservación,149
+202220,Normal,IP,En cola,340
+202220,Normal,IP,En ejecución,5
+202220,Normal,IP,Finalizada,1059
+202220,Normal,IP,No asistió,123
+202220,Normal,IP,Realizada,212
+202220,Normal pico,IP,Cancelada a tiempo,238
+202220,Normal pico,IP,Cancelada con excusa,5
+202220,Normal pico,IP,Cancelada por sanción,10
+202220,Normal pico,IP,Cola cancelada por reservación,14
+202220,Normal pico,IP,En cola,26
+202220,Normal pico,IP,Finalizada,276
+202220,Normal pico,IP,No asistió,60
+202220,Normal pico,IP,Realizada,28
+202220,Normal pico,IP,Reservada,14
+202310,Entrevistas,Entrevista,Cancelada a tiempo,16
+202310,Entrevistas,Entrevista,Cancelada con excusa,2
+202310,Entrevistas,Entrevista,Finalizada,60
+202310,Express,EDA,Cancelada a tiempo,95
+202310,Express,EDA,Cancelada con excusa,2
+202310,Express,EDA,Cancelada por sanción,1
+202310,Express,EDA,Cola cancelada por reservación,2
+202310,Express,EDA,En cola,47
+202310,Express,EDA,En ejecución,1
+202310,Express,EDA,Finalizada,113
+202310,Express,EDA,No asistió,34
+202310,Express,EDA,Realizada,18
+202310,Express,EDA,Reservada,2
+202310,Express,IP,Cancelada a tiempo,539
+202310,Express,IP,Cancelada con excusa,12
+202310,Express,IP,Cancelada por sanción,10
+202310,Express,IP,Cola cancelada por reservación,44
+202310,Express,IP,En cola,162
+202310,Express,IP,En ejecución,7
+202310,Express,IP,Finalizada,610
+202310,Express,IP,No asistió,151
+202310,Express,IP,Realizada,100
+202310,Express,IP,Reservada,4
+202310,Normal,EDA,Cancelada a tiempo,130
+202310,Normal,EDA,Cancelada con excusa,1
+202310,Normal,EDA,Cancelada por sanción,1
+202310,Normal,EDA,Cola cancelada por reservación,20
+202310,Normal,EDA,En cola,159
+202310,Normal,EDA,En ejecución,6
+202310,Normal,EDA,Finalizada,214
+202310,Normal,EDA,No asistió,41
+202310,Normal,EDA,Realizada,54
+202310,Normal,EDA,Reservada,1
+202310,Normal,IP,Cancelada a tiempo,572
+202310,Normal,IP,Cancelada con excusa,15
+202310,Normal,IP,Cancelada por sanción,15
+202310,Normal,IP,Cola cancelada por reservación,94
+202310,Normal,IP,En cola,185
+202310,Normal,IP,En ejecución,8
+202310,Normal,IP,Finalizada,933
+202310,Normal,IP,No asistió,91
+202310,Normal,IP,Realizada,133
+202310,Normal pico,IP,Cancelada a tiempo,211
+202310,Normal pico,IP,Cancelada con excusa,1
+202310,Normal pico,IP,Cancelada por sanción,8
+202310,Normal pico,IP,Cola cancelada por reservación,23
+202310,Normal pico,IP,En cola,66
+202310,Normal pico,IP,En ejecución,3
+202310,Normal pico,IP,Finalizada,384
+202310,Normal pico,IP,No asistió,40
+202310,Normal pico,IP,Realizada,41
+202310,Normal pico,IP,Reservada,5
+202319,Normal,EDA,Cancelada a tiempo,12
+202319,Normal,EDA,Cola cancelada por reservación,3
+202319,Normal,EDA,En cola,3
+202319,Normal,EDA,En ejecución,2
+202319,Normal,EDA,No asistió,1
+202319,Normal,EDA,Realizada,16
+202319,Normal,IP,Cancelada a tiempo,59
+202319,Normal,IP,Cola cancelada por reservación,7
+202319,Normal,IP,En cola,29
+202319,Normal,IP,En ejecución,1
+202319,Normal,IP,Finalizada,57
+202319,Normal,IP,No asistió,9
+202319,Normal,IP,Realizada,20
+202320,Entrevistas,Entrevista,Cancelada a tiempo,18
+202320,Entrevistas,Entrevista,Cancelada con excusa,4
+202320,Entrevistas,Entrevista,Finalizada,40
+202320,Entrevistas,Entrevista,No asistió,4
+202320,Express,EDA,Cancelada a tiempo,104
+202320,Express,EDA,Cancelada con excusa,4
+202320,Express,EDA,Cola cancelada por reservación,8
+202320,Express,EDA,En cola,82
+202320,Express,EDA,En ejecución,5
+202320,Express,EDA,Finalizada,114
+202320,Express,EDA,No asistió,42
+202320,Express,EDA,Realizada,32
+202320,Express,EDA,Reservada,4
+202320,Express,IP,Cancelada a tiempo,579
+202320,Express,IP,Cancelada con excusa,16
+202320,Express,IP,Cancelada por sanción,9
+202320,Express,IP,Cola cancelada por reservación,58
+202320,Express,IP,En cola,193
+202320,Express,IP,En ejecución,1
+202320,Express,IP,Finalizada,676
+202320,Express,IP,No asistió,142
+202320,Express,IP,Realizada,90
+202320,Express,IP,Reservada,5
+202320,Normal,EDA,Cancelada a tiempo,175
+202320,Normal,EDA,Cancelada con excusa,7
+202320,Normal,EDA,Cancelada por sanción,7
+202320,Normal,EDA,Cola cancelada por reservación,38
+202320,Normal,EDA,En cola,212
+202320,Normal,EDA,En ejecución,8
+202320,Normal,EDA,Finalizada,232
+202320,Normal,EDA,No asistió,43
+202320,Normal,EDA,Realizada,81
+202320,Normal,EDA,Reservada,3
+202320,Normal,IP,Cancelada a tiempo,448
+202320,Normal,IP,Cancelada con excusa,10
+202320,Normal,IP,Cancelada por sanción,10
+202320,Normal,IP,Cola cancelada por reservación,81
+202320,Normal,IP,En cola,183
+202320,Normal,IP,En ejecución,1
+202320,Normal,IP,Finalizada,763
+202320,Normal,IP,No asistió,71
+202320,Normal,IP,Realizada,84
+202320,Normal,IP,Reservada,4
+202320,Normal pico,IP,Cancelada a tiempo,165
+202320,Normal pico,IP,Cancelada con excusa,4
+202320,Normal pico,IP,Cancelada por sanción,10
+202320,Normal pico,IP,Cola cancelada por reservación,33
+202320,Normal pico,IP,En cola,84
+202320,Normal pico,IP,En ejecución,2
+202320,Normal pico,IP,Finalizada,356
+202320,Normal pico,IP,No asistió,27
+202320,Normal pico,IP,Realizada,54
+202320,Normal pico,IP,Reservada,4
+202410,Entrevistas,Entrevista,Cancelada a tiempo,11
+202410,Entrevistas,Entrevista,Cancelada con excusa,1
+202410,Entrevistas,Entrevista,En ejecución,7
+202410,Entrevistas,Entrevista,Finalizada,42
+202410,Entrevistas,Entrevista,No asistió,1
+202410,Express,EDA,Cancelada a tiempo,28
+202410,Express,EDA,Cancelada por sanción,1
+202410,Express,EDA,Cola cancelada por reservación,2
+202410,Express,EDA,En cola,20
+202410,Express,EDA,En ejecución,1
+202410,Express,EDA,Finalizada,23
+202410,Express,EDA,No asistió,10
+202410,Express,EDA,Realizada,15
+202410,Express,IP,Cancelada a tiempo,471
+202410,Express,IP,Cancelada con excusa,16
+202410,Express,IP,Cancelada por sanción,10
+202410,Express,IP,Cola cancelada por reservación,38
+202410,Express,IP,En cola,181
+202410,Express,IP,En ejecución,13
+202410,Express,IP,Finalizada,531
+202410,Express,IP,No asistió,135
+202410,Express,IP,Realizada,159
+202410,Express,IP,Reservada,5
+202410,Normal,EDA,Cancelada a tiempo,110
+202410,Normal,EDA,Cancelada con excusa,1
+202410,Normal,EDA,Cancelada por sanción,1
+202410,Normal,EDA,Cola cancelada por reservación,24
+202410,Normal,EDA,En cola,244
+202410,Normal,EDA,En ejecución,5
+202410,Normal,EDA,Finalizada,154
+202410,Normal,EDA,No asistió,33
+202410,Normal,EDA,Realizada,57
+202410,Normal,EDA,Reservada,3
+202410,Normal,IP,Cancelada a tiempo,525
+202410,Normal,IP,Cancelada con excusa,11
+202410,Normal,IP,Cancelada por sanción,14
+202410,Normal,IP,Cola cancelada por reservación,70
+202410,Normal,IP,En cola,176
+202410,Normal,IP,En ejecución,12
+202410,Normal,IP,Finalizada,703
+202410,Normal,IP,No asistió,81
+202410,Normal,IP,Realizada,167
+202410,Normal,IP,Reservada,2
+202410,Normal pico,IP,Cancelada a tiempo,185
+202410,Normal pico,IP,Cancelada con excusa,1
+202410,Normal pico,IP,Cancelada por sanción,6
+202410,Normal pico,IP,Cola cancelada por reservación,48
+202410,Normal pico,IP,En cola,112
+202410,Normal pico,IP,En ejecución,9
+202410,Normal pico,IP,Finalizada,399
+202410,Normal pico,IP,No asistió,28
+202410,Normal pico,IP,Realizada,84
+202410,Normal pico,IP,Reservada,4
+202419,Normal,EDA,Cancelada a tiempo,11
+202419,Normal,EDA,Cancelada con excusa,1
+202419,Normal,EDA,En cola,9
+202419,Normal,EDA,En ejecución,3
+202419,Normal,EDA,No asistió,2
+202419,Normal,EDA,Realizada,33
+202419,Normal,EDA,Reservada,6
+202419,Normal,IP,Cancelada a tiempo,20
+202419,Normal,IP,Cola cancelada por reservación,2
+202419,Normal,IP,En cola,7
+202419,Normal,IP,Finalizada,35
+202419,Normal,IP,No asistió,1
+202419,Normal,IP,Realizada,8
+202419,Sala,Sala,Cancelada a tiempo,9
+202420,Entrevistas,Entrevista,Cancelada a tiempo,14
+202420,Entrevistas,Entrevista,Cancelada con excusa,1
+202420,Entrevistas,Entrevista,Finalizada,34
+202420,Entrevistas,Entrevista,No asistió,23
+202420,Express,EDA,Cancelada a tiempo,9
+202420,Express,EDA,En cola,13
+202420,Express,EDA,En ejecución,1
+202420,Express,EDA,Finalizada,3
+202420,Express,EDA,No asistió,4
+202420,Express,EDA,Realizada,9
+202420,Express,EDA,Reservada,1
+202420,Express,IP,Cancelada a tiempo,502
+202420,Express,IP,Cancelada con excusa,12
+202420,Express,IP,Cancelada por sanción,9
+202420,Express,IP,Cola cancelada por reservación,60
+202420,Express,IP,En cola,186
+202420,Express,IP,En ejecución,6
+202420,Express,IP,Finalizada,625
+202420,Express,IP,No asistió,105
+202420,Express,IP,Realizada,103
+202420,Express,IP,Reservada,2
+202420,Normal,EDA,Cancelada a tiempo,43
+202420,Normal,EDA,Cola cancelada por reservación,11
+202420,Normal,EDA,En cola,127
+202420,Normal,EDA,En ejecución,6
+202420,Normal,EDA,Finalizada,51
+202420,Normal,EDA,No asistió,21
+202420,Normal,EDA,Realizada,33
+202420,Normal,EDA,Reservada,2
+202420,Normal,IP,Cancelada a tiempo,471
+202420,Normal,IP,Cancelada con excusa,16
+202420,Normal,IP,Cancelada por sanción,18
+202420,Normal,IP,Cola cancelada por reservación,126
+202420,Normal,IP,En cola,297
+202420,Normal,IP,En ejecución,11
+202420,Normal,IP,Finalizada,843
+202420,Normal,IP,No asistió,94
+202420,Normal,IP,Realizada,204
+202420,Normal,IP,Reservada,1
+202420,Normal pico,IP,Cancelada a tiempo,202
+202420,Normal pico,IP,Cancelada con excusa,7
+202420,Normal pico,IP,Cancelada por sanción,8
+202420,Normal pico,IP,Cola cancelada por reservación,21
+202420,Normal pico,IP,En cola,81
+202420,Normal pico,IP,En ejecución,2
+202420,Normal pico,IP,Finalizada,318
+202420,Normal pico,IP,No asistió,59
+202420,Normal pico,IP,Realizada,59
+202420,Sala,Sala,Cancelada a tiempo,3
+202420,Sala,Sala,Finalizada,12
+202420,Sala,Sala,No asistió,1
+202510,Entrevistas,Entrevista,Cancelada a tiempo,3
+202510,Entrevistas,Entrevista,Finalizada,26
+202510,Entrevistas,Entrevista,No asistió,2
+202510,Express,EDA,Cancelada a tiempo,34
+202510,Express,EDA,Cancelada con excusa,1
+202510,Express,EDA,Cola cancelada por reservación,3
+202510,Express,EDA,En cola,30
+202510,Express,EDA,En ejecución,3
+202510,Express,EDA,Finalizada,27
+202510,Express,EDA,No asistió,16
+202510,Express,EDA,Realizada,9
+202510,Express,EDA,Reservada,1
+202510,Express,IP,Cancelada a tiempo,294
+202510,Express,IP,Cancelada con excusa,13
+202510,Express,IP,Cancelada por sanción,3
+202510,Express,IP,Cola cancelada por reservación,18
+202510,Express,IP,En cola,59
+202510,Express,IP,En ejecución,9
+202510,Express,IP,Finalizada,344
+202510,Express,IP,No asistió,74
+202510,Express,IP,Realizada,123
+202510,Express,IP,Reservada,1
+202510,Express,IP Honores,Cancelada con excusa,1
+202510,Express,IP Honores,En ejecución,1
+202510,Express,IP Honores,No asistió,1
+202510,Normal,EDA,Cancelada a tiempo,23
+202510,Normal,EDA,Cancelada con excusa,3
+202510,Normal,EDA,Cola cancelada por reservación,4
+202510,Normal,EDA,En cola,75
+202510,Normal,EDA,En ejecución,2
+202510,Normal,EDA,Finalizada,41
+202510,Normal,EDA,No asistió,11
+202510,Normal,EDA,Realizada,39
+202510,Normal,EDA,Reservada,1
+202510,Normal,IP,Cancelada a tiempo,418
+202510,Normal,IP,Cancelada con excusa,10
+202510,Normal,IP,Cancelada por sanción,11
+202510,Normal,IP,Cola cancelada por reservación,76
+202510,Normal,IP,En cola,141
+202510,Normal,IP,En ejecución,13
+202510,Normal,IP,Finalizada,780
+202510,Normal,IP,No asistió,65
+202510,Normal,IP,Realizada,186
+202510,Normal,IP,Reservada,7
+202510,Normal pico,IP,Cancelada a tiempo,145
+202510,Normal pico,IP,Cancelada con excusa,4
+202510,Normal pico,IP,Cancelada por sanción,2
+202510,Normal pico,IP,Cola cancelada por reservación,5
+202510,Normal pico,IP,En cola,16
+202510,Normal pico,IP,En ejecución,9
+202510,Normal pico,IP,Finalizada,169
+202510,Normal pico,IP,No asistió,36
+202510,Normal pico,IP,Realizada,56
+202510,Normal pico,IP,Reservada,1
+202510,Normal pico,IP Honores,Cancelada con excusa,1
+202510,Normal pico,IP Honores,Finalizada,1
+202510,Normal pico,IP Honores,No asistió,2
+202510,Sala,Sala,Cancelada a tiempo,1
+202510,Sala,Sala,Finalizada,2
+202519,Normal,EDA,Finalizada,2
+202519,Normal,EDA,Realizada,1
+202519,Normal,IP,Cancelada a tiempo,9
+202519,Normal,IP,En cola,3
+202519,Normal,IP,En ejecución,2
+202519,Normal,IP,Finalizada,4
+202519,Normal,IP,No asistió,2
+202519,Normal,IP,Realizada,15
+202520,Entrevistas,Entrevista,Cancelada a tiempo,17
+202520,Entrevistas,Entrevista,Cancelada con excusa,2
+202520,Entrevistas,Entrevista,En cola,2
+202520,Entrevistas,Entrevista,Finalizada,36
+202520,Entrevistas,Entrevista,No asistió,5
+202520,Express,EDA,Cancelada a tiempo,7
+202520,Express,EDA,En cola,3
+202520,Express,EDA,En ejecución,1
+202520,Express,EDA,Finalizada,1
+202520,Express,EDA,No asistió,1
+202520,Express,EDA,Realizada,5
+202520,Express,EDA,Reservada,1
+202520,Express,IP,Cancelada a tiempo,197
+202520,Express,IP,Cancelada con excusa,12
+202520,Express,IP,Cancelada por sanción,3
+202520,Express,IP,Cola cancelada por reservación,7
+202520,Express,IP,En cola,10
+202520,Express,IP,En ejecución,14
+202520,Express,IP,Finalizada,196
+202520,Express,IP,No asistió,61
+202520,Express,IP,Realizada,86
+202520,Express,IP,Reservada,1
+202520,Normal,EDA,Cancelada a tiempo,14
+202520,Normal,EDA,En cola,19
+202520,Normal,EDA,En ejecución,6
+202520,Normal,EDA,Finalizada,11
+202520,Normal,EDA,No asistió,10
+202520,Normal,EDA,Realizada,16
+202520,Normal,IP,Cancelada a tiempo,320
+202520,Normal,IP,Cancelada con excusa,15
+202520,Normal,IP,Cancelada por sanción,6
+202520,Normal,IP,Cola cancelada por reservación,69
+202520,Normal,IP,En cola,66
+202520,Normal,IP,En ejecución,33
+202520,Normal,IP,Finalizada,522
+202520,Normal,IP,No asistió,68
+202520,Normal,IP,Realizada,186
+202520,Normal,IP,Reservada,2
+202520,Normal pico,IP,Cancelada a tiempo,83
+202520,Normal pico,IP,Cancelada con excusa,6
+202520,Normal pico,IP,Cancelada por sanción,5
+202520,Normal pico,IP,Cola cancelada por reservación,1
+202520,Normal pico,IP,En cola,26
+202520,Normal pico,IP,En ejecución,10
+202520,Normal pico,IP,Finalizada,85
+202520,Normal pico,IP,No asistió,25
+202520,Normal pico,IP,Realizada,36
+202520,Sala,Sala,Finalizada,10
+202610,Entrevistas,Entrevista,Cancelada a tiempo,20
+202610,Entrevistas,Entrevista,Cancelada con excusa,1
+202610,Entrevistas,Entrevista,Cola cancelada por reservación,1
+202610,Entrevistas,Entrevista,Finalizada,29
+202610,Entrevistas,Entrevista,No asistió,3
+202610,Entrevistas,Entrevista,Reservada,1
+202610,Express,EDA,Cancelada a tiempo,10
+202610,Express,EDA,En cola,3
+202610,Express,EDA,En ejecución,3
+202610,Express,EDA,Finalizada,12
+202610,Express,EDA,No asistió,6
+202610,Express,EDA,Realizada,2
+202610,Express,IP,Cancelada a tiempo,158
+202610,Express,IP,Cancelada con excusa,11
+202610,Express,IP,Cola cancelada por reservación,4
+202610,Express,IP,En cola,13
+202610,Express,IP,En ejecución,13
+202610,Express,IP,Finalizada,229
+202610,Express,IP,No asistió,60
+202610,Express,IP,Realizada,74
+202610,Normal,EDA,Cancelada a tiempo,17
+202610,Normal,EDA,Cancelada con excusa,2
+202610,Normal,EDA,Cola cancelada por reservación,1
+202610,Normal,EDA,En cola,9
+202610,Normal,EDA,En ejecución,3
+202610,Normal,EDA,Finalizada,18
+202610,Normal,EDA,No asistió,5
+202610,Normal,EDA,Realizada,12
+202610,Normal,IP,Cancelada a tiempo,276
+202610,Normal,IP,Cancelada con excusa,7
+202610,Normal,IP,Cancelada por sanción,5
+202610,Normal,IP,Cola cancelada por reservación,40
+202610,Normal,IP,En cola,64
+202610,Normal,IP,En ejecución,13
+202610,Normal,IP,Finalizada,569
+202610,Normal,IP,No asistió,58
+202610,Normal,IP,Realizada,141
+202610,Normal pico,IP,Cancelada a tiempo,22
+202610,Normal pico,IP,Cancelada con excusa,2
+202610,Normal pico,IP,En ejecución,2
+202610,Normal pico,IP,Finalizada,20
+202610,Normal pico,IP,No asistió,1
+202610,Normal pico,IP,Realizada,7
+202610,Sala,Sala,Cancelada a tiempo,2
+202610,Sala,Sala,Finalizada,18
+202610,Sala,Sala,No asistió,3

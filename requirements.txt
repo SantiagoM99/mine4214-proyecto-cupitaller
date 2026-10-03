@@ -1,0 +1,6 @@
+# El pipeline Bronze → Silver → Gold y el tablero usan solo la biblioteca estándar de Python (3.10+).
+# Estas dependencias son para las figuras, el PDF del informe y los cuadernos.
+matplotlib>=3.7
+markdown>=3.5
+jupyter
+ipykernel

@@ -1,0 +1,166 @@
+{
+  "Encuesta Express": [
+    {
+      "archivos": 29,
+      "columnas": [
+        "ID",
+        "Fecha inicio",
+        "Fecha fin",
+        "Fecha de llegada",
+        "Fecha de devolución",
+        "Estado de la reserva",
+        "Prioritaria",
+        "Categoría",
+        "Tipo de horario",
+        "Servicio",
+        "Código del servicio",
+        "Usuario",
+        "Correo usuario",
+        "Código usuario",
+        "Tipo de usuario",
+        "Programa",
+        "Prestador del servicio",
+        "Estado",
+        "¿El tiempo fue adecuado para resolver su problema o duda puntual?",
+        "La mayor parte del tiempo de la tutoría lo dediqué a",
+        "Califique la ayuda que le dio su tutor",
+        "El tutor me explicó cómo solucionar mi duda/problema/proyecto",
+        "El tutor aclaró y reforzó conceptos",
+        "El tutor me brindó herramientas adicionales para trabajar por mi cuenta",
+        "El tutor fue receptivo frente a mis inquietudes durante la tutoría",
+        "El tutor es capaz de expresar claramente su conocimiento sobre el tema o temas trabajados",
+        "Durante la tutoría, el tutor hizo uso de alguna herramienta de inteligencia artificial, tal como pero no limitándose a ChatGPT, Bard/Gemini o Bing AI.",
+        "Indique cuál fue la herramienta usada durante la tutoría (si sabe cuál es) y el uso que tuvo la misma en la tutoría.",
+        "¿Cuál considera que es su comprensión del tema actual del curso?",
+        "¿Considera que el material del curso permite un buen proceso de aprendizaje?",
+        "Comente aspectos positivos y negativos del tutor y la tutoría. Recuerde que las respuestas van a ser anónimas.",
+        "Escriba en este recuadro cualquier observación o comentario relacionado al curso y sus contenidos.",
+        "Sugerencias, reclamos y observaciones"
+      ]
+    }
+  ],
+  "Encuesta Normal": [
+    {
+      "archivos": 29,
+      "columnas": [
+        "ID",
+        "Fecha inicio",
+        "Fecha fin",
+        "Fecha de llegada",
+        "Fecha de devolución",
+        "Estado de la reserva",
+        "Prioritaria",
+        "Categoría",
+        "Tipo de horario",
+        "Servicio",
+        "Código del servicio",
+        "Usuario",
+        "Correo usuario",
+        "Código usuario",
+        "Tipo de usuario",
+        "Programa",
+        "Prestador del servicio",
+        "Estado",
+        "La tutoría a la que asistí me permitió entender que la solución de un problema usando herramientas de programación es un proceso que implica leer el problema, entender los requerimientos, planear un algoritmo, escribir el código y probar lo implementado",
+        "La tutoría a la que asistí se enfocó en el desarrollo de mis habilidades de análisis y no solo en la corrección de mi código",
+        "La mayor parte del tiempo de la tutoría lo dediqué a",
+        "Aproveché el tiempo de la tutoría haciendo preguntas puntuales al tutor y participando de manera proactiva en el desarrollo de las mismas",
+        "Califique la ayuda que le dio su tutor",
+        "El tutor me explicó cómo solucionar mi duda/problema/proyecto",
+        "El tutor aclaró y reforzó conceptos",
+        "El tutor me brindó herramientas adicionales para trabajar por mi cuenta",
+        "El tutor fue receptivo frente a mis inquietudes durante la tutoría",
+        "El tutor es capaz de expresar claramente su conocimiento sobre el tema o temas trabajados",
+        "Durante la tutoría, el tutor hizo uso de alguna herramienta de inteligencia artificial, tal como pero no limitándose a ChatGPT, Bard/Gemini o Bing AI.",
+        "Indique cuál fue la herramienta usada durante la tutoría (si sabe cuál es) y el uso que tuvo la misma en la tutoría.",
+        "¿Cuál considera que es su comprensión del tema actual del curso?",
+        "¿Considera que el material del curso permite un buen proceso de aprendizaje?",
+        "Comente aspectos positivos y negativos del tutor y la tutoría. Recuerde que las respuestas van a ser anónimas.",
+        "Escriba en este recuadro cualquier observación o comentario relacionado al curso y sus contenidos.",
+        "Sugerencias, reclamos y observaciones"
+      ]
+    }
+  ],
+  "Encuesta Reserva Express": [
+    {
+      "archivos": 14,
+      "columnas": [
+        "ID",
+        "Fecha inicio",
+        "Fecha fin",
+        "Fecha de llegada",
+        "Fecha de devolución",
+        "Estado de la reserva",
+        "Prioritaria",
+        "Categoría",
+        "Tipo de horario",
+        "Servicio",
+        "Código del servicio",
+        "Usuario",
+        "Correo usuario",
+        "Código usuario",
+        "Tipo de usuario",
+        "Programa",
+        "Prestador del servicio",
+        "Estado",
+        "La mayoría del tiempo de la tutoría que estoy reservando lo usaré para",
+        "Entiendo que durante la tutoría no debo usar mi celular",
+        "Acepto que si quiero trabajar en una tarea en senecode debo tener una solución probada y que pueda explicar, en caso de no cumplir estas condiciones se configurará un comportamiento inadecuado",
+        "Acepto que he leído los términos de uso de CupiTaller que están disponibles en la URL https://cupitaller.uniandes.edu.co/terminos-de-uso/"
+      ]
+    }
+  ],
+  "Encuesta Reserva Normal IP": [
+    {
+      "archivos": 13,
+      "columnas": [
+        "ID",
+        "Fecha inicio",
+        "Fecha fin",
+        "Fecha de llegada",
+        "Fecha de devolución",
+        "Estado de la reserva",
+        "Prioritaria",
+        "Categoría",
+        "Tipo de horario",
+        "Servicio",
+        "Código del servicio",
+        "Usuario",
+        "Correo usuario",
+        "Código usuario",
+        "Tipo de usuario",
+        "Programa",
+        "Prestador del servicio",
+        "Estado",
+        "La mayoría del tiempo de la tutoría que estoy reservando lo usaré para",
+        "Entiendo que durante la tutoría no debo usar mi celular",
+        "Acepto que si quiero trabajar en una tarea en senecode debo tener una solución probada y que pueda explicar, en caso de no cumplir estas condiciones se configurará un comportamiento inadecuado",
+        "Acepto que he leído los términos de uso de CupiTaller que están disponibles en la URL https://cupitaller.uniandes.edu.co/terminos-de-uso/"
+      ]
+    }
+  ],
+  "Reservas": [
+    {
+      "archivos": 29,
+      "columnas": [
+        "ID",
+        "Fecha inicio",
+        "Fecha fin",
+        "Fecha de llegada",
+        "Fecha de devolución",
+        "Estado de la reserva",
+        "Prioritaria",
+        "Categoría",
+        "Tipo de horario",
+        "Servicio",
+        "Código servicio",
+        "Usuario",
+        "Correo usuario",
+        "Código usuario",
+        "Tipo de usuario",
+        "Programa",
+        "Prestador del servicio"
+      ]
+    }
+  ]
+}

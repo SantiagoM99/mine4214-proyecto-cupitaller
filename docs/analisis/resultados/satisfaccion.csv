@@ -1,0 +1,134 @@
+periodo,servicio,modalidad,encuestas,calificaciones,suma,n1,n2,n3,n4,n5
+201620,"Deprecated, APO 1",Normal,981,0,0,0,0,0,0,0
+201620,"Deprecated, APO 2",Normal,275,0,0,0,0,0,0,0
+201620,"Deprecated, Apoyo",Normal,26,0,0,0,0,0,0,0
+201620,"Deprecated, IP Nivelación",Normal,27,0,0,0,0,0,0,0
+201710,"Deprecated, APO 1",Express,682,0,0,0,0,0,0,0
+201710,"Deprecated, APO 1",Normal,1180,0,0,0,0,0,0,0
+201710,"Deprecated, APO 2",Express,80,0,0,0,0,0,0,0
+201710,"Deprecated, APO 2",Normal,115,0,0,0,0,0,0,0
+201710,"Deprecated, Apoyo",Express,16,0,0,0,0,0,0,0
+201710,"Deprecated, Apoyo",Normal,22,0,0,0,0,0,0,0
+201710,"Deprecated, IP Nivelación",Express,3,0,0,0,0,0,0,0
+201710,"Deprecated, IP Nivelación",Normal,3,0,0,0,0,0,0,0
+201719,"Deprecated, APO 1",Express,10,0,0,0,0,0,0,0
+201719,"Deprecated, APO 1",Normal,26,0,0,0,0,0,0,0
+201719,"Deprecated, APO 2",Normal,12,0,0,0,0,0,0,0
+201720,"Deprecated, APO 1","Deprecated, Torre Séneca",6,0,0,0,0,0,0,0
+201720,"Deprecated, APO 1",Express,437,0,0,0,0,0,0,0
+201720,"Deprecated, APO 1",Normal,958,0,0,0,0,0,0,0
+201720,"Deprecated, APO 2",Express,38,0,0,0,0,0,0,0
+201720,"Deprecated, APO 2",Normal,117,0,0,0,0,0,0,0
+201720,"Deprecated, Apoyo",Express,9,0,0,0,0,0,0,0
+201720,"Deprecated, Apoyo",Normal,23,0,0,0,0,0,0,0
+201720,"Deprecated, IP Nivelación",Express,1,0,0,0,0,0,0,0
+201720,"Deprecated, IP Nivelación",Normal,4,0,0,0,0,0,0,0
+201810,"Deprecated, APO 1","Deprecated, Torre Séneca",19,0,0,0,0,0,0,0
+201810,"Deprecated, APO 1",Express,437,0,0,0,0,0,0,0
+201810,"Deprecated, APO 1",Normal,1088,0,0,0,0,0,0,0
+201810,"Deprecated, APO 2","Deprecated, Torre Séneca",1,0,0,0,0,0,0,0
+201810,"Deprecated, APO 2",Express,46,0,0,0,0,0,0,0
+201810,"Deprecated, APO 2",Normal,132,0,0,0,0,0,0,0
+201810,"Deprecated, Apoyo",Express,6,0,0,0,0,0,0,0
+201810,"Deprecated, Apoyo",Normal,13,0,0,0,0,0,0,0
+201810,"Deprecated, IP Nivelación",Express,3,0,0,0,0,0,0,0
+201810,"Deprecated, IP Nivelación",Normal,7,0,0,0,0,0,0,0
+201819,"Deprecated, APO 1",Express,10,10,48,0,0,0,2,8
+201819,"Deprecated, APO 1",Normal,31,31,153,0,0,0,2,29
+201819,"Deprecated, APO 2",Express,7,7,35,0,0,0,0,7
+201819,"Deprecated, APO 2",Normal,13,13,64,0,0,0,1,12
+201820,"Deprecated, APO 1","Deprecated, Grupal",35,35,163,1,0,2,4,28
+201820,"Deprecated, APO 1","Deprecated, Torre Séneca",20,20,99,0,0,0,1,19
+201820,"Deprecated, APO 1",Express,490,490,2379,0,2,6,53,429
+201820,"Deprecated, APO 1",Normal,1086,1086,5296,0,3,20,85,978
+201820,"Deprecated, APO 2","Deprecated, Torre Séneca",4,4,19,0,0,0,1,3
+201820,"Deprecated, APO 2",Express,50,50,245,0,0,1,3,46
+201820,"Deprecated, APO 2",Normal,108,108,520,0,1,3,11,93
+201820,"Deprecated, Apoyo",Express,14,14,69,0,0,0,1,13
+201820,"Deprecated, Apoyo",Normal,22,22,109,0,0,0,1,21
+201820,"Deprecated, IP Nivelación","Deprecated, Torre Séneca",1,1,5,0,0,0,0,1
+201820,"Deprecated, IP Nivelación",Express,1,1,5,0,0,0,0,1
+201820,"Deprecated, IP Nivelación",Normal,1,1,5,0,0,0,0,1
+201910,"Deprecated, APO 1","Deprecated, Grupal",25,25,113,0,0,4,4,17
+201910,"Deprecated, APO 1","Deprecated, Torre Séneca",15,15,68,0,0,1,5,9
+201910,"Deprecated, APO 1",Express,507,507,2439,0,2,10,70,425
+201910,"Deprecated, APO 1",Normal,1022,1022,4957,2,2,17,105,896
+201910,"Deprecated, APO 2","Deprecated, Torre Séneca",1,1,5,0,0,0,0,1
+201910,"Deprecated, APO 2",Express,48,48,229,0,0,2,7,39
+201910,"Deprecated, APO 2",Normal,94,94,451,0,0,3,13,78
+201910,"Deprecated, Apoyo",Express,10,10,50,0,0,0,0,10
+201910,"Deprecated, Apoyo",Normal,3,3,14,0,0,0,1,2
+201910,"Deprecated, IP Nivelación",Express,11,11,55,0,0,0,0,11
+201910,"Deprecated, IP Nivelación",Normal,14,14,67,0,0,0,3,11
+201919,"Deprecated, APO 1",Express,16,16,77,0,1,0,0,15
+201919,"Deprecated, APO 1",Normal,31,31,152,0,1,0,0,30
+201919,"Deprecated, APO 2",Express,5,5,25,0,0,0,0,5
+201919,"Deprecated, APO 2",Normal,9,9,42,0,0,1,1,7
+201920,"Deprecated, APO 1","Deprecated, Torre Séneca",17,17,79,0,0,0,6,11
+201920,"Deprecated, APO 1",Express,329,329,1604,0,0,6,29,294
+201920,"Deprecated, APO 1",Normal,698,698,3394,0,2,9,72,615
+201920,"Deprecated, APO 2",Express,49,49,241,0,0,0,4,45
+201920,"Deprecated, APO 2",Normal,130,130,632,0,0,3,12,115
+201920,IP,Normal,67,67,327,0,0,1,6,60
+202010,"Deprecated, APO 2",Express,22,22,107,0,0,0,3,19
+202010,"Deprecated, APO 2",Normal,100,100,464,0,0,8,20,72
+202010,EDA,"Deprecated, Torre Séneca",3,3,12,0,0,0,3,0
+202019,"Deprecated, APO 2",Express,6,6,29,0,0,0,1,5
+202019,"Deprecated, APO 2",Normal,21,21,104,0,0,0,1,20
+202020,"Deprecated, APO 2",Express,10,10,47,0,0,1,1,8
+202020,"Deprecated, APO 2",Normal,31,31,152,0,0,0,3,28
+202110,EDA,Express,30,30,131,1,0,3,9,17
+202110,EDA,Normal,96,96,457,1,0,2,15,78
+202119,EDA,Express,2,2,10,0,0,0,0,2
+202119,EDA,Normal,12,12,60,0,0,0,0,12
+202120,EDA,Express,76,76,353,0,4,5,5,62
+202120,EDA,Normal,169,169,791,2,2,9,22,134
+202120,IP,Normal,1,1,5,0,0,0,0,1
+202210,EDA,Express,34,34,154,1,0,2,8,23
+202210,EDA,Normal,186,186,818,8,6,16,30,126
+202210,IP,Express,1,1,5,0,0,0,0,1
+202220,EDA,Express,24,24,112,0,0,1,6,17
+202220,EDA,Normal,148,148,702,0,1,7,21,119
+202220,IP,Express,1,1,5,0,0,0,0,1
+202220,IP,Normal,7,7,34,0,0,0,1,6
+202310,EDA,Express,124,124,577,0,4,7,17,96
+202310,EDA,Normal,250,250,1194,0,0,19,18,213
+202310,IP,Express,7,7,35,0,0,0,0,7
+202310,IP,Normal,18,18,88,0,0,0,2,16
+202310,IP,Normal pico,6,6,28,0,0,0,2,4
+202319,EDA,Normal,16,16,80,0,0,0,0,16
+202319,IP,Normal,77,77,369,0,0,5,6,66
+202320,EDA,Express,138,138,645,2,3,8,12,113
+202320,EDA,Normal,300,300,1411,3,4,17,31,245
+202320,IP,Express,632,632,2923,11,8,44,81,488
+202320,IP,Normal,823,823,3914,2,10,31,101,679
+202320,IP,Normal pico,387,387,1806,8,3,18,52,306
+202410,EDA,Express,37,37,178,0,1,0,4,32
+202410,EDA,Normal,202,202,952,2,1,10,27,162
+202410,IP,Express,659,659,3042,8,11,39,110,491
+202410,IP,Normal,822,822,3872,11,9,34,99,669
+202410,IP,Normal pico,460,460,2140,6,12,19,62,361
+202419,EDA,Normal,33,33,165,0,0,0,0,33
+202419,IP,Normal,40,40,196,1,0,0,0,39
+202420,EDA,Express,12,12,54,0,0,2,2,8
+202420,EDA,Normal,83,83,378,1,3,4,16,59
+202420,IP,Express,675,675,3102,12,11,41,110,501
+202420,IP,Normal,1002,1002,4755,3,11,32,146,810
+202420,IP,Normal pico,339,339,1567,6,3,26,43,261
+202510,EDA,Express,31,31,148,0,0,2,3,26
+202510,EDA,Normal,75,75,363,0,1,2,5,67
+202510,IP,Express,430,430,1983,8,8,22,67,325
+202510,IP,Normal,923,923,4339,6,10,46,130,731
+202510,IP,Normal pico,202,202,900,11,2,15,30,144
+202519,EDA,Normal,2,2,10,0,0,0,0,2
+202519,IP,Normal,17,17,85,0,0,0,0,17
+202520,EDA,Express,4,4,20,0,0,0,0,4
+202520,EDA,Normal,17,17,76,1,0,1,3,12
+202520,IP,Express,95,95,438,1,0,7,19,68
+202520,IP,Normal,267,267,1280,1,3,7,28,228
+202520,IP,Normal pico,33,33,157,0,0,2,4,27
+202610,EDA,Express,14,14,67,0,0,0,3,11
+202610,EDA,Normal,28,28,135,0,0,1,3,24
+202610,IP,Express,267,267,1252,1,2,10,53,201
+202610,IP,Normal,627,627,2966,1,5,32,86,503
+202610,IP,Normal pico,23,23,107,0,0,2,4,17

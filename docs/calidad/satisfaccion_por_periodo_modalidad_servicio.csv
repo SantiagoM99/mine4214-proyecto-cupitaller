@@ -1,0 +1,134 @@
+grupo_encuesta,periodo,tipo_horario_reserva,servicio_reserva,respuestas_exportadas,respuestas_marcadas_valida,respuestas_otro_estado,calificaciones_1_a_5_en_validas,sin_calificacion_en_validas,fuera_dominio_en_validas,completitud_item_en_validas_pct,media_descriptiva_provisional,mediana_descriptiva_provisional,n_calificacion_1,n_calificacion_2,n_calificacion_3,n_calificacion_4,n_calificacion_5
+Encuesta Express,201710,Express,"Deprecated, APO 1",682,682,0,0,682,0,0.0,,,0,0,0,0,0
+Encuesta Express,201710,Express,"Deprecated, APO 2",80,80,0,0,80,0,0.0,,,0,0,0,0,0
+Encuesta Express,201710,Express,"Deprecated, Apoyo",16,16,0,0,16,0,0.0,,,0,0,0,0,0
+Encuesta Express,201710,Express,"Deprecated, IP Nivelación",3,3,0,0,3,0,0.0,,,0,0,0,0,0
+Encuesta Express,201719,Express,"Deprecated, APO 1",10,10,0,0,10,0,0.0,,,0,0,0,0,0
+Encuesta Express,201720,Express,"Deprecated, APO 1",439,437,2,0,437,0,0.0,,,0,0,0,0,0
+Encuesta Express,201720,Express,"Deprecated, APO 2",38,38,0,0,38,0,0.0,,,0,0,0,0,0
+Encuesta Express,201720,Express,"Deprecated, Apoyo",9,9,0,0,9,0,0.0,,,0,0,0,0,0
+Encuesta Express,201720,Express,"Deprecated, IP Nivelación",1,1,0,0,1,0,0.0,,,0,0,0,0,0
+Encuesta Express,201810,Express,"Deprecated, APO 1",443,437,6,0,437,0,0.0,,,0,0,0,0,0
+Encuesta Express,201810,Express,"Deprecated, APO 2",46,46,0,0,46,0,0.0,,,0,0,0,0,0
+Encuesta Express,201810,Express,"Deprecated, Apoyo",6,6,0,0,6,0,0.0,,,0,0,0,0,0
+Encuesta Express,201810,Express,"Deprecated, IP Nivelación",3,3,0,0,3,0,0.0,,,0,0,0,0,0
+Encuesta Express,201819,Express,"Deprecated, APO 1",10,10,0,10,0,0,100.0,4.8,5.0,0,0,0,2,8
+Encuesta Express,201819,Express,"Deprecated, APO 2",7,7,0,7,0,0,100.0,5,5,0,0,0,0,7
+Encuesta Express,201820,"Deprecated, Grupal","Deprecated, APO 1",35,35,0,35,0,0,100.0,4.6571,5,1,0,2,4,28
+Encuesta Express,201820,Express,"Deprecated, APO 1",494,490,4,490,0,0,100.0,4.8551,5.0,0,2,6,53,429
+Encuesta Express,201820,Express,"Deprecated, APO 2",50,50,0,50,0,0,100.0,4.9,5.0,0,0,1,3,46
+Encuesta Express,201820,Express,"Deprecated, Apoyo",14,14,0,14,0,0,100.0,4.9286,5.0,0,0,0,1,13
+Encuesta Express,201820,Express,"Deprecated, IP Nivelación",1,1,0,1,0,0,100.0,5,5,0,0,0,0,1
+Encuesta Express,201910,"Deprecated, Grupal","Deprecated, APO 1",26,25,1,25,0,0,100.0,4.52,5,0,0,4,4,17
+Encuesta Express,201910,Express,"Deprecated, APO 1",517,507,10,507,0,0,100.0,4.8107,5,0,2,10,70,425
+Encuesta Express,201910,Express,"Deprecated, APO 2",50,48,2,48,0,0,100.0,4.7708,5.0,0,0,2,7,39
+Encuesta Express,201910,Express,"Deprecated, Apoyo",10,10,0,10,0,0,100.0,5,5.0,0,0,0,0,10
+Encuesta Express,201910,Express,"Deprecated, IP Nivelación",11,11,0,11,0,0,100.0,5,5,0,0,0,0,11
+Encuesta Express,201919,Express,"Deprecated, APO 1",16,16,0,16,0,0,100.0,4.8125,5.0,0,1,0,0,15
+Encuesta Express,201919,Express,"Deprecated, APO 2",5,5,0,5,0,0,100.0,5,5,0,0,0,0,5
+Encuesta Express,201920,Express,"Deprecated, APO 1",331,329,2,329,0,0,100.0,4.8754,5,0,0,6,29,294
+Encuesta Express,201920,Express,"Deprecated, APO 2",50,49,1,49,0,0,100.0,4.9184,5,0,0,0,4,45
+Encuesta Express,202010,Express,"Deprecated, APO 2",22,22,0,22,0,0,100.0,4.8636,5.0,0,0,0,3,19
+Encuesta Express,202019,Express,"Deprecated, APO 2",6,6,0,6,0,0,100.0,4.8333,5.0,0,0,0,1,5
+Encuesta Express,202020,Express,"Deprecated, APO 2",10,10,0,10,0,0,100.0,4.7,5.0,0,0,1,1,8
+Encuesta Express,202110,Express,EDA,30,30,0,30,0,0,100.0,4.3667,5.0,1,0,3,9,17
+Encuesta Express,202119,Express,EDA,2,2,0,2,0,0,100.0,5,5.0,0,0,0,0,2
+Encuesta Express,202120,Express,EDA,76,76,0,76,0,0,100.0,4.6447,5.0,0,4,5,5,62
+Encuesta Express,202210,Express,EDA,34,34,0,34,0,0,100.0,4.5294,5.0,1,0,2,8,23
+Encuesta Express,202210,Express,IP,1,1,0,1,0,0,100.0,5,5,0,0,0,0,1
+Encuesta Express,202220,Express,EDA,25,24,1,24,0,0,100.0,4.6667,5.0,0,0,1,6,17
+Encuesta Express,202220,Express,IP,1,1,0,1,0,0,100.0,5,5,0,0,0,0,1
+Encuesta Express,202310,Express,EDA,124,124,0,124,0,0,100.0,4.6532,5.0,0,4,7,17,96
+Encuesta Express,202310,Express,IP,7,7,0,7,0,0,100.0,5,5,0,0,0,0,7
+Encuesta Express,202320,Express,EDA,139,138,1,138,0,0,100.0,4.6739,5.0,2,3,8,12,113
+Encuesta Express,202320,Express,IP,641,632,9,632,0,0,100.0,4.625,5.0,11,8,44,81,488
+Encuesta Express,202410,Express,EDA,37,37,0,37,0,0,100.0,4.8108,5,0,1,0,4,32
+Encuesta Express,202410,Express,IP,661,659,2,659,0,0,100.0,4.6161,5,8,11,39,110,491
+Encuesta Express,202420,Express,EDA,12,12,0,12,0,0,100.0,4.5,5.0,0,0,2,2,8
+Encuesta Express,202420,Express,IP,684,675,9,675,0,0,100.0,4.5956,5,12,11,41,110,501
+Encuesta Express,202510,Express,EDA,31,31,0,31,0,0,100.0,4.7742,5,0,0,2,3,26
+Encuesta Express,202510,Express,IP,430,430,0,430,0,0,100.0,4.6116,5.0,8,8,22,67,325
+Encuesta Express,202520,Express,EDA,4,4,0,4,0,0,100.0,5,5.0,0,0,0,0,4
+Encuesta Express,202520,Express,IP,98,95,3,95,0,0,100.0,4.6105,5,1,0,7,19,68
+Encuesta Express,202610,Express,EDA,14,14,0,14,0,0,100.0,4.7857,5.0,0,0,0,3,11
+Encuesta Express,202610,Express,IP,267,267,0,267,0,0,100.0,4.6891,5,1,2,10,53,201
+Encuesta Normal,201620,Normal,"Deprecated, APO 1",981,981,0,0,981,0,0.0,,,0,0,0,0,0
+Encuesta Normal,201620,Normal,"Deprecated, APO 2",275,275,0,0,275,0,0.0,,,0,0,0,0,0
+Encuesta Normal,201620,Normal,"Deprecated, Apoyo",26,26,0,0,26,0,0.0,,,0,0,0,0,0
+Encuesta Normal,201620,Normal,"Deprecated, IP Nivelación",27,27,0,0,27,0,0.0,,,0,0,0,0,0
+Encuesta Normal,201710,Normal,"Deprecated, APO 1",1180,1180,0,0,1180,0,0.0,,,0,0,0,0,0
+Encuesta Normal,201710,Normal,"Deprecated, APO 2",115,115,0,0,115,0,0.0,,,0,0,0,0,0
+Encuesta Normal,201710,Normal,"Deprecated, Apoyo",22,22,0,0,22,0,0.0,,,0,0,0,0,0
+Encuesta Normal,201710,Normal,"Deprecated, IP Nivelación",3,3,0,0,3,0,0.0,,,0,0,0,0,0
+Encuesta Normal,201719,Normal,"Deprecated, APO 1",26,26,0,0,26,0,0.0,,,0,0,0,0,0
+Encuesta Normal,201719,Normal,"Deprecated, APO 2",12,12,0,0,12,0,0.0,,,0,0,0,0,0
+Encuesta Normal,201720,"Deprecated, Torre Séneca","Deprecated, APO 1",6,6,0,0,6,0,0.0,,,0,0,0,0,0
+Encuesta Normal,201720,Normal,"Deprecated, APO 1",965,958,7,0,958,0,0.0,,,0,0,0,0,0
+Encuesta Normal,201720,Normal,"Deprecated, APO 2",119,117,2,0,117,0,0.0,,,0,0,0,0,0
+Encuesta Normal,201720,Normal,"Deprecated, Apoyo",24,23,1,0,23,0,0.0,,,0,0,0,0,0
+Encuesta Normal,201720,Normal,"Deprecated, IP Nivelación",4,4,0,0,4,0,0.0,,,0,0,0,0,0
+Encuesta Normal,201810,"Deprecated, Torre Séneca","Deprecated, APO 1",19,19,0,0,19,0,0.0,,,0,0,0,0,0
+Encuesta Normal,201810,"Deprecated, Torre Séneca","Deprecated, APO 2",1,1,0,0,1,0,0.0,,,0,0,0,0,0
+Encuesta Normal,201810,Normal,"Deprecated, APO 1",1094,1088,6,0,1088,0,0.0,,,0,0,0,0,0
+Encuesta Normal,201810,Normal,"Deprecated, APO 2",133,132,1,0,132,0,0.0,,,0,0,0,0,0
+Encuesta Normal,201810,Normal,"Deprecated, Apoyo",13,13,0,0,13,0,0.0,,,0,0,0,0,0
+Encuesta Normal,201810,Normal,"Deprecated, IP Nivelación",8,7,1,0,7,0,0.0,,,0,0,0,0,0
+Encuesta Normal,201819,Normal,"Deprecated, APO 1",31,31,0,31,0,0,100.0,4.9355,5,0,0,0,2,29
+Encuesta Normal,201819,Normal,"Deprecated, APO 2",13,13,0,13,0,0,100.0,4.9231,5,0,0,0,1,12
+Encuesta Normal,201820,"Deprecated, Torre Séneca","Deprecated, APO 1",20,20,0,20,0,0,100.0,4.95,5.0,0,0,0,1,19
+Encuesta Normal,201820,"Deprecated, Torre Séneca","Deprecated, APO 2",4,4,0,4,0,0,100.0,4.75,5.0,0,0,0,1,3
+Encuesta Normal,201820,"Deprecated, Torre Séneca","Deprecated, IP Nivelación",1,1,0,1,0,0,100.0,5,5,0,0,0,0,1
+Encuesta Normal,201820,Normal,"Deprecated, APO 1",1092,1086,6,1086,0,0,100.0,4.8766,5.0,0,3,20,85,978
+Encuesta Normal,201820,Normal,"Deprecated, APO 2",111,108,3,108,0,0,100.0,4.8148,5.0,0,1,3,11,93
+Encuesta Normal,201820,Normal,"Deprecated, Apoyo",22,22,0,22,0,0,100.0,4.9545,5.0,0,0,0,1,21
+Encuesta Normal,201820,Normal,"Deprecated, IP Nivelación",1,1,0,1,0,0,100.0,5,5,0,0,0,0,1
+Encuesta Normal,201910,"Deprecated, Torre Séneca","Deprecated, APO 1",15,15,0,15,0,0,100.0,4.5333,5,0,0,1,5,9
+Encuesta Normal,201910,"Deprecated, Torre Séneca","Deprecated, APO 2",1,1,0,1,0,0,100.0,5,5,0,0,0,0,1
+Encuesta Normal,201910,Normal,"Deprecated, APO 1",1029,1022,7,1022,0,0,100.0,4.8503,5.0,2,2,17,105,896
+Encuesta Normal,201910,Normal,"Deprecated, APO 2",111,94,17,94,0,0,100.0,4.7979,5.0,0,0,3,13,78
+Encuesta Normal,201910,Normal,"Deprecated, Apoyo",5,3,2,3,0,0,100.0,4.6667,5,0,0,0,1,2
+Encuesta Normal,201910,Normal,"Deprecated, IP Nivelación",14,14,0,14,0,0,100.0,4.7857,5.0,0,0,0,3,11
+Encuesta Normal,201919,Normal,"Deprecated, APO 1",31,31,0,31,0,0,100.0,4.9032,5,0,1,0,0,30
+Encuesta Normal,201919,Normal,"Deprecated, APO 2",9,9,0,9,0,0,100.0,4.6667,5,0,0,1,1,7
+Encuesta Normal,201920,"Deprecated, Torre Séneca","Deprecated, APO 1",17,17,0,17,0,0,100.0,4.6471,5,0,0,0,6,11
+Encuesta Normal,201920,Normal,"Deprecated, APO 1",701,698,3,698,0,0,100.0,4.8625,5.0,0,2,9,72,615
+Encuesta Normal,201920,Normal,"Deprecated, APO 2",131,130,1,130,0,0,100.0,4.8615,5.0,0,0,3,12,115
+Encuesta Normal,201920,Normal,IP,68,67,1,67,0,0,100.0,4.8806,5,0,0,1,6,60
+Encuesta Normal,202010,"Deprecated, Torre Séneca",EDA,3,3,0,3,0,0,100.0,4,4,0,0,0,3,0
+Encuesta Normal,202010,Normal,"Deprecated, APO 2",100,100,0,100,0,0,100.0,4.64,5.0,0,0,8,20,72
+Encuesta Normal,202019,Normal,"Deprecated, APO 2",21,21,0,21,0,0,100.0,4.9524,5,0,0,0,1,20
+Encuesta Normal,202020,Normal,"Deprecated, APO 2",31,31,0,31,0,0,100.0,4.9032,5,0,0,0,3,28
+Encuesta Normal,202110,Normal,EDA,96,96,0,96,0,0,100.0,4.7604,5.0,1,0,2,15,78
+Encuesta Normal,202119,Normal,EDA,12,12,0,12,0,0,100.0,5,5.0,0,0,0,0,12
+Encuesta Normal,202120,Normal,EDA,169,169,0,169,0,0,100.0,4.6805,5,2,2,9,22,134
+Encuesta Normal,202120,Normal,IP,1,1,0,1,0,0,100.0,5,5,0,0,0,0,1
+Encuesta Normal,202210,Normal,EDA,186,186,0,186,0,0,100.0,4.3978,5.0,8,6,16,30,126
+Encuesta Normal,202220,Normal,EDA,148,148,0,148,0,0,100.0,4.7432,5.0,0,1,7,21,119
+Encuesta Normal,202220,Normal,IP,7,7,0,7,0,0,100.0,4.8571,5,0,0,0,1,6
+Encuesta Normal,202310,Normal,EDA,253,250,3,250,0,0,100.0,4.776,5.0,0,0,19,18,213
+Encuesta Normal,202310,Normal,IP,18,18,0,18,0,0,100.0,4.8889,5.0,0,0,0,2,16
+Encuesta Normal,202310,Normal pico,IP,6,6,0,6,0,0,100.0,4.6667,5.0,0,0,0,2,4
+Encuesta Normal,202319,Normal,EDA,16,16,0,16,0,0,100.0,5,5.0,0,0,0,0,16
+Encuesta Normal,202319,Normal,IP,77,77,0,77,0,0,100.0,4.7922,5,0,0,5,6,66
+Encuesta Normal,202320,Normal,EDA,302,300,2,300,0,0,100.0,4.7033,5.0,3,4,17,31,245
+Encuesta Normal,202320,Normal,IP,828,823,5,823,0,0,100.0,4.7558,5,2,10,31,101,679
+Encuesta Normal,202320,Normal pico,IP,390,387,3,387,0,0,100.0,4.6667,5,8,3,18,52,306
+Encuesta Normal,202410,Normal,EDA,204,202,2,202,0,0,100.0,4.7129,5.0,2,1,10,27,162
+Encuesta Normal,202410,Normal,IP,839,822,17,822,0,0,100.0,4.7105,5.0,11,9,34,99,669
+Encuesta Normal,202410,Normal pico,IP,462,460,2,460,0,0,100.0,4.6522,5.0,6,12,19,62,361
+Encuesta Normal,202419,Normal,EDA,33,33,0,33,0,0,100.0,5,5,0,0,0,0,33
+Encuesta Normal,202419,Normal,IP,40,40,0,40,0,0,100.0,4.9,5.0,1,0,0,0,39
+Encuesta Normal,202420,Normal,EDA,83,83,0,83,0,0,100.0,4.5542,5,1,3,4,16,59
+Encuesta Normal,202420,Normal,IP,1008,1002,6,1002,0,0,100.0,4.7455,5.0,3,11,32,146,810
+Encuesta Normal,202420,Normal pico,IP,342,339,3,339,0,0,100.0,4.6224,5,6,3,26,43,261
+Encuesta Normal,202510,Normal,EDA,75,75,0,75,0,0,100.0,4.84,5,0,1,2,5,67
+Encuesta Normal,202510,Normal,IP,924,923,1,923,0,0,100.0,4.701,5,6,10,46,130,731
+Encuesta Normal,202510,Normal pico,IP,204,202,2,202,0,0,100.0,4.4554,5.0,11,2,15,30,144
+Encuesta Normal,202519,Normal,EDA,2,2,0,2,0,0,100.0,5,5.0,0,0,0,0,2
+Encuesta Normal,202519,Normal,IP,17,17,0,17,0,0,100.0,5,5,0,0,0,0,17
+Encuesta Normal,202520,Normal,EDA,17,17,0,17,0,0,100.0,4.4706,5,1,0,1,3,12
+Encuesta Normal,202520,Normal,IP,267,267,0,267,0,0,100.0,4.794,5,1,3,7,28,228
+Encuesta Normal,202520,Normal pico,IP,34,33,1,33,0,0,100.0,4.7576,5,0,0,2,4,27
+Encuesta Normal,202610,Normal,EDA,29,28,1,28,0,0,100.0,4.8214,5.0,0,0,1,3,24
+Encuesta Normal,202610,Normal,IP,632,627,5,627,0,0,100.0,4.7305,5,1,5,32,86,503
+Encuesta Normal,202610,Normal pico,IP,23,23,0,23,0,0,100.0,4.6522,5,0,0,2,4,17

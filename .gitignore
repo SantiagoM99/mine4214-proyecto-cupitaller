@@ -1,0 +1,20 @@
+# Entorno
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+
+# Datos: contienen nombres, correos y códigos de estudiantes y monitores.
+# Se distribuyen fuera del repositorio; ver data/README.md.
+data/bronce/*
+!data/bronce/.gitkeep
+data/plata/*
+!data/plata/.gitkeep
+data/oro/*
+!data/oro/.gitkeep
+
+# Comentarios textuales de estudiantes (análisis exploratorio, fuera de la Entrega 1)
+docs/texto/**/*.csv
+docs/texto/**/*.json
+exploratorio/

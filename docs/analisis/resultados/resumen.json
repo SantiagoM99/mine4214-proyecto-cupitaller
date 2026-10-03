@@ -1,0 +1,11 @@
+{
+  "eventos_reserva": 86562,
+  "atenciones_R01": 42646,
+  "no_asistio_registradas": 5086,
+  "encuestas_posteriores_incluidas_R02": 22974,
+  "calificaciones_utilizables": 16171,
+  "media_descriptiva": 4.735885226640282,
+  "tasa_inasistencia_D1": 0.10655325567753289,
+  "proporcion_cola_D1": 0.1711836602666297,
+  "proporcion_calificaciones_bajas": 0.05701564529095294
+}

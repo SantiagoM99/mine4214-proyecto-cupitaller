@@ -1,0 +1,14 @@
+grupo,bandera,registros
+Encuesta Express,atributos_difieren_de_reserva,88
+Encuesta Express,encuesta_marcada_invalida_en_origen,53
+Encuesta Express,revisar_finalizada_sin_llegada,2
+Encuesta Normal,atributos_difieren_de_reserva,311
+Encuesta Normal,encuesta_marcada_invalida_en_origen,111
+Encuesta Normal,revisar_cancelacion_con_llegada,2
+Encuesta Normal,revisar_finalizada_sin_llegada,4
+Encuesta Reserva Express,atributos_difieren_de_reserva,144
+Encuesta Reserva Normal IP,atributos_difieren_de_reserva,218
+Encuesta Reserva Normal IP,encuesta_marcada_invalida_en_origen,2
+Reservas,revisar_cancelacion_con_llegada,32
+Reservas,revisar_finalizada_sin_llegada,8
+Reservas,revisar_no_asistio_con_llegada,9

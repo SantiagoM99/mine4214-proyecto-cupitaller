@@ -1,0 +1,93 @@
+                                   UNIVERSIDAD DE LOS       ANDES     - FACULTAD    DE INGENIERÍA
+                                   DEPARTAMENTO DE INGENIERÍA DE SISTEMAS Y COMPUTACIÓN
+                                   MINE-4214 MODELADO Y DISEÑO DE DATOS
+                                   SEPTIEMBRE 2026
+
+
+
+DESCRIPCIÓN GENERAL
+El proyecto se realiza en el contexto de una organización que requiere realizar proyectos de analítica
+y de un acompañamiento para generar modelos de datos conceptuales, decidir el modelo o modelos
+de datos que requiere para almacenar los datos, estructurados según el modelo conceptual
+planteado y, visualizar el resultado de los análisis identificados. En cada una de las etapas a realizar,
+se requiere dar una justificación a las propuestas y una serie de recomendaciones si aplica al caso.
+
+El éxito del proyecto depende de los datos que logren conseguir y del apoyo que tengan de los
+expertos relacionados con los datos y los análisis que se quieren realizar. En caso de que tengan
+problemas para acceder a datos de la empresa, pueden apoyarse en portales de datos abiertos
+como datos.gov.co o kaggle.com.
+
+ENTREGA 1
+Los puntos solicitados en la primera entrega corresponden a los pasos seguidos con la metodología
+del grupo Kimball, ajustada a las propuestas modernas de Data Lake House. Con el fin de realizar los
+análisis propuestos. ACME de los Alpes ha contactado a su grupo y ha definido los siguientes
+entregables para esta primera actividad:
+
+    1. [5 puntos] Definición del objetivo y los análisis requeridos: En este punto estamos
+       entendiendo la organización y en particular el contexto que requiere los análisis. Es así como
+       deben describir de forma general la empresa y la dependencia o división con la que van a
+       trabajar y, definir al menos dos análisis a resolver. Estos análisis deben ser descritos en
+       términos del objetivo del análisis, rol o función de la persona hacia quien está definido el
+       análisis, descripción de los datos a utilizar y si es posible del proceso que los genera. Esta
+       información debe guiarlos a entender el proceso de negocio relacionado con los análisis y
+       los datos asociados. De estos últimos deben entregar una caracterización general que
+       incluya la cantidad de datos compartidos y la cantidad de variables que los describen.
+    2. [5 puntos] Ecosistema de analítica: En este punto deben graficar y describir el ecosistema
+       de analítica en la empresa. Si no existe, proponer uno con base en lo visto en clase y justificar
+       la propuesta. Adicionalmente, deben definir el o los componentes dentro del ecosistema de
+       analítica de la empresa que van a intervenir, por ejemplo, en la capa gold, en la silver, e
+       indica qué van a realizar en ese componente.
+    3. [8 puntos] Exploración y calidad de datos. Datos estadísticos de los datos compartidos y
+       análisis de las dimensiones de completitud, unicidad, consistencia y validez. Según la
+     naturaleza de los datos puede requerir cambiar o incluir dimensiones adicionales de calidad
+     de datos.
+     La completitud muestra problemas por datos faltantes. En esta dimensión deben indicar en
+     donde se encuentra el problema, la cantidad de registros y el porcentaje que representa. La
+     unicidad analiza si se encuentran registros duplicados ya sea en su totalidad o parcialmente.
+     En este último caso deben validar si hay repeticiones a nivel semántico que no debería estar.
+     Por ejemplo, en una fuente de estudiantes matriculados a un programa, no deberían existir
+     dos registros con el mismo código del estudiante. La consistencia mide la coherencia de los
+     datos y de su representación. En este caso pueden tener variables relacionadas entre ellas,
+     de una misma fuente de datos, las cuales deben ser analizadas de forma conjunta para
+     identificar posibles problemas. En esta dimensión se incluyen problemas de estandarización
+     de los datos, por ejemplo, el caso de diferentes formatos utilizados para una variable fecha.
+     Finalmente, la validez verifica que el valor de los datos tenga sentido en el contexto del
+     problema.
+     El análisis de la calidad de los datos permite identificar procesos de transformación que
+     deben ser aplicados posteriormente sobre los datos.
+4.   [12 puntos] Modelo de datos conceptual. Según los procesos requeridos para resolver los
+     análisis propuestos, proponer los modelos dimensionales a utilizar, acompañados de su
+     descripción y justificación en términos de calidad. En este punto es importante definir los
+     criterios a utilizar para validar la calidad del modelo e indicar por qué consideran son
+     suficientes.
+5.    [12 puntos] Diseño del proceso de transformación o adecuación requerido entre la capa
+     Silver y la Gold (o su equivalente), donde se almacenan los datos en la estructura propuesta,
+     a partir de los datos entregados. En este punto se deben incluir las justificaciones asociadas
+     a las decisiones importantes relacionadas con los modelos de datos y los puntos que
+     considera pueden ser corregidos por el responsable de la fuente de datos, antes de ser
+     enviados al sistema de analítica. Defina el mecanismo para validar que la transformación
+     quedo bien y aplique ese mecanismo a su proceso.
+6.   [8 puntos] Respuesta a los análisis. Uso de uno o más tableros de control para responder a
+     los análisis propuestos. Deben incluir la descripción de criterios utilizados para determinar
+     que el modelo de datos propuesto es apropiado para ese estilo de análisis.
+7.   Gestión del proyecto
+          a. Describir el trabajo de cada miembro del equipo y la distribución de 100 puntos
+               entre los integrantes del grupo. Justifiquen su respuesta. Tengan en cuenta: el
+               compromiso en el logro de resultados, la calidad de la contribución, el
+               cumplimiento de compromisos adquiridos con el grupo y la participación equitativa
+               en el trabajo del equipo. Identifique problemas al interior de grupo y diseñe
+               estrategias para mejorar en la siguiente entrega.
+          b. Describir el uso dado a la inteligencia artificial generativa. Indique las ventajas y los
+               riesgos que puede tener este uso en la organización para la que desarrolla el
+               proyecto.
+RESTRICCIONES
+* Los datos a trabajar en el proyecto deben incluir datos tabulares y de otros formatos como textos.
+El formato de texto será utilizado en las siguientes entregas del proyecto.
+
+* El número de registros esperado para el proyecto está entre los 80.000 y 200.000
+
+* El proyecto se realiza en grupos de entre 3 y 4 estudiantes
+
+* La evaluación tiene un componente grupal (75%) y otro individual (25%). La evaluación individual
+utiliza la respuesta dada al punto 7.
+

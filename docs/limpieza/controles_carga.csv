@@ -1,0 +1,6 @@
+grupo,archivo_plata,filas_bronce,filas_plata,filas_eliminadas,id_faltantes,id_distintos,filas_excedentes_id_repetido,encuestas_sin_reserva,vinculos_ambiguos,periodos_diferentes,registros_con_banderas,programas_originales_no_vacios,programas_normalizados_no_vacios,encuestas_incluidas_R02,encuestas_excluidas_R02,filas_con_estado_atendida,conciliacion_estructural
+Encuesta Express,data/plata/encuesta_satisfaccion_express.csv,6759,6759,0,0,6759,0,0,0,0,143,131,109,6706,53,6757,OK
+Encuesta Normal,data/plata/encuesta_satisfaccion_normal.csv,16379,16379,0,0,16379,0,0,0,0,427,140,119,16268,111,16372,OK
+Encuesta Reserva Express,data/plata/encuesta_previa_express.csv,13815,13815,0,0,13815,0,0,0,0,144,143,115,13815,0,7559,OK
+Encuesta Reserva Normal IP,data/plata/encuesta_previa_normal_ip.csv,23437,23437,0,0,23437,0,0,0,0,220,122,91,23435,2,14782,OK
+Reservas,data/plata/reservas.csv,86562,86562,0,0,86562,0,0,0,0,49,213,174,,,42646,OK

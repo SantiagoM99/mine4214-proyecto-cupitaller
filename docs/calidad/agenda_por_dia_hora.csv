@@ -1,0 +1,3618 @@
+periodo,tipo_horario_original,servicio_original,dia_semana_iso,hora_inicio,eventos_reserva
+201620,Normal,"Deprecated, APO 1",1,9,42
+201620,Normal,"Deprecated, APO 1",1,10,58
+201620,Normal,"Deprecated, APO 1",1,11,45
+201620,Normal,"Deprecated, APO 1",1,12,34
+201620,Normal,"Deprecated, APO 1",1,13,35
+201620,Normal,"Deprecated, APO 1",1,14,49
+201620,Normal,"Deprecated, APO 1",1,15,45
+201620,Normal,"Deprecated, APO 1",1,16,26
+201620,Normal,"Deprecated, APO 1",1,17,29
+201620,Normal,"Deprecated, APO 1",2,9,43
+201620,Normal,"Deprecated, APO 1",2,10,51
+201620,Normal,"Deprecated, APO 1",2,11,69
+201620,Normal,"Deprecated, APO 1",2,12,22
+201620,Normal,"Deprecated, APO 1",2,13,47
+201620,Normal,"Deprecated, APO 1",2,14,44
+201620,Normal,"Deprecated, APO 1",2,15,27
+201620,Normal,"Deprecated, APO 1",2,16,51
+201620,Normal,"Deprecated, APO 1",2,17,37
+201620,Normal,"Deprecated, APO 1",3,9,40
+201620,Normal,"Deprecated, APO 1",3,10,57
+201620,Normal,"Deprecated, APO 1",3,11,59
+201620,Normal,"Deprecated, APO 1",3,12,24
+201620,Normal,"Deprecated, APO 1",3,13,39
+201620,Normal,"Deprecated, APO 1",3,14,58
+201620,Normal,"Deprecated, APO 1",3,15,51
+201620,Normal,"Deprecated, APO 1",3,16,67
+201620,Normal,"Deprecated, APO 1",3,17,34
+201620,Normal,"Deprecated, APO 1",4,9,22
+201620,Normal,"Deprecated, APO 1",4,10,58
+201620,Normal,"Deprecated, APO 1",4,11,67
+201620,Normal,"Deprecated, APO 1",4,12,50
+201620,Normal,"Deprecated, APO 1",4,13,50
+201620,Normal,"Deprecated, APO 1",4,14,51
+201620,Normal,"Deprecated, APO 1",4,15,52
+201620,Normal,"Deprecated, APO 1",4,16,48
+201620,Normal,"Deprecated, APO 1",4,17,37
+201620,Normal,"Deprecated, APO 1",5,9,49
+201620,Normal,"Deprecated, APO 1",5,10,67
+201620,Normal,"Deprecated, APO 1",5,11,78
+201620,Normal,"Deprecated, APO 1",5,12,60
+201620,Normal,"Deprecated, APO 1",5,13,51
+201620,Normal,"Deprecated, APO 1",5,14,47
+201620,Normal,"Deprecated, APO 1",5,15,50
+201620,Normal,"Deprecated, APO 1",5,16,55
+201620,Normal,"Deprecated, APO 1",5,17,45
+201620,Normal,"Deprecated, APO 2",1,9,8
+201620,Normal,"Deprecated, APO 2",1,10,20
+201620,Normal,"Deprecated, APO 2",1,11,1
+201620,Normal,"Deprecated, APO 2",1,12,3
+201620,Normal,"Deprecated, APO 2",1,13,8
+201620,Normal,"Deprecated, APO 2",1,14,27
+201620,Normal,"Deprecated, APO 2",1,15,23
+201620,Normal,"Deprecated, APO 2",1,16,3
+201620,Normal,"Deprecated, APO 2",1,17,5
+201620,Normal,"Deprecated, APO 2",2,9,6
+201620,Normal,"Deprecated, APO 2",2,10,27
+201620,Normal,"Deprecated, APO 2",2,11,4
+201620,Normal,"Deprecated, APO 2",2,12,2
+201620,Normal,"Deprecated, APO 2",2,13,19
+201620,Normal,"Deprecated, APO 2",2,14,33
+201620,Normal,"Deprecated, APO 2",2,15,7
+201620,Normal,"Deprecated, APO 2",2,16,16
+201620,Normal,"Deprecated, APO 2",2,17,20
+201620,Normal,"Deprecated, APO 2",3,9,18
+201620,Normal,"Deprecated, APO 2",3,10,7
+201620,Normal,"Deprecated, APO 2",3,11,15
+201620,Normal,"Deprecated, APO 2",3,12,31
+201620,Normal,"Deprecated, APO 2",3,13,14
+201620,Normal,"Deprecated, APO 2",3,14,17
+201620,Normal,"Deprecated, APO 2",3,15,15
+201620,Normal,"Deprecated, APO 2",3,16,9
+201620,Normal,"Deprecated, APO 2",3,17,27
+201620,Normal,"Deprecated, APO 2",4,9,17
+201620,Normal,"Deprecated, APO 2",4,10,24
+201620,Normal,"Deprecated, APO 2",4,11,10
+201620,Normal,"Deprecated, APO 2",4,12,8
+201620,Normal,"Deprecated, APO 2",4,13,9
+201620,Normal,"Deprecated, APO 2",4,14,8
+201620,Normal,"Deprecated, APO 2",4,16,17
+201620,Normal,"Deprecated, APO 2",4,17,20
+201620,Normal,"Deprecated, APO 2",5,9,24
+201620,Normal,"Deprecated, APO 2",5,10,25
+201620,Normal,"Deprecated, APO 2",5,11,29
+201620,Normal,"Deprecated, APO 2",5,12,3
+201620,Normal,"Deprecated, APO 2",5,13,6
+201620,Normal,"Deprecated, APO 2",5,14,4
+201620,Normal,"Deprecated, APO 2",5,15,4
+201620,Normal,"Deprecated, APO 2",5,16,8
+201620,Normal,"Deprecated, APO 2",5,17,18
+201620,Normal,"Deprecated, Apoyo",1,9,1
+201620,Normal,"Deprecated, Apoyo",1,13,2
+201620,Normal,"Deprecated, Apoyo",1,14,1
+201620,Normal,"Deprecated, Apoyo",1,15,2
+201620,Normal,"Deprecated, Apoyo",1,17,2
+201620,Normal,"Deprecated, Apoyo",2,9,3
+201620,Normal,"Deprecated, Apoyo",2,10,1
+201620,Normal,"Deprecated, Apoyo",2,11,3
+201620,Normal,"Deprecated, Apoyo",2,16,1
+201620,Normal,"Deprecated, Apoyo",3,9,5
+201620,Normal,"Deprecated, Apoyo",3,10,3
+201620,Normal,"Deprecated, Apoyo",3,11,1
+201620,Normal,"Deprecated, Apoyo",3,16,2
+201620,Normal,"Deprecated, Apoyo",3,17,1
+201620,Normal,"Deprecated, Apoyo",4,9,2
+201620,Normal,"Deprecated, Apoyo",4,10,1
+201620,Normal,"Deprecated, Apoyo",4,11,3
+201620,Normal,"Deprecated, Apoyo",4,16,4
+201620,Normal,"Deprecated, Apoyo",5,10,1
+201620,Normal,"Deprecated, Apoyo",5,11,1
+201620,Normal,"Deprecated, Apoyo",5,14,3
+201620,Normal,"Deprecated, Apoyo",5,15,6
+201620,Normal,"Deprecated, IP Nivelación",1,9,8
+201620,Normal,"Deprecated, IP Nivelación",1,10,2
+201620,Normal,"Deprecated, IP Nivelación",1,13,2
+201620,Normal,"Deprecated, IP Nivelación",1,14,1
+201620,Normal,"Deprecated, IP Nivelación",1,16,1
+201620,Normal,"Deprecated, IP Nivelación",2,9,5
+201620,Normal,"Deprecated, IP Nivelación",2,10,1
+201620,Normal,"Deprecated, IP Nivelación",2,12,5
+201620,Normal,"Deprecated, IP Nivelación",2,13,3
+201620,Normal,"Deprecated, IP Nivelación",2,14,2
+201620,Normal,"Deprecated, IP Nivelación",2,15,1
+201620,Normal,"Deprecated, IP Nivelación",2,17,2
+201620,Normal,"Deprecated, IP Nivelación",3,9,1
+201620,Normal,"Deprecated, IP Nivelación",3,11,1
+201620,Normal,"Deprecated, IP Nivelación",3,12,1
+201620,Normal,"Deprecated, IP Nivelación",3,14,2
+201620,Normal,"Deprecated, IP Nivelación",3,15,2
+201620,Normal,"Deprecated, IP Nivelación",3,17,2
+201620,Normal,"Deprecated, IP Nivelación",4,9,2
+201620,Normal,"Deprecated, IP Nivelación",4,12,2
+201620,Normal,"Deprecated, IP Nivelación",4,14,2
+201620,Normal,"Deprecated, IP Nivelación",4,15,2
+201620,Normal,"Deprecated, IP Nivelación",5,9,2
+201620,Normal,"Deprecated, IP Nivelación",5,10,1
+201620,Normal,"Deprecated, IP Nivelación",5,13,1
+201620,Normal,"Deprecated, IP Nivelación",5,14,1
+201620,Normal,"Deprecated, IP Nivelación",5,16,3
+201710,"Deprecated, Grupal","Deprecated, APO 1",1,11,6
+201710,"Deprecated, Grupal","Deprecated, APO 1",1,14,17
+201710,"Deprecated, Grupal","Deprecated, APO 1",2,11,12
+201710,"Deprecated, Grupal","Deprecated, APO 1",2,14,3
+201710,"Deprecated, Grupal","Deprecated, APO 1",3,13,13
+201710,"Deprecated, Grupal","Deprecated, APO 1",3,14,6
+201710,"Deprecated, Grupal","Deprecated, APO 1",4,10,1
+201710,"Deprecated, Grupal","Deprecated, APO 1",4,13,14
+201710,"Deprecated, Grupal","Deprecated, APO 1",5,14,15
+201710,"Deprecated, Nivelación IP","Deprecated, APO 2",1,10,7
+201710,"Deprecated, Nivelación IP","Deprecated, APO 2",1,11,9
+201710,"Deprecated, Nivelación IP","Deprecated, APO 2",1,14,5
+201710,"Deprecated, Nivelación IP","Deprecated, APO 2",2,10,4
+201710,"Deprecated, Nivelación IP","Deprecated, APO 2",2,16,2
+201710,"Deprecated, Nivelación IP","Deprecated, APO 2",2,17,2
+201710,"Deprecated, Nivelación IP","Deprecated, APO 2",3,11,8
+201710,"Deprecated, Nivelación IP","Deprecated, APO 2",3,14,7
+201710,"Deprecated, Nivelación IP","Deprecated, APO 2",3,15,1
+201710,"Deprecated, Nivelación IP","Deprecated, APO 2",4,9,5
+201710,"Deprecated, Nivelación IP","Deprecated, APO 2",4,10,8
+201710,"Deprecated, Nivelación IP","Deprecated, APO 2",4,14,8
+201710,"Deprecated, Nivelación IP","Deprecated, APO 2",5,10,11
+201710,"Deprecated, Nivelación IP","Deprecated, APO 2",5,12,5
+201710,"Deprecated, Nivelación IP","Deprecated, APO 2",5,13,6
+201710,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",3,11,2
+201710,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",4,10,1
+201710,"Deprecated, Torre Séneca","Deprecated, APO 1",3,18,6
+201710,Express,"Deprecated, APO 1",1,9,37
+201710,Express,"Deprecated, APO 1",1,10,9
+201710,Express,"Deprecated, APO 1",1,11,41
+201710,Express,"Deprecated, APO 1",1,12,61
+201710,Express,"Deprecated, APO 1",1,13,4
+201710,Express,"Deprecated, APO 1",1,14,41
+201710,Express,"Deprecated, APO 1",1,15,44
+201710,Express,"Deprecated, APO 1",1,16,3
+201710,Express,"Deprecated, APO 1",1,17,30
+201710,Express,"Deprecated, APO 1",1,18,7
+201710,Express,"Deprecated, APO 1",2,9,31
+201710,Express,"Deprecated, APO 1",2,10,7
+201710,Express,"Deprecated, APO 1",2,11,44
+201710,Express,"Deprecated, APO 1",2,12,37
+201710,Express,"Deprecated, APO 1",2,13,1
+201710,Express,"Deprecated, APO 1",2,14,30
+201710,Express,"Deprecated, APO 1",2,15,27
+201710,Express,"Deprecated, APO 1",2,16,1
+201710,Express,"Deprecated, APO 1",2,17,21
+201710,Express,"Deprecated, APO 1",2,18,1
+201710,Express,"Deprecated, APO 1",3,9,43
+201710,Express,"Deprecated, APO 1",3,10,1
+201710,Express,"Deprecated, APO 1",3,11,42
+201710,Express,"Deprecated, APO 1",3,12,42
+201710,Express,"Deprecated, APO 1",3,13,2
+201710,Express,"Deprecated, APO 1",3,14,36
+201710,Express,"Deprecated, APO 1",3,15,33
+201710,Express,"Deprecated, APO 1",3,16,2
+201710,Express,"Deprecated, APO 1",3,17,33
+201710,Express,"Deprecated, APO 1",4,9,47
+201710,Express,"Deprecated, APO 1",4,10,4
+201710,Express,"Deprecated, APO 1",4,11,55
+201710,Express,"Deprecated, APO 1",4,12,50
+201710,Express,"Deprecated, APO 1",4,13,5
+201710,Express,"Deprecated, APO 1",4,14,34
+201710,Express,"Deprecated, APO 1",4,15,44
+201710,Express,"Deprecated, APO 1",4,16,4
+201710,Express,"Deprecated, APO 1",4,17,28
+201710,Express,"Deprecated, APO 1",5,9,45
+201710,Express,"Deprecated, APO 1",5,10,10
+201710,Express,"Deprecated, APO 1",5,11,65
+201710,Express,"Deprecated, APO 1",5,12,48
+201710,Express,"Deprecated, APO 1",5,13,7
+201710,Express,"Deprecated, APO 1",5,14,42
+201710,Express,"Deprecated, APO 1",5,15,50
+201710,Express,"Deprecated, APO 1",5,16,10
+201710,Express,"Deprecated, APO 1",5,17,8
+201710,Express,"Deprecated, APO 1",5,18,4
+201710,Express,"Deprecated, APO 2",1,9,9
+201710,Express,"Deprecated, APO 2",1,10,3
+201710,Express,"Deprecated, APO 2",1,12,7
+201710,Express,"Deprecated, APO 2",1,13,3
+201710,Express,"Deprecated, APO 2",1,15,16
+201710,Express,"Deprecated, APO 2",1,16,8
+201710,Express,"Deprecated, APO 2",1,17,12
+201710,Express,"Deprecated, APO 2",1,18,5
+201710,Express,"Deprecated, APO 2",2,9,9
+201710,Express,"Deprecated, APO 2",2,10,4
+201710,Express,"Deprecated, APO 2",2,14,1
+201710,Express,"Deprecated, APO 2",2,15,14
+201710,Express,"Deprecated, APO 2",2,16,2
+201710,Express,"Deprecated, APO 2",2,17,13
+201710,Express,"Deprecated, APO 2",2,18,5
+201710,Express,"Deprecated, APO 2",3,9,16
+201710,Express,"Deprecated, APO 2",3,10,3
+201710,Express,"Deprecated, APO 2",3,11,1
+201710,Express,"Deprecated, APO 2",4,9,4
+201710,Express,"Deprecated, APO 2",4,10,3
+201710,Express,"Deprecated, APO 2",4,17,1
+201710,Express,"Deprecated, APO 2",5,9,4
+201710,Express,"Deprecated, APO 2",5,10,4
+201710,Express,"Deprecated, APO 2",5,11,2
+201710,Express,"Deprecated, APO 2",5,12,6
+201710,Express,"Deprecated, APO 2",5,13,2
+201710,Express,"Deprecated, APO 2",5,14,5
+201710,Express,"Deprecated, APO 2",5,15,5
+201710,Express,"Deprecated, APO 2",5,16,2
+201710,Express,"Deprecated, Apoyo",1,11,1
+201710,Express,"Deprecated, Apoyo",1,13,1
+201710,Express,"Deprecated, Apoyo",1,14,2
+201710,Express,"Deprecated, Apoyo",1,15,3
+201710,Express,"Deprecated, Apoyo",2,11,1
+201710,Express,"Deprecated, Apoyo",2,12,3
+201710,Express,"Deprecated, Apoyo",3,11,2
+201710,Express,"Deprecated, Apoyo",3,12,4
+201710,Express,"Deprecated, Apoyo",3,13,1
+201710,Express,"Deprecated, Apoyo",3,15,1
+201710,Express,"Deprecated, Apoyo",4,11,1
+201710,Express,"Deprecated, Apoyo",4,15,1
+201710,Express,"Deprecated, Apoyo",4,17,1
+201710,Express,"Deprecated, Apoyo",5,14,1
+201710,Express,"Deprecated, Apoyo",5,15,1
+201710,Express,"Deprecated, IP Nivelación",1,9,1
+201710,Express,"Deprecated, IP Nivelación",1,15,1
+201710,Express,"Deprecated, IP Nivelación",1,17,1
+201710,Express,"Deprecated, IP Nivelación",2,15,1
+201710,Express,"Deprecated, IP Nivelación",2,16,1
+201710,Express,"Deprecated, IP Nivelación",3,10,2
+201710,Express,"Deprecated, IP Nivelación",5,12,2
+201710,Express,"Deprecated, IP Nivelación",5,15,1
+201710,Normal,"Deprecated, APO 1",1,9,6
+201710,Normal,"Deprecated, APO 1",1,10,74
+201710,Normal,"Deprecated, APO 1",1,11,69
+201710,Normal,"Deprecated, APO 1",1,12,4
+201710,Normal,"Deprecated, APO 1",1,13,64
+201710,Normal,"Deprecated, APO 1",1,14,63
+201710,Normal,"Deprecated, APO 1",1,15,7
+201710,Normal,"Deprecated, APO 1",1,16,46
+201710,Normal,"Deprecated, APO 1",1,17,58
+201710,Normal,"Deprecated, APO 1",2,9,4
+201710,Normal,"Deprecated, APO 1",2,10,62
+201710,Normal,"Deprecated, APO 1",2,11,70
+201710,Normal,"Deprecated, APO 1",2,13,58
+201710,Normal,"Deprecated, APO 1",2,14,64
+201710,Normal,"Deprecated, APO 1",2,16,42
+201710,Normal,"Deprecated, APO 1",2,17,55
+201710,Normal,"Deprecated, APO 1",3,10,69
+201710,Normal,"Deprecated, APO 1",3,11,92
+201710,Normal,"Deprecated, APO 1",3,12,2
+201710,Normal,"Deprecated, APO 1",3,13,67
+201710,Normal,"Deprecated, APO 1",3,14,76
+201710,Normal,"Deprecated, APO 1",3,16,67
+201710,Normal,"Deprecated, APO 1",3,17,49
+201710,Normal,"Deprecated, APO 1",4,9,3
+201710,Normal,"Deprecated, APO 1",4,10,73
+201710,Normal,"Deprecated, APO 1",4,11,85
+201710,Normal,"Deprecated, APO 1",4,12,8
+201710,Normal,"Deprecated, APO 1",4,13,78
+201710,Normal,"Deprecated, APO 1",4,14,75
+201710,Normal,"Deprecated, APO 1",4,15,6
+201710,Normal,"Deprecated, APO 1",4,16,80
+201710,Normal,"Deprecated, APO 1",4,17,56
+201710,Normal,"Deprecated, APO 1",5,9,3
+201710,Normal,"Deprecated, APO 1",5,10,73
+201710,Normal,"Deprecated, APO 1",5,11,102
+201710,Normal,"Deprecated, APO 1",5,12,4
+201710,Normal,"Deprecated, APO 1",5,13,63
+201710,Normal,"Deprecated, APO 1",5,14,64
+201710,Normal,"Deprecated, APO 1",5,15,8
+201710,Normal,"Deprecated, APO 1",5,16,58
+201710,Normal,"Deprecated, APO 1",5,17,10
+201710,Normal,"Deprecated, APO 2",1,9,2
+201710,Normal,"Deprecated, APO 2",1,10,15
+201710,Normal,"Deprecated, APO 2",1,11,1
+201710,Normal,"Deprecated, APO 2",1,12,2
+201710,Normal,"Deprecated, APO 2",1,13,14
+201710,Normal,"Deprecated, APO 2",1,15,3
+201710,Normal,"Deprecated, APO 2",1,16,24
+201710,Normal,"Deprecated, APO 2",1,17,13
+201710,Normal,"Deprecated, APO 2",2,9,1
+201710,Normal,"Deprecated, APO 2",2,10,12
+201710,Normal,"Deprecated, APO 2",2,11,1
+201710,Normal,"Deprecated, APO 2",2,13,1
+201710,Normal,"Deprecated, APO 2",2,14,1
+201710,Normal,"Deprecated, APO 2",2,15,1
+201710,Normal,"Deprecated, APO 2",2,16,13
+201710,Normal,"Deprecated, APO 2",2,17,17
+201710,Normal,"Deprecated, APO 2",3,9,3
+201710,Normal,"Deprecated, APO 2",3,10,22
+201710,Normal,"Deprecated, APO 2",3,11,1
+201710,Normal,"Deprecated, APO 2",3,13,1
+201710,Normal,"Deprecated, APO 2",4,9,3
+201710,Normal,"Deprecated, APO 2",4,10,9
+201710,Normal,"Deprecated, APO 2",4,17,3
+201710,Normal,"Deprecated, APO 2",5,9,1
+201710,Normal,"Deprecated, APO 2",5,10,9
+201710,Normal,"Deprecated, APO 2",5,11,2
+201710,Normal,"Deprecated, APO 2",5,13,9
+201710,Normal,"Deprecated, APO 2",5,14,14
+201710,Normal,"Deprecated, APO 2",5,15,1
+201710,Normal,"Deprecated, APO 2",5,16,10
+201710,Normal,"Deprecated, Apoyo",1,12,1
+201710,Normal,"Deprecated, Apoyo",1,14,2
+201710,Normal,"Deprecated, Apoyo",1,15,1
+201710,Normal,"Deprecated, Apoyo",1,17,2
+201710,Normal,"Deprecated, Apoyo",2,10,3
+201710,Normal,"Deprecated, Apoyo",2,11,6
+201710,Normal,"Deprecated, Apoyo",2,12,1
+201710,Normal,"Deprecated, Apoyo",2,13,1
+201710,Normal,"Deprecated, Apoyo",2,17,1
+201710,Normal,"Deprecated, Apoyo",3,10,2
+201710,Normal,"Deprecated, Apoyo",3,11,4
+201710,Normal,"Deprecated, Apoyo",3,12,1
+201710,Normal,"Deprecated, Apoyo",3,13,2
+201710,Normal,"Deprecated, Apoyo",3,16,1
+201710,Normal,"Deprecated, Apoyo",4,11,2
+201710,Normal,"Deprecated, Apoyo",4,13,3
+201710,Normal,"Deprecated, Apoyo",5,9,1
+201710,Normal,"Deprecated, Apoyo",5,10,2
+201710,Normal,"Deprecated, Apoyo",5,11,3
+201710,Normal,"Deprecated, Apoyo",5,13,1
+201710,Normal,"Deprecated, Apoyo",5,16,1
+201710,Normal,"Deprecated, IP Nivelación",1,17,1
+201710,Normal,"Deprecated, IP Nivelación",2,15,1
+201710,Normal,"Deprecated, IP Nivelación",3,10,3
+201719,Express,"Deprecated, APO 1",2,11,6
+201719,Express,"Deprecated, APO 1",3,11,6
+201719,Express,"Deprecated, APO 1",3,15,3
+201719,Express,"Deprecated, APO 2",3,11,2
+201719,Express,"Deprecated, APO 2",3,15,2
+201719,Normal,"Deprecated, APO 1",2,10,4
+201719,Normal,"Deprecated, APO 1",2,12,6
+201719,Normal,"Deprecated, APO 1",3,10,6
+201719,Normal,"Deprecated, APO 1",3,12,5
+201719,Normal,"Deprecated, APO 1",3,16,6
+201719,Normal,"Deprecated, APO 1",4,10,9
+201719,Normal,"Deprecated, APO 1",4,11,5
+201719,Normal,"Deprecated, APO 1",5,15,1
+201719,Normal,"Deprecated, APO 2",3,12,2
+201719,Normal,"Deprecated, APO 2",3,14,5
+201719,Normal,"Deprecated, APO 2",3,16,3
+201719,Normal,"Deprecated, APO 2",5,14,6
+201719,Normal,"Deprecated, APO 2",5,15,3
+201720,"Deprecated, Grupal","Deprecated, APO 1",1,11,14
+201720,"Deprecated, Grupal","Deprecated, APO 1",2,14,25
+201720,"Deprecated, Grupal","Deprecated, APO 1",4,10,14
+201720,"Deprecated, Grupal","Deprecated, APO 1",5,10,27
+201720,"Deprecated, Grupal","Deprecated, APO 1",5,13,12
+201720,"Deprecated, Grupal","Deprecated, Apoyo",1,11,1
+201720,"Deprecated, Nivelación IP","Deprecated, APO 2",4,10,5
+201720,"Deprecated, Nivelación IP","Deprecated, APO 2",4,11,4
+201720,"Deprecated, Nivelación IP","Deprecated, APO 2",4,15,2
+201720,"Deprecated, Nivelación IP","Deprecated, APO 2",5,10,3
+201720,"Deprecated, Nivelación IP","Deprecated, APO 2",5,11,7
+201720,"Deprecated, Nivelación IP","Deprecated, APO 2",5,15,2
+201720,"Deprecated, Torre Séneca","Deprecated, APO 1",3,18,26
+201720,"Deprecated, Torre Séneca","Deprecated, IP Nivelación",3,18,1
+201720,Entrevistas,Entrevista,1,15,3
+201720,Entrevistas,Entrevista,2,10,1
+201720,Entrevistas,Entrevista,3,10,1
+201720,Entrevistas,Entrevista,3,11,3
+201720,Entrevistas,Entrevista,4,9,1
+201720,Entrevistas,Entrevista,4,10,1
+201720,Entrevistas,Entrevista,4,11,2
+201720,Entrevistas,Entrevista,4,14,1
+201720,Entrevistas,Entrevista,4,15,3
+201720,Entrevistas,Entrevista,5,13,2
+201720,Express,"Deprecated, APO 1",1,11,46
+201720,Express,"Deprecated, APO 1",1,12,34
+201720,Express,"Deprecated, APO 1",1,14,42
+201720,Express,"Deprecated, APO 1",1,15,40
+201720,Express,"Deprecated, APO 1",2,11,77
+201720,Express,"Deprecated, APO 1",2,12,35
+201720,Express,"Deprecated, APO 1",2,14,49
+201720,Express,"Deprecated, APO 1",2,15,34
+201720,Express,"Deprecated, APO 1",3,11,72
+201720,Express,"Deprecated, APO 1",3,12,46
+201720,Express,"Deprecated, APO 1",3,14,19
+201720,Express,"Deprecated, APO 1",3,15,37
+201720,Express,"Deprecated, APO 1",4,11,49
+201720,Express,"Deprecated, APO 1",4,12,26
+201720,Express,"Deprecated, APO 1",4,14,40
+201720,Express,"Deprecated, APO 1",4,15,55
+201720,Express,"Deprecated, APO 1",5,11,71
+201720,Express,"Deprecated, APO 1",5,12,40
+201720,Express,"Deprecated, APO 1",5,14,29
+201720,Express,"Deprecated, APO 1",5,15,26
+201720,Express,"Deprecated, APO 2",1,11,7
+201720,Express,"Deprecated, APO 2",1,12,1
+201720,Express,"Deprecated, APO 2",1,15,7
+201720,Express,"Deprecated, APO 2",2,12,4
+201720,Express,"Deprecated, APO 2",2,14,14
+201720,Express,"Deprecated, APO 2",2,15,13
+201720,Express,"Deprecated, APO 2",3,11,9
+201720,Express,"Deprecated, APO 2",3,14,2
+201720,Express,"Deprecated, APO 2",4,11,4
+201720,Express,"Deprecated, APO 2",4,15,3
+201720,Express,"Deprecated, APO 2",5,11,2
+201720,Express,"Deprecated, APO 2",5,12,11
+201720,Express,"Deprecated, APO 2",5,14,7
+201720,Express,"Deprecated, Apoyo",1,11,1
+201720,Express,"Deprecated, Apoyo",1,12,2
+201720,Express,"Deprecated, Apoyo",2,11,4
+201720,Express,"Deprecated, Apoyo",2,15,1
+201720,Express,"Deprecated, Apoyo",3,11,5
+201720,Express,"Deprecated, Apoyo",4,11,1
+201720,Express,"Deprecated, Apoyo",4,12,1
+201720,Express,"Deprecated, Apoyo",5,11,1
+201720,Express,"Deprecated, Apoyo",5,12,1
+201720,Express,"Deprecated, IP Nivelación",1,15,1
+201720,Express,"Deprecated, IP Nivelación",2,15,1
+201720,Express,"Deprecated, IP Nivelación",3,11,1
+201720,Express,"Deprecated, IP Nivelación",4,15,1
+201720,Normal,"Deprecated, APO 1",1,9,49
+201720,Normal,"Deprecated, APO 1",1,10,55
+201720,Normal,"Deprecated, APO 1",1,11,46
+201720,Normal,"Deprecated, APO 1",1,13,61
+201720,Normal,"Deprecated, APO 1",1,14,51
+201720,Normal,"Deprecated, APO 1",1,16,49
+201720,Normal,"Deprecated, APO 1",1,17,19
+201720,Normal,"Deprecated, APO 1",2,9,29
+201720,Normal,"Deprecated, APO 1",2,10,87
+201720,Normal,"Deprecated, APO 1",2,11,99
+201720,Normal,"Deprecated, APO 1",2,13,34
+201720,Normal,"Deprecated, APO 1",2,14,68
+201720,Normal,"Deprecated, APO 1",2,16,62
+201720,Normal,"Deprecated, APO 1",2,17,52
+201720,Normal,"Deprecated, APO 1",3,9,54
+201720,Normal,"Deprecated, APO 1",3,10,52
+201720,Normal,"Deprecated, APO 1",3,11,86
+201720,Normal,"Deprecated, APO 1",3,13,53
+201720,Normal,"Deprecated, APO 1",3,14,49
+201720,Normal,"Deprecated, APO 1",3,16,55
+201720,Normal,"Deprecated, APO 1",3,17,35
+201720,Normal,"Deprecated, APO 1",4,9,47
+201720,Normal,"Deprecated, APO 1",4,10,83
+201720,Normal,"Deprecated, APO 1",4,11,73
+201720,Normal,"Deprecated, APO 1",4,13,30
+201720,Normal,"Deprecated, APO 1",4,14,64
+201720,Normal,"Deprecated, APO 1",4,16,58
+201720,Normal,"Deprecated, APO 1",4,17,32
+201720,Normal,"Deprecated, APO 1",5,9,66
+201720,Normal,"Deprecated, APO 1",5,10,77
+201720,Normal,"Deprecated, APO 1",5,11,84
+201720,Normal,"Deprecated, APO 1",5,13,32
+201720,Normal,"Deprecated, APO 1",5,14,59
+201720,Normal,"Deprecated, APO 1",5,16,26
+201720,Normal,"Deprecated, APO 1",5,17,32
+201720,Normal,"Deprecated, APO 2",1,10,2
+201720,Normal,"Deprecated, APO 2",1,11,11
+201720,Normal,"Deprecated, APO 2",1,13,3
+201720,Normal,"Deprecated, APO 2",1,16,12
+201720,Normal,"Deprecated, APO 2",1,17,1
+201720,Normal,"Deprecated, APO 2",2,10,2
+201720,Normal,"Deprecated, APO 2",2,13,3
+201720,Normal,"Deprecated, APO 2",2,14,20
+201720,Normal,"Deprecated, APO 2",2,16,16
+201720,Normal,"Deprecated, APO 2",3,9,17
+201720,Normal,"Deprecated, APO 2",3,10,21
+201720,Normal,"Deprecated, APO 2",3,11,19
+201720,Normal,"Deprecated, APO 2",3,13,2
+201720,Normal,"Deprecated, APO 2",3,14,15
+201720,Normal,"Deprecated, APO 2",3,16,5
+201720,Normal,"Deprecated, APO 2",3,17,3
+201720,Normal,"Deprecated, APO 2",4,9,3
+201720,Normal,"Deprecated, APO 2",4,10,11
+201720,Normal,"Deprecated, APO 2",4,11,11
+201720,Normal,"Deprecated, APO 2",4,14,8
+201720,Normal,"Deprecated, APO 2",4,16,6
+201720,Normal,"Deprecated, APO 2",4,17,4
+201720,Normal,"Deprecated, APO 2",5,9,14
+201720,Normal,"Deprecated, APO 2",5,10,21
+201720,Normal,"Deprecated, APO 2",5,11,21
+201720,Normal,"Deprecated, APO 2",5,13,6
+201720,Normal,"Deprecated, APO 2",5,14,6
+201720,Normal,"Deprecated, APO 2",5,16,1
+201720,Normal,"Deprecated, Apoyo",1,9,1
+201720,Normal,"Deprecated, Apoyo",1,10,1
+201720,Normal,"Deprecated, Apoyo",1,13,1
+201720,Normal,"Deprecated, Apoyo",1,14,1
+201720,Normal,"Deprecated, Apoyo",1,17,2
+201720,Normal,"Deprecated, Apoyo",2,16,4
+201720,Normal,"Deprecated, Apoyo",2,17,4
+201720,Normal,"Deprecated, Apoyo",3,10,1
+201720,Normal,"Deprecated, Apoyo",3,11,3
+201720,Normal,"Deprecated, Apoyo",3,13,1
+201720,Normal,"Deprecated, Apoyo",3,16,2
+201720,Normal,"Deprecated, Apoyo",4,11,1
+201720,Normal,"Deprecated, Apoyo",4,13,3
+201720,Normal,"Deprecated, Apoyo",4,16,2
+201720,Normal,"Deprecated, Apoyo",5,10,1
+201720,Normal,"Deprecated, Apoyo",5,11,3
+201720,Normal,"Deprecated, Apoyo",5,14,1
+201720,Normal,"Deprecated, Apoyo",5,16,2
+201720,Normal,"Deprecated, IP Nivelación",2,14,1
+201720,Normal,"Deprecated, IP Nivelación",2,16,1
+201720,Normal,"Deprecated, IP Nivelación",3,9,1
+201720,Normal,"Deprecated, IP Nivelación",3,11,4
+201720,Normal,"Deprecated, IP Nivelación",3,13,3
+201720,Normal,"Deprecated, IP Nivelación",4,10,1
+201720,Normal,"Deprecated, IP Nivelación",4,11,1
+201720,Normal,"Deprecated, IP Nivelación",4,16,1
+201720,Normal,"Deprecated, IP Nivelación",5,13,1
+201720,Sala,Sala,1,9,2
+201720,Sala,Sala,1,15,1
+201720,Sala,Sala,2,10,1
+201720,Sala,Sala,2,15,1
+201720,Sala,Sala,3,9,2
+201720,Sala,Sala,3,10,1
+201720,Sala,Sala,3,15,2
+201720,Sala,Sala,3,16,1
+201720,Sala,Sala,3,17,1
+201720,Sala,Sala,5,15,6
+201720,Sala,Sala,5,16,1
+201810,"Deprecated, Grupal","Deprecated, APO 1",1,11,26
+201810,"Deprecated, Grupal","Deprecated, APO 1",2,11,23
+201810,"Deprecated, Grupal","Deprecated, APO 1",3,10,26
+201810,"Deprecated, Grupal","Deprecated, APO 1",4,14,25
+201810,"Deprecated, Grupal","Deprecated, APO 1",5,10,22
+201810,"Deprecated, Grupal","Deprecated, Apoyo",4,14,1
+201810,"Deprecated, Nivelación IP","Deprecated, APO 2",4,10,6
+201810,"Deprecated, Nivelación IP","Deprecated, APO 2",4,11,5
+201810,"Deprecated, Nivelación IP","Deprecated, APO 2",5,10,3
+201810,"Deprecated, Nivelación IP","Deprecated, APO 2",5,11,5
+201810,"Deprecated, Nivelación IP","Deprecated, APO 2",5,14,6
+201810,"Deprecated, Nivelación IP","Deprecated, APO 2",5,15,2
+201810,"Deprecated, Torre Séneca","Deprecated, APO 1",3,18,30
+201810,"Deprecated, Torre Séneca","Deprecated, APO 2",3,18,3
+201810,Entrevistas,Entrevista,2,10,1
+201810,Entrevistas,Entrevista,2,11,3
+201810,Entrevistas,Entrevista,2,15,2
+201810,Entrevistas,Entrevista,3,9,3
+201810,Entrevistas,Entrevista,3,10,3
+201810,Entrevistas,Entrevista,3,11,1
+201810,Entrevistas,Entrevista,4,12,4
+201810,Entrevistas,Entrevista,4,13,1
+201810,Entrevistas,Entrevista,4,14,2
+201810,Entrevistas,Entrevista,4,15,3
+201810,Entrevistas,Entrevista,5,11,4
+201810,Entrevistas,Entrevista,5,14,7
+201810,Entrevistas,Entrevista,5,16,5
+201810,Express,"Deprecated, APO 1",1,11,49
+201810,Express,"Deprecated, APO 1",1,12,42
+201810,Express,"Deprecated, APO 1",1,14,46
+201810,Express,"Deprecated, APO 1",1,15,36
+201810,Express,"Deprecated, APO 1",2,11,75
+201810,Express,"Deprecated, APO 1",2,12,25
+201810,Express,"Deprecated, APO 1",2,14,43
+201810,Express,"Deprecated, APO 1",2,15,25
+201810,Express,"Deprecated, APO 1",3,11,70
+201810,Express,"Deprecated, APO 1",3,12,63
+201810,Express,"Deprecated, APO 1",3,14,11
+201810,Express,"Deprecated, APO 1",3,15,46
+201810,Express,"Deprecated, APO 1",4,11,80
+201810,Express,"Deprecated, APO 1",4,12,42
+201810,Express,"Deprecated, APO 1",4,14,60
+201810,Express,"Deprecated, APO 1",4,15,46
+201810,Express,"Deprecated, APO 1",5,11,89
+201810,Express,"Deprecated, APO 1",5,12,44
+201810,Express,"Deprecated, APO 1",5,14,39
+201810,Express,"Deprecated, APO 1",5,15,29
+201810,Express,"Deprecated, APO 2",1,12,11
+201810,Express,"Deprecated, APO 2",1,14,15
+201810,Express,"Deprecated, APO 2",1,15,11
+201810,Express,"Deprecated, APO 2",2,14,1
+201810,Express,"Deprecated, APO 2",3,11,17
+201810,Express,"Deprecated, APO 2",3,12,1
+201810,Express,"Deprecated, APO 2",3,14,14
+201810,Express,"Deprecated, APO 2",3,15,10
+201810,Express,"Deprecated, APO 2",4,12,8
+201810,Express,"Deprecated, APO 2",4,14,7
+201810,Express,"Deprecated, APO 2",4,15,1
+201810,Express,"Deprecated, APO 2",5,12,8
+201810,Express,"Deprecated, APO 2",5,14,6
+201810,Express,"Deprecated, APO 2",5,15,6
+201810,Express,"Deprecated, Apoyo",1,12,1
+201810,Express,"Deprecated, Apoyo",1,14,1
+201810,Express,"Deprecated, Apoyo",2,11,4
+201810,Express,"Deprecated, Apoyo",3,11,1
+201810,Express,"Deprecated, Apoyo",5,11,3
+201810,Express,"Deprecated, Apoyo",5,14,1
+201810,Express,"Deprecated, IP Nivelación",1,12,2
+201810,Express,"Deprecated, IP Nivelación",1,14,1
+201810,Express,"Deprecated, IP Nivelación",1,15,1
+201810,Express,"Deprecated, IP Nivelación",5,15,1
+201810,Normal,"Deprecated, APO 1",1,9,47
+201810,Normal,"Deprecated, APO 1",1,10,68
+201810,Normal,"Deprecated, APO 1",1,11,52
+201810,Normal,"Deprecated, APO 1",1,13,45
+201810,Normal,"Deprecated, APO 1",1,14,59
+201810,Normal,"Deprecated, APO 1",1,16,42
+201810,Normal,"Deprecated, APO 1",1,17,35
+201810,Normal,"Deprecated, APO 1",2,9,45
+201810,Normal,"Deprecated, APO 1",2,10,78
+201810,Normal,"Deprecated, APO 1",2,11,72
+201810,Normal,"Deprecated, APO 1",2,13,50
+201810,Normal,"Deprecated, APO 1",2,14,58
+201810,Normal,"Deprecated, APO 1",2,16,54
+201810,Normal,"Deprecated, APO 1",2,17,67
+201810,Normal,"Deprecated, APO 1",3,9,44
+201810,Normal,"Deprecated, APO 1",3,10,89
+201810,Normal,"Deprecated, APO 1",3,11,78
+201810,Normal,"Deprecated, APO 1",3,13,66
+201810,Normal,"Deprecated, APO 1",3,14,79
+201810,Normal,"Deprecated, APO 1",3,16,85
+201810,Normal,"Deprecated, APO 1",3,17,38
+201810,Normal,"Deprecated, APO 1",4,9,57
+201810,Normal,"Deprecated, APO 1",4,10,95
+201810,Normal,"Deprecated, APO 1",4,11,72
+201810,Normal,"Deprecated, APO 1",4,13,63
+201810,Normal,"Deprecated, APO 1",4,14,69
+201810,Normal,"Deprecated, APO 1",4,16,48
+201810,Normal,"Deprecated, APO 1",4,17,50
+201810,Normal,"Deprecated, APO 1",5,9,50
+201810,Normal,"Deprecated, APO 1",5,10,85
+201810,Normal,"Deprecated, APO 1",5,11,102
+201810,Normal,"Deprecated, APO 1",5,13,55
+201810,Normal,"Deprecated, APO 1",5,14,50
+201810,Normal,"Deprecated, APO 1",5,16,40
+201810,Normal,"Deprecated, APO 1",5,17,31
+201810,Normal,"Deprecated, APO 2",1,13,30
+201810,Normal,"Deprecated, APO 2",1,14,6
+201810,Normal,"Deprecated, APO 2",1,16,19
+201810,Normal,"Deprecated, APO 2",1,17,19
+201810,Normal,"Deprecated, APO 2",2,9,8
+201810,Normal,"Deprecated, APO 2",2,11,4
+201810,Normal,"Deprecated, APO 2",2,13,4
+201810,Normal,"Deprecated, APO 2",2,14,3
+201810,Normal,"Deprecated, APO 2",2,16,15
+201810,Normal,"Deprecated, APO 2",2,17,7
+201810,Normal,"Deprecated, APO 2",3,9,8
+201810,Normal,"Deprecated, APO 2",3,10,15
+201810,Normal,"Deprecated, APO 2",3,11,18
+201810,Normal,"Deprecated, APO 2",3,13,5
+201810,Normal,"Deprecated, APO 2",3,14,21
+201810,Normal,"Deprecated, APO 2",3,16,13
+201810,Normal,"Deprecated, APO 2",3,17,10
+201810,Normal,"Deprecated, APO 2",4,9,15
+201810,Normal,"Deprecated, APO 2",4,10,19
+201810,Normal,"Deprecated, APO 2",4,11,14
+201810,Normal,"Deprecated, APO 2",4,13,2
+201810,Normal,"Deprecated, APO 2",4,14,7
+201810,Normal,"Deprecated, APO 2",4,16,1
+201810,Normal,"Deprecated, APO 2",4,17,2
+201810,Normal,"Deprecated, APO 2",5,9,5
+201810,Normal,"Deprecated, APO 2",5,10,3
+201810,Normal,"Deprecated, APO 2",5,13,18
+201810,Normal,"Deprecated, APO 2",5,14,4
+201810,Normal,"Deprecated, APO 2",5,16,1
+201810,Normal,"Deprecated, APO 2",5,17,1
+201810,Normal,"Deprecated, Apoyo",1,11,5
+201810,Normal,"Deprecated, Apoyo",1,13,1
+201810,Normal,"Deprecated, Apoyo",1,14,2
+201810,Normal,"Deprecated, Apoyo",1,16,1
+201810,Normal,"Deprecated, Apoyo",1,17,2
+201810,Normal,"Deprecated, Apoyo",2,11,2
+201810,Normal,"Deprecated, Apoyo",2,14,1
+201810,Normal,"Deprecated, Apoyo",2,17,1
+201810,Normal,"Deprecated, Apoyo",3,9,2
+201810,Normal,"Deprecated, Apoyo",3,10,4
+201810,Normal,"Deprecated, Apoyo",3,11,1
+201810,Normal,"Deprecated, Apoyo",3,17,1
+201810,Normal,"Deprecated, Apoyo",4,10,3
+201810,Normal,"Deprecated, Apoyo",4,16,1
+201810,Normal,"Deprecated, Apoyo",4,17,2
+201810,Normal,"Deprecated, Apoyo",5,9,1
+201810,Normal,"Deprecated, Apoyo",5,14,1
+201810,Normal,"Deprecated, Apoyo",5,16,2
+201810,Normal,"Deprecated, IP Nivelación",1,13,2
+201810,Normal,"Deprecated, IP Nivelación",1,16,2
+201810,Normal,"Deprecated, IP Nivelación",1,17,1
+201810,Normal,"Deprecated, IP Nivelación",2,17,1
+201810,Normal,"Deprecated, IP Nivelación",3,9,1
+201810,Normal,"Deprecated, IP Nivelación",3,11,1
+201810,Normal,"Deprecated, IP Nivelación",3,14,6
+201810,Normal,"Deprecated, IP Nivelación",4,9,3
+201810,Normal,"Deprecated, IP Nivelación",5,9,1
+201810,Normal,"Deprecated, IP Nivelación",5,14,1
+201810,Sala,Sala,1,9,3
+201810,Sala,Sala,1,14,2
+201810,Sala,Sala,1,15,1
+201810,Sala,Sala,2,9,2
+201810,Sala,Sala,2,15,2
+201810,Sala,Sala,3,11,9
+201810,Sala,Sala,3,12,1
+201810,Sala,Sala,3,14,4
+201810,Sala,Sala,3,15,4
+201810,Sala,Sala,4,9,1
+201810,Sala,Sala,4,11,1
+201810,Sala,Sala,5,11,1
+201810,Sala,Sala,5,12,4
+201810,Sala,Sala,5,14,3
+201810,Sala,Sala,5,15,2
+201819,Express,"Deprecated, APO 1",1,12,1
+201819,Express,"Deprecated, APO 1",2,11,4
+201819,Express,"Deprecated, APO 1",3,11,2
+201819,Express,"Deprecated, APO 1",3,12,5
+201819,Express,"Deprecated, APO 1",4,11,2
+201819,Express,"Deprecated, APO 1",4,12,4
+201819,Express,"Deprecated, APO 1",5,12,12
+201819,Express,"Deprecated, APO 2",2,11,4
+201819,Express,"Deprecated, APO 2",3,11,2
+201819,Express,"Deprecated, APO 2",3,12,2
+201819,Express,"Deprecated, APO 2",4,11,1
+201819,Express,"Deprecated, APO 2",4,12,1
+201819,Normal,"Deprecated, APO 1",1,11,4
+201819,Normal,"Deprecated, APO 1",1,13,1
+201819,Normal,"Deprecated, APO 1",2,10,7
+201819,Normal,"Deprecated, APO 1",2,11,9
+201819,Normal,"Deprecated, APO 1",3,10,2
+201819,Normal,"Deprecated, APO 1",3,11,4
+201819,Normal,"Deprecated, APO 1",3,13,5
+201819,Normal,"Deprecated, APO 1",4,10,2
+201819,Normal,"Deprecated, APO 1",4,11,7
+201819,Normal,"Deprecated, APO 1",4,13,8
+201819,Normal,"Deprecated, APO 1",5,11,9
+201819,Normal,"Deprecated, APO 1",5,13,5
+201819,Normal,"Deprecated, APO 2",2,10,6
+201819,Normal,"Deprecated, APO 2",2,11,3
+201819,Normal,"Deprecated, APO 2",3,10,5
+201819,Normal,"Deprecated, APO 2",3,11,1
+201819,Normal,"Deprecated, APO 2",3,13,2
+201819,Normal,"Deprecated, APO 2",4,10,3
+201819,Normal,"Deprecated, APO 2",4,13,2
+201819,Normal,"Deprecated, APO 2",5,11,3
+201819,Normal,"Deprecated, APO 2",5,13,4
+201820,"Deprecated, Grupal","Deprecated, APO 1",1,13,8
+201820,"Deprecated, Grupal","Deprecated, APO 1",2,10,13
+201820,"Deprecated, Grupal","Deprecated, APO 1",3,14,27
+201820,"Deprecated, Grupal","Deprecated, APO 1",4,11,34
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",1,10,3
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",1,11,6
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",2,14,1
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",2,16,2
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",3,10,2
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",3,11,2
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",3,15,1
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",4,10,7
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",4,11,3
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",4,12,2
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",4,14,3
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",4,15,1
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",4,16,3
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",5,9,1
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",5,10,6
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",5,14,5
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",5,15,4
+201820,"Deprecated, Nivelación IP","Deprecated, APO 2",5,16,1
+201820,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",1,10,1
+201820,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",5,15,1
+201820,"Deprecated, Torre Séneca","Deprecated, APO 1",3,18,13
+201820,"Deprecated, Torre Séneca","Deprecated, APO 1",3,19,10
+201820,"Deprecated, Torre Séneca","Deprecated, APO 2",3,18,4
+201820,"Deprecated, Torre Séneca","Deprecated, APO 2",3,19,1
+201820,"Deprecated, Torre Séneca","Deprecated, IP Nivelación",3,18,1
+201820,Entrevistas,Entrevista,1,10,3
+201820,Entrevistas,Entrevista,1,11,7
+201820,Entrevistas,Entrevista,1,12,6
+201820,Entrevistas,Entrevista,1,13,3
+201820,Entrevistas,Entrevista,1,14,3
+201820,Entrevistas,Entrevista,1,15,6
+201820,Entrevistas,Entrevista,1,16,2
+201820,Entrevistas,Entrevista,2,8,3
+201820,Entrevistas,Entrevista,2,11,1
+201820,Entrevistas,Entrevista,2,12,2
+201820,Entrevistas,Entrevista,3,9,4
+201820,Entrevistas,Entrevista,3,10,5
+201820,Entrevistas,Entrevista,3,11,4
+201820,Entrevistas,Entrevista,3,12,2
+201820,Entrevistas,Entrevista,4,9,1
+201820,Entrevistas,Entrevista,4,11,3
+201820,Entrevistas,Entrevista,4,12,1
+201820,Entrevistas,Entrevista,5,15,2
+201820,Entrevistas,Entrevista,5,16,1
+201820,Entrevistas,Entrevista,5,17,2
+201820,Express,"Deprecated, APO 1",1,11,44
+201820,Express,"Deprecated, APO 1",1,12,37
+201820,Express,"Deprecated, APO 1",1,14,39
+201820,Express,"Deprecated, APO 1",1,15,41
+201820,Express,"Deprecated, APO 1",2,11,65
+201820,Express,"Deprecated, APO 1",2,12,40
+201820,Express,"Deprecated, APO 1",2,14,51
+201820,Express,"Deprecated, APO 1",2,15,37
+201820,Express,"Deprecated, APO 1",3,11,78
+201820,Express,"Deprecated, APO 1",3,12,55
+201820,Express,"Deprecated, APO 1",3,14,63
+201820,Express,"Deprecated, APO 1",3,15,79
+201820,Express,"Deprecated, APO 1",4,11,93
+201820,Express,"Deprecated, APO 1",4,12,71
+201820,Express,"Deprecated, APO 1",4,14,47
+201820,Express,"Deprecated, APO 1",4,15,29
+201820,Express,"Deprecated, APO 1",5,11,55
+201820,Express,"Deprecated, APO 1",5,12,57
+201820,Express,"Deprecated, APO 1",5,14,40
+201820,Express,"Deprecated, APO 1",5,15,47
+201820,Express,"Deprecated, APO 2",1,11,8
+201820,Express,"Deprecated, APO 2",1,14,7
+201820,Express,"Deprecated, APO 2",1,15,4
+201820,Express,"Deprecated, APO 2",2,12,16
+201820,Express,"Deprecated, APO 2",2,15,3
+201820,Express,"Deprecated, APO 2",3,11,5
+201820,Express,"Deprecated, APO 2",3,14,19
+201820,Express,"Deprecated, APO 2",4,12,30
+201820,Express,"Deprecated, APO 2",5,11,21
+201820,Express,"Deprecated, APO 2",5,14,15
+201820,Express,"Deprecated, APO 2",5,15,4
+201820,Express,"Deprecated, Apoyo",1,12,3
+201820,Express,"Deprecated, Apoyo",1,15,2
+201820,Express,"Deprecated, Apoyo",2,11,6
+201820,Express,"Deprecated, Apoyo",2,12,1
+201820,Express,"Deprecated, Apoyo",3,11,3
+201820,Express,"Deprecated, Apoyo",3,15,1
+201820,Express,"Deprecated, Apoyo",4,11,1
+201820,Express,"Deprecated, Apoyo",4,12,1
+201820,Express,"Deprecated, Apoyo",5,11,2
+201820,Express,"Deprecated, Apoyo",5,14,4
+201820,Express,"Deprecated, IP Nivelación",1,15,1
+201820,Normal,"Deprecated, APO 1",1,9,47
+201820,Normal,"Deprecated, APO 1",1,10,54
+201820,Normal,"Deprecated, APO 1",1,11,53
+201820,Normal,"Deprecated, APO 1",1,13,29
+201820,Normal,"Deprecated, APO 1",1,14,41
+201820,Normal,"Deprecated, APO 1",1,16,52
+201820,Normal,"Deprecated, APO 1",1,17,41
+201820,Normal,"Deprecated, APO 1",2,9,65
+201820,Normal,"Deprecated, APO 1",2,10,81
+201820,Normal,"Deprecated, APO 1",2,11,73
+201820,Normal,"Deprecated, APO 1",2,13,35
+201820,Normal,"Deprecated, APO 1",2,14,56
+201820,Normal,"Deprecated, APO 1",2,16,71
+201820,Normal,"Deprecated, APO 1",2,17,44
+201820,Normal,"Deprecated, APO 1",3,9,60
+201820,Normal,"Deprecated, APO 1",3,10,96
+201820,Normal,"Deprecated, APO 1",3,11,84
+201820,Normal,"Deprecated, APO 1",3,13,79
+201820,Normal,"Deprecated, APO 1",3,14,71
+201820,Normal,"Deprecated, APO 1",3,16,96
+201820,Normal,"Deprecated, APO 1",3,17,51
+201820,Normal,"Deprecated, APO 1",4,9,59
+201820,Normal,"Deprecated, APO 1",4,10,87
+201820,Normal,"Deprecated, APO 1",4,11,59
+201820,Normal,"Deprecated, APO 1",4,13,62
+201820,Normal,"Deprecated, APO 1",4,14,65
+201820,Normal,"Deprecated, APO 1",4,16,51
+201820,Normal,"Deprecated, APO 1",4,17,56
+201820,Normal,"Deprecated, APO 1",5,9,53
+201820,Normal,"Deprecated, APO 1",5,10,88
+201820,Normal,"Deprecated, APO 1",5,11,60
+201820,Normal,"Deprecated, APO 1",5,13,48
+201820,Normal,"Deprecated, APO 1",5,14,60
+201820,Normal,"Deprecated, APO 1",5,16,53
+201820,Normal,"Deprecated, APO 1",5,17,35
+201820,Normal,"Deprecated, APO 2",1,9,1
+201820,Normal,"Deprecated, APO 2",1,10,10
+201820,Normal,"Deprecated, APO 2",1,11,9
+201820,Normal,"Deprecated, APO 2",1,13,3
+201820,Normal,"Deprecated, APO 2",1,14,17
+201820,Normal,"Deprecated, APO 2",1,16,11
+201820,Normal,"Deprecated, APO 2",1,17,10
+201820,Normal,"Deprecated, APO 2",2,9,15
+201820,Normal,"Deprecated, APO 2",2,10,20
+201820,Normal,"Deprecated, APO 2",2,11,3
+201820,Normal,"Deprecated, APO 2",2,13,20
+201820,Normal,"Deprecated, APO 2",2,14,19
+201820,Normal,"Deprecated, APO 2",2,16,14
+201820,Normal,"Deprecated, APO 2",3,9,1
+201820,Normal,"Deprecated, APO 2",3,10,22
+201820,Normal,"Deprecated, APO 2",3,11,5
+201820,Normal,"Deprecated, APO 2",3,14,20
+201820,Normal,"Deprecated, APO 2",4,9,9
+201820,Normal,"Deprecated, APO 2",4,10,27
+201820,Normal,"Deprecated, APO 2",4,13,19
+201820,Normal,"Deprecated, APO 2",5,9,2
+201820,Normal,"Deprecated, APO 2",5,10,5
+201820,Normal,"Deprecated, APO 2",5,11,28
+201820,Normal,"Deprecated, APO 2",5,14,18
+201820,Normal,"Deprecated, APO 2",5,16,5
+201820,Normal,"Deprecated, Apoyo",1,10,1
+201820,Normal,"Deprecated, Apoyo",1,11,4
+201820,Normal,"Deprecated, Apoyo",1,13,2
+201820,Normal,"Deprecated, Apoyo",1,16,2
+201820,Normal,"Deprecated, Apoyo",1,17,3
+201820,Normal,"Deprecated, Apoyo",2,9,7
+201820,Normal,"Deprecated, Apoyo",2,10,2
+201820,Normal,"Deprecated, Apoyo",2,11,7
+201820,Normal,"Deprecated, Apoyo",2,13,2
+201820,Normal,"Deprecated, Apoyo",2,16,3
+201820,Normal,"Deprecated, Apoyo",2,17,1
+201820,Normal,"Deprecated, Apoyo",3,9,6
+201820,Normal,"Deprecated, Apoyo",3,10,5
+201820,Normal,"Deprecated, Apoyo",3,11,2
+201820,Normal,"Deprecated, Apoyo",3,13,6
+201820,Normal,"Deprecated, Apoyo",3,16,1
+201820,Normal,"Deprecated, Apoyo",4,9,1
+201820,Normal,"Deprecated, Apoyo",4,10,1
+201820,Normal,"Deprecated, Apoyo",4,13,3
+201820,Normal,"Deprecated, Apoyo",4,14,2
+201820,Normal,"Deprecated, Apoyo",4,17,3
+201820,Normal,"Deprecated, Apoyo",5,9,3
+201820,Normal,"Deprecated, Apoyo",5,10,3
+201820,Normal,"Deprecated, Apoyo",5,13,3
+201820,Normal,"Deprecated, Apoyo",5,14,4
+201820,Normal,"Deprecated, Apoyo",5,17,2
+201820,Normal,"Deprecated, IP Nivelación",2,13,1
+201820,Normal,"Deprecated, IP Nivelación",3,10,1
+201820,Normal,"Deprecated, IP Nivelación",3,14,1
+201820,Normal,"Deprecated, IP Nivelación",4,9,1
+201820,Normal,"Deprecated, IP Nivelación",5,11,1
+201820,Sala,Sala,1,11,1
+201820,Sala,Sala,1,14,3
+201820,Sala,Sala,1,16,1
+201820,Sala,Sala,2,11,3
+201820,Sala,Sala,2,13,4
+201820,Sala,Sala,2,14,2
+201820,Sala,Sala,2,16,2
+201820,Sala,Sala,3,10,3
+201820,Sala,Sala,3,11,4
+201820,Sala,Sala,3,13,1
+201820,Sala,Sala,3,14,2
+201820,Sala,Sala,3,16,1
+201820,Sala,Sala,4,10,1
+201820,Sala,Sala,4,13,1
+201820,Sala,Sala,4,14,3
+201820,Sala,Sala,5,10,1
+201820,Sala,Sala,5,11,2
+201820,Sala,Sala,5,14,2
+201820,Sala,Sala,5,16,1
+201910,"Deprecated, Express grupal",IP,1,9,4
+201910,"Deprecated, Express grupal",IP,1,10,14
+201910,"Deprecated, Express grupal",IP,1,13,3
+201910,"Deprecated, Express grupal",IP,1,17,6
+201910,"Deprecated, Express grupal",IP,2,9,8
+201910,"Deprecated, Express grupal",IP,2,11,2
+201910,"Deprecated, Express grupal",IP,2,13,4
+201910,"Deprecated, Express grupal",IP,2,14,3
+201910,"Deprecated, Express grupal",IP,2,16,19
+201910,"Deprecated, Express grupal",IP,3,9,3
+201910,"Deprecated, Express grupal",IP,3,10,1
+201910,"Deprecated, Express grupal",IP,3,11,7
+201910,"Deprecated, Express grupal",IP,3,12,4
+201910,"Deprecated, Express grupal",IP,3,13,16
+201910,"Deprecated, Express grupal",IP,4,9,2
+201910,"Deprecated, Express grupal",IP,4,10,11
+201910,"Deprecated, Express grupal",IP,4,11,7
+201910,"Deprecated, Express grupal",IP,4,13,12
+201910,"Deprecated, Express grupal",IP,5,10,1
+201910,"Deprecated, Express grupal",IP,5,11,14
+201910,"Deprecated, Express grupal",IP,5,13,14
+201910,"Deprecated, Express grupal",IP,5,14,2
+201910,"Deprecated, Grupal","Deprecated, APO 1",1,13,13
+201910,"Deprecated, Grupal","Deprecated, APO 1",2,14,12
+201910,"Deprecated, Grupal","Deprecated, APO 1",3,14,17
+201910,"Deprecated, Grupal","Deprecated, APO 1",4,9,9
+201910,"Deprecated, Torre Séneca","Deprecated, APO 1",2,18,25
+201910,"Deprecated, Torre Séneca","Deprecated, APO 1",2,19,12
+201910,"Deprecated, Torre Séneca","Deprecated, APO 2",2,18,4
+201910,"Deprecated, Torre Séneca","Deprecated, APO 2",2,19,6
+201910,Entrevistas,Entrevista,1,8,1
+201910,Entrevistas,Entrevista,1,12,2
+201910,Entrevistas,Entrevista,2,11,2
+201910,Entrevistas,Entrevista,2,13,1
+201910,Entrevistas,Entrevista,2,14,1
+201910,Entrevistas,Entrevista,2,15,2
+201910,Entrevistas,Entrevista,3,10,1
+201910,Entrevistas,Entrevista,3,11,2
+201910,Entrevistas,Entrevista,3,12,1
+201910,Entrevistas,Entrevista,3,14,2
+201910,Entrevistas,Entrevista,3,15,1
+201910,Entrevistas,Entrevista,4,9,4
+201910,Entrevistas,Entrevista,4,10,2
+201910,Entrevistas,Entrevista,4,14,2
+201910,Entrevistas,Entrevista,5,10,2
+201910,Entrevistas,Entrevista,5,11,2
+201910,Entrevistas,Entrevista,5,12,1
+201910,Entrevistas,Entrevista,5,14,2
+201910,Entrevistas,Entrevista,5,16,1
+201910,Express,"Deprecated, APO 1",1,11,78
+201910,Express,"Deprecated, APO 1",1,12,72
+201910,Express,"Deprecated, APO 1",1,14,68
+201910,Express,"Deprecated, APO 1",1,15,76
+201910,Express,"Deprecated, APO 1",2,11,79
+201910,Express,"Deprecated, APO 1",2,12,77
+201910,Express,"Deprecated, APO 1",2,14,80
+201910,Express,"Deprecated, APO 1",2,15,78
+201910,Express,"Deprecated, APO 1",3,11,82
+201910,Express,"Deprecated, APO 1",3,12,78
+201910,Express,"Deprecated, APO 1",3,14,58
+201910,Express,"Deprecated, APO 1",3,15,46
+201910,Express,"Deprecated, APO 1",4,11,75
+201910,Express,"Deprecated, APO 1",4,12,65
+201910,Express,"Deprecated, APO 1",4,14,46
+201910,Express,"Deprecated, APO 1",4,15,34
+201910,Express,"Deprecated, APO 1",5,11,56
+201910,Express,"Deprecated, APO 1",5,12,58
+201910,Express,"Deprecated, APO 1",5,14,24
+201910,Express,"Deprecated, APO 1",5,15,37
+201910,Express,"Deprecated, APO 2",1,11,11
+201910,Express,"Deprecated, APO 2",1,12,17
+201910,Express,"Deprecated, APO 2",1,14,13
+201910,Express,"Deprecated, APO 2",2,11,22
+201910,Express,"Deprecated, APO 2",2,14,16
+201910,Express,"Deprecated, APO 2",2,15,6
+201910,Express,"Deprecated, APO 2",3,11,1
+201910,Express,"Deprecated, APO 2",3,12,16
+201910,Express,"Deprecated, APO 2",3,14,2
+201910,Express,"Deprecated, APO 2",3,15,7
+201910,Express,"Deprecated, APO 2",4,11,24
+201910,Express,"Deprecated, APO 2",4,14,7
+201910,Express,"Deprecated, APO 2",4,15,14
+201910,Express,"Deprecated, APO 2",5,11,11
+201910,Express,"Deprecated, APO 2",5,12,9
+201910,Express,"Deprecated, Apoyo",1,11,4
+201910,Express,"Deprecated, Apoyo",1,14,1
+201910,Express,"Deprecated, Apoyo",1,15,2
+201910,Express,"Deprecated, Apoyo",2,11,1
+201910,Express,"Deprecated, Apoyo",3,11,1
+201910,Express,"Deprecated, Apoyo",3,15,1
+201910,Express,"Deprecated, Apoyo",4,11,1
+201910,Express,"Deprecated, Apoyo",4,12,1
+201910,Express,"Deprecated, Apoyo",4,14,4
+201910,Express,"Deprecated, Apoyo",5,11,1
+201910,Express,"Deprecated, IP Nivelación",1,11,6
+201910,Express,"Deprecated, IP Nivelación",1,12,1
+201910,Express,"Deprecated, IP Nivelación",2,11,1
+201910,Express,"Deprecated, IP Nivelación",2,14,6
+201910,Express,"Deprecated, IP Nivelación",2,15,2
+201910,Express,"Deprecated, IP Nivelación",3,12,1
+201910,Express,"Deprecated, IP Nivelación",3,14,1
+201910,Express,"Deprecated, IP Nivelación",3,15,3
+201910,Express,"Deprecated, IP Nivelación",4,14,1
+201910,Express,"Deprecated, IP Nivelación",4,15,3
+201910,Express,"Deprecated, IP Nivelación",5,11,2
+201910,Express,"Deprecated, IP Nivelación",5,12,3
+201910,Normal,"Deprecated, APO 1",1,9,78
+201910,Normal,"Deprecated, APO 1",1,10,84
+201910,Normal,"Deprecated, APO 1",1,11,90
+201910,Normal,"Deprecated, APO 1",1,13,78
+201910,Normal,"Deprecated, APO 1",1,14,68
+201910,Normal,"Deprecated, APO 1",1,16,74
+201910,Normal,"Deprecated, APO 1",1,17,70
+201910,Normal,"Deprecated, APO 1",2,9,50
+201910,Normal,"Deprecated, APO 1",2,10,83
+201910,Normal,"Deprecated, APO 1",2,11,70
+201910,Normal,"Deprecated, APO 1",2,13,79
+201910,Normal,"Deprecated, APO 1",2,14,92
+201910,Normal,"Deprecated, APO 1",2,16,79
+201910,Normal,"Deprecated, APO 1",2,17,29
+201910,Normal,"Deprecated, APO 1",3,9,61
+201910,Normal,"Deprecated, APO 1",3,10,104
+201910,Normal,"Deprecated, APO 1",3,11,62
+201910,Normal,"Deprecated, APO 1",3,13,84
+201910,Normal,"Deprecated, APO 1",3,14,52
+201910,Normal,"Deprecated, APO 1",3,16,51
+201910,Normal,"Deprecated, APO 1",3,17,70
+201910,Normal,"Deprecated, APO 1",4,9,74
+201910,Normal,"Deprecated, APO 1",4,10,96
+201910,Normal,"Deprecated, APO 1",4,11,60
+201910,Normal,"Deprecated, APO 1",4,13,79
+201910,Normal,"Deprecated, APO 1",4,14,67
+201910,Normal,"Deprecated, APO 1",4,16,65
+201910,Normal,"Deprecated, APO 1",4,17,28
+201910,Normal,"Deprecated, APO 1",5,9,41
+201910,Normal,"Deprecated, APO 1",5,10,67
+201910,Normal,"Deprecated, APO 1",5,11,66
+201910,Normal,"Deprecated, APO 1",5,13,56
+201910,Normal,"Deprecated, APO 1",5,14,24
+201910,Normal,"Deprecated, APO 1",5,16,50
+201910,Normal,"Deprecated, APO 1",5,17,4
+201910,Normal,"Deprecated, APO 2",1,9,3
+201910,Normal,"Deprecated, APO 2",1,10,24
+201910,Normal,"Deprecated, APO 2",1,11,17
+201910,Normal,"Deprecated, APO 2",1,13,4
+201910,Normal,"Deprecated, APO 2",1,16,5
+201910,Normal,"Deprecated, APO 2",2,10,8
+201910,Normal,"Deprecated, APO 2",2,11,18
+201910,Normal,"Deprecated, APO 2",2,13,3
+201910,Normal,"Deprecated, APO 2",2,14,19
+201910,Normal,"Deprecated, APO 2",2,16,15
+201910,Normal,"Deprecated, APO 2",3,9,18
+201910,Normal,"Deprecated, APO 2",3,10,25
+201910,Normal,"Deprecated, APO 2",3,11,3
+201910,Normal,"Deprecated, APO 2",3,13,22
+201910,Normal,"Deprecated, APO 2",3,14,7
+201910,Normal,"Deprecated, APO 2",3,17,2
+201910,Normal,"Deprecated, APO 2",4,10,30
+201910,Normal,"Deprecated, APO 2",4,11,22
+201910,Normal,"Deprecated, APO 2",4,14,15
+201910,Normal,"Deprecated, APO 2",4,16,24
+201910,Normal,"Deprecated, APO 2",4,17,2
+201910,Normal,"Deprecated, APO 2",5,9,3
+201910,Normal,"Deprecated, APO 2",5,10,16
+201910,Normal,"Deprecated, APO 2",5,11,16
+201910,Normal,"Deprecated, APO 2",5,13,4
+201910,Normal,"Deprecated, APO 2",5,14,2
+201910,Normal,"Deprecated, Apoyo",1,9,2
+201910,Normal,"Deprecated, Apoyo",1,11,2
+201910,Normal,"Deprecated, Apoyo",1,13,1
+201910,Normal,"Deprecated, Apoyo",1,14,2
+201910,Normal,"Deprecated, Apoyo",2,9,3
+201910,Normal,"Deprecated, Apoyo",2,10,2
+201910,Normal,"Deprecated, Apoyo",2,11,1
+201910,Normal,"Deprecated, Apoyo",2,14,1
+201910,Normal,"Deprecated, Apoyo",2,16,1
+201910,Normal,"Deprecated, Apoyo",3,9,1
+201910,Normal,"Deprecated, Apoyo",3,11,1
+201910,Normal,"Deprecated, Apoyo",3,17,1
+201910,Normal,"Deprecated, Apoyo",4,9,1
+201910,Normal,"Deprecated, Apoyo",4,11,1
+201910,Normal,"Deprecated, Apoyo",4,13,2
+201910,Normal,"Deprecated, Apoyo",5,9,1
+201910,Normal,"Deprecated, Apoyo",5,10,1
+201910,Normal,"Deprecated, Apoyo",5,11,2
+201910,Normal,"Deprecated, Apoyo",5,13,2
+201910,Normal,"Deprecated, Apoyo",5,16,2
+201910,Normal,"Deprecated, IP Nivelación",1,10,1
+201910,Normal,"Deprecated, IP Nivelación",1,11,6
+201910,Normal,"Deprecated, IP Nivelación",2,10,2
+201910,Normal,"Deprecated, IP Nivelación",2,14,7
+201910,Normal,"Deprecated, IP Nivelación",2,16,6
+201910,Normal,"Deprecated, IP Nivelación",3,9,3
+201910,Normal,"Deprecated, IP Nivelación",3,10,7
+201910,Normal,"Deprecated, IP Nivelación",3,11,1
+201910,Normal,"Deprecated, IP Nivelación",3,13,3
+201910,Normal,"Deprecated, IP Nivelación",4,10,3
+201910,Normal,"Deprecated, IP Nivelación",4,11,2
+201910,Normal,"Deprecated, IP Nivelación",4,14,2
+201910,Normal,"Deprecated, IP Nivelación",4,16,7
+201910,Normal,"Deprecated, IP Nivelación",5,10,5
+201910,Normal,"Deprecated, IP Nivelación",5,13,2
+201910,Normal,IP,2,16,1
+201910,Normal,IP,3,11,1
+201910,Normal,IP,4,10,2
+201910,Normal,IP,4,13,3
+201910,Sala,Sala,1,12,1
+201910,Sala,Sala,2,14,2
+201910,Sala,Sala,2,15,3
+201910,Sala,Sala,3,9,1
+201910,Sala,Sala,3,10,1
+201910,Sala,Sala,5,9,1
+201910,Sala,Sala,5,12,3
+201919,Express,"Deprecated, APO 1",2,14,3
+201919,Express,"Deprecated, APO 1",2,15,4
+201919,Express,"Deprecated, APO 1",3,12,5
+201919,Express,"Deprecated, APO 1",3,14,2
+201919,Express,"Deprecated, APO 1",4,14,8
+201919,Express,"Deprecated, APO 1",4,15,2
+201919,Express,"Deprecated, APO 1",5,12,6
+201919,Express,"Deprecated, APO 1",5,14,1
+201919,Express,"Deprecated, APO 2",2,14,4
+201919,Express,"Deprecated, APO 2",2,15,2
+201919,Express,"Deprecated, APO 2",3,12,1
+201919,Express,"Deprecated, APO 2",3,14,3
+201919,Normal,"Deprecated, APO 1",2,13,5
+201919,Normal,"Deprecated, APO 1",2,14,4
+201919,Normal,"Deprecated, APO 1",2,16,3
+201919,Normal,"Deprecated, APO 1",3,11,4
+201919,Normal,"Deprecated, APO 1",3,13,7
+201919,Normal,"Deprecated, APO 1",3,14,1
+201919,Normal,"Deprecated, APO 1",4,13,5
+201919,Normal,"Deprecated, APO 1",4,14,2
+201919,Normal,"Deprecated, APO 1",4,16,4
+201919,Normal,"Deprecated, APO 1",5,11,4
+201919,Normal,"Deprecated, APO 1",5,13,1
+201919,Normal,"Deprecated, APO 1",5,14,1
+201919,Normal,"Deprecated, APO 2",2,13,4
+201919,Normal,"Deprecated, APO 2",2,14,2
+201919,Normal,"Deprecated, APO 2",2,16,2
+201919,Normal,"Deprecated, APO 2",3,11,5
+201919,Normal,"Deprecated, APO 2",3,13,1
+201919,Normal,"Deprecated, APO 2",3,14,1
+201919,Normal,"Deprecated, APO 2",4,13,3
+201919,Normal,"Deprecated, APO 2",4,14,2
+201919,Normal,"Deprecated, APO 2",4,16,2
+201919,Normal,"Deprecated, APO 2",5,11,1
+201919,Normal,"Deprecated, APO 2",5,13,1
+201920,"Deprecated, Grupal",IP,3,10,1
+201920,"Deprecated, Torre Séneca","Deprecated, APO 1",2,18,9
+201920,"Deprecated, Torre Séneca","Deprecated, APO 1",2,19,13
+201920,Entrevistas,Entrevista,1,11,1
+201920,Entrevistas,Entrevista,1,14,1
+201920,Entrevistas,Entrevista,2,9,1
+201920,Entrevistas,Entrevista,2,14,1
+201920,Entrevistas,Entrevista,2,15,2
+201920,Entrevistas,Entrevista,2,16,1
+201920,Entrevistas,Entrevista,3,9,1
+201920,Entrevistas,Entrevista,3,11,1
+201920,Entrevistas,Entrevista,3,14,2
+201920,Entrevistas,Entrevista,3,15,1
+201920,Entrevistas,Entrevista,4,9,1
+201920,Entrevistas,Entrevista,4,10,1
+201920,Entrevistas,Entrevista,4,11,2
+201920,Entrevistas,Entrevista,4,15,1
+201920,Entrevistas,Entrevista,4,17,1
+201920,Entrevistas,Entrevista,5,10,1
+201920,Entrevistas,Entrevista,5,11,1
+201920,Entrevistas,Entrevista,5,14,2
+201920,Entrevistas,Entrevista,5,15,3
+201920,Entrevistas,Entrevista,5,16,1
+201920,Entrevistas,Entrevista,5,17,2
+201920,Express,"Deprecated, APO 1",1,11,30
+201920,Express,"Deprecated, APO 1",1,12,37
+201920,Express,"Deprecated, APO 1",1,14,23
+201920,Express,"Deprecated, APO 1",1,15,22
+201920,Express,"Deprecated, APO 1",2,11,55
+201920,Express,"Deprecated, APO 1",2,12,47
+201920,Express,"Deprecated, APO 1",2,14,53
+201920,Express,"Deprecated, APO 1",2,15,45
+201920,Express,"Deprecated, APO 1",3,11,51
+201920,Express,"Deprecated, APO 1",3,12,37
+201920,Express,"Deprecated, APO 1",3,14,44
+201920,Express,"Deprecated, APO 1",3,15,34
+201920,Express,"Deprecated, APO 1",4,11,63
+201920,Express,"Deprecated, APO 1",4,12,16
+201920,Express,"Deprecated, APO 1",4,14,45
+201920,Express,"Deprecated, APO 1",4,15,11
+201920,Express,"Deprecated, APO 1",5,11,71
+201920,Express,"Deprecated, APO 1",5,12,40
+201920,Express,"Deprecated, APO 1",5,14,35
+201920,Express,"Deprecated, APO 1",5,15,26
+201920,Express,"Deprecated, APO 2",1,11,3
+201920,Express,"Deprecated, APO 2",1,12,4
+201920,Express,"Deprecated, APO 2",1,14,4
+201920,Express,"Deprecated, APO 2",1,15,3
+201920,Express,"Deprecated, APO 2",2,11,13
+201920,Express,"Deprecated, APO 2",2,12,2
+201920,Express,"Deprecated, APO 2",2,15,5
+201920,Express,"Deprecated, APO 2",3,11,12
+201920,Express,"Deprecated, APO 2",3,12,1
+201920,Express,"Deprecated, APO 2",3,14,8
+201920,Express,"Deprecated, APO 2",3,15,8
+201920,Express,"Deprecated, APO 2",4,11,26
+201920,Express,"Deprecated, APO 2",4,14,15
+201920,Express,"Deprecated, APO 2",5,11,10
+201920,Express,"Deprecated, APO 2",5,12,3
+201920,Express,"Deprecated, APO 2",5,14,2
+201920,Express,"Deprecated, APO 2",5,15,4
+201920,Express,IP,1,11,10
+201920,Express,IP,1,12,7
+201920,Express,IP,1,14,10
+201920,Express,IP,1,15,2
+201920,Express,IP,2,11,16
+201920,Express,IP,2,12,25
+201920,Express,IP,2,14,7
+201920,Express,IP,3,11,16
+201920,Express,IP,3,12,15
+201920,Express,IP,3,14,16
+201920,Express,IP,3,15,6
+201920,Express,IP,4,11,14
+201920,Express,IP,4,12,13
+201920,Express,IP,4,14,3
+201920,Express,IP,4,15,8
+201920,Express,IP,5,12,14
+201920,Express,IP,5,14,9
+201920,Express,IP,5,15,1
+201920,Normal,"Deprecated, APO 1",1,9,37
+201920,Normal,"Deprecated, APO 1",1,10,31
+201920,Normal,"Deprecated, APO 1",1,11,20
+201920,Normal,"Deprecated, APO 1",1,13,38
+201920,Normal,"Deprecated, APO 1",1,14,34
+201920,Normal,"Deprecated, APO 1",1,16,17
+201920,Normal,"Deprecated, APO 1",1,17,37
+201920,Normal,"Deprecated, APO 1",2,9,52
+201920,Normal,"Deprecated, APO 1",2,10,37
+201920,Normal,"Deprecated, APO 1",2,11,81
+201920,Normal,"Deprecated, APO 1",2,13,47
+201920,Normal,"Deprecated, APO 1",2,14,62
+201920,Normal,"Deprecated, APO 1",2,16,42
+201920,Normal,"Deprecated, APO 1",2,17,44
+201920,Normal,"Deprecated, APO 1",3,9,50
+201920,Normal,"Deprecated, APO 1",3,10,59
+201920,Normal,"Deprecated, APO 1",3,11,69
+201920,Normal,"Deprecated, APO 1",3,13,45
+201920,Normal,"Deprecated, APO 1",3,14,54
+201920,Normal,"Deprecated, APO 1",3,16,34
+201920,Normal,"Deprecated, APO 1",3,17,35
+201920,Normal,"Deprecated, APO 1",4,9,27
+201920,Normal,"Deprecated, APO 1",4,10,50
+201920,Normal,"Deprecated, APO 1",4,11,76
+201920,Normal,"Deprecated, APO 1",4,13,28
+201920,Normal,"Deprecated, APO 1",4,14,51
+201920,Normal,"Deprecated, APO 1",4,16,43
+201920,Normal,"Deprecated, APO 1",4,17,40
+201920,Normal,"Deprecated, APO 1",5,9,52
+201920,Normal,"Deprecated, APO 1",5,10,47
+201920,Normal,"Deprecated, APO 1",5,11,67
+201920,Normal,"Deprecated, APO 1",5,13,35
+201920,Normal,"Deprecated, APO 1",5,14,48
+201920,Normal,"Deprecated, APO 1",5,16,25
+201920,Normal,"Deprecated, APO 1",5,17,41
+201920,Normal,"Deprecated, APO 2",1,9,9
+201920,Normal,"Deprecated, APO 2",1,10,10
+201920,Normal,"Deprecated, APO 2",1,11,2
+201920,Normal,"Deprecated, APO 2",1,13,12
+201920,Normal,"Deprecated, APO 2",1,14,6
+201920,Normal,"Deprecated, APO 2",2,9,9
+201920,Normal,"Deprecated, APO 2",2,10,18
+201920,Normal,"Deprecated, APO 2",2,13,1
+201920,Normal,"Deprecated, APO 2",2,16,8
+201920,Normal,"Deprecated, APO 2",2,17,14
+201920,Normal,"Deprecated, APO 2",3,9,4
+201920,Normal,"Deprecated, APO 2",3,10,13
+201920,Normal,"Deprecated, APO 2",3,11,13
+201920,Normal,"Deprecated, APO 2",3,14,12
+201920,Normal,"Deprecated, APO 2",3,16,13
+201920,Normal,"Deprecated, APO 2",3,17,7
+201920,Normal,"Deprecated, APO 2",4,9,13
+201920,Normal,"Deprecated, APO 2",4,10,22
+201920,Normal,"Deprecated, APO 2",4,11,25
+201920,Normal,"Deprecated, APO 2",4,13,20
+201920,Normal,"Deprecated, APO 2",4,14,16
+201920,Normal,"Deprecated, APO 2",4,16,4
+201920,Normal,"Deprecated, APO 2",4,17,24
+201920,Normal,"Deprecated, APO 2",5,10,2
+201920,Normal,"Deprecated, APO 2",5,11,12
+201920,Normal,"Deprecated, APO 2",5,13,7
+201920,Normal,"Deprecated, APO 2",5,14,17
+201920,Normal,"Deprecated, APO 2",5,16,8
+201920,Normal,"Deprecated, APO 2",5,17,10
+201920,Normal,"Deprecated, DPOO",1,11,3
+201920,Normal,"Deprecated, DPOO",1,13,1
+201920,Normal,"Deprecated, DPOO",1,14,2
+201920,Normal,"Deprecated, DPOO",2,14,2
+201920,Normal,"Deprecated, DPOO",3,9,1
+201920,Normal,"Deprecated, DPOO",3,13,4
+201920,Normal,"Deprecated, DPOO",3,14,1
+201920,Normal,"Deprecated, DPOO",3,16,4
+201920,Normal,"Deprecated, DPOO",4,9,3
+201920,Normal,"Deprecated, DPOO",4,10,4
+201920,Normal,"Deprecated, DPOO",4,11,2
+201920,Normal,"Deprecated, DPOO",4,13,6
+201920,Normal,"Deprecated, DPOO",5,11,5
+201920,Normal,"Deprecated, DPOO",5,13,1
+201920,Normal,"Deprecated, DPOO",5,14,1
+201920,Normal,IP,1,9,6
+201920,Normal,IP,1,10,12
+201920,Normal,IP,1,11,12
+201920,Normal,IP,1,13,7
+201920,Normal,IP,1,14,18
+201920,Normal,IP,1,16,13
+201920,Normal,IP,1,17,10
+201920,Normal,IP,2,9,2
+201920,Normal,IP,2,10,22
+201920,Normal,IP,2,11,18
+201920,Normal,IP,2,13,20
+201920,Normal,IP,2,14,13
+201920,Normal,IP,3,9,1
+201920,Normal,IP,3,10,3
+201920,Normal,IP,3,11,1
+201920,Normal,IP,3,13,38
+201920,Normal,IP,3,14,9
+201920,Normal,IP,3,16,7
+201920,Normal,IP,4,9,15
+201920,Normal,IP,4,10,15
+201920,Normal,IP,4,11,2
+201920,Normal,IP,4,13,13
+201920,Normal,IP,4,14,3
+201920,Normal,IP,4,16,15
+201920,Normal,IP,4,17,1
+201920,Normal,IP,5,9,3
+201920,Normal,IP,5,10,2
+201920,Normal,IP,5,11,13
+201920,Normal,IP,5,13,15
+201920,Normal,IP,5,14,19
+201920,Normal,IP,5,16,2
+201920,Normal,IP,5,17,1
+201920,Sala,Sala,1,11,2
+201920,Sala,Sala,1,12,1
+201920,Sala,Sala,2,9,4
+201920,Sala,Sala,2,10,2
+201920,Sala,Sala,2,11,2
+201920,Sala,Sala,2,12,1
+201920,Sala,Sala,2,14,3
+201920,Sala,Sala,2,15,1
+201920,Sala,Sala,2,16,1
+201920,Sala,Sala,2,17,1
+201920,Sala,Sala,3,9,2
+201920,Sala,Sala,3,10,1
+201920,Sala,Sala,3,12,2
+201920,Sala,Sala,3,13,2
+201920,Sala,Sala,3,14,9
+201920,Sala,Sala,3,15,1
+201920,Sala,Sala,3,17,2
+201920,Sala,Sala,4,10,2
+201920,Sala,Sala,4,11,9
+201920,Sala,Sala,4,13,2
+201920,Sala,Sala,4,14,2
+201920,Sala,Sala,4,15,1
+201920,Sala,Sala,5,9,1
+201920,Sala,Sala,5,11,2
+201920,Sala,Sala,5,12,2
+201920,Sala,Sala,5,13,2
+201920,Sala,Sala,5,15,1
+201920,Sala,Sala,5,16,2
+202010,"Deprecated, Profesores IP","Deprecated, Profesores",1,9,2
+202010,"Deprecated, Profesores IP","Deprecated, Profesores",1,11,1
+202010,"Deprecated, Profesores IP","Deprecated, Profesores",1,12,1
+202010,"Deprecated, Profesores IP","Deprecated, Profesores",2,10,1
+202010,"Deprecated, Profesores IP","Deprecated, Profesores",2,13,1
+202010,"Deprecated, Profesores IP","Deprecated, Profesores",3,9,1
+202010,"Deprecated, Profesores IP","Deprecated, Profesores",4,11,1
+202010,"Deprecated, Profesores IP","Deprecated, Profesores",5,9,1
+202010,"Deprecated, Torre Séneca",EDA,2,18,4
+202010,"Deprecated, Torre Séneca",EDA,2,19,1
+202010,"Deprecated, Torre Séneca",IP,2,12,1
+202010,"Deprecated, Torre Séneca",IP,2,18,27
+202010,"Deprecated, Torre Séneca",IP,2,19,18
+202010,Entrevistas,Entrevista,1,10,1
+202010,Entrevistas,Entrevista,1,13,1
+202010,Entrevistas,Entrevista,1,17,1
+202010,Entrevistas,Entrevista,2,11,2
+202010,Entrevistas,Entrevista,2,13,1
+202010,Entrevistas,Entrevista,2,14,1
+202010,Entrevistas,Entrevista,3,16,1
+202010,Entrevistas,Entrevista,3,17,2
+202010,Entrevistas,Entrevista,4,9,1
+202010,Entrevistas,Entrevista,4,11,1
+202010,Entrevistas,Entrevista,4,16,1
+202010,Entrevistas,Entrevista,4,17,2
+202010,Entrevistas,Entrevista,5,9,2
+202010,Entrevistas,Entrevista,5,10,1
+202010,Entrevistas,Entrevista,5,11,5
+202010,Entrevistas,Entrevista,5,12,3
+202010,Entrevistas,Entrevista,5,13,3
+202010,Express,"Deprecated, APO 2",1,11,7
+202010,Express,"Deprecated, APO 2",1,14,2
+202010,Express,"Deprecated, APO 2",1,15,4
+202010,Express,"Deprecated, APO 2",2,11,5
+202010,Express,"Deprecated, APO 2",2,12,7
+202010,Express,"Deprecated, APO 2",3,14,10
+202010,Express,"Deprecated, APO 2",5,11,11
+202010,Express,"Deprecated, APO 2",5,14,6
+202010,Express,IP,1,11,41
+202010,Express,IP,1,12,58
+202010,Express,IP,1,14,74
+202010,Express,IP,1,15,71
+202010,Express,IP,2,11,86
+202010,Express,IP,2,12,74
+202010,Express,IP,2,14,70
+202010,Express,IP,2,15,70
+202010,Express,IP,3,11,107
+202010,Express,IP,3,12,69
+202010,Express,IP,3,14,71
+202010,Express,IP,3,15,104
+202010,Express,IP,4,11,71
+202010,Express,IP,4,12,39
+202010,Express,IP,4,14,79
+202010,Express,IP,4,15,87
+202010,Express,IP,5,11,68
+202010,Express,IP,5,12,40
+202010,Express,IP,5,14,75
+202010,Express,IP,5,15,72
+202010,Normal,"Deprecated, APO 2",1,10,11
+202010,Normal,"Deprecated, APO 2",1,13,7
+202010,Normal,"Deprecated, APO 2",1,14,10
+202010,Normal,"Deprecated, APO 2",1,16,10
+202010,Normal,"Deprecated, APO 2",2,11,13
+202010,Normal,"Deprecated, APO 2",2,13,11
+202010,Normal,"Deprecated, APO 2",2,14,12
+202010,Normal,"Deprecated, APO 2",2,16,11
+202010,Normal,"Deprecated, APO 2",2,17,16
+202010,Normal,"Deprecated, APO 2",3,9,1
+202010,Normal,"Deprecated, APO 2",3,10,17
+202010,Normal,"Deprecated, APO 2",3,14,4
+202010,Normal,"Deprecated, APO 2",3,16,16
+202010,Normal,"Deprecated, APO 2",4,10,14
+202010,Normal,"Deprecated, APO 2",4,13,5
+202010,Normal,"Deprecated, APO 2",4,14,2
+202010,Normal,"Deprecated, APO 2",4,16,23
+202010,Normal,"Deprecated, APO 2",5,10,15
+202010,Normal,"Deprecated, APO 2",5,11,1
+202010,Normal,"Deprecated, APO 2",5,13,11
+202010,Normal,"Deprecated, APO 2",5,14,19
+202010,Normal,"Deprecated, APO 2",5,17,13
+202010,Normal,IP,1,9,24
+202010,Normal,IP,1,10,62
+202010,Normal,IP,1,11,57
+202010,Normal,IP,1,13,63
+202010,Normal,IP,1,14,85
+202010,Normal,IP,1,16,64
+202010,Normal,IP,1,17,64
+202010,Normal,IP,2,9,20
+202010,Normal,IP,2,10,51
+202010,Normal,IP,2,11,61
+202010,Normal,IP,2,13,54
+202010,Normal,IP,2,14,50
+202010,Normal,IP,2,16,78
+202010,Normal,IP,2,17,76
+202010,Normal,IP,3,9,76
+202010,Normal,IP,3,10,80
+202010,Normal,IP,3,11,80
+202010,Normal,IP,3,13,71
+202010,Normal,IP,3,14,92
+202010,Normal,IP,3,16,84
+202010,Normal,IP,3,17,85
+202010,Normal,IP,4,9,91
+202010,Normal,IP,4,10,95
+202010,Normal,IP,4,11,73
+202010,Normal,IP,4,13,62
+202010,Normal,IP,4,14,82
+202010,Normal,IP,4,16,60
+202010,Normal,IP,4,17,106
+202010,Normal,IP,5,9,61
+202010,Normal,IP,5,10,69
+202010,Normal,IP,5,11,70
+202010,Normal,IP,5,13,61
+202010,Normal,IP,5,14,87
+202010,Normal,IP,5,16,62
+202010,Normal,IP,5,17,57
+202010,Sala,Sala,1,10,2
+202010,Sala,Sala,1,11,8
+202010,Sala,Sala,1,12,3
+202010,Sala,Sala,1,13,2
+202010,Sala,Sala,1,14,4
+202010,Sala,Sala,1,16,2
+202010,Sala,Sala,1,17,2
+202010,Sala,Sala,2,10,2
+202010,Sala,Sala,2,11,2
+202010,Sala,Sala,2,12,2
+202010,Sala,Sala,2,13,2
+202010,Sala,Sala,2,14,2
+202010,Sala,Sala,2,15,2
+202010,Sala,Sala,2,16,2
+202010,Sala,Sala,3,9,2
+202010,Sala,Sala,3,10,1
+202010,Sala,Sala,3,11,1
+202010,Sala,Sala,3,12,2
+202010,Sala,Sala,3,14,2
+202010,Sala,Sala,3,15,2
+202010,Sala,Sala,3,16,1
+202010,Sala,Sala,4,10,2
+202010,Sala,Sala,4,11,4
+202010,Sala,Sala,4,12,2
+202010,Sala,Sala,4,13,2
+202010,Sala,Sala,4,14,1
+202010,Sala,Sala,5,13,1
+202010,Sala,Sala,5,14,2
+202010,Sala,Sala,5,15,1
+202010,Sala,Sala,5,16,2
+202019,Entrevistas,Entrevista,3,10,3
+202019,Entrevistas,Entrevista,3,14,2
+202019,Entrevistas,Entrevista,3,15,1
+202019,Entrevistas,Entrevista,4,14,2
+202019,Entrevistas,Entrevista,4,15,2
+202019,Entrevistas,Entrevista,4,16,3
+202019,Express,"Deprecated, APO 2",2,11,3
+202019,Express,"Deprecated, APO 2",4,11,6
+202019,Express,"Deprecated, APO 2",5,11,7
+202019,Express,IP,2,11,1
+202019,Express,IP,2,14,6
+202019,Express,IP,2,15,13
+202019,Express,IP,3,14,5
+202019,Express,IP,3,15,9
+202019,Express,IP,4,14,2
+202019,Express,IP,4,15,4
+202019,Express,IP,5,11,2
+202019,Express,IP,5,14,6
+202019,Normal,"Deprecated, APO 2",2,10,6
+202019,Normal,"Deprecated, APO 2",2,11,5
+202019,Normal,"Deprecated, APO 2",3,10,13
+202019,Normal,"Deprecated, APO 2",3,11,3
+202019,Normal,"Deprecated, APO 2",3,16,2
+202019,Normal,"Deprecated, APO 2",4,10,6
+202019,Normal,"Deprecated, APO 2",4,11,2
+202019,Normal,"Deprecated, APO 2",5,10,4
+202019,Normal,"Deprecated, APO 2",5,11,7
+202019,Normal,IP,2,10,2
+202019,Normal,IP,2,11,5
+202019,Normal,IP,2,14,11
+202019,Normal,IP,3,10,2
+202019,Normal,IP,3,11,10
+202019,Normal,IP,3,14,9
+202019,Normal,IP,3,16,8
+202019,Normal,IP,4,10,3
+202019,Normal,IP,4,11,5
+202019,Normal,IP,4,14,7
+202019,Normal,IP,5,10,2
+202019,Normal,IP,5,11,1
+202019,Normal,IP,5,14,7
+202019,Normal pico,IP,1,14,2
+202019,Normal pico,IP,1,17,1
+202019,Normal pico,IP,2,13,2
+202019,Normal pico,IP,2,14,2
+202019,Normal pico,IP,2,16,3
+202019,Normal pico,IP,2,17,4
+202019,Normal pico,IP,3,10,1
+202019,Normal pico,IP,3,11,2
+202019,Normal pico,IP,3,14,4
+202019,Normal pico,IP,3,16,5
+202019,Normal pico,IP,3,17,3
+202019,Normal pico,IP,4,10,2
+202019,Normal pico,IP,4,11,3
+202019,Normal pico,IP,4,13,1
+202019,Normal pico,IP,4,14,2
+202019,Normal pico,IP,4,16,3
+202019,Normal pico,IP,4,17,3
+202020,"Deprecated, Grupal",EDA,1,14,1
+202020,"Deprecated, Grupal",EDA,2,10,23
+202020,"Deprecated, Grupal",EDA,2,13,15
+202020,"Deprecated, Grupal",EDA,2,14,18
+202020,"Deprecated, Grupal",EDA,3,8,11
+202020,"Deprecated, Grupal",EDA,3,10,8
+202020,"Deprecated, Grupal",EDA,3,11,1
+202020,"Deprecated, Grupal",EDA,3,13,15
+202020,"Deprecated, Grupal",EDA,4,8,2
+202020,"Deprecated, Grupal",EDA,4,10,3
+202020,"Deprecated, Grupal",EDA,4,11,4
+202020,"Deprecated, Grupal",EDA,4,13,1
+202020,"Deprecated, Grupal",EDA,4,17,4
+202020,"Deprecated, Grupal",EDA,5,8,3
+202020,"Deprecated, Grupal",EDA,5,14,9
+202020,"Deprecated, Grupal",EDA,5,17,10
+202020,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",2,16,2
+202020,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",2,17,9
+202020,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",3,16,6
+202020,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",3,17,6
+202020,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",4,16,6
+202020,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",4,17,5
+202020,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",5,16,8
+202020,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",5,17,3
+202020,Entrevistas,Entrevista,1,16,2
+202020,Entrevistas,Entrevista,2,9,1
+202020,Entrevistas,Entrevista,3,11,1
+202020,Entrevistas,Entrevista,3,12,3
+202020,Entrevistas,Entrevista,3,13,2
+202020,Entrevistas,Entrevista,3,14,2
+202020,Entrevistas,Entrevista,3,15,1
+202020,Entrevistas,Entrevista,3,16,1
+202020,Entrevistas,Entrevista,4,8,4
+202020,Entrevistas,Entrevista,4,9,2
+202020,Entrevistas,Entrevista,4,10,4
+202020,Entrevistas,Entrevista,4,11,4
+202020,Entrevistas,Entrevista,4,12,3
+202020,Entrevistas,Entrevista,5,8,1
+202020,Entrevistas,Entrevista,5,10,2
+202020,Entrevistas,Entrevista,5,11,1
+202020,Entrevistas,Entrevista,5,13,2
+202020,Entrevistas,Entrevista,5,14,3
+202020,Entrevistas,Entrevista,5,15,1
+202020,Express,"Deprecated, APO 2",2,11,1
+202020,Express,"Deprecated, APO 2",2,15,1
+202020,Express,"Deprecated, APO 2",4,11,14
+202020,Express,"Deprecated, APO 2",4,15,17
+202020,Express,IP,1,9,36
+202020,Express,IP,1,11,46
+202020,Express,IP,1,12,16
+202020,Express,IP,1,14,37
+202020,Express,IP,1,15,34
+202020,Express,IP,1,17,45
+202020,Express,IP,2,9,55
+202020,Express,IP,2,11,43
+202020,Express,IP,2,12,26
+202020,Express,IP,2,14,37
+202020,Express,IP,2,15,43
+202020,Express,IP,2,17,38
+202020,Express,IP,3,9,54
+202020,Express,IP,3,11,37
+202020,Express,IP,3,12,41
+202020,Express,IP,3,14,60
+202020,Express,IP,3,15,56
+202020,Express,IP,3,17,64
+202020,Express,IP,4,9,58
+202020,Express,IP,4,11,28
+202020,Express,IP,4,12,42
+202020,Express,IP,4,14,49
+202020,Express,IP,4,15,33
+202020,Express,IP,4,17,66
+202020,Express,IP,5,9,60
+202020,Express,IP,5,11,34
+202020,Express,IP,5,12,34
+202020,Express,IP,5,14,32
+202020,Express,IP,5,15,31
+202020,Express,IP,5,17,55
+202020,Normal,"Deprecated, APO 2",1,8,5
+202020,Normal,"Deprecated, APO 2",1,11,7
+202020,Normal,"Deprecated, APO 2",1,14,5
+202020,Normal,"Deprecated, APO 2",2,10,5
+202020,Normal,"Deprecated, APO 2",2,14,6
+202020,Normal,"Deprecated, APO 2",3,11,14
+202020,Normal,"Deprecated, APO 2",4,10,13
+202020,Normal,"Deprecated, APO 2",4,14,11
+202020,Normal,IP,1,8,30
+202020,Normal,IP,1,10,72
+202020,Normal,IP,1,11,54
+202020,Normal,IP,1,13,62
+202020,Normal,IP,1,14,56
+202020,Normal,IP,1,16,70
+202020,Normal,IP,1,17,68
+202020,Normal,IP,2,8,40
+202020,Normal,IP,2,10,57
+202020,Normal,IP,2,11,61
+202020,Normal,IP,2,13,65
+202020,Normal,IP,2,14,65
+202020,Normal,IP,2,16,75
+202020,Normal,IP,2,17,65
+202020,Normal,IP,3,8,45
+202020,Normal,IP,3,10,77
+202020,Normal,IP,3,11,80
+202020,Normal,IP,3,13,94
+202020,Normal,IP,3,14,100
+202020,Normal,IP,3,16,101
+202020,Normal,IP,3,17,77
+202020,Normal,IP,4,8,52
+202020,Normal,IP,4,10,75
+202020,Normal,IP,4,11,63
+202020,Normal,IP,4,13,60
+202020,Normal,IP,4,14,72
+202020,Normal,IP,4,16,92
+202020,Normal,IP,4,17,57
+202020,Normal,IP,5,8,51
+202020,Normal,IP,5,10,74
+202020,Normal,IP,5,11,67
+202020,Normal,IP,5,13,67
+202020,Normal,IP,5,14,75
+202020,Normal,IP,5,16,82
+202020,Normal,IP,5,17,48
+202020,Normal pico,IP,1,8,29
+202020,Normal pico,IP,1,10,41
+202020,Normal pico,IP,1,11,34
+202020,Normal pico,IP,1,13,37
+202020,Normal pico,IP,1,14,42
+202020,Normal pico,IP,1,16,46
+202020,Normal pico,IP,1,17,45
+202020,Normal pico,IP,2,8,33
+202020,Normal pico,IP,2,10,31
+202020,Normal pico,IP,2,11,36
+202020,Normal pico,IP,2,13,29
+202020,Normal pico,IP,2,14,38
+202020,Normal pico,IP,2,16,28
+202020,Normal pico,IP,2,17,29
+202020,Normal pico,IP,3,8,37
+202020,Normal pico,IP,3,10,44
+202020,Normal pico,IP,3,11,45
+202020,Normal pico,IP,3,13,43
+202020,Normal pico,IP,3,14,44
+202020,Normal pico,IP,3,16,36
+202020,Normal pico,IP,3,17,37
+202020,Normal pico,IP,4,8,29
+202020,Normal pico,IP,4,10,42
+202020,Normal pico,IP,4,11,41
+202020,Normal pico,IP,4,13,35
+202020,Normal pico,IP,4,14,38
+202020,Normal pico,IP,4,16,18
+202020,Normal pico,IP,4,17,38
+202020,Normal pico,IP,5,8,33
+202020,Normal pico,IP,5,10,43
+202020,Normal pico,IP,5,11,45
+202020,Normal pico,IP,5,13,44
+202020,Normal pico,IP,5,14,33
+202020,Normal pico,IP,5,16,33
+202020,Normal pico,IP,5,17,41
+202110,"Deprecated, Grupal","Deprecated, DPOO",2,17,31
+202110,"Deprecated, Grupal","Deprecated, DPOO",3,15,17
+202110,"Deprecated, Grupal","Deprecated, DPOO",3,17,8
+202110,"Deprecated, Grupal","Deprecated, DPOO",4,11,11
+202110,"Deprecated, Grupal","Deprecated, DPOO",5,11,8
+202110,"Deprecated, Grupal","Deprecated, DPOO",5,17,19
+202110,Entrevistas,Entrevista,1,8,7
+202110,Entrevistas,Entrevista,1,9,5
+202110,Entrevistas,Entrevista,1,10,4
+202110,Entrevistas,Entrevista,1,11,6
+202110,Entrevistas,Entrevista,1,12,2
+202110,Entrevistas,Entrevista,1,14,1
+202110,Entrevistas,Entrevista,1,15,3
+202110,Entrevistas,Entrevista,1,16,4
+202110,Entrevistas,Entrevista,1,17,3
+202110,Entrevistas,Entrevista,2,9,1
+202110,Entrevistas,Entrevista,2,10,2
+202110,Entrevistas,Entrevista,2,12,1
+202110,Entrevistas,Entrevista,2,14,1
+202110,Entrevistas,Entrevista,2,15,1
+202110,Entrevistas,Entrevista,2,16,1
+202110,Entrevistas,Entrevista,2,17,1
+202110,Entrevistas,Entrevista,3,8,2
+202110,Entrevistas,Entrevista,3,9,1
+202110,Entrevistas,Entrevista,3,14,1
+202110,Entrevistas,Entrevista,3,17,3
+202110,Entrevistas,Entrevista,4,11,1
+202110,Entrevistas,Entrevista,4,16,1
+202110,Entrevistas,Entrevista,4,17,2
+202110,Entrevistas,Entrevista,5,10,1
+202110,Entrevistas,Entrevista,5,15,1
+202110,Entrevistas,Entrevista,5,17,1
+202110,Express,EDA,1,12,11
+202110,Express,EDA,1,15,12
+202110,Express,EDA,1,16,16
+202110,Express,EDA,2,12,8
+202110,Express,EDA,2,16,13
+202110,Express,EDA,3,9,8
+202110,Express,EDA,3,12,11
+202110,Express,EDA,3,13,5
+202110,Express,EDA,3,15,9
+202110,Express,EDA,3,16,2
+202110,Express,EDA,4,15,6
+202110,Express,EDA,5,9,4
+202110,Express,EDA,5,12,5
+202110,Express,IP,1,9,43
+202110,Express,IP,1,10,55
+202110,Express,IP,1,12,61
+202110,Express,IP,1,13,39
+202110,Express,IP,1,15,64
+202110,Express,IP,1,16,30
+202110,Express,IP,2,9,58
+202110,Express,IP,2,10,69
+202110,Express,IP,2,12,52
+202110,Express,IP,2,13,48
+202110,Express,IP,2,15,59
+202110,Express,IP,2,16,9
+202110,Express,IP,3,9,35
+202110,Express,IP,3,10,56
+202110,Express,IP,3,12,53
+202110,Express,IP,3,13,64
+202110,Express,IP,3,15,46
+202110,Express,IP,3,16,72
+202110,Express,IP,4,9,31
+202110,Express,IP,4,10,47
+202110,Express,IP,4,12,68
+202110,Express,IP,4,13,45
+202110,Express,IP,4,15,73
+202110,Express,IP,4,16,38
+202110,Express,IP,5,9,51
+202110,Express,IP,5,10,34
+202110,Express,IP,5,12,11
+202110,Express,IP,5,13,56
+202110,Express,IP,5,15,69
+202110,Express,IP,5,16,50
+202110,Normal,EDA,1,12,8
+202110,Normal,EDA,1,14,1
+202110,Normal,EDA,1,15,19
+202110,Normal,EDA,1,17,19
+202110,Normal,EDA,2,8,16
+202110,Normal,EDA,2,9,3
+202110,Normal,EDA,2,11,11
+202110,Normal,EDA,2,12,13
+202110,Normal,EDA,2,14,14
+202110,Normal,EDA,2,15,13
+202110,Normal,EDA,2,17,23
+202110,Normal,EDA,3,8,8
+202110,Normal,EDA,3,9,11
+202110,Normal,EDA,3,11,20
+202110,Normal,EDA,3,12,26
+202110,Normal,EDA,3,14,14
+202110,Normal,EDA,3,15,11
+202110,Normal,EDA,3,17,1
+202110,Normal,EDA,4,9,8
+202110,Normal,EDA,4,12,5
+202110,Normal,EDA,4,14,3
+202110,Normal,EDA,4,15,7
+202110,Normal,EDA,4,17,7
+202110,Normal,EDA,5,8,8
+202110,Normal,EDA,5,9,10
+202110,Normal,EDA,5,12,13
+202110,Normal,IP,1,8,87
+202110,Normal,IP,1,9,79
+202110,Normal,IP,1,11,81
+202110,Normal,IP,1,12,76
+202110,Normal,IP,1,14,82
+202110,Normal,IP,1,15,64
+202110,Normal,IP,1,17,94
+202110,Normal,IP,2,8,81
+202110,Normal,IP,2,9,80
+202110,Normal,IP,2,11,80
+202110,Normal,IP,2,12,77
+202110,Normal,IP,2,14,58
+202110,Normal,IP,2,15,75
+202110,Normal,IP,2,17,82
+202110,Normal,IP,3,8,88
+202110,Normal,IP,3,9,78
+202110,Normal,IP,3,11,83
+202110,Normal,IP,3,12,68
+202110,Normal,IP,3,14,58
+202110,Normal,IP,3,15,84
+202110,Normal,IP,3,17,133
+202110,Normal,IP,4,9,80
+202110,Normal,IP,4,11,110
+202110,Normal,IP,4,12,96
+202110,Normal,IP,4,14,87
+202110,Normal,IP,4,15,57
+202110,Normal,IP,4,17,94
+202110,Normal,IP,5,8,95
+202110,Normal,IP,5,9,93
+202110,Normal,IP,5,11,59
+202110,Normal,IP,5,12,64
+202110,Normal,IP,5,14,105
+202110,Normal,IP,5,15,91
+202110,Normal,IP,5,17,95
+202110,Normal pico,IP,1,8,39
+202110,Normal pico,IP,1,9,40
+202110,Normal pico,IP,1,11,41
+202110,Normal pico,IP,1,12,41
+202110,Normal pico,IP,1,14,48
+202110,Normal pico,IP,1,15,43
+202110,Normal pico,IP,1,17,54
+202110,Normal pico,IP,2,8,39
+202110,Normal pico,IP,2,9,44
+202110,Normal pico,IP,2,11,49
+202110,Normal pico,IP,2,12,36
+202110,Normal pico,IP,2,14,39
+202110,Normal pico,IP,2,15,38
+202110,Normal pico,IP,2,17,45
+202110,Normal pico,IP,3,8,27
+202110,Normal pico,IP,3,9,35
+202110,Normal pico,IP,3,11,40
+202110,Normal pico,IP,3,12,44
+202110,Normal pico,IP,3,14,44
+202110,Normal pico,IP,3,15,47
+202110,Normal pico,IP,3,17,48
+202110,Normal pico,IP,4,8,12
+202110,Normal pico,IP,4,9,22
+202110,Normal pico,IP,4,11,24
+202110,Normal pico,IP,4,12,16
+202110,Normal pico,IP,4,14,17
+202110,Normal pico,IP,4,15,23
+202110,Normal pico,IP,4,17,25
+202110,Normal pico,IP,5,8,27
+202110,Normal pico,IP,5,9,21
+202110,Normal pico,IP,5,11,22
+202110,Normal pico,IP,5,12,32
+202110,Normal pico,IP,5,14,27
+202110,Normal pico,IP,5,15,37
+202110,Normal pico,IP,5,17,38
+202119,Express,EDA,2,9,2
+202119,Express,IP,2,9,1
+202119,Express,IP,2,15,1
+202119,Express,IP,3,9,9
+202119,Express,IP,4,9,4
+202119,Express,IP,4,11,3
+202119,Express,IP,4,15,1
+202119,Express,IP,5,15,2
+202119,Normal,EDA,2,10,1
+202119,Normal,EDA,2,13,1
+202119,Normal,EDA,3,10,3
+202119,Normal,EDA,3,13,1
+202119,Normal,EDA,4,10,2
+202119,Normal,EDA,4,11,4
+202119,Normal,EDA,4,13,4
+202119,Normal,EDA,4,15,1
+202119,Normal,EDA,5,10,1
+202119,Normal,EDA,5,13,7
+202119,Normal,EDA,5,15,1
+202119,Normal,IP,2,10,2
+202119,Normal,IP,2,14,8
+202119,Normal,IP,2,15,5
+202119,Normal,IP,3,10,5
+202119,Normal,IP,3,13,3
+202119,Normal,IP,4,10,4
+202119,Normal,IP,4,11,3
+202119,Normal,IP,4,13,2
+202119,Normal,IP,4,14,6
+202119,Normal,IP,4,15,7
+202119,Normal,IP,4,17,1
+202119,Normal,IP,5,10,1
+202119,Normal,IP,5,14,2
+202119,Normal,IP,5,15,4
+202119,Normal pico,IP,2,10,1
+202119,Normal pico,IP,2,15,1
+202119,Normal pico,IP,3,15,1
+202119,Normal pico,IP,3,17,3
+202119,Normal pico,IP,4,10,1
+202119,Normal pico,IP,4,15,1
+202120,"Deprecated, Grupal","Deprecated, DPOO",1,9,4
+202120,"Deprecated, Grupal","Deprecated, DPOO",1,15,19
+202120,"Deprecated, Grupal","Deprecated, DPOO",1,17,19
+202120,"Deprecated, Grupal","Deprecated, DPOO",3,9,11
+202120,"Deprecated, Grupal","Deprecated, DPOO",3,11,10
+202120,"Deprecated, Grupal","Deprecated, DPOO",3,12,5
+202120,"Deprecated, Grupal","Deprecated, DPOO",3,14,10
+202120,"Deprecated, Grupal","Deprecated, DPOO",3,15,12
+202120,"Deprecated, Grupal","Deprecated, DPOO",5,11,19
+202120,"Deprecated, Grupal","Deprecated, DPOO",5,12,9
+202120,Entrevistas,Entrevista,1,8,6
+202120,Entrevistas,Entrevista,1,9,7
+202120,Entrevistas,Entrevista,1,10,2
+202120,Entrevistas,Entrevista,1,11,2
+202120,Entrevistas,Entrevista,1,12,6
+202120,Entrevistas,Entrevista,1,13,1
+202120,Entrevistas,Entrevista,1,14,2
+202120,Entrevistas,Entrevista,1,15,2
+202120,Entrevistas,Entrevista,1,16,5
+202120,Entrevistas,Entrevista,2,9,1
+202120,Entrevistas,Entrevista,2,11,3
+202120,Entrevistas,Entrevista,2,13,1
+202120,Entrevistas,Entrevista,2,16,1
+202120,Entrevistas,Entrevista,3,12,1
+202120,Entrevistas,Entrevista,3,15,1
+202120,Entrevistas,Entrevista,4,14,2
+202120,Entrevistas,Entrevista,4,15,1
+202120,Entrevistas,Entrevista,4,16,1
+202120,Entrevistas,Entrevista,5,8,1
+202120,Entrevistas,Entrevista,5,13,1
+202120,Express,EDA,1,9,1
+202120,Express,EDA,1,15,2
+202120,Express,EDA,2,10,22
+202120,Express,EDA,2,12,1
+202120,Express,EDA,3,9,22
+202120,Express,EDA,3,10,21
+202120,Express,EDA,3,15,25
+202120,Express,EDA,3,16,18
+202120,Express,EDA,4,9,14
+202120,Express,EDA,5,12,21
+202120,Express,IP,1,9,40
+202120,Express,IP,1,10,30
+202120,Express,IP,1,12,29
+202120,Express,IP,1,13,25
+202120,Express,IP,1,15,43
+202120,Express,IP,1,16,41
+202120,Express,IP,2,9,41
+202120,Express,IP,2,10,31
+202120,Express,IP,2,12,37
+202120,Express,IP,2,13,44
+202120,Express,IP,2,15,53
+202120,Express,IP,2,16,44
+202120,Express,IP,3,9,28
+202120,Express,IP,3,10,26
+202120,Express,IP,3,12,39
+202120,Express,IP,3,13,56
+202120,Express,IP,3,15,40
+202120,Express,IP,3,16,54
+202120,Express,IP,4,9,29
+202120,Express,IP,4,10,57
+202120,Express,IP,4,12,27
+202120,Express,IP,4,13,35
+202120,Express,IP,4,15,33
+202120,Express,IP,4,16,65
+202120,Express,IP,5,9,56
+202120,Express,IP,5,10,56
+202120,Express,IP,5,12,32
+202120,Express,IP,5,13,35
+202120,Express,IP,5,15,38
+202120,Express,IP,5,16,49
+202120,Normal,EDA,1,8,1
+202120,Normal,EDA,1,9,1
+202120,Normal,EDA,1,14,1
+202120,Normal,EDA,1,15,33
+202120,Normal,EDA,1,17,2
+202120,Normal,EDA,2,9,28
+202120,Normal,EDA,2,14,20
+202120,Normal,EDA,3,8,31
+202120,Normal,EDA,3,9,19
+202120,Normal,EDA,3,11,46
+202120,Normal,EDA,3,14,25
+202120,Normal,EDA,3,15,38
+202120,Normal,EDA,3,17,27
+202120,Normal,EDA,4,8,13
+202120,Normal,EDA,4,9,23
+202120,Normal,EDA,5,8,1
+202120,Normal,EDA,5,11,25
+202120,Normal,EDA,5,12,26
+202120,Normal,EDA,5,15,1
+202120,Normal,IP,1,8,41
+202120,Normal,IP,1,9,45
+202120,Normal,IP,1,11,44
+202120,Normal,IP,1,12,32
+202120,Normal,IP,1,14,46
+202120,Normal,IP,1,15,39
+202120,Normal,IP,1,17,62
+202120,Normal,IP,2,8,40
+202120,Normal,IP,2,9,39
+202120,Normal,IP,2,11,69
+202120,Normal,IP,2,12,34
+202120,Normal,IP,2,14,48
+202120,Normal,IP,2,15,68
+202120,Normal,IP,2,17,68
+202120,Normal,IP,3,8,36
+202120,Normal,IP,3,9,39
+202120,Normal,IP,3,11,59
+202120,Normal,IP,3,12,49
+202120,Normal,IP,3,14,81
+202120,Normal,IP,3,15,68
+202120,Normal,IP,3,17,81
+202120,Normal,IP,4,8,54
+202120,Normal,IP,4,9,76
+202120,Normal,IP,4,11,72
+202120,Normal,IP,4,12,43
+202120,Normal,IP,4,14,39
+202120,Normal,IP,4,15,83
+202120,Normal,IP,4,17,90
+202120,Normal,IP,5,8,71
+202120,Normal,IP,5,9,78
+202120,Normal,IP,5,11,66
+202120,Normal,IP,5,12,50
+202120,Normal,IP,5,14,69
+202120,Normal,IP,5,15,33
+202120,Normal,IP,5,17,50
+202120,Normal pico,IP,1,8,13
+202120,Normal pico,IP,1,9,19
+202120,Normal pico,IP,1,11,19
+202120,Normal pico,IP,1,12,17
+202120,Normal pico,IP,1,14,21
+202120,Normal pico,IP,1,15,21
+202120,Normal pico,IP,1,17,26
+202120,Normal pico,IP,2,8,14
+202120,Normal pico,IP,2,9,22
+202120,Normal pico,IP,2,11,19
+202120,Normal pico,IP,2,12,16
+202120,Normal pico,IP,2,14,30
+202120,Normal pico,IP,2,15,26
+202120,Normal pico,IP,2,17,30
+202120,Normal pico,IP,3,8,31
+202120,Normal pico,IP,3,9,26
+202120,Normal pico,IP,3,11,26
+202120,Normal pico,IP,3,12,18
+202120,Normal pico,IP,3,14,28
+202120,Normal pico,IP,3,15,32
+202120,Normal pico,IP,3,17,34
+202120,Normal pico,IP,4,8,16
+202120,Normal pico,IP,4,9,18
+202120,Normal pico,IP,4,11,16
+202120,Normal pico,IP,4,12,7
+202120,Normal pico,IP,4,14,8
+202120,Normal pico,IP,4,15,25
+202120,Normal pico,IP,4,17,18
+202120,Normal pico,IP,5,8,23
+202120,Normal pico,IP,5,9,19
+202120,Normal pico,IP,5,11,20
+202120,Normal pico,IP,5,12,10
+202120,Normal pico,IP,5,14,23
+202120,Normal pico,IP,5,15,25
+202120,Normal pico,IP,5,17,32
+202210,Entrevistas,Entrevista,1,8,1
+202210,Entrevistas,Entrevista,1,9,1
+202210,Entrevistas,Entrevista,1,11,7
+202210,Entrevistas,Entrevista,1,12,3
+202210,Entrevistas,Entrevista,1,13,1
+202210,Entrevistas,Entrevista,1,14,3
+202210,Entrevistas,Entrevista,1,15,3
+202210,Entrevistas,Entrevista,1,16,5
+202210,Entrevistas,Entrevista,2,8,1
+202210,Entrevistas,Entrevista,2,9,3
+202210,Entrevistas,Entrevista,2,10,2
+202210,Entrevistas,Entrevista,2,11,2
+202210,Entrevistas,Entrevista,2,13,1
+202210,Entrevistas,Entrevista,2,14,1
+202210,Entrevistas,Entrevista,2,16,2
+202210,Entrevistas,Entrevista,3,10,1
+202210,Entrevistas,Entrevista,3,11,2
+202210,Entrevistas,Entrevista,3,15,3
+202210,Entrevistas,Entrevista,3,16,1
+202210,Entrevistas,Entrevista,4,13,2
+202210,Entrevistas,Entrevista,4,16,2
+202210,Entrevistas,Entrevista,5,9,2
+202210,Entrevistas,Entrevista,5,11,1
+202210,Entrevistas,Entrevista,5,14,1
+202210,Entrevistas,Entrevista,5,15,1
+202210,Entrevistas,Entrevista,5,16,1
+202210,Express,EDA,1,16,1
+202210,Express,EDA,3,10,13
+202210,Express,EDA,3,15,11
+202210,Express,EDA,3,16,20
+202210,Express,EDA,4,10,27
+202210,Express,EDA,4,13,8
+202210,Express,EDA,5,9,14
+202210,Express,EDA,5,16,5
+202210,Express,IP,1,9,36
+202210,Express,IP,1,12,35
+202210,Express,IP,1,13,29
+202210,Express,IP,1,15,30
+202210,Express,IP,1,16,36
+202210,Express,IP,2,9,39
+202210,Express,IP,2,10,39
+202210,Express,IP,2,12,33
+202210,Express,IP,2,15,40
+202210,Express,IP,2,16,55
+202210,Express,IP,3,9,35
+202210,Express,IP,3,10,37
+202210,Express,IP,3,12,46
+202210,Express,IP,3,13,1
+202210,Express,IP,3,15,41
+202210,Express,IP,3,16,22
+202210,Express,IP,4,9,26
+202210,Express,IP,4,10,29
+202210,Express,IP,4,12,38
+202210,Express,IP,4,13,25
+202210,Express,IP,4,15,38
+202210,Express,IP,4,16,37
+202210,Express,IP,5,9,11
+202210,Express,IP,5,10,54
+202210,Express,IP,5,12,32
+202210,Express,IP,5,13,39
+202210,Express,IP,5,15,39
+202210,Express,IP,5,16,38
+202210,Normal,EDA,1,8,4
+202210,Normal,EDA,1,11,6
+202210,Normal,EDA,1,12,8
+202210,Normal,EDA,1,17,23
+202210,Normal,EDA,2,9,22
+202210,Normal,EDA,2,12,5
+202210,Normal,EDA,3,8,26
+202210,Normal,EDA,3,9,22
+202210,Normal,EDA,3,11,17
+202210,Normal,EDA,3,12,24
+202210,Normal,EDA,3,14,45
+202210,Normal,EDA,3,15,35
+202210,Normal,EDA,3,17,14
+202210,Normal,EDA,4,8,14
+202210,Normal,EDA,4,9,39
+202210,Normal,EDA,4,11,42
+202210,Normal,EDA,4,12,29
+202210,Normal,EDA,4,14,6
+202210,Normal,EDA,5,8,15
+202210,Normal,EDA,5,9,22
+202210,Normal,EDA,5,11,16
+202210,Normal,EDA,5,12,1
+202210,Normal,EDA,5,14,1
+202210,Normal,EDA,5,15,9
+202210,Normal,EDA,5,17,37
+202210,Normal,IP,1,8,25
+202210,Normal,IP,1,11,104
+202210,Normal,IP,1,12,59
+202210,Normal,IP,1,14,92
+202210,Normal,IP,1,15,90
+202210,Normal,IP,1,17,70
+202210,Normal,IP,2,8,96
+202210,Normal,IP,2,9,101
+202210,Normal,IP,2,11,116
+202210,Normal,IP,2,12,41
+202210,Normal,IP,2,15,85
+202210,Normal,IP,2,17,76
+202210,Normal,IP,3,8,58
+202210,Normal,IP,3,9,102
+202210,Normal,IP,3,11,115
+202210,Normal,IP,3,12,83
+202210,Normal,IP,3,14,81
+202210,Normal,IP,3,15,59
+202210,Normal,IP,3,17,78
+202210,Normal,IP,4,8,99
+202210,Normal,IP,4,9,89
+202210,Normal,IP,4,11,89
+202210,Normal,IP,4,12,58
+202210,Normal,IP,4,14,97
+202210,Normal,IP,4,15,107
+202210,Normal,IP,4,17,108
+202210,Normal,IP,5,8,104
+202210,Normal,IP,5,9,102
+202210,Normal,IP,5,11,119
+202210,Normal,IP,5,12,46
+202210,Normal,IP,5,14,111
+202210,Normal,IP,5,15,91
+202210,Normal,IP,5,17,73
+202210,Normal pico,IP,1,8,20
+202210,Normal pico,IP,1,11,30
+202210,Normal pico,IP,1,12,19
+202210,Normal pico,IP,1,14,19
+202210,Normal pico,IP,1,15,28
+202210,Normal pico,IP,1,17,22
+202210,Normal pico,IP,2,8,28
+202210,Normal pico,IP,2,9,32
+202210,Normal pico,IP,2,11,31
+202210,Normal pico,IP,2,12,26
+202210,Normal pico,IP,2,15,41
+202210,Normal pico,IP,2,17,32
+202210,Normal pico,IP,3,8,10
+202210,Normal pico,IP,3,9,15
+202210,Normal pico,IP,3,11,19
+202210,Normal pico,IP,3,12,15
+202210,Normal pico,IP,3,14,22
+202210,Normal pico,IP,3,15,15
+202210,Normal pico,IP,3,17,17
+202210,Normal pico,IP,4,8,19
+202210,Normal pico,IP,4,9,15
+202210,Normal pico,IP,4,11,25
+202210,Normal pico,IP,4,12,14
+202210,Normal pico,IP,4,14,13
+202210,Normal pico,IP,4,15,25
+202210,Normal pico,IP,4,17,21
+202210,Normal pico,IP,5,8,21
+202210,Normal pico,IP,5,9,30
+202210,Normal pico,IP,5,11,34
+202210,Normal pico,IP,5,12,18
+202210,Normal pico,IP,5,14,24
+202210,Normal pico,IP,5,15,21
+202210,Normal pico,IP,5,17,24
+202219,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",2,10,2
+202219,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",2,11,2
+202219,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",2,12,3
+202219,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",2,14,2
+202219,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",2,15,1
+202219,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",3,10,1
+202219,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",3,11,1
+202219,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",3,12,1
+202219,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",4,12,1
+202219,"Deprecated, Nivelación IP","Deprecated, IP Nivelación",4,13,1
+202219,Normal,IP,2,10,7
+202219,Normal,IP,2,11,8
+202219,Normal,IP,2,14,8
+202219,Normal,IP,2,15,5
+202219,Normal,IP,3,10,9
+202219,Normal,IP,3,11,9
+202219,Normal,IP,3,12,10
+202219,Normal,IP,3,13,12
+202219,Normal,IP,4,14,12
+202219,Normal,IP,4,15,7
+202220,"Deprecated, Torre Séneca",IP,4,18,28
+202220,"Deprecated, Torre Séneca",IP,4,19,22
+202220,"Deprecated, Torre Séneca",IP,5,19,3
+202220,Entrevistas,Entrevista,1,8,6
+202220,Entrevistas,Entrevista,1,9,4
+202220,Entrevistas,Entrevista,1,10,2
+202220,Entrevistas,Entrevista,1,11,2
+202220,Entrevistas,Entrevista,1,12,2
+202220,Entrevistas,Entrevista,1,13,3
+202220,Entrevistas,Entrevista,1,14,5
+202220,Entrevistas,Entrevista,1,15,4
+202220,Entrevistas,Entrevista,1,16,6
+202220,Entrevistas,Entrevista,1,17,3
+202220,Entrevistas,Entrevista,2,9,1
+202220,Entrevistas,Entrevista,2,10,1
+202220,Entrevistas,Entrevista,2,11,1
+202220,Entrevistas,Entrevista,2,14,2
+202220,Entrevistas,Entrevista,2,16,2
+202220,Entrevistas,Entrevista,2,17,1
+202220,Entrevistas,Entrevista,3,9,1
+202220,Entrevistas,Entrevista,3,10,1
+202220,Entrevistas,Entrevista,3,11,3
+202220,Entrevistas,Entrevista,3,16,1
+202220,Entrevistas,Entrevista,4,10,1
+202220,Entrevistas,Entrevista,4,11,2
+202220,Entrevistas,Entrevista,4,15,2
+202220,Entrevistas,Entrevista,4,16,1
+202220,Entrevistas,Entrevista,5,9,1
+202220,Entrevistas,Entrevista,5,10,1
+202220,Entrevistas,Entrevista,5,15,1
+202220,Express,EDA,1,9,19
+202220,Express,EDA,1,13,17
+202220,Express,EDA,1,15,17
+202220,Express,EDA,2,9,35
+202220,Express,EDA,3,15,6
+202220,Express,EDA,4,9,8
+202220,Express,EDA,4,10,8
+202220,Express,EDA,4,12,22
+202220,Express,EDA,4,15,23
+202220,Express,EDA,5,10,22
+202220,Express,EDA,5,15,1
+202220,Express,IP,1,9,27
+202220,Express,IP,1,10,35
+202220,Express,IP,1,12,55
+202220,Express,IP,1,13,55
+202220,Express,IP,1,15,40
+202220,Express,IP,1,16,35
+202220,Express,IP,2,9,59
+202220,Express,IP,2,10,61
+202220,Express,IP,2,12,77
+202220,Express,IP,2,13,36
+202220,Express,IP,2,15,2
+202220,Express,IP,2,16,47
+202220,Express,IP,3,9,3
+202220,Express,IP,3,10,69
+202220,Express,IP,3,12,82
+202220,Express,IP,3,13,60
+202220,Express,IP,3,15,63
+202220,Express,IP,3,16,64
+202220,Express,IP,4,9,85
+202220,Express,IP,4,10,61
+202220,Express,IP,4,12,24
+202220,Express,IP,4,13,58
+202220,Express,IP,4,15,58
+202220,Express,IP,4,16,74
+202220,Express,IP,5,9,57
+202220,Express,IP,5,10,59
+202220,Express,IP,5,12,63
+202220,Express,IP,5,15,58
+202220,Express,IP,5,16,57
+202220,Normal,EDA,1,9,6
+202220,Normal,EDA,1,12,12
+202220,Normal,EDA,1,14,28
+202220,Normal,EDA,1,15,23
+202220,Normal,EDA,1,17,1
+202220,Normal,EDA,2,9,32
+202220,Normal,EDA,2,15,20
+202220,Normal,EDA,3,8,26
+202220,Normal,EDA,3,9,30
+202220,Normal,EDA,3,12,2
+202220,Normal,EDA,3,14,15
+202220,Normal,EDA,3,15,33
+202220,Normal,EDA,4,8,26
+202220,Normal,EDA,4,9,33
+202220,Normal,EDA,4,11,28
+202220,Normal,EDA,4,12,24
+202220,Normal,EDA,4,15,27
+202220,Normal,EDA,5,8,23
+202220,Normal,EDA,5,9,43
+202220,Normal,EDA,5,11,15
+202220,Normal,EDA,5,15,15
+202220,Normal,IP,1,9,75
+202220,Normal,IP,1,11,86
+202220,Normal,IP,1,12,75
+202220,Normal,IP,1,14,74
+202220,Normal,IP,1,15,56
+202220,Normal,IP,1,17,63
+202220,Normal,IP,2,9,105
+202220,Normal,IP,2,11,96
+202220,Normal,IP,2,12,61
+202220,Normal,IP,2,14,6
+202220,Normal,IP,2,15,50
+202220,Normal,IP,3,8,53
+202220,Normal,IP,3,9,123
+202220,Normal,IP,3,11,146
+202220,Normal,IP,3,12,8
+202220,Normal,IP,3,14,121
+202220,Normal,IP,3,15,80
+202220,Normal,IP,4,8,75
+202220,Normal,IP,4,9,102
+202220,Normal,IP,4,11,129
+202220,Normal,IP,4,12,96
+202220,Normal,IP,4,14,135
+202220,Normal,IP,4,15,89
+202220,Normal,IP,4,17,112
+202220,Normal,IP,5,9,113
+202220,Normal,IP,5,11,151
+202220,Normal,IP,5,12,3
+202220,Normal,IP,5,14,114
+202220,Normal,IP,5,15,110
+202220,Normal,IP,5,17,108
+202220,Normal pico,IP,1,9,4
+202220,Normal pico,IP,1,11,7
+202220,Normal pico,IP,1,12,6
+202220,Normal pico,IP,1,14,8
+202220,Normal pico,IP,1,15,9
+202220,Normal pico,IP,1,17,19
+202220,Normal pico,IP,2,9,40
+202220,Normal pico,IP,2,11,30
+202220,Normal pico,IP,2,12,34
+202220,Normal pico,IP,2,15,34
+202220,Normal pico,IP,3,8,18
+202220,Normal pico,IP,3,9,27
+202220,Normal pico,IP,3,11,22
+202220,Normal pico,IP,3,14,22
+202220,Normal pico,IP,3,15,21
+202220,Normal pico,IP,4,8,13
+202220,Normal pico,IP,4,9,31
+202220,Normal pico,IP,4,11,28
+202220,Normal pico,IP,4,12,18
+202220,Normal pico,IP,4,14,27
+202220,Normal pico,IP,4,15,27
+202220,Normal pico,IP,4,17,29
+202220,Normal pico,IP,5,8,24
+202220,Normal pico,IP,5,9,41
+202220,Normal pico,IP,5,11,35
+202220,Normal pico,IP,5,14,37
+202220,Normal pico,IP,5,15,30
+202220,Normal pico,IP,5,17,30
+202310,Entrevistas,Entrevista,3,10,2
+202310,Entrevistas,Entrevista,3,11,5
+202310,Entrevistas,Entrevista,3,13,1
+202310,Entrevistas,Entrevista,3,15,3
+202310,Entrevistas,Entrevista,3,16,2
+202310,Entrevistas,Entrevista,4,8,3
+202310,Entrevistas,Entrevista,4,9,4
+202310,Entrevistas,Entrevista,4,10,3
+202310,Entrevistas,Entrevista,4,11,8
+202310,Entrevistas,Entrevista,4,12,4
+202310,Entrevistas,Entrevista,4,13,2
+202310,Entrevistas,Entrevista,4,14,5
+202310,Entrevistas,Entrevista,4,15,4
+202310,Entrevistas,Entrevista,4,16,4
+202310,Entrevistas,Entrevista,4,17,2
+202310,Entrevistas,Entrevista,5,8,2
+202310,Entrevistas,Entrevista,5,9,3
+202310,Entrevistas,Entrevista,5,10,4
+202310,Entrevistas,Entrevista,5,11,3
+202310,Entrevistas,Entrevista,5,12,4
+202310,Entrevistas,Entrevista,5,13,1
+202310,Entrevistas,Entrevista,5,14,4
+202310,Entrevistas,Entrevista,5,15,3
+202310,Entrevistas,Entrevista,5,16,1
+202310,Entrevistas,Entrevista,5,17,1
+202310,Express,EDA,1,12,18
+202310,Express,EDA,1,13,32
+202310,Express,EDA,1,15,1
+202310,Express,EDA,1,16,22
+202310,Express,EDA,2,9,37
+202310,Express,EDA,2,12,2
+202310,Express,EDA,2,13,40
+202310,Express,EDA,3,9,11
+202310,Express,EDA,3,10,16
+202310,Express,EDA,3,12,15
+202310,Express,EDA,3,16,4
+202310,Express,EDA,4,9,11
+202310,Express,EDA,4,12,9
+202310,Express,EDA,4,13,13
+202310,Express,EDA,4,15,10
+202310,Express,EDA,4,16,6
+202310,Express,EDA,5,9,8
+202310,Express,EDA,5,10,14
+202310,Express,EDA,5,12,10
+202310,Express,EDA,5,13,10
+202310,Express,EDA,5,15,25
+202310,Express,EDA,5,16,1
+202310,Express,IP,1,10,55
+202310,Express,IP,1,12,69
+202310,Express,IP,1,13,35
+202310,Express,IP,1,15,71
+202310,Express,IP,1,16,49
+202310,Express,IP,2,9,55
+202310,Express,IP,2,10,74
+202310,Express,IP,2,12,60
+202310,Express,IP,2,13,48
+202310,Express,IP,2,15,67
+202310,Express,IP,2,16,34
+202310,Express,IP,3,9,35
+202310,Express,IP,3,10,71
+202310,Express,IP,3,12,65
+202310,Express,IP,3,13,51
+202310,Express,IP,3,15,58
+202310,Express,IP,3,16,37
+202310,Express,IP,4,9,11
+202310,Express,IP,4,10,67
+202310,Express,IP,4,12,49
+202310,Express,IP,4,13,53
+202310,Express,IP,4,15,64
+202310,Express,IP,4,16,72
+202310,Express,IP,5,9,77
+202310,Express,IP,5,10,69
+202310,Express,IP,5,12,61
+202310,Express,IP,5,13,40
+202310,Express,IP,5,15,68
+202310,Express,IP,5,16,74
+202310,Normal,EDA,1,11,22
+202310,Normal,EDA,1,12,21
+202310,Normal,EDA,1,14,22
+202310,Normal,EDA,1,15,27
+202310,Normal,EDA,1,17,25
+202310,Normal,EDA,2,8,39
+202310,Normal,EDA,2,9,26
+202310,Normal,EDA,2,11,33
+202310,Normal,EDA,2,12,39
+202310,Normal,EDA,2,17,42
+202310,Normal,EDA,3,8,28
+202310,Normal,EDA,3,9,17
+202310,Normal,EDA,3,11,32
+202310,Normal,EDA,3,12,12
+202310,Normal,EDA,3,17,8
+202310,Normal,EDA,4,8,12
+202310,Normal,EDA,4,9,29
+202310,Normal,EDA,4,11,10
+202310,Normal,EDA,4,12,28
+202310,Normal,EDA,4,14,19
+202310,Normal,EDA,4,15,12
+202310,Normal,EDA,4,17,15
+202310,Normal,EDA,5,8,24
+202310,Normal,EDA,5,9,19
+202310,Normal,EDA,5,11,19
+202310,Normal,EDA,5,12,19
+202310,Normal,EDA,5,14,15
+202310,Normal,EDA,5,15,2
+202310,Normal,EDA,5,17,11
+202310,Normal,IP,1,8,28
+202310,Normal,IP,1,10,15
+202310,Normal,IP,1,11,61
+202310,Normal,IP,1,12,43
+202310,Normal,IP,1,14,53
+202310,Normal,IP,1,15,57
+202310,Normal,IP,1,17,50
+202310,Normal,IP,2,8,55
+202310,Normal,IP,2,9,85
+202310,Normal,IP,2,11,89
+202310,Normal,IP,2,12,27
+202310,Normal,IP,2,14,88
+202310,Normal,IP,2,15,58
+202310,Normal,IP,2,17,43
+202310,Normal,IP,3,8,5
+202310,Normal,IP,3,9,32
+202310,Normal,IP,3,11,70
+202310,Normal,IP,3,12,73
+202310,Normal,IP,3,14,79
+202310,Normal,IP,3,15,74
+202310,Normal,IP,3,17,32
+202310,Normal,IP,4,9,72
+202310,Normal,IP,4,11,76
+202310,Normal,IP,4,12,58
+202310,Normal,IP,4,14,86
+202310,Normal,IP,4,15,83
+202310,Normal,IP,4,17,50
+202310,Normal,IP,5,8,67
+202310,Normal,IP,5,9,89
+202310,Normal,IP,5,11,88
+202310,Normal,IP,5,12,59
+202310,Normal,IP,5,14,51
+202310,Normal,IP,5,15,80
+202310,Normal,IP,5,17,70
+202310,Normal pico,IP,1,8,28
+202310,Normal pico,IP,1,11,22
+202310,Normal pico,IP,1,12,24
+202310,Normal pico,IP,1,14,27
+202310,Normal pico,IP,1,15,26
+202310,Normal pico,IP,1,17,29
+202310,Normal pico,IP,2,8,17
+202310,Normal pico,IP,2,9,25
+202310,Normal pico,IP,2,11,21
+202310,Normal pico,IP,2,12,21
+202310,Normal pico,IP,2,14,23
+202310,Normal pico,IP,2,15,24
+202310,Normal pico,IP,2,17,19
+202310,Normal pico,IP,3,8,16
+202310,Normal pico,IP,3,9,18
+202310,Normal pico,IP,3,11,27
+202310,Normal pico,IP,3,12,26
+202310,Normal pico,IP,3,14,20
+202310,Normal pico,IP,3,15,22
+202310,Normal pico,IP,3,17,9
+202310,Normal pico,IP,4,8,9
+202310,Normal pico,IP,4,9,25
+202310,Normal pico,IP,4,11,21
+202310,Normal pico,IP,4,12,20
+202310,Normal pico,IP,4,14,29
+202310,Normal pico,IP,4,15,21
+202310,Normal pico,IP,4,17,26
+202310,Normal pico,IP,5,8,12
+202310,Normal pico,IP,5,9,23
+202310,Normal pico,IP,5,11,35
+202310,Normal pico,IP,5,12,30
+202310,Normal pico,IP,5,14,31
+202310,Normal pico,IP,5,15,31
+202310,Normal pico,IP,5,17,25
+202319,Normal,EDA,2,8,5
+202319,Normal,EDA,2,9,2
+202319,Normal,EDA,3,8,9
+202319,Normal,EDA,3,9,1
+202319,Normal,EDA,4,8,4
+202319,Normal,EDA,4,9,3
+202319,Normal,EDA,5,8,8
+202319,Normal,EDA,5,9,5
+202319,Normal,IP,2,8,2
+202319,Normal,IP,2,9,8
+202319,Normal,IP,2,12,9
+202319,Normal,IP,2,13,9
+202319,Normal,IP,2,14,7
+202319,Normal,IP,2,15,5
+202319,Normal,IP,3,8,3
+202319,Normal,IP,3,9,12
+202319,Normal,IP,3,12,11
+202319,Normal,IP,3,13,10
+202319,Normal,IP,3,14,10
+202319,Normal,IP,3,15,12
+202319,Normal,IP,4,8,6
+202319,Normal,IP,4,9,7
+202319,Normal,IP,4,12,8
+202319,Normal,IP,4,13,5
+202319,Normal,IP,4,14,10
+202319,Normal,IP,4,15,7
+202319,Normal,IP,5,8,3
+202319,Normal,IP,5,9,7
+202319,Normal,IP,5,12,9
+202319,Normal,IP,5,13,8
+202319,Normal,IP,5,14,7
+202319,Normal,IP,5,15,7
+202320,Entrevistas,Entrevista,3,8,2
+202320,Entrevistas,Entrevista,3,9,3
+202320,Entrevistas,Entrevista,3,10,1
+202320,Entrevistas,Entrevista,3,11,2
+202320,Entrevistas,Entrevista,3,12,4
+202320,Entrevistas,Entrevista,3,13,5
+202320,Entrevistas,Entrevista,3,14,2
+202320,Entrevistas,Entrevista,3,15,3
+202320,Entrevistas,Entrevista,3,16,1
+202320,Entrevistas,Entrevista,3,17,4
+202320,Entrevistas,Entrevista,4,8,2
+202320,Entrevistas,Entrevista,4,9,2
+202320,Entrevistas,Entrevista,4,10,1
+202320,Entrevistas,Entrevista,4,11,3
+202320,Entrevistas,Entrevista,4,12,2
+202320,Entrevistas,Entrevista,4,13,3
+202320,Entrevistas,Entrevista,4,14,1
+202320,Entrevistas,Entrevista,4,15,5
+202320,Entrevistas,Entrevista,4,16,1
+202320,Entrevistas,Entrevista,4,17,1
+202320,Entrevistas,Entrevista,5,9,4
+202320,Entrevistas,Entrevista,5,10,3
+202320,Entrevistas,Entrevista,5,11,2
+202320,Entrevistas,Entrevista,5,12,1
+202320,Entrevistas,Entrevista,5,13,1
+202320,Entrevistas,Entrevista,5,14,2
+202320,Entrevistas,Entrevista,5,15,1
+202320,Entrevistas,Entrevista,5,16,1
+202320,Entrevistas,Entrevista,5,17,3
+202320,Express,EDA,1,9,10
+202320,Express,EDA,1,10,21
+202320,Express,EDA,1,12,28
+202320,Express,EDA,1,13,22
+202320,Express,EDA,1,15,12
+202320,Express,EDA,1,16,20
+202320,Express,EDA,2,10,13
+202320,Express,EDA,2,12,33
+202320,Express,EDA,3,10,31
+202320,Express,EDA,3,12,33
+202320,Express,EDA,3,13,26
+202320,Express,EDA,4,9,4
+202320,Express,EDA,4,10,20
+202320,Express,EDA,4,12,30
+202320,Express,EDA,4,13,8
+202320,Express,EDA,5,10,28
+202320,Express,EDA,5,12,13
+202320,Express,EDA,5,13,24
+202320,Express,EDA,5,16,19
+202320,Express,IP,1,9,37
+202320,Express,IP,1,10,45
+202320,Express,IP,1,12,52
+202320,Express,IP,1,13,32
+202320,Express,IP,1,15,47
+202320,Express,IP,1,16,34
+202320,Express,IP,2,9,72
+202320,Express,IP,2,10,75
+202320,Express,IP,2,12,22
+202320,Express,IP,2,13,44
+202320,Express,IP,2,15,87
+202320,Express,IP,2,16,70
+202320,Express,IP,3,9,90
+202320,Express,IP,3,10,83
+202320,Express,IP,3,12,84
+202320,Express,IP,3,13,65
+202320,Express,IP,3,15,52
+202320,Express,IP,3,16,51
+202320,Express,IP,4,9,61
+202320,Express,IP,4,10,76
+202320,Express,IP,4,12,48
+202320,Express,IP,4,13,59
+202320,Express,IP,4,15,67
+202320,Express,IP,4,16,73
+202320,Express,IP,5,9,58
+202320,Express,IP,5,10,82
+202320,Express,IP,5,12,46
+202320,Express,IP,5,13,29
+202320,Express,IP,5,15,72
+202320,Express,IP,5,16,56
+202320,Normal,EDA,1,9,35
+202320,Normal,EDA,1,11,30
+202320,Normal,EDA,1,12,18
+202320,Normal,EDA,1,14,30
+202320,Normal,EDA,1,15,26
+202320,Normal,EDA,1,17,10
+202320,Normal,EDA,2,8,10
+202320,Normal,EDA,2,9,50
+202320,Normal,EDA,2,11,49
+202320,Normal,EDA,2,12,14
+202320,Normal,EDA,2,14,55
+202320,Normal,EDA,2,15,39
+202320,Normal,EDA,2,17,25
+202320,Normal,EDA,3,8,21
+202320,Normal,EDA,3,11,55
+202320,Normal,EDA,3,12,43
+202320,Normal,EDA,3,14,23
+202320,Normal,EDA,3,15,2
+202320,Normal,EDA,4,8,19
+202320,Normal,EDA,4,9,41
+202320,Normal,EDA,4,11,43
+202320,Normal,EDA,4,12,12
+202320,Normal,EDA,4,17,3
+202320,Normal,EDA,5,11,52
+202320,Normal,EDA,5,12,33
+202320,Normal,EDA,5,14,43
+202320,Normal,EDA,5,15,25
+202320,Normal,IP,1,8,34
+202320,Normal,IP,1,9,33
+202320,Normal,IP,1,11,39
+202320,Normal,IP,1,12,34
+202320,Normal,IP,1,14,33
+202320,Normal,IP,1,15,34
+202320,Normal,IP,1,17,37
+202320,Normal,IP,2,8,60
+202320,Normal,IP,2,9,63
+202320,Normal,IP,2,11,51
+202320,Normal,IP,2,12,27
+202320,Normal,IP,2,14,45
+202320,Normal,IP,2,15,47
+202320,Normal,IP,2,17,24
+202320,Normal,IP,3,8,69
+202320,Normal,IP,3,11,79
+202320,Normal,IP,3,12,52
+202320,Normal,IP,3,14,70
+202320,Normal,IP,3,15,50
+202320,Normal,IP,3,17,71
+202320,Normal,IP,4,8,52
+202320,Normal,IP,4,9,25
+202320,Normal,IP,4,11,48
+202320,Normal,IP,4,12,42
+202320,Normal,IP,4,14,74
+202320,Normal,IP,4,15,52
+202320,Normal,IP,4,17,56
+202320,Normal,IP,5,8,50
+202320,Normal,IP,5,11,71
+202320,Normal,IP,5,12,62
+202320,Normal,IP,5,14,59
+202320,Normal,IP,5,15,60
+202320,Normal,IP,5,17,52
+202320,Normal pico,IP,1,8,16
+202320,Normal pico,IP,1,9,14
+202320,Normal pico,IP,1,11,19
+202320,Normal pico,IP,1,12,21
+202320,Normal pico,IP,1,14,14
+202320,Normal pico,IP,1,15,23
+202320,Normal pico,IP,1,17,14
+202320,Normal pico,IP,2,8,28
+202320,Normal pico,IP,2,9,31
+202320,Normal pico,IP,2,11,29
+202320,Normal pico,IP,2,12,19
+202320,Normal pico,IP,2,14,26
+202320,Normal pico,IP,2,15,28
+202320,Normal pico,IP,2,17,33
+202320,Normal pico,IP,3,8,25
+202320,Normal pico,IP,3,11,31
+202320,Normal pico,IP,3,12,29
+202320,Normal pico,IP,3,14,22
+202320,Normal pico,IP,3,15,19
+202320,Normal pico,IP,3,17,26
+202320,Normal pico,IP,4,8,23
+202320,Normal pico,IP,4,9,24
+202320,Normal pico,IP,4,11,27
+202320,Normal pico,IP,4,12,15
+202320,Normal pico,IP,4,14,21
+202320,Normal pico,IP,4,15,27
+202320,Normal pico,IP,4,17,14
+202320,Normal pico,IP,5,8,17
+202320,Normal pico,IP,5,11,27
+202320,Normal pico,IP,5,12,14
+202320,Normal pico,IP,5,14,20
+202320,Normal pico,IP,5,15,16
+202320,Normal pico,IP,5,17,27
+202410,Entrevistas,Entrevista,1,10,1
+202410,Entrevistas,Entrevista,1,11,1
+202410,Entrevistas,Entrevista,1,13,1
+202410,Entrevistas,Entrevista,1,17,2
+202410,Entrevistas,Entrevista,4,9,1
+202410,Entrevistas,Entrevista,4,12,3
+202410,Entrevistas,Entrevista,4,13,6
+202410,Entrevistas,Entrevista,4,14,5
+202410,Entrevistas,Entrevista,4,15,12
+202410,Entrevistas,Entrevista,4,16,7
+202410,Entrevistas,Entrevista,4,17,7
+202410,Entrevistas,Entrevista,5,8,1
+202410,Entrevistas,Entrevista,5,9,2
+202410,Entrevistas,Entrevista,5,11,2
+202410,Entrevistas,Entrevista,5,12,3
+202410,Entrevistas,Entrevista,5,13,4
+202410,Entrevistas,Entrevista,5,14,2
+202410,Entrevistas,Entrevista,5,17,2
+202410,Express,EDA,1,10,16
+202410,Express,EDA,1,13,12
+202410,Express,EDA,3,10,8
+202410,Express,EDA,3,12,9
+202410,Express,EDA,3,13,9
+202410,Express,EDA,3,15,5
+202410,Express,EDA,5,10,21
+202410,Express,EDA,5,12,20
+202410,Express,IP,1,9,41
+202410,Express,IP,1,10,37
+202410,Express,IP,1,12,59
+202410,Express,IP,1,13,51
+202410,Express,IP,1,15,63
+202410,Express,IP,1,16,58
+202410,Express,IP,2,9,78
+202410,Express,IP,2,10,84
+202410,Express,IP,2,12,60
+202410,Express,IP,2,13,44
+202410,Express,IP,2,15,80
+202410,Express,IP,2,16,72
+202410,Express,IP,3,9,42
+202410,Express,IP,3,10,65
+202410,Express,IP,3,12,75
+202410,Express,IP,3,13,46
+202410,Express,IP,3,15,41
+202410,Express,IP,3,16,38
+202410,Express,IP,4,9,43
+202410,Express,IP,4,10,44
+202410,Express,IP,4,12,57
+202410,Express,IP,4,13,13
+202410,Express,IP,4,15,55
+202410,Express,IP,4,16,40
+202410,Express,IP,5,9,20
+202410,Express,IP,5,10,88
+202410,Express,IP,5,12,85
+202410,Express,IP,5,13,20
+202410,Express,IP,5,15,24
+202410,Express,IP,5,16,36
+202410,Normal,EDA,1,9,16
+202410,Normal,EDA,1,11,15
+202410,Normal,EDA,1,12,15
+202410,Normal,EDA,1,14,20
+202410,Normal,EDA,1,15,45
+202410,Normal,EDA,1,17,30
+202410,Normal,EDA,2,11,41
+202410,Normal,EDA,2,12,34
+202410,Normal,EDA,2,15,16
+202410,Normal,EDA,2,17,33
+202410,Normal,EDA,3,8,24
+202410,Normal,EDA,3,9,13
+202410,Normal,EDA,3,11,12
+202410,Normal,EDA,3,12,39
+202410,Normal,EDA,3,14,27
+202410,Normal,EDA,3,15,30
+202410,Normal,EDA,3,17,28
+202410,Normal,EDA,4,11,29
+202410,Normal,EDA,4,15,15
+202410,Normal,EDA,4,17,29
+202410,Normal,EDA,5,9,30
+202410,Normal,EDA,5,11,35
+202410,Normal,EDA,5,12,31
+202410,Normal,EDA,5,14,25
+202410,Normal,IP,1,8,28
+202410,Normal,IP,1,9,16
+202410,Normal,IP,1,11,55
+202410,Normal,IP,1,12,49
+202410,Normal,IP,1,14,55
+202410,Normal,IP,1,15,56
+202410,Normal,IP,1,17,23
+202410,Normal,IP,2,8,73
+202410,Normal,IP,2,11,89
+202410,Normal,IP,2,12,64
+202410,Normal,IP,2,14,71
+202410,Normal,IP,2,15,55
+202410,Normal,IP,2,17,35
+202410,Normal,IP,3,8,43
+202410,Normal,IP,3,9,84
+202410,Normal,IP,3,11,84
+202410,Normal,IP,3,12,59
+202410,Normal,IP,3,14,75
+202410,Normal,IP,3,15,44
+202410,Normal,IP,3,17,27
+202410,Normal,IP,4,8,30
+202410,Normal,IP,4,9,41
+202410,Normal,IP,4,11,86
+202410,Normal,IP,4,12,27
+202410,Normal,IP,4,14,69
+202410,Normal,IP,4,15,16
+202410,Normal,IP,4,17,57
+202410,Normal,IP,5,8,30
+202410,Normal,IP,5,9,68
+202410,Normal,IP,5,11,105
+202410,Normal,IP,5,12,64
+202410,Normal,IP,5,14,15
+202410,Normal,IP,5,15,39
+202410,Normal,IP,5,17,29
+202410,Normal pico,IP,1,8,19
+202410,Normal pico,IP,1,9,26
+202410,Normal pico,IP,1,11,39
+202410,Normal pico,IP,1,12,30
+202410,Normal pico,IP,1,14,36
+202410,Normal pico,IP,1,15,35
+202410,Normal pico,IP,1,17,27
+202410,Normal pico,IP,2,8,32
+202410,Normal pico,IP,2,11,34
+202410,Normal pico,IP,2,12,25
+202410,Normal pico,IP,2,14,27
+202410,Normal pico,IP,2,15,33
+202410,Normal pico,IP,2,17,29
+202410,Normal pico,IP,3,8,25
+202410,Normal pico,IP,3,9,28
+202410,Normal pico,IP,3,11,32
+202410,Normal pico,IP,3,12,23
+202410,Normal pico,IP,3,14,19
+202410,Normal pico,IP,3,15,25
+202410,Normal pico,IP,3,17,19
+202410,Normal pico,IP,4,8,15
+202410,Normal pico,IP,4,9,24
+202410,Normal pico,IP,4,11,19
+202410,Normal pico,IP,4,12,25
+202410,Normal pico,IP,4,14,27
+202410,Normal pico,IP,4,15,25
+202410,Normal pico,IP,4,17,18
+202410,Normal pico,IP,5,8,24
+202410,Normal pico,IP,5,9,30
+202410,Normal pico,IP,5,11,30
+202410,Normal pico,IP,5,12,16
+202410,Normal pico,IP,5,14,15
+202410,Normal pico,IP,5,15,28
+202410,Normal pico,IP,5,17,17
+202419,Normal,EDA,2,10,9
+202419,Normal,EDA,3,8,8
+202419,Normal,EDA,3,9,8
+202419,Normal,EDA,3,10,6
+202419,Normal,EDA,4,10,7
+202419,Normal,EDA,5,8,8
+202419,Normal,EDA,5,9,10
+202419,Normal,EDA,5,10,9
+202419,Normal,IP,2,10,13
+202419,Normal,IP,2,14,3
+202419,Normal,IP,3,8,5
+202419,Normal,IP,3,9,5
+202419,Normal,IP,3,10,16
+202419,Normal,IP,4,9,2
+202419,Normal,IP,4,10,9
+202419,Normal,IP,4,14,3
+202419,Normal,IP,5,8,2
+202419,Normal,IP,5,9,5
+202419,Normal,IP,5,10,10
+202419,Sala,Sala,2,12,7
+202419,Sala,Sala,2,13,2
+202420,Entrevistas,Entrevista,1,11,1
+202420,Entrevistas,Entrevista,1,12,1
+202420,Entrevistas,Entrevista,1,13,5
+202420,Entrevistas,Entrevista,1,14,6
+202420,Entrevistas,Entrevista,1,15,2
+202420,Entrevistas,Entrevista,1,16,3
+202420,Entrevistas,Entrevista,1,17,2
+202420,Entrevistas,Entrevista,2,8,6
+202420,Entrevistas,Entrevista,2,9,2
+202420,Entrevistas,Entrevista,2,10,4
+202420,Entrevistas,Entrevista,2,11,1
+202420,Entrevistas,Entrevista,2,12,3
+202420,Entrevistas,Entrevista,2,13,1
+202420,Entrevistas,Entrevista,2,15,1
+202420,Entrevistas,Entrevista,2,16,1
+202420,Entrevistas,Entrevista,2,17,2
+202420,Entrevistas,Entrevista,4,8,3
+202420,Entrevistas,Entrevista,4,9,1
+202420,Entrevistas,Entrevista,4,10,1
+202420,Entrevistas,Entrevista,4,11,4
+202420,Entrevistas,Entrevista,4,12,2
+202420,Entrevistas,Entrevista,4,13,1
+202420,Entrevistas,Entrevista,4,14,1
+202420,Entrevistas,Entrevista,4,15,3
+202420,Entrevistas,Entrevista,4,16,3
+202420,Entrevistas,Entrevista,4,17,1
+202420,Entrevistas,Entrevista,5,9,1
+202420,Entrevistas,Entrevista,5,10,1
+202420,Entrevistas,Entrevista,5,11,1
+202420,Entrevistas,Entrevista,5,12,2
+202420,Entrevistas,Entrevista,5,15,1
+202420,Entrevistas,Entrevista,5,16,1
+202420,Entrevistas,Entrevista,5,17,4
+202420,Express,EDA,1,12,17
+202420,Express,EDA,1,13,1
+202420,Express,EDA,1,15,8
+202420,Express,EDA,2,12,1
+202420,Express,EDA,2,13,3
+202420,Express,EDA,5,13,10
+202420,Express,IP,1,9,43
+202420,Express,IP,1,10,37
+202420,Express,IP,1,12,64
+202420,Express,IP,1,13,41
+202420,Express,IP,1,15,27
+202420,Express,IP,1,16,41
+202420,Express,IP,2,9,58
+202420,Express,IP,2,10,60
+202420,Express,IP,2,12,74
+202420,Express,IP,2,13,48
+202420,Express,IP,2,15,63
+202420,Express,IP,2,16,66
+202420,Express,IP,3,9,25
+202420,Express,IP,3,10,68
+202420,Express,IP,3,12,38
+202420,Express,IP,3,13,64
+202420,Express,IP,3,15,89
+202420,Express,IP,3,16,35
+202420,Express,IP,4,9,66
+202420,Express,IP,4,10,50
+202420,Express,IP,4,12,97
+202420,Express,IP,4,15,73
+202420,Express,IP,4,16,52
+202420,Express,IP,5,9,86
+202420,Express,IP,5,10,105
+202420,Express,IP,5,12,60
+202420,Express,IP,5,13,52
+202420,Express,IP,5,15,8
+202420,Express,IP,5,16,20
+202420,Normal,EDA,1,9,25
+202420,Normal,EDA,1,11,28
+202420,Normal,EDA,1,14,21
+202420,Normal,EDA,2,8,29
+202420,Normal,EDA,2,11,30
+202420,Normal,EDA,2,12,2
+202420,Normal,EDA,3,11,39
+202420,Normal,EDA,3,12,31
+202420,Normal,EDA,3,15,24
+202420,Normal,EDA,4,14,20
+202420,Normal,EDA,5,11,19
+202420,Normal,EDA,5,14,26
+202420,Normal,IP,1,8,37
+202420,Normal,IP,1,9,27
+202420,Normal,IP,1,11,35
+202420,Normal,IP,1,12,43
+202420,Normal,IP,1,14,41
+202420,Normal,IP,1,15,46
+202420,Normal,IP,1,17,37
+202420,Normal,IP,2,8,59
+202420,Normal,IP,2,9,74
+202420,Normal,IP,2,11,64
+202420,Normal,IP,2,12,33
+202420,Normal,IP,2,14,72
+202420,Normal,IP,2,15,76
+202420,Normal,IP,2,17,23
+202420,Normal,IP,3,8,56
+202420,Normal,IP,3,9,83
+202420,Normal,IP,3,11,74
+202420,Normal,IP,3,12,70
+202420,Normal,IP,3,14,103
+202420,Normal,IP,3,15,75
+202420,Normal,IP,3,17,52
+202420,Normal,IP,4,8,102
+202420,Normal,IP,4,9,82
+202420,Normal,IP,4,11,124
+202420,Normal,IP,4,14,53
+202420,Normal,IP,4,15,65
+202420,Normal,IP,4,17,24
+202420,Normal,IP,5,8,83
+202420,Normal,IP,5,9,116
+202420,Normal,IP,5,11,82
+202420,Normal,IP,5,12,71
+202420,Normal,IP,5,14,38
+202420,Normal,IP,5,15,38
+202420,Normal,IP,5,17,23
+202420,Normal pico,IP,1,9,18
+202420,Normal pico,IP,1,11,25
+202420,Normal pico,IP,1,12,11
+202420,Normal pico,IP,1,14,15
+202420,Normal pico,IP,1,15,22
+202420,Normal pico,IP,1,17,26
+202420,Normal pico,IP,2,8,31
+202420,Normal pico,IP,2,9,41
+202420,Normal pico,IP,2,11,47
+202420,Normal pico,IP,2,12,20
+202420,Normal pico,IP,2,14,33
+202420,Normal pico,IP,2,15,20
+202420,Normal pico,IP,2,17,26
+202420,Normal pico,IP,3,9,31
+202420,Normal pico,IP,3,11,31
+202420,Normal pico,IP,3,12,17
+202420,Normal pico,IP,3,14,22
+202420,Normal pico,IP,3,15,15
+202420,Normal pico,IP,3,17,24
+202420,Normal pico,IP,4,8,14
+202420,Normal pico,IP,4,9,23
+202420,Normal pico,IP,4,11,35
+202420,Normal pico,IP,4,14,30
+202420,Normal pico,IP,4,15,12
+202420,Normal pico,IP,4,17,28
+202420,Normal pico,IP,5,8,14
+202420,Normal pico,IP,5,9,25
+202420,Normal pico,IP,5,11,26
+202420,Normal pico,IP,5,12,14
+202420,Normal pico,IP,5,14,19
+202420,Normal pico,IP,5,15,16
+202420,Normal pico,IP,5,17,26
+202420,Sala,Sala,1,12,3
+202420,Sala,Sala,1,13,1
+202420,Sala,Sala,2,16,2
+202420,Sala,Sala,3,9,2
+202420,Sala,Sala,3,10,1
+202420,Sala,Sala,3,12,1
+202420,Sala,Sala,3,13,1
+202420,Sala,Sala,3,17,2
+202420,Sala,Sala,4,11,1
+202420,Sala,Sala,4,12,2
+202510,Entrevistas,Entrevista,1,11,1
+202510,Entrevistas,Entrevista,1,12,3
+202510,Entrevistas,Entrevista,1,13,1
+202510,Entrevistas,Entrevista,1,14,2
+202510,Entrevistas,Entrevista,1,15,3
+202510,Entrevistas,Entrevista,1,16,3
+202510,Entrevistas,Entrevista,2,8,2
+202510,Entrevistas,Entrevista,2,9,1
+202510,Entrevistas,Entrevista,2,10,2
+202510,Entrevistas,Entrevista,2,11,1
+202510,Entrevistas,Entrevista,2,14,1
+202510,Entrevistas,Entrevista,3,11,3
+202510,Entrevistas,Entrevista,3,12,2
+202510,Entrevistas,Entrevista,4,9,1
+202510,Entrevistas,Entrevista,4,11,2
+202510,Entrevistas,Entrevista,5,10,1
+202510,Entrevistas,Entrevista,5,13,1
+202510,Entrevistas,Entrevista,5,14,1
+202510,Express,EDA,1,12,1
+202510,Express,EDA,1,13,9
+202510,Express,EDA,1,15,8
+202510,Express,EDA,1,16,14
+202510,Express,EDA,2,10,17
+202510,Express,EDA,2,12,16
+202510,Express,EDA,2,16,10
+202510,Express,EDA,3,15,13
+202510,Express,EDA,4,12,19
+202510,Express,EDA,4,16,17
+202510,Express,IP,1,9,53
+202510,Express,IP,1,12,40
+202510,Express,IP,1,13,35
+202510,Express,IP,1,15,17
+202510,Express,IP,1,16,41
+202510,Express,IP,2,9,31
+202510,Express,IP,2,10,15
+202510,Express,IP,2,12,24
+202510,Express,IP,2,13,20
+202510,Express,IP,2,15,20
+202510,Express,IP,2,16,41
+202510,Express,IP,3,9,35
+202510,Express,IP,3,10,32
+202510,Express,IP,3,12,40
+202510,Express,IP,3,13,34
+202510,Express,IP,3,15,32
+202510,Express,IP,3,16,22
+202510,Express,IP,4,9,36
+202510,Express,IP,4,10,33
+202510,Express,IP,4,12,26
+202510,Express,IP,4,13,43
+202510,Express,IP,4,15,27
+202510,Express,IP,4,16,37
+202510,Express,IP,5,9,50
+202510,Express,IP,5,10,43
+202510,Express,IP,5,12,38
+202510,Express,IP,5,13,40
+202510,Express,IP,5,15,13
+202510,Express,IP,5,16,20
+202510,Express,IP Honores,1,9,1
+202510,Express,IP Honores,1,10,1
+202510,Express,IP Honores,3,10,1
+202510,Normal,EDA,1,11,20
+202510,Normal,EDA,1,12,1
+202510,Normal,EDA,1,14,15
+202510,Normal,EDA,1,15,20
+202510,Normal,EDA,2,8,25
+202510,Normal,EDA,2,11,31
+202510,Normal,EDA,2,15,14
+202510,Normal,EDA,2,17,9
+202510,Normal,EDA,3,15,13
+202510,Normal,EDA,4,11,20
+202510,Normal,EDA,4,15,23
+202510,Normal,EDA,4,17,8
+202510,Normal,IP,1,8,34
+202510,Normal,IP,1,11,55
+202510,Normal,IP,1,12,45
+202510,Normal,IP,1,14,50
+202510,Normal,IP,1,15,32
+202510,Normal,IP,1,17,44
+202510,Normal,IP,2,8,22
+202510,Normal,IP,2,9,80
+202510,Normal,IP,2,11,61
+202510,Normal,IP,2,12,48
+202510,Normal,IP,2,14,56
+202510,Normal,IP,2,15,56
+202510,Normal,IP,2,17,32
+202510,Normal,IP,3,8,59
+202510,Normal,IP,3,9,47
+202510,Normal,IP,3,11,94
+202510,Normal,IP,3,12,43
+202510,Normal,IP,3,14,59
+202510,Normal,IP,3,15,51
+202510,Normal,IP,3,17,39
+202510,Normal,IP,4,8,42
+202510,Normal,IP,4,9,55
+202510,Normal,IP,4,11,63
+202510,Normal,IP,4,12,48
+202510,Normal,IP,4,14,47
+202510,Normal,IP,4,15,48
+202510,Normal,IP,4,17,30
+202510,Normal,IP,5,8,44
+202510,Normal,IP,5,9,87
+202510,Normal,IP,5,11,59
+202510,Normal,IP,5,12,67
+202510,Normal,IP,5,14,69
+202510,Normal,IP,5,15,19
+202510,Normal,IP,5,17,22
+202510,Normal pico,IP,1,8,11
+202510,Normal pico,IP,1,11,18
+202510,Normal pico,IP,1,12,19
+202510,Normal pico,IP,1,14,16
+202510,Normal pico,IP,1,15,15
+202510,Normal pico,IP,1,17,30
+202510,Normal pico,IP,2,8,15
+202510,Normal pico,IP,2,11,13
+202510,Normal pico,IP,2,12,8
+202510,Normal pico,IP,2,14,9
+202510,Normal pico,IP,2,15,22
+202510,Normal pico,IP,2,17,19
+202510,Normal pico,IP,3,8,17
+202510,Normal pico,IP,3,9,14
+202510,Normal pico,IP,3,11,9
+202510,Normal pico,IP,3,12,4
+202510,Normal pico,IP,3,14,14
+202510,Normal pico,IP,3,15,7
+202510,Normal pico,IP,3,17,25
+202510,Normal pico,IP,4,8,2
+202510,Normal pico,IP,4,11,15
+202510,Normal pico,IP,4,12,11
+202510,Normal pico,IP,4,14,8
+202510,Normal pico,IP,4,15,9
+202510,Normal pico,IP,4,17,19
+202510,Normal pico,IP,5,8,10
+202510,Normal pico,IP,5,9,11
+202510,Normal pico,IP,5,11,18
+202510,Normal pico,IP,5,12,12
+202510,Normal pico,IP,5,14,11
+202510,Normal pico,IP,5,15,13
+202510,Normal pico,IP,5,17,19
+202510,Normal pico,IP Honores,1,8,1
+202510,Normal pico,IP Honores,3,11,2
+202510,Normal pico,IP Honores,5,14,1
+202510,Sala,Sala,4,11,3
+202519,Normal,EDA,3,10,1
+202519,Normal,EDA,4,11,1
+202519,Normal,EDA,5,9,1
+202519,Normal,IP,2,11,4
+202519,Normal,IP,2,14,3
+202519,Normal,IP,2,15,3
+202519,Normal,IP,3,11,3
+202519,Normal,IP,3,14,5
+202519,Normal,IP,4,10,2
+202519,Normal,IP,4,14,4
+202519,Normal,IP,4,15,5
+202519,Normal,IP,5,9,2
+202519,Normal,IP,5,10,3
+202519,Normal,IP,5,11,1
+202520,Entrevistas,Entrevista,1,9,1
+202520,Entrevistas,Entrevista,1,10,3
+202520,Entrevistas,Entrevista,1,11,3
+202520,Entrevistas,Entrevista,1,12,2
+202520,Entrevistas,Entrevista,1,13,2
+202520,Entrevistas,Entrevista,1,14,2
+202520,Entrevistas,Entrevista,1,17,1
+202520,Entrevistas,Entrevista,2,9,2
+202520,Entrevistas,Entrevista,2,11,2
+202520,Entrevistas,Entrevista,2,12,3
+202520,Entrevistas,Entrevista,2,14,1
+202520,Entrevistas,Entrevista,2,15,1
+202520,Entrevistas,Entrevista,2,17,1
+202520,Entrevistas,Entrevista,3,11,2
+202520,Entrevistas,Entrevista,3,12,1
+202520,Entrevistas,Entrevista,3,13,3
+202520,Entrevistas,Entrevista,3,14,1
+202520,Entrevistas,Entrevista,3,15,1
+202520,Entrevistas,Entrevista,4,9,1
+202520,Entrevistas,Entrevista,4,10,1
+202520,Entrevistas,Entrevista,4,12,1
+202520,Entrevistas,Entrevista,4,13,3
+202520,Entrevistas,Entrevista,4,15,1
+202520,Entrevistas,Entrevista,5,8,2
+202520,Entrevistas,Entrevista,5,9,3
+202520,Entrevistas,Entrevista,5,10,3
+202520,Entrevistas,Entrevista,5,11,2
+202520,Entrevistas,Entrevista,5,12,3
+202520,Entrevistas,Entrevista,5,13,2
+202520,Entrevistas,Entrevista,5,14,3
+202520,Entrevistas,Entrevista,5,15,4
+202520,Entrevistas,Entrevista,5,16,1
+202520,Express,EDA,5,13,12
+202520,Express,EDA,5,15,7
+202520,Express,IP,1,9,11
+202520,Express,IP,1,10,6
+202520,Express,IP,1,12,14
+202520,Express,IP,1,13,3
+202520,Express,IP,1,15,7
+202520,Express,IP,1,16,8
+202520,Express,IP,2,9,16
+202520,Express,IP,2,10,17
+202520,Express,IP,2,12,13
+202520,Express,IP,2,13,21
+202520,Express,IP,2,15,15
+202520,Express,IP,2,16,21
+202520,Express,IP,3,9,14
+202520,Express,IP,3,10,38
+202520,Express,IP,3,12,29
+202520,Express,IP,3,13,31
+202520,Express,IP,3,15,20
+202520,Express,IP,3,16,21
+202520,Express,IP,4,9,25
+202520,Express,IP,4,10,27
+202520,Express,IP,4,12,27
+202520,Express,IP,4,13,21
+202520,Express,IP,4,15,30
+202520,Express,IP,4,16,14
+202520,Express,IP,5,9,31
+202520,Express,IP,5,10,27
+202520,Express,IP,5,12,36
+202520,Express,IP,5,13,23
+202520,Express,IP,5,15,11
+202520,Express,IP,5,16,10
+202520,Normal,EDA,1,11,8
+202520,Normal,EDA,1,12,8
+202520,Normal,EDA,1,14,5
+202520,Normal,EDA,2,14,16
+202520,Normal,EDA,2,17,6
+202520,Normal,EDA,3,14,17
+202520,Normal,EDA,4,14,7
+202520,Normal,EDA,5,14,9
+202520,Normal,IP,1,8,6
+202520,Normal,IP,1,9,14
+202520,Normal,IP,1,11,27
+202520,Normal,IP,1,12,22
+202520,Normal,IP,1,14,15
+202520,Normal,IP,1,15,18
+202520,Normal,IP,1,17,8
+202520,Normal,IP,2,8,31
+202520,Normal,IP,2,9,45
+202520,Normal,IP,2,11,58
+202520,Normal,IP,2,12,35
+202520,Normal,IP,2,14,33
+202520,Normal,IP,2,15,22
+202520,Normal,IP,2,17,25
+202520,Normal,IP,3,8,27
+202520,Normal,IP,3,9,73
+202520,Normal,IP,3,11,73
+202520,Normal,IP,3,12,36
+202520,Normal,IP,3,14,53
+202520,Normal,IP,3,15,36
+202520,Normal,IP,3,17,21
+202520,Normal,IP,4,8,38
+202520,Normal,IP,4,9,51
+202520,Normal,IP,4,11,81
+202520,Normal,IP,4,12,54
+202520,Normal,IP,4,14,37
+202520,Normal,IP,4,15,58
+202520,Normal,IP,4,17,16
+202520,Normal,IP,5,8,38
+202520,Normal,IP,5,9,57
+202520,Normal,IP,5,11,66
+202520,Normal,IP,5,12,49
+202520,Normal,IP,5,14,32
+202520,Normal,IP,5,15,19
+202520,Normal,IP,5,17,13
+202520,Normal pico,IP,1,8,3
+202520,Normal pico,IP,1,9,3
+202520,Normal pico,IP,1,11,9
+202520,Normal pico,IP,1,12,4
+202520,Normal pico,IP,1,14,9
+202520,Normal pico,IP,1,15,9
+202520,Normal pico,IP,1,17,10
+202520,Normal pico,IP,2,8,15
+202520,Normal pico,IP,2,9,6
+202520,Normal pico,IP,2,11,12
+202520,Normal pico,IP,2,12,4
+202520,Normal pico,IP,2,14,5
+202520,Normal pico,IP,2,15,3
+202520,Normal pico,IP,2,17,17
+202520,Normal pico,IP,3,8,19
+202520,Normal pico,IP,3,9,11
+202520,Normal pico,IP,3,11,10
+202520,Normal pico,IP,3,12,9
+202520,Normal pico,IP,3,14,16
+202520,Normal pico,IP,3,15,8
+202520,Normal pico,IP,3,17,15
+202520,Normal pico,IP,4,8,4
+202520,Normal pico,IP,4,9,7
+202520,Normal pico,IP,4,11,8
+202520,Normal pico,IP,4,12,5
+202520,Normal pico,IP,4,14,7
+202520,Normal pico,IP,4,15,3
+202520,Normal pico,IP,4,17,14
+202520,Normal pico,IP,5,8,7
+202520,Normal pico,IP,5,9,3
+202520,Normal pico,IP,5,11,6
+202520,Normal pico,IP,5,12,4
+202520,Normal pico,IP,5,14,4
+202520,Normal pico,IP,5,15,6
+202520,Normal pico,IP,5,17,2
+202520,Sala,Sala,2,15,2
+202520,Sala,Sala,2,16,4
+202520,Sala,Sala,3,16,2
+202520,Sala,Sala,3,17,2
+202610,Entrevistas,Entrevista,1,9,1
+202610,Entrevistas,Entrevista,2,9,3
+202610,Entrevistas,Entrevista,2,10,3
+202610,Entrevistas,Entrevista,2,11,3
+202610,Entrevistas,Entrevista,2,12,1
+202610,Entrevistas,Entrevista,2,14,2
+202610,Entrevistas,Entrevista,2,15,1
+202610,Entrevistas,Entrevista,3,11,3
+202610,Entrevistas,Entrevista,3,12,2
+202610,Entrevistas,Entrevista,3,13,1
+202610,Entrevistas,Entrevista,3,14,1
+202610,Entrevistas,Entrevista,3,15,1
+202610,Entrevistas,Entrevista,3,16,1
+202610,Entrevistas,Entrevista,4,9,2
+202610,Entrevistas,Entrevista,4,10,3
+202610,Entrevistas,Entrevista,4,11,3
+202610,Entrevistas,Entrevista,4,12,3
+202610,Entrevistas,Entrevista,4,13,2
+202610,Entrevistas,Entrevista,4,14,2
+202610,Entrevistas,Entrevista,4,15,1
+202610,Entrevistas,Entrevista,4,16,1
+202610,Entrevistas,Entrevista,5,9,3
+202610,Entrevistas,Entrevista,5,11,3
+202610,Entrevistas,Entrevista,5,12,2
+202610,Entrevistas,Entrevista,5,13,3
+202610,Entrevistas,Entrevista,5,14,1
+202610,Entrevistas,Entrevista,5,15,1
+202610,Entrevistas,Entrevista,5,17,2
+202610,Express,EDA,1,16,4
+202610,Express,EDA,3,13,9
+202610,Express,EDA,4,12,4
+202610,Express,EDA,4,13,8
+202610,Express,EDA,5,12,4
+202610,Express,EDA,5,13,7
+202610,Express,IP,1,9,13
+202610,Express,IP,1,10,9
+202610,Express,IP,1,12,17
+202610,Express,IP,1,13,10
+202610,Express,IP,1,15,18
+202610,Express,IP,1,16,10
+202610,Express,IP,2,9,27
+202610,Express,IP,2,10,29
+202610,Express,IP,2,12,21
+202610,Express,IP,2,13,7
+202610,Express,IP,2,15,15
+202610,Express,IP,2,16,19
+202610,Express,IP,3,9,25
+202610,Express,IP,3,10,28
+202610,Express,IP,3,12,15
+202610,Express,IP,3,13,19
+202610,Express,IP,3,15,23
+202610,Express,IP,3,16,19
+202610,Express,IP,4,9,21
+202610,Express,IP,4,10,27
+202610,Express,IP,4,12,24
+202610,Express,IP,4,13,20
+202610,Express,IP,4,15,22
+202610,Express,IP,4,16,16
+202610,Express,IP,5,9,21
+202610,Express,IP,5,10,27
+202610,Express,IP,5,12,21
+202610,Express,IP,5,13,18
+202610,Express,IP,5,15,14
+202610,Express,IP,5,16,7
+202610,Normal,EDA,1,17,7
+202610,Normal,EDA,3,12,11
+202610,Normal,EDA,3,14,15
+202610,Normal,EDA,4,11,9
+202610,Normal,EDA,4,12,13
+202610,Normal,EDA,5,11,7
+202610,Normal,EDA,5,12,5
+202610,Normal,IP,1,8,23
+202610,Normal,IP,1,9,15
+202610,Normal,IP,1,11,31
+202610,Normal,IP,1,12,21
+202610,Normal,IP,1,14,25
+202610,Normal,IP,1,15,19
+202610,Normal,IP,1,17,20
+202610,Normal,IP,2,8,37
+202610,Normal,IP,2,9,38
+202610,Normal,IP,2,11,38
+202610,Normal,IP,2,12,18
+202610,Normal,IP,2,14,32
+202610,Normal,IP,2,15,26
+202610,Normal,IP,2,17,19
+202610,Normal,IP,3,8,29
+202610,Normal,IP,3,9,59
+202610,Normal,IP,3,11,73
+202610,Normal,IP,3,12,34
+202610,Normal,IP,3,14,45
+202610,Normal,IP,3,15,38
+202610,Normal,IP,3,17,30
+202610,Normal,IP,4,8,60
+202610,Normal,IP,4,9,53
+202610,Normal,IP,4,11,58
+202610,Normal,IP,4,12,25
+202610,Normal,IP,4,14,53
+202610,Normal,IP,4,15,27
+202610,Normal,IP,4,17,20
+202610,Normal,IP,5,8,35
+202610,Normal,IP,5,9,45
+202610,Normal,IP,5,11,42
+202610,Normal,IP,5,12,31
+202610,Normal,IP,5,14,25
+202610,Normal,IP,5,15,17
+202610,Normal,IP,5,17,12
+202610,Normal pico,IP,1,12,2
+202610,Normal pico,IP,1,14,2
+202610,Normal pico,IP,1,15,6
+202610,Normal pico,IP,1,17,6
+202610,Normal pico,IP,2,8,2
+202610,Normal pico,IP,2,9,1
+202610,Normal pico,IP,2,14,2
+202610,Normal pico,IP,2,17,3
+202610,Normal pico,IP,3,8,2
+202610,Normal pico,IP,3,9,2
+202610,Normal pico,IP,3,11,3
+202610,Normal pico,IP,3,12,1
+202610,Normal pico,IP,3,15,1
+202610,Normal pico,IP,3,17,4
+202610,Normal pico,IP,4,11,1
+202610,Normal pico,IP,4,12,2
+202610,Normal pico,IP,4,14,1
+202610,Normal pico,IP,4,15,2
+202610,Normal pico,IP,4,17,2
+202610,Normal pico,IP,5,11,4
+202610,Normal pico,IP,5,12,1
+202610,Normal pico,IP,5,14,1
+202610,Normal pico,IP,5,15,2
+202610,Normal pico,IP,5,17,1
+202610,Sala,Sala,1,15,4
+202610,Sala,Sala,1,16,2
+202610,Sala,Sala,1,17,2
+202610,Sala,Sala,2,8,1
+202610,Sala,Sala,2,15,1
+202610,Sala,Sala,2,16,2
+202610,Sala,Sala,3,17,8
+202610,Sala,Sala,4,15,1
+202610,Sala,Sala,4,16,2

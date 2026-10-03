@@ -1,0 +1,439 @@
+Read Encuesta Estudiante Express 201620.xlsx
+Read Encuesta Estudiante Express 201710.xlsx
+Read Encuesta Estudiante Express 201719.xlsx
+Read Encuesta Estudiante Express 201720.xlsx
+Read Encuesta Estudiante Express 201810.xlsx
+Read Encuesta Estudiante Express 201819.xlsx
+Read Encuesta Estudiante Express 201820.xlsx
+Read Encuesta Estudiante Express 201910.xlsx
+Read Encuesta Estudiante Express 201919.xlsx
+Read Encuesta Estudiante Express 201920.xlsx
+Read Encuesta Estudiante Express 202010.xlsx
+Read Encuesta Estudiante Express 202019.xlsx
+Read Encuesta Estudiante Express 202020.xlsx
+Read Encuesta Estudiante Express 202110.xlsx
+Read Encuesta Estudiante Express 202119.xlsx
+Read Encuesta Estudiante Express 202120.xlsx
+Read Encuesta Estudiante Express 202210.xlsx
+Read Encuesta Estudiante Express 202219.xlsx
+Read Encuesta Estudiante Express 202220.xlsx
+Read Encuesta Estudiante Express 202310.xlsx
+Read Encuesta Estudiante Express 202319.xlsx
+Read Encuesta Estudiante Express 202320.xlsx
+Read Encuesta Estudiante Express 202410.xlsx
+Read Encuesta Estudiante Express 202419.xlsx
+Read Encuesta Estudiante Express 202420.xlsx
+Read Encuesta Estudiante Express 202510.xlsx
+Read Encuesta Estudiante Express 202519.xlsx
+Read Encuesta Estudiante Express 202520.xlsx
+Read Encuesta Estudiante Express 202610.xlsx
+Read Encuesta Estudiante Normal 201620.xlsx
+Read Encuesta Estudiante Normal 201710.xlsx
+Read Encuesta Estudiante Normal 201719.xlsx
+Read Encuesta Estudiante Normal 201720.xlsx
+Read Encuesta Estudiante Normal 201810.xlsx
+Read Encuesta Estudiante Normal 201819.xlsx
+Read Encuesta Estudiante Normal 201820.xlsx
+Read Encuesta Estudiante Normal 201910.xlsx
+Read Encuesta Estudiante Normal 201919.xlsx
+Read Encuesta Estudiante Normal 201920.xlsx
+Read Encuesta Estudiante Normal 202010.xlsx
+Read Encuesta Estudiante Normal 202019.xlsx
+Read Encuesta Estudiante Normal 202020.xlsx
+Read Encuesta Estudiante Normal 202110.xlsx
+Read Encuesta Estudiante Normal 202119.xlsx
+Read Encuesta Estudiante Normal 202120.xlsx
+Read Encuesta Estudiante Normal 202210.xlsx
+Read Encuesta Estudiante Normal 202219.xlsx
+Read Encuesta Estudiante Normal 202220.xlsx
+Read Encuesta Estudiante Normal 202310.xlsx
+Read Encuesta Estudiante Normal 202319.xlsx
+Read Encuesta Estudiante Normal 202320.xlsx
+Read Encuesta Estudiante Normal 202410.xlsx
+Read Encuesta Estudiante Normal 202419.xlsx
+Read Encuesta Estudiante Normal 202420.xlsx
+Read Encuesta Estudiante Normal 202510.xlsx
+Read Encuesta Estudiante Normal 202519.xlsx
+Read Encuesta Estudiante Normal 202520.xlsx
+Read Encuesta Estudiante Normal 202610.xlsx
+Read Encuesta Reserva Express IP 201920.xlsx
+Read Encuesta Reserva Express IP 202010.xlsx
+Read Encuesta Reserva Express IP 202020.xlsx
+Read Encuesta Reserva Express IP 202110.xlsx
+Read Encuesta Reserva Express IP 202120.xlsx
+Read Encuesta Reserva Express IP 202210.xlsx
+Read Encuesta Reserva Express IP 202220.xlsx
+Read Encuesta Reserva Express IP 202310.xlsx
+Read Encuesta Reserva Express IP 202320.xlsx
+Read Encuesta Reserva Express IP 202410.xlsx
+Read Encuesta Reserva Express IP 202420.xlsx
+Read Encuesta Reserva Express IP 202510.xlsx
+Read Encuesta Reserva Express IP 202520.xlsx
+Read Encuesta Reserva Express IP 202610.xlsx
+Read Encuesta Reserva Normal IP 201920.xlsx
+Read Encuesta Reserva Normal IP 202010.xlsx
+Read Encuesta Reserva Normal IP 202020.xlsx
+Read Encuesta Reserva Normal IP 202110.xlsx
+Read Encuesta Reserva Normal IP 202120.xlsx
+Read Encuesta Reserva Normal IP 202210.xlsx
+Read Encuesta Reserva Normal IP 202220.xlsx
+Read Encuesta Reserva Normal IP 202310.xlsx
+Read Encuesta Reserva Normal IP 202320.xlsx
+Read Encuesta Reserva Normal IP 202410.xlsx
+Read Encuesta Reserva Normal IP 202420.xlsx
+Read Encuesta Reserva Normal IP 202520.xlsx
+Read Encuesta Reserva Normal IP 202610.xlsx
+Read Reservas201620.xlsx
+Read Reservas201710.xlsx
+Read Reservas201719.xlsx
+Read Reservas201720.xlsx
+Read Reservas201810.xlsx
+Read Reservas201819.xlsx
+Read Reservas201820.xlsx
+Read Reservas201910.xlsx
+Read Reservas201919.xlsx
+Read Reservas201920.xlsx
+Read Reservas202010.xlsx
+Read Reservas202019.xlsx
+Read Reservas202020.xlsx
+Read Reservas202110.xlsx
+Read Reservas202119.xlsx
+Read Reservas202120.xlsx
+Read Reservas202210.xlsx
+Read Reservas202219.xlsx
+Read Reservas202220.xlsx
+Read Reservas202310.xlsx
+Read Reservas202319.xlsx
+Read Reservas202320.xlsx
+Read Reservas202410.xlsx
+Read Reservas202419.xlsx
+Read Reservas202420.xlsx
+Read Reservas202510.xlsx
+Read Reservas202519.xlsx
+Read Reservas202520.xlsx
+Read Reservas202610.xlsx
+Profiled Encuesta Express
+Profiled Encuesta Normal
+Profiled Encuesta Reserva Express
+Profiled Encuesta Reserva Normal IP
+Profiled Reservas
+{
+  "resumen": [
+    {
+      "grupo": "Encuesta Express",
+      "archivos": 29,
+      "filas": 6759,
+      "variables": 33,
+      "variantes_encabezado": 1,
+      "id_distintos": 6759,
+      "id_faltantes": 0,
+      "filas_excedentes_id_repetido": 0,
+      "filas_excedentes_id_periodo_repetido": 0,
+      "filas_excedentes_duplicado_exacto": 0,
+      "inicio_min": "2017-02-02 10:30:00.000000",
+      "inicio_max": "2026-05-22 15:00:00.000000",
+      "duracion_programada_min_minutos": 20.0,
+      "duracion_programada_mediana_minutos": 30.0,
+      "duracion_programada_max_minutos": 50.0
+    },
+    {
+      "grupo": "Encuesta Normal",
+      "archivos": 29,
+      "filas": 16379,
+      "variables": 35,
+      "variantes_encabezado": 1,
+      "id_distintos": 16379,
+      "id_faltantes": 0,
+      "filas_excedentes_id_repetido": 0,
+      "filas_excedentes_id_periodo_repetido": 0,
+      "filas_excedentes_duplicado_exacto": 0,
+      "inicio_min": "2016-08-19 09:00:00.000000",
+      "inicio_max": "2026-05-22 17:00:00.000000",
+      "duracion_programada_min_minutos": 50.0,
+      "duracion_programada_mediana_minutos": 55.0,
+      "duracion_programada_max_minutos": 120.0
+    },
+    {
+      "grupo": "Encuesta Reserva Express",
+      "archivos": 14,
+      "filas": 13815,
+      "variables": 22,
+      "variantes_encabezado": 1,
+      "id_distintos": 13815,
+      "id_faltantes": 0,
+      "filas_excedentes_id_repetido": 0,
+      "filas_excedentes_id_periodo_repetido": 0,
+      "filas_excedentes_duplicado_exacto": 0,
+      "inicio_min": "2019-10-21 11:00:00.000000",
+      "inicio_max": "2026-05-22 16:30:00.000000",
+      "duracion_programada_min_minutos": 30.0,
+      "duracion_programada_mediana_minutos": 30.0,
+      "duracion_programada_max_minutos": 30.0
+    },
+    {
+      "grupo": "Encuesta Reserva Normal IP",
+      "archivos": 13,
+      "filas": 23437,
+      "variables": 22,
+      "variantes_encabezado": 1,
+      "id_distintos": 23437,
+      "id_faltantes": 0,
+      "filas_excedentes_id_repetido": 0,
+      "filas_excedentes_id_periodo_repetido": 0,
+      "filas_excedentes_duplicado_exacto": 0,
+      "inicio_min": "2019-10-21 09:00:00.000000",
+      "inicio_max": "2026-05-22 17:00:00.000000",
+      "duracion_programada_min_minutos": 50.0,
+      "duracion_programada_mediana_minutos": 60.0,
+      "duracion_programada_max_minutos": 60.0
+    },
+    {
+      "grupo": "Reservas",
+      "archivos": 29,
+      "filas": 86562,
+      "variables": 17,
+      "variantes_encabezado": 1,
+      "id_distintos": 86562,
+      "id_faltantes": 0,
+      "filas_excedentes_id_repetido": 0,
+      "filas_excedentes_id_periodo_repetido": 0,
+      "filas_excedentes_duplicado_exacto": 0,
+      "inicio_min": "2016-08-19 09:00:00.000000",
+      "inicio_max": "2026-05-22 17:00:00.000000",
+      "duracion_programada_min_minutos": 20.0,
+      "duracion_programada_mediana_minutos": 50.0,
+      "duracion_programada_max_minutos": 120.0
+    }
+  ],
+  "vinculos": [
+    {
+      "grupo_encuesta": "Encuesta Express",
+      "filas_con_id": 6759,
+      "id_distintos": 6759,
+      "id_en_reservas": 6759,
+      "filas_con_id_en_reservas": 6759,
+      "filas_sin_id_en_reservas": 0,
+      "filas_con_id_y_periodo_en_reservas": 6759,
+      "porcentaje_filas_con_id_en_reservas": 100.0
+    },
+    {
+      "grupo_encuesta": "Encuesta Normal",
+      "filas_con_id": 16379,
+      "id_distintos": 16379,
+      "id_en_reservas": 16379,
+      "filas_con_id_en_reservas": 16379,
+      "filas_sin_id_en_reservas": 0,
+      "filas_con_id_y_periodo_en_reservas": 16379,
+      "porcentaje_filas_con_id_en_reservas": 100.0
+    },
+    {
+      "grupo_encuesta": "Encuesta Reserva Express",
+      "filas_con_id": 13815,
+      "id_distintos": 13815,
+      "id_en_reservas": 13815,
+      "filas_con_id_en_reservas": 13815,
+      "filas_sin_id_en_reservas": 0,
+      "filas_con_id_y_periodo_en_reservas": 13815,
+      "porcentaje_filas_con_id_en_reservas": 100.0
+    },
+    {
+      "grupo_encuesta": "Encuesta Reserva Normal IP",
+      "filas_con_id": 23437,
+      "id_distintos": 23437,
+      "id_en_reservas": 23437,
+      "filas_con_id_en_reservas": 23437,
+      "filas_sin_id_en_reservas": 0,
+      "filas_con_id_y_periodo_en_reservas": 23437,
+      "porcentaje_filas_con_id_en_reservas": 100.0
+    }
+  ],
+  "fechas": [
+    {
+      "grupo": "Encuesta Express",
+      "regla": "fin_anterior_a_inicio",
+      "evaluables": 6759,
+      "incumplimientos": 0,
+      "porcentaje_evaluables": 0.0
+    },
+    {
+      "grupo": "Encuesta Express",
+      "regla": "devolucion_anterior_a_llegada",
+      "evaluables": 0,
+      "incumplimientos": 0,
+      "porcentaje_evaluables": ""
+    },
+    {
+      "grupo": "Encuesta Express",
+      "regla": "inicio_fuera_anio_periodo",
+      "evaluables": 6759,
+      "incumplimientos": 0,
+      "porcentaje_evaluables": 0.0
+    },
+    {
+      "grupo": "Encuesta Normal",
+      "regla": "fin_anterior_a_inicio",
+      "evaluables": 16379,
+      "incumplimientos": 0,
+      "porcentaje_evaluables": 0.0
+    },
+    {
+      "grupo": "Encuesta Normal",
+      "regla": "devolucion_anterior_a_llegada",
+      "evaluables": 0,
+      "incumplimientos": 0,
+      "porcentaje_evaluables": ""
+    },
+    {
+      "grupo": "Encuesta Normal",
+      "regla": "inicio_fuera_anio_periodo",
+      "evaluables": 16379,
+      "incumplimientos": 0,
+      "porcentaje_evaluables": 0.0
+    },
+    {
+      "grupo": "Encuesta Reserva Express",
+      "regla": "fin_anterior_a_inicio",
+      "evaluables": 13815,
+      "incumplimientos": 0,
+      "porcentaje_evaluables": 0.0
+    },
+    {
+      "grupo": "Encuesta Reserva Express",
+      "regla": "devolucion_anterior_a_llegada",
+      "evaluables": 0,
+      "incumplimientos": 0,
+      "porcentaje_evaluables": ""
+    },
+    {
+      "grupo": "Encuesta Reserva Express",
+      "regla": "inicio_fuera_anio_periodo",
+      "evaluables": 13815,
+      "incumplimientos": 0,
+      "porcentaje_evaluables": 0.0
+    },
+    {
+      "grupo": "Encuesta Reserva Normal IP",
+      "regla": "fin_anterior_a_inicio",
+      "evaluables": 23437,
+      "incumplimientos": 0,
+      "porcentaje_evaluables": 0.0
+    },
+    {
+      "grupo": "Encuesta Reserva Normal IP",
+      "regla": "devolucion_anterior_a_llegada",
+      "evaluables": 0,
+      "incumplimientos": 0,
+      "porcentaje_evaluables": ""
+    },
+    {
+      "grupo": "Encuesta Reserva Normal IP",
+      "regla": "inicio_fuera_anio_periodo",
+      "evaluables": 23437,
+      "incumplimientos": 0,
+      "porcentaje_evaluables": 0.0
+    },
+    {
+      "grupo": "Reservas",
+      "regla": "fin_anterior_a_inicio",
+      "evaluables": 86562,
+      "incumplimientos": 0,
+      "porcentaje_evaluables": 0.0
+    },
+    {
+      "grupo": "Reservas",
+      "regla": "devolucion_anterior_a_llegada",
+      "evaluables": 0,
+      "incumplimientos": 0,
+      "porcentaje_evaluables": ""
+    },
+    {
+      "grupo": "Reservas",
+      "regla": "inicio_fuera_anio_periodo",
+      "evaluables": 86562,
+      "incumplimientos": 0,
+      "porcentaje_evaluables": 0.0
+    }
+  ],
+  "textos": [
+    {
+      "grupo": "Encuesta Express",
+      "variable": "Indique cuál fue la herramienta usada durante la tutoría (si sabe cuál es) y el uso que tuvo la misma en la tutoría.",
+      "respuestas_no_vacias": 4,
+      "porcentaje_cobertura": 0.0592,
+      "textos_distintos": 3,
+      "longitud_min": 6,
+      "longitud_mediana": 16.0,
+      "longitud_max": 238
+    },
+    {
+      "grupo": "Encuesta Express",
+      "variable": "Comente aspectos positivos y negativos del tutor y la tutoría. Recuerde que las respuestas van a ser anónimas.",
+      "respuestas_no_vacias": 5453,
+      "porcentaje_cobertura": 80.6776,
+      "textos_distintos": 3878,
+      "longitud_min": 1,
+      "longitud_mediana": 26,
+      "longitud_max": 550
+    },
+    {
+      "grupo": "Encuesta Express",
+      "variable": "Escriba en este recuadro cualquier observación o comentario relacionado al curso y sus contenidos.",
+      "respuestas_no_vacias": 564,
+      "porcentaje_cobertura": 8.3444,
+      "textos_distintos": 265,
+      "longitud_min": 1,
+      "longitud_mediana": 7.0,
+      "longitud_max": 339
+    },
+    {
+      "grupo": "Encuesta Express",
+      "variable": "Sugerencias, reclamos y observaciones",
+      "respuestas_no_vacias": 1730,
+      "porcentaje_cobertura": 25.5955,
+      "textos_distintos": 655,
+      "longitud_min": 1,
+      "longitud_mediana": 7.0,
+      "longitud_max": 450
+    },
+    {
+      "grupo": "Encuesta Normal",
+      "variable": "Indique cuál fue la herramienta usada durante la tutoría (si sabe cuál es) y el uso que tuvo la misma en la tutoría.",
+      "respuestas_no_vacias": 22,
+      "porcentaje_cobertura": 0.1343,
+      "textos_distintos": 20,
+      "longitud_min": 1,
+      "longitud_mediana": 14.5,
+      "longitud_max": 90
+    },
+    {
+      "grupo": "Encuesta Normal",
+      "variable": "Comente aspectos positivos y negativos del tutor y la tutoría. Recuerde que las respuestas van a ser anónimas.",
+      "respuestas_no_vacias": 12534,
+      "porcentaje_cobertura": 76.5248,
+      "textos_distintos": 8526,
+      "longitud_min": 1,
+      "longitud_mediana": 29.0,
+      "longitud_max": 1912
+    },
+    {
+      "grupo": "Encuesta Normal",
+      "variable": "Escriba en este recuadro cualquier observación o comentario relacionado al curso y sus contenidos.",
+      "respuestas_no_vacias": 1329,
+      "porcentaje_cobertura": 8.114,
+      "textos_distintos": 580,
+      "longitud_min": 1,
+      "longitud_mediana": 7,
+      "longitud_max": 878
+    },
+    {
+      "grupo": "Encuesta Normal",
+      "variable": "Sugerencias, reclamos y observaciones",
+      "respuestas_no_vacias": 4053,
+      "porcentaje_cobertura": 24.7451,
+      "textos_distintos": 1411,
+      "longitud_min": 1,
+      "longitud_mediana": 7,
+      "longitud_max": 2281
+    }
+  ]
+}

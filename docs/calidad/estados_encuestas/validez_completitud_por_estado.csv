@@ -1,0 +1,26 @@
+grupo_encuesta,estado_en_reservas,respuestas_exportadas,marcadas_valida,marcadas_invalida,sin_ninguna_respuesta_a_preguntas,con_alguna_respuesta,con_todas_preguntas_exportadas_no_vacias,con_calificacion_no_vacia
+Encuesta Express,En ejecución,1,1,0,0,1,0,1
+Encuesta Express,Finalizada,6299,6248,51,0,6299,1,4525
+Encuesta Express,Realizada,457,455,2,0,457,1,455
+Encuesta Express,Reservada,2,2,0,0,2,0,2
+Encuesta Normal,Cancelada con excusa,5,2,3,1,4,0,3
+Encuesta Normal,En ejecución,1,1,0,0,1,0,1
+Encuesta Normal,Finalizada,15208,15101,107,12,15196,7,10164
+Encuesta Normal,Realizada,1163,1162,1,0,1163,2,1156
+Encuesta Normal,Reservada,2,2,0,0,2,0,2
+Encuesta Reserva Express,Cancelada a tiempo,4670,4670,0,0,4670,4670,
+Encuesta Reserva Express,Cancelada con excusa,170,170,0,0,170,170,
+Encuesta Reserva Express,Cancelada por sanción,88,88,0,0,88,88,
+Encuesta Reserva Express,En ejecución,72,72,0,0,72,72,
+Encuesta Reserva Express,Finalizada,6545,6545,0,0,6545,6545,
+Encuesta Reserva Express,No asistió,1236,1236,0,0,1236,1236,
+Encuesta Reserva Express,Realizada,1009,1009,0,0,1009,1009,
+Encuesta Reserva Express,Reservada,25,25,0,0,25,25,
+Encuesta Reserva Normal IP,Cancelada a tiempo,6826,6826,0,0,6826,6826,
+Encuesta Reserva Normal IP,Cancelada con excusa,202,202,0,0,202,202,
+Encuesta Reserva Normal IP,Cancelada por sanción,189,189,0,0,189,189,
+Encuesta Reserva Normal IP,En ejecución,118,118,0,0,118,118,
+Encuesta Reserva Normal IP,Finalizada,12882,12882,0,0,12882,12882,
+Encuesta Reserva Normal IP,No asistió,1304,1303,1,0,1304,1304,
+Encuesta Reserva Normal IP,Realizada,1888,1887,1,0,1888,1888,
+Encuesta Reserva Normal IP,Reservada,28,28,0,0,28,28,

@@ -1,0 +1,50 @@
+id_reserva,periodo,estado_reserva,motivo_revision,tratamiento
+1,201620,Cancelada con excusa,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+2,201620,Cancelada con excusa,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+256,201620,Finalizada,Finalizada sin marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+257,201620,Cancelada por sanción,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+349,201620,Finalizada,Finalizada sin marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+421,201620,Cancelada con excusa,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+476,201620,Cancelada con excusa,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+493,201620,Cancelada con excusa,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+903,201620,Cancelada con excusa,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+1636,201620,Cancelada con excusa,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+2146,201620,No asistió,No asistió con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+2337,201620,Cancelada con excusa,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+3016,201620,Cancelada con excusa,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+3133,201620,No asistió,No asistió con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+3695,201620,No asistió,No asistió con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+4285,201710,No asistió,No asistió con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+4368,201710,No asistió,No asistió con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+4821,201710,No asistió,No asistió con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+4876,201710,Cancelada con excusa,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+5676,201710,Finalizada,Finalizada sin marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+6038,201710,Cancelada con excusa,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+6043,201710,Cancelada con excusa,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+7039,201710,Cancelada con excusa,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+7696,201710,No asistió,No asistió con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+8146,201710,No asistió,No asistió con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+9296,201720,No asistió,No asistió con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+9397,201720,Cancelada con excusa,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+9380,201720,Cola cancelada por reservación,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+9399,201720,Finalizada,Finalizada sin marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+9374,201720,Cola cancelada por reservación,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+9513,201720,Cancelada a tiempo,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+9751,201720,Cancelada a tiempo,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+9752,201720,Finalizada,Finalizada sin marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+9949,201720,Cancelada a tiempo,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+10154,201720,Cola cancelada por reservación,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+10159,201720,Finalizada,Finalizada sin marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+10168,201720,Cola cancelada por reservación,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+10173,201720,Finalizada,Finalizada sin marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+31946,201810,Finalizada,Finalizada sin marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+38095,201810,Cancelada por sanción,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+72314,201910,Cancelada por sanción,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+90364,201910,Cancelada por sanción,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+90540,201910,Cancelada con excusa,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+183232,201920,Cancelada por sanción,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+309874,202020,Cancelada por sanción,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+310905,202020,Cancelada por sanción,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+378347,202110,Cancelada por sanción,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+400873,202110,Cancelada con excusa,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir
+467344,202120,Cancelada a tiempo,Estado de cancelación con marca de llegada,Conservar; confirmar significado operativo antes de corregir o excluir

@@ -1,0 +1,80 @@
+grupo,regla,columna_original,celdas
+Encuesta Express,celda_vacia_o_espacios_a_nulo,Califique la ayuda que le dio su tutor,1776
+Encuesta Express,celda_vacia_o_espacios_a_nulo,Comente aspectos positivos y negativos del tutor y la tutoría. Recuerde que las respuestas van a ser anónimas.,1306
+Encuesta Express,celda_vacia_o_espacios_a_nulo,"Durante la tutoría, el tutor hizo uso de alguna herramienta de inteligencia artificial, tal como pero no limitándose a ChatGPT, Bard/Gemini o Bing AI.",4056
+Encuesta Express,celda_vacia_o_espacios_a_nulo,El tutor aclaró y reforzó conceptos,1776
+Encuesta Express,celda_vacia_o_espacios_a_nulo,El tutor es capaz de expresar claramente su conocimiento sobre el tema o temas trabajados,496
+Encuesta Express,celda_vacia_o_espacios_a_nulo,El tutor fue receptivo frente a mis inquietudes durante la tutoría,1311
+Encuesta Express,celda_vacia_o_espacios_a_nulo,El tutor me brindó herramientas adicionales para trabajar por mi cuenta,1776
+Encuesta Express,celda_vacia_o_espacios_a_nulo,El tutor me explicó cómo solucionar mi duda/problema/proyecto,1776
+Encuesta Express,celda_vacia_o_espacios_a_nulo,Escriba en este recuadro cualquier observación o comentario relacionado al curso y sus contenidos.,6195
+Encuesta Express,celda_vacia_o_espacios_a_nulo,Fecha de devolución,6759
+Encuesta Express,celda_vacia_o_espacios_a_nulo,Fecha de llegada,2
+Encuesta Express,celda_vacia_o_espacios_a_nulo,Indique cuál fue la herramienta usada durante la tutoría (si sabe cuál es) y el uso que tuvo la misma en la tutoría.,6755
+Encuesta Express,celda_vacia_o_espacios_a_nulo,La mayor parte del tiempo de la tutoría lo dediqué a,3230
+Encuesta Express,celda_vacia_o_espacios_a_nulo,Prestador del servicio,2
+Encuesta Express,celda_vacia_o_espacios_a_nulo,Programa,19
+Encuesta Express,celda_vacia_o_espacios_a_nulo,"Sugerencias, reclamos y observaciones",5029
+Encuesta Express,celda_vacia_o_espacios_a_nulo,¿Considera que el material del curso permite un buen proceso de aprendizaje?,4849
+Encuesta Express,celda_vacia_o_espacios_a_nulo,¿Cuál considera que es su comprensión del tema actual del curso?,4849
+Encuesta Express,fecha_excel_a_iso8601,Fecha de llegada,6757
+Encuesta Express,fecha_excel_a_iso8601,Fecha fin,6759
+Encuesta Express,fecha_excel_a_iso8601,Fecha inicio,6759
+Encuesta Express,programa_normalizado_en_columna_adicional,Programa,380
+Encuesta Express,regla_R01_finalizada_realizada_a_atendida,Estado de la reserva,6757
+Encuesta Express,regla_R02_excluir_encuesta_invalida_de_analisis,Estado,53
+Encuesta Normal,celda_vacia_o_espacios_a_nulo,Aproveché el tiempo de la tutoría haciendo preguntas puntuales al tutor y participando de manera proactiva en el desarrollo de las mismas,15
+Encuesta Normal,celda_vacia_o_espacios_a_nulo,Califique la ayuda que le dio su tutor,5053
+Encuesta Normal,celda_vacia_o_espacios_a_nulo,Comente aspectos positivos y negativos del tutor y la tutoría. Recuerde que las respuestas van a ser anónimas.,3845
+Encuesta Normal,celda_vacia_o_espacios_a_nulo,"Durante la tutoría, el tutor hizo uso de alguna herramienta de inteligencia artificial, tal como pero no limitándose a ChatGPT, Bard/Gemini o Bing AI.",10305
+Encuesta Normal,celda_vacia_o_espacios_a_nulo,El tutor aclaró y reforzó conceptos,5053
+Encuesta Normal,celda_vacia_o_espacios_a_nulo,El tutor es capaz de expresar claramente su conocimiento sobre el tema o temas trabajados,13
+Encuesta Normal,celda_vacia_o_espacios_a_nulo,El tutor fue receptivo frente a mis inquietudes durante la tutoría,19
+Encuesta Normal,celda_vacia_o_espacios_a_nulo,El tutor me brindó herramientas adicionales para trabajar por mi cuenta,24
+Encuesta Normal,celda_vacia_o_espacios_a_nulo,El tutor me explicó cómo solucionar mi duda/problema/proyecto,5053
+Encuesta Normal,celda_vacia_o_espacios_a_nulo,Escriba en este recuadro cualquier observación o comentario relacionado al curso y sus contenidos.,15050
+Encuesta Normal,celda_vacia_o_espacios_a_nulo,Fecha de devolución,16379
+Encuesta Normal,celda_vacia_o_espacios_a_nulo,Fecha de llegada,7
+Encuesta Normal,celda_vacia_o_espacios_a_nulo,Indique cuál fue la herramienta usada durante la tutoría (si sabe cuál es) y el uso que tuvo la misma en la tutoría.,16357
+Encuesta Normal,celda_vacia_o_espacios_a_nulo,La mayor parte del tiempo de la tutoría lo dediqué a,13
+Encuesta Normal,celda_vacia_o_espacios_a_nulo,"La tutoría a la que asistí me permitió entender que la solución de un problema usando herramientas de programación es un proceso que implica leer el problema, entender los requerimientos, planear un algoritmo, escribir el código y probar lo implementado",32
+Encuesta Normal,celda_vacia_o_espacios_a_nulo,La tutoría a la que asistí se enfocó en el desarrollo de mis habilidades de análisis y no solo en la corrección de mi código,20
+Encuesta Normal,celda_vacia_o_espacios_a_nulo,Prestador del servicio,2
+Encuesta Normal,celda_vacia_o_espacios_a_nulo,Programa,41
+Encuesta Normal,celda_vacia_o_espacios_a_nulo,"Sugerencias, reclamos y observaciones",12326
+Encuesta Normal,celda_vacia_o_espacios_a_nulo,¿Considera que el material del curso permite un buen proceso de aprendizaje?,11937
+Encuesta Normal,celda_vacia_o_espacios_a_nulo,¿Cuál considera que es su comprensión del tema actual del curso?,11937
+Encuesta Normal,fecha_excel_a_iso8601,Fecha de llegada,16372
+Encuesta Normal,fecha_excel_a_iso8601,Fecha fin,16379
+Encuesta Normal,fecha_excel_a_iso8601,Fecha inicio,16379
+Encuesta Normal,programa_normalizado_en_columna_adicional,Programa,964
+Encuesta Normal,regla_R01_finalizada_realizada_a_atendida,Estado de la reserva,16372
+Encuesta Normal,regla_R02_excluir_encuesta_invalida_de_analisis,Estado,111
+Encuesta Reserva Express,celda_vacia_o_espacios_a_nulo,Fecha de devolución,13815
+Encuesta Reserva Express,celda_vacia_o_espacios_a_nulo,Fecha de llegada,6165
+Encuesta Reserva Express,celda_vacia_o_espacios_a_nulo,Prestador del servicio,6156
+Encuesta Reserva Express,celda_vacia_o_espacios_a_nulo,Programa,3
+Encuesta Reserva Express,fecha_excel_a_iso8601,Fecha de llegada,7650
+Encuesta Reserva Express,fecha_excel_a_iso8601,Fecha fin,13815
+Encuesta Reserva Express,fecha_excel_a_iso8601,Fecha inicio,13815
+Encuesta Reserva Express,programa_normalizado_en_columna_adicional,Programa,1462
+Encuesta Reserva Express,regla_R01_finalizada_realizada_a_atendida,Estado de la reserva,7559
+Encuesta Reserva Normal IP,celda_vacia_o_espacios_a_nulo,Fecha de devolución,23437
+Encuesta Reserva Normal IP,celda_vacia_o_espacios_a_nulo,Fecha de llegada,8522
+Encuesta Reserva Normal IP,celda_vacia_o_espacios_a_nulo,Prestador del servicio,8470
+Encuesta Reserva Normal IP,celda_vacia_o_espacios_a_nulo,Programa,5
+Encuesta Reserva Normal IP,fecha_excel_a_iso8601,Fecha de llegada,14915
+Encuesta Reserva Normal IP,fecha_excel_a_iso8601,Fecha fin,23437
+Encuesta Reserva Normal IP,fecha_excel_a_iso8601,Fecha inicio,23437
+Encuesta Reserva Normal IP,programa_normalizado_en_columna_adicional,Programa,2464
+Encuesta Reserva Normal IP,regla_R01_finalizada_realizada_a_atendida,Estado de la reserva,14782
+Encuesta Reserva Normal IP,regla_R02_excluir_encuesta_invalida_de_analisis,Estado,2
+Reservas,celda_vacia_o_espacios_a_nulo,Fecha de devolución,86562
+Reservas,celda_vacia_o_espacios_a_nulo,Fecha de llegada,43422
+Reservas,celda_vacia_o_espacios_a_nulo,Prestador del servicio,42616
+Reservas,celda_vacia_o_espacios_a_nulo,Programa,333
+Reservas,fecha_excel_a_iso8601,Fecha de llegada,43140
+Reservas,fecha_excel_a_iso8601,Fecha fin,86562
+Reservas,fecha_excel_a_iso8601,Fecha inicio,86562
+Reservas,programa_normalizado_en_columna_adicional,Programa,8123
+Reservas,regla_R01_finalizada_realizada_a_atendida,Estado de la reserva,42646

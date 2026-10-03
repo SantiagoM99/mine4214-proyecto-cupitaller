@@ -1,0 +1,68 @@
+-- Ejecutar sobre data/oro/bookeau.sqlite3. Encuestas Gold ya excluye Inválida (R02).
+-- Análisis 1: eventos registrados y atención R01, sin asumir capacidad disponible.
+SELECT p.periodo_original, s.servicio_original, m.tipo_horario_original,
+       COUNT(*) AS eventos_registrados,
+       SUM(CASE WHEN e.estado_analitico='Atendida' THEN 1 ELSE 0 END) AS atenciones_registradas,
+       SUM(CASE WHEN e.estado_original='No asistió' THEN 1 ELSE 0 END) AS inasistencias_registradas
+FROM hecho_reserva h
+JOIN dim_periodo p USING(sk_periodo)
+JOIN dim_servicio s USING(sk_servicio)
+JOIN dim_modalidad m USING(sk_modalidad)
+JOIN dim_estado e USING(sk_estado)
+GROUP BY p.periodo_original,s.servicio_original,m.tipo_horario_original;
+
+-- Análisis 2: calificación de encuestas posteriores incluidas, con denominador del ítem.
+SELECT p.periodo_original, s.servicio_original, m.tipo_horario_original,
+       COUNT(*) AS encuestas_posteriores_incluidas,
+       COUNT(h.calificacion_ayuda_tutor) AS n_calificaciones,
+       AVG(h.calificacion_ayuda_tutor) AS media_descriptiva,
+       100.0*COUNT(h.calificacion_ayuda_tutor)/COUNT(*) AS completitud_item_pct
+FROM hecho_encuesta h
+JOIN dim_tipo_encuesta t USING(sk_tipo_encuesta)
+JOIN dim_periodo p USING(sk_periodo)
+JOIN dim_servicio s USING(sk_servicio)
+JOIN dim_modalidad m USING(sk_modalidad)
+WHERE t.etapa='posterior'
+GROUP BY p.periodo_original,s.servicio_original,m.tipo_horario_original;
+
+-- Texto válido disponible para etapas futuras; no mezclar su grano con reservas.
+SELECT q.texto_pregunta,t.grupo_fuente,COUNT(*) AS respuestas_textuales
+FROM hecho_respuesta r
+JOIN dim_pregunta q USING(sk_pregunta)
+JOIN hecho_encuesta e USING(id_encuesta)
+JOIN dim_tipo_encuesta t USING(sk_tipo_encuesta)
+WHERE q.es_texto_libre=1
+GROUP BY q.texto_pregunta,t.grupo_fuente;
+
+-- Análisis 1 (D1): tasa de inasistencia y proporción en cola por modalidad.
+-- Inasistencia = No asistió / (Atendida + No asistió); cola = En cola + Cola cancelada por reservación.
+SELECT m.tipo_horario_original AS modalidad,
+       COUNT(*) AS eventos,
+       ROUND(100.0*SUM(e.estado_original='No asistió')
+             /SUM(e.estado_analitico='Atendida' OR e.estado_original='No asistió'),1) AS inasistencia_pct,
+       ROUND(100.0*SUM(e.estado_original IN ('En cola','Cola cancelada por reservación'))/COUNT(*),1) AS cola_pct
+FROM hecho_reserva h
+JOIN dim_modalidad m USING(sk_modalidad)
+JOIN dim_estado e USING(sk_estado)
+GROUP BY m.tipo_horario_original
+ORDER BY eventos DESC;
+
+-- Análisis 1 (D1): inasistencia por día de la semana.
+SELECT d.dia_semana_iso,
+       ROUND(100.0*SUM(e.estado_original='No asistió')
+             /SUM(e.estado_analitico='Atendida' OR e.estado_original='No asistió'),1) AS inasistencia_pct
+FROM hecho_reserva h
+JOIN dim_fecha d ON d.sk_fecha=h.sk_fecha_inicio
+JOIN dim_estado e USING(sk_estado)
+GROUP BY d.dia_semana_iso;
+
+-- Análisis 2: proporción de calificaciones 1–3 por período (encuestas posteriores válidas).
+SELECT p.periodo_original,
+       COUNT(h.calificacion_ayuda_tutor) AS n_calificaciones,
+       ROUND(100.0*SUM(h.calificacion_ayuda_tutor<=3)/COUNT(h.calificacion_ayuda_tutor),1) AS bajas_pct
+FROM hecho_encuesta h
+JOIN dim_tipo_encuesta t USING(sk_tipo_encuesta)
+JOIN dim_periodo p USING(sk_periodo)
+WHERE t.etapa='posterior'
+GROUP BY p.periodo_original
+HAVING COUNT(h.calificacion_ayuda_tutor)>=30;
