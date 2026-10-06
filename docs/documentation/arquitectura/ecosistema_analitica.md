@@ -24,14 +24,14 @@ flowchart LR
 |---|---|---|
 | Bookeau / exportaciones | Origen de eventos y respuestas | Conserva el contexto del proceso y el período de extracción |
 | Bronze | Archivos originales intactos | Permite reproducir la lectura y volver a la evidencia |
-| Silver | Nombres y fechas comunes, programas normalizados, reglas R01/R02, banderas | Evita repetir limpieza en cada análisis y mantiene las discrepancias auditables |
+| Silver | Nombres y fechas comunes, programas normalizados, reglas R01 a R04, banderas | Evita repetir limpieza en cada análisis y mantiene las discrepancias auditables |
 | Gold | Hechos a distintos granos y dimensiones conformadas | Soporta segmentación consistente sin sumar encuestas como reservas nuevas |
 | Consumo | Tablero local y consultas SQL | Responde preguntas con población, filtros y denominadores visibles |
 | Calidad y metadatos | Diccionarios, reglas, conciliación, revisión de casos | Comprueba integridad y hace explícitas decisiones y limitaciones |
 
 ## Componentes intervenidos
 
-Se intervienen Bronze, Silver, Gold y la capa de consumo. Bronze contiene las 114 hojas originales; Silver conserva los 146.952 registros; Gold conserva todos los eventos y excluye solo las encuestas no incluidas según R02. Las respuestas de texto se preservan con vínculos a su pregunta y encuesta para las siguientes entregas.
+Se intervienen Bronze, Silver, Gold y la capa de consumo. Bronze contiene las 114 hojas originales; Silver conserva los 146.952 registros; Gold conserva los eventos de reservas de tutorías (R03) y excluye las encuestas no incluidas según R02. Las respuestas de texto se preservan con vínculos a su pregunta y encuesta para las siguientes entregas.
 
 La implementación local usa Python estándar, CSV y una base SQLite en `data/oro/bookeau.sqlite3`. SQLite materializa el modelo y permite ejecutar SQL con restricciones de integridad. Es una implementación local para esta entrega; el ecosistema propone capas compatibles con una futura plataforma Lakehouse, pero no declara un Lakehouse corporativo ya desplegado. No se ha conectado a Bookeau ni desplegado infraestructura en la nube.
 

@@ -39,7 +39,7 @@ def ecosystem():
     stages=[(1.2,'Bookeau',['Reservas y','encuestas'],DIM),
             (3.5,'Exportación',['Excel por período','(coordinación)'],DIM),
             (5.9,'Bronze',['114 Excel originales','ZIP intacto'],TEAM),
-            (8.3,'Silver',['5 CSV limpios','banderas, R01/R02'],TEAM),
+            (8.3,'Silver',['5 CSV limpios','banderas, R01 a R04'],TEAM),
             (10.7,'Gold',['Modelo dimensional','SQLite: 3 hechos'],TEAM),
             (13.0,'Consumo',['Tablero HTML','consultas SQL'],TEAM)]
     for x,t,l,f in stages:box(ax,x,3.6,2.0,1.3,t,l,fill=f)
@@ -73,12 +73,11 @@ def star(name,fact,measures,dims,extra=None,size=(13,8.5),extra_w=0):
 def stars():
     star('modelo_reserva.png','HECHO_RESERVA',
          ['Grano: un evento de reserva','id_reserva (degenerada)','evento_reserva = 1','minutos_programados','es_prioritaria'],
-         [('Fecha',['roles: inicio · fin · llegada','día → mes → año','nombre del día · fin de semana']),
+         [('Fecha',['roles: inicio · fin · llegada','día → mes → año','período → tipo de período','nombre del día · fin de semana']),
           ('Hora',['minuto → hora → franja']),
-          ('Período',['código → tipo → año','Semestre 1/2 · Intersemestral']),
-          ('Servicio',['código + etiqueta original']),
+                    ('Servicio',['código + etiqueta original']),
           ('Modalidad',['tipo de horario','categoría original']),
-          ('Estado',['original → analítico (R01)','→ grupo (D1)']),
+          ('Estado',['original → analítico (R01)','→ grupo (R04)']),
           ('Programa',['programa normalizado','0 = No informado'])])
 
     def detail(ax,cx,cy):
@@ -92,12 +91,11 @@ def stars():
     star('modelo_encuesta.png','HECHO_ENCUESTA',
          ['Grano: una encuesta válida','de una reserva (R02)','id_reserva (degenerada)','respuesta_encuesta = 1','calificación 1–5 (nullable)'],
          [('Tipo de encuesta',['grupo de fuente','etapa: previa / posterior']),
-          ('Fecha',['fecha del evento reservado','día → mes → año']),
+          ('Fecha',['fecha del evento reservado','día → mes → año','período → tipo de período']),
           ('Hora',['minuto → hora → franja']),
-          ('Período',['código → tipo → año']),
           ('Servicio',['conformada con Reserva']),
           ('Modalidad',['conformada con Reserva']),
-          ('Estado',['estado de la reserva','conformada (R01, D1)']),
+          ('Estado',['estado de la reserva','conformada (R01, R04)']),
           ('Programa',['conformada con Reserva'])],
          extra=detail,size=(15,9.5),extra_w=4.8)
 

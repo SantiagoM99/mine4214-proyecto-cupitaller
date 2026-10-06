@@ -2,7 +2,7 @@
 
 ## Objetivos
 
-Responder patrones de reservas y atención registrada, y describir satisfacción de estudiantes. R01 agrupa Finalizada y Realizada como Atendida; R02 excluye encuestas Inválida de los análisis. La falta de oferta disponible limita las preguntas: el modelo no mide ocupación ni capacidad libre.
+Responder patrones de reservas y atención registrada, y describir satisfacción de estudiantes. R01 agrupa Finalizada y Realizada como Atendida; R02 excluye encuestas Inválida de los análisis; R03 limita Gold a las reservas de tutorías (tipo de horario Normal, Express o Normal pico); R04 define el grupo de estado (la cola no ocupa cupo). La falta de oferta disponible limita las preguntas: el modelo no mide ocupación ni capacidad libre.
 
 ## Grano de cada hecho
 
@@ -20,14 +20,12 @@ El hecho de encuesta incluye las etapas previa y posterior. Para satisfacción s
 erDiagram
     DIM_FECHA ||--o{ HECHO_RESERVA : inicio_fin_llegada
     DIM_HORA ||--o{ HECHO_RESERVA : inicio
-    DIM_PERIODO ||--o{ HECHO_RESERVA : periodo
     DIM_SERVICIO ||--o{ HECHO_RESERVA : servicio
     DIM_MODALIDAD ||--o{ HECHO_RESERVA : modalidad_categoria
     DIM_ESTADO ||--o{ HECHO_RESERVA : estado
     DIM_PROGRAMA ||--o{ HECHO_RESERVA : programa
     DIM_FECHA ||--o{ HECHO_ENCUESTA : fecha_del_evento
     DIM_HORA ||--o{ HECHO_ENCUESTA : hora_del_evento
-    DIM_PERIODO ||--o{ HECHO_ENCUESTA : periodo
     DIM_SERVICIO ||--o{ HECHO_ENCUESTA : servicio
     DIM_MODALIDAD ||--o{ HECHO_ENCUESTA : modalidad_categoria
     DIM_ESTADO ||--o{ HECHO_ENCUESTA : estado_de_reserva
@@ -38,7 +36,6 @@ erDiagram
     DIM_PREGUNTA ||--o{ HECHO_RESPUESTA : pregunta
     HECHO_RESERVA {
         string id_reserva PK
-        int sk_periodo FK
         int sk_servicio FK
         int sk_modalidad FK
         int sk_estado FK
@@ -49,7 +46,6 @@ erDiagram
         string id_encuesta PK
         string id_reserva FK
         int sk_tipo_encuesta FK
-        int sk_periodo FK
         int sk_servicio FK
         int sk_modalidad FK
         int respuesta_encuesta
@@ -70,9 +66,8 @@ Las referencias de fecha en encuestas describen la reserva asociada, no la fecha
 
 | Dimensión | Grano / atributos | Motivo |
 |---|---|---|
-| Fecha | Día del calendario completo, año, mes, día ISO | Permite series y fechas sin eventos; juega roles inicio, fin y llegada |
+| Fecha | Día del calendario completo, año, mes, día ISO y período académico (código, año del código, terminación y tipo de período) | Permite series y fechas sin eventos; juega roles inicio, fin y llegada. El período es un atributo de la fecha: cada día pertenece a un solo período, y los días entre períodos quedan como «Entre períodos» |
 | Hora | Un minuto del día, 1.440 miembros | Segmenta inicio programado sin confundir segundos de llegada |
-| Período | Código original de período, año del código y sufijo sin reinterpretar | Separa período académico exportado de fecha calendario |
 | Servicio | Código + etiqueta original | Conserva catálogos históricos sin fusionar Deprecated |
 | Modalidad | Tipo de horario + categoría original | Evita confundir modalidad con recurso y grupos de archivo con modalidades |
 | Estado | Etiqueta original + agrupación analítica R01 | Conserva evidencia y permite contar atención sin perder el detalle original |
@@ -88,7 +83,7 @@ No se crean dimensiones de personas basadas solo en nombres ni una dimensión de
 
 | Dimensión | Reserva | Encuesta | Respuesta |
 |---|---|---|---|
-| Fecha, hora, período | Directa | Directa, relativa al evento | Mediante encuesta |
+| Fecha (con período), hora | Directa | Directa, relativa al evento | Mediante encuesta |
 | Servicio, modalidad, estado, programa | Directa | Directa y conformada | Mediante encuesta |
 | Tipo de encuesta | — | Directa | Mediante encuesta |
 | Pregunta | — | — | Directa |
@@ -103,9 +98,9 @@ Los conteos unitarios son aditivos dentro de su grano. Minutos programados son a
 
 1. **Grano:** unicidad de ID de reserva, encuesta y par encuesta/pregunta, aplicada mediante claves primarias y restricción de grupo-reserva.
 2. **Integridad:** ninguna clave dimensional o referencia entre hechos queda sin miembro; claves foráneas SQLite activas y comprobadas durante la carga.
-3. **Conservación:** todas las reservas Silver llegan a Gold; encuestas Gold + exclusiones R02 + estados pendientes reconcilian con Silver por fuente.
+3. **Conservación:** las reservas Silver = reservas Gold + excluidas por R03; las encuestas Gold + exclusiones R02 y R03 + estados pendientes reconcilian con Silver por fuente.
 4. **Completitud explícita:** llegada y calificación son nullable; no se fabrican fechas, ceros de respuesta ni oferta.
-5. **Semántica:** estados y modalidades originales visibles, reglas R01/R02 trazadas, etapas de encuesta separadas y atributos conformados.
+5. **Semántica:** estados y modalidades originales visibles, reglas R01 a R04 trazadas, etapas de encuesta separadas y atributos conformados.
 6. **Aptitud analítica:** las preguntas seleccionadas se expresan con agregaciones al grano correcto; denominadores y `n` visibles.
 7. **Reproducibilidad:** claves consistentes dentro de cada reconstrucción completa, archivos de origen trazables y controles publicados.
 
@@ -122,4 +117,4 @@ El DDL ejecutable está en `sql/00_crear_modelo.sql`. CSV dimensionales y hechos
 - Fecha es una dimensión con roles (inicio, fin, llegada). Modalidad es una dimensión de combinaciones (tipo de horario × categoría).
 - SCD: Servicio, Modalidad y Estado tipo 0 (las etiquetas `Deprecated` son miembros propios); Programa tipo 1.
 - Diagramas en estrella: `img/modelo_reserva.png` e `img/modelo_encuesta.png`. Justificación completa en la sección 4 del informe.
-- Jerarquías materializadas en Gold: Fecha (día → mes → año; `nombre_dia`, `nombre_mes`, `es_fin_de_semana`), Hora (minuto → hora → `franja`), Período (código → `tipo_periodo` → año), Estado (original → `estado_analitico` R01 → `grupo_estado` D1). Las reglas de negocio quedan en las dimensiones y no en las consultas.
+- Jerarquías materializadas en Gold: Fecha (día → mes → año; `nombre_dia`, `nombre_mes`, `es_fin_de_semana`), Hora (minuto → hora → `franja`), Período, como atributos de Fecha (`periodo_original` → `tipo_periodo`, con `anio_periodo` y `sufijo_periodo`), Estado (original → `estado_analitico` R01 → `grupo_estado` R04). Las reglas de negocio quedan en las dimensiones y no en las consultas.

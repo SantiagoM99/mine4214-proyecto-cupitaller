@@ -113,7 +113,7 @@ def run():
     db=sqlite3.connect(f"file:{ROOT/'data/oro/bookeau.sqlite3'}?mode=ro",uri=True);db.row_factory=sqlite3.Row
     comments=list(db.execute('''SELECT e.id_encuesta,e.id_reserva,p.periodo_original periodo,s.servicio_original servicio,m.tipo_horario_original modalidad,r.valor_original comentario
        FROM hecho_respuesta r JOIN dim_pregunta q USING(sk_pregunta) JOIN hecho_encuesta e USING(id_encuesta)
-       JOIN dim_periodo p ON p.sk_periodo=e.sk_periodo JOIN dim_servicio s ON s.sk_servicio=e.sk_servicio
+       JOIN dim_fecha p ON p.sk_fecha=e.sk_fecha_inicio JOIN dim_servicio s ON s.sk_servicio=e.sk_servicio
        JOIN dim_modalidad m ON m.sk_modalidad=e.sk_modalidad WHERE q.texto_pregunta=?''',(PROMPT,)))
     db.close()
     manual_path=DOCS/'etiquetas_manuales.csv'

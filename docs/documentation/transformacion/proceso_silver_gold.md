@@ -2,7 +2,7 @@
 
 ## Entradas y reglas
 
-Se leen los cinco CSV Silver. Todas las reservas se conservan. Para encuestas se incluye exclusivamente `incluir_encuesta_en_analisis = true` según R02; los falsos se excluyen de Gold analítico y permanecen en Silver. Un indicador desconocido requiere revisión y se concilia por separado.
+Se leen los cinco CSV Silver. De las reservas solo entran las de tutorías (R03: tipo de horario Normal, Express o Normal pico); las demás permanecen en Silver. Para encuestas se incluye exclusivamente `incluir_encuesta_en_analisis = true` según R02 y solo si su reserva está en Gold (R03); los falsos se excluyen de Gold analítico y permanecen en Silver. Un indicador desconocido requiere revisión y se concilia por separado.
 
 R01 llega a `dim_estado` como etiqueta original y etiqueta analítica. No se infiere encuesta completa ni duración efectiva. Servicios y modalidades históricos se mantienen separados. La segmentación de encuesta usa la reserva vinculada; las discrepancias del origen se mantienen como auditoría, sin afirmar que se reconstruyó la verdad histórica.
 
@@ -10,7 +10,7 @@ R01 llega a `dim_estado` como etiqueta original y etiqueta analítica. No se inf
 
 1. Comprobar unicidad de reservas y respuestas de cada grupo y coincidencia del período de la encuesta con la reserva.
 2. Generar el calendario diario continuo para el rango de inicio, fin y llegada observados, y los 1.440 minutos del día.
-3. Construir catálogos distintos de período, servicio, modalidad/categoría, estado y programa, sin equivalencias históricas inventadas.
+3. Asignar a cada día del calendario su período académico (el de las reservas que empiezan ese día; los días sin reservas toman el período que los rodea o «Entre períodos») y construir catálogos distintos de servicio, modalidad/categoría, estado y programa, sin equivalencias históricas inventadas. El período es un atributo de `dim_fecha`: no hay dimensión de período.
 4. Construir tipo de encuesta y preguntas, manteniendo el texto íntegro del encabezado y reutilizando preguntas de igual texto entre fuentes.
 5. Cargar un hecho por reserva, con fechas reales de la extracción, duración programada y trazabilidad.
 6. Cargar un hecho por encuesta incluida; copiar las claves de segmentación de su reserva.

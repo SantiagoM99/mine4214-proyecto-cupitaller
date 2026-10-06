@@ -18,3 +18,6 @@ data/oro/*
 docs/texto/**/*.csv
 docs/texto/**/*.json
 exploratorio/
+
+# latex generated files
+entregables/latex/**

@@ -5,7 +5,7 @@
 </style>
 <header><p class="muted">MINE-4214 · Proyecto · Entrega 1</p><h1>CupiTaller · Reservas y satisfacción</h1><p class="muted">Reservas de tutoría y encuestas de estudiantes registradas en Bookeau, agosto de 2016 a mayo de 2026.</p></header>
 <div class="filters"><label>Período<select id="periodo"></select></label><label>Servicio original<select id="servicio"></select></label><label>Modalidad original<select id="modalidad"></select></label></div>
-<div class="note"><b>Definiciones.</b> Atendida = Finalizada + Realizada (R01). Tasa de inasistencia = No asistió / (Atendida + No asistió). Solicitudes en cola = En cola + Cola cancelada por reservación, sobre todos los eventos (supuesto D1). Sin datos de oferta no se mide ocupación.</div>
+<div class="note"><b>Definiciones.</b> Atendida = Finalizada + Realizada (R01). Tasa de inasistencia = No asistió / (Atendida + No asistió). Solicitudes en cola = En cola + Cola cancelada por reservación, sobre todos los eventos (regla R04: la cola no ocupa cupo). Solo reservas de tutorías (R03). Sin datos de oferta no se mide ocupación.</div>
 <section><h2>1. Reservas, inasistencia y cola</h2><div class="metrics" id="demandaMetrics"></div>
 <div class="panel scroll"><h3>Por modalidad</h3><table><thead><tr><th>Modalidad</th><th class="n">Eventos</th><th class="n">Atendidas</th><th class="n">Inasistencia</th><th class="n">En cola</th><th class="n">Canceladas</th></tr></thead><tbody id="tablaModalidad"></tbody></table></div>
 <div class="grid"><div class="panel"><h3>Inasistencia por día de la semana</h3><div id="diasInasistencia"></div></div><div class="panel"><h3>Inasistencia por hora de inicio</h3><div id="horasInasistencia"></div></div></div>

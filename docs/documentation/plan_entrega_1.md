@@ -42,7 +42,9 @@ Fuente: `Proyecto - entrega 1.pdf`, MINE-4214, septiembre de 2026.
 - [x] Diseñar y ejecutar transformaciones Silver → Gold con conciliación de resultados.
 - [x] Generar tablero local y documentar respuestas iniciales.
 - [x] Revisar visualmente el tablero (capturas en `img/`).
-- [ ] Validar con la coordinación el supuesto D1 y la interpretación de resultados.
+- [x] Supuesto D1 confirmado por la coordinación: ahora es la regla R04.
+- [ ] Validar con la coordinación la interpretación de resultados.
+- [ ] Volver a ejecutar Gold, tablero y cifras del informe con la regla R03 (solo reservas de tutorías).
 - [x] Informe autocontenido con tablas, diagramas y capturas; PDF en `entregables/`.
 - [x] Ejecutar los cuadernos.
 - [ ] Completar integrantes, contribuciones y distribución de 100 puntos, y revisión final.

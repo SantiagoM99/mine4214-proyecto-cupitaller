@@ -33,3 +33,20 @@ La comprobación por ID muestra encuesta posterior exportada en el 55,80% de Fin
 **Alcance:** la decisión acepta la etiqueta de validez exportada como criterio operativo del proyecto. No demuestra que una encuesta esté completa ni explica el mecanismo interno de Bookeau. La regla se aplica a las cuatro fuentes de encuesta.
 
 **Implementación:** `src/limpiar_bookeau.py`, campos adicionales de inclusión y motivo; auditoría de aplicación en `bitacora_transformaciones.csv`. Los resúmenes de calificación preparados previamente ya usaban solo la etiqueta Válida, por lo que su criterio coincide con esta decisión. Sus estadísticas continúan siendo exploratorias por las limitaciones de cobertura y de instrumentos históricos.
+
+## R03 · Solo reservas de tutorías en Gold
+
+**Origen:** decisión del equipo, octubre de 2026.
+
+**Regla adoptada:** la población de Reservas incluye modalidades distintas de la tutoría (entrevistas, salas y etiquetas históricas). Para los análisis de Gold solo se incluyen los ID asociados a reservas de tutorías, es decir, aquellas cuyo tipo de horario es Normal, Express o Normal pico. Las encuestas se incluyen solo si su reserva está incluida. Las demás filas permanecen en Silver.
+
+**Implementación:** `src/construir_gold_bookeau.py` (constante `TUTORIA_TIPOS`). La conciliación Silver a Gold registra las exclusiones por R03 (`excluidas_R03` por fuente y `reservas_excluidas_R03` en los controles). Si una encuesta es inválida (R02) y además pertenece a una reserva excluida, se cuenta en R02.
+
+## R04 · La cola no ocupa cupo
+
+**Origen:** supuesto D1 del equipo, confirmado por la coordinación de CupiTaller.
+
+**Regla adoptada:** una solicitud en cola no ocupa cupo. La inasistencia se mide solo sobre citas que llegaron a su hora: No asistió / (Atendida + No asistió). La proporción en cola es (En cola + Cola cancelada por reservación) / eventos. Los estados abiertos (En ejecución, Reservada) quedan fuera de la tasa.
+
+**Implementación:** atributo `grupo_estado` de `dim_estado` (Atendida, No asistió, Cola, Cancelada, Abierta).
+

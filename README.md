@@ -11,14 +11,14 @@ Proyecto del curso Modelado y Diseño de Datos (Uniandes, 2026-2) sobre las rese
 | Tablero interactivo (abrir en el navegador, sin servidor) | [`entregables/tablero_bookeau.html`](entregables/tablero_bookeau.html) |
 | Enunciado | [`docs/Proyecto - entrega 1.pdf`](docs/Proyecto%20-%20entrega%201.pdf) |
 
-**Pendiente del equipo antes de entregar:** completar integrantes y la sección 7.a del informe; validar con la coordinación el supuesto D1 (definición de inasistencia y cola); regenerar el PDF.
+**Pendiente del equipo antes de entregar:** completar integrantes y la sección 7.a del informe; regenerar el PDF.
 
 ## Análisis
 
 1. **Inasistencia y presión de cola** (coordinación de CupiTaller): tasa de inasistencia = No asistió / (Atendida + No asistió); proporción de solicitudes en cola. Por modalidad, día, hora y período.
 2. **Satisfacción** (coordinación académica): proporción de calificaciones 1–3 por modalidad, servicio y período, con la media y la distribución como apoyo.
 
-Reglas: **R01** Finalizada + Realizada = Atendida · **R02** se excluyen las encuestas «Inválida» · **D1** la cola no ocupa cupo (supuesto por validar).
+Reglas: **R01** Finalizada + Realizada = Atendida · **R02** se excluyen las encuestas «Inválida» · **R03** solo se analizan reservas de tutorías (Normal, Express, Normal pico) · **R04** la cola no ocupa cupo (confirmada por la coordinación).
 
 ## Estructura
 

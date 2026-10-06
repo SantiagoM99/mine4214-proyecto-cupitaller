@@ -107,7 +107,7 @@ El modelo conceptual y la materialización Gold están en `docs/modelo/` y `data
 
 Los dos análisis se reformularon en función de la decisión que apoyan (ver sección 1 del informe):
 
-1. **Inasistencia y presión de cola.** Supuesto **D1** (del equipo, por validar con la coordinación): la cola no ocupa cupo. Tasa de inasistencia = No asistió / (Atendida + No asistió); proporción en cola = (En cola + Cola cancelada por reservación) / eventos. Los estados abiertos (En ejecución, Reservada) quedan fuera de la tasa.
+1. **Inasistencia y presión de cola.** Regla **R04** (antes supuesto D1; confirmada por la coordinación): la cola no ocupa cupo. Tasa de inasistencia = No asistió / (Atendida + No asistió); proporción en cola = (En cola + Cola cancelada por reservación) / eventos. Los estados abiertos (En ejecución, Reservada) quedan fuera de la tasa.
 2. **Satisfacción.** Indicador principal: proporción de calificaciones 1–3 sobre las calificadas, porque la escala tiene efecto techo (81,7% de cincos; mediana 5).
 
 Consultas en `sql/01_consultas_analisis.sql`; implementación en `src/generar_tablero_bookeau.py`.
