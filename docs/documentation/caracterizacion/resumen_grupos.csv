@@ -1,6 +1,0 @@
-grupo,archivos,filas,variables,variantes_encabezado,id_distintos,id_faltantes,filas_excedentes_id_repetido,filas_excedentes_id_periodo_repetido,filas_excedentes_duplicado_exacto,inicio_min,inicio_max,duracion_programada_min_minutos,duracion_programada_mediana_minutos,duracion_programada_max_minutos
-Encuesta Express,29,6759,33,1,6759,0,0,0,0,2017-02-02 10:30:00.000000,2026-05-22 15:00:00.000000,20.0,30.0,50.0
-Encuesta Normal,29,16379,35,1,16379,0,0,0,0,2016-08-19 09:00:00.000000,2026-05-22 17:00:00.000000,50.0,55.0,120.0
-Encuesta Reserva Express,14,13815,22,1,13815,0,0,0,0,2019-10-21 11:00:00.000000,2026-05-22 16:30:00.000000,30.0,30.0,30.0
-Encuesta Reserva Normal IP,13,23437,22,1,23437,0,0,0,0,2019-10-21 09:00:00.000000,2026-05-22 17:00:00.000000,50.0,60.0,60.0
-Reservas,29,86562,17,1,86562,0,0,0,0,2016-08-19 09:00:00.000000,2026-05-22 17:00:00.000000,20.0,50.0,120.0

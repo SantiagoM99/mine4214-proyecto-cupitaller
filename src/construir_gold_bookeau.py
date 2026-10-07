@@ -37,7 +37,7 @@ def franja(hora):
     if hora<12:return 'Mañana'
     if hora<18:return 'Tarde'
     return 'Noche'
-DOCS=ROOT/'docs/transformacion'
+DOCS=ROOT/'docs/artifacts/transformacion'
 
 
 def load(path):
@@ -109,7 +109,7 @@ def build():
     for row in tables['dim_estado']:row['grupo_estado']=grupo_estado(row['estado_original'],row['estado_analitico'])
     programs=dimension('dim_programa','sk_programa',['programa_normalizado'],[(r['programa_normalizado'] or 'No informado',) for r in reservations],unknown=('No informado',))
     survey_types=dimension('dim_tipo_encuesta','sk_tipo_encuesta',['grupo_fuente','etapa'],[(g,'posterior' if 'satisfaccion' in f else 'previa') for g,f in GROUPS.items() if g!='Reservas'])
-    mapping=load(ROOT/'docs/limpieza/diccionario_columnas.csv')
+    mapping=load(ROOT/'docs/artifacts/limpieza/diccionario_columnas.csv')
     survey_question_map=defaultdict(list)
     question_attributes={}
     for r in mapping:

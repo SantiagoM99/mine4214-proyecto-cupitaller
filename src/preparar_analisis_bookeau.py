@@ -12,7 +12,7 @@ from pathlib import Path
 
 from caracterizar_bookeau import read_workbook, missing, SOURCE, ROOT
 
-OUT = ROOT / 'docs/calidad'
+OUT = ROOT / 'docs/artifacts/calidad'
 RATING = 'Califique la ayuda que le dio su tutor'
 
 

@@ -18,7 +18,7 @@ from pathlib import Path
 from caracterizar_bookeau import ROOT, SOURCE, DATE_COLUMNS, read_workbook, missing
 
 OUT = ROOT / 'data/plata'
-DOCS = ROOT / 'docs/limpieza'
+DOCS = ROOT / 'docs/artifacts/limpieza'
 GROUPS = {
     'Reservas': 'reservas',
     'Encuesta Express': 'encuesta_satisfaccion_express',

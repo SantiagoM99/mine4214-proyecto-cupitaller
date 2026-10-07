@@ -5,8 +5,8 @@ import sqlite3
 from pathlib import Path
 from limpiar_bookeau import ROOT
 
-OUT=ROOT/'entregables'
-RESULTS=ROOT/'docs/analisis/resultados'
+OUT=ROOT/'docs/entregables'
+RESULTS=ROOT/'docs/artifacts/analisis/resultados'
 
 
 def generate():
