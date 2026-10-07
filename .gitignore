@@ -31,3 +31,4 @@ docs/entregables/latex/*
 # artifacts generados por scripts de limpieza y transformación
 docs/artifacts/
 !docs/artifacts/.gitkeep
+src/auxiliar

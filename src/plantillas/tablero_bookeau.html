@@ -5,7 +5,7 @@
 </style>
 <header><p class="muted">MINE-4214 · Proyecto · Entrega 1</p><h1>CupiTaller · Reservas y satisfacción</h1><p class="muted">Reservas de tutoría y encuestas de estudiantes registradas en Bookeau, agosto de 2016 a mayo de 2026.</p></header>
 <div class="filters"><label>Período<select id="periodo"></select></label><label>Servicio original<select id="servicio"></select></label><label>Modalidad original<select id="modalidad"></select></label></div>
-<div class="note"><b>Definiciones.</b> Atendida = Finalizada + Realizada (R01). Tasa de inasistencia = No asistió / (Atendida + No asistió). Solicitudes en cola = En cola + Cola cancelada por reservación, sobre todos los eventos (regla R04: la cola no ocupa cupo). Solo reservas de tutorías (R03). Sin datos de oferta no se mide ocupación.</div>
+<div class="note"><b>Definiciones.</b> Atendida = Finalizada + Realizada (R01), En ejecución y Reservada con hora de llegada y prestador (R07). No asistió incluye las Reservada sin llegada o sin prestador (R07). Cancelada agrupa todos los estados de cancelación (R06). Tasa de inasistencia = No asistió / (Atendida + No asistió). Solicitudes en cola = En cola, sobre todos los eventos (regla R04: la cola no ocupa cupo); «Cola cancelada por reservación» son solicitudes en cola que terminaron en una reserva y se cuentan aparte. Solo reservas de tutorías (R03). La sección 3 usa el reporte de horarios (oferta), que cubre solo la categoría Tutor Presencial y no distingue servicio ni modalidad.</div>
 <section><h2>1. Reservas, inasistencia y cola</h2><div class="metrics" id="demandaMetrics"></div>
 <div class="panel scroll"><h3>Por modalidad</h3><table><thead><tr><th>Modalidad</th><th class="n">Eventos</th><th class="n">Atendidas</th><th class="n">Inasistencia</th><th class="n">En cola</th><th class="n">Canceladas</th></tr></thead><tbody id="tablaModalidad"></tbody></table></div>
 <div class="grid"><div class="panel"><h3>Inasistencia por día de la semana</h3><div id="diasInasistencia"></div></div><div class="panel"><h3>Inasistencia por hora de inicio</h3><div id="horasInasistencia"></div></div></div>
@@ -14,13 +14,16 @@
 <section><h2>2. Satisfacción de estudiantes</h2><div class="metrics" id="satisfaccionMetrics"></div><div class="note">Solo encuestas posteriores válidas (R02). Las calificaciones ausentes no se imputan. Con mediana 5, la media discrimina poco: el indicador principal es la proporción de calificaciones 1–3. Comparar períodos exige revisar cambios de servicio y de formulario.</div>
 <div class="grid"><div class="panel"><h3>Distribución de calificaciones</h3><div id="calificaciones"></div></div><div class="panel scroll"><h3>Por modalidad</h3><table><thead><tr><th>Modalidad</th><th class="n">Encuestas</th><th class="n">Con nota</th><th class="n">Media</th><th class="n">Nota 1–3</th></tr></thead><tbody id="tablaSatisfaccion"></tbody></table></div></div>
 <div class="panel"><h3>Calificaciones 1–3 por período (solo períodos con 30 o más notas)</h3><div id="bajasPeriodo"></div></div></section>
+<section><h2>3. Oferta y ocupación</h2><div class="metrics" id="ofertaMetrics"></div><div class="note">Reporte de horarios por período, día y hora. Los cupos disponibles son la capacidad total de la franja en el semestre y la ocupación es cupos reservados / cupos disponibles (confirmado por la coordinación). Los períodos 201620 y 201710 no traen cupos reservados y se excluyen de la ocupación. Solo el filtro de período aplica a esta sección.</div>
+<div class="panel scroll"><h3>Ocupación por día y hora (cupos reservados / cupos disponibles)</h3><table><thead id="mapaCabecera"></thead><tbody id="mapaOcupacion"></tbody></table></div>
+<div class="grid"><div class="panel"><h3>Ocupación por período</h3><div id="ocupacionPeriodo"></div></div><div class="panel"><h3>Lista de espera por período</h3><div id="esperaPeriodo"></div></div></div></section>
 <footer>Modelo Gold con dimensiones conformadas; las encuestas se segmentan con los atributos de su reserva. El período es el código exportado (10 y 20 = semestres, 19 = intersemestral). El tablero contiene solo agregados: no incluye nombres, correos ni comentarios.</footer>
 <script>
 const data=__DATA__;
 const fmt=n=>new Intl.NumberFormat('es-CO').format(n);
 const pct=(a,b)=>b?(100*a/b).toFixed(1)+'%':'—';
 const selects=['periodo','servicio','modalidad'];
-for(const key of selects){const select=document.getElementById(key);const all=document.createElement('option');all.value='';all.textContent='Todos';select.append(all);for(const v of [...new Set(data.reservas.map(r=>r[key]))].sort()){const o=document.createElement('option');o.value=v;o.textContent=v;select.append(o)}select.addEventListener('change',render)}
+for(const key of selects){const select=document.getElementById(key);const all=document.createElement('option');all.value='';all.textContent='Todos';select.append(all);for(const v of [...new Set([...data.reservas,...(key==='periodo'?data.oferta:[])].map(r=>r[key]))].sort()){const o=document.createElement('option');o.value=v;o.textContent=v;select.append(o)}select.addEventListener('change',render)}
 function filtered(rows,skip){return rows.filter(r=>selects.every(k=>k===skip||!document.getElementById(k).value||r[k]===document.getElementById(k).value))}
 const sum=(rows,k='n')=>rows.reduce((v,row)=>v+row[k],0);
 function totals(rows,key,value='n'){const m=new Map();for(const r of rows)m.set(r[key],(m.get(r[key])||0)+r[value]);return [...m]}
@@ -31,7 +34,7 @@ function rate(rows,key){const m=new Map();for(const r of rows){const v=m.get(r[k
 function render(){
 const a=filtered(data.agenda),s=filtered(data.satisfaccion);
 const g=k=>sum(a.filter(x=>x.grupo===k)),total=sum(a);
-cards('demandaMetrics',[['Eventos registrados',fmt(total)],['Atendidas (R01)',fmt(g('Atendida'))],['Tasa de inasistencia',pct(g('No asistió'),g('Atendida')+g('No asistió')),fmt(g('No asistió'))+' No asistió'],['Solicitudes en cola',pct(g('Cola'),total),fmt(g('Cola'))+' eventos']]);
+cards('demandaMetrics',[['Eventos registrados',fmt(total)],['Atendidas',fmt(g('Atendida'))],['Tasa de inasistencia',pct(g('No asistió'),g('Atendida')+g('No asistió')),fmt(g('No asistió'))+' No asistió'],['Solicitudes en cola',pct(g('Cola'),total),fmt(g('Cola'))+' eventos'],['Pasaron de la cola a reserva',pct(g('Cola a reserva'),total),fmt(g('Cola a reserva'))+' eventos']]);
 const modes=[...new Set(a.map(x=>x.modalidad))].map(m=>{const r=a.filter(x=>x.modalidad===m),G=k=>sum(r.filter(x=>x.grupo===k));return [m,sum(r),G('Atendida'),G('No asistió'),G('Cola'),G('Cancelada')]}).sort((x,y)=>y[1]-x[1]);
 table('tablaModalidad',modes.map(([m,n,at,na,c,ca])=>[m,fmt(n),fmt(at),pct(na,at+na),pct(c,n),pct(ca,n)]),6);
 const names=['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
@@ -42,6 +45,18 @@ bars('horas',totals(a,'hora').sort((x,y)=>x[0]-y[0]).map(([h,n])=>[String(h).pad
 bars('estados',totals(filtered(data.reservas),'estado'));
 const ap=filtered(data.agenda,'periodo');const per=[...new Set(ap.map(x=>x.periodo))].sort().map(p=>{const r=ap.filter(x=>x.periodo===p);return [p,sum(r),sum(r.filter(x=>x.grupo==='Cola'))]});
 bars('periodos',per,{sort:false,label:e=>fmt(e[1])+' · cola '+pct(e[2],e[1])});
+const conCupos=new Set(data.oferta.filter(r=>r.reservados>0).map(r=>r.periodo));
+const of=data.oferta.filter(r=>!document.getElementById('periodo').value||r.periodo===document.getElementById('periodo').value),oc=of.filter(r=>conCupos.has(r.periodo));
+const capTotal=sum(of,'disponibles'),cap=sum(oc,'disponibles'),esp=sum(of,'espera'),luego=sum(of,'luego');
+cards('ofertaMetrics',[['Capacidad (cupos disponibles)',fmt(capTotal),'Total de la franja en el semestre'],['Ocupación',pct(sum(oc,'reservados'),cap),fmt(sum(oc,'reservados'))+' cupos reservados'],['En lista de espera',fmt(esp),'Franja con lista: '+fmt(of.filter(r=>r.espera>0).length)+' de '+fmt(of.length)],['Conversión de la cola',pct(luego,esp+luego),fmt(luego)+' reservaron luego de estar en lista']]);
+const hours=[...new Set(oc.map(r=>r.hora))].sort(),days=[...new Set(oc.map(r=>r.dia))].sort();
+const head=document.getElementById('mapaCabecera');head.replaceChildren();const hr=document.createElement('tr');for(const t of ['Hora',...days.map(d=>names[d-1])]){const th=document.createElement('th');th.textContent=t;hr.append(th)}head.append(hr);
+const map=document.getElementById('mapaOcupacion');map.replaceChildren();
+if(!oc.length){const tr=document.createElement('tr'),td=document.createElement('td');td.textContent='Sin registros para esta selección.';tr.append(td);map.append(tr)}
+for(const h of hours){const tr=document.createElement('tr');const th=document.createElement('td');th.textContent=h;tr.append(th);for(const d of days){const r=oc.filter(x=>x.hora===h&&x.dia===d),c=sum(r,'disponibles'),td=document.createElement('td');td.className='n';if(c){const o=sum(r,'reservados')/c;td.textContent=(100*o).toFixed(0)+'%';td.style.background='rgba(53,109,184,'+(0.12+0.7*o).toFixed(2)+')';td.style.color=o>0.55?'#fff':'#17243a';td.title='Capacidad '+fmt(c)+' · lista de espera '+fmt(sum(r,'espera'))}else td.textContent='—';tr.append(td)}map.append(tr)}
+const po=data.oferta.filter(r=>conCupos.has(r.periodo)),pl=[...new Set(po.map(r=>r.periodo))].sort();
+bars('ocupacionPeriodo',pl.map(p=>{const r=po.filter(x=>x.periodo===p),c=sum(r,'disponibles');return [p,100*sum(r,'reservados')/c,c]}),{sort:false,label:e=>e[1].toFixed(1)+'% · cap. '+fmt(e[2])});
+bars('esperaPeriodo',[...new Set(data.oferta.map(r=>r.periodo))].sort().map(p=>{const r=data.oferta.filter(x=>x.periodo===p);return [p,sum(r,'espera')]}),{sort:false});
 const n=sum(s,'calificaciones'),enc=sum(s,'encuestas'),low=sum(s,'n1')+sum(s,'n2')+sum(s,'n3');
 cards('satisfaccionMetrics',[['Encuestas posteriores válidas',fmt(enc)],['Con calificación',fmt(n),'Completitud del ítem '+pct(n,enc)],['Media (escala 1–5)',n?(sum(s,'suma')/n).toFixed(2):'—'],['Calificaciones 1–3',pct(low,n),fmt(low)+' encuestas']]);
 bars('calificaciones',[1,2,3,4,5].map(i=>[String(i),sum(s,'n'+i)]),{sort:false,label:e=>fmt(e[1])+' · '+pct(e[1],n)});

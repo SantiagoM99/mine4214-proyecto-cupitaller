@@ -1,12 +1,12 @@
 """Full rebuild of the local dimensional model from Silver using SQLite.
 
-Rules applied here: R03 keeps only reservations of tutoring sessions (tipo de horario
+Rules applied here: R07 closes the open states (En ejecución, Reservada); R06 groups all cancellation states into one analytic state; R03 keeps only reservations of tutoring sessions (tipo de horario
 Normal, Express or Normal pico); R02 keeps only valid surveys, and a survey also needs
 its reservation to be in Gold. R04 is materialised as dim_estado.grupo_estado. All survey
 dimensions come from the linked reservation; survey-source discrepancies remain
-traceable. The academic period (periodo) is an attribute of dim_fecha, not a dimension.
+traceable. The offer (horarios) loads hecho_oferta, one row per period, weekday and hour.
+The academic period lives only in dim_periodo.
 """
-import bisect
 import csv
 import json
 import sqlite3
@@ -17,7 +17,6 @@ from limpiar_bookeau import ROOT, GROUPS
 
 OUT=ROOT/'data/oro'
 TUTORIA_TIPOS=('Normal','Express','Normal pico')  # R03
-SIN_PERIODO=('Sin período',None,None,'Entre períodos')
 TIPO_PERIODO={'10':'Semestre 1','20':'Semestre 2','19':'Intersemestral'}
 NOMBRE_DIA=['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo']
 NOMBRE_MES=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']
@@ -26,10 +25,22 @@ NOMBRE_MES=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','S
 def grupo_estado(original,analitico):
     """R04, confirmed by the coordination: the queue never held a slot; open states are not closed outcomes."""
     if analitico=='Atendida':return 'Atendida'
-    if original=='No asistió':return 'No asistió'
-    if original in ('En cola','Cola cancelada por reservación'):return 'Cola'
+    if analitico=='No asistió':return 'No asistió'
+    if original=='En cola':return 'Cola'
+    if original=='Cola cancelada por reservación':return 'Cola a reserva'  # the queued request ended in a reservation
     if original.startswith('Cancelada'):return 'Cancelada'
-    return 'Abierta'
+    raise ValueError(f'Estado sin grupo: {original} / {analitico}')
+
+
+def estado_analitico(r):
+    """R01 (Silver) sets Atendida; R06 groups every «Cancelada…» state into one category; R07 closes the
+    open states: En ejecución is Atendida, and Reservada is Atendida only with arrival time and provider,
+    otherwise No asistió. The original state is kept."""
+    original=r['estado_reserva']
+    if original.startswith('Cancelada'):return 'Cancelada'
+    if original=='En ejecución':return 'Atendida'
+    if original=='Reservada':return 'Atendida' if r['fecha_llegada'] and r['prestador_servicio'] else 'No asistió'
+    return r['estado_reserva_analitico']
 
 
 def franja(hora):
@@ -58,6 +69,8 @@ def build():
     reservations=[r for r in all_reservations if r['tipo_horario'] in TUTORIA_TIPOS]  # R03
     included_ids={r['id_reserva'] for r in reservations}
     excluded_r03_reservations=len(all_reservations)-len(reservations)
+    horarios_path=ROOT/'data/plata/horarios.csv'
+    horarios=load(horarios_path) if horarios_path.exists() else []
     if not reservations:raise ValueError('R03 left no reservations')
     tables={}
     indices={}
@@ -78,34 +91,18 @@ def build():
         for field in ['fecha_inicio','fecha_fin','fecha_llegada']:
             if r[field]:dates.append(datetime.fromisoformat(r[field]).date())
     day,last=min(dates),max(dates)
-    # The academic period is an attribute of the date: each calendar day takes the period of the
-    # reservations that start on it; days without reservations take the period that surrounds them.
-    by_day=defaultdict(Counter)
-    for r in reservations:by_day[datetime.fromisoformat(r['fecha_inicio']).date()][r['periodo_origen']]+=1
-    event_days=sorted(by_day)
-    days_with_several_periods=sum(len(c)>1 for c in by_day.values())
-    def period_of(d):
-        if d in by_day:return by_day[d].most_common(1)[0][0]
-        i=bisect.bisect_left(event_days,d)
-        if 0<i<len(event_days):
-            before=by_day[event_days[i-1]].most_common(1)[0][0];after=by_day[event_days[i]].most_common(1)[0][0]
-            if before==after:return before
-        return None
-    def period_attributes(code):
-        if code is None:return SIN_PERIODO
-        suffix=code[4:]
-        return (code,int(code[:4]),suffix,TIPO_PERIODO.get(suffix,'Sin clasificar'))
-    reservations_other_period=sum(r['periodo_origen']!=period_of(datetime.fromisoformat(r['fecha_inicio']).date()) for r in reservations)
     date_rows=[]
     while day<=last:
-        code,year,suffix,kind=period_attributes(period_of(day))
-        date_rows.append({'sk_fecha':int(day.strftime('%Y%m%d')),'fecha':day.isoformat(),'anio':day.year,'mes':day.month,'dia':day.day,'dia_semana_iso':day.isoweekday(),'nombre_dia':NOMBRE_DIA[day.isoweekday()-1],'nombre_mes':NOMBRE_MES[day.month-1],'es_fin_de_semana':int(day.isoweekday()>5),'periodo_original':code,'anio_periodo':year,'sufijo_periodo':suffix,'tipo_periodo':kind})
+        date_rows.append({'sk_fecha':int(day.strftime('%Y%m%d')),'fecha':day.isoformat(),'anio':day.year,'mes':day.month,'dia':day.day,'dia_semana_iso':day.isoweekday(),'nombre_dia':NOMBRE_DIA[day.isoweekday()-1],'nombre_mes':NOMBRE_MES[day.month-1],'es_fin_de_semana':int(day.isoweekday()>5)})
         day+=timedelta(days=1)
     tables['dim_fecha']=date_rows
     tables['dim_hora']=[{'sk_hora':h*60+m+1,'hora':h,'minuto':m,'etiqueta':f'{h:02d}:{m:02d}','franja':franja(h)} for h in range(24) for m in range(60)]
+    periods=dimension('dim_periodo','sk_periodo',['periodo_original','anio_codigo','sufijo_original'],[(c,int(c[:4]),c[4:]) for c in sorted({r['periodo_origen'] for r in reservations}|{h['periodo_origen'] for h in horarios})])
+    for row in tables['dim_periodo']:row['tipo_periodo']=TIPO_PERIODO.get(row['sufijo_original'],'Sin clasificar')
+    tables['dim_dia_semana']=[{'sk_dia_semana':i,'dia_semana_iso':i,'nombre_dia':NOMBRE_DIA[i-1],'es_fin_de_semana':int(i>5)} for i in range(1,8)]
     services=dimension('dim_servicio','sk_servicio',['codigo_servicio','servicio_original'],[(r['codigo_servicio'],r['servicio']) for r in reservations])
     modes=dimension('dim_modalidad','sk_modalidad',['tipo_horario_original','categoria_original'],[(r['tipo_horario'],r['categoria']) for r in reservations])
-    states=dimension('dim_estado','sk_estado',['estado_original','estado_analitico'],[(r['estado_reserva'],r['estado_reserva_analitico']) for r in reservations])
+    states=dimension('dim_estado','sk_estado',['estado_original','estado_analitico'],[(r['estado_reserva'],estado_analitico(r)) for r in reservations])
     for row in tables['dim_estado']:row['grupo_estado']=grupo_estado(row['estado_original'],row['estado_analitico'])
     programs=dimension('dim_programa','sk_programa',['programa_normalizado'],[(r['programa_normalizado'] or 'No informado',) for r in reservations],unknown=('No informado',))
     survey_types=dimension('dim_tipo_encuesta','sk_tipo_encuesta',['grupo_fuente','etapa'],[(g,'posterior' if 'satisfaccion' in f else 'previa') for g,f in GROUPS.items() if g!='Reservas'])
@@ -122,7 +119,7 @@ def build():
     question_keys={r['columna_plata']:r['sk_pregunta'] for r in tables['dim_pregunta']}
     def keys(r):
         start=datetime.fromisoformat(r['fecha_inicio'])
-        return {'sk_fecha_inicio':int(start.strftime('%Y%m%d')),'sk_hora_inicio':start.hour*60+start.minute+1,'sk_servicio':services[(r['codigo_servicio'],r['servicio'])],'sk_modalidad':modes[(r['tipo_horario'],r['categoria'])],'sk_estado':states[(r['estado_reserva'],r['estado_reserva_analitico'])],'sk_programa':programs[(r['programa_normalizado'] or 'No informado',)]}
+        return {'sk_fecha_inicio':int(start.strftime('%Y%m%d')),'sk_hora_inicio':start.hour*60+start.minute+1,'sk_periodo':periods[(r['periodo_origen'],int(r['periodo_origen'][:4]),r['periodo_origen'][4:])],'sk_servicio':services[(r['codigo_servicio'],r['servicio'])],'sk_modalidad':modes[(r['tipo_horario'],r['categoria'])],'sk_estado':states[(r['estado_reserva'],estado_analitico(r))],'sk_programa':programs[(r['programa_normalizado'] or 'No informado',)]}
     fact_reservations=[]
     for r in reservations:
         k=keys(r)
@@ -162,6 +159,10 @@ def build():
         if included+excluded+excluded_r03+pending!=len(rows):raise ValueError('Survey counts do not reconcile')
         reconciliation.append({'grupo':group,'filas_silver':len(rows),'encuestas_gold':included,'excluidas_R02':excluded,'excluidas_R03':excluded_r03,'estado_desconocido_pendiente':pending,'items_no_vacios':expected_answers,'conciliacion':'OK'})
     tables['hecho_encuesta']=fact_surveys;tables['hecho_respuesta']=fact_answers
+    measures=['asistencias','cancelaciones','inasistencias','en_lista_espera','reservaron_luego_de_lista','cupos_reservados','cupos_disponibles']
+    tables['hecho_oferta']=[{'sk_periodo':periods[(h['periodo_origen'],int(h['periodo_origen'][:4]),h['periodo_origen'][4:])],'sk_dia_semana':int(h['dia_semana_iso']),
+        'sk_hora_inicio':int(h['hora_inicio'][:2])*60+int(h['hora_inicio'][3:])+1,**{m:int(h[m]) for m in measures},
+        'archivo_origen':h['archivo_origen'],'hoja_origen':h['hoja_origen'],'fila_excel':int(h['fila_excel']),'banderas_calidad_json':h['banderas_calidad_json']} for h in horarios]
     temporary=OUT/'bookeau.sqlite3.tmp'
     if temporary.exists():temporary.unlink()
     db=sqlite3.connect(temporary)
@@ -175,6 +176,7 @@ def build():
         if db.execute('SELECT COUNT(*) FROM hecho_reserva').fetchone()[0]!=len(reservations):raise ValueError('Reservation counts differ')
         if len(reservations)+excluded_r03_reservations!=len(all_reservations):raise ValueError('R03 counts do not reconcile')
         if db.execute('SELECT COUNT(*) FROM hecho_encuesta').fetchone()[0]!=sum(r['encuestas_gold'] for r in reconciliation):raise ValueError('Survey counts differ')
+        if db.execute('SELECT COUNT(*) FROM hecho_oferta').fetchone()[0]!=len(horarios):raise ValueError('Offer counts differ')
         db.commit()
     except Exception:
         db.close();temporary.unlink(missing_ok=True);raise
@@ -186,7 +188,7 @@ def build():
     with (DOCS/'conciliacion_silver_gold.csv').open('w',newline='') as stream:
         writer=csv.DictWriter(stream,fieldnames=list(reconciliation[0]));writer.writeheader();writer.writerows(reconciliation)
     counts={table:len(rows) for table,rows in tables.items()}
-    controls={'conteos':counts,'reservas_silver':len(all_reservations),'reservas_excluidas_R03':excluded_r03_reservations,'reservas_gold':len(fact_reservations),'encuestas_excluidas_R03':sum(r['excluidas_R03'] for r in reconciliation),'fechas_con_mas_de_un_periodo':days_with_several_periods,'reservas_con_periodo_distinto_al_de_su_fecha':reservations_other_period,'atendidas_R01':sum(r['estado_reserva_analitico']=='Atendida' for r in reservations),'encuestas_excluidas_R02':sum(r['excluidas_R02'] for r in reconciliation),'claves_foraneas':'OK','unicidad_granos':'OK','conciliacion':'OK'}
+    controls={'conteos':counts,'reservas_silver':len(all_reservations),'reservas_excluidas_R03':excluded_r03_reservations,'reservas_gold':len(fact_reservations),'franjas_oferta_silver':len(horarios),'franjas_oferta_gold':len(tables['hecho_oferta']),'encuestas_excluidas_R03':sum(r['excluidas_R03'] for r in reconciliation),'atenciones':sum(estado_analitico(r)=='Atendida' for r in reservations),'encuestas_excluidas_R02':sum(r['excluidas_R02'] for r in reconciliation),'claves_foraneas':'OK','unicidad_granos':'OK','conciliacion':'OK'}
     (DOCS/'controles_gold.json').write_text(json.dumps(controls,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps(controls,ensure_ascii=False,indent=2))
 

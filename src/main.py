@@ -29,6 +29,7 @@ PASOS = [
     ('documentar', 'documentar_caracterizacion.py', 'diccionario y documento de caracterización'),
     ('preparar', 'preparar_analisis_bookeau.py', 'evidencia de calidad para los análisis'),
     ('limpiar', 'limpiar_bookeau.py', 'Bronze → Silver'),
+    ('horarios', 'procesar_horarios.py', 'horarios (oferta) Bronze → Silver y conciliación con Reservas'),
     ('comprobar', 'comprobar_estados_encuestas.py', 'cruce estados de reserva × encuestas'),
     ('gold', 'construir_gold_bookeau.py', 'Silver → Gold + controles'),
     ('tablero', 'generar_tablero_bookeau.py', 'tablero interactivo'),

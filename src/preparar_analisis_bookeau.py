@@ -10,7 +10,7 @@ from collections import Counter, defaultdict
 from datetime import datetime
 from pathlib import Path
 
-from caracterizar_bookeau import read_workbook, missing, SOURCE, ROOT
+from caracterizar_bookeau import read_workbook, missing, SOURCE, ROOT, GRUPOS_APARTE
 
 OUT = ROOT / 'docs/artifacts/calidad'
 RATING = 'Califique la ayuda que le dio su tutor'
@@ -40,6 +40,8 @@ def prepare():
     reservations = {}
     survey_rows = []
     for path in sorted(SOURCE.rglob('*.xlsx')):
+        if path.parent.name in GRUPOS_APARTE:
+            continue
         period = path.stem[-6:]
         for _, _, rows in read_workbook(path):
             if path.parent.name == 'Reservas':

@@ -38,9 +38,14 @@ Anexos del informe principal (\texttt{informe\_latex.tex}). Las referencias a se
 \textbf{Modalidad} & Tipo de tutoría: Normal, Express o Normal pico (ver 1.1). \\
 \textbf{Servicio} & Curso para el cual se pide la tutoría (IP, EDA, APO 1, etc.). \\
 \textbf{Período} & Semestre académico, con código de seis cifras (por ejemplo, 202610 es el primer semestre de 2026; terminación 19 es el intersemestral). \\
-\textbf{En cola} & Solicitud que no consiguió cupo y quedó en lista de espera. \\
+\textbf{En cola} & Solicitud que no consiguió cupo y quedó en lista de espera. Si luego el estudiante consigue una reserva, se cierra como «Cola cancelada por reservación». \\
 \textbf{Sanción} & Penalización por incumplir las reglas de reserva. \\
 \textbf{Variable} & Una columna de una tabla de datos. \\
+\textbf{Horarios} & Reporte de Bookeau que resume, por semestre y franja semanal, la oferta de tutorías y lo ocurrido en ella. \\
+\textbf{Franja} & Un día de la semana y una hora de inicio dentro de un semestre (por ejemplo, lunes a las 9:00). \\
+\textbf{Capacidad} & Cupos disponibles de una franja: su capacidad total en el semestre (los cupos reservados no se le suman). \\
+\textbf{Ocupación} & Cupos reservados dividido entre los cupos disponibles (la capacidad) de la franja. \\
+\textbf{Conversión de la cola} & Parte de las solicitudes en lista de espera que terminó en una reserva. \\
 \bottomrule
 \end{longtable}
 \endgroup
@@ -50,8 +55,9 @@ Anexos del informe principal (\texttt{informe\_latex.tex}). Las referencias a se
 
 Todo el proceso se puede volver a ejecutar desde los archivos originales con programas en Python:
 \begin{enumerate}[leftmargin=1.5em,itemsep=2pt]
-\item \textbf{Perfilamiento de Bronze:} lee los 114 archivos de Excel sin modificarlos y calcula estadísticas, vínculos y reglas de validez.
-\item \textbf{Limpieza (Bronze a Silver):} genera los cinco archivos CSV con las reglas de la sección 3.6 y las banderas de calidad.
+\item \textbf{Perfilamiento de Bronze:} lee los 114 archivos de Excel de reservas y encuestas sin modificarlos y calcula estadísticas, vínculos y reglas de validez.
+\item \textbf{Limpieza (Bronze a Silver):} genera los cinco archivos CSV de reservas y encuestas con las reglas de la sección 3.6 y las banderas de calidad.
+\item \textbf{Horarios (oferta):} lee los 30 archivos de horarios, escribe su capa Silver y concilia cada franja con Reservas.
 \item \textbf{Carga (Silver a Gold):} reconstruye la base de datos SQLite con el modelo dimensional y ejecuta los controles de la sección 5.3.
 \item \textbf{Tablero:} genera el archivo HTML a partir de la base Gold.
 \end{enumerate}
@@ -60,7 +66,7 @@ Cada paso reemplaza sus resultados solo cuando termina sin errores. Los resultad
 
 \section*{Anexo C · Datos de apoyo detallados}
 
-Este anexo reúne el detalle completo de la caracterización, la calidad, la limpieza y la carga. El informe usa un resumen de estas tablas. Las cifras describen todos los datos recibidos, antes de aplicar la regla R03 (solo reservas de tutorías), y deben recalcularse con esa población.
+Este anexo reúne el detalle completo de la caracterización, la calidad, la limpieza y la carga. El informe usa un resumen de estas tablas. Las tablas C.1 a C.11 describen todos los datos recibidos, antes de aplicar la regla R03 (solo reservas de tutorías). Las tablas C.12 a C.15 usan la capa Gold, es decir, ya con las reglas R02 y R03, e incluyen los horarios.
 
 \subsection*{C.1 Resumen de las cinco fuentes}
 
@@ -833,17 +839,20 @@ R02: encuesta inválida excluida del análisis & 166 \\
 \textbf{Tabla} & \textbf{Filas} & \textbf{Contenido} \\
 \midrule
 \endhead
-\texttt{dim\_\allowbreak{}fecha} & 3.565 & Calendario diario continuo del rango observado (inicio, fin y llegada), con el período académico como atributo \\
+\texttt{dim\_\allowbreak{}fecha} & 3.565 & Calendario diario continuo del rango observado (inicio, fin y llegada) \\
+\texttt{dim\_\allowbreak{}periodo} & 30 & Códigos de período de reservas y horarios (10 por cada tipo de período) \\
+\texttt{dim\_\allowbreak{}dia\_\allowbreak{}semana} & 7 & Día de la semana (número ISO, nombre e indicador de fin de semana) \\
 \texttt{dim\_\allowbreak{}hora} & 1.440 & Un miembro por minuto del día \\
-\texttt{dim\_\allowbreak{}servicio} & 11 & Código y etiqueta original del servicio \\
-\texttt{dim\_\allowbreak{}modalidad} & 24 & Combinación de tipo de horario y categoría \\
-\texttt{dim\_\allowbreak{}estado} & 12 & Estado original, estado analítico (R01) y grupo de estado (R04) \\
-\texttt{dim\_\allowbreak{}programa} & 175 & Programa normalizado, con el miembro «No informado» \\
+\texttt{dim\_\allowbreak{}servicio} & 8 & Código y etiqueta original del servicio \\
+\texttt{dim\_\allowbreak{}modalidad} & 15 & Combinación de tipo de horario y categoría \\
+\texttt{dim\_\allowbreak{}estado} & 13 & Estado original, estado analítico (R01, R06 y R07) y grupo de estado (R04); «Reservada» tiene dos miembros \\
+\texttt{dim\_\allowbreak{}programa} & 164 & Programa normalizado, con el miembro «No informado» \\
 \texttt{dim\_\allowbreak{}tipo\_\allowbreak{}encuesta} & 4 & Cuatro tipos: grupo de fuente y etapa (previa o posterior) \\
 \texttt{dim\_\allowbreak{}pregunta} & 22 & Texto completo de cada pregunta, con marcas de texto libre y de calificación del tutor \\
-\texttt{hecho\_\allowbreak{}reserva} & 86.562 & Un evento de reserva \\
-\texttt{hecho\_\allowbreak{}encuesta} & 60.224 & Una encuesta incluida (R02) \\
-\texttt{hecho\_\allowbreak{}respuesta} & 384.792 & Una respuesta no vacía a una pregunta \\
+\texttt{hecho\_\allowbreak{}reserva} & 83.894 & Un evento de reserva de tutoría (R03) \\
+\texttt{hecho\_\allowbreak{}encuesta} & 60.024 & Una encuesta incluida (R02 y R03) \\
+\texttt{hecho\_\allowbreak{}respuesta} & 383.183 & Una respuesta no vacía a una pregunta \\
+\texttt{hecho\_\allowbreak{}oferta} & 1.396 & Una franja de un semestre: período, día de la semana y hora de inicio \\
 \bottomrule
 \end{longtable}
 \endgroup
@@ -852,55 +861,59 @@ R02: encuesta inválida excluida del análisis & 166 \\
 \textbf{Conciliación entre Silver y Gold}
 
 \begingroup\footnotesize\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.15}
-\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.262\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.086\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.112\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.112\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.127\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.120\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.112\textwidth-2\tabcolsep\relax}}
+\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.242\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.080\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.072\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.103\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.103\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.118\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.110\textwidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.103\textwidth-2\tabcolsep\relax}}
 \toprule
-\textbf{Fuente} & \textbf{Filas Silver} & \textbf{Encuestas Gold} & \textbf{Excluidas R02} & \textbf{Estado desconocido pendiente} & \textbf{Respuestas no vacías} & \textbf{Resultado} \\
+\textbf{Fuente} & \textbf{Filas Silver} & \textbf{Filas Gold} & \textbf{Excluidas R02} & \textbf{Excluidas R03} & \textbf{Estado desconocido pendiente} & \textbf{Respuestas no vacías} & \textbf{Resultado} \\
 \midrule
 \endhead
-Encuesta de satisfacción Express & 6.759 & 6.706 & 53 & 0 & 55.720 & OK \\
-Encuesta de satisfacción Normal & 16.379 & 16.268 & 111 & 0 & 180.072 & OK \\
-Encuesta previa Express & 13.815 & 13.815 & 0 & 0 & 55.260 & OK \\
-Encuesta previa Normal IP & 23.437 & 23.435 & 2 & 0 & 93.740 & OK \\
+Reservas & 86.562 & 83.894 & --- & 2.668 & --- & --- & OK \\
+Encuesta de satisfacción Express & 6.759 & 6.646 & 53 & 60 & 0 & 55.228 & OK \\
+Encuesta de satisfacción Normal & 16.379 & 16.181 & 111 & 87 & 0 & 179.167 & OK \\
+Encuesta previa Express & 13.815 & 13.815 & 0 & 0 & 0 & 55.260 & OK \\
+Encuesta previa Normal IP & 23.437 & 23.382 & 2 & 53 & 0 & 93.528 & OK \\
+Horarios (franjas) & 1.396 & 1.396 & --- & --- & --- & --- & OK \\
 \bottomrule
 \end{longtable}
 \endgroup
 
 
-Esta tabla y los controles siguientes corresponden a la carga anterior a la regla R03. Con R03, el programa de carga también excluye las reservas que no son de tutorías y las encuestas de esas reservas, agrega la columna \texttt{excluidas\_\allowbreak{}R03} a la conciliación y los controles \texttt{reservas\_\allowbreak{}excluidas\_\allowbreak{}R03} y \texttt{encuestas\_\allowbreak{}excluidas\_\allowbreak{}R03}, de modo que las filas de Silver igualan las de Gold más las exclusiones R02 y R03. Controles de la carga anterior: reservas Silver 86.562 y Gold 86.562; atenciones R01 42.646; encuestas excluidas por R02 166; claves foráneas OK; unicidad de granularidades OK; conciliación OK. No se exige igualdad entre el número de respuestas y el de encuestas porque sus granularidades son distintas. Las encuestas con campos vacíos se conservan a nivel de encuesta pero no generan respuestas inventadas.
+Controles: reservas Silver 86.562 y Gold 83.894 (más 2.668 excluidas por R03); atenciones (R01 y R07) en Gold 41.430; encuestas excluidas por R02 166 y por R03 200; franjas de oferta Silver 1.396 y Gold 1.396; claves foráneas OK; unicidad de granularidades OK; conciliación OK. Si una encuesta es inválida (R02) y además pertenece a una reserva excluida, se cuenta en R02. No se exige igualdad entre el número de respuestas y el de encuestas porque sus granularidades son distintas. Las encuestas con campos vacíos se conservan a nivel de encuesta pero no generan respuestas inventadas.
 
 \textbf{Atributos de las tablas de hechos}
 
 \begingroup\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.15}
-\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.105\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.156\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.335\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.335\textwidth-2\tabcolsep\relax}}
+\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.097\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.211\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.311\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.311\textwidth-2\tabcolsep\relax}}
 \toprule
 \textbf{Tabla} & \textbf{Clave primaria} & \textbf{Claves foráneas} & \textbf{Medidas y atributos} \\
 \midrule
 \endhead
-\texttt{hecho\_\allowbreak{}reserva} & \texttt{id\_\allowbreak{}reserva} & fecha de inicio, fin y llegada; hora de inicio; servicio; modalidad; estado; programa & \texttt{evento\_\allowbreak{}reserva} (siempre 1), \texttt{duracion\_\allowbreak{}programada\_\allowbreak{}minutos} ($\geq$ 0), \texttt{es\_\allowbreak{}prioritaria}, fechas originales, archivo, hoja y fila de origen, banderas de calidad \\
-\texttt{hecho\_\allowbreak{}encuesta} & \texttt{id\_\allowbreak{}encuesta} & \texttt{id\_\allowbreak{}reserva}, tipo de encuesta, fecha y hora de inicio de la reserva, servicio, modalidad, estado, programa & \texttt{respuesta\_\allowbreak{}encuesta} (siempre 1), \texttt{calificacion\_\allowbreak{}ayuda\_\allowbreak{}tutor} (1 a 5, puede estar vacía), origen, banderas, diferencias con la reserva; restricción única (\texttt{id\_\allowbreak{}reserva}, tipo de encuesta) \\
+\texttt{hecho\_\allowbreak{}reserva} & \texttt{id\_\allowbreak{}reserva} & fecha de inicio, fin y llegada; hora de inicio; período; servicio; modalidad; estado; programa & \texttt{evento\_\allowbreak{}reserva} (siempre 1), \texttt{duracion\_\allowbreak{}programada\_\allowbreak{}minutos} ($\geq$ 0), \texttt{es\_\allowbreak{}prioritaria}, fechas originales, archivo, hoja y fila de origen, banderas de calidad \\
+\texttt{hecho\_\allowbreak{}encuesta} & \texttt{id\_\allowbreak{}encuesta} & \texttt{id\_\allowbreak{}reserva}, tipo de encuesta, fecha y hora de inicio de la reserva, período, servicio, modalidad, estado, programa & \texttt{respuesta\_\allowbreak{}encuesta} (siempre 1), \texttt{calificacion\_\allowbreak{}ayuda\_\allowbreak{}tutor} (1 a 5, puede estar vacía), origen, banderas, diferencias con la reserva; restricción única (\texttt{id\_\allowbreak{}reserva}, tipo de encuesta) \\
 \texttt{hecho\_\allowbreak{}respuesta} & \texttt{id\_\allowbreak{}encuesta} y \texttt{sk\_\allowbreak{}pregunta} & encuesta, pregunta & \texttt{valor\_\allowbreak{}original} (no vacío), \texttt{valor\_\allowbreak{}numerico} (solo la calificación 1 a 5), \texttt{respuesta\_\allowbreak{}item} (siempre 1) \\
+\texttt{hecho\_\allowbreak{}oferta} & \texttt{sk\_\allowbreak{}periodo}, \texttt{sk\_\allowbreak{}dia\_\allowbreak{}semana} y \texttt{sk\_\allowbreak{}hora\_\allowbreak{}inicio} & período, día de la semana, hora de inicio & \texttt{asistencias}, \texttt{cancelaciones}, \texttt{inasistencias}, \texttt{en\_\allowbreak{}lista\_\allowbreak{}espera}, \texttt{reservaron\_\allowbreak{}luego\_\allowbreak{}de\_\allowbreak{}lista}, \texttt{cupos\_\allowbreak{}reservados}, \texttt{cupos\_\allowbreak{}disponibles} (la capacidad; todas enteras y no negativas), archivo, hoja y fila de origen, banderas de calidad \\
 \bottomrule
 \end{longtable}
 \endgroup
 
 
-Las referencias de fecha en las encuestas describen la reserva asociada, no el momento en que se contestó. Los conteos son aditivos dentro de su granularidad. Los minutos programados son aditivos como tiempo reservado, pero pueden superponerse entre recursos o usuarios y no equivalen a horas trabajadas ni a ocupación. La calificación no se suma: se calcula su media y mediana con las respuestas no vacías mostrando el tamaño del grupo. Los porcentajes se recalculan desde numerador y denominador. Las claves sustitutas son secuenciales y pueden cambiar si cambia el conjunto de miembros; no deben usarse como identidad estable fuera de una reconstrucción completa.
+Las referencias de fecha en las encuestas describen la reserva asociada, no el momento en que se contestó. Los conteos son aditivos dentro de su granularidad. Los minutos programados son aditivos como tiempo reservado, pero pueden superponerse entre recursos o usuarios y no equivalen a horas trabajadas ni a ocupación. La calificación no se suma: se calcula su media y mediana con las respuestas no vacías mostrando el tamaño del grupo. Los porcentajes se recalculan desde numerador y denominador. La capacidad de la oferta son los cupos disponibles; la ocupación (cupos reservados / cupos disponibles) no se guarda y se calcula en las consultas. Las claves sustitutas son secuenciales y pueden cambiar si cambia el conjunto de miembros; no deben usarse como identidad estable fuera de una reconstrucción completa.
 
 \subsection*{C.13 Consultas SQL de los análisis}
 
-Se ejecutan sobre la base SQLite de la capa Gold. Gold solo contiene reservas de tutorías (R03) y encuestas válidas (R02). El período académico es un atributo de \texttt{dim\_\allowbreak{}fecha}, y se une por la fecha de inicio de la reserva.
+Se ejecutan sobre la base SQLite de la capa Gold. Gold solo contiene reservas de tutorías (R03), encuestas válidas (R02) y la oferta de los horarios, que cubre la categoría Tutor Presencial (R05).
 
 \begingroup\footnotesize\begin{verbatim}
 -- Ejecutar sobre data/oro/bookeau.sqlite3. Gold solo tiene reservas de tutorías (R03) y encuestas 
     válidas (R02).
--- El período académico es un atributo de dim_fecha (se une por la fecha de inicio de la reserva).
+-- Oferta: hecho_oferta (horarios por período, día y hora) cubre solo la categoría Tutor Presencial 
+    (R05).
 -- Análisis 1: eventos registrados y atención R01, sin asumir capacidad disponible.
 SELECT p.periodo_original, s.servicio_original, m.tipo_horario_original,
        COUNT(*) AS eventos_registrados,
        SUM(CASE WHEN e.estado_analitico='Atendida' THEN 1 ELSE 0 END) AS atenciones_registradas,
-       SUM(CASE WHEN e.estado_original='No asistió' THEN 1 ELSE 0 END) AS inasistencias_registradas
+       SUM(CASE WHEN e.estado_analitico='No asistió' THEN 1 ELSE 0 END) AS inasistencias_registradas
 FROM hecho_reserva h
-JOIN dim_fecha p ON p.sk_fecha=h.sk_fecha_inicio
+JOIN dim_periodo p USING(sk_periodo)
 JOIN dim_servicio s USING(sk_servicio)
 JOIN dim_modalidad m USING(sk_modalidad)
 JOIN dim_estado e USING(sk_estado)
@@ -914,7 +927,7 @@ SELECT p.periodo_original, s.servicio_original, m.tipo_horario_original,
        100.0*COUNT(h.calificacion_ayuda_tutor)/COUNT(*) AS completitud_item_pct
 FROM hecho_encuesta h
 JOIN dim_tipo_encuesta t USING(sk_tipo_encuesta)
-JOIN dim_fecha p ON p.sk_fecha=h.sk_fecha_inicio
+JOIN dim_periodo p USING(sk_periodo)
 JOIN dim_servicio s USING(sk_servicio)
 JOIN dim_modalidad m USING(sk_modalidad)
 WHERE t.etapa='posterior'
@@ -935,7 +948,8 @@ SELECT m.tipo_horario_original AS modalidad,
        COUNT(*) AS eventos,
        ROUND(100.0*SUM(e.grupo_estado='No asistió')
              /SUM(e.grupo_estado IN ('Atendida','No asistió')),1) AS inasistencia_pct,
-       ROUND(100.0*SUM(e.grupo_estado='Cola')/COUNT(*),1) AS cola_pct
+       ROUND(100.0*SUM(e.grupo_estado='Cola')/COUNT(*),1) AS cola_pct,
+       ROUND(100.0*SUM(e.grupo_estado='Cola a reserva')/COUNT(*),1) AS cola_a_reserva_pct
 FROM hecho_reserva h
 JOIN dim_modalidad m USING(sk_modalidad)
 JOIN dim_estado e USING(sk_estado)
@@ -955,11 +969,11 @@ JOIN dim_estado e USING(sk_estado)
 GROUP BY d.dia_semana_iso, d.nombre_dia, t.franja
 ORDER BY d.dia_semana_iso, t.franja;
 
--- Análisis 1: eventos y cola por tipo de período (atributos de período en dim_fecha).
+-- Análisis 1: eventos y cola por tipo de período (dim_periodo).
 SELECT p.tipo_periodo, COUNT(*) AS eventos,
        ROUND(100.0*SUM(e.grupo_estado='Cola')/COUNT(*),1) AS cola_pct
 FROM hecho_reserva h
-JOIN dim_fecha p ON p.sk_fecha=h.sk_fecha_inicio
+JOIN dim_periodo p USING(sk_periodo)
 JOIN dim_estado e USING(sk_estado)
 GROUP BY p.tipo_periodo;
 
@@ -970,10 +984,80 @@ SELECT p.periodo_original,
     bajas_pct
 FROM hecho_encuesta h
 JOIN dim_tipo_encuesta t USING(sk_tipo_encuesta)
-JOIN dim_fecha p ON p.sk_fecha=h.sk_fecha_inicio
+JOIN dim_periodo p USING(sk_periodo)
 WHERE t.etapa='posterior'
 GROUP BY p.periodo_original
 HAVING COUNT(h.calificacion_ayuda_tutor)>=30;
+
+-- Oferta: ocupación y lista de espera por franja y período.
+-- Cupos disponibles es la capacidad total de la franja en el semestre (confirmado por la 
+    coordinación) y los
+-- cupos reservados son los ya tomados: ocupación = reservados / disponibles. Se excluyen los 
+    períodos sin cupos
+-- reservados registrados (201620 y 201710). En 5 franjas los reservados superan por poco a los 
+    disponibles.
+SELECT p.periodo_original, d.nombre_dia, t.etiqueta AS hora, o.cupos_reservados, o.cupos_disponibles
+     AS capacidad,
+       ROUND(100.0*o.cupos_reservados/o.cupos_disponibles,1) AS ocupacion_pct,
+       o.en_lista_espera, o.reservaron_luego_de_lista
+FROM hecho_oferta o
+JOIN dim_periodo p USING(sk_periodo)
+JOIN dim_dia_semana d USING(sk_dia_semana)
+JOIN dim_hora t ON t.sk_hora=o.sk_hora_inicio
+WHERE o.cupos_disponibles>0
+  AND o.sk_periodo IN (SELECT sk_periodo FROM hecho_oferta GROUP BY sk_periodo HAVING 
+    SUM(cupos_reservados)>0);
+
+-- Oferta frente a demanda por período: capacidad, ocupación, lista de espera y conversión de la 
+    cola a reserva.
+SELECT p.periodo_original, SUM(o.cupos_disponibles) AS capacidad,
+       CASE WHEN SUM(o.cupos_reservados)>0
+            THEN ROUND(100.0*SUM(o.cupos_reservados)/SUM(o.cupos_disponibles),1) END AS 
+    ocupacion_pct,
+       SUM(o.asistencias) AS asistencias, SUM(o.en_lista_espera) AS en_lista_espera,
+       SUM(o.reservaron_luego_de_lista) AS cola_a_reserva,
+       
+    ROUND(100.0*SUM(o.reservaron_luego_de_lista)/NULLIF(SUM(o.en_lista_espera+o.reservaron_luego_de_lista),0),1)
+     AS conversion_cola_pct
+FROM hecho_oferta o
+JOIN dim_periodo p USING(sk_periodo)
+GROUP BY p.periodo_original;
+
+-- Cupos que se pierden por inasistencia frente a la lista de espera: en cuántas franjas las 
+    inasistencias
+-- habrían alcanzado para atender a todos los que esperaban (comparación agregada, sin casar 
+    fechas).
+SELECT p.periodo_original, SUM(o.inasistencias) AS inasistencias, SUM(o.en_lista_espera) AS 
+    en_lista_espera,
+       SUM(o.en_lista_espera>0) AS franjas_con_lista,
+       SUM(o.en_lista_espera>0 AND o.inasistencias>=o.en_lista_espera) AS 
+    franjas_donde_inasistencias_cubren_la_lista
+FROM hecho_oferta o
+JOIN dim_periodo p USING(sk_periodo)
+GROUP BY p.periodo_original;
+
+-- Análisis 2 (exploratorio): calificación según la saturación de la franja (tercil de ocupación).
+-- Une la encuesta posterior con su franja (período, día de la semana y hora de inicio), solo Tutor 
+    Presencial.
+WITH franja AS (
+  SELECT o.sk_periodo, o.sk_dia_semana, o.sk_hora_inicio,
+         NTILE(3) OVER (ORDER BY 1.0*o.cupos_reservados/o.cupos_disponibles) AS tercil_ocupacion
+  FROM hecho_oferta o
+  WHERE o.cupos_disponibles>0
+    AND o.sk_periodo IN (SELECT sk_periodo FROM hecho_oferta GROUP BY sk_periodo HAVING 
+    SUM(cupos_reservados)>0))
+SELECT f.tercil_ocupacion, COUNT(h.calificacion_ayuda_tutor) AS n_calificaciones,
+       ROUND(AVG(h.calificacion_ayuda_tutor),2) AS media,
+       ROUND(100.0*SUM(h.calificacion_ayuda_tutor<=3)/COUNT(h.calificacion_ayuda_tutor),1) AS 
+    bajas_pct
+FROM hecho_encuesta h
+JOIN dim_tipo_encuesta t USING(sk_tipo_encuesta)
+JOIN dim_modalidad m USING(sk_modalidad)
+JOIN dim_fecha d ON d.sk_fecha=h.sk_fecha_inicio
+JOIN franja f ON f.sk_periodo=h.sk_periodo AND f.sk_dia_semana=d.dia_semana_iso AND 
+    f.sk_hora_inicio=h.sk_hora_inicio
+WHERE t.etapa='posterior' AND m.categoria_original='Tutor Presencial'
+GROUP BY f.tercil_ocupacion;
 \end{verbatim}\endgroup
 
 \textbf{Definición de las tablas (DDL).}
@@ -983,17 +1067,21 @@ PRAGMA foreign_keys = ON;
 CREATE TABLE dim_fecha(sk_fecha INTEGER PRIMARY KEY, fecha TEXT UNIQUE NOT NULL, anio INTEGER, mes 
     INTEGER, dia INTEGER, dia_semana_iso INTEGER CHECK(dia_semana_iso BETWEEN 1 AND 7), nombre_dia 
     TEXT NOT NULL, nombre_mes TEXT NOT NULL, es_fin_de_semana INTEGER CHECK(es_fin_de_semana IN 
-    (0,1)), periodo_original TEXT NOT NULL, anio_periodo INTEGER, sufijo_periodo TEXT, tipo_periodo 
-    TEXT NOT NULL);
+    (0,1)));
 CREATE TABLE dim_hora(sk_hora INTEGER PRIMARY KEY, hora INTEGER, minuto INTEGER, etiqueta TEXT, 
     franja TEXT NOT NULL CHECK(franja IN ('Madrugada','Mañana','Tarde','Noche')));
+CREATE TABLE dim_periodo(sk_periodo INTEGER PRIMARY KEY, periodo_original TEXT UNIQUE NOT NULL, 
+    anio_codigo INTEGER, sufijo_original TEXT, tipo_periodo TEXT NOT NULL);
+CREATE TABLE dim_dia_semana(sk_dia_semana INTEGER PRIMARY KEY CHECK(sk_dia_semana BETWEEN 1 AND 7), 
+    dia_semana_iso INTEGER NOT NULL UNIQUE, nombre_dia TEXT NOT NULL, es_fin_de_semana INTEGER 
+    CHECK(es_fin_de_semana IN (0,1)));
 CREATE TABLE dim_servicio(sk_servicio INTEGER PRIMARY KEY, codigo_servicio TEXT, servicio_original 
     TEXT, UNIQUE(codigo_servicio, servicio_original));
 CREATE TABLE dim_modalidad(sk_modalidad INTEGER PRIMARY KEY, tipo_horario_original TEXT, 
     categoria_original TEXT, UNIQUE(tipo_horario_original,categoria_original));
-CREATE TABLE dim_estado(sk_estado INTEGER PRIMARY KEY, estado_original TEXT UNIQUE NOT NULL, 
+CREATE TABLE dim_estado(sk_estado INTEGER PRIMARY KEY, estado_original TEXT NOT NULL, 
     estado_analitico TEXT NOT NULL, grupo_estado TEXT NOT NULL CHECK(grupo_estado IN ('Atendida','No
-     asistió','Cola','Cancelada','Abierta')));
+     asistió','Cola','Cola a reserva','Cancelada')), UNIQUE(estado_original, estado_analitico));
 CREATE TABLE dim_programa(sk_programa INTEGER PRIMARY KEY, programa_normalizado TEXT UNIQUE NOT 
     NULL);
 CREATE TABLE dim_tipo_encuesta(sk_tipo_encuesta INTEGER PRIMARY KEY, grupo_fuente TEXT UNIQUE NOT 
@@ -1005,7 +1093,8 @@ CREATE TABLE hecho_reserva(
  id_reserva TEXT PRIMARY KEY, sk_fecha_inicio INTEGER REFERENCES dim_fecha, sk_fecha_fin INTEGER 
     REFERENCES dim_fecha,
  sk_fecha_llegada INTEGER REFERENCES dim_fecha, sk_hora_inicio INTEGER NOT NULL REFERENCES dim_hora,
- sk_servicio INTEGER NOT NULL REFERENCES dim_servicio,
+ sk_periodo INTEGER NOT NULL REFERENCES dim_periodo, sk_servicio INTEGER NOT NULL REFERENCES 
+    dim_servicio,
  sk_modalidad INTEGER NOT NULL REFERENCES dim_modalidad, sk_estado INTEGER NOT NULL REFERENCES 
     dim_estado,
  sk_programa INTEGER NOT NULL REFERENCES dim_programa,
@@ -1019,7 +1108,8 @@ CREATE TABLE hecho_encuesta(
  id_encuesta TEXT PRIMARY KEY, id_reserva TEXT NOT NULL REFERENCES hecho_reserva,
  sk_tipo_encuesta INTEGER NOT NULL REFERENCES dim_tipo_encuesta,
  sk_fecha_inicio INTEGER REFERENCES dim_fecha, sk_hora_inicio INTEGER NOT NULL REFERENCES dim_hora,
- sk_servicio INTEGER NOT NULL REFERENCES dim_servicio,
+ sk_periodo INTEGER NOT NULL REFERENCES dim_periodo, sk_servicio INTEGER NOT NULL REFERENCES 
+    dim_servicio,
  sk_modalidad INTEGER NOT NULL REFERENCES dim_modalidad, sk_estado INTEGER NOT NULL REFERENCES 
     dim_estado,
  sk_programa INTEGER NOT NULL REFERENCES dim_programa,
@@ -1034,53 +1124,68 @@ CREATE TABLE hecho_respuesta(
  valor_original TEXT NOT NULL CHECK(length(trim(valor_original))>0),
  valor_numerico REAL, respuesta_item INTEGER NOT NULL DEFAULT 1 CHECK(respuesta_item=1),
  PRIMARY KEY(id_encuesta,sk_pregunta));
+CREATE TABLE hecho_oferta(
+ sk_periodo INTEGER NOT NULL REFERENCES dim_periodo, sk_dia_semana INTEGER NOT NULL REFERENCES 
+    dim_dia_semana,
+ sk_hora_inicio INTEGER NOT NULL REFERENCES dim_hora,
+ asistencias INTEGER NOT NULL CHECK(asistencias>=0), cancelaciones INTEGER NOT NULL 
+    CHECK(cancelaciones>=0),
+ inasistencias INTEGER NOT NULL CHECK(inasistencias>=0), en_lista_espera INTEGER NOT NULL 
+    CHECK(en_lista_espera>=0),
+ reservaron_luego_de_lista INTEGER NOT NULL CHECK(reservaron_luego_de_lista>=0),
+ cupos_reservados INTEGER NOT NULL CHECK(cupos_reservados>=0), cupos_disponibles INTEGER NOT NULL 
+    CHECK(cupos_disponibles>=0),
+ archivo_origen TEXT NOT NULL, hoja_origen TEXT NOT NULL, fila_excel INTEGER NOT NULL, 
+    banderas_calidad_json TEXT NOT NULL,
+ PRIMARY KEY(sk_periodo, sk_dia_semana, sk_hora_inicio));
 \end{verbatim}\endgroup
 
 \subsection*{C.14 Resultados adicionales de los análisis}
 
-\textbf{Indicadores globales}
+\textbf{Indicadores globales} (reservas de tutorías, regla R03)
 
 \begingroup\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.15}
-\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.736\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.194\textwidth-2\tabcolsep\relax}}
+\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.776\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.154\textwidth-2\tabcolsep\relax}}
 \toprule
 \textbf{Indicador} & \textbf{Valor} \\
 \midrule
 \endhead
-Eventos de reserva & 86.562 \\
-Atenciones (R01) & 42.646 \\
-Eventos «No asistió» & 5.086 \\
-Encuestas posteriores incluidas (R02) & 22.974 \\
-Calificaciones utilizables & 16.171 \\
+Eventos de reserva & 83.894 \\
+Atenciones (R01 y R07) & 41.430 \\
+Eventos «No asistió» (R04 y R07) & 4.836 \\
+Encuestas posteriores incluidas (R02) & 22.827 \\
+Calificaciones utilizables & 16.050 \\
 Media descriptiva de la calificación & 4,74 \\
-Tasa de inasistencia (R04) & 10,7\% \\
-Proporción en cola (R04) & 17,1\% \\
+Tasa de inasistencia (R04) & 10,5\% \\
+Proporción en cola (R04) & 12,1\% \\
+Proporción que pasó de la cola a reserva & 5,4\% \\
 Proporción de calificaciones 1 a 3 & 5,7\% \\
+Ocupación de la oferta (períodos con cupos reservados) & 74,5\% \\
+Conversión de la cola a reserva (horarios) & 34,5\% \\
 \bottomrule
 \end{longtable}
 \endgroup
 
 
-\textbf{Satisfacción por modalidad original} (todas las modalidades presentes, incluidas las obsoletas)
+\textbf{Satisfacción por modalidad original} (tras la regla R03 solo quedan las tres modalidades de tutoría)
 
 \begingroup\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.15}
-\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.332\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.178\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.216\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.204\textwidth-2\tabcolsep\relax}}
+\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.214\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.214\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.259\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.244\textwidth-2\tabcolsep\relax}}
 \toprule
 \textbf{Modalidad original} & \textbf{Encuestas incluidas} & \textbf{Con calificación} & \textbf{Media descriptiva} \\
 \midrule
 \endhead
-Express & 6.646 & 4.878 & 4,6982 \\
-Normal & 14.731 & 9.722 & 4,7725 \\
-Normal pico & 1.450 & 1.450 & 4,6241 \\
-Deprecated, Grupal & 60 & 60 & 4,6000 \\
-Deprecated, Torre Séneca & 87 & 61 & 4,7049 \\
+Express & 6.646 & 4.878 & 4,70 \\
+Normal & 14.731 & 9.722 & 4,77 \\
+Normal pico & 1.450 & 1.450 & 4,62 \\
 \bottomrule
 \end{longtable}
 \endgroup
 
 
-Faltan 6.803 calificaciones y no se les asigna cero; la completitud del ítem entre las encuestas incluidas es de 70,39\%. La mediana global es 5. Las medias agregadas no demuestran superioridad de una modalidad: hay que comparar por período, servicio, muestra y formulario, y la media supone distancias iguales entre los puntos de la escala. La ausencia de respuestas y los cambios históricos pueden sesgar la comparación, y no se infiere una mejora causal del aprendizaje.
+Faltan 6.777 calificaciones y no se les asigna cero; la completitud del ítem entre las encuestas incluidas es de 70,3\%. La mediana global es 5. Las medias agregadas no demuestran superioridad de una modalidad: hay que comparar por período, servicio, muestra y formulario, y la media supone distancias iguales entre los puntos de la escala. La ausencia de respuestas y los cambios históricos pueden sesgar la comparación, y no se infiere una mejora causal del aprendizaje.
 
-\textbf{Servicios y modalidades con más eventos (etiquetas originales).} Servicios: IP 53.272, Deprecated APO 1 21.136, EDA 6.127. Modalidades: Normal 49.472, Express 25.754, Normal pico 8.668. Hora de inicio programado con más eventos: 11:00 a 11:59 (13.699), 14:00 a 14:59 (11.253) y 09:00 a 09:59 (10.217). Estos conteos reflejan agenda reservada y no demuestran insuficiencia de oferta. Los totales incluyen modalidades históricas, salas y entrevistas, que el tablero permite separar.
+\textbf{Servicios y modalidades con más eventos (etiquetas originales, reservas de tutorías).} Servicios: IP 53.015, Deprecated APO 1 20.558, EDA 5.994. Modalidades: Normal 49.472, Express 25.754, Normal pico 8.668. Hora de inicio programado con más eventos: 11:00 a 11:59 (13.243), 14:00 a 14:59 (10.877) y 09:00 a 09:59 (10.052). Estos conteos reflejan agenda reservada y no demuestran insuficiencia de oferta.
 
 \textbf{Texto disponible en Gold} (respuestas textuales de encuestas incluidas)
 
@@ -1090,20 +1195,127 @@ Faltan 6.803 calificaciones y no se les asigna cero; la completitud del ítem en
 \textbf{Pregunta} & \textbf{Encuesta} & \textbf{Respuestas} \\
 \midrule
 \endhead
-Comente aspectos positivos y negativos del tutor y la tutoría. Recuerde que las respuestas van a ser anónimas. & Encuesta de satisfacción Express & 5.403 \\
-Comente aspectos positivos y negativos del tutor y la tutoría. Recuerde que las respuestas van a ser anónimas. & Encuesta de satisfacción Normal & 12.426 \\
+Comente aspectos positivos y negativos del tutor y la tutoría. Recuerde que las respuestas van a ser anónimas. & Encuesta de satisfacción Express & 5.343 \\
+Comente aspectos positivos y negativos del tutor y la tutoría. Recuerde que las respuestas van a ser anónimas. & Encuesta de satisfacción Normal & 12.344 \\
 Escriba en este recuadro cualquier observación o comentario relacionado al curso y sus contenidos. & Encuesta de satisfacción Express & 561 \\
 Escriba en este recuadro cualquier observación o comentario relacionado al curso y sus contenidos. & Encuesta de satisfacción Normal & 1.317 \\
 Indique cuál fue la herramienta usada durante la tutoría (si sabe cuál es) y el uso que tuvo la misma en la tutoría. & Encuesta de satisfacción Express & 4 \\
 Indique cuál fue la herramienta usada durante la tutoría (si sabe cuál es) y el uso que tuvo la misma en la tutoría. & Encuesta de satisfacción Normal & 22 \\
-Sugerencias, reclamos y observaciones & Encuesta de satisfacción Express & 1.703 \\
-Sugerencias, reclamos y observaciones & Encuesta de satisfacción Normal & 4.005 \\
+Sugerencias, reclamos y observaciones & Encuesta de satisfacción Express & 1.691 \\
+Sugerencias, reclamos y observaciones & Encuesta de satisfacción Normal & 3.974 \\
 \bottomrule
 \end{longtable}
 \endgroup
 
 
-\textbf{Archivos que consume el tablero.} Agregados por período, servicio, modalidad, estado, día y hora, y distribución de calificaciones. Contienen solo información de grupos, sin nombres ni correos.
+\textbf{Archivos que consume el tablero.} Agregados por período, servicio, modalidad, estado, día y hora, distribución de calificaciones y franjas de oferta. Contienen solo información de grupos, sin nombres ni correos.
+
+\subsection*{C.15 Horarios (oferta): perfil y conciliación con Reservas}
+
+Los 30 archivos de horarios tienen la misma estructura (hoja «Citas» con nueve columnas) y 1.396 filas en total. Los períodos 202219, 202220 y 202319 tienen archivo sin filas porque no hubo tutorías presenciales. Una franja se identifica por período, día y hora, sin repeticiones.
+
+\textbf{Perfil por período}
+
+\begingroup\footnotesize\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.15}
+\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.084\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.084\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.112\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.126\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.126\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.076\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.105\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.105\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.112\textwidth-2\tabcolsep\relax}}
+\toprule
+\textbf{Período} & \textbf{Franjas} & \textbf{Asistencias} & \textbf{Cancelaciones} & \textbf{Inasistencias} & \textbf{En lista de espera} & \textbf{Reservaron luego de la lista} & \textbf{Cupos reservados} & \textbf{Cupos disponibles} \\
+\midrule
+\endhead
+201620 & 45 & 1.308 & 609 & 137 & 191 & 588 & 0 & 1.969 \\
+201710 & 90 & 2.155 & 713 & 185 & 116 & 577 & 0 & 4.245 \\
+201719 & 16 & 48 & 22 & 6 & 1 & 3 & 70 & 117 \\
+201720 & 55 & 1.598 & 753 & 189 & 307 & 345 & 1.992 & 2.578 \\
+201810 & 55 & 1.746 & 1.040 & 189 & 455 & 129 & 2.120 & 2.783 \\
+201819 & 21 & 61 & 48 & 10 & 8 & 5 & 90 & 103 \\
+201820 & 56 & 1.782 & 987 & 177 & 605 & 183 & 2.113 & 2.611 \\
+201910 & 55 & 1.749 & 1.263 & 196 & 720 & 261 & 2.177 & 2.431 \\
+201919 & 20 & 62 & 30 & 6 & 4 & 4 & 81 & 115 \\
+201920 & 55 & 1.479 & 1.136 & 213 & 364 & 164 & 2.012 & 2.630 \\
+202010 & 55 & 1.818 & 1.226 & 223 & 643 & 222 & 2.170 & 2.468 \\
+202019 & 55 & 90 & 62 & 8 & 16 & 8 & 124 & 163 \\
+202020 & 65 & 2.162 & 898 & 117 & 413 & 146 & 2.428 & 3.209 \\
+202110 & 65 & 2.533 & 1.122 & 183 & 634 & 227 & 2.895 & 3.607 \\
+202119 & 44 & 48 & 44 & 5 & 3 & 2 & 83 & 157 \\
+202120 & 65 & 2.041 & 876 & 206 & 430 & 124 & 2.456 & 3.480 \\
+202210 & 65 & 1.060 & 740 & 237 & 324 & 68 & 1.517 & 2.160 \\
+202310 & 63 & 301 & 214 & 45 & 61 & 28 & 407 & 531 \\
+202320 & 63 & 101 & 54 & 21 & 73 & 11 & 137 & 160 \\
+202410 & 64 & 255 & 141 & 43 & 264 & 26 & 346 & 364 \\
+202419 & 9 & 39 & 14 & 3 & 6 & 0 & 52 & 65 \\
+202420 & 63 & 1.754 & 973 & 201 & 591 & 194 & 2.196 & 2.703 \\
+202510 & 65 & 1.476 & 751 & 151 & 296 & 98 & 1.903 & 2.797 \\
+202519 & 35 & 24 & 9 & 2 & 3 & 0 & 34 & 122 \\
+202520 & 65 & 1.035 & 549 & 135 & 98 & 76 & 1.415 & 2.616 \\
+202610 & 65 & 1.085 & 476 & 128 & 89 & 45 & 1.438 & 2.616 \\
+202619 & 22 & 25 & 18 & 3 & 4 & 0 & 36 & 67 \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+\textbf{Conciliación con Reservas.} Para cada franja se compararon los cinco conteos de los horarios con los de Reservas de categoría Tutor Presencial: Asistencias con Finalizada, Realizada y En ejecución; Inasistencias con No asistió; Cancelaciones con todos los estados «Cancelada\ldots{}»; En lista de espera con En cola; y Reservaron luego de estar en lista con Cola cancelada por reservación. Coinciden las cinco medidas en 1.386 de las 1.396 franjas.
+
+\begingroup\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.15}
+\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.143\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.143\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.168\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.103\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.192\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.180\textwidth-2\tabcolsep\relax}}
+\toprule
+\textbf{Período} & \textbf{Franjas} & \textbf{Franjas que coinciden} & \textbf{\%} & \textbf{Asistencias (horarios)} & \textbf{Atenciones de Tutor Presencial (Reservas)} \\
+\midrule
+\endhead
+201620 & 45 & 45 & 100,0\% & 1.308 & 1.308 \\
+201710 & 90 & 90 & 100,0\% & 2.155 & 2.155 \\
+201719 & 16 & 16 & 100,0\% & 48 & 48 \\
+201720 & 55 & 55 & 100,0\% & 1.598 & 1.598 \\
+201810 & 55 & 55 & 100,0\% & 1.746 & 1.746 \\
+201819 & 21 & 21 & 100,0\% & 61 & 61 \\
+201820 & 56 & 56 & 100,0\% & 1.782 & 1.782 \\
+201910 & 55 & 55 & 100,0\% & 1.749 & 1.749 \\
+201919 & 20 & 20 & 100,0\% & 62 & 62 \\
+201920 & 55 & 55 & 100,0\% & 1.479 & 1.479 \\
+202010 & 55 & 55 & 100,0\% & 1.818 & 1.818 \\
+202019 & 55 & 55 & 100,0\% & 90 & 90 \\
+202020 & 65 & 65 & 100,0\% & 2.162 & 2.162 \\
+202110 & 65 & 65 & 100,0\% & 2.533 & 2.533 \\
+202119 & 44 & 44 & 100,0\% & 48 & 48 \\
+202120 & 65 & 65 & 100,0\% & 2.041 & 2.041 \\
+202210 & 65 & 65 & 100,0\% & 1.060 & 1.060 \\
+202310 & 63 & 63 & 100,0\% & 301 & 301 \\
+202320 & 63 & 63 & 100,0\% & 101 & 101 \\
+202410 & 64 & 64 & 100,0\% & 255 & 255 \\
+202419 & 9 & 9 & 100,0\% & 39 & 39 \\
+202420 & 63 & 63 & 100,0\% & 1.754 & 1.754 \\
+202510 & 65 & 65 & 100,0\% & 1.476 & 1.476 \\
+202519 & 35 & 35 & 100,0\% & 24 & 24 \\
+202520 & 65 & 65 & 100,0\% & 1.035 & 1.035 \\
+202610 & 65 & 65 & 100,0\% & 1.085 & 1.085 \\
+202619 & 22 & 12 & 54,5\% & 25 & 0 \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+Las 10 franjas que difieren son de 202619, un intersemestral que todavía no está en Reservas: los horarios tienen actividad que Reservas aún no registra.
+
+\begingroup\footnotesize\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.15}
+\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.116\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.116\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.084\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.156\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.175\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.175\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.106\textwidth-2\tabcolsep\relax}}
+\toprule
+\textbf{Período} & \textbf{Día} & \textbf{Hora} & \textbf{Dif. asistencias} & \textbf{Dif. inasistencias} & \textbf{Dif. cancelaciones} & \textbf{Dif. lista de espera} \\
+\midrule
+\endhead
+202619 & Martes & 14:00 & 5 & 0 & 1 & 0 \\
+202619 & Martes & 15:00 & 1 & 1 & 3 & 1 \\
+202619 & Miércoles & 09:00 & 2 & 1 & 3 & 0 \\
+202619 & Miércoles & 13:00 & 4 & 0 & 3 & 0 \\
+202619 & Miércoles & 14:00 & 5 & 0 & 1 & 0 \\
+202619 & Miércoles & 15:00 & 0 & 0 & 1 & 0 \\
+202619 & Jueves & 10:00 & 3 & 0 & 0 & 0 \\
+202619 & Jueves & 11:00 & 1 & 0 & 2 & 0 \\
+202619 & Jueves & 14:00 & 3 & 1 & 2 & 3 \\
+202619 & Viernes & 15:00 & 1 & 0 & 2 & 0 \\
+\bottomrule
+\end{longtable}
+\endgroup
+
 
 \section*{Anexo D · Extensión exploratoria: comentarios por monitor}
 
@@ -1218,11 +1430,13 @@ Otros desacuerdos mezclan elogios con problemas de conexión, sugerencias de mej
 \item Los catálogos históricos de servicios y modalidades, el significado de los períodos y la zona horaria de las marcas de tiempo.
 \item Los cuestionarios y escalas por período, y si la exportación usa etiquetas actuales para respuestas históricas.
 \item La fuente de referencia y el momento de actualización de los atributos de reserva repetidos en las encuestas.
+\item Por qué «Cupos reservados» vale 0 en 201620 y 201710, y por qué en 5 franjas supera por un cupo a los «Cupos disponibles».
+\item La regla R05: que el reporte de horarios cubre solo la categoría Tutor Presencial.
 \end{enumerate}
 
 Mientras se confirman, pueden presentarse el volumen de eventos, la agenda programada, las distribuciones de etiquetas y las calificaciones del subconjunto documentado. Los roles destinatarios de los análisis son propuestos: no se ha confirmado el organigrama ni se ha entrevistado al responsable de la fuente.
 
-\textbf{Limitaciones de los datos.} No hay oferta ni capacidad general de franjas, fin efectivo de la sesión, respuestas del tutor como fuente separada, ni versiones certificadas del cuestionario. No se publican ocupación, cupos libres ni demanda insatisfecha. Tampoco hay notas académicas ni medidas objetivas de aprendizaje, costos o ingresos, de modo que los datos no permiten medir impacto causal en el aprendizaje, rentabilidad ni uso de capacidad. Para incorporar la oferta harían falta registros de franjas ofrecidas, capacidad, recursos y cambios de disponibilidad, con fechas y claves compatibles; su granularidad sería distinta de la de reserva y el modelo no fabrica esos eventos.
+\textbf{Limitaciones de los datos.} La oferta existe solo como resumen por semestre, día y hora de la categoría Tutor Presencial (sin oferta por fecha concreta, servicio ni modalidad), y no hay fin efectivo de la sesión, respuestas del tutor como fuente separada, ni versiones certificadas del cuestionario. No se publican ocupación ni demanda insatisfecha fuera de las franjas con datos. Tampoco hay notas académicas ni medidas objetivas de aprendizaje, costos o ingresos, de modo que los datos no permiten medir impacto causal en el aprendizaje, rentabilidad ni uso de capacidad. Para medir la ocupación por sesión harían falta registros de las sesiones ofrecidas por fecha, con capacidad y cambios de disponibilidad; su granularidad sería distinta de la franja semanal y el modelo no fabrica esos eventos.
 
 \textbf{Estado de las tareas de la entrega}
 
@@ -1238,6 +1452,7 @@ Caracterización completa, perfilamiento y verificación de ID y vínculos & Hec
 Definición de los dos análisis con objetivos, medidas, preguntas y denominadores & Hecho \\
 Evidencia de calidad y agregados descriptivos & Hecho \\
 Limpieza Bronze a Silver con trazabilidad, banderas y conciliación & Hecho \\
+Horarios (oferta): Silver, conciliación con Reservas, hecho de oferta y sección del tablero & Hecho \\
 Ecosistema propuesto y justificado & Hecho \\
 Modelo: granularidad, hechos, dimensiones y criterios de calidad & Hecho \\
 Transformación Silver a Gold con conciliación & Hecho \\
@@ -1246,6 +1461,7 @@ Cuadernos ejecutados e informe con tablas, diagramas y capturas & Hecho \\
 Confirmar integrantes, contexto organizacional y roles destinatarios & Pendiente \\
 Revisar los casos marcados y completar reglas operativas de limpieza & Pendiente \\
 Confirmar con la fuente reglas operativas, catálogos y formularios históricos & Pendiente \\
+Confirmar con la coordinación el significado de los cupos disponibles (capacidad total de la franja) & Hecho \\
 Validar con la coordinación la interpretación de los resultados & Pendiente \\
 Completar integrantes, contribuciones y distribución de los 100 puntos, y revisión final & Pendiente \\
 \bottomrule

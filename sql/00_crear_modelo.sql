@@ -1,16 +1,18 @@
 PRAGMA foreign_keys = ON;
-CREATE TABLE dim_fecha(sk_fecha INTEGER PRIMARY KEY, fecha TEXT UNIQUE NOT NULL, anio INTEGER, mes INTEGER, dia INTEGER, dia_semana_iso INTEGER CHECK(dia_semana_iso BETWEEN 1 AND 7), nombre_dia TEXT NOT NULL, nombre_mes TEXT NOT NULL, es_fin_de_semana INTEGER CHECK(es_fin_de_semana IN (0,1)), periodo_original TEXT NOT NULL, anio_periodo INTEGER, sufijo_periodo TEXT, tipo_periodo TEXT NOT NULL);
+CREATE TABLE dim_fecha(sk_fecha INTEGER PRIMARY KEY, fecha TEXT UNIQUE NOT NULL, anio INTEGER, mes INTEGER, dia INTEGER, dia_semana_iso INTEGER CHECK(dia_semana_iso BETWEEN 1 AND 7), nombre_dia TEXT NOT NULL, nombre_mes TEXT NOT NULL, es_fin_de_semana INTEGER CHECK(es_fin_de_semana IN (0,1)));
 CREATE TABLE dim_hora(sk_hora INTEGER PRIMARY KEY, hora INTEGER, minuto INTEGER, etiqueta TEXT, franja TEXT NOT NULL CHECK(franja IN ('Madrugada','Mañana','Tarde','Noche')));
+CREATE TABLE dim_periodo(sk_periodo INTEGER PRIMARY KEY, periodo_original TEXT UNIQUE NOT NULL, anio_codigo INTEGER, sufijo_original TEXT, tipo_periodo TEXT NOT NULL);
+CREATE TABLE dim_dia_semana(sk_dia_semana INTEGER PRIMARY KEY CHECK(sk_dia_semana BETWEEN 1 AND 7), dia_semana_iso INTEGER NOT NULL UNIQUE, nombre_dia TEXT NOT NULL, es_fin_de_semana INTEGER CHECK(es_fin_de_semana IN (0,1)));
 CREATE TABLE dim_servicio(sk_servicio INTEGER PRIMARY KEY, codigo_servicio TEXT, servicio_original TEXT, UNIQUE(codigo_servicio, servicio_original));
 CREATE TABLE dim_modalidad(sk_modalidad INTEGER PRIMARY KEY, tipo_horario_original TEXT, categoria_original TEXT, UNIQUE(tipo_horario_original,categoria_original));
-CREATE TABLE dim_estado(sk_estado INTEGER PRIMARY KEY, estado_original TEXT UNIQUE NOT NULL, estado_analitico TEXT NOT NULL, grupo_estado TEXT NOT NULL CHECK(grupo_estado IN ('Atendida','No asistió','Cola','Cancelada','Abierta')));
+CREATE TABLE dim_estado(sk_estado INTEGER PRIMARY KEY, estado_original TEXT NOT NULL, estado_analitico TEXT NOT NULL, grupo_estado TEXT NOT NULL CHECK(grupo_estado IN ('Atendida','No asistió','Cola','Cola a reserva','Cancelada')), UNIQUE(estado_original, estado_analitico));
 CREATE TABLE dim_programa(sk_programa INTEGER PRIMARY KEY, programa_normalizado TEXT UNIQUE NOT NULL);
 CREATE TABLE dim_tipo_encuesta(sk_tipo_encuesta INTEGER PRIMARY KEY, grupo_fuente TEXT UNIQUE NOT NULL, etapa TEXT NOT NULL);
 CREATE TABLE dim_pregunta(sk_pregunta INTEGER PRIMARY KEY, columna_plata TEXT UNIQUE NOT NULL, texto_pregunta TEXT NOT NULL, es_texto_libre INTEGER CHECK(es_texto_libre IN (0,1)), es_calificacion_tutor INTEGER CHECK(es_calificacion_tutor IN (0,1)));
 CREATE TABLE hecho_reserva(
  id_reserva TEXT PRIMARY KEY, sk_fecha_inicio INTEGER REFERENCES dim_fecha, sk_fecha_fin INTEGER REFERENCES dim_fecha,
  sk_fecha_llegada INTEGER REFERENCES dim_fecha, sk_hora_inicio INTEGER NOT NULL REFERENCES dim_hora,
- sk_servicio INTEGER NOT NULL REFERENCES dim_servicio,
+ sk_periodo INTEGER NOT NULL REFERENCES dim_periodo, sk_servicio INTEGER NOT NULL REFERENCES dim_servicio,
  sk_modalidad INTEGER NOT NULL REFERENCES dim_modalidad, sk_estado INTEGER NOT NULL REFERENCES dim_estado,
  sk_programa INTEGER NOT NULL REFERENCES dim_programa,
  fecha_inicio TEXT NOT NULL, fecha_fin TEXT NOT NULL, fecha_llegada TEXT,
@@ -21,7 +23,7 @@ CREATE TABLE hecho_encuesta(
  id_encuesta TEXT PRIMARY KEY, id_reserva TEXT NOT NULL REFERENCES hecho_reserva,
  sk_tipo_encuesta INTEGER NOT NULL REFERENCES dim_tipo_encuesta,
  sk_fecha_inicio INTEGER REFERENCES dim_fecha, sk_hora_inicio INTEGER NOT NULL REFERENCES dim_hora,
- sk_servicio INTEGER NOT NULL REFERENCES dim_servicio,
+ sk_periodo INTEGER NOT NULL REFERENCES dim_periodo, sk_servicio INTEGER NOT NULL REFERENCES dim_servicio,
  sk_modalidad INTEGER NOT NULL REFERENCES dim_modalidad, sk_estado INTEGER NOT NULL REFERENCES dim_estado,
  sk_programa INTEGER NOT NULL REFERENCES dim_programa,
  calificacion_ayuda_tutor INTEGER CHECK(calificacion_ayuda_tutor BETWEEN 1 AND 5),
@@ -35,3 +37,12 @@ CREATE TABLE hecho_respuesta(
  valor_original TEXT NOT NULL CHECK(length(trim(valor_original))>0),
  valor_numerico REAL, respuesta_item INTEGER NOT NULL DEFAULT 1 CHECK(respuesta_item=1),
  PRIMARY KEY(id_encuesta,sk_pregunta));
+CREATE TABLE hecho_oferta(
+ sk_periodo INTEGER NOT NULL REFERENCES dim_periodo, sk_dia_semana INTEGER NOT NULL REFERENCES dim_dia_semana,
+ sk_hora_inicio INTEGER NOT NULL REFERENCES dim_hora,
+ asistencias INTEGER NOT NULL CHECK(asistencias>=0), cancelaciones INTEGER NOT NULL CHECK(cancelaciones>=0),
+ inasistencias INTEGER NOT NULL CHECK(inasistencias>=0), en_lista_espera INTEGER NOT NULL CHECK(en_lista_espera>=0),
+ reservaron_luego_de_lista INTEGER NOT NULL CHECK(reservaron_luego_de_lista>=0),
+ cupos_reservados INTEGER NOT NULL CHECK(cupos_reservados>=0), cupos_disponibles INTEGER NOT NULL CHECK(cupos_disponibles>=0),
+ archivo_origen TEXT NOT NULL, hoja_origen TEXT NOT NULL, fila_excel INTEGER NOT NULL, banderas_calidad_json TEXT NOT NULL,
+ PRIMARY KEY(sk_periodo, sk_dia_semana, sk_hora_inicio));

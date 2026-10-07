@@ -4,7 +4,7 @@ Los datos no se versionan porque contienen datos personales (nombres, correos y 
 
 Para reproducir:
 
-1. Copiar `Bookeau.zip` (compartido por la coordinación de CupiTaller) en `data/bronce/` y descomprimirlo como `data/bronce/Bookeau/`.
+1. Copiar `Bookeau.zip` (compartido por la coordinación de CupiTaller) en `data/bronce/` y descomprimirlo como `data/bronce/Bookeau/`. Incluye las carpetas de reservas y encuestas y `horarios/` (oferta por semestre, sin datos personales).
 2. Desde la raíz del proyecto, ejecutar `python3 src/main.py`, que corre todos los pasos en orden. Se regeneran `data/plata/` (Silver) y `data/oro/` (Gold, incluida `bookeau.sqlite3`).
 
 ## Datos ficticios para probar el flujo
@@ -13,6 +13,6 @@ Para reproducir:
 
 | Capa | Carpeta | Contenido |
 |---|---|---|
-| Bronze | `data/bronce/` | ZIP y 114 Excel originales, sin modificar |
-| Silver | `data/plata/` | 5 CSV limpios con trazabilidad y banderas |
+| Bronze | `data/bronce/` | ZIP, 114 Excel de reservas y encuestas y 30 de horarios, sin modificar |
+| Silver | `data/plata/` | 6 CSV limpios (reservas, cuatro encuestas y horarios) con trazabilidad y banderas |
 | Gold | `data/oro/` | Dimensiones, hechos y base SQLite |

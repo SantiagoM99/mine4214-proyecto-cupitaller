@@ -172,6 +172,37 @@ def generar_todo():
     return salida
 
 
+# ---- horarios (oferta): resumen de las reservas de Tutor Presencial por período, día y hora ----
+DIAS = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
+ENCABEZADOS_HORARIOS = ['Día', 'Hora', 'Asistencias', 'Cancelaciones', 'Inasistencias', 'En lista de espera', 'Reservaron luego de estar en lista', 'Cupos reservados', 'Cupos disponibles']
+
+
+def generar_horarios(reservas, periodo, rng):
+    franjas = {}
+    for r in reservas:
+        if r['Categoría'] != 'Tutor Presencial':
+            continue
+        inicio = r['Fecha inicio']
+        clave = (DIAS[inicio.weekday()], f"{inicio.hour % 12 or 12}:{inicio.minute:02d} {'am' if inicio.hour < 12 else 'pm'}")
+        f = franjas.setdefault(clave, dict.fromkeys(ENCABEZADOS_HORARIOS[2:], 0))
+        estado = r['Estado de la reserva']
+        if estado in ('Finalizada', 'Realizada', 'En ejecución'):
+            f['Asistencias'] += 1
+        elif estado == 'No asistió':
+            f['Inasistencias'] += 1
+        elif estado.startswith('Cancelada'):
+            f['Cancelaciones'] += 1
+        elif estado == 'En cola':
+            f['En lista de espera'] += 1
+        elif estado == 'Cola cancelada por reservación':
+            f['Reservaron luego de estar en lista'] += 1
+    filas = []
+    for (dia, hora), f in sorted(franjas.items(), key=lambda x: (DIAS.index(x[0][0]), x[0][1])):
+        reservados = 0 if periodo < '201719' else round(0.9 * (f['Asistencias'] + f['Inasistencias'] + f['Cancelaciones']))
+        filas.append({'Día': dia, 'Hora': hora, **f, 'Cupos reservados': reservados, 'Cupos disponibles': reservados + rng.randint(5, 30)})
+    return filas
+
+
 # ---- escritura de libros .xlsx con la biblioteca estándar --------------------------------
 def columna(i):
     letras = ''
@@ -209,7 +240,9 @@ def escribir_xlsx(ruta, hoja, encabezados, filas):
     ruta.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(ruta, 'w', zipfile.ZIP_DEFLATED) as zf:
         for nombre, contenido in partes.items():
-            zf.writestr(nombre, contenido)
+            info = zipfile.ZipInfo(nombre, date_time=(2026, 1, 1, 0, 0, 0))  # fecha fija: archivos idénticos en cada generación
+            info.compress_type = zipfile.ZIP_DEFLATED
+            zf.writestr(info, contenido)
 
 
 def main():
@@ -222,6 +255,14 @@ def main():
             escribir_xlsx(SOURCE / carpeta / patron.format(p=periodo), hoja, encabezados, filas)
             total += 1
         print(f'{carpeta}: {sum(len(f) for f in datos[g].values())} filas')
+    rng = random.Random(SEED + 1)
+    franjas = 0
+    for periodo, reservas in datos['Reservas'].items():
+        filas = generar_horarios(reservas, periodo, rng)
+        escribir_xlsx(SOURCE / 'horarios' / f'horarios{periodo}.xlsx', 'Citas', ENCABEZADOS_HORARIOS, filas)
+        total += 1
+        franjas += len(filas)
+    print(f'horarios: {franjas} franjas')
     print(f'{total} libros en {SOURCE.relative_to(ROOT)}')
 
 
