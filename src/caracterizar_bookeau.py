@@ -8,6 +8,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import os
 import re
 import statistics
 import unicodedata
@@ -18,8 +19,12 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / 'data/bronce/Bookeau'
-OUTPUT = ROOT / 'docs/caracterizacion'
+# CUPITALLER_FUENTE: carpeta de los Excel, relativa a ROOT. Por defecto, los datos reales;
+# con `main.py --dummy` apunta a data/bronce/dummy.
+SOURCE = ROOT / os.environ.get('CUPITALLER_FUENTE', 'data/bronce/Bookeau')
+OUTPUT = ROOT / 'docs/artifacts/caracterizacion'
+# Carpetas de SOURCE que no son reservas ni encuestas (no tienen ID de reserva).
+GRUPOS_APARTE = {'horarios'}
 NS = '{http://schemas.openxmlformats.org/spreadsheetml/2006/main}'
 REL = '{http://schemas.openxmlformats.org/officeDocument/2006/relationships}'
 DATE_COLUMNS = ['Fecha inicio', 'Fecha fin', 'Fecha de llegada', 'Fecha de devolución']
@@ -125,6 +130,8 @@ def characterize():
     files = []
     signatures = defaultdict(Counter)
     for path in sorted(SOURCE.rglob('*.xlsx')):
+        if path.parent.name in GRUPOS_APARTE:
+            continue  # los horarios (oferta) se procesan en procesar_horarios.py
         period = re.search(r'(\d{6})\.xlsx$', path.name).group(1)
         for sheet, headers, records in read_workbook(path):
             group = path.parent.name

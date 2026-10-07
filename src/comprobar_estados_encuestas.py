@@ -9,7 +9,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from limpiar_bookeau import ROOT, GROUPS
 
-OUT=ROOT/'docs/calidad/estados_encuestas'
+OUT=ROOT/'docs/artifacts/calidad/estados_encuestas'
 
 
 def read(path):

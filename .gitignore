@@ -9,6 +9,8 @@ __pycache__/
 # Se distribuyen fuera del repositorio; ver data/README.md.
 data/bronce/*
 !data/bronce/.gitkeep
+# Datos ficticios (sin información personal), versionables para probar el pipeline
+!data/bronce/dummy/
 data/plata/*
 !data/plata/.gitkeep
 data/oro/*
@@ -18,3 +20,15 @@ data/oro/*
 docs/texto/**/*.csv
 docs/texto/**/*.json
 exploratorio/
+
+# latex generated files
+docs/entregables/latex/*
+!docs/entregables/latex/informe_latex.pdf
+!docs/entregables/latex/informe_latex.tex
+!docs/entregables/latex/anexos_latex.pdf
+!docs/entregables/latex/anexos_latex.tex
+
+# artifacts generados por scripts de limpieza y transformación
+docs/artifacts/
+!docs/artifacts/.gitkeep
+src/auxiliar

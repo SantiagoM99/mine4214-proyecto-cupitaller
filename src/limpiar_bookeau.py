@@ -15,10 +15,10 @@ from collections import Counter, defaultdict
 from datetime import datetime
 from pathlib import Path
 
-from caracterizar_bookeau import ROOT, SOURCE, DATE_COLUMNS, read_workbook, missing
+from caracterizar_bookeau import ROOT, SOURCE, DATE_COLUMNS, GRUPOS_APARTE, read_workbook, missing
 
 OUT = ROOT / 'data/plata'
-DOCS = ROOT / 'docs/limpieza'
+DOCS = ROOT / 'docs/artifacts/limpieza'
 GROUPS = {
     'Reservas': 'reservas',
     'Encuesta Express': 'encuesta_satisfaccion_express',
@@ -79,6 +79,8 @@ def clean():
     schema = {}
     for path in sorted(SOURCE.rglob('*.xlsx')):
         group = path.parent.name
+        if group in GRUPOS_APARTE:
+            continue  # los horarios (oferta) se procesan en procesar_horarios.py
         if group not in GROUPS:
             raise ValueError('Unknown source group; review the cleaning rules: ' + group)
         period = re.search(r'(\d{6})\.xlsx$', path.name).group(1)
