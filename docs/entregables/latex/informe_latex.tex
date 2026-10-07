@@ -14,6 +14,10 @@
 \fancyhead[L]{MINE-4214 · Proyecto Entrega 1}\fancyhead[R]{CupiTaller · Universidad de los Andes}
 \fancyfoot[C]{\thepage}
 \setcounter{secnumdepth}{2}
+
+\setlength{\headheight}{14pt}
+\addtolength{\topmargin}{-2pt}
+
 \begin{document}
 \begin{center}
 {\Large\bfseries Proyecto · Entrega 1\\[2pt] Reservas y satisfacción en CupiTaller}\\[8pt]
@@ -64,12 +68,27 @@ Trabajamos con dos áreas del DISC. La \textbf{coordinación de CupiTaller} plan
 
 Los dos análisis usan datos que nacen de un mismo proceso: el ciclo de una tutoría en Bookeau. La tabla indica, paso a paso, quién actúa, qué ocurre y qué dato queda registrado. Los nombres entre comillas son los de las columnas tal como vienen de Bookeau.
 
-\begingroup\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.15}
-\begin{longtable}{>{\raggedleft\arraybackslash}p{\dimexpr 0.046\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.119\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.287\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.287\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.191\textwidth-2\tabcolsep\relax}}
+\begingroup
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{longtable}{
+>{\raggedleft\arraybackslash}p{\dimexpr 0.0495\textwidth-2\tabcolsep\relax}
+>{\raggedright\arraybackslash}p{\dimexpr 0.1280\textwidth-2\tabcolsep\relax}
+>{\raggedright\arraybackslash}p{\dimexpr 0.3086\textwidth-2\tabcolsep\relax}
+>{\raggedright\arraybackslash}p{\dimexpr 0.3086\textwidth-2\tabcolsep\relax}
+>{\raggedright\arraybackslash}p{\dimexpr 0.2053\textwidth-2\tabcolsep\relax}
+}
 \toprule
-\textbf{Paso} & \textbf{Quién actúa} & \textbf{Qué ocurre} & \textbf{Dato que queda registrado} & \textbf{Fuente (archivo)} \\
+\textbf{Paso} &
+\textbf{Quién actúa} &
+\textbf{Qué ocurre} &
+\textbf{Dato que queda registrado} &
+\textbf{Fuente (archivo)} \\
 \midrule
 \endhead
+
 1 & Estudiante & Elige curso (servicio), modalidad y una franja horaria, y pide la cita. & Un evento de reserva con su «ID», «Fecha inicio», «Fecha fin», «Servicio», «Tipo de horario», «Categoría», «Prioritaria», y los datos del usuario («Código usuario», «Programa», «Tipo de usuario»). & Reservas \\
 2 & Estudiante & Antes de confirmar, responde la encuesta previa: para qué usará la tutoría y si acepta las condiciones (no usar el celular, tener una solución probada si trabaja en una tarea, términos de uso). & Cuatro respuestas por reserva, ligadas a su «ID». & Encuesta Reserva Express / Normal IP \\
 3 & Bookeau & Si hay cupo en la franja, la reserva queda hecha. Si no, queda \textbf{en cola}. & «Estado de la reserva»: Reservada o En cola. Existe también la etiqueta «Cola cancelada por reservación»: la solicitud en cola se cerró porque el estudiante consiguió una reserva (los horarios lo confirman). & Reservas \\
@@ -97,9 +116,9 @@ Para analizar los datos el proyecto aplica siete reglas. Se definen aquí, con s
 \textbf{R02} & Las encuestas que Bookeau marca como «Inválida» (166 en total) se excluyen de los análisis y de los indicadores de respuestas. Su reserva sí se mantiene. & Sugerida por el equipo, aprobada por la coordinación & Permanecen en Silver para auditoría. \\
 \textbf{R03} & Para los análisis de Gold solo se incluyen los ID asociados a reservas de tutorías, es decir, las de tipo de horario Normal, Express o Normal pico. Se excluyen las entrevistas, las salas y las etiquetas históricas, junto con las encuestas de esas reservas. & Aportada por la coordinación & Permanecen en Silver. \\
 \textbf{R04} & Una solicitud en cola no ocupa cupo. Por eso la inasistencia se mide solo sobre las citas que llegaron a su hora: No asistió / (Atendida + No asistió). Las solicitudes que salen de la cola porque el estudiante consigue una reserva («Cola cancelada por reservación») no son demanda sin atender: se reportan aparte de las que siguen «En cola». & Aportada por la coordinación & Los estados originales se conservan; el grupo de estado es un atributo adicional. \\
-\textbf{R05} & El reporte de horarios cubre solo las reservas de categoría «Tutor Presencial», y sus cinco conteos (asistencias, cancelaciones, inasistencias, lista de espera y reservas luego de la lista) coinciden con los de Reservas en esa categoría. Por eso la oferta se compara con las reservas de esa categoría. & Verificada en los datos (sección 3.4); por confirmar con la coordinación & Las reservas de otras categorías se conservan, pero no tienen oferta registrada. \\
-\textbf{R06} & En Gold, todos los estados de cancelación («Cancelada», a tiempo, con excusa, por sanción, y sancionada) se agrupan en un solo estado de análisis, \emph{Cancelada}. & Decisión del equipo & El estado original se conserva en la dimensión Estado. \\
-\textbf{R07} & Las reservas que quedaron abiertas se cierran así: «En ejecución» se trata como \emph{Atendida}; «Reservada» es \emph{Atendida} si tiene hora de llegada y prestador del servicio, y \emph{No asistió} en los demás casos. & Decisión del equipo & El estado original se conserva en la dimensión Estado. \\
+\textbf{R05} & El reporte de horarios cubre solo las reservas de categoría «Tutor Presencial», y sus cinco conteos (asistencias, cancelaciones, inasistencias, lista de espera y reservas luego de la lista) coinciden con los de Reservas en esa categoría. Por eso la oferta se compara con las reservas de esa categoría. & Verificada en los datos (sección 3.4) & Las reservas de otras categorías se conservan, pero no tienen oferta registrada. \\
+\textbf{R06} & En Gold, todos los estados de cancelación («Cancelada», a tiempo, con excusa, por sanción, y sancionada) se agrupan en un solo estado de análisis, \emph{Cancelada}. & Sugerida por el equipo, aprobada por la coordinación & El estado original se conserva en la dimensión Estado. \\
+\textbf{R07} & Las reservas que quedaron abiertas se cierran así: «En ejecución» se trata como \emph{Atendida}; «Reservada» es \emph{Atendida} si tiene hora de llegada y prestador del servicio, y \emph{No asistió} en los demás casos. & Sugerida por el equipo, aprobada por la coordinación & El estado original se conserva en la dimensión Estado. \\
 \bottomrule
 \end{longtable}
 \endgroup
@@ -274,7 +293,6 @@ Calificaciones 1 a 3 por ocupación de la franja & Proporción de 1 a 3 en cada 
 \endgroup
 
 
-\textbf{Calidad necesaria:} vínculos completos y únicos, separación entre el estado de la reserva y el de la encuesta, calificación dentro del dominio observado, disponibilidad por período, conciliación de atributos repetidos y conocimiento de las escalas y formularios históricos.
 
 \textbf{Cuidado con la interpretación.} La encuesta es voluntaria: los resultados describen a quienes respondieron, no a todos los estudiantes que recibieron una tutoría. La calificación mide la percepción del estudiante, no la calidad objetiva de la tutoría, y un resultado de satisfacción no demuestra mejora del aprendizaje ni que una modalidad cause mejores resultados.
 
@@ -594,7 +612,7 @@ Cada figura muestra una tabla de hechos al centro y las dimensiones alrededor. E
 \textbf{Dimensiones del modelo y sus jerarquías.} Una \textbf{jerarquía} es una cadena de niveles que permite pasar del detalle al resumen y viceversa (en inglés, \emph{drill-down}). Todas están guardadas en Gold.
 
 \begingroup\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.15}
-\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.097\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.278\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.278\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.278\textwidth-2\tabcolsep\relax}}
+\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.10\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.278\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.278\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.278\textwidth-2\tabcolsep\relax}}
 \toprule
 \textbf{Dimensión} & \textbf{Granularidad y atributos} & \textbf{Jerarquía} & \textbf{Motivo} \\
 \midrule
@@ -1040,45 +1058,42 @@ El tablero no necesita servidor porque la coordinación no tiene infraestructura
 
 \subsection{Contribuciones y distribución de puntos}
 
-\begingroup\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.15}
-\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.180\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.341\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.068\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.341\textwidth-2\tabcolsep\relax}}
+\begingroup
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{longtable}{
+>{\raggedright\arraybackslash}p{\dimexpr 0.180\textwidth-2\tabcolsep\relax}
+>{\raggedright\arraybackslash}p{\dimexpr 0.752\textwidth-2\tabcolsep\relax}
+>{\raggedleft\arraybackslash}p{\dimexpr 0.068\textwidth-2\tabcolsep\relax}
+}
 \toprule
-\textbf{Integrante} & \textbf{Trabajo realizado} & \textbf{Puntos (de 100)} & \textbf{Justificación} \\
+\textbf{Integrante} &
+\textbf{Trabajo realizado} &
+\textbf{Puntos (de 100)} \\
 \midrule
 \endhead
-María Alejandra Pérez Petro & Descarga y extracción de los datos de la fuente (reservas, encuestas y horarios). Conciliación de las dudas con el coordinador de CupiTaller: significado de los estados, reglas de negocio y oferta. Documentación del proyecto y del informe. Diseño del modelo dimensional, con Santiago. & 50 & Aportó los datos validados con la fuente, de los que dependen todos los puntos de la entrega, y las reglas confirmadas con la coordinación. Su documentación hace que el trabajo se pueda entender y reproducir. \\
-Santiago Martinez Novoa & Diseño de los tableros. Arquitectura del repositorio. Diseño del modelo dimensional, con María Alejandra. & 50 & Aportó los productos con los que se consultan y se reutilizan los resultados: los tableros y la estructura del repositorio, que permite reproducir el flujo completo. Compartió el diseño del modelo, el punto de mayor peso de la entrega. \\
+
+María Alejandra Pérez Petro &
+Descarga y extracción de los datos de la fuente (reservas, encuestas y horarios). Conciliación de las dudas con el coordinador de CupiTaller: significado de los estados, reglas de negocio y oferta. Documentación del proyecto y del informe. Diseño del modelo dimensional, con Santiago. &
+50 \\
+
+Santiago Martinez Novoa &
+Diseño de los tableros. Arquitectura del repositorio. Apoyo en la implementación de la limpieza y la carga de datos en Gold, y creación de las consultas SQL. Diseño del modelo dimensional, con María Alejandra. &
+50 \\
+
 \bottomrule
 \end{longtable}
 \endgroup
 
-
-La distribución es de 50 puntos para cada integrante, y suma 100. Las contribuciones son complementarias y de peso comparable: la fuente y su validación con la coordinación sostienen la calidad de los datos, y el modelo, el repositorio y los tableros sostienen su uso. Los cuatro criterios de la guía se aplicaron así:
-
-\begin{itemize}[leftmargin=1.5em,itemsep=2pt]
-\item \textbf{Compromiso en el logro de resultados:} cada parte necesita a la otra. Sin datos validados no hay modelo, y sin modelo ni tableros no hay respuesta a los análisis.
-\item \textbf{Calidad de la contribución:} las dudas sobre la fuente se resolvieron con el coordinador antes de fijar las reglas de negocio, y el repositorio y los tableros permiten reproducir y consultar los resultados.
-\item \textbf{Cumplimiento de los compromisos:} cada área tuvo una persona responsable. Las definiciones que llegaron durante el desarrollo obligaron a ajustar el modelo, las cifras y los tableros, y esos ajustes tocaron las dos áreas.
-\item \textbf{Participación equitativa:} cada integrante tuvo un área propia, y el modelo dimensional, el trabajo de mayor peso, se diseñó entre los dos.
-\end{itemize}
+La distribución es de 50 puntos para cada integrante, y suma 100. 
 
 \textbf{Problemas identificados en el equipo:} las definiciones de la coordinación llegaron mientras ya se modelaba (la cola no ocupa cupo, el alcance a reservas de tutorías, el significado de «Cola cancelada por reservación» y los horarios de oferta), por lo que el modelo, las cifras y los tableros se recalcularon varias veces.
 
-\textbf{Estrategias para la Entrega 2:} pedir a la coordinación, en la primera semana, el significado de los estados, el alcance de los datos y la oferta; dejar por escrito las reglas de negocio antes de modelar; mantener el flujo de datos automatizado de punta a punta para recalcular las cifras sin trabajo manual; y acordar desde el inicio una revisión cruzada del informe.
-
+\textbf{Estrategias para la Entrega 2:} preguntar con mayor tiempo a la coordinación cualquier duda con respecto al significado de los datos y las reglas de negocio. Proponer analisis que permitan aprovechar la información en texto libre, como son las respuestas a las preguntas abiertas de la encuesta y los comentarios de los estudiantes en la reserva.
 \subsection{Uso de inteligencia artificial generativa}
 
-\textbf{Uso dado.} Usamos un asistente de programación con inteligencia artificial para: escribir los programas que leen los archivos de Excel, perfilan los datos (calculan sus estadísticas), los limpian y cargan Gold; proponer y discutir el modelo dimensional; generar el tablero, las figuras y los borradores de documentación y de este informe; y hacer una clasificación exploratoria de comentarios (fuera del alcance de esta entrega). Las reglas de negocio R01 a R07 son decisiones humanas. Cada cifra del informe se contrastó con las salidas de los programas y de las consultas SQL.
-
-\textbf{Ventajas para la organización:} procesos reproducibles en lugar de revisión manual de Excel; documentación y diccionarios generados junto con el código; capacidad de explorar alternativas de modelo rápidamente.
-
-\textbf{Riesgos para la organización:}
-
-\begin{itemize}[leftmargin=1.5em,itemsep=2pt]
-\item \textbf{Privacidad:} las fuentes contienen nombres, correos y códigos de estudiantes y monitores, y comentarios sobre personas. Pasar estos datos a un servicio de IA externo requiere autorización y anonimización previa.
-\item \textbf{Significados inventados:} la IA puede proponer interpretaciones plausibles pero falsas de estados o campos. Lo mitigamos con reglas confirmadas por personas (R01 a R07) y con banderas en lugar de correcciones automáticas.
-\item \textbf{Exceso de confianza en métricas automáticas:} por ejemplo, un clasificador automático de comentarios que coincide solo en 62\% con una revisión hecha por otra IA no sirve para evaluar a monitores. Por eso lo dejamos fuera del entregable.
-\item \textbf{Dependencia:} el equipo debe entender y poder mantener el código generado.
-\end{itemize}
+\textbf{Uso dado.} Usamos un asistente de programación con inteligencia artificial generativa para tres tareas: (i) escribir los programas que leen los archivos de Excel, perfilan los datos (calculan sus estadísticas), los limpian y los cargan en la capa Gold; (ii) generar el tablero; y (iii) revisar detalles del modelo dimensional. El diseño del modelo dimensional fue obra del equipo; la herramienta solo apoyó su revisión.
 
 \end{document}

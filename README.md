@@ -89,4 +89,5 @@ Esquema dimensional de Kimball con cuatro tablas de hechos (`hecho_reserva`, `he
 
 - Los comentarios de texto libre están en Gold (`hecho_respuesta`), pero su análisis queda para las siguientes entregas.
 - Las capturas del tablero (`docs/img/tablero_*.png`) se tomaron con Chrome sin interfaz desde `docs/entregables/tablero_bookeau.html`.
+- Los cuadernos se ejecutan con el entorno del proyecto (`.venv`) y leen los resultados que deja el pipeline, así que conviene correr antes `python3 src/main.py`: `.venv/bin/jupyter nbconvert --to notebook --execute --inplace notebooks/*.ipynb`.
 - Las dependencias opcionales (`requirements.txt`: matplotlib, markdown, jupyter) solo hacen falta para las figuras (`python3 src/auxiliar/generar_figuras.py`), el PDF del informe en Markdown y los cuadernos.
