@@ -6,12 +6,11 @@ Proyecto del curso Modelado y Diseño de Datos (Uniandes, 2026-2) sobre las rese
 
 | Producto | Archivo |
 |---|---|
-| **Informe** (LaTeX y PDF) | [`docs/entregables/latex/informe_latex.tex`](docs/entregables/latex/informe_latex.tex) · [PDF](docs/entregables/latex/informe_latex.pdf) |
-| **Anexos** del informe (glosario, datos de apoyo, extensión de texto) | [`docs/entregables/latex/anexos_latex.tex`](docs/entregables/latex/anexos_latex.tex) · [PDF](docs/entregables/latex/anexos_latex.pdf) |
+| **Informe** (LaTeX y PDF) | [`docs/entregables/latex/informe_latex.pdf`](docs/entregables/latex/informe_latex.pdf) |
+| **Anexos** del informe (glosario, datos de apoyo, extensión de texto) | [`docs/entregables/latex/anexos_latex.pdf`](docs/entregables/latex/anexos_latex.pdf) |
 | Tablero interactivo (abrir en el navegador, sin servidor) | [`docs/entregables/tablero_bookeau.html`](docs/entregables/tablero_bookeau.html) |
-| Enunciado y fuente | [`docs/documentacion/`](docs/documentacion/) |
 
-Para compilar los `.tex` se necesita un compilador de LaTeX (por ejemplo, `tectonic informe_latex.tex` dentro de `docs/entregables/latex/`).
+
 
 ## Análisis
 
@@ -32,6 +31,11 @@ Para compilar los `.tex` se necesita un compilador de LaTeX (por ejemplo, `tecto
 Con Python 3.10 o superior; el pipeline usa solo la biblioteca estándar.
 
 ```bash
+# Crear ambiente
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt       
+
+# Ejecutar pipeline
 python3 src/main.py            # datos reales (data/bronce/Bookeau/)
 python3 src/main.py --dummy    # datos ficticios, para probar el flujo completo
 python3 src/main.py --lista    # pasos disponibles; también --desde PASO y --solo PASO...
@@ -53,7 +57,7 @@ python3 src/main.py --lista    # pasos disponibles; también --desde PASO y --so
 
 Los datos reales contienen nombres, correos y códigos de estudiantes y monitores, así que **no se versionan**. Para reproducir con ellos, copiar `Bookeau.zip` (compartido por la coordinación) en `data/bronce/` y descomprimirlo como `data/bronce/Bookeau/`; ver [`data/README.md`](data/README.md).
 
-Para probar el flujo sin datos personales, `--dummy` genera libros de Excel inventados con la misma estructura (`src/generar_datos_dummy.py`, en `data/bronce/dummy/`) y ejecuta todo sobre ellos. Los resultados salen en las mismas carpetas de siempre (`data/plata`, `data/oro`, `docs/`), así que reemplazan los que hubiera; para volver a los reales, ejecutar `main.py` sin `--dummy`. Los Excel ficticios sí se versionan.
+Para probar el flujo sin datos personales, `--dummy` genera libros de Excel inventados con la misma estructura (`src/generar_datos_dummy.py`, en `data/bronce/dummy/`) y ejecuta todo el pipeline sobre ellos. 
 
 ## Estructura
 

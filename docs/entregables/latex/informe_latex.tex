@@ -107,12 +107,8 @@ Para analizar los datos el proyecto aplica cuatro reglas. Se definen aquí y el 
 \midrule
 \endhead
 Objetivo & Identificar en qué modalidades, días, horas y períodos los estudiantes reservan y no asisten, y en cuáles se quedan sin cupo, para decidir dónde reforzar franjas (más monitores) y dónde aplicar medidas contra la inasistencia (recordatorios, política de sanciones). \\
-Destinatario & \textbf{Coordinación de CupiTaller.} \\
-Por qué ese rol & Planea las franjas y asigna monitores cada semestre y fija las reglas de reserva y de sanción. Las dos decisiones que este análisis apoya (cuántos monitores poner en cada franja y qué reglas ajustar) son exactamente las suyas. \\
-Cómo lo usaría & Antes de cada semestre, revisa por modalidad, día y hora qué proporción de citas se pierde y dónde se acumula la cola; cambia la oferta de franjas o las reglas según lo que encuentre. \\
-Preguntas & (1) ¿Cómo evolucionan las reservas y la atención por período? (2) ¿Qué modalidades, días y horas tienen mayor tasa de inasistencia? (3) ¿Qué proporción de solicitudes termina en cola y dónde? \\
-Indicadores & \textbf{Evento de reserva:} una fila de Reservas. \textbf{Atención:} reserva en estado Atendida. \textbf{Tasa de inasistencia} = No asistió / (Atendida + No asistió). \textbf{Proporción en cola} = (En cola + Cola cancelada por reservación) / eventos. \textbf{Proporción de cancelaciones} = canceladas / eventos. \\
-Preguntas complementarias & (4) Una vez confirmados los estados y la población elegible: ¿qué proporción de los eventos elegibles se atiende, se cancela o termina sin asistencia? \\
+Destinatario y por qué & \textbf{Coordinación de CupiTaller.} Planea las franjas, asigna monitores cada semestre y fija las reglas de reserva y de sanción: las dos decisiones que este análisis apoya (cuántos monitores poner en cada franja y qué reglas ajustar) son suyas. Antes de cada semestre revisa por modalidad, día y hora qué proporción de citas se pierde y dónde se acumula la cola, y cambia la oferta de franjas o las reglas según lo que encuentre. \\
+Preguntas & (1) ¿Cómo evolucionan las reservas y la atención por período? (2) ¿Qué modalidades, días y horas tienen mayor tasa de inasistencia? (3) ¿Qué proporción de solicitudes termina en cola y dónde? (4) Una vez confirmados los estados y la población elegible: ¿qué proporción de los eventos elegibles se atiende, se cancela o termina sin asistencia? \\
 Viabilidad & Los datos cubren casi diez años (29 períodos) y 86.562 eventos. Todas las variables necesarias están en un solo archivo (Reservas), sin cruces con otras fuentes. \\
 \bottomrule
 \end{longtable}
@@ -122,9 +118,8 @@ Viabilidad & Los datos cubren casi diez años (29 períodos) y 86.562 eventos. T
 \textbf{Datos del Análisis 1}
 
 \begin{itemize}[leftmargin=1.5em,itemsep=2pt]
-\item \textbf{Fuente:} archivo \emph{Reservas}, 29 archivos de Excel (uno por período, de 201620 a 202610), con 86.562 filas y 17 variables.
+\item \textbf{Fuente:} archivo \emph{Reservas}: 29 archivos de Excel (uno por período, de 201620 a 202610), con 86.562 filas y 17 variables.
 \item \textbf{Nivel de detalle (granularidad):} una fila es un \textbf{evento de reserva}: una solicitud de un estudiante para una franja, sin importar cómo terminó (atendida, cancelada, no asistió o en cola). El dato más fino es el minuto de inicio de la cita.
-\item \textbf{Período cubierto:} 19 de agosto de 2016 a 22 de mayo de 2026.
 \end{itemize}
 
 \begingroup\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.15}
@@ -160,6 +155,7 @@ Eventos de reserva & Conteo de ID distintos en el segmento & Todos los eventos d
 Distribución de estados & Eventos con cada etiqueta literal & Todos los eventos del mismo segmento \\
 Agenda por día y hora & Eventos por día ISO y hora de «Fecha inicio» & Eventos con inicio disponible \\
 Minutos programados & Fin programado menos inicio programado & Eventos con ambos campos coherentes \\
+Proporción en cola & (En cola + Cola cancelada por reservación) / eventos & Todos los eventos de la selección \\
 Tasa de asistencia & Finalizada o Realizada / eventos elegibles & Numerador agrupado por R01; población elegible por confirmar \\
 Tasa de inasistencia & No asistió / (Atendida + No asistió) & Regla R04: la cola no ocupa cupo \\
 Tasa de cancelación & Eventos cancelados / población definida & Falta definir si entra la cancelación de cola y la cancelación por sanción \\
@@ -169,7 +165,7 @@ Tasa de cancelación & Eventos cancelados / población definida & Falta definir 
 
 
 
-La población de Reservas incluye modalidades distintas de la tutoría (entrevistas, salas y etiquetas históricas); por la regla R03, los análisis de Gold solo usan las reservas de tutorías. Con los datos recibidos, las modalidades Normal, Express y Normal pico suman 83.894 de las 86.562 reservas (96,9\%), por lo que el volumen sigue dentro del rango de 80.000 a 200.000 registros que pide la guía. Para comparar Express con Normal se usan las etiquetas exactas, y «Normal pico» permanece separada hasta justificar su equivalencia.
+Por la regla R03, con los datos recibidos las modalidades Normal, Express y Normal pico suman 83.894 de las 86.562 reservas (96,9\%), por lo que el volumen sigue dentro del rango de 80.000 a 200.000 registros que pide la guía. Para comparar Express con Normal se usan las etiquetas exactas, y «Normal pico» permanece separada hasta justificar su equivalencia.
 
 Otras columnas de Reservas (nombre, correo y código del usuario, tipo de usuario, categoría, códigos de servicio) identifican personas o duplican información. No se usan en el análisis, y el modelo no incluye una dimensión de personas para no exponer datos personales.
 
@@ -183,12 +179,8 @@ Otras columnas de Reservas (nombre, correo y código del usuario, tipo de usuari
 \midrule
 \endhead
 Objetivo & Conocer cómo califican los estudiantes la ayuda del tutor y en qué servicios, modalidades y períodos se concentran las calificaciones bajas, para decidir qué priorizar en la formación y el seguimiento de los monitores. \\
-Destinatario & \textbf{Coordinación académica de los cursos.} \\
-Por qué ese rol & Es quien forma y evalúa a los monitores. Una calificación baja concentrada en un curso, una modalidad o un semestre le dice dónde reforzar la formación. \\
-Cómo lo usaría & Cada semestre revisa la proporción de calificaciones bajas por segmento, compara con los semestres anteriores y decide dónde intervenir (capacitación, acompañamiento, ajustes a la modalidad). \\
-Preguntas & (1) ¿Cómo se distribuye la calificación del tutor? (2) ¿Qué segmentos concentran calificaciones bajas (1 a 3)? (3) ¿Cómo cambian en el tiempo? \\
-Indicadores & \textbf{Encuestas válidas:} las no marcadas «Inválida». \textbf{Completitud del ítem:} parte de las encuestas válidas que contestó la calificación. \textbf{Proporción de calificaciones 1 a 3} (indicador principal). \textbf{Media y distribución de 1 a 5} (apoyo). \\
-Preguntas complementarias & (4) ¿Qué porcentaje de las respuestas incluidas tiene una calificación utilizable? (5) ¿Cómo se comparan Express y Normal dentro de períodos y servicios con respuestas de ambas? (6) ¿Qué percepciones y temas aparecen en los comentarios? (esta última se desarrollará en las siguientes entregas) \\
+Destinatario y por qué & \textbf{Coordinación académica de los cursos.} Forma y evalúa a los monitores, así que una calificación baja concentrada en un curso, una modalidad o un semestre le dice dónde reforzar la formación. Cada semestre revisa la proporción de calificaciones bajas por segmento, la compara con los semestres anteriores y decide dónde intervenir (capacitación, acompañamiento, ajustes a la modalidad). \\
+Preguntas & (1) ¿Cómo se distribuye la calificación del tutor? (2) ¿Qué segmentos concentran calificaciones bajas (1 a 3)? (3) ¿Cómo cambian en el tiempo? (4) ¿Qué porcentaje de las respuestas incluidas tiene una calificación utilizable? (5) ¿Cómo se comparan Express y Normal dentro de períodos y servicios con respuestas de ambas? (6) ¿Qué percepciones y temas aparecen en los comentarios? (esta última se desarrollará en las siguientes entregas) \\
 Viabilidad & Hay 23.138 encuestas posteriores, todas vinculadas a su reserva por el ID, de modo que cada calificación se puede ubicar por curso, modalidad, período y programa. \\
 \bottomrule
 \end{longtable}
@@ -200,9 +192,9 @@ Viabilidad & Hay 23.138 encuestas posteriores, todas vinculadas a su reserva por
 \textbf{Datos del Análisis 2}
 
 \begin{itemize}[leftmargin=1.5em,itemsep=2pt]
-\item \textbf{Fuentes:} \emph{Encuesta Express} (6.759 filas $\times$ 33 variables) y \emph{Encuesta Normal} (16.379 filas $\times$ 35 variables), 29 archivos cada una. Para segmentar se cruzan por el ID con \emph{Reservas} (fuente del Análisis 1). Todas las encuestas encuentran su reserva.
+\item \textbf{Fuentes:} \emph{Encuesta Express} (6.759 filas $\times$ 33 variables) y \emph{Encuesta Normal} (16.379 filas $\times$ 35 variables), 29 archivos cada una. Para segmentar se cruzan por el ID con \emph{Reservas} (fuente del Análisis 1). Incluyen también preguntas sobre el uso del tiempo de la tutoría y sugerencias o reclamos en texto libre, disponibles en el modelo para los análisis de texto.
 \item \textbf{Nivel de detalle:} una fila es una \textbf{encuesta de satisfacción de una reserva}; en el modelo se desglosa además en una fila por pregunta contestada (384.792 respuestas contando también las encuestas previas).
-\item \textbf{Período cubierto:} de 201620 a 202610. Los formularios cambiaron en el tiempo, así que no todas las preguntas existen en todos los períodos.
+\item \textbf{Cobertura:} de 201620 a 202610. Los formularios cambiaron en el tiempo, así que no todas las preguntas existen en todos los períodos.
 \end{itemize}
 
 \begingroup\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.15}
@@ -232,8 +224,10 @@ Servicio, Tipo de horario, Estado de la reserva, Programa y período & Datos de 
 \textbf{Indicador} & \textbf{Definición} & \textbf{Denominador o población} \\
 \midrule
 \endhead
+Encuestas válidas & Encuestas no marcadas «Inválida» & Todas las encuestas posteriores del segmento \\
 Calificaciones utilizables & Encuestas «Válida» con calificación entera de 1 a 5 & Encuestas «Válida» del segmento (regla R02) \\
 Distribución 1 a 5 & Cantidad de cada calificación / calificaciones utilizables & Calificaciones utilizables del segmento \\
+Proporción de calificaciones 1 a 3 (indicador principal) & Calificaciones de 1, 2 y 3 / calificaciones utilizables & Calificaciones utilizables del segmento \\
 Mediana y media & Resumen de la calificación utilizable & Calificaciones utilizables, con su \emph{n} \\
 Completitud del ítem & Calificaciones utilizables / encuestas válidas & Encuestas válidas del segmento \\
 Tasa de respuesta & Reservas elegibles con respuesta / reservas elegibles & Falta definir invitación, elegibilidad, estados y períodos del instrumento \\
@@ -243,11 +237,9 @@ Comparación Express y Normal & Comparar dentro del mismo período y servicio or
 \endgroup
 
 
-Las encuestas «Inválida» se excluyen de numeradores y denominadores (regla R02) pero se cuentan en la auditoría; su reserva sigue en los análisis de demanda y atención. Las preguntas vacías no se rellenan con cero. La fecha de inicio de la reserva ubica el evento en el tiempo, pero no demuestra cuándo se contestó la encuesta. \textbf{Calidad necesaria:} vínculos completos y únicos, separación entre el estado de la reserva y el de la encuesta, calificación dentro del dominio observado, disponibilidad por período, conciliación de atributos repetidos y conocimiento de las escalas y formularios históricos. Además, un resultado de satisfacción no demuestra mejora del aprendizaje ni que una modalidad cause mejores resultados.
+\textbf{Calidad necesaria:} vínculos completos y únicos, separación entre el estado de la reserva y el de la encuesta, calificación dentro del dominio observado, disponibilidad por período, conciliación de atributos repetidos y conocimiento de las escalas y formularios históricos.
 
-La encuesta incluye también preguntas sobre cómo se usó el tiempo de la tutoría y sugerencias o reclamos en texto libre, que quedan disponibles en el modelo para los análisis de texto.
-
-\textbf{Cuidado con la interpretación.} La encuesta es voluntaria: los resultados describen a quienes respondieron, no a todos los estudiantes que recibieron una tutoría. Además, la calificación mide la percepción del estudiante, no la calidad objetiva de la tutoría.
+\textbf{Cuidado con la interpretación.} La encuesta es voluntaria: los resultados describen a quienes respondieron, no a todos los estudiantes que recibieron una tutoría. La calificación mide la percepción del estudiante, no la calidad objetiva de la tutoría, y un resultado de satisfacción no demuestra mejora del aprendizaje ni que una modalidad cause mejores resultados.
 
 \subsection{Caracterización general de los datos}
 
@@ -272,31 +264,13 @@ Encuesta Normal (satisfacción) & 29 & 16.379 & 35 & Encuesta posterior de una r
 
 
 
-\subsection{Información disponible y relaciones entre las fuentes}
-
-
 Las encuestas reutilizan el ID de la reserva, así que la unidad de trabajo del proyecto es el \textbf{evento de reserva: 86.562 registros}, dentro del rango de 80.000 a 200.000 que pide la guía. Además de los datos en tablas hay texto libre: 17.987 comentarios sobre el tutor y la tutoría, que se analizarán en las siguientes entregas.
 
-Los identificadores (ID, códigos) se tratan como texto, no son medidas para promediar. Cada reserva tiene cero o alguna respuesta en cada una de las cuatro encuestas; las respuestas previas y posteriores pueden pertenecer a la misma reserva y se conservan como registros asociados, no como reservas nuevas. Todas las encuestas encuentran su reserva por ID y por ID más período:
-
-\begingroup\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.15}
-\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.374\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.161\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.197\textwidth-2\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr 0.197\textwidth-2\tabcolsep\relax}}
-\toprule
-\textbf{Encuesta} & \textbf{Filas} & \textbf{ID con reserva} & \textbf{Sin reserva} \\
-\midrule
-\endhead
-Satisfacción Express & 6.759 & 6.759 & 0 \\
-Satisfacción Normal & 16.379 & 16.379 & 0 \\
-Previa Express & 13.815 & 13.815 & 0 \\
-Previa Normal IP & 23.437 & 23.437 & 0 \\
-\bottomrule
-\end{longtable}
-\endgroup
-
+Los identificadores (ID, códigos) se tratan como texto: no son medidas para promediar. Cada reserva tiene cero o alguna respuesta en cada una de las cuatro encuestas; las respuestas previas y posteriores pueden pertenecer a la misma reserva y se conservan como registros asociados, no como reservas nuevas. Las 60.390 filas de las cuatro encuestas encuentran su reserva por ID y por ID más período (ninguna queda sin reserva).
 
 \textbf{Cobertura temporal.} Las reservas cubren del 19 de agosto de 2016 al 22 de mayo de 2026. Las encuestas previas existen desde el 21 de octubre de 2019. La calificación numérica del tutor tiene respuestas desde el período 201819, y las preguntas de comprensión y de uso de IA aparecen en períodos distintos según la encuesta. El detalle por período está en los Anexos C.2 y C.5.
 
-\textbf{Limitaciones de los datos.} No hay oferta ni capacidad general de franjas, fin efectivo de la sesión, respuestas del tutor como fuente separada, ni versiones certificadas del cuestionario. No se publican ocupación, cupos libres ni demanda insatisfecha. Tampoco hay notas académicas ni medidas objetivas de aprendizaje, costos o ingresos, de modo que los datos no permiten medir impacto causal en el aprendizaje, rentabilidad ni uso de capacidad. Para incorporar la oferta harían falta registros de franjas ofrecidas, capacidad, recursos y cambios de disponibilidad, con fechas y claves compatibles; su granularidad sería distinta de la de reserva y el modelo no fabrica esos eventos.
+\textbf{Limitaciones de los datos.} No hay oferta ni capacidad general de franjas, fin efectivo de la sesión, respuestas del tutor como fuente separada, ni versiones certificadas del cuestionario. Tampoco hay notas académicas ni medidas objetivas de aprendizaje, costos o ingresos, de modo que los datos no permiten medir impacto causal en el aprendizaje, rentabilidad ni uso de capacidad.
 
 
 \section{Ecosistema de analítica}
@@ -327,13 +301,11 @@ Calidad y metadatos & Diccionarios (qué significa cada columna), reglas de nego
 \endgroup
 
 
-\textbf{Qué intervenimos.} Trabajamos sobre Bronze (carga e inventario), Silver (limpieza y reglas), Gold (modelo y carga), el consumo (tablero) y la capa de calidad. La oferta de franjas y la capacidad de monitores no se exportan de Bookeau; quedan como fuente futura (línea punteada en la figura).
+\textbf{Qué se interviene y cómo.} Bronze contiene las 114 hojas originales (carga e inventario). Silver conserva los 146.952 registros (limpieza y reglas). Gold conserva las reservas de tutorías (regla R03) y excluye las encuestas inválidas (regla R02); allí se construyen el modelo y la carga, y las respuestas de texto se guardan con su vínculo a la pregunta y a la encuesta para las siguientes entregas. También se interviene el consumo (tablero) y la capa de calidad.
 
-Para esta entrega la implementación es local, con programas en Python, archivos CSV y la base de datos SQLite (un motor de base de datos contenido en un solo archivo). Los criterios de diseño no dependen de la plataforma, así que se pueden llevar a un lakehouse administrado en la nube (por ejemplo, con el formato Delta Lake) sin cambiar el modelo.
+\textbf{Implementación y migración.} Para esta entrega la implementación es local, con programas en Python, archivos CSV y la base de datos SQLite (un motor de base de datos contenido en un solo archivo). No está conectada a Bookeau ni desplegada en la nube, y no se declara que exista un lakehouse corporativo. Los criterios de diseño no dependen de la plataforma: una migración a un lakehouse administrado en la nube (por ejemplo, con el formato Delta Lake) debe mantener las granularidades, las reglas, las restricciones y la conciliación, sin cambiar el modelo; formatos, catálogo, acceso, orquestación y carga incremental se decidirían según esa plataforma.
 
-\textbf{Componentes que se intervienen y cómo.} Bronze contiene las 114 hojas originales. Silver conserva los 146.952 registros. Gold conserva las reservas de tutorías (regla R03) y excluye las encuestas inválidas (regla R02). Las respuestas de texto se guardan con su vínculo a la pregunta y a la encuesta para las siguientes entregas. La implementación actual no está conectada a Bookeau ni desplegada en la nube, y no se declara que exista un lakehouse corporativo. Una migración a otra plataforma debe mantener las granularidades, las reglas, las restricciones y la conciliación; formatos, catálogo, acceso, orquestación y carga incremental se decidirían según esa plataforma.
-
-\textbf{Oferta y capacidad.} Los eventos exportados no permiten reconstruir todas las franjas ofrecidas ni los cupos sin reservas. Por eso el primer análisis se limita a patrones de reservas y atención registrada, y no se publican ocupación, cupos libres, duración efectiva ni demanda insatisfecha como magnitudes observadas. Para incorporar la oferta se necesitarían registros de franjas ofrecidas, capacidad, recursos y cambios de disponibilidad, con granularidad propia.
+\textbf{Oferta y capacidad.} Los eventos exportados no permiten reconstruir todas las franjas ofrecidas ni los cupos sin reservas; por eso el primer análisis se limita a patrones de reservas y atención registrada, y no se publican ocupación, cupos libres, duración efectiva ni demanda insatisfecha como magnitudes observadas. La oferta queda como fuente futura (línea punteada en la figura): se necesitarían registros de franjas ofrecidas, capacidad, recursos y cambios de disponibilidad, con fechas y claves compatibles. Su granularidad sería distinta de la de reserva y el modelo no fabrica esos eventos.
 
 \subsection{Pertinencia del ecosistema}
 
@@ -356,7 +328,7 @@ Capacidad de evolución & El modelo no depende de la plataforma; la oferta de fr
 
 \section{Exploración y calidad de datos}
 
-Revisamos los 114 archivos completos, sin tomar muestras. Las estadísticas de esta sección describen todas las reservas recibidas, antes de aplicar la regla R03. Las tablas completas de este perfilamiento están en el Anexo C.
+Revisamos los 114 archivos completos, sin tomar muestras. Las estadísticas de esta sección describen todas las reservas recibidas, antes de aplicar la regla R03. Las tablas completas están en el Anexo C.
 
 \subsection{Estadísticas descriptivas}
 
@@ -414,7 +386,7 @@ Encuestas de satisfacción & Comentario sobre tutor y tutoría & 5.151 & 19--23\
 \endgroup
 
 
-Los faltantes de llegada y de prestador dependen del estado de la cita, así que no los tratamos como errores. Los de las encuestas se explican por \textbf{cambios del formulario en el tiempo}: la cobertura de cada pregunta por período (primer período con valores) está en el Anexo C.5.
+Los faltantes de las encuestas se explican por \textbf{cambios del formulario en el tiempo}; la cobertura de cada pregunta por período (primer período con valores) está en el Anexo C.5.
 
 \subsection{Unicidad}
 
@@ -436,8 +408,6 @@ Repeticiones de significado: variantes de escritura del programa académico & 21
 \end{longtable}
 \endgroup
 
-
-La clave de negocio (el ID de la reserva) es única, lo que permite usarla para vincular reservas y encuestas.
 
 \subsection{Consistencia}
 
@@ -494,10 +464,7 @@ El análisis anterior define qué debe corregirse al pasar los datos de una capa
 \begin{enumerate}[leftmargin=1.5em,itemsep=2pt]
 \item Unificar nombres de columna, escribir las fechas en formato ISO 8601 y fijar los tipos de dato, tratando los identificadores como texto.
 \item Normalizar la escritura del programa académico en una columna adicional, conservando el original.
-\item \textbf{Regla R01} (Coordinación de Cupitaller): los estados «Finalizada» y «Realizada» se tratan como un solo estado analítico, \emph{Atendida}, y se conserva el estado original.
-\item \textbf{Regla R02} (Sugerida por el equipo, aprobada por la coordinación): excluir de los análisis las 166 encuestas «Inválida» (marcadas así por Bookeau), pero mantenerlas en Silver para auditoría.
-\item \textbf{Regla R03} (Coordinación de Cupitaller): la población de Reservas incluye modalidades distintas de la tutoría (entrevistas, salas y etiquetas históricas); para los análisis de Gold solo se incluyen los ID asociados a reservas de tutorías, es decir, las de tipo de horario Normal, Express o Normal pico. Las demás reservas, y las encuestas que les corresponden, permanecen en Silver.
-\item \textbf{Regla R04} (Coordinación de Cupitaller): una solicitud en cola no ocupa cupo, así que la inasistencia se mide solo sobre citas que llegaron a su hora (Atendida + No asistió). Se guarda como el atributo \texttt{grupo\_\allowbreak{}estado} de la dimensión Estado (ver 4.4).
+\item Aplicar las reglas R01 a R04 (sección 1.3): R01 y R04 se guardan como atributos de la dimensión Estado (\texttt{estado\_\allowbreak{}analitico} y \texttt{grupo\_\allowbreak{}estado}, ver 4.4), y R02 y R03 actúan como filtros en la carga a Gold.
 \item Marcar con banderas los casos inconsistentes, sin corregirlos ni borrarlos.
 \item No inventar valores: no se rellenan la fecha de devolución, la llegada ni las calificaciones faltantes.
 \end{enumerate}
@@ -549,30 +516,28 @@ Cada figura muestra una tabla de hechos al centro y las dimensiones alrededor. E
 \caption{Modelo dimensional de encuestas y respuestas}
 \end{figure}
 
-\textbf{Dimensiones del modelo.}
+\textbf{Dimensiones del modelo y sus jerarquías.} Una \textbf{jerarquía} es una cadena de niveles que permite pasar del detalle al resumen y viceversa (en inglés, \emph{drill-down}). Todas están guardadas en Gold.
 
 \begingroup\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.15}
-\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.138\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.396\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.396\textwidth-2\tabcolsep\relax}}
+\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.097\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.278\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.278\textwidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.278\textwidth-2\tabcolsep\relax}}
 \toprule
-\textbf{Dimensión} & \textbf{Granularidad y atributos} & \textbf{Motivo} \\
+\textbf{Dimensión} & \textbf{Granularidad y atributos} & \textbf{Jerarquía} & \textbf{Motivo} \\
 \midrule
 \endhead
-Fecha & Un día del calendario completo; año, mes, día ISO, nombre del día y del mes, indicador de fin de semana, y período académico (código, año del código, terminación y tipo de período) & Permite series y mostrar fechas sin eventos; cumple tres roles (inicio, fin, llegada). El período es un atributo de la fecha: cada día pertenece a un solo período, y los días entre períodos quedan como «Entre períodos» \\
-Hora & Un minuto del día (1.440 miembros) & Segmenta el inicio programado sin confundirlo con los segundos de la llegada \\
-Servicio & Código y etiqueta original & Conserva los catálogos históricos sin fusionar los \texttt{Deprecated} \\
-Modalidad & Tipo de horario y categoría originales & Evita confundir la modalidad con el recurso, y los grupos de archivo con modalidades \\
-Estado & Etiqueta original, estado analítico (R01) y grupo (R04) & Conserva la evidencia y permite contar atenciones sin perder el detalle \\
-Programa & Etiqueta normalizada; miembro 0 «No informado» & Agrupa variantes de escritura y mantiene explícitos los faltantes \\
-Tipo de encuesta & Grupo de fuente y etapa (previa o posterior) & Define el proceso de encuesta; por sí solo no identifica la modalidad real \\
-Pregunta & Texto completo, columna de origen y marcas de texto libre y de calificación & Admite preguntas largas sin un hecho distinto por pregunta \\
+Fecha & Un día del calendario completo, con tres roles (inicio, fin, llegada); \texttt{nombre\_\allowbreak{}dia}, \texttt{nombre\_\allowbreak{}mes}, \texttt{dia\_\allowbreak{}semana\_\allowbreak{}iso}, \texttt{es\_\allowbreak{}fin\_\allowbreak{}de\_\allowbreak{}semana}; y período académico (\texttt{periodo\_\allowbreak{}original}, \texttt{anio\_\allowbreak{}periodo}, \texttt{sufijo\_\allowbreak{}periodo}, \texttt{tipo\_\allowbreak{}periodo}) & día $\rightarrow$ mes $\rightarrow$ año; período $\rightarrow$ tipo de período (Semestre 1 = terminación 10, Semestre 2 = 20, Intersemestral = 19); los días entre períodos son «Entre períodos» & Permite series y mostrar fechas sin eventos. El período es un atributo de la fecha: cada día pertenece a un solo período \\
+Hora & Un minuto del día (1.440 miembros); \texttt{etiqueta} (HH:MM) & minuto $\rightarrow$ hora $\rightarrow$ franja (Madrugada, Mañana, Tarde, Noche) & Segmenta el inicio programado sin confundirlo con los segundos de la llegada \\
+Servicio & Código y etiqueta original & Sin jerarquía (lista plana) & Conserva los catálogos históricos sin fusionar los \texttt{Deprecated} \\
+Modalidad & Tipo de horario y categoría originales & Sin jerarquía & Evita confundir la modalidad con el recurso, y los grupos de archivo con modalidades \\
+Estado & Etiqueta original, estado analítico (R01) y grupo (R04) & estado original (12) $\rightarrow$ estado analítico (11) $\rightarrow$ grupo (5) & Conserva la evidencia y permite contar atenciones sin perder el detalle \\
+Programa & Etiqueta normalizada; miembro 0 «No informado» & Sin jerarquía & Agrupa variantes de escritura y mantiene explícitos los faltantes. Son etiquetas registradas, no el programa oficial certificado \\
+Tipo de encuesta & Grupo de fuente y etapa (previa o posterior) & Sin jerarquía & Define el proceso de encuesta; por sí solo no identifica la modalidad real \\
+Pregunta & Texto completo, columna de origen y marcas de texto libre y de calificación & Sin jerarquía & Admite preguntas largas sin un hecho distinto por pregunta \\
 \bottomrule
 \end{longtable}
 \endgroup
 
 
-Los atributos de segmentación de la encuesta se toman de la reserva vinculada, como referencia de trabajo acordada; las diferencias del registro de la encuesta permanecen en Silver y en la auditoría de Gold. No se reconstruyen cambios históricos de atributos que las fuentes no traen. Tampoco se crea una dimensión de personas basada solo en nombres. Usuario y prestador permanecen en Silver. Los programas son etiquetas registradas, no una certificación del programa oficial del estudiante.
-
-El hecho de encuesta incluye las etapas previa y posterior; para la satisfacción se filtra la etapa posterior, y las respuestas previas no se mezclan con las calificaciones del tutor. Una pregunta vacía no genera un hecho de respuesta, pero la encuesta permanece, lo que permite calcular la completitud de cada ítem. Las referencias de fecha de la encuesta describen la reserva asociada, no el momento de contestación.
+Los atributos de segmentación de la encuesta se toman de la reserva vinculada, como referencia de trabajo acordada; las diferencias del registro de la encuesta permanecen en Silver y en la auditoría de Gold. El hecho de encuesta incluye las etapas previa y posterior: la satisfacción filtra la posterior y no se mezcla con las respuestas previas. Las fechas de la encuesta describen la reserva asociada, no el momento en que se contestó.
 
 \subsection{Matriz de bus}
 
@@ -611,8 +576,8 @@ Pregunta &  &  & $\checkmark$ \\
 \texttt{hecho\_\allowbreak{}reserva} es una \textbf{tabla de hechos sin medidas numéricas propias} (\emph{factless}) & El proceso solo registra que un evento ocurrió; las preguntas se responden contando filas por estado. La columna \texttt{evento\_\allowbreak{}reserva = 1} hace explícita esa cuenta. \\
 \texttt{hecho\_\allowbreak{}respuesta} es un \textbf{detalle con dimensión Pregunta} & Hay 22 preguntas que cambian según el período y el grupo. Una columna por pregunta dejaría la tabla llena de vacíos y obligaría a cambiar la estructura con cada formulario nuevo. Con la dimensión Pregunta, un formulario nuevo solo agrega filas. Los textos libres quedan listos para la Entrega 2. \\
 \texttt{id\_\allowbreak{}reserva} como \textbf{dimensión degenerada} & Es un identificador que no tiene atributos propios, así que no necesita tabla de dimensión: se guarda en la tabla de hechos. Permite rastrear y vincular reserva y encuesta. En Gold se protege con una clave foránea (ver 4.5). \\
-\textbf{Fecha con roles} (inicio, fin, llegada) & Una sola tabla de calendario sirve tres significados y permite mostrar días sin eventos. \\
-\textbf{Dimensiones conformadas} entre reserva y encuesta & La encuesta toma servicio, modalidad, estado y programa de su reserva. Así un mismo filtro del tablero se aplica a ambos análisis. \\
+\textbf{Fecha con roles} (inicio, fin, llegada) & Una sola tabla de calendario sirve tres significados. \\
+\textbf{Dimensiones conformadas} entre reserva y encuesta & La encuesta toma servicio, modalidad, estado y programa de su reserva, así que un mismo filtro del tablero se aplica a ambos análisis. \\
 \textbf{Modalidad} = tipo de horario + categoría & Es una dimensión pequeña (24 combinaciones) que evita tener dos dimensiones casi vacías. \\
 \textbf{Estado} con jerarquía: original $\rightarrow$ analítico $\rightarrow$ grupo & Las reglas de negocio viven en la dimensión, no en cada consulta: \texttt{estado\_\allowbreak{}analitico} aplica la regla R01 y \texttt{grupo\_\allowbreak{}estado} aplica la regla R04 (Atendida, No asistió, Cola, Cancelada, Abierta). Si la coordinación cambia una regla, se modifica una fila de la dimensión y ninguna consulta. \\
 \textbf{Manejo de cambios en el tiempo (SCD)} & Servicio, Modalidad y Estado son tipo 0; Programa es tipo 1. La justificación completa está en 4.6. \\
@@ -653,8 +618,8 @@ Para decidir si el modelo es bueno usamos los siguientes criterios, cada uno con
 \endhead
 \textbf{Granularidad declarada y única} & \textbf{Clave primaria} (PK, el identificador único de cada fila) en cada hecho, y restricción de unicidad \texttt{UNIQUE(id\_\allowbreak{}reserva, tipo\_\allowbreak{}encuesta)} & 0 violaciones \\
 \textbf{Integridad referencial} (ninguna fila apunta a algo que no existe) & \textbf{Claves foráneas} (FK, referencias de una tabla a otra) activas en SQLite y la verificación \texttt{PRAGMA foreign\_\allowbreak{}key\_\allowbreak{}check} & 0 filas huérfanas \\
-\textbf{Conservación} (no se pierde ni se inventa nada) & Los registros de Silver son iguales a los de Gold más las exclusiones documentadas, por fuente & 86.562 = 86.562; las encuestas concilian (sección 5.3) \\
-\textbf{Suma correcta de medidas} & Las medidas sumables son conteos por fila; las calificaciones solo se promedian; los porcentajes se recalculan a partir de numerador y denominador, nunca se promedian porcentajes & Revisado en las consultas del tablero \\
+\textbf{Conservación} (no se pierde ni se inventa nada) & Los registros de Silver son iguales a los de Gold más las exclusiones documentadas, por fuente & 86.562 = 86.562; las encuestas concilian (sección 5.4) \\
+\textbf{Suma correcta de medidas} & Reglas de aditividad de la sección 4.3: conteos por fila, calificaciones solo promediadas y porcentajes recalculados & Revisado en las consultas del tablero \\
 \textbf{Sin vacíos en las claves de dimensión} & Categoría «No informado» (clave 0) en Programa & 333 reservas apuntan a la clave 0 \\
 \textbf{Valores permitidos en los atributos de agrupación} & Restricciones \texttt{CHECK} (la base rechaza valores fuera de una lista o rango) sobre \texttt{grupo\_\allowbreak{}estado}, \texttt{franja} y \texttt{es\_\allowbreak{}fin\_\allowbreak{}de\_\allowbreak{}semana} & 0 violaciones \\
 \textbf{Aptitud para las preguntas} & Cada pregunta de 1.4 y 1.5 se responde con una agrupación (\texttt{GROUP BY}) sobre una sola tabla de hechos y sus dimensiones & Ver las consultas en el Anexo C.13 \\
@@ -664,7 +629,7 @@ Para decidir si el modelo es bueno usamos los siguientes criterios, cada uno con
 \endgroup
 
 
-Estos criterios sirven para comprobar la estructura y la conservación de los datos en esta entrega, pero no sustituyen la confirmación de formularios históricos, de la identidad de los participantes ni de los estados operativos desconocidos. Bastan para esta entrega porque cubren los tres fallos típicos de un modelo dimensional: granularidad mal definida (se cuentan eventos de más), integridad rota (filas que desaparecen al cruzar tablas) y medidas mal agregadas (promedios de promedios). Además, cada criterio se verifica automáticamente en cada carga. La validez de los significados de los estados depende de reglas de negocio, y las que faltan se listan en 5.4.
+Estos criterios sirven para comprobar la estructura y la conservación de los datos en esta entrega, pero no sustituyen la confirmación de formularios históricos, de la identidad de los participantes ni de los estados operativos desconocidos. Bastan para esta entrega porque cubren los tres fallos típicos de un modelo dimensional: granularidad mal definida (se cuentan eventos de más), integridad rota (filas que desaparecen al cruzar tablas) y medidas mal agregadas (promedios de promedios). Cada criterio se verifica automáticamente en cada carga. La validez de los significados de los estados depende de reglas de negocio, y las que faltan se listan en 5.5.
 
 \subsection{Historia de atributos (SCD)}
 
@@ -693,7 +658,7 @@ Persona (no modelada) & Tipo 2, si se agregara & Solo un cambio real de programa
 \endgroup
 
 
-Se elige tipo 0 en lugar de tipo 2 porque la fuente no registra cuándo cambió un catálogo: no hay fechas de vigencia que sustenten un tipo 2. Como cada reserva ya trae la etiqueta vigente al momento del evento, el tipo 0 conserva la historia sin inventarla. Si la coordinación exportara una tabla de equivalencias con fechas (ver 5.4), Servicio y Modalidad pasarían a tipo 2.
+Se elige tipo 0 en lugar de tipo 2 porque la fuente no registra cuándo cambió un catálogo: no hay fechas de vigencia que sustenten un tipo 2. Como cada reserva ya trae la etiqueta vigente al momento del evento, el tipo 0 conserva la historia sin inventarla. Si la coordinación exportara una tabla de equivalencias con fechas (ver 5.5), Servicio y Modalidad pasarían a tipo 2.
 
 \subsection{Diseño del repositorio}
 
@@ -732,11 +697,11 @@ Soporte del modelo dimensional & Alta: un hecho por tabla y dimensiones comparti
 
 \section{Transformación Silver $\rightarrow$ Gold}
 
-\textbf{Silver} contiene los datos limpios, tal como salen de la fuente pero con formato uniforme. \textbf{Gold} contiene los mismos datos reorganizados en el modelo dimensional de la sección 4. Esta sección describe el proceso que convierte uno en otro.
+Esta sección describe el proceso que convierte los datos limpios de Silver en el modelo dimensional de Gold (sección 4).
 
 \subsection{Entradas y reglas de la transformación}
 
-Se leen los cinco archivos CSV de Silver, producto de la limpieza descrita en el Anexo C.11 (nombres comunes, fechas ISO, identificadores como texto, programa normalizado, banderas y trazabilidad). De las reservas solo entran las de tutorías (regla R03); todas las demás permanecen en Silver. De las encuestas solo entran las que tienen \texttt{incluir\_\allowbreak{}encuesta\_\allowbreak{}en\_\allowbreak{}analisis = true} (regla R02); las marcadas falsas se excluyen de Gold y permanecen en Silver, y un indicador desconocido requiere revisión y se concilia aparte. La regla R01 llega a \texttt{dim\_\allowbreak{}estado} como etiqueta original y etiqueta analítica. No se infiere encuesta completa ni duración efectiva. Los servicios y modalidades históricos se mantienen separados, y la segmentación de la encuesta usa la reserva vinculada, sin afirmar que se reconstruyó la verdad histórica.
+Se leen los cinco archivos CSV de Silver, producto de la limpieza descrita en el Anexo C.11 (nombres comunes, fechas ISO, identificadores como texto, programa normalizado, banderas y trazabilidad). De las reservas solo entran las de tutorías (regla R03) y de las encuestas solo las incluidas por la regla R02; un indicador de validez desconocido requiere revisión y se concilia aparte. La regla R01 llega a \texttt{dim\_\allowbreak{}estado} como etiqueta original y etiqueta analítica. No se infiere encuesta completa ni duración efectiva. Los servicios y modalidades históricos se mantienen separados, y la segmentación de la encuesta usa la reserva vinculada, sin afirmar que se reconstruyó la verdad histórica.
 
 \subsection{Diseño del proceso}
 
@@ -759,7 +724,7 @@ Se leen los cinco archivos CSV de Silver, producto de la limpieza descrita en el
 \endgroup
 
 
-La carga produce 86.562 reservas, 60.224 encuestas incluidas y 384.792 respuestas no vacías; las 166 encuestas inválidas quedan fuera de Gold y dentro de Silver. No se exige igualdad entre el número de respuestas y el de encuestas porque sus granularidades son distintas. La carga reconstruye todo en una base de datos temporal, y solo reemplaza la versión publicada si pasan todos los controles.
+No se exige igualdad entre el número de respuestas y el de encuestas porque sus granularidades son distintas. La carga reconstruye todo en una base de datos temporal y solo reemplaza la versión publicada si pasan todos los controles.
 
 \subsection{Decisiones importantes}
 
@@ -915,7 +880,7 @@ APO 1 (histórico) & 4.332 & 4,85 & 2,1\% \\
 \midrule
 \endhead
 Cada indicador se calcula sobre una sola tabla de hechos, a la granularidad correcta & Inasistencia y cola: un conteo (\texttt{COUNT}) sobre \texttt{hecho\_\allowbreak{}reserva} agrupado por \texttt{dim\_\allowbreak{}estado}. Calificaciones: \texttt{hecho\_\allowbreak{}encuesta} filtrado a la encuesta posterior. Ningún indicador cruza dos tablas de hechos fila a fila. \\
-Los filtros son coherentes entre los dos análisis & Fecha (con su período), servicio y modalidad son dimensiones compartidas, así que el mismo filtro significa lo mismo en ambas secciones. \\
+Los filtros son coherentes entre los dos análisis & Fecha (con su período), servicio y modalidad son dimensiones compartidas: el mismo filtro significa lo mismo en ambas secciones. \\
 Los denominadores son explícitos & Las reglas R01 y R04 son atributos de la dimensión Estado (\texttt{estado\_\allowbreak{}analitico}, \texttt{grupo\_\allowbreak{}estado}) y R02 y R03 son filtros de carga; las consultas solo agrupan por esos atributos. El tablero muestra el número de casos (\emph{n}) junto a cada porcentaje. \\
 Se puede pasar del resumen al detalle & Las jerarquías permiten ir de tipo de período a período, de franja a hora y de grupo de estado a estado original. Por ejemplo, la proporción en cola es 12,2\% en intersemestrales frente a 16,9--17,5\% en semestres. \\
 El tablero no tiene que corregir problemas de calidad & Las exclusiones e inconsistencias se resuelven en Silver y Gold; el tablero solo suma y agrupa. \\
@@ -935,13 +900,13 @@ El modelo puede crecer & La oferta de franjas se incorporaría como una nueva ta
 \endhead
 Coordinación de CupiTaller & 1. Inasistencia y cola & Filtra por período, servicio y modalidad; lee las tasas con su número de casos; compara por día de la semana y hora & \texttt{hecho\_\allowbreak{}reserva} con \texttt{dim\_\allowbreak{}estado} (grupo de estado), \texttt{dim\_\allowbreak{}fecha} y \texttt{dim\_\allowbreak{}hora}; un conteo por estado \\
 Coordinación académica de los cursos & 2. Satisfacción & Filtra por los mismos criterios; revisa la proporción de calificaciones de 1 a 3 y su evolución por período & \texttt{hecho\_\allowbreak{}encuesta} filtrado a la encuesta posterior, con dimensiones compartidas \\
-Ambos & Exploración & Pasan de tipo de período a período, de franja a hora y de grupo de estado a estado original & Jerarquías guardadas en las dimensiones (4.4) \\
+Ambos & Exploración & Pasan de tipo de período a período, de franja a hora y de grupo de estado a estado original & Jerarquías guardadas en las dimensiones (4.2) \\
 \bottomrule
 \end{longtable}
 \endgroup
 
 
-El tablero es un archivo HTML que no necesita servidor, porque la coordinación no tiene infraestructura de BI. Las decisiones de modelo que lo hacen posible (dimensiones compartidas, reglas guardadas en \texttt{dim\_\allowbreak{}estado}, una sola granularidad por tabla de hechos) están justificadas en 4.4 y 6.3.
+El tablero no necesita servidor porque la coordinación no tiene infraestructura de BI. Las decisiones de modelo que lo hacen posible (dimensiones compartidas, reglas guardadas en \texttt{dim\_\allowbreak{}estado}, una sola granularidad por tabla de hechos) están justificadas en 4.4 y 6.3.
 
 
 \section{Gestión del proyecto}

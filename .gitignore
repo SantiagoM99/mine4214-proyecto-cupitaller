@@ -25,6 +25,8 @@ exploratorio/
 docs/entregables/latex/*
 !docs/entregables/latex/informe_latex.pdf
 !docs/entregables/latex/informe_latex.tex
+!docs/entregables/latex/anexos_latex.pdf
+!docs/entregables/latex/anexos_latex.tex
 
 # artifacts generados por scripts de limpieza y transformación
 docs/artifacts/
