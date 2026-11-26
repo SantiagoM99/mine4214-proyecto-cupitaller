@@ -47,7 +47,7 @@ Requerimientos que cruzan los documentos del curso con la bodega de la Entrega 1
 | **Informe** (LaTeX y PDF) | [`docs/entregables/e2_informe/informe.pdf`](docs/entregables/e2_informe/informe.pdf) |
 | **Póster** de 70 × 100 cm | [`docs/entregables/e2_poster/poster.pdf`](docs/entregables/e2_poster/poster.pdf). Fuente en `poster.html`; `src/auxiliar/e2_exportar_poster.sh` genera el PDF y `src/auxiliar/e2_medir_poster.sh` dice cuántos milímetros sobran o faltan en cada columna |
 
-Los PDF, el póster y el tablero están versionados: se pueden abrir sin ejecutar nada. Para recompilar el informe o volver a exportar el póster hay que generar antes sus figuras y tabla (pasos `figuras`, `temas`, `poster` y `modelo`), que quedan en `artifacts/entrega2/` y no se versionan. Ver [Recompilar informes y póster](#recompilar-informes-y-póster).
+Los PDF, el póster y el tablero están versionados: se pueden abrir sin ejecutar nada. Para recompilar el informe o volver a exportar el póster hay que generar antes sus figuras y tabla (paso `update_documentation`), que quedan en `artifacts/entrega2/` y no se versionan. Ver [Recompilar informes y póster](#recompilar-informes-y-póster).
 
 # Qué necesitas según lo que quieras hacer
 
@@ -191,10 +191,11 @@ scripts/e2_postgres.sh iniciar               # Postgres local en 127.0.0.1:5434 
 python3 src/main.py --entrega 2              # todos los pasos de la Entrega 2
 python3 src/main.py --entrega 2 --lista      # lista los pasos
 python3 src/main.py --entrega 2 --desde indexar
-python3 src/main.py --entrega 2 --solo temas modelo   # solo estos pasos
+python3 src/main.py --entrega 2 --solo update_documentation   # solo tabla, figuras y diagrama
+python3 src/auxiliar/e2_update_documentation.py --solo temas modelo   # solo esas partes de update_documentation
 ```
 
-Sin documentos ni llave se pueden correr solo `temas` y `modelo`, que usan el catálogo versionado y el Gold de la Entrega 1 (con datos ficticios basta). Los pasos `catalogo`, `transcribir`, `indexar`, `evaluar`, `entropia` y `agente` necesitan los documentos y la llave, y los últimos cuatro, además, Postgres iniciado.
+Sin documentos ni llave se pueden correr solo las partes `temas` y `modelo` de `update_documentation` (última línea de arriba), que usan el catálogo versionado y el Gold de la Entrega 1 (con datos ficticios basta). Los pasos `catalogo`, `transcribir`, `indexar`, `evaluar`, `entropia` y `agente` necesitan los documentos y la llave, y los últimos cuatro, además, Postgres iniciado.
 
 Los pasos que llaman al modelo guardan lo que producen (`data/plata/documentos/transcripciones/`, `artifacts/entrega2/resultados/`) y no repiten lo ya hecho. Para volver a responder y calificar: `python3 src/entrega2/evaluar.py --rehacer`.
 
@@ -213,12 +214,9 @@ python3 src/entrega2/agente.py "El programa menciona tutorías grupales. ¿Se si
 | `evaluar` | `src/entrega2/evaluar.py` | Responde 26 preguntas con prompting directo, RAG de texto y RAG visual, y las califica con un modelo juez |
 | `entropia` | `src/entrega2/poc_entropia.py` | Prueba de concepto con las dos versiones del programa del curso (2020-20 y 2026-20) |
 | `agente` | `src/entrega2/casos_agente.py` | Casos del agente híbrido |
-| `figuras` | `src/auxiliar/e2_figuras.py` | Gráficas del informe |
-| `temas` | `src/auxiliar/e2_temas_por_nivel.py` | Qué clases de 2026-20 tienen versión en el material de 2020-21; tabla del informe |
-| `poster` | `src/auxiliar/e2_figuras_poster.py` | Gráficas y recortes de documentos del póster, al tamaño de impresión |
-| `modelo` | `src/auxiliar/e2_modelo_dimensional.py` | Diagrama del modelo dimensional para el póster; se detiene si no coincide con el DDL de `sql/e2_bodega_modelo_gold.sql` |
+| `update_documentation` | `src/auxiliar/e2_update_documentation.py` | Todo el material del informe y del póster, en cuatro partes: `temas` (tabla del informe: qué clases de 2026-20 tienen versión en el material de 2020-21), `modelo` (diagrama del modelo dimensional; se detiene si no coincide con el DDL de `sql/e2_bodega_modelo_gold.sql`), `figuras` (gráficas del informe) y `poster` (gráficas y recortes de documentos del póster, al tamaño de impresión) |
 
-Los enfoques están en `src/entrega2/enfoques.py`, el acceso a la base vectorial en `base_vectorial.py`, el juez en `juez.py` y las llamadas al modelo, con su registro de tokens y tiempo, en `llm.py`. Los cuatro últimos pasos solo producen material del informe y del póster, por eso viven en `src/auxiliar/`.
+Los enfoques están en `src/entrega2/enfoques.py`, el acceso a la base vectorial en `base_vectorial.py`, el juez en `juez.py` y las llamadas al modelo, con su registro de tokens y tiempo, en `llm.py`. El último paso solo produce material del informe y del póster, por eso vive en `src/auxiliar/`.
 
 ## Datos de la Entrega 2
 
@@ -250,8 +248,8 @@ Los PDF ya están versionados; solo hace falta recompilarlos si cambias el texto
 | Producto | Requisitos | Comando |
 |---|---|---|
 | Informe y anexos de la Entrega 1 | TeX Live o MacTeX (distribución completa) | `cd docs/entregables/e1_informe && pdflatex informe_latex.tex` (dos veces, para las referencias); igual con `anexos_latex.tex`. Las imágenes están en `img/` |
-| Informe de la Entrega 2 | TeX Live o MacTeX; usa `fontspec`, así que se compila con **XeLaTeX o LuaLaTeX**, no con `pdflatex` | Antes, generar figuras y tabla: `python3 src/main.py --entrega 2 --solo figuras temas` (necesita los resultados de `evaluar`, `entropia` y Postgres; ver arriba). Luego `cd docs/entregables/e2_informe && xelatex informe.tex` (dos veces). Lee `artifacts/entrega2/figuras/` y `artifacts/entrega2/tablas/` |
-| Póster de la Entrega 2 | Chrome o Chromium y `pdfinfo` (poppler: `brew install poppler`) | `python3 src/main.py --entrega 2 --solo poster modelo` (el paso `poster` necesita las páginas renderizadas por `transcribir` y los resultados de `evaluar`), luego `src/auxiliar/e2_exportar_poster.sh` (fuera de macOS, `CHROME=/ruta/al/navegador src/auxiliar/e2_exportar_poster.sh`). `src/auxiliar/e2_medir_poster.sh` dice cuántos milímetros sobran o faltan en cada columna |
+| Informe de la Entrega 2 | TeX Live o MacTeX; usa `fontspec`, así que se compila con **XeLaTeX o LuaLaTeX**, no con `pdflatex` | Antes, generar figuras y tabla: `python3 src/main.py --entrega 2 --solo update_documentation` (las partes `figuras` y `poster` necesitan los resultados de `evaluar`, `entropia` y Postgres; ver arriba). Luego `cd docs/entregables/e2_informe && xelatex informe.tex` (dos veces). Lee `artifacts/entrega2/figuras/` y `artifacts/entrega2/tablas/` |
+| Póster de la Entrega 2 | Chrome o Chromium y `pdfinfo` (poppler: `brew install poppler`) | `python3 src/main.py --entrega 2 --solo update_documentation` (la parte `poster` necesita las páginas renderizadas por `transcribir` y los resultados de `evaluar`), luego `src/auxiliar/e2_exportar_poster.sh` (fuera de macOS, `CHROME=/ruta/al/navegador src/auxiliar/e2_exportar_poster.sh`). `src/auxiliar/e2_medir_poster.sh` dice cuántos milímetros sobran o faltan en cada columna |
 
 La fuente Helvetica Neue, con la que se miden las cajas del diagrama del modelo, solo existe en macOS; en otros sistemas el paso `modelo` usa una medida aproximada y el diagrama puede variar un poco.
 

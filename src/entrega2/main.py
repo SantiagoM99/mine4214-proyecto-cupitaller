@@ -17,8 +17,8 @@ from pathlib import Path
 
 SRC = Path(__file__).resolve().parent
 
-# Los pasos figuras, temas, poster y modelo producen material del informe y del póster:
-# no son lógica del proyecto y viven en src/auxiliar/.
+# update_documentation produce el material del informe y del póster (tabla, figuras y diagrama):
+# no es lógica del proyecto y vive en src/auxiliar/. Sus cuatro partes se pueden correr por separado.
 PASOS = [
     ('catalogo', 'catalogo.py', 'etiqueta cada documento con semestre, vigencia y nivel'),
     ('transcribir', 'transcribir.py', 'ingesta visual: una transcripción por página'),
@@ -27,10 +27,7 @@ PASOS = [
     ('evaluar', 'evaluar.py', 'prompting directo, RAG de texto y RAG visual sobre el banco de preguntas'),
     ('entropia', 'poc_entropia.py', 'prueba de concepto con documentos desactualizados'),
     ('agente', 'casos_agente.py', 'casos del agente híbrido (RAG + SQL)'),
-    ('figuras', '../auxiliar/e2_figuras.py', 'gráficas del informe'),
-    ('temas', '../auxiliar/e2_temas_por_nivel.py', 'clases de 2026-20 con y sin versión en el material de 2020-21'),
-    ('poster', '../auxiliar/e2_figuras_poster.py', 'gráficas y recortes de documentos del póster'),
-    ('modelo', '../auxiliar/e2_modelo_dimensional.py', 'diagrama del modelo dimensional, comprobado contra el DDL'),
+    ('update_documentation', '../auxiliar/e2_update_documentation.py', 'tabla, figuras y diagrama del informe y del póster'),
 ]
 NOMBRES = [nombre for nombre, _, _ in PASOS]
 
@@ -52,7 +49,7 @@ def main() -> None:
     opciones = argumentos.parse_args()
     if opciones.lista:
         for nombre, script, descripcion in PASOS:
-            print(f'{nombre:<12} {script:<38} {descripcion}')
+            print(f'{nombre:<12} {script:<42} {descripcion}')
         return
     for nombre, script, descripcion in seleccionar(opciones):
         print(f'== {nombre}: {descripcion}')
