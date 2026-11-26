@@ -53,15 +53,11 @@ Los PDF, el póster y el tablero están versionados: se pueden abrir sin ejecuta
 
 | Quiero… | Necesito |
 |---|---|
-| Leer los informes, el póster y el tablero | Un visor de PDF y un navegador. Están en `docs/entregables/` |
-| **Ejecutar la Entrega 1 con datos ficticios** | Python 3.10 o superior. Nada más: usa solo la biblioteca estándar |
+| Ejecutar la Entrega 1 con datos ficticios | Python 3.10 o superior. Nada más: usa solo la biblioteca estándar |
 | Abrir los cuadernos de `notebooks/` | Lo anterior y `jupyter` ([Cuadernos](#cuadernos)) |
 | Ejecutar la Entrega 1 con los datos reales | `Bookeau.zip`, que entrega la coordinación de CupiTaller (no se distribuye) |
-| Regenerar la tabla y el diagrama del modelo de la Entrega 2 (pasos `temas` y `modelo`) | Python 3.12, `pip install -r requirements.txt` y haber corrido la Entrega 1 (con datos ficticios basta). No necesita documentos, llave ni Postgres |
 | Ejecutar la Entrega 2 completa | Todo lo de [Entrega 2: ejecutar](#ejecutar): los documentos del curso, los datos reales de la Entrega 1, Postgres con pgvector, LibreOffice y una llave de OpenAI |
-| Recompilar los informes o exportar el póster | [Recompilar informes y póster](#recompilar-informes-y-póster) |
 
-Los scripts `.sh` (`scripts/` y `src/auxiliar/`) son para bash (macOS o Linux; en Windows, WSL). Las instrucciones de macOS usan Homebrew; lo probado de punta a punta es la Entrega 1 con datos ficticios y los pasos `temas` y `modelo` de la Entrega 2 en Linux.
 
 # Entrega 1
 
