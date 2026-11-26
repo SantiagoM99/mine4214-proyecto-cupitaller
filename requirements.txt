@@ -1,6 +1,22 @@
-# El pipeline Bronze → Silver → Gold y el tablero usan solo la biblioteca estándar de Python (3.10+).
-# Estas dependencias solo son necesarias para los cuadernos (jupyter) y para regenerar las figuras (matplotlib).
-matplotlib>=3.7
-markdown>=3.5
-jupyter
+# Dependencias del proyecto (Python 3.12 para la Entrega 2; la Entrega 1 corre con 3.10+).
+# Instalar con: pip install -r requirements.txt
+
+# --- Común a ambas entregas ---
+matplotlib>=3.7              # E1: figuras de docs/img (ya generadas); E2: src/auxiliar/e2_figuras*.py
+
+# --- Entrega 1 ---
+# El pipeline Bronze → Silver → Gold y el tablero (src/entrega1/) usan solo la biblioteca estándar.
+jupyter                      # cuadernos de notebooks/
 ipykernel
+
+# --- Entrega 2: núcleo (src/entrega2/: ingesta, RAG, agente y evaluación) ---
+openai>=1.60                 # llm, enfoques, juez, agente y transcribir
+psycopg[binary]>=3.2         # conexión a Postgres (base vectorial y figuras)
+pgvector>=0.3                # tipo vector de pgvector
+sentence-transformers>=3.0   # embeddings multilingual-e5-small
+pymupdf>=1.24                # lectura y render de los PDF
+numpy                        # base_vectorial
+python-dotenv                # config.py lee .env
+
+# --- Entrega 2: auxiliar (src/auxiliar/: informe y póster) ---
+pillow                       # recortes de documentos y diagrama del modelo del póster

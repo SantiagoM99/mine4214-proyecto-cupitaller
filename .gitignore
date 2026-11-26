@@ -1,34 +1,85 @@
-# Entorno
+# =============================================================================
+# Entorno de Python y del sistema
+# =============================================================================
 .venv/
 __pycache__/
-*.pyc
 .ipynb_checkpoints/
 .DS_Store
 
-# Datos: contienen nombres, correos y códigos de estudiantes y monitores.
-# Se distribuyen fuera del repositorio; ver data/README.md.
+# =============================================================================
+# Secretos y servicios locales (Entrega 2)
+# =============================================================================
+# Configuración local; la plantilla es .env.example
+.env
+# Clúster de Postgres de scripts/e2_postgres.sh
+.pgdata/
+# Archivos con la llave de OpenAI
+*openai*.txt
+
+# =============================================================================
+# data/: arquitectura medallón. Solo se versiona lo que no se puede regenerar
+# y no tiene datos personales ni material con derechos reservados.
+# =============================================================================
+# Bronce: Excel reales con datos de estudiantes y monitores (E1) y documentos
+# del curso con derechos reservados de la Universidad (E2). Ver data/README.md.
 data/bronce/*
 !data/bronce/.gitkeep
-# Datos ficticios (sin información personal), versionables para probar el pipeline
+# E1: Excel ficticios para probar el pipeline
 !data/bronce/dummy/
+# E2: banco de preguntas escrito a mano
+!data/bronce/evaluacion/
+
+# Plata y oro se generan al ejecutar, salvo dos archivos de la E2.
 data/plata/*
 !data/plata/.gitkeep
+!data/plata/documentos/
+data/plata/documentos/*
+# Catálogo curado a mano
+!data/plata/documentos/catalogo_documentos.csv
 data/oro/*
 !data/oro/.gitkeep
+# Oferta agregada de la E1
+!data/oro/oferta_por_periodo.csv
 
-# Comentarios textuales de estudiantes (análisis exploratorio, fuera de la Entrega 1)
+# =============================================================================
+# artifacts/: todo lo generado en ejecución (E1 y E2). No se versiona nada.
+# (El tablero de la E1 es un entregable: vive en docs/entregables/e1_tablero/.)
+# =============================================================================
+artifacts/
+
+# =============================================================================
+# LaTeX: se versionan las fuentes (.tex), las imágenes y los PDF, no los
+# archivos intermedios de la compilación.
+# =============================================================================
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.xdv
+
+# =============================================================================
+# Material local que no forma parte de las entregas
+# =============================================================================
+# Comentarios textuales de estudiantes (análisis exploratorio, fuera de la E1)
 docs/texto/**/*.csv
 docs/texto/**/*.json
 exploratorio/
-
-# latex generated files
-docs/entregables/latex/*
-!docs/entregables/latex/informe_latex.pdf
-!docs/entregables/latex/informe_latex.tex
-!docs/entregables/latex/anexos_latex.pdf
-!docs/entregables/latex/anexos_latex.tex
-
-# artifacts generados por scripts de limpieza y transformación
-docs/artifacts/
-!docs/artifacts/.gitkeep
-src/auxiliar
+# Laboratorios del curso (incluye un CSV de 80 MB)
+vectorial/
+rag_lab_final/
+# Borradores del póster y notas de planificación
+docs/entregables/e2_poster/versiones/
+docs/superpowers/
+# Carpeta de la Entrega 2 anterior a la reorganización: su contenido versionado
+# ya está en data/, docs/, src/ y sql/. Si queda en un clon local con documentos
+# o datos, no debe subirse por accidente; mover su contenido y borrarla.
+/entrega2/
