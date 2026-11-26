@@ -195,7 +195,16 @@ python3 src/main.py --entrega 2 --solo update_documentation   # solo tabla, figu
 python3 src/auxiliar/e2_update_documentation.py --solo temas modelo   # solo esas partes de update_documentation
 ```
 
-Sin documentos ni llave se pueden correr solo las partes `temas` y `modelo` de `update_documentation` (última línea de arriba), que usan el catálogo versionado y el Gold de la Entrega 1 (con datos ficticios basta). Los pasos `catalogo`, `transcribir`, `indexar`, `evaluar`, `entropia` y `agente` necesitan los documentos y la llave, y los últimos cuatro, además, Postgres iniciado.
+
+otros comandos utiles:
+```bash
+python3 src/main.py --entrega 2 --lista      # lista los pasos
+python3 src/main.py --entrega 2 --desde indexar
+python3 src/main.py --entrega 2 --solo temas modelo   # solo estos pasos
+```
+
+
+Sin documentos ni llave se pueden correr solo `temas` y `modelo`, que usan el catálogo versionado y el Gold de la Entrega 1 (con datos ficticios basta). Los pasos `catalogo`, `transcribir`, `indexar`, `evaluar`, `entropia` y `agente` necesitan los documentos y la llave, y los últimos cuatro, además, Postgres iniciado.
 
 Los pasos que llaman al modelo guardan lo que producen (`data/plata/documentos/transcripciones/`, `artifacts/entrega2/resultados/`) y no repiten lo ya hecho. Para volver a responder y calificar: `python3 src/entrega2/evaluar.py --rehacer`.
 
