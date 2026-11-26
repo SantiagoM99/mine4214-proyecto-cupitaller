@@ -42,13 +42,10 @@ data/oro/*
 !data/oro/oferta_por_periodo.csv
 
 # =============================================================================
-# artifacts/: todo lo generado en ejecución (E1 y E2). Solo se versiona el
-# tablero de la E1 (datos ficticios), que se abre sin ejecutar nada.
+# artifacts/: todo lo generado en ejecución (E1 y E2). No se versiona nada.
+# (El tablero de la E1 es un entregable: vive en docs/entregables/e1_tablero/.)
 # =============================================================================
-artifacts/*
-!artifacts/entrega1/
-artifacts/entrega1/*
-!artifacts/entrega1/tablero_bookeau.html
+artifacts/
 
 # =============================================================================
 # LaTeX: se versionan las fuentes (.tex), las imágenes y los PDF, no los

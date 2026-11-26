@@ -7,7 +7,7 @@
     python3 src/main.py --lista            # muestra los pasos
 
 Con --dummy los Excel se leen de data/bronce/dummy/ (se generan si faltan) y el resto del flujo es
-el mismo: escribe en data/plata, data/oro y artifacts/entrega1/, por lo que reemplaza los resultados que hubiera.
+el mismo: escribe en data/plata, data/oro, artifacts/entrega1/ y el tablero, por lo que reemplaza los resultados que hubiera.
 Para volver a los datos reales, basta ejecutar python3 src/main.py sin --dummy.
 """
 from __future__ import annotations
@@ -90,7 +90,7 @@ def main():
             return resultado.returncode
         print(f'-- {nombre} terminó en {time.time() - t:.1f} s', flush=True)
     print(f'\nPipeline completo en {time.time() - inicio:.1f} s.')
-    print('Silver: data/plata · Gold: data/oro · Tablero: artifacts/entrega1/tablero_bookeau.html')
+    print('Silver: data/plata · Gold: data/oro · Tablero: docs/entregables/e1_tablero/tablero_bookeau.html')
     return 0
 
 

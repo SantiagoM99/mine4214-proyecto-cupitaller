@@ -5,7 +5,8 @@ import sqlite3
 from pathlib import Path
 from limpiar_bookeau import ROOT
 
-OUT=ROOT/'artifacts/entrega1'
+# El tablero es un entregable de la Entrega 1: va a docs/entregables/, no a artifacts/.
+OUT=ROOT/'docs/entregables/e1_tablero'
 RESULTS=ROOT/'artifacts/entrega1/analisis'
 
 
