@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Póster · Proyecto MINE-4214 · CupiTaller</title>
+<style>
+  /* Pliego de 70 × 100 cm a tamaño real: medidas en mm y pt. Amarillo y negro de
+     Uniandes; el argumento lo llevan las figuras y cada diagrama usa pocas palabras.
+     Se lee en el orden de la historia: actores y preguntas, datos y modelo dimensional
+     (Entrega 1), documentos y RAG (Entrega 2), y al final lo que se respondió a cada actor. */
+  @page { size: 700mm 1000mm; margin: 0; }
+  :root {
+    --tinta: #1c1c1c; --gris: #6e6e6e; --gris-claro: #dedede; --amarillo: #ffd200; --fondo: #f2f1ee;
+    --verde: #1f9d55; --rojo: #d23b3b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 700mm; height: 1000mm; }
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: var(--tinta); background: var(--fondo);
+    font-size: 24pt; line-height: 1.23; -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .pliego { width: 700mm; height: 1000mm; display: flex; flex-direction: column; overflow: hidden; }
+
+  header { background: var(--amarillo); padding: 7mm 16mm 6mm; display: grid; grid-template-columns: 80mm 1fr; gap: 14mm; align-items: center; border-bottom: 3.5mm solid var(--tinta); }
+  header img { width: 100%; display: block; }
+  h1 { font-size: 54pt; line-height: 1.06; font-weight: 700; letter-spacing: -0.012em; }
+  header .autores { font-size: 27pt; margin-top: 4mm; font-weight: 500; }
+  header .curso { font-size: 19pt; margin-top: 1mm; }
+
+  /* Fila 1: actores y modelo dimensional (dos columnas). Fila 2: el resto. */
+  main { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: auto minmax(0, 1fr); gap: 7mm 9mm; padding: 6mm 14mm 0; }
+  .columna { display: flex; flex-direction: column; gap: 6mm; min-height: 0; }
+  .dos-columnas { grid-column: span 2; }
+
+  /* Cada tarjeta crece con el alto que le sobra a su columna y reparte ese aire
+     entre sus figuras, para que no queden huecos entre tarjetas. */
+  .tarjeta { background: #fff; display: flex; flex-direction: column; }
+  .columna > .tarjeta { flex: 1 0 auto; }
+  .tarjeta > h2 { background: var(--tinta); color: #fff; font-size: 27pt; line-height: 1.12; font-weight: 400; padding: 3.2mm 6mm 3mm; }
+  .tarjeta > h2 b { font-weight: 700; color: var(--amarillo); }
+  .cuerpo { padding: 5mm 6mm 5.5mm; flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; gap: 3mm; }
+  b { font-weight: 700; }
+  mark { background: var(--amarillo); color: inherit; padding: 0 1.2mm; font-weight: 700; }
+
+  .etapa { display: inline-block; background: var(--amarillo); color: var(--tinta); font-weight: 700; font-size: 18pt; padding: 0.6mm 2.6mm; margin-right: 2.5mm; vertical-align: 0.8mm; }
+  .entrega1 { border-left: 3mm solid var(--amarillo); }
+  .lead { font-size: 21pt; }
+
+  .grafica { display: block; width: 100%; }
+  .pie { font-size: 16pt; color: var(--gris); margin-top: 1.5mm; line-height: 1.2; }
+  .rotulo { font-size: 17.5pt; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; margin-bottom: 1.5mm; }
+  .rotulo span { font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--gris); }
+
+  svg text { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; fill: var(--tinta); }
+  svg .linea { fill: none; stroke: var(--tinta); stroke-width: 0.7; }
+  svg .tenue { fill: none; stroke: #b5b5b5; stroke-width: 0.5; stroke-dasharray: 2 1.6; }
+  svg .icono { fill: none; stroke: var(--tinta); stroke-width: 1.15; stroke-linecap: round; stroke-linejoin: round; }
+  svg .gris { fill: var(--gris); }
+  svg .mono { font-family: Menlo, "SF Mono", monospace; }
+
+  .recorte { border: 0.5mm solid var(--gris-claro); }
+  .conector { text-align: center; font-size: 26pt; line-height: 1; margin: 1.5mm 0 0.5mm; }
+  .pregunta { display: grid; grid-template-columns: 16mm 1fr; gap: 0 5mm; align-items: center; }
+  .pregunta svg { width: 100%; display: block; }
+  .pregunta .clave { font-size: 28pt; font-weight: 700; margin-right: 1.5mm; }
+  .pregunta span:not(.clave) { color: var(--gris); font-size: 18pt; display: block; }
+
+  .diapositiva { border: 0.6mm solid var(--gris-claro); width: 52%; display: block; margin: 0 auto; }
+  .extraccion { display: grid; grid-template-columns: 36mm 1fr; gap: 2.5mm 4mm; align-items: center; margin-top: 3mm; }
+  .extraccion pre { font-family: Menlo, "SF Mono", monospace; font-size: 11.5pt; line-height: 1.3; }
+  .extraccion .vacio { border: 0.6mm dashed #a9a9a9; color: var(--gris); font-size: 19pt; text-align: center; padding: 2.5mm; }
+  .extraccion .codigo { border-left: 2.2mm solid var(--amarillo); background: #f6f6f4; padding: 2.5mm 3.5mm; }
+
+  table { border-collapse: collapse; width: 100%; }
+  .vigencia td { padding: 1.5mm 0; border-top: 0.3mm solid var(--gris-claro); vertical-align: middle; }
+  .vigencia td:first-child { font-size: 20pt; font-weight: 700; width: 34%; }
+  .vigencia .marcas { font-size: 26pt; font-weight: 700; letter-spacing: 2mm; white-space: nowrap; }
+  .vigencia td:last-child { font-size: 18pt; text-align: right; }
+  .si { color: var(--verde); } .no { color: var(--rojo); } .abs { color: #9a9a9a; }
+
+  .respuestas { margin: 6mm 14mm 0; display: block; }
+  .respuestas .cuerpo { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9mm; padding: 3.5mm 6mm 4mm; }
+  .respuestas h3 { font-size: 25pt; line-height: 1.1; margin-bottom: 1.5mm; display: flex; align-items: center; gap: 3mm; }
+  .respuestas h3 svg { width: 14mm; height: 14mm; flex: none; }
+  .respuestas h3 small { display: block; font-size: 16pt; font-weight: 400; color: var(--gris); }
+  .respuestas p { font-size: 20pt; line-height: 1.22; }
+
+  footer { padding: 2.5mm 14mm 3mm; font-size: 14pt; color: var(--gris); }
+</style>
+</head>
+<body>
+
+<!-- Íconos y punta de flecha que comparten todos los diagramas -->
+<svg width="0" height="0" style="position: absolute" aria-hidden="true">
+  <defs>
+    <marker id="punta" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+      <path d="M0 0.8 L10 5 L0 9.2 Z" fill="#1c1c1c" />
+    </marker>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 2.5h8.5L19 7v14.5H6z M14.5 2.5V7H19 M9 12h7 M9 15.5h7 M9 19h4.5" /></symbol>
+    <symbol id="i-imagen" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" /><circle cx="8.6" cy="9.4" r="1.8" /><path d="M3 17l5.2-5.2 3.8 3.8 3-3 6 6" /></symbol>
+    <symbol id="i-ojo" viewBox="0 0 24 24"><path d="M2 12C6 5.2 18 5.2 22 12 18 18.8 6 18.8 2 12z" /><circle cx="12" cy="12" r="3.3" /></symbol>
+    <symbol id="i-indice" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3" /><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6 M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" /></symbol>
+    <symbol id="i-modelo" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="1.6" /><rect x="9.6" y="9.6" width="4.8" height="4.8" /><path d="M9 3v3 M15 3v3 M9 18v3 M15 18v3 M3 9h3 M3 15h3 M18 9h3 M18 15h3" /></symbol>
+    <symbol id="i-tabla" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" /><path d="M3 9.3h18 M3 14.6h18 M9 4v16 M15 4v16" /></symbol>
+    <symbol id="i-calendario" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1.2" /><path d="M3 10h18 M8 2.5v5 M16 2.5v5 M7 14h2 M11 14h2 M15 14h2 M7 17.5h2 M11 17.5h2" /></symbol>
+    <symbol id="i-persona" viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4" /><path d="M4 21.5c0-4.4 3.6-8 8-8s8 3.6 8 8" /></symbol>
+    <symbol id="i-grupo" viewBox="0 0 24 24"><circle cx="8" cy="8" r="3.2" /><circle cx="16.5" cy="8" r="3.2" /><path d="M1.5 20.5c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5 M13.5 14.2c1-0.2 2-0.2 3 0 3.4 0.5 6 3.1 6 6.3" /></symbol>
+  </defs>
+</svg>
+
+<div class="pliego">
+
+<header>
+  <img src="img/uniandes.png" alt="Universidad de los Andes">
+  <div>
+    <h1>Reservas, encuestas y documentos de CupiTaller: bodega dimensional, RAG visual y agente híbrido</h1>
+    <p class="autores">María Alejandra Pérez Petro · Santiago Martinez Novoa</p>
+    <p class="curso">MINE-4214 Modelado y Diseño de Datos · Proyecto, entregas 1 y 2 · Noviembre de 2026</p>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================ FILA 1 · ACTORES Y DATOS ============================ -->
+<div class="columna">
+
+  <section class="tarjeta entrega1">
+    <h2><span class="etapa">Entrega 1</span><b>CupiTaller:</b> actores y preguntas</h2>
+    <div class="cuerpo">
+      <p class="lead">Centro de tutorías del Departamento de Sistemas para Introducción a la Programación y otros cursos de primeros semestres.</p>
+      <svg class="grafica" viewBox="0 0 206 58" role="img" aria-label="Los estudiantes reservan en Bookeau y los monitores atienden la tutoría">
+        <use href="#i-persona" class="icono" x="12" y="1" width="26" height="26" />
+        <use href="#i-calendario" class="icono" x="90" y="1" width="26" height="26" />
+        <use href="#i-grupo" class="icono" x="168" y="1" width="26" height="26" />
+        <path class="linea" d="M42 14 H86" marker-end="url(#punta)" />
+        <path class="linea" d="M120 14 H164" marker-end="url(#punta)" />
+        <text x="64" y="10" text-anchor="middle" font-size="6.6" class="gris">reservan</text>
+        <text x="142" y="10" text-anchor="middle" font-size="6.6" class="gris">asigna la cita</text>
+        <text x="25" y="39" text-anchor="middle" font-size="8.4" font-weight="700">Estudiantes</text>
+        <text x="25" y="48" text-anchor="middle" font-size="6.8" class="gris">asisten y</text>
+        <text x="25" y="56" text-anchor="middle" font-size="6.8" class="gris">califican al tutor</text>
+        <text x="103" y="39" text-anchor="middle" font-size="8.4" font-weight="700">Bookeau</text>
+        <text x="103" y="48" text-anchor="middle" font-size="6.8" class="gris">citas, encuestas</text>
+        <text x="103" y="56" text-anchor="middle" font-size="6.8" class="gris">y horarios</text>
+        <text x="181" y="39" text-anchor="middle" font-size="8.4" font-weight="700">Monitores</text>
+        <text x="181" y="48" text-anchor="middle" font-size="6.8" class="gris">atienden</text>
+        <text x="181" y="56" text-anchor="middle" font-size="6.8" class="gris">la tutoría</text>
+      </svg>
+      <div class="pregunta">
+        <svg viewBox="0 0 24 24"><use href="#i-persona" class="icono" x="0" y="0" width="24" height="24" /></svg>
+        <div><span class="clave">A1</span>¿Dónde se pierden citas y falta cupo?<span>coordinación de CupiTaller · franjas, cupos y sanciones</span></div>
+      </div>
+      <div class="pregunta">
+        <svg viewBox="0 0 24 24"><use href="#i-persona" class="icono" x="0" y="0" width="24" height="24" /></svg>
+        <div><span class="clave">A2</span>¿Dónde se concentran las calificaciones bajas?<span>coordinación académica · forma a los monitores</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tarjeta entrega1">
+    <h2><span class="etapa">Entrega 1</span><b>Lakehouse:</b> de Bookeau al modelo</h2>
+    <div class="cuerpo">
+      <svg class="grafica" viewBox="0 0 206 60" role="img" aria-label="De Bookeau a las capas bronce, plata y oro">
+        <use href="#i-calendario" class="icono" x="7" y="1" width="26" height="26" />
+        <rect x="55" y="3" width="30" height="22" fill="#b4825a" />
+        <rect x="105" y="3" width="30" height="22" fill="#c4c8cd" />
+        <rect x="155" y="3" width="30" height="22" fill="#ffd200" />
+        <path class="linea" d="M37 14 H51" marker-end="url(#punta)" />
+        <path class="linea" d="M87 14 H101" marker-end="url(#punta)" />
+        <path class="linea" d="M137 14 H151" marker-end="url(#punta)" />
+        <text x="20" y="38" text-anchor="middle" font-size="8.4" font-weight="700">Bookeau</text>
+        <text x="70" y="38" text-anchor="middle" font-size="8.4" font-weight="700">Bronce</text>
+        <text x="120" y="38" text-anchor="middle" font-size="8.4" font-weight="700">Plata</text>
+        <text x="170" y="38" text-anchor="middle" font-size="8.4" font-weight="700">Oro</text>
+        <text x="20" y="47.5" text-anchor="middle" font-size="6.8" class="gris">144 Excel</text>
+        <text x="20" y="56" text-anchor="middle" font-size="6.8" class="gris">2016 a 2026</text>
+        <text x="70" y="47.5" text-anchor="middle" font-size="6.8" class="gris">archivos</text>
+        <text x="70" y="56" text-anchor="middle" font-size="6.8" class="gris">sin modificar</text>
+        <text x="120" y="47.5" text-anchor="middle" font-size="6.8" class="gris">6 CSV limpios</text>
+        <text x="120" y="56" text-anchor="middle" font-size="6.8" class="gris">reglas R01 a R07</text>
+        <text x="170" y="47.5" text-anchor="middle" font-size="6.8" class="gris">modelo</text>
+        <text x="170" y="56" text-anchor="middle" font-size="6.8" class="gris">dimensional</text>
+      </svg>
+    </div>
+  </section>
+
+</div>
+
+<div class="columna dos-columnas">
+  <section class="tarjeta entrega1">
+    <h2><span class="etapa">Entrega 1</span><b>Modelo dimensional</b> en la capa oro</h2>
+    <div class="cuerpo">
+      <img class="grafica" src="../../../artifacts/entrega2/poster/modelo_dimensional.svg" alt="Modelo dimensional: cuatro tablas de hechos (oferta, reserva, encuesta y respuesta) y diez dimensiones con sus llaves y atributos">
+      <p class="pie">Fig. 1. Constelación de 4 hechos y 10 dimensiones, tal como está en el DDL de la Entrega 1. Cada línea va de la PK a la fila de la FK que la usa.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ============================ FILA 2 · RESPUESTAS DE LA BODEGA Y DOCUMENTOS ============================ -->
+<div class="columna">
+
+  <section class="tarjeta entrega1">
+    <h2><span class="etapa">Entrega 1</span><b>Lo que respondió</b> la bodega</h2>
+    <div class="cuerpo">
+      <div>
+        <img class="grafica" src="../../../artifacts/entrega2/poster/analisis_entrega1.svg" alt="Inasistencia y calificaciones de 1 a 3 por modalidad de tutoría">
+        <p class="pie">Fig. 2. A1 y A2 por modalidad: Express tiene 60 % más inasistencia que Normal; Normal pico, el doble de calificaciones bajas.</p>
+      </div>
+      <div>
+        <img class="grafica" src="../../../artifacts/entrega2/poster/ocupacion_por_semestre.svg" alt="Ocupación de la oferta por semestre: bajó a 54 y 55 por ciento en 2025-20 y 2026-10">
+        <p class="pie">Fig. 3. A1: la ocupación de los cupos bajó a 55 % sin que la capacidad se ajustara.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tarjeta">
+    <h2><span class="etapa">Entrega 2</span><b>Además,</b> el curso cambia</h2>
+    <div class="cuerpo">
+      <div>
+        <p class="rotulo">58 documentos del curso <span>· tres versiones</span></p>
+        <svg class="grafica" viewBox="0 0 206 27" role="img" aria-label="Versiones del curso: 2020-20 con programa y 3 presentaciones, 2021-10 con 9 presentaciones, 2026-20 con programa y 44 presentaciones">
+          <path class="linea" d="M14 6 H118" />
+          <path class="tenue" d="M118 6 H148" style="stroke: #1c1c1c" />
+          <path class="linea" d="M148 6 H194" />
+          <circle cx="34" cy="6" r="3.2" fill="#fff" stroke="#1c1c1c" stroke-width="0.9" />
+          <circle cx="100" cy="6" r="3.2" fill="#fff" stroke="#1c1c1c" stroke-width="0.9" />
+          <circle cx="166" cy="6" r="3.6" fill="#ffd200" stroke="#1c1c1c" stroke-width="0.9" />
+          <text x="34" y="18.5" text-anchor="middle" font-size="8.6" font-weight="700">2020-20</text>
+          <text x="34" y="26" text-anchor="middle" font-size="7" class="gris">programa y 3 clases</text>
+          <text x="100" y="18.5" text-anchor="middle" font-size="8.6" font-weight="700">2021-10</text>
+          <text x="100" y="26" text-anchor="middle" font-size="7" class="gris">9 clases</text>
+          <text x="166" y="18.5" text-anchor="middle" font-size="8.6" font-weight="700">2026-20 · vigente</text>
+          <text x="166" y="26" text-anchor="middle" font-size="7" class="gris">programa y 44 clases</text>
+        </svg>
+      </div>
+      <div>
+        <img class="grafica" src="../../../artifacts/entrega2/poster/temas_por_nivel.svg" alt="Clases de 2026-20 por nivel con y sin versión en el material de 2020-21: nivel 1, 8 y 2; nivel 2, 8 y 1; nivel 3, 8 y 2; nivel 4, 4 y 5">
+        <p class="pie">Fig. 4. Las clases de 2026-20 frente a las 12 presentaciones que tenemos de 2020-21. Sin introducciones ni ejercicios.</p>
+      </div>
+      <div class="pregunta">
+        <svg viewBox="0 0 24 24"><use href="#i-grupo" class="icono" x="0" y="0" width="24" height="24" /></svg>
+        <div><span class="clave">R1</span>¿Qué se dicta hoy en cada nivel y qué cambió?<span>monitores y profesores · solo documentos</span></div>
+      </div>
+      <div>
+        <p class="rotulo">La bodega registra <span>· reservas grupales, que anuncia el programa 2020-20</span></p>
+        <img class="grafica" src="../../../artifacts/entrega2/poster/grupales_por_semestre.svg" alt="Reservas de tutoría grupal por semestre de 2017 a 2026: ninguna desde 2022-10">
+        <p class="pie">Fig. 5. Las reglas están en los documentos, no en Bookeau, y algunas ya no aplican.</p>
+      </div>
+      <div class="pregunta">
+        <svg viewBox="0 0 24 24"><use href="#i-persona" class="icono" x="0" y="0" width="24" height="24" /></svg>
+        <div><span class="clave">R2</span>¿Las reglas escritas siguen vigentes y se cumplen?<span>coordinación de CupiTaller · documentos y bodega</span></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============================ FILA 2 · RAG ============================ -->
+<div class="columna">
+
+  <section class="tarjeta">
+    <h2><b>Ingesta visual:</b> el código está en imágenes</h2>
+    <div class="cuerpo">
+      <div>
+        <img class="diapositiva" src="../../../artifacts/entrega2/poster/diapositiva_n3_08_p5.png" alt="Diapositiva del Nivel 3 cuyo código es una captura de pantalla">
+        <div class="extraccion">
+          <p class="rotulo" style="margin: 0">Texto del PDF</p>
+          <div class="vacio">sin el código</div>
+          <p class="rotulo" style="margin: 0">Con visión</p>
+          <pre class="codigo">def suma_recorrido_total_con_for_in_range(lista: list) -> int:
+    suma = 0
+    for i in range(0, len(lista)):
+        suma += lista[i]
+    return suma</pre>
+        </div>
+        <p class="pie">Fig. 6. Con visión se indexan 49.673 palabras; sin ella, 23.203.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tarjeta">
+    <h2><b>Dos enfoques,</b> un mismo modelo</h2>
+    <div class="cuerpo">
+      <svg class="grafica" viewBox="0 0 206 99" role="img" aria-label="Flujo de la ingesta y de los dos enfoques">
+        <use href="#i-doc" class="icono" x="23" y="1" width="22" height="22" />
+        <use href="#i-imagen" class="icono" x="92" y="1" width="22" height="22" />
+        <use href="#i-ojo" class="icono" x="161" y="1" width="22" height="22" />
+        <path class="linea" d="M50 12 H87" marker-end="url(#punta)" />
+        <path class="linea" d="M119 12 H156" marker-end="url(#punta)" />
+        <text x="34" y="32" text-anchor="middle" font-size="8.8">58 documentos</text>
+        <text x="103" y="32" text-anchor="middle" font-size="8.8">una imagen</text>
+        <text x="103" y="40.5" text-anchor="middle" font-size="7.4" class="gris">por página</text>
+        <text x="172" y="32" text-anchor="middle" font-size="8.8">transcripción</text>
+        <text x="172" y="40.5" text-anchor="middle" font-size="7.4" class="gris">con visión</text>
+        <path class="linea" d="M172 44 V50 H52 V58" marker-end="url(#punta)" />
+        <path class="linea" d="M154 50 V58" marker-end="url(#punta)" />
+        <path class="tenue" d="M103 56 V100" />
+        <text x="52" y="68" text-anchor="middle" font-size="9.6" font-weight="700">Prompting directo</text>
+        <text x="52" y="77" text-anchor="middle" font-size="8" class="gris">todo el corpus</text>
+        <rect x="16" y="81" width="72" height="17" fill="#ffd200" />
+        <text x="52" y="94.4" text-anchor="middle" font-size="13.5" font-weight="700">103.160</text>
+        <text x="154" y="68" text-anchor="middle" font-size="9.6" font-weight="700">RAG</text>
+        <text x="154" y="77" text-anchor="middle" font-size="8" class="gris">5 páginas vigentes</text>
+        <rect x="126" y="81" width="56" height="17" fill="#ffd200" />
+        <text x="154" y="94.4" text-anchor="middle" font-size="13.5" font-weight="700">1.255</text>
+      </svg>
+      <p class="pie">Fig. 7. Mismo modelo (gpt-6-luna) y mismas reglas; cambia el contexto. Tokens de entrada por consulta.</p>
+    </div>
+  </section>
+
+  <section class="tarjeta">
+    <h2><b>Resultados:</b> 26 preguntas</h2>
+    <div class="cuerpo">
+      <div>
+        <img class="grafica" src="../../../artifacts/entrega2/poster/aciertos_por_pregunta.svg" alt="Un cuadro por pregunta: directo 26 de 26, RAG visual 23, RAG de texto 18">
+        <p class="pie">Fig. 8. Cada cuadro es una pregunta. Sin visión, el RAG no acierta ninguna cuyo contenido está en una imagen.</p>
+      </div>
+      <div>
+        <img class="grafica" src="../../../artifacts/entrega2/poster/costo_por_mil_consultas.svg" alt="Costo por mil consultas: directo sin caché 10,34 dólares, con caché 1,06, RAG visual 0,14">
+        <p class="pie">Fig. 9. Costo por 1.000 consultas. Para R1: <b>RAG visual con filtro de vigencia</b>; un semestre ya ocupa el 10 % de la ventana.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============================ FILA 2 · ENTROPÍA Y AGENTE ============================ -->
+<div class="columna">
+
+  <section class="tarjeta">
+    <h2><b>Entropía documental:</b> dos versiones</h2>
+    <div class="cuerpo">
+      <div>
+        <svg class="grafica" viewBox="0 0 206 150" role="img" aria-label="Sin etiquetas el RAG responde con la regla de 2020-20; con filtro de vigencia responde con la vigente">
+          <text x="103" y="9" text-anchor="middle" font-size="9" font-style="italic">«¿Qué tipos de tutorías ofrece CupiTaller?»</text>
+          <path class="linea" d="M103 14 V20 H52 V28" marker-end="url(#punta)" />
+          <path class="linea" d="M103 20 H154 V28" marker-end="url(#punta)" />
+          <path class="tenue" d="M103 27 V150" />
+          <text x="52" y="40" text-anchor="middle" font-size="9.4" font-weight="700">RAG sin etiquetas</text>
+          <text x="154" y="40" text-anchor="middle" font-size="9.4" font-weight="700">RAG con filtro</text>
+          <image href="../../../artifacts/entrega2/poster/programa_2020_p5.png" x="11" y="46" width="38" height="49.2" />
+          <rect x="11" y="46" width="38" height="49.2" fill="none" stroke="#d23b3b" stroke-width="1.3" />
+          <rect x="11" y="95.2" width="38" height="10.5" fill="#d23b3b" />
+          <text x="30" y="103" text-anchor="middle" font-size="7.2" font-weight="700" style="fill: #fff">2020-20</text>
+          <image href="../../../artifacts/entrega2/poster/programa_2026_p5.png" x="55" y="46" width="38" height="49.2" />
+          <rect x="55" y="46" width="38" height="49.2" fill="none" stroke="#9a9a9a" stroke-width="0.6" />
+          <rect x="55" y="95.2" width="38" height="10.5" fill="#9a9a9a" />
+          <text x="74" y="103" text-anchor="middle" font-size="7.2" font-weight="700" style="fill: #fff">2026-20</text>
+          <image href="../../../artifacts/entrega2/poster/programa_2026_p5.png" x="135" y="46" width="38" height="49.2" />
+          <rect x="135" y="46" width="38" height="49.2" fill="none" stroke="#1f9d55" stroke-width="1.3" />
+          <rect x="135" y="95.2" width="38" height="10.5" fill="#1f9d55" />
+          <text x="154" y="103" text-anchor="middle" font-size="7.2" font-weight="700" style="fill: #fff">2026-20</text>
+          <path class="linea" d="M52 108 V117" marker-end="url(#punta)" />
+          <path class="linea" d="M154 108 V117" marker-end="url(#punta)" />
+          <text x="52" y="128" text-anchor="middle" font-size="8.8" font-weight="700" style="fill: #d23b3b">✗ «individuales,</text>
+          <text x="52" y="138" text-anchor="middle" font-size="8.8" font-weight="700" style="fill: #d23b3b">grupales y express»</text>
+          <text x="52" y="147.5" text-anchor="middle" font-size="7.2" class="gris">regla de 2020-20</text>
+          <text x="154" y="128" text-anchor="middle" font-size="8.8" font-weight="700" style="fill: #1f9d55">✓ «tutorías</text>
+          <text x="154" y="138" text-anchor="middle" font-size="8.8" font-weight="700" style="fill: #1f9d55">personalizadas»</text>
+          <text x="154" y="147.5" text-anchor="middle" font-size="7.2" class="gris">regla vigente</text>
+        </svg>
+      </div>
+      <div>
+        <table class="vigencia">
+          <tr><td>Sin etiquetas</td><td class="marcas"><span class="no">✗</span><span class="si">✓</span><span class="no">✗</span><span class="si">✓</span><span class="no">✗</span><span class="si">✓</span></td><td><b>3 de 6</b> con la regla antigua</td></tr>
+          <tr><td>Con filtro</td><td class="marcas"><span class="si">✓✓✓✓</span><span class="abs">–</span><span class="si">✓</span></td><td><b>0 de 6</b></td></tr>
+        </table>
+        <p class="pie">Fig. 10. Sin y con filtro de vigencia; abajo, seis reglas que cambiaron.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tarjeta">
+    <h2><b>Agente híbrido:</b> documentos y SQL</h2>
+    <div class="cuerpo">
+      <svg class="grafica" viewBox="0 0 206 151" role="img" aria-label="El agente busca en los documentos, consulta la bodega con SQL y responde">
+        <text x="103" y="9" text-anchor="middle" font-size="8.6" font-style="italic">«¿Se siguen ofreciendo las tutorías grupales?»</text>
+        <path class="linea" d="M103 13 V20" marker-end="url(#punta)" />
+        <use href="#i-modelo" class="icono" x="90" y="21" width="26" height="26" />
+        <text x="121" y="37" font-size="9.6" font-weight="700">agente</text>
+        <path class="linea" d="M103 49 V55 H52 V62" marker-end="url(#punta)" />
+        <path class="linea" d="M103 55 H154 V62" marker-end="url(#punta)" />
+        <use href="#i-indice" class="icono" x="14" y="64" width="24" height="24" />
+        <text x="43" y="74" font-size="7.2" class="mono">buscar_</text>
+        <text x="43" y="83" font-size="7.2" class="mono">documentos</text>
+        <text x="52" y="97" text-anchor="middle" font-size="8.2">programa 2020-20</text>
+        <rect x="24" y="101" width="56" height="11.5" fill="#d23b3b" />
+        <text x="52" y="109.4" text-anchor="middle" font-size="7.8" font-weight="700" style="fill: #fff">no vigente</text>
+        <use href="#i-tabla" class="icono" x="114" y="64" width="24" height="24" />
+        <text x="143" y="74" font-size="7.2" class="mono">consultar_</text>
+        <text x="143" y="83" font-size="7.2" class="mono">bodega</text>
+        <text x="154" y="97" text-anchor="middle" font-size="8.2">SQL de solo lectura</text>
+        <rect x="111" y="101" width="86" height="11.5" fill="#ffd200" />
+        <text x="154" y="109.4" text-anchor="middle" font-size="7.8" font-weight="700">0 reservas desde 2022</text>
+        <path class="linea" d="M52 115 V121 H154 V115" />
+        <path class="linea" d="M103 121 V128" marker-end="url(#punta)" />
+        <text x="103" y="139" text-anchor="middle" font-size="9" font-weight="700">La regla es de 2020-20 y ya no aplica:</text>
+        <text x="103" y="149" text-anchor="middle" font-size="9" font-weight="700">la última tutoría grupal fue en 2021-20</text>
+      </svg>
+      <p class="pie">Fig. 11. Traza real del agente para R2: 2 pasos, 4,9 s, US$ 0,0004.</p>
+      <svg class="grafica" viewBox="0 0 206 60.5" role="img" aria-label="El agente lista las clases del nivel 3 de 2021-10 y de hoy, busca solo en 2021-10 los temas que difieren y responde con el recorrido de diccionarios">
+        <text x="103" y="8" text-anchor="middle" font-size="8" font-style="italic">«Nivel 3: ¿qué falta en mi material de 2021-10?»</text>
+        <path class="linea" d="M103 12 V16 H52 V21" marker-end="url(#punta)" />
+        <path class="linea" d="M103 16 H154 V21" marker-end="url(#punta)" />
+        <use href="#i-doc" class="icono" x="12" y="22" width="18" height="18" />
+        <text x="34" y="29" font-size="7.2" class="mono">listar_</text>
+        <text x="34" y="37.5" font-size="7.2" class="mono">presentaciones</text>
+        <use href="#i-indice" class="icono" x="116" y="22" width="18" height="18" />
+        <text x="138" y="29" font-size="7.2" class="mono">buscar_</text>
+        <text x="138" y="37.5" font-size="7.2" class="mono">documentos</text>
+        <text x="52" y="45.5" text-anchor="middle" font-size="7.6" class="gris">el nivel 3 en cada semestre</text>
+        <text x="154" y="45.5" text-anchor="middle" font-size="7.6" class="gris">busca solo en 2021-10</text>
+        <rect x="38" y="48.5" width="130" height="11.5" fill="#ffd200" />
+        <text x="103" y="56.9" text-anchor="middle" font-size="8.6" font-weight="700">recorrido de diccionarios</text>
+      </svg>
+      <p class="pie">Fig. 12. Cuarto intento, tras agregar la lista del catálogo y el filtro de semestre: 4 pasos, US$ 0,0007. Omite los índices de strings (Fig. 4).</p>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<section class="tarjeta respuestas">
+  <h2><b>Lo que se respondió</b> a cada actor</h2>
+  <div class="cuerpo">
+    <div>
+      <h3><svg viewBox="0 0 24 24"><use href="#i-persona" class="icono" x="0" y="0" width="24" height="24" /></svg><span>Coordinación de CupiTaller<small>A1 y R2</small></span></h3>
+      <p>Express pierde 60 % más citas; la ocupación cayó a 55 % sin ajustar los cupos; no hay tutorías grupales desde 2022.</p>
+    </div>
+    <div>
+      <h3><svg viewBox="0 0 24 24"><use href="#i-persona" class="icono" x="0" y="0" width="24" height="24" /></svg><span>Coordinación académica<small>A2 y R2</small></span></h3>
+      <p>Normal pico tiene el doble de calificaciones bajas. El 52 % usa la tutoría para su proyecto, que el tutor no debe solucionar.</p>
+    </div>
+    <div>
+      <h3><svg viewBox="0 0 24 24"><use href="#i-grupo" class="icono" x="0" y="0" width="24" height="24" /></svg><span>Monitores<small>R1</small></span></h3>
+      <p>Un RAG visual con filtro de vigencia dice qué se dicta hoy en cada nivel y muestra la diapositiva: 23 de 26 respuestas correctas.</p>
+    </div>
+    <div>
+      <h3><svg viewBox="0 0 24 24"><use href="#i-persona" class="icono" x="0" y="0" width="24" height="24" /></svg><span>Profesores<small>R1</small></span></h3>
+      <p>10 de las 38 clases de hoy no tienen versión en el material de 2020-21; 5 son del nivel 4: librerías, matplotlib y pandas.</p>
+    </div>
+  </div>
+</section>
+
+<footer>Montaje: SQLite (bodega) · Postgres con pgvector · multilingual-e5-small · gpt-6-luna (respuestas, transcripción y agente) · gpt-6-sol (juez)</footer>
+
+</div>
+</body>
+</html>

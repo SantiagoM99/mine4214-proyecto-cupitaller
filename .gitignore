@@ -5,30 +5,59 @@ __pycache__/
 .ipynb_checkpoints/
 .DS_Store
 
-# Datos: contienen nombres, correos y códigos de estudiantes y monitores.
-# Se distribuyen fuera del repositorio; ver data/README.md.
+# Entrega 2: configuración local, Postgres local y llaves de API
+.env
+.pgdata/
+*openai-key*.txt
+openai*.txt
+
+# --- data/: arquitectura medallón ---
+# Bronce: datos reales con nombres, correos y códigos de estudiantes y monitores (E1) y
+# documentos del curso con derechos reservados de la Universidad (E2). Ver data/README.md.
 data/bronce/*
 !data/bronce/.gitkeep
-# Datos ficticios (sin información personal), versionables para probar el pipeline
+# E1: datos ficticios (sin información personal), versionables para probar el pipeline
 !data/bronce/dummy/
+# E2: banco de preguntas escrito a mano
+!data/bronce/evaluacion/
+
+# Plata y oro se generan al ejecutar. Excepciones (E2): el catálogo curado de documentos
+# y la oferta agregada por semestre, que no se pueden regenerar.
 data/plata/*
 !data/plata/.gitkeep
+!data/plata/documentos/
+data/plata/documentos/*
+!data/plata/documentos/catalogo_documentos.csv
 data/oro/*
 !data/oro/.gitkeep
+!data/oro/oferta_por_periodo.csv
+
+# Todo lo generado en ejecución (E1 y E2) va a artifacts/ y no se versiona
+artifacts/
 
 # Comentarios textuales de estudiantes (análisis exploratorio, fuera de la Entrega 1)
 docs/texto/**/*.csv
 docs/texto/**/*.json
 exploratorio/
 
-# latex generated files
-docs/entregables/latex/*
-!docs/entregables/latex/informe_latex.pdf
-!docs/entregables/latex/informe_latex.tex
-!docs/entregables/latex/anexos_latex.pdf
-!docs/entregables/latex/anexos_latex.tex
+# Archivos intermedios de LaTeX: solo se versionan las fuentes y los PDF
+docs/entregables/e1_informe/*
+!docs/entregables/e1_informe/informe_latex.pdf
+!docs/entregables/e1_informe/informe_latex.tex
+!docs/entregables/e1_informe/anexos_latex.pdf
+!docs/entregables/e1_informe/anexos_latex.tex
+docs/entregables/e2_informe/*.aux
+docs/entregables/e2_informe/*.log
+docs/entregables/e2_informe/*.out
+docs/entregables/e2_informe/*.toc
+docs/entregables/e2_informe/*.synctex.gz
+docs/entregables/e2_informe/*.fdb_latexmk
+docs/entregables/e2_informe/*.fls
 
-# artifacts generados por scripts de limpieza y transformación
-docs/artifacts/
-!docs/artifacts/.gitkeep
-src/auxiliar
+# Material de los laboratorios del curso (incluye un CSV de 80 MB)
+vectorial/
+rag_lab_final/
+
+# Borradores del póster y notas de planificación: solo locales
+docs/entregables/e2_poster/versiones/
+docs/superpowers/
