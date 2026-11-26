@@ -1,0 +1,38 @@
+[
+  {
+    "id": "vig-01",
+    "pregunta": "¿Qué tipos de tutorías ofrece CupiTaller?",
+    "respuesta_vigente": "El programa 2026-20 habla de tutorías personalizadas que se agendan con antelación; no enumera tipos.",
+    "respuesta_desactualizada": "Tres tipos: individuales, grupales y express (programa 2020-20)."
+  },
+  {
+    "id": "vig-02",
+    "pregunta": "¿Qué porcentaje de la nota del curso vale el Nivel 2?",
+    "respuesta_vigente": "20 % (programa 2026-20).",
+    "respuesta_desactualizada": "25 % (programa 2020-20)."
+  },
+  {
+    "id": "vig-03",
+    "pregunta": "¿Cuánto vale el Nivel 4 en la nota del curso?",
+    "respuesta_vigente": "35 % (programa 2026-20).",
+    "respuesta_desactualizada": "30 % (programa 2020-20)."
+  },
+  {
+    "id": "vig-04",
+    "pregunta": "¿El proyecto de cada nivel tiene nota?",
+    "respuesta_vigente": "No. El proyecto no tiene nota asociada; los monitores dan retroalimentación formativa (programa 2026-20).",
+    "respuesta_desactualizada": "Sí. El proyecto vale entre 4 % y 6 % según el nivel y se anula si en el examen no se obtiene el 60 % de la nota del proyecto (programa 2020-20)."
+  },
+  {
+    "id": "vig-05",
+    "pregunta": "Si entrego un proyecto que no es de mi autoría pero se lo informo al profesor dentro de las 72 horas siguientes, ¿qué pasa?",
+    "respuesta_vigente": "El programa 2026-20 no tiene cláusula de arrepentimiento: el profesor puede asignar cero o remitir el caso al Comité Disciplinario.",
+    "respuesta_desactualizada": "Aplica la cláusula de arrepentimiento: la nota del proyecto es cero, pero no la del nivel, y no hay acción disciplinaria adicional (programa 2020-20)."
+  },
+  {
+    "id": "vig-06",
+    "pregunta": "¿En qué plataforma está el material del curso?",
+    "respuesta_vigente": "En Bloque Neón (programa 2026-20).",
+    "respuesta_desactualizada": "En Brightspace (programa 2020-20)."
+  }
+]
