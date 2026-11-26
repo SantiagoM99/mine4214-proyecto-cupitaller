@@ -10,7 +10,7 @@ Todo vive en una sola estructura: `data/`, `docs/`, `src/`, `sql/`, `notebooks/`
 |---|---|
 | **Informe** (LaTeX y PDF) | [`docs/entregables/e1_informe/informe_latex.pdf`](docs/entregables/e1_informe/informe_latex.pdf) |
 | **Anexos** del informe (glosario, datos de apoyo, extensión de texto) | [`docs/entregables/e1_informe/anexos_latex.pdf`](docs/entregables/e1_informe/anexos_latex.pdf) |
-| Tablero interactivo (abrir en el navegador, sin servidor) | `artifacts/entrega1/tablero_bookeau.html`, se genera con `python3 src/main.py --dummy` |
+| Tablero interactivo (abrir en el navegador, sin servidor) | [`artifacts/entrega1/tablero_bookeau.html`](artifacts/entrega1/tablero_bookeau.html) |
 
 ## Entrega 2
 
@@ -66,7 +66,7 @@ Tarda menos de un segundo y ejecuta los 8 pasos de Bronze a Gold. Al terminar:
 
 Para consultar el modelo directamente: `sqlite3 data/oro/bookeau.sqlite3 < sql/e1_01_consultas_analisis.sql`.
 
-Con datos ficticios los conteos son pequeños (≈1.700 reservas) y **no coinciden con las cifras del informe**, que se calcularon con los datos reales (83.894 reservas de tutoría). El tablero no se versiona: se regenera en `artifacts/entrega1/` con cada ejecución. Las capturas del informe (`docs/img/tablero_*.png`) son del tablero con los datos reales.
+Con datos ficticios los conteos son pequeños (≈1.700 reservas) y **no coinciden con las cifras del informe**, que se calcularon con los datos reales (83.894 reservas de tutoría). El tablero versionado en `artifacts/entrega1/` es el generado con los datos ficticios (es lo único de `artifacts/` que se versiona); las capturas del informe (`docs/img/tablero_*.png`) son del tablero con los datos reales.
 
 ### Opciones de `main.py`
 
@@ -183,7 +183,7 @@ src/           main.py (punto de entrada), entrega1/, entrega2/, auxiliar/ (cód
 sql/           DDL y consultas (prefijo e1_, e2_)
 scripts/       e2_postgres.sh
 notebooks/     cuadernos de la Entrega 1 (prefijo e1_)
-artifacts/     todo lo generado en ejecución: entrega1/ y entrega2/ (no se versiona)
+artifacts/     todo lo generado en ejecución: entrega1/ y entrega2/ (no se versiona, salvo el tablero de E1)
 ```
 
 | Carpeta | Contenido |
@@ -204,7 +204,7 @@ artifacts/     todo lo generado en ejecución: entrega1/ y entrega2/ (no se vers
 | `docs/documentacion/` | Enunciados de las dos entregas, plan de la Entrega 1 y README de la fuente Bookeau |
 | `docs/entregables/` | `e1_informe/` (informe y anexos), `e2_informe/` (informe), `e2_poster/` (póster) |
 | `docs/img/` | Diagramas del ecosistema y del modelo, y capturas del tablero (ya generados) |
-| `artifacts/entrega1/` | Salidas del pipeline: caracterización, calidad, limpieza, transformación, análisis y tablero |
+| `artifacts/entrega1/` | Salidas del pipeline: caracterización, calidad, limpieza, transformación, análisis y tablero (solo el tablero se versiona) |
 | `artifacts/entrega2/` | Resultados de las corridas, figuras y tabla del informe y gráficas del póster |
 
 ## Modelo en Gold

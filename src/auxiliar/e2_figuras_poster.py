@@ -23,14 +23,13 @@ from pathlib import Path
 # Código auxiliar (informe y póster): usa los módulos del núcleo de la Entrega 2.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'entrega2'))
 
-from config import ARTIFACTS, BODEGA, DIR_PAGINAS, PREGUNTAS, RAIZ
+from config import ARTIFACTS, BODEGA, DIR_PAGINAS, PREGUNTAS
 from evaluar import ARCHIVO_RESUMEN, ARCHIVO_VEREDICTOS, leer_json
 from e2_figuras import DIR_FIGURAS, numero, periodo_legible
 from e2_temas_por_nivel import por_nivel
 
 # Gráficas (SVG) y recortes de documentos (PNG) del póster, juntos en una carpeta.
-DIR_GRAFICAS = ARTIFACTS / 'poster'
-DIR_IMAGENES = ARTIFACTS / 'poster'
+DIR_POSTER = ARTIFACTS / 'poster'
 
 MM = 1 / 25.4
 ANCHO_MM = 206  # ancho útil de una columna del póster
@@ -74,8 +73,8 @@ def lienzo(alto_mm: float, *args, **kwargs):
 
 
 def guardar(figura: plt.Figure, nombre: str) -> None:
-    DIR_GRAFICAS.mkdir(parents=True, exist_ok=True)
-    figura.savefig(DIR_GRAFICAS / f'{nombre}.svg', bbox_inches='tight', pad_inches=0.02, transparent=True)
+    DIR_POSTER.mkdir(parents=True, exist_ok=True)
+    figura.savefig(DIR_POSTER / f'{nombre}.svg', bbox_inches='tight', pad_inches=0.02, transparent=True)
     plt.close(figura)
 
 
@@ -291,8 +290,8 @@ def _pagina(clave: str, numero_de_pagina: int) -> Image.Image:
 
 def recortes() -> None:
     """Imágenes de los documentos reales que muestra el póster."""
-    DIR_IMAGENES.mkdir(parents=True, exist_ok=True)
-    _pagina('2026-20_n3_08_patrones-de-recorrido', 5).save(DIR_IMAGENES / 'diapositiva_n3_08_p5.png')
+    DIR_POSTER.mkdir(parents=True, exist_ok=True)
+    _pagina('2026-20_n3_08_patrones-de-recorrido', 5).save(DIR_POSTER / 'diapositiva_n3_08_p5.png')
 
     # Párrafo de la página 5 del programa de 2020-20 que enumera los tipos de tutoría.
     # Las cajas están en píxeles de la página renderizada a 1.237 × 1.600.
@@ -304,12 +303,12 @@ def recortes() -> None:
     # El párrafo sigue a la derecha del recorte; el fundido a blanco muestra que el corte es deliberado.
     fundido = Image.linear_gradient('L').rotate(90).resize((ANCHO_DEL_FUNDIDO_PX, recorte.height))
     recorte.paste(Image.new('RGB', fundido.size, 'white'), (recorte.width - ANCHO_DEL_FUNDIDO_PX, 0), fundido)
-    recorte.save(DIR_IMAGENES / 'programa_2020_tipos_de_tutoria.png')
+    recorte.save(DIR_POSTER / 'programa_2020_tipos_de_tutoria.png')
 
     for clave, nombre in (('2020-20_programa', 'programa_2020_p5.png'), ('2026-20_programa', 'programa_2026_p5.png')):
         miniatura = _pagina(clave, 5)
         miniatura.thumbnail((520, 700))
-        miniatura.save(DIR_IMAGENES / nombre)
+        miniatura.save(DIR_POSTER / nombre)
 
 
 def main() -> None:

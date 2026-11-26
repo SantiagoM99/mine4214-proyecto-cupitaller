@@ -23,6 +23,6 @@ from pathlib import Path
 html = Path('poster.html').read_text(encoding='utf-8')
 Path('.medir.html').write_text(html.replace('</body>', f"<script>{Path('.medir.js').read_text()}</script></body>"), encoding='utf-8')
 PY
-"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --disable-gpu --allow-file-access-from-files \
+"${CHROME:-/Applications/Google Chrome.app/Contents/MacOS/Google Chrome}" --headless=new --disable-gpu --allow-file-access-from-files \
   --virtual-time-budget=8000 --dump-dom "file://$PWD/.medir.html" 2> /dev/null | grep -o 'data-medida="[^"]*"'
 rm -f .medir.html .medir.js

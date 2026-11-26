@@ -32,8 +32,12 @@ data/oro/*
 !data/oro/.gitkeep
 !data/oro/oferta_por_periodo.csv
 
-# Todo lo generado en ejecución (E1 y E2) va a artifacts/ y no se versiona
-artifacts/
+# Todo lo generado en ejecución (E1 y E2) va a artifacts/ y no se versiona, salvo el
+# tablero de la Entrega 1 (con datos ficticios), que se puede abrir sin ejecutar nada.
+artifacts/*
+!artifacts/entrega1/
+artifacts/entrega1/*
+!artifacts/entrega1/tablero_bookeau.html
 
 # Comentarios textuales de estudiantes (análisis exploratorio, fuera de la Entrega 1)
 docs/texto/**/*.csv

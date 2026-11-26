@@ -21,7 +21,7 @@ from pathlib import Path
 # Código auxiliar (informe y póster): usa los módulos del núcleo de la Entrega 2.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'entrega2'))
 
-from config import ARTIFACTS, BODEGA, DATABASE_URL, RAIZ
+from config import ARTIFACTS, BODEGA, DATABASE_URL
 from evaluar import ARCHIVO_RESUMEN, SISTEMAS, leer_json
 from poc_entropia import ARCHIVO as ARCHIVO_ENTROPIA
 from poc_entropia import CONFIGURACIONES, PREGUNTAS_DE_VIGENCIA
