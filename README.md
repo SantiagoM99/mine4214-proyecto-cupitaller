@@ -12,6 +12,15 @@ Proyecto del curso Modelado y Diseño de Datos (Uniandes, 2026-2) sobre las rese
 
 
 
+## Entrega 2
+
+La Entrega 2 vive en [`entrega2/`](entrega2/): requerimientos que cruzan los documentos del curso con la bodega de la Entrega 1, prompting directo frente a RAG visual, entropía documental y un agente híbrido (RAG y SQL). Su README explica cómo ejecutarla; toma el Gold y el Silver de `data/` de esta raíz.
+
+| Producto | Archivo |
+|---|---|
+| **Informe** (LaTeX y PDF) | [`entrega2/docs/informe/informe.pdf`](entrega2/docs/informe/informe.pdf) |
+| **Póster** de 70 × 100 cm | [`entrega2/docs/poster/poster.pdf`](entrega2/docs/poster/poster.pdf) |
+
 ## Análisis
 
 1. **Inasistencia, presión de cola y oferta** (coordinación de CupiTaller): tasa de inasistencia = No asistió / (Atendida + No asistió); proporción de solicitudes en cola (En cola / eventos); y, con los horarios, ocupación de la oferta, lista de espera y conversión de la cola a reserva. Por modalidad, día, hora y período.

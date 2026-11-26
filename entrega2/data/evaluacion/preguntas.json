@@ -1,0 +1,158 @@
+[
+  {
+    "id": "prog-01", "categoria": "programa", "respondible": true,
+    "pregunta": "¿Qué porcentaje de la nota final del curso corresponde al Nivel 2?",
+    "respuesta_esperada": "El Nivel 2 vale el 20 % de la nota del curso.",
+    "fuentes": [{"clave": "2026-20_programa", "paginas": [4]}]
+  },
+  {
+    "id": "prog-02", "categoria": "programa", "respondible": true,
+    "pregunta": "¿Qué pasa si un estudiante falta sin justificación a más del 20 % de las sesiones?",
+    "respuesta_esperada": "No puede aprobar el curso; la nota final será el menor valor entre 2.5 y la nota real.",
+    "fuentes": [{"clave": "2026-20_programa", "paginas": [5]}]
+  },
+  {
+    "id": "prog-03", "categoria": "programa", "respondible": true,
+    "pregunta": "¿Los tutores de CupiTaller pueden resolverle a un estudiante una tarea o un proyecto?",
+    "respuesta_esperada": "No. Los tutores no solucionan tareas ni proyectos.",
+    "fuentes": [{"clave": "2026-20_programa", "paginas": [5]}]
+  },
+  {
+    "id": "prog-04", "categoria": "programa", "respondible": true,
+    "pregunta": "¿Cuántos ejercicios tiene senecode y en qué dificultades se clasifican?",
+    "respuesta_esperada": "Más de 200 ejercicios, clasificados en cuatro dificultades: básica, intermedia, avanzada y extrema.",
+    "fuentes": [{"clave": "2026-20_programa", "paginas": [3]}]
+  },
+  {
+    "id": "prog-05", "categoria": "programa", "respondible": true,
+    "pregunta": "¿Cuánto tiempo tiene un estudiante para reclamar por una nota y cuánto tiene el profesor para resolver el reclamo?",
+    "respuesta_esperada": "El estudiante tiene cuatro días hábiles desde la publicación de la nota y el profesor cinco días hábiles para resolver.",
+    "fuentes": [{"clave": "2026-20_programa", "paginas": [4]}]
+  },
+  {
+    "id": "prog-06", "categoria": "programa", "respondible": true,
+    "pregunta": "¿En qué nivel se hace el quiz de ética, cuánto vale y sobre qué trata?",
+    "respuesta_esperada": "Se hace en el Nivel 1, equivale al 1 % de la nota del curso y trata sobre el módulo de uso responsable de la IA generativa del curso de Coursera de la Universidad.",
+    "fuentes": [{"clave": "2026-20_programa", "paginas": [3]}]
+  },
+  {
+    "id": "prog-07", "categoria": "programa", "respondible": true,
+    "pregunta": "¿Desde qué semana de clases reciben los estudiantes invitaciones para agendar tutorías en CupiTaller?",
+    "respuesta_esperada": "A partir de la tercera semana de clases, por correo electrónico y cada semana.",
+    "fuentes": [{"clave": "2026-20_programa", "paginas": [5]}]
+  },
+  {
+    "id": "texto-01", "categoria": "diapositiva_texto", "respondible": true,
+    "pregunta": "¿Para qué sirve el método get de los diccionarios y cuál es su sintaxis?",
+    "respuesta_esperada": "Sirve para consultar una llave cuando no se sabe si existe, sin que se produzca un error. Sintaxis: diccionario.get(llave, valor si no existe).",
+    "fuentes": [{"clave": "2026-20_n2_08_diccionarios-operaciones-basicas", "paginas": [12, 13]}]
+  },
+  {
+    "id": "texto-02", "categoria": "diapositiva_texto", "respondible": true,
+    "pregunta": "Según el curso, ¿qué estándares se usan en Python para escribir los nombres de variables y funciones?",
+    "respuesta_esperada": "Se separan las palabras con guion bajo (_), los identificadores van en minúscula y se usa el alfabeto inglés.",
+    "fuentes": [{"clave": "2026-20_n1_09_estilo-de-programacion", "paginas": [3]}]
+  },
+  {
+    "id": "texto-03", "categoria": "diapositiva_texto", "respondible": true,
+    "pregunta": "¿Cómo se clona una lista y para qué se hace?",
+    "respuesta_esperada": "Con el operador de corte (slice), por ejemplo b = a[:]. Se hace para modificar una lista conservando una copia de la original.",
+    "fuentes": [{"clave": "2026-20_n3_07_operaciones-sobre-listas", "paginas": [14]}]
+  },
+  {
+    "id": "texto-04", "categoria": "diapositiva_texto", "respondible": true,
+    "pregunta": "¿Qué patrones de recorrido de listas enseña el curso y cuándo se usa cada uno?",
+    "respuesta_esperada": "Recorrido total, cuando hay que recorrer toda la lista, y recorrido parcial, cuando no hay que recorrerla toda y una condición indica cuándo detener el ciclo.",
+    "fuentes": [{"clave": "2026-20_n3_08_patrones-de-recorrido", "paginas": [2, 3, 8]}]
+  },
+  {
+    "id": "texto-05", "categoria": "diapositiva_texto", "respondible": true,
+    "pregunta": "¿Por qué el curso usa type-hints si en Python son opcionales?",
+    "respuesta_esperada": "Porque el código queda más legible y fácil de usar, y porque prepara para utilizar otros lenguajes.",
+    "fuentes": [{"clave": "2026-20_n1_09_estilo-de-programacion", "paginas": [6]}]
+  },
+  {
+    "id": "imagen-01", "categoria": "diapositiva_imagen", "respondible": true,
+    "pregunta": "¿Cómo se crea en Python una tupla de un solo elemento?",
+    "respuesta_esperada": "Con una coma final después del elemento, por ejemplo tupla = (5,).",
+    "fuentes": [{"clave": "2026-20_n4_02_tuplas", "paginas": [9]}]
+  },
+  {
+    "id": "imagen-02", "categoria": "diapositiva_imagen", "respondible": true,
+    "pregunta": "¿Qué librerías presenta la introducción a librerías del Nivel 4?",
+    "respuesta_esperada": "NumPy, SciPy, matplotlib, SymPy y pandas.",
+    "fuentes": [{"clave": "2026-20_n4_06_introduccion-a-librerias", "paginas": [3, 4, 5, 6, 7]}]
+  },
+  {
+    "id": "imagen-03", "categoria": "diapositiva_imagen", "respondible": true,
+    "pregunta": "En el ejemplo del inventario de frutas sobre borrado de datos en diccionarios, ¿qué fruta se elimina y con qué instrucción?",
+    "respuesta_esperada": "Se eliminan los bananos, con la instrucción del inventario[\"bananos\"].",
+    "fuentes": [{"clave": "2026-20_n2_09_diccionarios-mutabilidad-borrado-de-datos-y-parametros-por-referencia", "paginas": [7]}]
+  },
+  {
+    "id": "imagen-04", "categoria": "diapositiva_imagen", "respondible": true,
+    "pregunta": "¿Qué temas se van a aprender en el Nivel 4 según su presentación de introducción?",
+    "respuesta_esperada": "Tuplas, estructuras de datos compuestas, matrices y librerías especializadas (gráficas y de procesamiento numérico).",
+    "fuentes": [{"clave": "2026-20_n4_01_introduccion", "paginas": [2]}]
+  },
+  {
+    "id": "imagen-05", "categoria": "diapositiva_imagen", "respondible": true,
+    "pregunta": "En el ejemplo del método get con el inventario, ¿qué devuelve la consulta de la llave \"arándanos\"?",
+    "respuesta_esperada": "Devuelve el valor por defecto, 'esa fruta no existe en el inventario', sin producir un error.",
+    "fuentes": [{"clave": "2026-20_n2_08_diccionarios-operaciones-basicas", "paginas": [13]}]
+  },
+  {
+    "id": "imagen-06", "categoria": "diapositiva_imagen", "respondible": true,
+    "pregunta": "En el ejemplo de desempaquetado de tuplas con el rectángulo, ¿qué valor queda en cada variable?",
+    "respuesta_esperada": "esquina queda con (2, 3), dimension con (7, 4) y color con 'rojo'.",
+    "fuentes": [{"clave": "2026-20_n4_02_tuplas", "paginas": [11]}]
+  },
+  {
+    "id": "nivel-01", "categoria": "alcance_por_nivel", "respondible": true,
+    "pregunta": "¿En qué nivel del curso se introducen los diccionarios?",
+    "respuesta_esperada": "En el Nivel 2.",
+    "fuentes": [{"clave": "2026-20_n2_08_diccionarios-operaciones-basicas"}, {"clave": "2026-20_n2_09_diccionarios-mutabilidad-borrado-de-datos-y-parametros-por-referencia"}, {"clave": "2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas"}]
+  },
+  {
+    "id": "nivel-02", "categoria": "alcance_por_nivel", "respondible": true,
+    "pregunta": "¿En qué nivel del curso se introducen las listas?",
+    "respuesta_esperada": "En el Nivel 3.",
+    "fuentes": [{"clave": "2026-20_n3_06_introduccion-a-listas"}, {"clave": "2026-20_n3_07_operaciones-sobre-listas"}]
+  },
+  {
+    "id": "nivel-03", "categoria": "alcance_por_nivel", "respondible": true,
+    "pregunta": "Un estudiante que va en el Nivel 2, ¿ya vio en clase las instrucciones iterativas while y for?",
+    "respuesta_esperada": "No. Las instrucciones iterativas (while y for) se enseñan en el Nivel 3.",
+    "fuentes": [{"clave": "2026-20_n3_02_instrucciones-iterativas-while"}, {"clave": "2026-20_n3_05_instrucciones-iterativas-for"}, {"clave": "2026-20_n3_01_introduccion-al-modulo"}, {"clave": "2026-20_programa"}]
+  },
+  {
+    "id": "nivel-04", "categoria": "alcance_por_nivel", "respondible": true,
+    "pregunta": "¿En qué nivel se ven las tuplas y las matrices?",
+    "respuesta_esperada": "En el Nivel 4.",
+    "fuentes": [{"clave": "2026-20_n4_01_introduccion"}, {"clave": "2026-20_n4_02_tuplas"}, {"clave": "2026-20_n4_04_matrices"}, {"clave": "2026-20_programa"}]
+  },
+  {
+    "id": "nores-01", "categoria": "no_respondible", "respondible": false,
+    "pregunta": "¿En qué fecha es el examen del Nivel 2 este semestre?",
+    "respuesta_esperada": "Los documentos no dan la fecha: remiten al cronograma del curso, que no hace parte del corpus.",
+    "fuentes": []
+  },
+  {
+    "id": "nores-02", "categoria": "no_respondible", "respondible": false,
+    "pregunta": "¿Cuántas tutorías por semana puede reservar un estudiante en CupiTaller?",
+    "respuesta_esperada": "Los documentos no fijan un máximo de tutorías por semana.",
+    "fuentes": []
+  },
+  {
+    "id": "nores-03", "categoria": "no_respondible", "respondible": false,
+    "pregunta": "¿Cómo se define en el curso una clase con atributos y métodos propios?",
+    "respuesta_esperada": "El curso no enseña a definir clases; los documentos no lo cubren.",
+    "fuentes": []
+  },
+  {
+    "id": "nores-04", "categoria": "no_respondible", "respondible": false,
+    "pregunta": "¿Quién coordina el curso de Introducción a la Programación este semestre?",
+    "respuesta_esperada": "Los documentos no nombran a la persona que coordina el curso.",
+    "fuentes": []
+  }
+]

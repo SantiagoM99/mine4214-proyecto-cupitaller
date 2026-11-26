@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ag-01",
+    "tipo": "hibrida",
+    "pregunta": "El programa del curso menciona tutorías grupales en CupiTaller. ¿Se siguen ofreciendo?"
+  },
+  {
+    "id": "ag-02",
+    "tipo": "hibrida",
+    "pregunta": "Según el programa, ¿qué no deben hacer los tutores de CupiTaller con los proyectos de los estudiantes? ¿A qué dedican los estudiantes la mayor parte del tiempo de la tutoría según las encuestas posteriores?"
+  },
+  {
+    "id": "ag-03",
+    "tipo": "hibrida",
+    "pregunta": "El programa organiza el curso en cuatro niveles y dice cuántas sesiones tiene cada uno, con tres sesiones por semana. ¿En qué semanas del semestre se concentran las reservas de tutoría de IP en 2024 y 2025, y coincide con el cierre de cada nivel?"
+  },
+  {
+    "id": "ag-04",
+    "tipo": "hibrida",
+    "pregunta": "El programa prohíbe entregar contenido generado por chatbots. ¿Qué dicen las encuestas sobre el uso de herramientas de inteligencia artificial por parte de los tutores durante las tutorías?"
+  },
+  {
+    "id": "ag-05",
+    "tipo": "solo_bodega",
+    "pregunta": "¿Cómo ha cambiado el número de reservas de tutoría y la tasa de inasistencia por semestre desde 2023?"
+  },
+  {
+    "id": "ag-06",
+    "tipo": "solo_documentos",
+    "pregunta": "¿Cómo explica el curso el recorrido parcial de una lista con centinela?"
+  },
+  {
+    "id": "ag-07",
+    "tipo": "solo_bodega",
+    "pregunta": "Las reservas de tutoría cayeron en los últimos semestres. ¿La coordinación ajustó la oferta de cupos? ¿En qué días y horas se concentra la lista de espera en 2025 y 2026?"
+  },
+  {
+    "id": "ag-08",
+    "tipo": "solo_documentos",
+    "pregunta": "Soy profesor del nivel 3 de IP y tengo las presentaciones de 2021-10. ¿Qué temas se dictan hoy en el nivel 3 que no aparecen en ese material?"
+  }
+]
