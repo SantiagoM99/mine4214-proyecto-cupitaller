@@ -1,67 +1,88 @@
-# Entorno
+# =============================================================================
+# Entorno de Python y del sistema
+# =============================================================================
 .venv/
 __pycache__/
-*.pyc
 .ipynb_checkpoints/
 .DS_Store
 
-# Entrega 2: configuración local, Postgres local y llaves de API
+# =============================================================================
+# Secretos y servicios locales (Entrega 2)
+# =============================================================================
+# Configuración local; la plantilla es .env.example
 .env
+# Clúster de Postgres de scripts/e2_postgres.sh
 .pgdata/
-*openai-key*.txt
-openai*.txt
+# Archivos con la llave de OpenAI
+*openai*.txt
 
-# --- data/: arquitectura medallón ---
-# Bronce: datos reales con nombres, correos y códigos de estudiantes y monitores (E1) y
-# documentos del curso con derechos reservados de la Universidad (E2). Ver data/README.md.
+# =============================================================================
+# data/: arquitectura medallón. Solo se versiona lo que no se puede regenerar
+# y no tiene datos personales ni material con derechos reservados.
+# =============================================================================
+# Bronce: Excel reales con datos de estudiantes y monitores (E1) y documentos
+# del curso con derechos reservados de la Universidad (E2). Ver data/README.md.
 data/bronce/*
 !data/bronce/.gitkeep
-# E1: datos ficticios (sin información personal), versionables para probar el pipeline
+# E1: Excel ficticios para probar el pipeline
 !data/bronce/dummy/
 # E2: banco de preguntas escrito a mano
 !data/bronce/evaluacion/
 
-# Plata y oro se generan al ejecutar. Excepciones (E2): el catálogo curado de documentos
-# y la oferta agregada por semestre, que no se pueden regenerar.
+# Plata y oro se generan al ejecutar, salvo dos archivos de la E2.
 data/plata/*
 !data/plata/.gitkeep
 !data/plata/documentos/
 data/plata/documentos/*
+# Catálogo curado a mano
 !data/plata/documentos/catalogo_documentos.csv
 data/oro/*
 !data/oro/.gitkeep
+# Oferta agregada de la E1
 !data/oro/oferta_por_periodo.csv
 
-# Todo lo generado en ejecución (E1 y E2) va a artifacts/ y no se versiona, salvo el
-# tablero de la Entrega 1 (con datos ficticios), que se puede abrir sin ejecutar nada.
+# =============================================================================
+# artifacts/: todo lo generado en ejecución (E1 y E2). Solo se versiona el
+# tablero de la E1 (datos ficticios), que se abre sin ejecutar nada.
+# =============================================================================
 artifacts/*
 !artifacts/entrega1/
 artifacts/entrega1/*
 !artifacts/entrega1/tablero_bookeau.html
 
-# Comentarios textuales de estudiantes (análisis exploratorio, fuera de la Entrega 1)
+# =============================================================================
+# LaTeX: se versionan las fuentes (.tex), las imágenes y los PDF, no los
+# archivos intermedios de la compilación.
+# =============================================================================
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.xdv
+
+# =============================================================================
+# Material local que no forma parte de las entregas
+# =============================================================================
+# Comentarios textuales de estudiantes (análisis exploratorio, fuera de la E1)
 docs/texto/**/*.csv
 docs/texto/**/*.json
 exploratorio/
-
-# Archivos intermedios de LaTeX: solo se versionan las fuentes y los PDF
-docs/entregables/e1_informe/*
-!docs/entregables/e1_informe/informe_latex.pdf
-!docs/entregables/e1_informe/informe_latex.tex
-!docs/entregables/e1_informe/anexos_latex.pdf
-!docs/entregables/e1_informe/anexos_latex.tex
-docs/entregables/e2_informe/*.aux
-docs/entregables/e2_informe/*.log
-docs/entregables/e2_informe/*.out
-docs/entregables/e2_informe/*.toc
-docs/entregables/e2_informe/*.synctex.gz
-docs/entregables/e2_informe/*.fdb_latexmk
-docs/entregables/e2_informe/*.fls
-
-# Material de los laboratorios del curso (incluye un CSV de 80 MB)
+# Laboratorios del curso (incluye un CSV de 80 MB)
 vectorial/
 rag_lab_final/
-
-# Borradores del póster y notas de planificación: solo locales
+# Borradores del póster y notas de planificación
 docs/entregables/e2_poster/versiones/
 docs/superpowers/
+# Carpeta de la Entrega 2 anterior a la reorganización: su contenido versionado
+# ya está en data/, docs/, src/ y sql/. Si queda en un clon local con documentos
+# o datos, no debe subirse por accidente; mover su contenido y borrarla.
+/entrega2/
