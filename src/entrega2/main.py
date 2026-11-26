@@ -49,7 +49,7 @@ def main() -> None:
     opciones = argumentos.parse_args()
     if opciones.lista:
         for nombre, script, descripcion in PASOS:
-            print(f'{nombre:<12} {script:<42} {descripcion}')
+            print(f'{nombre:<21} {script:<40} {descripcion}')
         return
     for nombre, script, descripcion in seleccionar(opciones):
         print(f'== {nombre}: {descripcion}')
