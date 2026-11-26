@@ -5,11 +5,13 @@
 # usuario, clave y base "mine4214" en 127.0.0.1:5434. El clúster vive en .pgdata/,
 # dentro del proyecto, y no se registra como servicio del sistema.
 #
-#   scripts/postgres.sh iniciar   # crea el clúster la primera vez y lo arranca
-#   scripts/postgres.sh detener
-#   scripts/postgres.sh estado
+#   scripts/e2_postgres.sh iniciar   # crea el clúster la primera vez y lo arranca
+#   scripts/e2_postgres.sh detener
+#   scripts/e2_postgres.sh estado
 #
 # Requiere: brew install postgresql@18 pgvector
+# En Linux, apuntar a los binarios de Postgres 18: PG_BIN=/usr/lib/postgresql/18/bin
+# (y que exista la configuración regional en_US.UTF-8, que usa initdb).
 set -euo pipefail
 
 RAIZ="$(cd "$(dirname "$0")/.." && pwd)"
