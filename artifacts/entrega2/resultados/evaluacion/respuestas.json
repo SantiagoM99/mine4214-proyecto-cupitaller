@@ -1,0 +1,1224 @@
+{
+  "prog-01|directo": {
+    "respuesta": "El Nivel 2 corresponde al 20% de la nota final del curso. [Programa del curso IP, p. 4]",
+    "uso": {
+      "tokens_entrada": 103157,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 31,
+      "segundos": 1.67
+    },
+    "fuentes": []
+  },
+  "prog-02|directo": {
+    "respuesta": "No podrá aprobar el curso. Si lo pierde por inasistencia, la nota final será el menor valor entre 2.5 y la nota real. [Programa del curso IP, p. 5]",
+    "uso": {
+      "tokens_entrada": 103162,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 46,
+      "segundos": 1.29
+    },
+    "fuentes": []
+  },
+  "prog-03|directo": {
+    "respuesta": "No. Los tutores de CupiTaller no resuelven tareas ni proyectos. [Programa del curso IP, p. 5]",
+    "uso": {
+      "tokens_entrada": 103163,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 33,
+      "segundos": 1.97
+    },
+    "fuentes": []
+  },
+  "prog-04|directo": {
+    "respuesta": "senecode contiene más de 200 ejercicios, clasificados en cuatro dificultades: básica, intermedia, avanzada y extrema. [Programa del curso IP, p. 3]",
+    "uso": {
+      "tokens_entrada": 103158,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 39,
+      "segundos": 1.44
+    },
+    "fuentes": []
+  },
+  "prog-05|directo": {
+    "respuesta": "El estudiante tiene cuatro días hábiles desde la publicación de la nota para presentar el reclamo por escrito y debidamente sustentado; el profesor tiene cinco días hábiles para resolverlo. [Programa del curso IP, p. 4]",
+    "uso": {
+      "tokens_entrada": 103165,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 54,
+      "segundos": 1.48
+    },
+    "fuentes": []
+  },
+  "prog-06|directo": {
+    "respuesta": "El Quiz de Ética se realiza durante el Nivel 1, equivale al 1% de la nota del curso y trata sobre el módulo «Uso Responsable de la IA Generativa: Lineamientos y Principios Éticos» del curso «Fundamentos del uso de IA generativa» de Coursera. [Programa del curso IP, p. 3]",
+    "uso": {
+      "tokens_entrada": 103160,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 77,
+      "segundos": 1.67
+    },
+    "fuentes": []
+  },
+  "prog-07|directo": {
+    "respuesta": "A partir de la tercera semana de clases reciben invitaciones semanales por correo electrónico para agendar tutorías. [Programa del curso IP, p. 5]",
+    "uso": {
+      "tokens_entrada": 103164,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 37,
+      "segundos": 1.57
+    },
+    "fuentes": []
+  },
+  "texto-01|directo": {
+    "respuesta": "El método `get` sirve para consultar un diccionario cuando no se sabe con certeza si la llave existe: si existe, devuelve su valor; si no, devuelve el valor predeterminado sin producir un error. Su sintaxis es `diccionario.get(llave, valor si no existe)`. [Diccionarios operaciones básicas, p. 12]",
+    "uso": {
+      "tokens_entrada": 103161,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 76,
+      "segundos": 2.16
+    },
+    "fuentes": []
+  },
+  "texto-02|directo": {
+    "respuesta": "En Python se recomienda separar las palabras con `_` y escribir los identificadores en minúscula, usando el alfabeto inglés para evitar problemas de codificación. También se aconsejan nombres claros y descriptivos para variables y funciones. [Estilo de programación, p. 3]",
+    "uso": {
+      "tokens_entrada": 103162,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 62,
+      "segundos": 1.44
+    },
+    "fuentes": []
+  },
+  "texto-03|directo": {
+    "respuesta": "Se clona una lista usando el operador de corte: `b = a[:]`. Así se crea una lista independiente con el mismo contenido, de modo que modificar una no afecte la otra. [Operaciones sobre listas, p. 14]",
+    "uso": {
+      "tokens_entrada": 103155,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 54,
+      "segundos": 1.59
+    },
+    "fuentes": []
+  },
+  "texto-04|directo": {
+    "respuesta": "El curso enseña dos patrones:\n\n- **Recorrido total:** se usa cuando hay que recorrer toda la lista, por ejemplo, para sumar todos sus valores o hallar el menor. Puede implementarse con `while`, `for-in range` o `for-in`. [Patrones de recorrido, p. 3]\n- **Recorrido parcial:** se usa cuando no hace falta recorrer toda la lista y se puede detener el ciclo al cumplirse una condición, como al encontrar un valor. Se implementa con `while`, con o sin centinela; no con `for-in`, porque se necesita interrumpir el recorrido. [Patrones de recorrido, pp. 8–9]",
+    "uso": {
+      "tokens_entrada": 103160,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 144,
+      "segundos": 2.12
+    },
+    "fuentes": []
+  },
+  "texto-05|directo": {
+    "respuesta": "El curso usa *type-hints* porque hacen el código más legible y fácil de usar, y preparan para utilizar otros lenguajes. [Estilo de programación, p. 6]",
+    "uso": {
+      "tokens_entrada": 103158,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 45,
+      "segundos": 1.42
+    },
+    "fuentes": []
+  },
+  "imagen-01|directo": {
+    "respuesta": "Para crear una tupla de un solo elemento, se incluye una coma final: `(5,)`. Sin esa coma, Python lo interpreta como un valor entre paréntesis, no como una tupla. [Tuplas, p. 9]",
+    "uso": {
+      "tokens_entrada": 103156,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 54,
+      "segundos": 1.62
+    },
+    "fuentes": []
+  },
+  "imagen-02|directo": {
+    "respuesta": "Presenta NumPy (`ndarray`), SciPy, Matplotlib, SymPy y pandas. [Introduccion a librerias, p. 3] [Introduccion a librerias, p. 4] [Introduccion a librerias, p. 5] [Introduccion a librerias, p. 6] [Introduccion a librerias, p. 7]",
+    "uso": {
+      "tokens_entrada": 103158,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 89,
+      "segundos": 1.6
+    },
+    "fuentes": []
+  },
+  "imagen-03|directo": {
+    "respuesta": "Se elimina «bananos» con la instrucción `del inventario[\"bananos\"]`. [Diccionarios mutabilidad, borrado de datos y parámetros por referencia, p. 7]",
+    "uso": {
+      "tokens_entrada": 103171,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 44,
+      "segundos": 1.26
+    },
+    "fuentes": []
+  },
+  "imagen-04|directo": {
+    "respuesta": "En el Nivel 4 se aprenderán tuplas para agrupar y organizar datos, estructuras de datos compuestas, matrices como estructuras bidimensionales y librerías especializadas para gráficas y procesamiento numérico. [Introduccion, p. 2]",
+    "uso": {
+      "tokens_entrada": 103161,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 55,
+      "segundos": 1.57
+    },
+    "fuentes": []
+  },
+  "imagen-05|directo": {
+    "respuesta": "Devuelve el valor por defecto: `'esa fruta no existe en el inventario'`. [Diccionarios operaciones básicas, p. 13]",
+    "uso": {
+      "tokens_entrada": 103166,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 34,
+      "segundos": 1.3
+    },
+    "fuentes": []
+  },
+  "imagen-06|directo": {
+    "respuesta": "`esquina` queda con `(2, 3)`, `dimension` con `(7, 4)` y `color` con `'rojo'`. [Tuplas, p. 11]",
+    "uso": {
+      "tokens_entrada": 103167,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 46,
+      "segundos": 1.2
+    },
+    "fuentes": []
+  },
+  "nivel-01|directo": {
+    "respuesta": "Los diccionarios se introducen en el Nivel 2. [Introducción | Nivel 2, p. 2]",
+    "uso": {
+      "tokens_entrada": 103156,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 30,
+      "segundos": 1.18
+    },
+    "fuentes": []
+  },
+  "nivel-02|directo": {
+    "respuesta": "Las listas se introducen en el Nivel 3. [Introducción a listas, p. 1]",
+    "uso": {
+      "tokens_entrada": 103154,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 26,
+      "segundos": 1.09
+    },
+    "fuentes": []
+  },
+  "nivel-03|directo": {
+    "respuesta": "No. En el Nivel 2 se ven booleanos, expresiones lógicas y condicionales; las instrucciones iterativas `while` y `for-in` se estudian en el Nivel 3. [Introducción, p. 2] [Introducción al módulo, p. 2] [Instrucciones iterativas (while), p. 2] [Instrucciones iterativas (for), p. 1]",
+    "uso": {
+      "tokens_entrada": 103165,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 94,
+      "segundos": 1.91
+    },
+    "fuentes": []
+  },
+  "nivel-04|directo": {
+    "respuesta": "Las tuplas y las matrices se ven en el Nivel 4. [Introduccion, p. 2]",
+    "uso": {
+      "tokens_entrada": 103155,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 27,
+      "segundos": 1.0
+    },
+    "fuentes": []
+  },
+  "nores-01|directo": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 103156,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.95
+    },
+    "fuentes": []
+  },
+  "nores-02|directo": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 103160,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.9
+    },
+    "fuentes": []
+  },
+  "nores-03|directo": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 103157,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.92
+    },
+    "fuentes": []
+  },
+  "nores-04|directo": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 103158,
+      "tokens_en_cache": 103137,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.18
+    },
+    "fuentes": []
+  },
+  "prog-01|rag_texto": {
+    "respuesta": "El Nivel 2 corresponde al 20% de la nota final del curso. [2]",
+    "uso": {
+      "tokens_entrada": 1705,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 23,
+      "segundos": 0.94,
+      "segundos_busqueda": 0.073
+    },
+    "fuentes": [
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 2"
+    ]
+  },
+  "prog-02|rag_texto": {
+    "respuesta": "No podrá aprobar el curso. Si lo pierde por inasistencia, su nota final será el menor valor entre 2.5 y la nota real. [1]",
+    "uso": {
+      "tokens_entrada": 1009,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 38,
+      "segundos": 1.08,
+      "segundos_busqueda": 0.017
+    },
+    "fuentes": [
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 3",
+      "2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas p. 5",
+      "2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas p. 4"
+    ]
+  },
+  "prog-03|rag_texto": {
+    "respuesta": "No. Los tutores de CupiTaller no resuelven tareas ni proyectos para los estudiantes [1].",
+    "uso": {
+      "tokens_entrada": 1295,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 27,
+      "segundos": 1.24,
+      "segundos_busqueda": 0.031
+    },
+    "fuentes": [
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 3"
+    ]
+  },
+  "prog-04|rag_texto": {
+    "respuesta": "SeneCode tiene más de 200 ejercicios, clasificados en cuatro dificultades: básica, intermedia, avanzada y extrema. [1]",
+    "uso": {
+      "tokens_entrada": 750,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 32,
+      "segundos": 1.12,
+      "segundos_busqueda": 0.032
+    },
+    "fuentes": [
+      "2026-20_programa p. 3",
+      "2026-20_n1_08_ejercicios-de-funciones p. 10",
+      "2026-20_n1_08_ejercicios-de-funciones p. 12",
+      "2026-20_n1_08_ejercicios-de-funciones p. 6",
+      "2026-20_n1_08_ejercicios-de-funciones p. 8"
+    ]
+  },
+  "prog-05|rag_texto": {
+    "respuesta": "El estudiante tiene cuatro días hábiles desde la publicación de la nota para presentar el reclamo por escrito y debidamente sustentado; el profesor tiene cinco días hábiles para resolverlo. [1]",
+    "uso": {
+      "tokens_entrada": 1679,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 46,
+      "segundos": 1.31,
+      "segundos_busqueda": 0.023
+    },
+    "fuentes": [
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 5"
+    ]
+  },
+  "prog-06|rag_texto": {
+    "respuesta": "El Quiz de Ética se realiza durante el Nivel 1, vale el 1% de la nota del curso y trata sobre el módulo “Uso Responsable de la IA Generativa: Lineamientos y Principios Éticos” del curso “Fundamentos del uso de IA generativa” de Coursera. [1]",
+    "uso": {
+      "tokens_entrada": 1622,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 68,
+      "segundos": 1.24,
+      "segundos_busqueda": 0.052
+    },
+    "fuentes": [
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 3"
+    ]
+  },
+  "prog-07|rag_texto": {
+    "respuesta": "Desde la tercera semana de clases reciben invitaciones semanales por correo electrónico para agendar tutorías en CupiTaller. [1]",
+    "uso": {
+      "tokens_entrada": 1587,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 32,
+      "segundos": 1.02,
+      "segundos_busqueda": 0.034
+    },
+    "fuentes": [
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 5"
+    ]
+  },
+  "texto-01|rag_texto": {
+    "respuesta": "El método `get` sirve para consultar datos en un diccionario cuando no estamos seguros de que la llave exista. Su sintaxis es `diccionario.get(llave, valor si no existe)`: si la llave no existe, devuelve el valor por defecto sin producir un error. [1][2]",
+    "uso": {
+      "tokens_entrada": 985,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 65,
+      "segundos": 1.26,
+      "segundos_busqueda": 0.03
+    },
+    "fuentes": [
+      "2026-20_n2_08_diccionarios-operaciones-basicas p. 12",
+      "2026-20_n2_08_diccionarios-operaciones-basicas p. 13",
+      "2026-20_n2_10_ejercicio-ocurrencias-de-cada-digito-en-un-numero-usando-diccionarios p. 8",
+      "2026-20_n2_09_diccionarios-mutabilidad-borrado-de-datos-y-parametros-por-referencia p. 4",
+      "2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas p. 6"
+    ]
+  },
+  "texto-02|rag_texto": {
+    "respuesta": "En Python, los identificadores se escriben en minúscula y se usa el carácter `_` para separar palabras; los nombres deben ser claros y, para las funciones, indicar lo que hacen. [1] Las variables pueden incluir letras, dígitos y `_`, pero no empezar con un dígito ni coincidir con una palabra reservada; Python distingue entre mayúsculas y minúsculas. [2]",
+    "uso": {
+      "tokens_entrada": 1426,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 90,
+      "segundos": 1.43,
+      "segundos_busqueda": 0.06
+    },
+    "fuentes": [
+      "2026-20_n1_09_estilo-de-programacion p. 3",
+      "2026-20_n1_03_declaracion-de-variables-instruccion-de-asignacion-y-tipado-dinamico p. 5",
+      "2026-20_programa p. 1",
+      "2026-20_n1_03_declaracion-de-variables-instruccion-de-asignacion-y-tipado-dinamico p. 9",
+      "2026-20_programa p. 6"
+    ]
+  },
+  "texto-03|rag_texto": {
+    "respuesta": "Se clona una lista usando el operador de corte (*slice*), para crear una copia independiente de la lista original y poder modificarla sin alterar esa lista. [1]",
+    "uso": {
+      "tokens_entrada": 764,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 39,
+      "segundos": 1.32,
+      "segundos_busqueda": 0.058
+    },
+    "fuentes": [
+      "2026-20_n3_07_operaciones-sobre-listas p. 14",
+      "2026-20_n3_06_introduccion-a-listas p. 7",
+      "2026-20_n3_07_operaciones-sobre-listas p. 15",
+      "2026-20_n3_07_operaciones-sobre-listas p. 16",
+      "2026-20_n3_07_operaciones-sobre-listas p. 25"
+    ]
+  },
+  "texto-04|rag_texto": {
+    "respuesta": "El curso enseña dos patrones principales:\n\n- **Recorrido total**: se usa cuando es necesario recorrer toda la lista, por ejemplo, para sumar todos sus valores o encontrar el menor. Puede implementarse con `while` o con `for-in` (incluido `for-in range`). [2]\n- **Recorrido parcial**: se usa cuando no hace falta recorrer toda la lista y se verifica una condición en cada iteración para decidir si continuar o detenerse; por ejemplo, para buscar un valor o comprobar si hay alguno positivo. Se implementa con `while`, con o sin centinela, porque hay que poder interrumpir el ciclo antes de terminar la lista. [3]",
+    "uso": {
+      "tokens_entrada": 820,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 146,
+      "segundos": 1.94,
+      "segundos_busqueda": 0.058
+    },
+    "fuentes": [
+      "2026-20_n3_08_patrones-de-recorrido p. 6",
+      "2026-20_n3_08_patrones-de-recorrido p. 3",
+      "2026-20_n3_08_patrones-de-recorrido p. 8",
+      "2026-20_n3_08_patrones-de-recorrido p. 4",
+      "2026-20_n3_08_patrones-de-recorrido p. 5"
+    ]
+  },
+  "texto-05|rag_texto": {
+    "respuesta": "Porque hacen el código más legible y fácil de usar, y preparan a los estudiantes para utilizar otros lenguajes. [1]",
+    "uso": {
+      "tokens_entrada": 1373,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 32,
+      "segundos": 1.36,
+      "segundos_busqueda": 0.049
+    },
+    "fuentes": [
+      "2026-20_n1_09_estilo-de-programacion p. 6",
+      "2026-20_programa p. 6",
+      "2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas p. 14",
+      "2026-20_n1_09_estilo-de-programacion p. 3",
+      "2026-20_programa p. 1"
+    ]
+  },
+  "imagen-01|rag_texto": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1034,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.87,
+      "segundos_busqueda": 0.059
+    },
+    "fuentes": [
+      "2026-20_n4_02_tuplas p. 3",
+      "2026-20_n4_02_tuplas p. 4",
+      "2026-20_n2_04_condicionales p. 6",
+      "2026-20_n1_03_declaracion-de-variables-instruccion-de-asignacion-y-tipado-dinamico p. 9",
+      "2026-20_n3_03_uso-del-centinela p. 11"
+    ]
+  },
+  "imagen-02|rag_texto": {
+    "respuesta": "La información disponible no enumera las librerías que presenta. No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 381,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 24,
+      "segundos": 1.11,
+      "segundos_busqueda": 0.028
+    },
+    "fuentes": [
+      "2026-20_n4_06_introduccion-a-librerias p. 1",
+      "2026-20_n4_06_introduccion-a-librerias p. 7",
+      "2026-20_n4_06_introduccion-a-librerias p. 5",
+      "2026-20_n4_06_introduccion-a-librerias p. 2",
+      "2026-20_n4_06_introduccion-a-librerias p. 3"
+    ]
+  },
+  "imagen-03|rag_texto": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 601,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.08,
+      "segundos_busqueda": 0.06
+    },
+    "fuentes": [
+      "2026-20_n2_09_diccionarios-mutabilidad-borrado-de-datos-y-parametros-por-referencia p. 7",
+      "2026-20_n2_09_diccionarios-mutabilidad-borrado-de-datos-y-parametros-por-referencia p. 9",
+      "2026-20_n2_09_diccionarios-mutabilidad-borrado-de-datos-y-parametros-por-referencia p. 11",
+      "2026-20_n3_07_operaciones-sobre-listas p. 8",
+      "2026-20_n3_11_estructura-de-datos-compuestos p. 25"
+    ]
+  },
+  "imagen-04|rag_texto": {
+    "respuesta": "En el Nivel 4 se aprenderán matrices y procesamiento. [1]",
+    "uso": {
+      "tokens_entrada": 911,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 19,
+      "segundos": 1.0,
+      "segundos_busqueda": 0.019
+    },
+    "fuentes": [
+      "2026-20_n4_01_introduccion p. 2",
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 2",
+      "2026-20_n4_06_introduccion-a-librerias p. 1",
+      "2026-20_n4_01_introduccion p. 1"
+    ]
+  },
+  "imagen-05|rag_texto": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 767,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.91,
+      "segundos_busqueda": 0.025
+    },
+    "fuentes": [
+      "2026-20_n2_08_diccionarios-operaciones-basicas p. 12",
+      "2026-20_n2_08_diccionarios-operaciones-basicas p. 13",
+      "2026-20_n2_08_diccionarios-operaciones-basicas p. 10",
+      "2026-20_n3_05_instrucciones-iterativas-for p. 9",
+      "2026-20_n3_05_instrucciones-iterativas-for p. 6"
+    ]
+  },
+  "imagen-06|rag_texto": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 642,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.9,
+      "segundos_busqueda": 0.029
+    },
+    "fuentes": [
+      "2026-20_n1_07_funciones-y-variables-locales p. 14",
+      "2026-20_n4_02_tuplas p. 11",
+      "2026-20_n4_02_tuplas p. 2",
+      "2026-20_n4_10_visualizacion-con-pandas p. 16",
+      "2026-20_n3_11_estructura-de-datos-compuestos p. 21"
+    ]
+  },
+  "nivel-01|rag_texto": {
+    "respuesta": "Los diccionarios se introducen en el nivel 2 [2].",
+    "uso": {
+      "tokens_entrada": 727,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 19,
+      "segundos": 1.01,
+      "segundos_busqueda": 0.018
+    },
+    "fuentes": [
+      "2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas p. 3",
+      "2026-20_n2_08_diccionarios-operaciones-basicas p. 2",
+      "2026-20_n3_11_estructura-de-datos-compuestos p. 23",
+      "2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas p. 7",
+      "2026-20_n3_11_estructura-de-datos-compuestos p. 22"
+    ]
+  },
+  "nivel-02|rag_texto": {
+    "respuesta": "Las listas se introducen en el nivel 3 del curso [1].",
+    "uso": {
+      "tokens_entrada": 757,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 19,
+      "segundos": 1.09,
+      "segundos_busqueda": 0.028
+    },
+    "fuentes": [
+      "2026-20_n3_06_introduccion-a-listas p. 2",
+      "2026-20_n3_07_operaciones-sobre-listas p. 15",
+      "2026-20_n3_06_introduccion-a-listas p. 10",
+      "2026-20_n3_06_introduccion-a-listas p. 3",
+      "2026-20_n3_06_introduccion-a-listas p. 6"
+    ]
+  },
+  "nivel-03|rag_texto": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 631,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.02,
+      "segundos_busqueda": 0.054
+    },
+    "fuentes": [
+      "2026-20_n3_05_instrucciones-iterativas-for p. 3",
+      "2026-20_n3_02_instrucciones-iterativas-while p. 1",
+      "2026-20_n3_02_instrucciones-iterativas-while p. 2",
+      "2026-20_n3_05_instrucciones-iterativas-for p. 1",
+      "2026-20_n3_02_instrucciones-iterativas-while p. 3"
+    ]
+  },
+  "nivel-04|rag_texto": {
+    "respuesta": "Las tuplas y las matrices se ven en el nivel 4 [1][2][3][4].",
+    "uso": {
+      "tokens_entrada": 841,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 26,
+      "segundos": 1.17,
+      "segundos_busqueda": 0.018
+    },
+    "fuentes": [
+      "2026-20_n4_05_mas-sobre-matrices p. 4",
+      "2026-20_n4_05_mas-sobre-matrices p. 3",
+      "2026-20_n4_04_matrices p. 19",
+      "2026-20_n4_02_tuplas p. 4",
+      "2026-20_n4_02_tuplas p. 2"
+    ]
+  },
+  "nores-01|rag_texto": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1367,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.93,
+      "segundos_busqueda": 0.016
+    },
+    "fuentes": [
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 4",
+      "2026-20_n2_01_introduccion p. 1",
+      "2026-20_programa p. 2"
+    ]
+  },
+  "nores-02|rag_texto": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1796,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.9,
+      "segundos_busqueda": 0.025
+    },
+    "fuentes": [
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 4",
+      "2026-20_n2_05_leyes-de-de-morgan p. 10"
+    ]
+  },
+  "nores-03|rag_texto": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1599,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.86,
+      "segundos_busqueda": 0.03
+    },
+    "fuentes": [
+      "2026-20_programa p. 1",
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 1",
+      "2026-20_programa p. 5"
+    ]
+  },
+  "nores-04|rag_texto": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1768,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.88,
+      "segundos_busqueda": 0.028
+    },
+    "fuentes": [
+      "2026-20_programa p. 1",
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 6",
+      "2026-20_programa p. 1",
+      "2026-20_programa p. 3"
+    ]
+  },
+  "prog-01|rag_visual": {
+    "respuesta": "El Nivel 2 corresponde al 20% de la nota final del curso. [1]",
+    "uso": {
+      "tokens_entrada": 1503,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 23,
+      "segundos": 1.05,
+      "segundos_busqueda": 0.031
+    },
+    "fuentes": [
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 5"
+    ]
+  },
+  "prog-02|rag_visual": {
+    "respuesta": "No podrá aprobar el curso. Si lo pierde por inasistencia, su nota final será el menor valor entre 2.5 y su nota real. [1]",
+    "uso": {
+      "tokens_entrada": 1423,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 38,
+      "segundos": 1.21,
+      "segundos_busqueda": 0.029
+    },
+    "fuentes": [
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 4"
+    ]
+  },
+  "prog-03|rag_visual": {
+    "respuesta": "No. Los tutores de CupiTaller no resuelven tareas, quices ni proyectos. [1]",
+    "uso": {
+      "tokens_entrada": 1176,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 28,
+      "segundos": 1.34,
+      "segundos_busqueda": 0.055
+    },
+    "fuentes": [
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 5"
+    ]
+  },
+  "prog-04|rag_visual": {
+    "respuesta": "*senecode* contiene más de 200 ejercicios, clasificados en cuatro dificultades: básica, intermedia, avanzada y extrema. [1]",
+    "uso": {
+      "tokens_entrada": 1267,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 33,
+      "segundos": 1.0,
+      "segundos_busqueda": 0.056
+    },
+    "fuentes": [
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 3",
+      "2026-20_n2_10_ejercicio-ocurrencias-de-cada-digito-en-un-numero-usando-diccionarios p. 1",
+      "2026-20_n2_10_ejercicio-ocurrencias-de-cada-digito-en-un-numero-usando-diccionarios p. 8",
+      "2026-20_n4_09_dataframes p. 22"
+    ]
+  },
+  "prog-05|rag_visual": {
+    "respuesta": "El estudiante tiene cuatro días hábiles desde la publicación de la nota para presentar el reclamo por escrito y debidamente sustentado. El profesor tiene cinco días hábiles para resolverlo. [1]",
+    "uso": {
+      "tokens_entrada": 1531,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 46,
+      "segundos": 1.31,
+      "segundos_busqueda": 0.019
+    },
+    "fuentes": [
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 4"
+    ]
+  },
+  "prog-06|rag_visual": {
+    "respuesta": "El quiz de ética se desarrolla durante el Nivel 1 y vale el 1% de la nota del curso. Trata sobre el módulo «Uso Responsable de la IA Generativa: Lineamientos y Principios Éticos» del curso «Fundamentos del uso de IA generativa» de la Universidad de los Andes, disponible en Coursera. [1]",
+    "uso": {
+      "tokens_entrada": 1471,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 75,
+      "segundos": 1.33,
+      "segundos_busqueda": 0.052
+    },
+    "fuentes": [
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 1"
+    ]
+  },
+  "prog-07|rag_visual": {
+    "respuesta": "Desde la tercera semana de clases, los estudiantes reciben invitaciones semanales por correo electrónico para agendar tutorías en CupiTaller. [2]",
+    "uso": {
+      "tokens_entrada": 1181,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 35,
+      "segundos": 1.14,
+      "segundos_busqueda": 0.058
+    },
+    "fuentes": [
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 5"
+    ]
+  },
+  "texto-01|rag_visual": {
+    "respuesta": "El método `get` sirve para consultar el valor asociado a una llave y, si esta no existe, devolver un valor por defecto en lugar de producir un error. [1][2]\n\nSu sintaxis es: `diccionario.get(llave, valor si no existe)`. [1]",
+    "uso": {
+      "tokens_entrada": 1391,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 63,
+      "segundos": 1.55,
+      "segundos_busqueda": 0.058
+    },
+    "fuentes": [
+      "2026-20_n2_08_diccionarios-operaciones-basicas p. 12",
+      "2026-20_n2_08_diccionarios-operaciones-basicas p. 13",
+      "2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas p. 6",
+      "2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas p. 15",
+      "2026-20_n2_10_ejercicio-ocurrencias-de-cada-digito-en-un-numero-usando-diccionarios p. 8"
+    ]
+  },
+  "texto-02|rag_visual": {
+    "respuesta": "En Python, los identificadores se escriben en minúscula, se usa `_` para separar palabras y se recomienda el alfabeto inglés para evitar problemas de codificación. Los nombres de variables deben ser claros y evitar abreviaciones demasiado cortas; los de funciones deben indicar lo que hacen. [1]",
+    "uso": {
+      "tokens_entrada": 1634,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 68,
+      "segundos": 1.33,
+      "segundos_busqueda": 0.051
+    },
+    "fuentes": [
+      "2026-20_n1_09_estilo-de-programacion p. 3",
+      "2026-20_n1_03_declaracion-de-variables-instruccion-de-asignacion-y-tipado-dinamico p. 5",
+      "2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas p. 4",
+      "2026-20_n1_03_declaracion-de-variables-instruccion-de-asignacion-y-tipado-dinamico p. 9",
+      "2026-20_programa p. 3"
+    ]
+  },
+  "texto-03|rag_visual": {
+    "respuesta": "Se clona una lista usando el operador de corte, por ejemplo, `b = a[:]`. Esto crea una copia con el mismo contenido, pero que no referencia a la misma lista; así se puede modificar una lista y conservar intacta la original. [1]",
+    "uso": {
+      "tokens_entrada": 1393,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 58,
+      "segundos": 1.38,
+      "segundos_busqueda": 0.055
+    },
+    "fuentes": [
+      "2026-20_n3_07_operaciones-sobre-listas p. 14",
+      "2026-20_n3_06_introduccion-a-listas p. 7",
+      "2026-20_n3_06_introduccion-a-listas p. 2",
+      "2026-20_n3_06_introduccion-a-listas p. 8",
+      "2026-20_n3_07_operaciones-sobre-listas p. 15"
+    ]
+  },
+  "texto-04|rag_visual": {
+    "respuesta": "El curso enseña el **recorrido total**, que se usa cuando se necesita recorrer toda la lista, por ejemplo, para sumar todos sus valores o encontrar el menor [2]. También presenta el recorrido con **`for-in`**, donde la variable del ciclo toma cada elemento directamente, sin usar `[]` para extraerlo [4].\n\nAdemás, enseña el **recorrido parcial con centinela** y **sin centinela**; las fuentes muestran ambos como formas de buscar un elemento, pero no explican en qué situaciones se elige uno u otro [3][5]. Ambas advierten que hay que verificar que el índice esté dentro del tamaño de la lista [3][5].",
+    "uso": {
+      "tokens_entrada": 904,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 146,
+      "segundos": 1.84,
+      "segundos_busqueda": 0.04
+    },
+    "fuentes": [
+      "2026-20_n3_08_patrones-de-recorrido p. 2",
+      "2026-20_n3_08_patrones-de-recorrido p. 3",
+      "2026-20_n3_08_patrones-de-recorrido p. 10",
+      "2026-20_n3_08_patrones-de-recorrido p. 6",
+      "2026-20_n3_08_patrones-de-recorrido p. 12"
+    ]
+  },
+  "texto-05|rag_visual": {
+    "respuesta": "El curso usa *type-hints* porque hacen que el código sea más legible y fácil de usar, y preparan para utilizar otros lenguajes. [1]",
+    "uso": {
+      "tokens_entrada": 1217,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 39,
+      "segundos": 1.06,
+      "segundos_busqueda": 0.037
+    },
+    "fuentes": [
+      "2026-20_n1_09_estilo-de-programacion p. 6",
+      "2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas p. 14",
+      "2026-20_n1_03_declaracion-de-variables-instruccion-de-asignacion-y-tipado-dinamico p. 4",
+      "2026-20_n1_03_declaracion-de-variables-instruccion-de-asignacion-y-tipado-dinamico p. 5",
+      "2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas p. 13"
+    ]
+  },
+  "imagen-01|rag_visual": {
+    "respuesta": "Para crear una tupla de un solo elemento, se incluye una coma final dentro de los paréntesis, por ejemplo: `tupla = (5,)`. Sin la coma, Python lo interpreta como un valor simple entre paréntesis. [1]",
+    "uso": {
+      "tokens_entrada": 1177,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 56,
+      "segundos": 1.28,
+      "segundos_busqueda": 0.032
+    },
+    "fuentes": [
+      "2026-20_n4_02_tuplas p. 9",
+      "2026-20_n4_02_tuplas p. 4",
+      "2026-20_n4_02_tuplas p. 7",
+      "2026-20_n4_02_tuplas p. 3",
+      "2026-20_n4_02_tuplas p. 6"
+    ]
+  },
+  "imagen-02|rag_visual": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 721,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.09,
+      "segundos_busqueda": 0.036
+    },
+    "fuentes": [
+      "2026-20_n4_06_introduccion-a-librerias p. 1",
+      "2026-20_n4_01_introduccion p. 2",
+      "2026-20_n4_01_introduccion p. 1",
+      "2026-20_n4_07_introduccion-a-visualizaciones-con-matplotlib p. 1",
+      "2026-20_programa p. 3"
+    ]
+  },
+  "imagen-03|rag_visual": {
+    "respuesta": "Se elimina `\"bananos\"` con la instrucción `del inventario[\"bananos\"]`. [1]",
+    "uso": {
+      "tokens_entrada": 1380,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 26,
+      "segundos": 1.11,
+      "segundos_busqueda": 0.07
+    },
+    "fuentes": [
+      "2026-20_n2_09_diccionarios-mutabilidad-borrado-de-datos-y-parametros-por-referencia p. 7",
+      "2026-20_n2_08_diccionarios-operaciones-basicas p. 13",
+      "2026-20_n3_07_operaciones-sobre-listas p. 8",
+      "2026-20_n3_12_ejericicios p. 5",
+      "2026-20_n2_09_diccionarios-mutabilidad-borrado-de-datos-y-parametros-por-referencia p. 3"
+    ]
+  },
+  "imagen-04|rag_visual": {
+    "respuesta": "En el Nivel 4 se aprenderán tuplas para agrupar y organizar datos, estructuras de datos compuestas, matrices de dos dimensiones y librerías especializadas de gráficas y procesamiento numérico. [1] La presentación lo identifica como una introducción a librerías. [4]",
+    "uso": {
+      "tokens_entrada": 813,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 62,
+      "segundos": 1.25,
+      "segundos_busqueda": 0.027
+    },
+    "fuentes": [
+      "2026-20_n4_01_introduccion p. 2",
+      "2026-20_n2_01_introduccion p. 2",
+      "2026-20_programa p. 3",
+      "2026-20_n4_06_introduccion-a-librerias p. 1",
+      "2026-20_programa p. 3"
+    ]
+  },
+  "imagen-05|rag_visual": {
+    "respuesta": "Devuelve el valor por defecto: `'esa fruta no existe en el inventario'`. [2]",
+    "uso": {
+      "tokens_entrada": 1603,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 25,
+      "segundos": 1.11,
+      "segundos_busqueda": 0.044
+    },
+    "fuentes": [
+      "2026-20_n2_08_diccionarios-operaciones-basicas p. 12",
+      "2026-20_n2_08_diccionarios-operaciones-basicas p. 13",
+      "2026-20_n3_12_ejericicios p. 8",
+      "2026-20_n2_09_diccionarios-mutabilidad-borrado-de-datos-y-parametros-por-referencia p. 7",
+      "2026-20_n3_11_estructura-de-datos-compuestos p. 28"
+    ]
+  },
+  "imagen-06|rag_visual": {
+    "respuesta": "`esquina` queda con `(2, 3)`, `dimension` con `(7, 4)` y `color` con `'rojo'`. [1]",
+    "uso": {
+      "tokens_entrada": 1190,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 40,
+      "segundos": 0.96,
+      "segundos_busqueda": 0.02
+    },
+    "fuentes": [
+      "2026-20_n4_02_tuplas p. 11",
+      "2026-20_n4_02_tuplas p. 12",
+      "2026-20_n4_02_tuplas p. 7",
+      "2026-20_n4_02_tuplas p. 8",
+      "2026-20_n4_02_tuplas p. 2"
+    ]
+  },
+  "nivel-01|rag_visual": {
+    "respuesta": "Los diccionarios se introducen en el nivel 2 del curso. [1]",
+    "uso": {
+      "tokens_entrada": 1040,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 22,
+      "segundos": 0.93,
+      "segundos_busqueda": 0.025
+    },
+    "fuentes": [
+      "2026-20_n2_08_diccionarios-operaciones-basicas p. 2",
+      "2026-20_n3_09_recorrido-de-diccionarios p. 1",
+      "2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas p. 15",
+      "2026-20_n3_09_recorrido-de-diccionarios p. 4",
+      "2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas p. 8"
+    ]
+  },
+  "nivel-02|rag_visual": {
+    "respuesta": "Las listas se introducen en el nivel 3 del curso. [1]",
+    "uso": {
+      "tokens_entrada": 1317,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 20,
+      "segundos": 1.22,
+      "segundos_busqueda": 0.022
+    },
+    "fuentes": [
+      "2026-20_n3_06_introduccion-a-listas p. 2",
+      "2026-20_n3_07_operaciones-sobre-listas p. 15",
+      "2026-20_n3_06_introduccion-a-listas p. 8",
+      "2026-20_n3_06_introduccion-a-listas p. 7",
+      "2026-20_n3_07_operaciones-sobre-listas p. 5"
+    ]
+  },
+  "nivel-03|rag_visual": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 715,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.94,
+      "segundos_busqueda": 0.046
+    },
+    "fuentes": [
+      "2026-20_n3_05_instrucciones-iterativas-for p. 3",
+      "2026-20_n3_02_instrucciones-iterativas-while p. 1",
+      "2026-20_n3_05_instrucciones-iterativas-for p. 1",
+      "2026-20_n3_02_instrucciones-iterativas-while p. 3",
+      "2026-20_n3_05_instrucciones-iterativas-for p. 8"
+    ]
+  },
+  "nivel-04|rag_visual": {
+    "respuesta": "Las tuplas y las matrices se ven en el Nivel 4. [1][5]",
+    "uso": {
+      "tokens_entrada": 1005,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 23,
+      "segundos": 0.9,
+      "segundos_busqueda": 0.02
+    },
+    "fuentes": [
+      "2026-20_n4_01_introduccion p. 2",
+      "2026-20_n4_04_matrices p. 2",
+      "2026-20_n4_02_tuplas p. 3",
+      "2026-20_n4_02_tuplas p. 4",
+      "2026-20_n4_02_tuplas p. 1"
+    ]
+  },
+  "nores-01|rag_visual": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1363,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.81,
+      "segundos_busqueda": 0.02
+    },
+    "fuentes": [
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 2"
+    ]
+  },
+  "nores-02|rag_visual": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1233,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.95,
+      "segundos_busqueda": 0.017
+    },
+    "fuentes": [
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 3",
+      "2026-20_n2_05_leyes-de-de-morgan p. 10"
+    ]
+  },
+  "nores-03|rag_visual": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1503,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.98,
+      "segundos_busqueda": 0.021
+    },
+    "fuentes": [
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 1",
+      "2026-20_programa p. 1",
+      "2026-20_programa p. 2"
+    ]
+  },
+  "nores-04|rag_visual": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1481,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.35,
+      "segundos_busqueda": 0.02
+    },
+    "fuentes": [
+      "2026-20_programa p. 1",
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 6",
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 1"
+    ]
+  }
+}

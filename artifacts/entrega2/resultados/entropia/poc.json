@@ -1,0 +1,530 @@
+{
+  "vig-01|rag_ingenuo_texto": {
+    "respuesta": "Las fuentes indican que CupiTaller ofrece tutorías personalizadas para fortalecer habilidades de análisis de problemas y programación, mediante sesiones de trabajo con un tutor. No especifican otros tipos de tutoría. [1]",
+    "fuentes": [
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 2",
+      "2020-20_programa p. 5"
+    ],
+    "uso": {
+      "tokens_entrada": 1353,
+      "tokens_en_cache": 0,
+      "tokens_salida": 47,
+      "segundos": 3.71,
+      "segundos_busqueda": 2.175
+    },
+    "clase": "vigente",
+    "motivo": "Indica que las tutorías son personalizadas y que no se especifican otros tipos, sin presentar como vigente la lista de la versión anterior."
+  },
+  "vig-01|rag_ingenuo_visual": {
+    "respuesta": "CupiTaller ofrece tutorías individuales, grupales y express. [1]",
+    "fuentes": [
+      "2020-20_programa p. 5",
+      "2026-20_programa p. 5",
+      "2020-20_programa p. 4",
+      "2026-20_programa p. 5",
+      "2020-20_programa p. 5"
+    ],
+    "uso": {
+      "tokens_entrada": 1193,
+      "tokens_en_cache": 0,
+      "tokens_salida": 21,
+      "segundos": 1.3,
+      "segundos_busqueda": 0.06
+    },
+    "clase": "desactualizada",
+    "motivo": "Presenta los tres tipos del programa 2020-20 como vigentes, sin advertir que corresponden a una versión anterior."
+  },
+  "vig-01|rag_con_etiquetas": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "fuentes": [
+      "2020-20_programa p. 5",
+      "2026-20_programa p. 5",
+      "2020-20_programa p. 4",
+      "2026-20_programa p. 5",
+      "2020-20_programa p. 5"
+    ],
+    "uso": {
+      "tokens_entrada": 1279,
+      "tokens_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.96,
+      "segundos_busqueda": 0.041
+    },
+    "clase": "abstencion",
+    "motivo": "El asistente dice que no hay información suficiente en las fuentes."
+  },
+  "vig-01|rag_filtro_vigente": {
+    "respuesta": "CupiTaller ofrece tutorías personalizadas para fortalecer habilidades de análisis de problemas y programación: analizar requerimientos, planear algoritmos, escribir programas y probarlos. [2]",
+    "fuentes": [
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 5",
+      "2026-20_n4_01_introduccion p. 2",
+      "2026-20_programa p. 3"
+    ],
+    "uso": {
+      "tokens_entrada": 1024,
+      "tokens_en_cache": 0,
+      "tokens_salida": 41,
+      "segundos": 1.38,
+      "segundos_busqueda": 0.046
+    },
+    "clase": "vigente",
+    "motivo": "Describe las tutorías como personalizadas y no presenta como vigentes los tres tipos del programa anterior."
+  },
+  "vig-01|directo_dos_programas": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "fuentes": [],
+    "uso": {
+      "tokens_entrada": 8304,
+      "tokens_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.1
+    },
+    "clase": "abstencion",
+    "motivo": "Afirma que no hay información suficiente en las fuentes."
+  },
+  "vig-02|rag_ingenuo_texto": {
+    "respuesta": "El Nivel 2 vale el 20% de la nota del curso. [2]",
+    "fuentes": [
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 4"
+    ],
+    "uso": {
+      "tokens_entrada": 1621,
+      "tokens_en_cache": 0,
+      "tokens_salida": 22,
+      "segundos": 1.06,
+      "segundos_busqueda": 0.066
+    },
+    "clase": "vigente",
+    "motivo": "Indica que el Nivel 2 vale el 20 %, conforme al programa vigente, sin presentar el 25 % anterior como válido."
+  },
+  "vig-02|rag_ingenuo_visual": {
+    "respuesta": "El Nivel 2 vale el 20% de la nota del curso. [1]",
+    "fuentes": [
+      "2026-20_programa p. 4",
+      "2020-20_programa p. 3",
+      "2026-20_programa p. 3",
+      "2020-20_programa p. 2",
+      "2026-20_programa p. 4"
+    ],
+    "uso": {
+      "tokens_entrada": 1595,
+      "tokens_en_cache": 0,
+      "tokens_salida": 22,
+      "segundos": 1.2,
+      "segundos_busqueda": 0.059
+    },
+    "clase": "vigente",
+    "motivo": "Indica que el Nivel 2 vale el 20 %, que coincide con el programa vigente, sin presentar el 25 % anterior como válido."
+  },
+  "vig-02|rag_con_etiquetas": {
+    "respuesta": "El Nivel 2 vale el 20% de la nota del curso. [1]",
+    "fuentes": [
+      "2026-20_programa p. 4",
+      "2020-20_programa p. 3",
+      "2026-20_programa p. 3",
+      "2020-20_programa p. 2",
+      "2026-20_programa p. 4"
+    ],
+    "uso": {
+      "tokens_entrada": 1680,
+      "tokens_en_cache": 0,
+      "tokens_salida": 22,
+      "segundos": 1.09,
+      "segundos_busqueda": 0.059
+    },
+    "clase": "vigente",
+    "motivo": "Indica que el Nivel 2 vale el 20 %, que coincide con el programa vigente, sin presentar el 25 % anterior como válido."
+  },
+  "vig-02|rag_filtro_vigente": {
+    "respuesta": "El Nivel 2 vale el 20% de la nota del curso: 10% de examen escrito, 6% de tareas y 4% de quices. [1]",
+    "fuentes": [
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 4"
+    ],
+    "uso": {
+      "tokens_entrada": 1502,
+      "tokens_en_cache": 0,
+      "tokens_salida": 42,
+      "segundos": 1.31,
+      "segundos_busqueda": 0.052
+    },
+    "clase": "vigente",
+    "motivo": "Indica que el Nivel 2 vale el 20 % de la nota, conforme al programa vigente, y no presenta el 25 % anterior como válido."
+  },
+  "vig-02|directo_dos_programas": {
+    "respuesta": "El Nivel 2 vale el 20% de la nota del curso. [Programa del curso IP, p. 4]",
+    "fuentes": [],
+    "uso": {
+      "tokens_entrada": 8306,
+      "tokens_en_cache": 0,
+      "tokens_salida": 30,
+      "segundos": 1.2
+    },
+    "clase": "vigente",
+    "motivo": "Indica que el Nivel 2 vale el 20 %, que coincide con el programa vigente, y no presenta el 25 % anterior como válido."
+  },
+  "vig-03|rag_ingenuo_texto": {
+    "respuesta": "El Nivel 4 representa el 35% de la nota del curso: 25% corresponde al examen escrito, 3% a tareas y 7% a quices. [2]",
+    "fuentes": [
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 4"
+    ],
+    "uso": {
+      "tokens_entrada": 1450,
+      "tokens_en_cache": 0,
+      "tokens_salida": 43,
+      "segundos": 1.3,
+      "segundos_busqueda": 0.062
+    },
+    "clase": "vigente",
+    "motivo": "Indica que el Nivel 4 vale 35 %, conforme al programa vigente, y no presenta el 30 % anterior como válido."
+  },
+  "vig-03|rag_ingenuo_visual": {
+    "respuesta": "El Nivel 4 vale el 30% de la nota del curso. [3]",
+    "fuentes": [
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 4",
+      "2020-20_programa p. 3",
+      "2020-20_programa p. 3",
+      "2026-20_programa p. 3"
+    ],
+    "uso": {
+      "tokens_entrada": 1517,
+      "tokens_en_cache": 0,
+      "tokens_salida": 22,
+      "segundos": 1.2,
+      "segundos_busqueda": 0.065
+    },
+    "clase": "desactualizada",
+    "motivo": "Afirma que el Nivel 4 vale 30 %, que corresponde al programa anterior, sin indicar que la ponderación vigente es 35 %."
+  },
+  "vig-03|rag_con_etiquetas": {
+    "respuesta": "El Nivel 4 vale el 35% de la nota del curso: 25% corresponde al examen escrito, 3% a tareas y 7% a quices. [2]",
+    "fuentes": [
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 4",
+      "2020-20_programa p. 3",
+      "2020-20_programa p. 3",
+      "2026-20_programa p. 3"
+    ],
+    "uso": {
+      "tokens_entrada": 1602,
+      "tokens_en_cache": 0,
+      "tokens_salida": 43,
+      "segundos": 1.15,
+      "segundos_busqueda": 0.04
+    },
+    "clase": "vigente",
+    "motivo": "Indica que el Nivel 4 vale 35 %, conforme al programa vigente, y no presenta el 30 % anterior como válido."
+  },
+  "vig-03|rag_filtro_vigente": {
+    "respuesta": "El Nivel 4 vale el 35% de la nota del curso: 25% corresponde al examen escrito, 3% a tareas y 7% a quices. [2]",
+    "fuentes": [
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 3"
+    ],
+    "uso": {
+      "tokens_entrada": 1452,
+      "tokens_en_cache": 0,
+      "tokens_salida": 43,
+      "segundos": 1.19,
+      "segundos_busqueda": 0.061
+    },
+    "clase": "vigente",
+    "motivo": "Indica que el Nivel 4 vale el 35 % de la nota, conforme al programa vigente, sin presentar el 30 % anterior como válido."
+  },
+  "vig-03|directo_dos_programas": {
+    "respuesta": "El Nivel 4 representa el 35% de la nota del curso. [Programa del curso IP, p. 4]",
+    "fuentes": [],
+    "uso": {
+      "tokens_entrada": 8306,
+      "tokens_en_cache": 0,
+      "tokens_salida": 30,
+      "segundos": 1.28
+    },
+    "clase": "vigente",
+    "motivo": "Indica que el Nivel 4 vale 35 %, coincidiendo con el programa vigente, y no presenta el 30 % anterior como válido."
+  },
+  "vig-04|rag_ingenuo_texto": {
+    "respuesta": "No. El proyecto no tiene una nota asociada; los monitores revisan las entregas hechas a tiempo y dan retroalimentación formativa. [1]",
+    "fuentes": [
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 2"
+    ],
+    "uso": {
+      "tokens_entrada": 1455,
+      "tokens_en_cache": 0,
+      "tokens_salida": 37,
+      "segundos": 1.46,
+      "segundos_busqueda": 0.165
+    },
+    "clase": "vigente",
+    "motivo": "Indica que el proyecto no tiene nota y que los monitores dan retroalimentación formativa, conforme al programa vigente."
+  },
+  "vig-04|rag_ingenuo_visual": {
+    "respuesta": "No, el proyecto no tiene una nota asociada; los monitores revisan las entregas hechas a tiempo y dan retroalimentación formativa. [2]",
+    "fuentes": [
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 2",
+      "2020-20_programa p. 3",
+      "2020-20_programa p. 2",
+      "2020-20_programa p. 4"
+    ],
+    "uso": {
+      "tokens_entrada": 1451,
+      "tokens_en_cache": 0,
+      "tokens_salida": 37,
+      "segundos": 1.08,
+      "segundos_busqueda": 0.058
+    },
+    "clase": "vigente",
+    "motivo": "Indica que el proyecto no tiene nota asociada y que los monitores dan retroalimentación formativa, de acuerdo con la versión vigente."
+  },
+  "vig-04|rag_con_etiquetas": {
+    "respuesta": "El proyecto de cada nivel no tiene una nota asociada; los monitores revisan las entregas hechas a tiempo y dan retroalimentación formativa. [2]",
+    "fuentes": [
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 2",
+      "2020-20_programa p. 3",
+      "2020-20_programa p. 2",
+      "2020-20_programa p. 4"
+    ],
+    "uso": {
+      "tokens_entrada": 1537,
+      "tokens_en_cache": 0,
+      "tokens_salida": 38,
+      "segundos": 1.36,
+      "segundos_busqueda": 0.061
+    },
+    "clase": "vigente",
+    "motivo": "Indica que el proyecto no tiene nota asociada y que recibe retroalimentación formativa, en concordancia con el programa vigente."
+  },
+  "vig-04|rag_filtro_vigente": {
+    "respuesta": "No. El proyecto de cada nivel no tiene una nota asociada; sirve para practicar y recibir retroalimentación formativa. [2]",
+    "fuentes": [
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 4",
+      "2026-20_programa p. 1"
+    ],
+    "uso": {
+      "tokens_entrada": 1486,
+      "tokens_en_cache": 0,
+      "tokens_salida": 32,
+      "segundos": 1.2,
+      "segundos_busqueda": 0.054
+    },
+    "clase": "vigente",
+    "motivo": "Afirma que el proyecto no tiene nota y que ofrece retroalimentación formativa, en concordancia con el programa vigente."
+  },
+  "vig-04|directo_dos_programas": {
+    "respuesta": "No. El proyecto de cada nivel no tiene una nota asociada; se revisa si se entrega a tiempo y se da retroalimentación formativa. [Programa del curso IP, p. 2]",
+    "fuentes": [],
+    "uso": {
+      "tokens_entrada": 8301,
+      "tokens_en_cache": 0,
+      "tokens_salida": 46,
+      "segundos": 1.19
+    },
+    "clase": "vigente",
+    "motivo": "Afirma que el proyecto no tiene nota asociada y que recibe retroalimentación formativa, en consonancia con la versión vigente."
+  },
+  "vig-05|rag_ingenuo_texto": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "fuentes": [
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 4",
+      "2026-20_n3_01_introduccion-al-modulo p. 4",
+      "2026-20_programa p. 3",
+      "2026-20_n1_08_ejercicios-de-funciones p. 12"
+    ],
+    "uso": {
+      "tokens_entrada": 984,
+      "tokens_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.87,
+      "segundos_busqueda": 0.099
+    },
+    "clase": "abstencion",
+    "motivo": "El asistente afirma que no hay información suficiente en las fuentes y no da una respuesta sobre las consecuencias."
+  },
+  "vig-05|rag_ingenuo_visual": {
+    "respuesta": "La nota del proyecto será cero, pero no la nota completa del nivel. No habrá acción disciplinaria adicional. Esta cláusula aplica una sola vez; si reincides, el profesor puede anular los niveles involucrados y tomar medidas disciplinarias [1].",
+    "fuentes": [
+      "2020-20_programa p. 4",
+      "2020-20_programa p. 4",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 3"
+    ],
+    "uso": {
+      "tokens_entrada": 1382,
+      "tokens_en_cache": 0,
+      "tokens_salida": 55,
+      "segundos": 1.39,
+      "segundos_busqueda": 0.061
+    },
+    "clase": "desactualizada",
+    "motivo": "Presenta como vigente la cláusula de arrepentimiento y descarta acciones disciplinarias, aunque el programa 2026-20 ya no contempla esa cláusula."
+  },
+  "vig-05|rag_con_etiquetas": {
+    "respuesta": "La versión vigente indica que, si entregas un proyecto que no es de tu autoría, el profesor puede asignarte un cero o remitir el caso al Comité Disciplinario; no menciona una excepción por avisar dentro de las 72 horas [3]. La versión anterior decía que, si lo informabas dentro de ese plazo, la nota del proyecto sería cero, pero no la nota completa del nivel ni habría acción disciplinaria adicional; esa cláusula aplicaba una sola vez [1].",
+    "fuentes": [
+      "2020-20_programa p. 4",
+      "2020-20_programa p. 4",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 3"
+    ],
+    "uso": {
+      "tokens_entrada": 1467,
+      "tokens_en_cache": 0,
+      "tokens_salida": 106,
+      "segundos": 1.82,
+      "segundos_busqueda": 0.058
+    },
+    "clase": "ambas_distinguiendo",
+    "motivo": "Distingue la regla vigente, sin excepción por avisar dentro de 72 horas, de la cláusula de arrepentimiento de la versión anterior."
+  },
+  "vig-05|rag_filtro_vigente": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "fuentes": [
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 2"
+    ],
+    "uso": {
+      "tokens_entrada": 1362,
+      "tokens_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.38,
+      "segundos_busqueda": 0.052
+    },
+    "clase": "abstencion",
+    "motivo": "El asistente afirma que no hay información suficiente en las fuentes y no responde qué ocurre."
+  },
+  "vig-05|directo_dos_programas": {
+    "respuesta": "El programa vigente indica que un proyecto debe ser de completa autoría del estudiante; entregar material ajeno puede resultar en nota cero o en remisión al Comité Disciplinario. No contempla una cláusula de arrepentimiento de 72 horas. [Programa del curso IP, p. 5]\n\nLa versión anterior sí decía que, si se avisaba al profesor dentro de las 72 horas, la nota del proyecto sería cero, pero no la nota completa del nivel, y no habría acción disciplinaria adicional; esa cláusula solo podía usarse una vez. [Programa del curso IP, p. 4]",
+    "fuentes": [],
+    "uso": {
+      "tokens_entrada": 8323,
+      "tokens_en_cache": 0,
+      "tokens_salida": 129,
+      "segundos": 1.97
+    },
+    "clase": "ambas_distinguiendo",
+    "motivo": "Distingue la norma vigente, sin cláusula de arrepentimiento y con posible cero o remisión al Comité Disciplinario, de la cláusula de 72 horas que solo aplicaba en la versión anterior."
+  },
+  "vig-06|rag_ingenuo_texto": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "fuentes": [
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 6",
+      "2026-20_n3_11_estructura-de-datos-compuestos p. 16"
+    ],
+    "uso": {
+      "tokens_entrada": 1407,
+      "tokens_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.21,
+      "segundos_busqueda": 0.163
+    },
+    "clase": "abstencion",
+    "motivo": "La respuesta afirma que no hay información suficiente en las fuentes y no indica ninguna plataforma."
+  },
+  "vig-06|rag_ingenuo_visual": {
+    "respuesta": "El material académico del curso, incluidas las presentaciones, está en Bloque Neón. [2]",
+    "fuentes": [
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 3",
+      "2020-20_programa p. 4"
+    ],
+    "uso": {
+      "tokens_entrada": 1408,
+      "tokens_en_cache": 0,
+      "tokens_salida": 26,
+      "segundos": 1.13,
+      "segundos_busqueda": 0.06
+    },
+    "clase": "vigente",
+    "motivo": "Indica que el material del curso está en Bloque Neón, la plataforma vigente, sin presentar Brightspace como actual."
+  },
+  "vig-06|rag_con_etiquetas": {
+    "respuesta": "El material académico del curso, incluidas las presentaciones, se encuentra en Bloque Neón. [2]",
+    "fuentes": [
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 3",
+      "2020-20_programa p. 4"
+    ],
+    "uso": {
+      "tokens_entrada": 1492,
+      "tokens_en_cache": 0,
+      "tokens_salida": 27,
+      "segundos": 1.13,
+      "segundos_busqueda": 0.05
+    },
+    "clase": "vigente",
+    "motivo": "Indica que el material del curso está en Bloque Neón, la plataforma vigente, sin presentar Brightspace como actual."
+  },
+  "vig-06|rag_filtro_vigente": {
+    "respuesta": "El material académico del curso, incluidas las presentaciones, está en Bloque Neón [2].",
+    "fuentes": [
+      "2026-20_programa p. 5",
+      "2026-20_programa p. 2",
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 3",
+      "2026-20_programa p. 2"
+    ],
+    "uso": {
+      "tokens_entrada": 1475,
+      "tokens_en_cache": 0,
+      "tokens_salida": 25,
+      "segundos": 1.19,
+      "segundos_busqueda": 0.054
+    },
+    "clase": "vigente",
+    "motivo": "Indica que el material del curso está en Bloque Neón, la plataforma vigente, y no presenta Brightspace como actual."
+  },
+  "vig-06|directo_dos_programas": {
+    "respuesta": "El material académico del curso, incluidas las presentaciones, está en Bloque Neón. [Programa del curso IP, p. 2]",
+    "fuentes": [],
+    "uso": {
+      "tokens_entrada": 8302,
+      "tokens_en_cache": 0,
+      "tokens_salida": 34,
+      "segundos": 1.22
+    },
+    "clase": "vigente",
+    "motivo": "Indica que el material del curso está en Bloque Neón, la plataforma de la versión vigente, sin presentar Brightspace como actual."
+  }
+}

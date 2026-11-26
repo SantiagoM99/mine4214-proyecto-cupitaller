@@ -45,7 +45,18 @@ data/oro/*
 # artifacts/: todo lo generado en ejecución (E1 y E2). No se versiona nada.
 # (El tablero de la E1 es un entregable: vive en docs/entregables/e1_tablero/.)
 # =============================================================================
-artifacts/
+artifacts/*
+# Excepción: la E2 versiona las figuras, tablas y resultados que el informe y el
+# póster citan, porque regenerar los resultados cuesta llamadas a OpenAI y el
+# agente no responde igual en otra corrida.
+!artifacts/entrega2/
+artifacts/entrega2/*
+!artifacts/entrega2/figuras/
+!artifacts/entrega2/poster/
+!artifacts/entrega2/tablas/
+!artifacts/entrega2/resultados/
+# Salidas de la E1 escritas en docs/ al ejecutar los cuadernos
+docs/artifacts/
 
 # =============================================================================
 # LaTeX: se versionan las fuentes (.tex), las imágenes y los PDF, no los
