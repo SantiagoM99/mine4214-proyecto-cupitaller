@@ -157,6 +157,24 @@ La unión de las dos fuentes produce hallazgos que ninguna da sola. Cuatro ejemp
 \item La capacidad no siguió a la demanda: 2.616 cupos tanto en 2025-20 como en 2026-10, con ocupación de 54 y 55\,\%. En 2026-10 la lista de espera se concentra en los miércoles: a las 14:00 hubo 8 solicitudes con 44 de 55 cupos reservados. Ningún documento del corpus fija una regla de cupos, así que la decisión de reasignarlos es de la coordinación y estos datos le dicen dónde.
 \end{itemize}
 
+\subsection{Requerimiento 3 · Preparar las tutorías del día (documentos, bodega y modelo local)}
+\label{sec:req3}
+
+\begin{table}[H]\small\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.2\textwidth}L}
+\toprule
+\textbf{Elemento} & \textbf{Definición} \\
+\midrule
+Decisión que apoya & Qué temas trabajar con cada estudiante que reservó una tutoría hoy, sin salirse del contenido autorizado. Ejemplo: «Tengo tutoría con Pepito. Según lo que ha escrito en sus encuestas y lo que el curso ya vio, ¿de qué hablamos?». \\
+Rol beneficiado & \textbf{Monitores de CupiTaller}, antes de su turno. Hoy llegan a la tutoría sin saber para qué viene el estudiante ni qué le costó en tutorías anteriores. \\
+Preguntas & ¿Para qué reservó? ¿Qué dijo en sus encuestas anteriores sobre el curso y la tutoría, y cómo calificó su comprensión del tema? ¿Qué presentaciones ya vio en el nivel en que va el curso? ¿Qué de lo que pide aún no se ha enseñado? \\
+Fuentes & Bodega (Silver): reservas del día, encuesta previa (propósito de la reserva) y las 5 encuestas de satisfacción anteriores del mismo estudiante. Documentos: catálogo de presentaciones vigentes por nivel y la colección visual, filtrada al nivel del curso. \\
+Por qué es híbrido & Ninguna fuente sola responde. La bodega sabe quién viene y qué escribió, pero no qué cubre cada nivel; los documentos saben qué cubre cada nivel, pero no quién viene. La restricción es incremental: un tema del Nivel 3 no se puede proponer a un estudiante de Nivel 2 aunque lo pida. \\
+Restricción de privacidad & Los comentarios de las encuestas son texto libre que nombra a estudiantes y tutores. No pueden salir de la Universidad, así que este requerimiento corre completo en un equipo local: embeddings e5, Postgres y un modelo abierto (sección~\ref{sec:abierto}). \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
 \section{Fase 2 · Prompting directo frente a RAG}
 
 \subsection{Los dos enfoques implementados}
@@ -194,7 +212,7 @@ La unión de las dos fuentes produce hallazgos que ninguna da sola. Cuatro ejemp
 
 \textbf{Enfoque 1, prompting directo} (\cod{src/entrega2/enfoques.py}, \cod{responder\_directo}). El prompt lleva los 45 documentos vigentes completos, página por página, cada uno con un encabezado que indica título, nivel, semestre y vigencia. Son 52.607 palabras y 103.160 tokens por consulta. Los documentos van antes de la pregunta y terminan en un punto de corte de caché, para que las consultas siguientes lean ese prefijo de la caché del proveedor.
 
-\textbf{Enfoque 2, RAG} (\cod{src/entrega2/indexar.py}, \cod{src/entrega2/base\_vectorial.py}, \cod{responder\_rag}). La base vectorial es Postgres 18 con pgvector, con el esquema del laboratorio del curso y dos cambios: el semestre, la vigencia y el nivel son columnas del documento, y cada fragmento pertenece a una colección. La unidad de chunking es la página, porque una diapositiva desarrolla una idea; solo se parten las páginas de más de 200 palabras, entre líneas para no romper el código. Los embeddings son de \cod{multilingual-e5-small} (384 dimensiones, se ejecuta en local) y la búsqueda usa distancia coseno sobre un índice HNSW. La consulta recupera los 5 fragmentos más parecidos y el modelo responde solo con ellos.
+\textbf{Enfoque 2, RAG} (\cod{src/entrega2/indexar.py}, \cod{src/entrega2/base\_vectorial.py}, \cod{responder\_rag}). La base vectorial es Postgres 18 con pgvector, con el esquema del laboratorio del curso y dos cambios: el semestre, la vigencia y el nivel son columnas del documento, y cada fragmento pertenece a una colección. La unidad de chunking es la página, porque una diapositiva desarrolla una idea; solo se parten las páginas de más de 200 palabras, entre líneas para no romper el código. La sección~\ref{sec:chunking} compara esta elección con otras nueve. Los embeddings son de \cod{multilingual-e5-small} (384 dimensiones, se ejecuta en local) y la búsqueda usa distancia coseno sobre un índice HNSW. La consulta recupera los 5 fragmentos más parecidos y el modelo responde solo con ellos.
 
 Los dos enfoques usan \cod{gpt-6-luna} sin razonamiento, como el laboratorio del curso, y las mismas instrucciones: responder solo con las fuentes, citar, y decir «No hay información suficiente en las fuentes» cuando no alcancen.
 
@@ -263,6 +281,69 @@ Costo por 1.000 consultas, caché caliente (USD) & 1,06 & 0,13 & 0,14 \\
 \textbf{La latencia es parecida.} La mediana fue 1,44 s para el prompting directo con caché (1,9 s sin caché) y 1,1 s para el RAG. La búsqueda vectorial tomó 0,03 s; casi todo el tiempo es la generación.
 
 \textbf{Límites de la medición.} Son 26 preguntas y una sola corrida por sistema: una pregunta equivale a 3,8 puntos porcentuales, y en la primera corrida el prompting directo se abstuvo en la pregunta de las librerías, que en la segunda acertó. Las preguntas las escribió el equipo conociendo el corpus. Los precios vienen de rastreadores de precios que citan la página oficial de OpenAI, consultados el 24 de noviembre de 2026.
+
+\subsection{Experimentos de fragmentación}
+\label{sec:chunking}
+
+Para saber si otra forma de partir los documentos mejora el RAG, comparamos diez variantes sobre las mismas transcripciones vigentes (\cod{src/entrega2/exp\_chunking.py}): la de producción (una página, partida si pasa de 200 palabras), la página partida por tokens del modelo de embeddings (450), ventanas fijas de 128, 256 y 512 tokens sin solape y con solape de 15 y 25\,\%, la página junto con la siguiente (solape de una página) y una variante semántica, de tamaño variable, que une páginas consecutivas mientras su similitud coseno sea al menos 0,85 y no pasen de 450 tokens.
+
+El banco de 26 preguntas es pequeño para medir recuperación, así que construimos un banco sintético (\cod{src/entrega2/exp\_preguntas\_sinteticas.py}): 200 páginas vigentes con al menos 25 palabras, elegidas al azar con semilla fija, y para cada una \cod{gpt-6-luna} escribió una pregunta que parafrasea la página sin copiar sus frases. La recuperación cuenta un acierto si algún fragmento de los 5 primeros contiene la página de origen. La búsqueda es exacta, en memoria, para que el índice no influya. La calidad de respuesta se midió con las 26 preguntas, generando con \cod{gpt-6-luna} y calificando con \cod{gpt-6-sol}. Comparamos cada variante con producción con la prueba exacta de McNemar sobre los pares de preguntas.
+
+\begin{table}[H]\small\renewcommand{\arraystretch}{1.12}\centering
+\begin{tabular}{lrrrrrr}
+\toprule
+\textbf{Variante} & \textbf{Fragm.} & \textbf{Trunc.} & \textbf{Tokens top 5} & \textbf{R@5 sint.} & \textbf{R@1 sint.} & \textbf{Correctas} \\
+\midrule
+Página, 200 palabras (producción) & 604 & 12 & 927 & 78,5 & 51,0 & 22 \\
+Página, 450 tokens & 614 & 0 & 900 & 79,0 & 52,0 & 22 \\
+Fija 128 & 825 & 0 & 629 & 78,5 & 53,0 & 20 \\
+Fija 256 & 424 & 0 & 1.229 & 82,0 & 43,5 & 22 \\
+Fija 512 & 236 & 0 & 2.207 & 82,5 & 51,5 & 21 \\
+Fija 128, solape 25\,\% & 1.075 & 0 & 633 & 78,5 & 51,5 & 23 \\
+Fija 256, solape 15\,\% & 489 & 0 & 1.238 & 81,0 & 46,5 & 21 \\
+Fija 256, solape 25\,\% & 542 & 0 & 1.250 & 81,5 & 51,5 & 23 \\
+Página con la siguiente & 576 & 92 & 1.761 & 82,0 & 54,5 & 24 \\
+Semántica, tamaño variable & 362 & 0 & 1.504 & 79,5 & 50,5 & 22 \\
+\bottomrule
+\end{tabular}
+\caption{Variantes de fragmentación. «Trunc.»: fragmentos de más de 512 tokens, que e5 corta al calcular el embedding. R@5 y R@1: porcentaje de las 200 preguntas sintéticas con la página de origen entre los 5 primeros fragmentos o en el primero. «Correctas»: de las 26 preguntas del banco manual.}
+\label{tab:chunking}
+\end{table}
+
+\textbf{Ninguna variante supera a producción de forma significativa.} En recuperación la mejor (ventana fija de 512 tokens) gana 4 puntos, con $p = 0{,}29$; ninguna diferencia baja de $p = 0{,}21$. En respuestas, la mejor (página con la siguiente) acierta 24 contra 22, con $p = 0{,}5$. Las diferencias de respuesta son del tamaño del ruido: repetimos la generación y la calificación tres veces para cuatro variantes (\cod{src/entrega2/exp\_chunking\_ruido.py}) y producción sacó 23, 24 y 23 correctas, la de 450 tokens 24, 23 y 22, la fija de 256 con solape 23, 24 y 23, y la de página con la siguiente 24, 24 y 23. Una o dos preguntas de diferencia entre variantes no distinguen nada.
+
+\textbf{El solape y los fragmentos grandes cuestan contexto.} Las variantes que más recuperan son las que dan más texto al modelo: 512 tokens y página con la siguiente envían 1,9 a 2,4 veces los tokens de producción. Además, la de página con la siguiente deja 92 fragmentos por encima del límite de 512 tokens de e5, que el modelo de embeddings corta sin aviso. Las ventanas fijas cortan diapositivas a la mitad: la de 256 tokens pierde 7,5 puntos en R@1 frente a producción.
+
+\textbf{Recomendación.} Mantener la página como unidad y partirla por tokens del modelo de embeddings (450) en lugar de por palabras. Rinde lo mismo, envía el mismo contexto y elimina los 12 fragmentos que hoy se truncan. El banco manual no discrimina: sus 22 preguntas con página de origen aciertan entre 95 y 100\,\% en todas las variantes.
+
+\subsection{Latencia con y sin índice}
+\label{sec:indices}
+
+El corpus tiene 753 fragmentos; con tan pocos, el índice no importa. Para ver cuándo importa medimos la búsqueda de los 5 vecinos en Postgres con pgvector 0.8 sobre conjuntos de 10 mil, 100 mil y 1 millón de vectores (\cod{src/entrega2/exp\_indices.py}). Los conjuntos grandes repiten los vectores reales con ruido gaussiano, para conservar su distribución. Cada configuración responde 200 consultas; el recall@5 es la fracción de los 5 vecinos exactos que devuelve.
+
+\begin{table}[H]\small\renewcommand{\arraystretch}{1.12}\centering
+\begin{tabular}{lrrrrrrrr}
+\toprule
+& \multicolumn{2}{c}{\textbf{753}} & \multicolumn{2}{c}{\textbf{10 mil}} & \multicolumn{2}{c}{\textbf{100 mil}} & \multicolumn{2}{c}{\textbf{1 millón}} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+\textbf{Configuración} & ms & recall & ms & recall & ms & recall & ms & recall \\
+\midrule
+Sin índice (exacta) & 0,63 & 1,00 & 7,3 & 1,00 & 32,3 & 1,00 & 286 & 1,00 \\
+HNSW, ef\_search 40 & 0,39 & 1,00 & 0,94 & 0,99 & 1,33 & 0,99 & 1,37 & 0,97 \\
+HNSW, ef\_search 100 & 0,57 & 1,00 & 1,95 & 1,00 & 2,86 & 1,00 & 3,28 & 0,99 \\
+IVFFlat, 1 sonda & 0,13 & 0,71 & 0,34 & 0,65 & 1,31 & 0,41 & 2,89 & 0,22 \\
+IVFFlat, $\sqrt{\mathrm{listas}}$ sondas & 0,24 & 0,93 & 1,92 & 0,94 & 11,4 & 0,97 & 57,1 & 1,00 \\
+HNSW sobre halfvec (16 bits) & 0,40 & 1,00 & 0,95 & 0,99 & 1,23 & 0,99 & 1,57 & 0,97 \\
+HNSW binario + re-ranqueo de 40 & 0,22 & 0,47 & 0,32 & 0,47 & 0,38 & 0,47 & 0,85 & 0,47 \\
+\bottomrule
+\end{tabular}
+\caption{Latencia mediana de la búsqueda (ms) y recall@5 por tamaño de la colección. HNSW con $m = 16$ y ef\_construction 64; IVFFlat con $\sqrt{n}$ listas.}
+\label{tab:indices}
+\end{table}
+
+\textbf{Sin índice, la latencia crece con la colección; con HNSW casi no.} La búsqueda exacta pasa de 0,6 ms a 286 ms al llegar al millón de vectores; HNSW se queda entre 0,4 y 1,4 ms y recupera el 97\,\% de los vecinos exactos. A la escala actual las dos son irrelevantes frente a los 1,1 s de generación. Con un millón de vectores (unos 1.300 corpus como el de hoy) la búsqueda exacta ya suma 0,3 s por consulta.
+
+\textbf{HNSW es la opción por defecto.} Subir ef\_search a 100 lleva el recall a 0,99 por 3,3 ms. IVFFlat con una sonda es rápido pero pierde la mayoría de los vecinos en colecciones grandes (recall 0,22 con un millón), y con suficientes sondas para recuperarlos tarda 57 ms. HNSW sobre \cod{halfvec} da el mismo recall con un índice 43\,\% más pequeño (1,1 GB frente a 1,95 GB con un millón), útil si la memoria limita. La cuantización binaria con re-ranqueo de 40 candidatos no sirve con e5-small: recupera menos de la mitad de los vecinos en todos los tamaños. El costo de HNSW está en la construcción: 183 s y 1,95 GB para el millón de vectores.
 
 \subsection{Matriz comparativa}
 
@@ -459,6 +540,64 @@ El material vigente de nivel 3 incluye \textbf{Recorrido de diccionarios} como t
 
 La respuesta acierta una de las dos clases del nivel 3 sin versión en la tabla~\ref{tab:versiones}, el recorrido de diccionarios, y omite la otra: «Más sobre strings». Al buscar strings en 2021-10 recuperó páginas de Diccionarios, Instrucciones cíclicas y Listas, no la de Cadenas, y no volvió a la clase. No tomó por nuevas «Uso del centinela» ni «Estructura de datos compuestos», que tienen títulos nuevos pero contenido que ya estaba en 2021-10. Llama «nuevo» al tema, una palabra que este informe evita porque el material de 2021-10 está incompleto; el propio agente lo advierte en la misma respuesta. Tiene dos defectos de cita: atribuye la lista de títulos a «[Diccionarios, 2021-10, p. 2]», cuando vino del catálogo, y no indica la página de la clase vigente. El agente se ajustó sobre este mismo caso, así que su resultado sobreestima el desempeño en preguntas parecidas; repetir la pregunta para los niveles 1, 2 y 4 es la prueba que falta.
 
+\subsection{Un modelo abierto en local}
+\label{sec:abierto}
+
+El Requerimiento 3 lee comentarios de encuestas, que no pueden ir a un modelo externo. Para saber qué se pierde al cambiar de modelo, probamos un modelo abierto en las tres tareas del proyecto: generar respuestas RAG, calificar respuestas y operar el agente (\cod{src/entrega2/exp\_modelo\_abierto.py}). El modelo es Qwen3-30B-A3B (licencia Apache 2.0; 30.500 millones de parámetros, de los que 3.300 millones se activan por token), cuantizado a 4 bits (18 GB), servido con Ollama en un portátil Apple M5 de 32 GB. Ollama expone la misma API que usa el proyecto, así que el código solo cambia la URL y el nombre del modelo. Probamos dos variantes: \emph{instruct}, que responde directo, y \emph{razonador}, que piensa antes de responder y no permite desactivarlo.
+
+\begin{table}[H]\small\renewcommand{\arraystretch}{1.12}\centering
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Generador RAG (26 preguntas)} & \textbf{gpt-6-luna} & \textbf{Qwen3 instruct} & \textbf{Qwen3 razonador} \\
+\midrule
+Correctas / parciales / incorrectas & 23 / 1 / 2 & 18 / 4 / 4 & 23 / 3 / 0 \\
+Respuestas con un hecho inventado & 0 & 3 & 1 \\
+Tokens de salida por respuesta & 38 & 58 & 624 \\
+Latencia mediana / máxima (s) & 1,1 / 1,8 & 9,5 / 29,9 & 27,7 / 59,6 \\
+\midrule
+\textbf{Agente (8 casos; rúbrica de 0 a 16)} & & & \\
+\midrule
+Fundamentada / responde / cita & 11 / 14 / 10 & 1 / 11 / 6 & 2 / 9 / 8 \\
+Pasos promedio & 3,8 & 2,4 & 1,8 \\
+Tiempo mediano por caso (s) & 7,4 & 34 & 200 \\
+\bottomrule
+\end{tabular}
+\caption{Modelo abierto local frente a \cod{gpt-6-luna}. RAG visual con los mismos 5 fragmentos e instrucciones; calificó \cod{gpt-6-sol}. En el agente, \cod{gpt-6-sol} puntuó cada respuesta de 0 a 2 en tres criterios contra las salidas de las herramientas.}
+\label{tab:abierto}
+\end{table}
+
+\textbf{Como generador RAG, el razonador iguala a \cod{gpt-6-luna} en aciertos, pero es 25 veces más lento.} Acertó 23 de 26 y no tuvo incorrectas; inventó un hecho en una respuesta. El instruct es más rápido y peor: 18 correctas y 3 respuestas con hechos inventados. Dos son preguntas que el corpus no responde: en lugar de abstenerse, afirmó un límite de una tutoría por semana que ningún documento fija y atribuyó al curso una definición que no está documentada. La tercera presentó las mayúsculas como parte de la convención de nombres del curso, que pide minúsculas. Para una tarea por lotes, como preparar tutorías la noche anterior, 28 s por respuesta son aceptables; para un monitor esperando en la tutoría, no.
+
+\textbf{Como juez, el instruct sustituye a \cod{gpt-6-sol}.} Volvió a calificar las 52 respuestas del RAG de texto y del RAG visual y coincidió en 51 (98,1\,\%, kappa de Cohen 0,94). La única diferencia: una respuesta que \cod{gpt-6-sol} calificó parcial y Qwen correcta. La mediana fue 5,9 s por calificación.
+
+\textbf{Como agente, ninguna variante sirve.} Las dos usan menos herramientas que \cod{gpt-6-luna} (2,4 y 1,8 pasos frente a 3,8) y responden con cifras que no aparecen en las salidas de las herramientas: 1 y 2 de 16 en fundamentación frente a 11. En el caso 1, el instruct respondió sin llamar a ninguna herramienta. La rúbrica tiene un sesgo que afecta a los tres modelos por igual: el juez ve las salidas de las herramientas cortadas a 3.000 caracteres, de modo que una cifra que sí salió de la bodega puede parecer inventada. Ese sesgo no explica una diferencia de 11 a 1.
+
+\textbf{Conclusión.} Un modelo abierto de 30.000 millones de parámetros, en un portátil, alcanza para generar sobre fragmentos recuperados y para calificar, si se acepta la latencia; no alcanza para decidir qué herramienta usar y escribir el SQL. Esto define la arquitectura del Requerimiento 3: el código decide qué datos reunir y el modelo local solo redacta sobre ellos.
+
+\subsection{Requerimiento 3: las tutorías del día con el modelo local}
+\label{sec:tutorias}
+
+\cod{src/entrega2/tutorias\_del\_dia.py} prepara todas las tutorías de IP de una fecha. El monitor indica la fecha y el nivel en que va el curso. Para cada estudiante con reserva atendida ese día, el script:
+
+\begin{enumerate}[leftmargin=1.8em,itemsep=2pt]
+\item lee de la bodega Silver el propósito de la reserva (encuesta previa) y las 5 encuestas de satisfacción anteriores del mismo estudiante: en qué usó la tutoría, cómo calificó su comprensión del tema y sus comentarios sobre el curso, el tutor y las sugerencias;
+\item lista del catálogo las presentaciones vigentes de los niveles 1 hasta el actual;
+\item busca en la colección visual con el propósito y los comentarios como consulta, y conserva los 5 primeros fragmentos de nivel menor o igual al actual;
+\item pide al modelo local de 1 a 3 temas, cada uno con el título exacto de una presentación permitida, su nivel y el motivo tomado de lo que escribió el estudiante; lo que el estudiante pida y el curso aún no haya visto va aparte, en \cod{fuera\_de\_nivel}, con una pregunta para abrir la tutoría. La salida tiene un esquema JSON fijo;
+\item comprueba en código que cada título propuesto esté en el catálogo permitido.
+\end{enumerate}
+
+Los estudiantes se identifican con un seudónimo («Estudiante 3»). La salida con datos reales se escribe en una carpeta que no se versiona, y por consola solo salen métricas agregadas. Las decisiones que pueden fallar sin ser visibles (qué datos leer, qué fragmentos están en el nivel, qué títulos están permitidos) las toma el código; el modelo solo redacta, que es lo que la sección~\ref{sec:abierto} mostró que hace bien.
+
+\textbf{Ejemplo con un estudiante ficticio.} Pepito reservó para «desarrollar un ejercicio en Senecode». En encuestas anteriores escribió que se confunde «cuando hay varios if seguidos y no sé cuándo usar elif», que el tutor le mostró «un ciclo for para contar letras» y no lo entendió, y pidió «más ejercicios de contar cosas dentro de un texto». Con el curso en el Nivel 2, el modelo propuso tres temas del Nivel 2: condicionales en cascada (\cod{if}, \cod{elif}, \cod{else}), contar ocurrencias con diccionarios (la clase de ejercicio «Ocurrencias de cada dígito en un número usando diccionarios») y diccionarios para agrupar elementos. No propuso el ciclo \cod{for}, que es del Nivel 3, pero tampoco lo anotó en \cod{fuera\_de\_nivel}: cumplió la mitad de la regla. Tardó 75 s, incluida la carga del modelo en memoria.
+
+\textbf{Un día real.} El 9 de febrero de 2026, con el curso en el Nivel 1, hubo 37 estudiantes con tutoría de IP. 14 tenían encuestas anteriores y 16 no llenaron la encuesta previa, así que para ellos el modelo solo contó con el temario del nivel. El modelo propuso 94 temas; 90 tienen el título exacto de una presentación permitida y 4 usan títulos inventados, como «Análisis» o «Diseño», que la comprobación del paso 5 marca. Ningún estudiante quedó con temas fuera de nivel. La mediana fue 25 s por estudiante y el día completo tomó 18 minutos, que se pueden correr la noche anterior. No revisamos el contenido de las 37 propuestas: contienen los comentarios de los estudiantes, y leerlos para evaluar exigiría el mismo cuidado que el resto del flujo. Una revisión por un monitor sobre una muestra es la evaluación que falta.
+
+\subsection{Trabajo futuro: Senecode}
+\label{sec:senecode}
+
+En la encuesta previa de IP, 6.132 de 23.437 reservas (26\,\%) declaran que el tiempo se usará para «desarrollar un ejercicio en Senecode», el segundo propósito después de resolver un problema del proyecto (11.014, 47\,\%). El programa vigente describe Senecode, la herramienta de la Universidad con «más de 200 ejercicios» en cuatro dificultades (básica, intermedia, avanzada y extrema). Hoy el sistema sabe que Pepito viene a hacer un ejercicio de Senecode, pero no cuál ni qué exige. Con el enunciado de cada ejercicio y el nivel al que pertenece, el Requerimiento 3 podría anticipar los temas que la tarea requiere, contrastarlos con lo que el estudiante dice que le cuesta y advertir al monitor si el ejercicio pide algo de un nivel que el curso aún no cubre. Requiere tres cosas: acceso a los enunciados, una etiqueta de nivel y tema por ejercicio, y que la reserva registre el ejercicio que trae el estudiante.
+
 \subsection{Limitaciones}
 
 \begin{itemize}[leftmargin=1.5em,itemsep=2pt]
@@ -466,6 +605,9 @@ La respuesta acierta una de las dos clases del nivel 3 sin versión en la tabla~
 \item Las etiquetas de semestre de los documentos históricos se infieren de la fecha del archivo. 
 \item Los ocho casos del agente son una demostración, no una medición de exactitud. Cada caso se revisó contra la bodega o, el caso 8, contra la correspondencia de la tabla~\ref{tab:versiones}.
 \item El agente depende de un modelo externo. Lo que lee, páginas del curso y resultados agregados, sale de la Universidad; por eso la copia de la bodega no tiene texto libre ni nombres.
+\item Ni la bodega ni el programa dicen en qué nivel va el curso cada semana, así que el monitor lo indica al preparar las tutorías. Con el cronograma del semestre en el corpus, el sistema lo deduciría de la fecha.
+\item El banco sintético de fragmentación lo escribió el mismo proveedor que genera las respuestas, y cada pregunta sale de una sola página: favorece las variantes de una página y no mide preguntas que reúnen varias.
+\item Los conjuntos de 10 mil a 1 millón de vectores son sintéticos, derivados de los reales con ruido. Miden la latencia y el recall del índice, no la calidad de búsqueda en un corpus real de ese tamaño.
 \end{itemize}
 
 \section{Fase 5 · Gestión del proyecto}
