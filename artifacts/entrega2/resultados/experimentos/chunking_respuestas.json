@@ -1,0 +1,3902 @@
+{
+  "prog-01|pagina_200_palabras (producción)": {
+    "respuesta": "El Nivel 2 corresponde al 20% de la nota final del curso. [1]",
+    "uso": {
+      "tokens_entrada": 1503,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 23,
+      "segundos": 3.49
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que el Nivel 2 representa el 20 % de la nota final."
+    }
+  },
+  "prog-02|pagina_200_palabras (producción)": {
+    "respuesta": "No podrá aprobar el curso. Si lo pierde por inasistencia, su nota final será el menor valor entre 2.5 y la nota real. [1]",
+    "uso": {
+      "tokens_entrada": 1423,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 38,
+      "segundos": 6.44
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye que no puede aprobar y que la nota final será el menor valor entre 2.5 y la nota real."
+    }
+  },
+  "prog-03|pagina_200_palabras (producción)": {
+    "respuesta": "No. Los tutores de CupiTaller no solucionan tareas, quices ni proyectos. [1]",
+    "uso": {
+      "tokens_entrada": 1176,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 27,
+      "segundos": 6.31
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Confirma que los tutores no solucionan tareas ni proyectos."
+    }
+  },
+  "prog-04|pagina_200_palabras (producción)": {
+    "respuesta": "*senecode* contiene más de 200 ejercicios, clasificados en cuatro dificultades: básica, intermedia, avanzada y extrema. [1]",
+    "uso": {
+      "tokens_entrada": 1267,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 33,
+      "segundos": 12.18
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica más de 200 ejercicios y las cuatro dificultades esperadas."
+    }
+  },
+  "prog-05|pagina_200_palabras (producción)": {
+    "respuesta": "El estudiante tiene cuatro (4) días hábiles desde la publicación de la nota para presentar el reclamo por escrito y debidamente sustentado. El profesor tiene cinco (5) días hábiles para resolverlo. [1]",
+    "uso": {
+      "tokens_entrada": 1531,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 52,
+      "segundos": 8.12
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente los cuatro días hábiles del estudiante y los cinco días hábiles del profesor."
+    }
+  },
+  "prog-06|pagina_200_palabras (producción)": {
+    "respuesta": "Se desarrolla durante el Nivel 1 y equivale al 1% de la nota del curso. Trata sobre el módulo «Uso Responsable de la IA Generativa: Lineamientos y Principios Éticos», del curso «Fundamentos del uso de IA generativa» de la Universidad de los Andes. [1]",
+    "uso": {
+      "tokens_entrada": 1471,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 67,
+      "segundos": 7.04
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Indica el Nivel 1, el 1 % y el tema del módulo, pero omite que pertenece a un curso de Coursera."
+    }
+  },
+  "prog-07|pagina_200_palabras (producción)": {
+    "respuesta": "A partir de la tercera semana de clases. [2]",
+    "uso": {
+      "tokens_entrada": 1181,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 16,
+      "segundos": 7.06
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Indica la tercera semana, pero omite que las invitaciones llegan por correo electrónico cada semana."
+    }
+  },
+  "texto-01|pagina_200_palabras (producción)": {
+    "respuesta": "El método `get` sirve para consultar el valor asociado a una llave y, si esta no existe, devolver un valor por defecto en lugar de producir un error [1][2]. Su sintaxis es: `diccionario.get(llave, valor si no existe)` [1].",
+    "uso": {
+      "tokens_entrada": 1391,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 61,
+      "segundos": 4.84
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Explica que get consulta una llave sin producir un error si no existe y da la sintaxis esperada."
+    }
+  },
+  "texto-02|pagina_200_palabras (producción)": {
+    "respuesta": "En Python se usa el guion bajo (`_`) para separar palabras, los identificadores se escriben en minúscula y se recomienda usar el alfabeto inglés. Los nombres de variables deben ser claros y evitar abreviaturas ambiguas; los de funciones deben indicar qué hace la función. [1]",
+    "uso": {
+      "tokens_entrada": 1634,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 67,
+      "segundos": 3.46
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye los tres estándares esperados y no los contradice."
+    }
+  },
+  "texto-03|pagina_200_palabras (producción)": {
+    "respuesta": "Se clona una lista usando el operador de corte, por ejemplo `b = a[:]`. Esto crea una copia independiente: ambas listas tienen el mismo contenido, pero no son la misma lista. Se hace para poder modificar una lista y conservar intacta la original. [1]",
+    "uso": {
+      "tokens_entrada": 1393,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 60,
+      "segundos": 1.55
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Explica cómo clonar la lista con un corte y que se hace para modificarla conservando la original."
+    }
+  },
+  "texto-04|pagina_200_palabras (producción)": {
+    "respuesta": "Las fuentes muestran estos patrones de recorrido:\n\n- **Recorrido total:** se usa cuando es necesario recorrer toda la lista, por ejemplo, para sumar todos sus valores u obtener el menor. [2]\n- **Recorrido parcial con centinela:** permite detener el recorrido al encontrar el elemento buscado; la condición `i < len(lista)` evita salir de los límites de la lista. [3]\n- **Recorrido parcial sin centinela:** también busca un elemento y se detiene al encontrarlo o al llegar al final de la lista. [5]\n- **Recorrido total con `for-in`:** recorre los elementos directamente, sin extraerlos mediante `[]`. [4]",
+    "uso": {
+      "tokens_entrada": 904,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 146,
+      "segundos": 2.12
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Distingue el recorrido total del parcial y explica cuándo se usa cada uno; los detalles adicionales no contradicen la respuesta esperada."
+    }
+  },
+  "texto-05|pagina_200_palabras (producción)": {
+    "respuesta": "El curso usa type-hints porque hacen que el código sea más legible y fácil de usar, y porque preparan a los estudiantes para utilizar otros lenguajes. [1]",
+    "uso": {
+      "tokens_entrada": 1217,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 41,
+      "segundos": 1.32
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye las dos razones esperadas: mejorar la legibilidad y facilidad de uso del código, y preparar para otros lenguajes."
+    }
+  },
+  "imagen-01|pagina_200_palabras (producción)": {
+    "respuesta": "Se incluye una coma final después del único elemento: `tupla = (5,)`. Sin la coma, `(5)` se interpreta como un entero. [1]",
+    "uso": {
+      "tokens_entrada": 1177,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 38,
+      "segundos": 1.38
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que se necesita una coma final y proporciona el ejemplo esperado."
+    }
+  },
+  "imagen-02|pagina_200_palabras (producción)": {
+    "respuesta": "Presenta librerías especializadas de gráficas y de procesamiento numérico [2].",
+    "uso": {
+      "tokens_entrada": 721,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 21,
+      "segundos": 2.11
+    },
+    "veredicto": {
+      "veredicto": "incorrecta",
+      "alucinacion": false,
+      "motivo": "No menciona ninguna de las cinco librerías esperadas; solo describe sus usos de forma general."
+    }
+  },
+  "imagen-03|pagina_200_palabras (producción)": {
+    "respuesta": "Se elimina «bananos» con la instrucción `del inventario[\"bananos\"]`. [1]",
+    "uso": {
+      "tokens_entrada": 1380,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 26,
+      "segundos": 1.61
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Identifica los bananos y la instrucción exacta para eliminarlos."
+    }
+  },
+  "imagen-04|pagina_200_palabras (producción)": {
+    "respuesta": "En el Nivel 4 se aprenderán tuplas, estructuras de datos compuestas, matrices de dos dimensiones y librerías especializadas para gráficas y procesamiento numérico. [1]",
+    "uso": {
+      "tokens_entrada": 813,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 41,
+      "segundos": 1.39
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye todos los temas esperados sin contradecirlos."
+    }
+  },
+  "imagen-05|pagina_200_palabras (producción)": {
+    "respuesta": "Devuelve `'esa fruta no existe en el inventario'`, el valor por defecto indicado en la consulta. [2]",
+    "uso": {
+      "tokens_entrada": 1603,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 29,
+      "segundos": 1.22
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que la consulta devuelve el valor por defecto esperado, lo que implica que no produce un error."
+    }
+  },
+  "imagen-06|pagina_200_palabras (producción)": {
+    "respuesta": "`esquina` queda con `(2, 3)`, `dimension` con `(7, 4)` y `color` con `'rojo'`. [1]",
+    "uso": {
+      "tokens_entrada": 1190,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 40,
+      "segundos": 1.37
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta asigna a cada variable el valor esperado."
+    }
+  },
+  "nivel-01|pagina_200_palabras (producción)": {
+    "respuesta": "Los diccionarios se introducen en el Nivel 2. [1]",
+    "uso": {
+      "tokens_entrada": 1040,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 20,
+      "segundos": 1.94
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que los diccionarios se introducen en el Nivel 2."
+    }
+  },
+  "nivel-02|pagina_200_palabras (producción)": {
+    "respuesta": "Las listas se introducen en el Nivel 3 del curso. [1]",
+    "uso": {
+      "tokens_entrada": 1317,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 20,
+      "segundos": 1.51
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta indica correctamente que las listas se introducen en el Nivel 3."
+    }
+  },
+  "nivel-03|pagina_200_palabras (producción)": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 715,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.94
+    },
+    "veredicto": {
+      "veredicto": "incorrecta",
+      "alucinacion": false,
+      "motivo": "Las fuentes sí permiten responder: while y for se enseñan en el Nivel 3, no en el Nivel 2."
+    }
+  },
+  "nivel-04|pagina_200_palabras (producción)": {
+    "respuesta": "Las tuplas y las matrices se ven en el nivel 4. [1][5]",
+    "uso": {
+      "tokens_entrada": 1005,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 23,
+      "segundos": 1.23
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que las tuplas y las matrices se ven en el nivel 4."
+    }
+  },
+  "nores-01|pagina_200_palabras (producción)": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1363,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.98
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta indica correctamente que las fuentes no proporcionan información suficiente para determinar la fecha."
+    }
+  },
+  "nores-02|pagina_200_palabras (producción)": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1233,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.09
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que las fuentes no proporcionan información suficiente para determinar un máximo semanal de tutorías."
+    }
+  },
+  "nores-03|pagina_200_palabras (producción)": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1503,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.16
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La pregunta no es respondible con los documentos y el asistente indica que no hay información suficiente."
+    }
+  },
+  "nores-04|pagina_200_palabras (producción)": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1481,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 2.14
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "El asistente indica correctamente que las fuentes no contienen información suficiente para identificar a quien coordina el curso."
+    }
+  },
+  "prog-01|pagina_450_tokens": {
+    "respuesta": "El Nivel 2 corresponde al 20% de la nota final del curso. [1]",
+    "uso": {
+      "tokens_entrada": 2257,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 23,
+      "segundos": 2.15
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que el Nivel 2 corresponde al 20 % de la nota final."
+    }
+  },
+  "prog-02|pagina_450_tokens": {
+    "respuesta": "No podrá aprobar el curso. Si lo pierde por inasistencia, la nota final será el menor valor entre 2.5 y su nota real. [1]",
+    "uso": {
+      "tokens_entrada": 2038,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 38,
+      "segundos": 1.37
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que no puede aprobar y que la nota final será el menor valor entre 2.5 y su nota real."
+    }
+  },
+  "prog-03|pagina_450_tokens": {
+    "respuesta": "No. Los tutores de CupiTaller no resuelven tareas ni proyectos [1].",
+    "uso": {
+      "tokens_entrada": 1858,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 24,
+      "segundos": 1.2
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta coincide con lo esperado: los tutores no resuelven tareas ni proyectos."
+    }
+  },
+  "prog-04|pagina_450_tokens": {
+    "respuesta": "senecode contiene más de 200 ejercicios, clasificados en cuatro dificultades: básica, intermedia, avanzada y extrema. [1]",
+    "uso": {
+      "tokens_entrada": 1590,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 31,
+      "segundos": 2.66
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica más de 200 ejercicios y las cuatro dificultades esperadas."
+    }
+  },
+  "prog-05|pagina_450_tokens": {
+    "respuesta": "El estudiante tiene cuatro días hábiles desde la publicación de la nota para presentar el reclamo por escrito y debidamente sustentado. El profesor tiene cinco días hábiles para resolverlo. [1]",
+    "uso": {
+      "tokens_entrada": 2018,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 46,
+      "segundos": 1.41
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente los cuatro días hábiles para reclamar desde la publicación de la nota y los cinco días hábiles del profesor para resolver."
+    }
+  },
+  "prog-06|pagina_450_tokens": {
+    "respuesta": "El Quiz de Ética se desarrolla durante el Nivel 1, vale el 1% de la nota del curso y trata sobre el módulo «Uso Responsable de la IA Generativa: Lineamientos y Principios Éticos» del curso «Fundamentos del uso de IA generativa». [1]",
+    "uso": {
+      "tokens_entrada": 1950,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 64,
+      "segundos": 1.48
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica el Nivel 1, el 1 % de la nota y el módulo de uso responsable de la IA generativa."
+    }
+  },
+  "prog-07|pagina_450_tokens": {
+    "respuesta": "A partir de la tercera semana de clases, los estudiantes reciben invitaciones semanales por correo electrónico para agendar tutorías en CupiTaller. [1]",
+    "uso": {
+      "tokens_entrada": 1842,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 37,
+      "segundos": 1.61
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica la tercera semana y que las invitaciones llegan semanalmente por correo electrónico."
+    }
+  },
+  "texto-01|pagina_450_tokens": {
+    "respuesta": "El método `get` sirve para consultar el valor asociado a una llave, incluso cuando no se sabe si existe. Si la llave no existe, devuelve el valor por defecto indicado en lugar de producir un error. [1][2]\n\nSu sintaxis es: `diccionario.get(llave, valor si no existe)` [1]",
+    "uso": {
+      "tokens_entrada": 1426,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 71,
+      "segundos": 1.34
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Explica que get consulta una llave sin provocar un error si no existe y presenta la sintaxis esperada."
+    }
+  },
+  "texto-02|pagina_450_tokens": {
+    "respuesta": "En Python, se usa `_` para separar palabras, se escriben los identificadores en minúscula y se recomienda usar el alfabeto inglés. Los nombres deben ser claros, evitar abreviaturas demasiado cortas y, en el caso de las funciones, indicar qué hacen. [1]",
+    "uso": {
+      "tokens_entrada": 1781,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 64,
+      "segundos": 1.51
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye los tres estándares esperados y no los contradice."
+    }
+  },
+  "texto-03|pagina_450_tokens": {
+    "respuesta": "Se clona una lista con el operador de corte, por ejemplo, `b = a[:]`. Así se obtiene una copia independiente: conserva el mismo contenido, pero no es la misma lista que la original. [1]",
+    "uso": {
+      "tokens_entrada": 1393,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 49,
+      "segundos": 1.36
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Explica cómo clonarla y que la copia es independiente, pero no indica que se hace para modificar una lista conservando la original."
+    }
+  },
+  "texto-04|pagina_450_tokens": {
+    "respuesta": "El curso enseña el **recorrido total**, que se usa cuando es necesario recorrer toda la lista (o cadena), por ejemplo para sumar todos sus valores o encontrar el menor; puede hacerse con `while`, `for-in range` o `for-in`. [2]\n\nTambién enseña el **recorrido parcial con centinela** y **sin centinela**. [3][5] Las fuentes muestran ambos como formas de buscar la posición de un elemento y advierten que siempre se debe comprobar que el índice esté dentro del tamaño de la lista. [3][5]",
+    "uso": {
+      "tokens_entrada": 904,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 122,
+      "segundos": 1.82
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Identifica ambos patrones y explica el recorrido total, pero no aclara que el parcial se detiene al cumplirse una condición sin recorrer necesariamente toda la lista."
+    }
+  },
+  "texto-05|pagina_450_tokens": {
+    "respuesta": "El curso usa *type-hints* porque hacen que el código sea más legible y fácil de usar, y preparan a los estudiantes para utilizar otros lenguajes. [1]",
+    "uso": {
+      "tokens_entrada": 1400,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 42,
+      "segundos": 1.16
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye ambas razones esperadas sin contradecirlas."
+    }
+  },
+  "imagen-01|pagina_450_tokens": {
+    "respuesta": "Para crear una tupla de un solo elemento, incluye una coma final, por ejemplo: `tupla = (5,)`. Sin la coma, Python lo interpreta como un valor simple entre paréntesis. [1]",
+    "uso": {
+      "tokens_entrada": 1177,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 49,
+      "segundos": 1.45
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica la coma final y ofrece el ejemplo esperado."
+    }
+  },
+  "imagen-02|pagina_450_tokens": {
+    "respuesta": "La introducción presenta librerías gráficas y de procesamiento numérico; también se abordan Matplotlib y Pandas [2][4][5].",
+    "uso": {
+      "tokens_entrada": 516,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 34,
+      "segundos": 1.25
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Menciona Matplotlib y Pandas, pero omite NumPy, SciPy y SymPy."
+    }
+  },
+  "imagen-03|pagina_450_tokens": {
+    "respuesta": "Se elimina **“bananos”** con la instrucción `del inventario[\"bananos\"]`. [1]",
+    "uso": {
+      "tokens_entrada": 1380,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 28,
+      "segundos": 1.16
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Identifica los bananos y la instrucción `del inventario[\"bananos\"]`."
+    }
+  },
+  "imagen-04|pagina_450_tokens": {
+    "respuesta": "En el Nivel 4 se aprenderán tuplas, estructuras de datos compuestas, matrices y librerías especializadas para gráficas y procesamiento numérico. [1]",
+    "uso": {
+      "tokens_entrada": 954,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 38,
+      "segundos": 1.19
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta incluye todos los temas esperados sin contradicciones."
+    }
+  },
+  "imagen-05|pagina_450_tokens": {
+    "respuesta": "Devuelve `'esa fruta no existe en el inventario'`, el valor por defecto indicado en la consulta. [2]",
+    "uso": {
+      "tokens_entrada": 1562,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 29,
+      "segundos": 1.61
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que la consulta devuelve el valor por defecto esperado, lo que implica que no produce un error."
+    }
+  },
+  "imagen-06|pagina_450_tokens": {
+    "respuesta": "`esquina` queda con `(2, 3)`, `dimension` con `(7, 4)` y `color` con `'rojo'`. [1]",
+    "uso": {
+      "tokens_entrada": 1190,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 40,
+      "segundos": 1.08
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Asigna a cada variable el valor esperado."
+    }
+  },
+  "nivel-01|pagina_450_tokens": {
+    "respuesta": "Los diccionarios se introducen en el nivel 2 del curso. [1]",
+    "uso": {
+      "tokens_entrada": 1040,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 22,
+      "segundos": 1.07
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que los diccionarios se introducen en el Nivel 2."
+    }
+  },
+  "nivel-02|pagina_450_tokens": {
+    "respuesta": "Las listas se introducen en el nivel 3 del curso. [1]",
+    "uso": {
+      "tokens_entrada": 1317,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 20,
+      "segundos": 1.15
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta indica correctamente que las listas se introducen en el Nivel 3."
+    }
+  },
+  "nivel-03|pagina_450_tokens": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 715,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.97
+    },
+    "veredicto": {
+      "veredicto": "incorrecta",
+      "alucinacion": false,
+      "motivo": "La respuesta se abstiene pese a que los documentos indican que while y for se enseñan en el Nivel 3."
+    }
+  },
+  "nivel-04|pagina_450_tokens": {
+    "respuesta": "Las tuplas y las matrices se ven en el Nivel 4. [1][5]",
+    "uso": {
+      "tokens_entrada": 1005,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 23,
+      "segundos": 1.36
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que las tuplas y las matrices se ven en el Nivel 4."
+    }
+  },
+  "nores-01|pagina_450_tokens": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1984,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.98
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "El asistente indica que las fuentes no ofrecen información suficiente para determinar la fecha."
+    }
+  },
+  "nores-02|pagina_450_tokens": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1855,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.89
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta indica que las fuentes no ofrecen información suficiente para fijar un máximo semanal."
+    }
+  },
+  "nores-03|pagina_450_tokens": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 2096,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.86
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta indica que las fuentes no ofrecen información suficiente para contestar."
+    }
+  },
+  "nores-04|pagina_450_tokens": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 2097,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.98
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "El asistente indica correctamente que las fuentes no proporcionan información suficiente para identificar a la persona coordinadora."
+    }
+  },
+  "prog-01|fija_128": {
+    "respuesta": "El Nivel 2 corresponde al 20% de la nota final. [1]",
+    "uso": {
+      "tokens_entrada": 1014,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 21,
+      "segundos": 1.2
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que el Nivel 2 corresponde al 20 % de la nota final."
+    }
+  },
+  "prog-02|fija_128": {
+    "respuesta": "No podrá aprobar el curso. [2]",
+    "uso": {
+      "tokens_entrada": 967,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 13,
+      "segundos": 1.09
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Indica que no podrá aprobar, pero omite que la nota final será el menor valor entre 2.5 y la nota real."
+    }
+  },
+  "prog-03|fija_128": {
+    "respuesta": "No. Los tutores no solucionan tareas ni proyectos. [1]",
+    "uso": {
+      "tokens_entrada": 937,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 19,
+      "segundos": 1.07
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta coincide con la esperada: los tutores no solucionan tareas ni proyectos."
+    }
+  },
+  "prog-04|fija_128": {
+    "respuesta": "*senecode* contiene más de 200 ejercicios, clasificados en cuatro dificultades: básica, intermedia, avanzada y una cuarta que no se especifica en las fuentes. [1]",
+    "uso": {
+      "tokens_entrada": 923,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 42,
+      "segundos": 1.36
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": true,
+      "motivo": "Acertó la cantidad y tres dificultades, pero omitió «extrema» y afirmó erróneamente que la cuarta no se especifica."
+    }
+  },
+  "prog-05|fija_128": {
+    "respuesta": "El estudiante tiene cuatro (4) días hábiles desde la publicación de la nota para presentar el reclamo por escrito y debidamente sustentado. El profesor tiene cinco (5) días hábiles para resolverlo. [1]",
+    "uso": {
+      "tokens_entrada": 963,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 52,
+      "segundos": 1.21
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente los cuatro días hábiles para el estudiante y los cinco días hábiles para el profesor."
+    }
+  },
+  "prog-06|fija_128": {
+    "respuesta": "El quiz de ética se realiza durante el Nivel 1, vale el 1 % de la nota del curso y trata sobre el módulo «Uso Responsable de la IA Generativa: Lineamientos y Principios Éticos» del curso «Fundamentos del uso de IA generativa» de la Universidad de los Andes, disponible en Coursera. [1]",
+    "uso": {
+      "tokens_entrada": 951,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 75,
+      "segundos": 1.28
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica el Nivel 1, el 1 % de la nota y el módulo de uso responsable de la IA generativa en el curso de Coursera de la Universidad."
+    }
+  },
+  "prog-07|fija_128": {
+    "respuesta": "A partir de la tercera semana de clases reciben invitaciones semanales para agendar tutorías en CupiTaller. [1][2]",
+    "uso": {
+      "tokens_entrada": 947,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 33,
+      "segundos": 1.17
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Indica que las invitaciones empiezan en la tercera semana y son semanales, pero omite que llegan por correo electrónico."
+    }
+  },
+  "texto-01|fija_128": {
+    "respuesta": "El método `get` sirve para consultar el valor asociado a una llave sin provocar un error si esta no existe: en ese caso, devuelve el valor por defecto indicado. [1][5]\n\nSu sintaxis es: `diccionario.get(llave, valor si no existe)` [1]",
+    "uso": {
+      "tokens_entrada": 957,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 63,
+      "segundos": 1.5
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Explica que get consulta una llave sin generar error si no existe y presenta la sintaxis esperada."
+    }
+  },
+  "texto-02|fija_128": {
+    "respuesta": "En Python, se usa `_` para separar palabras y se escriben los identificadores en minúscula, usando el alfabeto inglés. Los nombres de variables deben ser claros y evitar abreviaciones ambiguas; los de funciones deben indicar lo que hacen, por ejemplo, `calcular_area_triangulo` [1].",
+    "uso": {
+      "tokens_entrada": 980,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 71,
+      "segundos": 1.38
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye los tres estándares esperados y no los contradice."
+    }
+  },
+  "texto-03|fija_128": {
+    "respuesta": "Se clona con el operador de corte (slice), por ejemplo, `b = a[:]`. Así se obtiene una copia independiente de la lista original: ambas tienen el mismo contenido, pero no son la misma lista. [1][2]",
+    "uso": {
+      "tokens_entrada": 1002,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 53,
+      "segundos": 1.32
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Explica cómo clonarla y que se conserva una copia independiente, pero omite que se hace para poder modificar una lista sin perder la original."
+    }
+  },
+  "texto-04|fija_128": {
+    "respuesta": "El curso enseña el **recorrido total**, que se usa cuando se necesita recorrer toda la lista, por ejemplo, para sumar sus valores. [1] También enseña el **recorrido parcial**, que se usa cuando no es necesario recorrerla completa y una condición determina si el ciclo continúa o se detiene, como al buscar un valor. [2]",
+    "uso": {
+      "tokens_entrada": 987,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 77,
+      "segundos": 1.54
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Identifica ambos patrones y explica correctamente cuándo se usa cada uno."
+    }
+  },
+  "texto-05|fija_128": {
+    "respuesta": "El curso usa *type-hints* porque hacen que el código sea más legible y fácil de usar, y preparan para utilizar otros lenguajes. [1]",
+    "uso": {
+      "tokens_entrada": 970,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 39,
+      "segundos": 1.34
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye ambos motivos esperados: mejorar la legibilidad y facilidad de uso del código, y preparar para otros lenguajes."
+    }
+  },
+  "imagen-01|fija_128": {
+    "respuesta": "Se crea poniendo una coma después del único elemento, por ejemplo: `tupla = (5,)`. Sin la coma, Python lo interpreta como un valor simple entre paréntesis. [1]",
+    "uso": {
+      "tokens_entrada": 1057,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 44,
+      "segundos": 1.09
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que se necesita una coma después del único elemento y da el ejemplo correcto."
+    }
+  },
+  "imagen-02|fija_128": {
+    "respuesta": "Presenta NumPy (mediante `ndarray`) y SciPy. [3]",
+    "uso": {
+      "tokens_entrada": 907,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 22,
+      "segundos": 1.09
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Menciona NumPy y SciPy, pero omite matplotlib, SymPy y pandas."
+    }
+  },
+  "imagen-03|fija_128": {
+    "respuesta": "Se elimina `\"bananos\"` con la instrucción `del inventario[\"bananos\"]`. [1]",
+    "uso": {
+      "tokens_entrada": 986,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 26,
+      "segundos": 1.31
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Identifica los bananos y la instrucción exacta para eliminarlos."
+    }
+  },
+  "imagen-04|fija_128": {
+    "respuesta": "En el Nivel 4 se aprenden tuplas y estructuras de datos compuestas, matrices de dos dimensiones y librerías especializadas para gráficas y procesamiento numérico. [1]",
+    "uso": {
+      "tokens_entrada": 936,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 41,
+      "segundos": 1.26
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye todos los temas esperados: tuplas, estructuras de datos compuestas, matrices y librerías especializadas para gráficas y procesamiento numérico."
+    }
+  },
+  "imagen-05|fija_128": {
+    "respuesta": "Devuelve el valor por defecto: `'esa fruta no existe en el inventario'`. [2]",
+    "uso": {
+      "tokens_entrada": 972,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 25,
+      "segundos": 1.11
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica el valor por defecto esperado, lo que implica que la consulta no produce un error."
+    }
+  },
+  "imagen-06|fija_128": {
+    "respuesta": "`esquina` queda en `(2, 3)`, `dimension` en `(7, 4)` y `color` en `'rojo'`. [2]",
+    "uso": {
+      "tokens_entrada": 1010,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 40,
+      "segundos": 1.2
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Asigna correctamente (2, 3) a esquina, (7, 4) a dimension y 'rojo' a color."
+    }
+  },
+  "nivel-01|fija_128": {
+    "respuesta": "Los diccionarios se introducen en el Nivel 2. [2]",
+    "uso": {
+      "tokens_entrada": 939,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 20,
+      "segundos": 1.18
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que los diccionarios se introducen en el Nivel 2."
+    }
+  },
+  "nivel-02|fija_128": {
+    "respuesta": "Las listas se introducen en el nivel 3 del curso. [1]",
+    "uso": {
+      "tokens_entrada": 1000,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 20,
+      "segundos": 1.52
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que las listas se introducen en el nivel 3."
+    }
+  },
+  "nivel-03|fija_128": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1038,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.96
+    },
+    "veredicto": {
+      "veredicto": "incorrecta",
+      "alucinacion": false,
+      "motivo": "Se abstiene aunque la respuesta esperada indica que while y for se enseñan en el Nivel 3."
+    }
+  },
+  "nivel-04|fija_128": {
+    "respuesta": "Las tuplas y las matrices se ven en el Nivel 4. [1]",
+    "uso": {
+      "tokens_entrada": 970,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 21,
+      "segundos": 1.16
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que las tuplas y las matrices se ven en el Nivel 4."
+    }
+  },
+  "nores-01|fija_128": {
+    "respuesta": "La fecha del examen de Nivel 2 está especificada en el cronograma del curso, disponible en Bloque Neón; las fuentes no indican la fecha concreta. [1]",
+    "uso": {
+      "tokens_entrada": 971,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 40,
+      "segundos": 1.25
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que las fuentes no dan la fecha concreta y remite al cronograma del curso."
+    }
+  },
+  "nores-02|fija_128": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 961,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.07
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que las fuentes no proporcionan información suficiente para establecer un máximo semanal de tutorías."
+    }
+  },
+  "nores-03|fija_128": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 939,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.87
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que las fuentes no ofrecen información suficiente para responder."
+    }
+  },
+  "nores-04|fija_128": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 960,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.92
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "El asistente indica correctamente que las fuentes no proporcionan información suficiente para identificar a la persona coordinadora."
+    }
+  },
+  "prog-01|fija_256": {
+    "respuesta": "El Nivel 2 corresponde al 20% de la nota final del curso. [1]",
+    "uso": {
+      "tokens_entrada": 1638,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 23,
+      "segundos": 1.35
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que el Nivel 2 representa el 20 % de la nota final."
+    }
+  },
+  "prog-02|fija_256": {
+    "respuesta": "No podrá aprobar el curso. Si pierde por inasistencia, su nota final será el menor valor entre 2.5 y su nota real. [1]",
+    "uso": {
+      "tokens_entrada": 1448,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 37,
+      "segundos": 1.33
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que no puede aprobar y que la nota final será el menor valor entre 2.5 y la nota real."
+    }
+  },
+  "prog-03|fija_256": {
+    "respuesta": "No. Los tutores no solucionan tareas, quices ni proyectos, ni explican soluciones ya desarrolladas. [1]",
+    "uso": {
+      "tokens_entrada": 1549,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 30,
+      "segundos": 1.58
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Responde que los tutores no solucionan tareas ni proyectos, sin contradecir la respuesta esperada."
+    }
+  },
+  "prog-04|fija_256": {
+    "respuesta": "*senecode* contiene más de 200 ejercicios, clasificados en cuatro dificultades: básica, intermedia, avanzada y extrema. [2]",
+    "uso": {
+      "tokens_entrada": 1577,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 33,
+      "segundos": 1.25
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta incluye la cantidad y las cuatro dificultades esperadas."
+    }
+  },
+  "prog-05|fija_256": {
+    "respuesta": "El estudiante tiene cuatro días hábiles desde la publicación de la nota para presentar el reclamo por escrito y debidamente sustentado. El profesor tiene cinco días hábiles para resolverlo. [1]",
+    "uso": {
+      "tokens_entrada": 1645,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 46,
+      "segundos": 1.31
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente los cuatro días hábiles del estudiante desde la publicación de la nota y los cinco días hábiles del profesor para resolver."
+    }
+  },
+  "prog-06|fija_256": {
+    "respuesta": "El quiz de ética se desarrolla durante el Nivel 1, equivale al 1% de la nota del curso y trata sobre el módulo «Uso Responsable de la IA Generativa: Lineamientos y Principios Éticos». [1]",
+    "uso": {
+      "tokens_entrada": 1422,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 52,
+      "segundos": 1.97
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Indica el nivel, el porcentaje y el tema, pero omite que el módulo pertenece al curso de Coursera de la Universidad."
+    }
+  },
+  "prog-07|fija_256": {
+    "respuesta": "A partir de la tercera semana de clases reciben invitaciones semanales para agendar tutorías en CupiTaller. [2]",
+    "uso": {
+      "tokens_entrada": 1559,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 31,
+      "segundos": 6.12
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Indica la tercera semana y la frecuencia semanal, pero omite que las invitaciones llegan por correo electrónico."
+    }
+  },
+  "texto-01|fija_256": {
+    "respuesta": "El método `get` sirve para consultar el valor de una llave sin provocar un error si esta no existe; en ese caso, devuelve el valor por defecto indicado. Su sintaxis es `diccionario.get(llave, valor si no existe)`. [1][2]",
+    "uso": {
+      "tokens_entrada": 1593,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 59,
+      "segundos": 2.97
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Explica que get consulta una llave sin generar un error si no existe y proporciona la sintaxis esperada."
+    }
+  },
+  "texto-02|fija_256": {
+    "respuesta": "En Python se recomienda usar nombres claros y descriptivos; separar palabras con `_`, escribir los identificadores en minúscula y usar el alfabeto inglés. Para las funciones, el nombre debe indicar qué hacen. [2]",
+    "uso": {
+      "tokens_entrada": 1626,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 50,
+      "segundos": 4.57
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye los tres estándares esperados: guion bajo, minúsculas y alfabeto inglés."
+    }
+  },
+  "texto-03|fija_256": {
+    "respuesta": "Se clona con el operador de corte (slice), por ejemplo: `b = a[:]`. Así se crea una copia independiente de la lista para poder modificarla sin alterar la original. [1]",
+    "uso": {
+      "tokens_entrada": 1639,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 45,
+      "segundos": 3.47
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Explica el uso de slice para copiar la lista y modificarla conservando la original."
+    }
+  },
+  "texto-04|fija_256": {
+    "respuesta": "El curso enseña dos patrones de recorrido:\n\n- **Recorrido total:** se usa cuando se necesita recorrer toda la lista, por ejemplo, para sumar sus valores u obtener el menor. Puede hacerse con `while`, `for-in range` o `for-in`. [1][4]\n- **Recorrido parcial:** se usa cuando no hace falta recorrer toda la lista y una condición determina si el ciclo continúa o se detiene; por ejemplo, para saber si hay algún valor positivo o buscar la posición de un valor. Puede hacerse con centinela o sin centinela. [2][5]",
+    "uso": {
+      "tokens_entrada": 1515,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 126,
+      "segundos": 3.43
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Identifica ambos patrones y explica correctamente cuándo se usa cada uno."
+    }
+  },
+  "texto-05|fija_256": {
+    "respuesta": "El curso usa *type-hints* porque hacen el código más legible y fácil de usar, y preparan para utilizar otros lenguajes. [1]",
+    "uso": {
+      "tokens_entrada": 1612,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 37,
+      "segundos": 3.11
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye ambas razones esperadas sin contradicciones."
+    }
+  },
+  "imagen-01|fija_256": {
+    "respuesta": "Se escribe el único elemento seguido de una coma dentro de paréntesis, por ejemplo: `tupla = (5,)`. Sin la coma, Python lo interpreta como un valor simple. [1]",
+    "uso": {
+      "tokens_entrada": 1754,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 45,
+      "segundos": 3.87
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Explica que se necesita una coma después del único elemento y da el ejemplo esperado."
+    }
+  },
+  "imagen-02|fija_256": {
+    "respuesta": "La introducción presenta NumPy y SciPy. [4]",
+    "uso": {
+      "tokens_entrada": 1306,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 17,
+      "segundos": 5.01
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Menciona NumPy y SciPy, pero omite matplotlib, SymPy y pandas."
+    }
+  },
+  "imagen-03|fija_256": {
+    "respuesta": "Se elimina «bananos» con la instrucción `del inventario[\"bananos\"]`. [2]",
+    "uso": {
+      "tokens_entrada": 1573,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 26,
+      "segundos": 1.63
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Identifica los bananos y la instrucción `del inventario[\"bananos\"]`."
+    }
+  },
+  "imagen-04|fija_256": {
+    "respuesta": "En el Nivel 4 se aprenderán tuplas para agrupar y organizar datos, estructuras de datos compuestas, matrices como contenedores de dos dimensiones y librerías especializadas de gráficas y procesamiento numérico. [1]",
+    "uso": {
+      "tokens_entrada": 1414,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 51,
+      "segundos": 1.61
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye todos los temas esperados sin contradicciones."
+    }
+  },
+  "imagen-05|fija_256": {
+    "respuesta": "Devuelve `'esa fruta no existe en el inventario'`, el valor por defecto indicado en la consulta. [1]",
+    "uso": {
+      "tokens_entrada": 1486,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 29,
+      "segundos": 1.3
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que devuelve el valor por defecto esperado, lo que implica que no se produce un error."
+    }
+  },
+  "imagen-06|fija_256": {
+    "respuesta": "`esquina` queda con `(2, 3)`, `dimension` con `(7, 4)` y `color` con `'rojo'`. [1]",
+    "uso": {
+      "tokens_entrada": 1704,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 40,
+      "segundos": 1.11
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta asigna a cada variable el valor esperado."
+    }
+  },
+  "nivel-01|fija_256": {
+    "respuesta": "Los diccionarios se introducen en el nivel 2 del curso [2].",
+    "uso": {
+      "tokens_entrada": 1433,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 21,
+      "segundos": 1.91
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que los diccionarios se introducen en el nivel 2."
+    }
+  },
+  "nivel-02|fija_256": {
+    "respuesta": "Las listas se introducen en el nivel 3 del curso [2].",
+    "uso": {
+      "tokens_entrada": 1567,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 19,
+      "segundos": 1.24
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta indica que las listas se introducen en el nivel 3, tal como se esperaba."
+    }
+  },
+  "nivel-03|fija_256": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1674,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.05
+    },
+    "veredicto": {
+      "veredicto": "incorrecta",
+      "alucinacion": false,
+      "motivo": "La respuesta se abstiene pese a que los documentos indican que while y for se enseñan en el Nivel 3."
+    }
+  },
+  "nivel-04|fija_256": {
+    "respuesta": "Las tuplas y las matrices se ven en el Nivel 4. [1] [2] [3]",
+    "uso": {
+      "tokens_entrada": 1594,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 27,
+      "segundos": 1.13
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que las tuplas y las matrices se ven en el Nivel 4."
+    }
+  },
+  "nores-01|fija_256": {
+    "respuesta": "El examen del Nivel 2 está en la fecha marcada como N2-EXAM en el cronograma del curso, disponible en Bloque Neón; las fuentes no indican la fecha concreta. [1]",
+    "uso": {
+      "tokens_entrada": 1596,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 46,
+      "segundos": 1.39
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": true,
+      "motivo": "Aclara que no consta la fecha concreta, pero añade detalles no respaldados sobre el cronograma y dónde consultarlo."
+    }
+  },
+  "nores-02|fija_256": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1472,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.88
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Reconoce que las fuentes no proporcionan información suficiente para establecer un máximo semanal de tutorías."
+    }
+  },
+  "nores-03|fija_256": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1559,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.96
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que las fuentes no ofrecen información suficiente, como corresponde a una pregunta no cubierta por los documentos."
+    }
+  },
+  "nores-04|fija_256": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1586,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.92
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que las fuentes no aportan información suficiente para identificar a la persona coordinadora."
+    }
+  },
+  "prog-01|fija_512": {
+    "respuesta": "El Nivel 2 corresponde al 20% de la nota final del curso. [2]",
+    "uso": {
+      "tokens_entrada": 2700,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 23,
+      "segundos": 1.3
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que el Nivel 2 corresponde al 20 % de la nota final."
+    }
+  },
+  "prog-02|fija_512": {
+    "respuesta": "No podrá aprobar el curso. Si lo pierde por inasistencia, su nota final será el menor valor entre 2.5 y su nota real. [1]",
+    "uso": {
+      "tokens_entrada": 2707,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 38,
+      "segundos": 1.25
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que no podrá aprobar y que la nota final será el menor valor entre 2.5 y la nota real."
+    }
+  },
+  "prog-03|fija_512": {
+    "respuesta": "No. Los tutores no solucionan tareas ni proyectos. [2]",
+    "uso": {
+      "tokens_entrada": 2634,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 19,
+      "segundos": 1.07
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta coincide con la esperada: los tutores no resuelven tareas ni proyectos."
+    }
+  },
+  "prog-04|fija_512": {
+    "respuesta": "*senecode* contiene más de 200 ejercicios, clasificados en cuatro dificultades: básica, intermedia, avanzada y extrema. [2]",
+    "uso": {
+      "tokens_entrada": 2248,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 33,
+      "segundos": 1.25
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye la cantidad de ejercicios y las cuatro dificultades esperadas."
+    }
+  },
+  "prog-05|fija_512": {
+    "respuesta": "El estudiante tiene cuatro días hábiles desde la publicación de la nota para presentar el reclamo; el profesor dispone de cinco días hábiles para resolverlo. [1]",
+    "uso": {
+      "tokens_entrada": 2697,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 40,
+      "segundos": 1.16
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente los cuatro días hábiles para reclamar y los cinco días hábiles para resolver."
+    }
+  },
+  "prog-06|fija_512": {
+    "respuesta": "El quiz de ética se realiza durante el Nivel 1, equivale al 1% de la nota del curso y trata sobre el módulo «Uso Responsable de la IA Generativa: Lineamientos y Principios Éticos» [1][2].",
+    "uso": {
+      "tokens_entrada": 2396,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 54,
+      "segundos": 1.27
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Indica correctamente el nivel, el valor y el tema, pero omite que el módulo pertenece al curso de Coursera de la Universidad."
+    }
+  },
+  "prog-07|fija_512": {
+    "respuesta": "A partir de la tercera semana de clases, reciben invitaciones semanales por correo electrónico para agendar tutorías en CupiTaller. [2]",
+    "uso": {
+      "tokens_entrada": 2696,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 35,
+      "segundos": 1.3
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que las invitaciones comienzan en la tercera semana y llegan semanalmente por correo electrónico."
+    }
+  },
+  "texto-01|fija_512": {
+    "respuesta": "El método `get` sirve para consultar el valor asociado a una llave sin generar un error si esta no existe: en ese caso, devuelve el valor por defecto. Su sintaxis es: `diccionario.get(llave, valor si no existe)`. [1][2]",
+    "uso": {
+      "tokens_entrada": 2569,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 60,
+      "segundos": 1.4
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Explica que get consulta una llave sin error si no existe e incluye la sintaxis esperada."
+    }
+  },
+  "texto-02|fija_512": {
+    "respuesta": "En Python, se usa `_` para separar palabras, los identificadores se escriben en minúscula y se recomienda el alfabeto inglés para evitar problemas de codificación. Además, los nombres de variables deben ser claros y evitarse los muy cortos; los de funciones deben indicar qué hace la función. [1]",
+    "uso": {
+      "tokens_entrada": 2637,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 70,
+      "segundos": 1.55
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye los tres estándares esperados; los consejos adicionales no los contradicen."
+    }
+  },
+  "texto-03|fija_512": {
+    "respuesta": "Se clona con el operador de corte (slice), por ejemplo `b = a[:]`. Así se obtiene una copia de la lista, no solo una referencia, para poder modificarla y conservar la original. [1]",
+    "uso": {
+      "tokens_entrada": 2366,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 49,
+      "segundos": 1.23
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Explica el uso de slice para copiar la lista y modificar la copia sin alterar la original."
+    }
+  },
+  "texto-04|fija_512": {
+    "respuesta": "El curso enseña el **recorrido total** y el **recorrido parcial**. El total se usa cuando es necesario recorrer toda la lista, por ejemplo, para sumar sus valores o buscar el menor; puede implementarse con `while`, `for-in range` o `for-in`. [1][3]\n\nEl parcial se usa cuando no hace falta recorrer toda la lista y una condición permite detener el ciclo, por ejemplo, al buscar la posición de un valor o verificar si algún valor es positivo. Se implementa con `while`, con o sin centinela; no se puede implementar con `for-in`, porque hay que interrumpir el recorrido al encontrar lo buscado. [3][4]",
+    "uso": {
+      "tokens_entrada": 2086,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 148,
+      "segundos": 1.89
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": true,
+      "motivo": "Identifica correctamente ambos recorridos y sus usos, pero afirma erróneamente que el recorrido parcial no puede implementarse con `for-in`."
+    }
+  },
+  "texto-05|fija_512": {
+    "respuesta": "El curso usa *type-hints* porque hacen que el código sea más legible y fácil de usar, y preparan al estudiante para algo que no se alcanza a especificar en la fuente. [2]",
+    "uso": {
+      "tokens_entrada": 2559,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 47,
+      "segundos": 1.26
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": true,
+      "motivo": "Menciona la legibilidad y facilidad de uso, pero omite la preparación para otros lenguajes y afirma erróneamente que ese propósito no se especifica."
+    }
+  },
+  "imagen-01|fija_512": {
+    "respuesta": "Se crea poniendo una coma después del elemento, por ejemplo: `tupla = (5,)`. [3]",
+    "uso": {
+      "tokens_entrada": 2949,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 27,
+      "segundos": 1.11
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que se necesita una coma después del único elemento y da el ejemplo esperado."
+    }
+  },
+  "imagen-02|fija_512": {
+    "respuesta": "La introducción a librerías del Nivel 4 presenta NumPy (ndarray), SciPy y matplotlib. [3]",
+    "uso": {
+      "tokens_entrada": 1959,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 29,
+      "segundos": 1.76
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Menciona NumPy, SciPy y matplotlib, pero omite SymPy y pandas."
+    }
+  },
+  "imagen-03|fija_512": {
+    "respuesta": "Se elimina «bananos» con la instrucción `del inventario[\"bananos\"]`. [1]",
+    "uso": {
+      "tokens_entrada": 2560,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 26,
+      "segundos": 1.03
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Identifica los bananos y la instrucción exacta para eliminarlos."
+    }
+  },
+  "imagen-04|fija_512": {
+    "respuesta": "En el Nivel 4 se aprenderán tuplas para agrupar y organizar datos, estructuras de datos compuestas, matrices como contenedores de dos dimensiones y librerías especializadas de gráficas y procesamiento numérico. [1]",
+    "uso": {
+      "tokens_entrada": 1864,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 51,
+      "segundos": 1.36
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye todos los temas esperados sin contradicciones."
+    }
+  },
+  "imagen-05|fija_512": {
+    "respuesta": "Devuelve `'esa fruta no existe en el inventario'`. [2]",
+    "uso": {
+      "tokens_entrada": 2459,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 20,
+      "segundos": 1.28
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que la consulta devuelve el mensaje esperado, lo que implica que no produce un error."
+    }
+  },
+  "imagen-06|fija_512": {
+    "respuesta": "`esquina` queda con `(2, 3)`, `dimension` con `(7, 4)` y `color` con `'rojo'`. [2]",
+    "uso": {
+      "tokens_entrada": 2744,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 40,
+      "segundos": 1.3
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta asigna correctamente (2, 3) a esquina, (7, 4) a dimension y 'rojo' a color."
+    }
+  },
+  "nivel-01|fija_512": {
+    "respuesta": "Los diccionarios se introducen en el nivel 2 del curso. [2]",
+    "uso": {
+      "tokens_entrada": 1904,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 22,
+      "segundos": 1.05
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que los diccionarios se introducen en el nivel 2."
+    }
+  },
+  "nivel-02|fija_512": {
+    "respuesta": "Las listas se introducen en el Nivel 3 [1].",
+    "uso": {
+      "tokens_entrada": 2709,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 17,
+      "segundos": 1.05
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta indica correctamente que las listas se introducen en el Nivel 3."
+    }
+  },
+  "nivel-03|fija_512": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 2756,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.99
+    },
+    "veredicto": {
+      "veredicto": "incorrecta",
+      "alucinacion": false,
+      "motivo": "Se abstiene pese a que los documentos indican que while y for se enseñan en el Nivel 3."
+    }
+  },
+  "nivel-04|fija_512": {
+    "respuesta": "Las tuplas y las matrices se ven en el Nivel 4. [1][2][3]",
+    "uso": {
+      "tokens_entrada": 2325,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 25,
+      "segundos": 1.15
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta indica correctamente que las tuplas y las matrices se ven en el Nivel 4."
+    }
+  },
+  "nores-01|fija_512": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 2444,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.07
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que las fuentes no ofrecen información suficiente para determinar la fecha."
+    }
+  },
+  "nores-02|fija_512": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 2692,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.29
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta indica que las fuentes no proporcionan información suficiente para determinar un máximo semanal."
+    }
+  },
+  "nores-03|fija_512": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 2257,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.99
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que las fuentes no contienen información suficiente para responder."
+    }
+  },
+  "nores-04|fija_512": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 2644,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.86
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que las fuentes no proporcionan información suficiente para identificar a la persona coordinadora."
+    }
+  },
+  "prog-01|fija_128_solape_25": {
+    "respuesta": "El Nivel 2 corresponde al 20% de la nota final del curso. [1]",
+    "uso": {
+      "tokens_entrada": 1000,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 23,
+      "segundos": 1.12
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que el Nivel 2 corresponde al 20 % de la nota final."
+    }
+  },
+  "prog-02|fija_128_solape_25": {
+    "respuesta": "No podrá aprobar el curso; si lo pierde por inasistencia, la nota final será el menor valor entre 2.5 y la nota real. [2]",
+    "uso": {
+      "tokens_entrada": 977,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 38,
+      "segundos": 1.48
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que no puede aprobar y que su nota final será el menor valor entre 2.5 y la nota real."
+    }
+  },
+  "prog-03|fija_128_solape_25": {
+    "respuesta": "No. Los tutores no solucionan tareas ni proyectos. [1]",
+    "uso": {
+      "tokens_entrada": 939,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 19,
+      "segundos": 0.97
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta coincide con la esperada: los tutores no resuelven tareas ni proyectos."
+    }
+  },
+  "prog-04|fija_128_solape_25": {
+    "respuesta": "*senecode* contiene más de 200 ejercicios, clasificados en cuatro dificultades: básica, intermedia, avanzada y extrema. [1]",
+    "uso": {
+      "tokens_entrada": 948,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 33,
+      "segundos": 1.04
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta incluye la cantidad de ejercicios y las cuatro dificultades esperadas."
+    }
+  },
+  "prog-05|fija_128_solape_25": {
+    "respuesta": "El estudiante tiene cuatro días hábiles desde la publicación de la nota para presentar el reclamo por escrito y sustentado; el profesor tiene cinco días hábiles para resolverlo. [1]",
+    "uso": {
+      "tokens_entrada": 993,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 44,
+      "segundos": 1.56
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente los cuatro días hábiles del estudiante y los cinco días hábiles del profesor."
+    }
+  },
+  "prog-06|fija_128_solape_25": {
+    "respuesta": "El quiz de ética se realiza en el Nivel 1, equivale al 1% de la nota del curso y trata sobre el módulo “Uso Responsable de la IA Generativa: Lineamientos y Principios Éticos”. [1][3]",
+    "uso": {
+      "tokens_entrada": 965,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 54,
+      "segundos": 1.61
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Indica correctamente el nivel, el porcentaje y el tema, pero omite que el módulo pertenece al curso de Coursera de la Universidad."
+    }
+  },
+  "prog-07|fija_128_solape_25": {
+    "respuesta": "Desde la tercera semana de clases, los estudiantes reciben invitaciones semanales por correo electrónico para agendar tutorías en CupiTaller. [1]",
+    "uso": {
+      "tokens_entrada": 972,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 35,
+      "segundos": 1.2
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta incluye la tercera semana de clases, el envío semanal y el correo electrónico."
+    }
+  },
+  "texto-01|fija_128_solape_25": {
+    "respuesta": "El método `get` sirve para consultar una llave sin asumir que existe: si existe, devuelve su valor; si no, permite indicar un valor alternativo. Su sintaxis es `diccionario.get(llave, valor si no existe)`. [2]",
+    "uso": {
+      "tokens_entrada": 961,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 56,
+      "segundos": 1.27
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Explica que get consulta una llave sin asumir que existe y proporciona la sintaxis esperada."
+    }
+  },
+  "texto-02|fija_128_solape_25": {
+    "respuesta": "En Python se separan las palabras con guion bajo (`_`), se escriben los identificadores en minúscula y se usa el alfabeto inglés [1]. Los nombres deben ser claros: para variables, indicar qué guardan; para funciones, qué hacen; y se recomienda evitar nombres muy cortos o ambiguos [2].",
+    "uso": {
+      "tokens_entrada": 994,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 74,
+      "segundos": 1.59
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye los tres estándares esperados y no los contradice."
+    }
+  },
+  "texto-03|fija_128_solape_25": {
+    "respuesta": "Se clona usando el operador de corte: `b = a[:]`. Así se crea una copia de la lista, con el mismo contenido pero sin compartir la misma lista de referencia; sirve para poder modificar una lista y mantener intacta la original. [1][2]",
+    "uso": {
+      "tokens_entrada": 1008,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 59,
+      "segundos": 1.84
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Explica que se clona con el operador de corte `b = a[:]` para modificar la copia sin alterar la lista original."
+    }
+  },
+  "texto-04|fija_128_solape_25": {
+    "respuesta": "El curso enseña dos patrones: el **recorrido total**, que se usa cuando se necesita recorrer toda la lista, y el **recorrido parcial**, que se usa cuando se puede detener el recorrido antes de llegar al final, según una condición evaluada en cada iteración. [1][2]",
+    "uso": {
+      "tokens_entrada": 970,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 65,
+      "segundos": 1.65
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Identifica ambos patrones y explica correctamente cuándo se usa cada uno."
+    }
+  },
+  "texto-05|fija_128_solape_25": {
+    "respuesta": "El curso usa *type-hints* porque hacen que el código sea más legible y fácil de usar, y preparan para utilizar otros lenguajes. [1]",
+    "uso": {
+      "tokens_entrada": 980,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 39,
+      "segundos": 4.37
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye ambos motivos esperados: mejorar la legibilidad y facilidad de uso del código, y preparar para otros lenguajes."
+    }
+  },
+  "imagen-01|fija_128_solape_25": {
+    "respuesta": "Se incluye una coma final después del único elemento, por ejemplo: `tupla = (5,)`. [1]",
+    "uso": {
+      "tokens_entrada": 1024,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 28,
+      "segundos": 1.24
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica la coma final y da el ejemplo esperado."
+    }
+  },
+  "imagen-02|fija_128_solape_25": {
+    "respuesta": "Presenta NumPy y SciPy. [3]",
+    "uso": {
+      "tokens_entrada": 908,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 15,
+      "segundos": 1.24
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Menciona NumPy y SciPy, pero omite matplotlib, SymPy y pandas."
+    }
+  },
+  "imagen-03|fija_128_solape_25": {
+    "respuesta": "Se elimina “bananos” con la instrucción `del inventario[\"bananos\"]`. [2]",
+    "uso": {
+      "tokens_entrada": 989,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 26,
+      "segundos": 1.33
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Identifica los bananos y la instrucción exacta para eliminarlos."
+    }
+  },
+  "imagen-04|fija_128_solape_25": {
+    "respuesta": "En el Nivel 4 se aprenderá a usar tuplas para organizar datos, estructuras de datos compuestas, matrices de dos dimensiones y librerías especializadas para gráficas y procesamiento numérico. [1]",
+    "uso": {
+      "tokens_entrada": 935,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 46,
+      "segundos": 1.37
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye todos los temas esperados sin contradecirlos."
+    }
+  },
+  "imagen-05|fija_128_solape_25": {
+    "respuesta": "Devuelve `'esa fruta no existe en el inventario'`. [3]",
+    "uso": {
+      "tokens_entrada": 966,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 20,
+      "segundos": 1.2
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que la consulta devuelve el mensaje esperado, sin señalar ningún error."
+    }
+  },
+  "imagen-06|fija_128_solape_25": {
+    "respuesta": "`esquina` queda con `(2, 3)`, `dimension` con `(7, 4)` y `color` con `'rojo'` [1].",
+    "uso": {
+      "tokens_entrada": 1010,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 40,
+      "segundos": 1.13
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Asigna a las tres variables los valores esperados."
+    }
+  },
+  "nivel-01|fija_128_solape_25": {
+    "respuesta": "Los diccionarios se introducen en el nivel 2 del curso. [3]",
+    "uso": {
+      "tokens_entrada": 912,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 22,
+      "segundos": 1.13
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que los diccionarios se introducen en el nivel 2."
+    }
+  },
+  "nivel-02|fija_128_solape_25": {
+    "respuesta": "Las listas se introducen en el nivel 3 del curso. [1]",
+    "uso": {
+      "tokens_entrada": 1036,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 20,
+      "segundos": 1.0
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que las listas se introducen en el Nivel 3."
+    }
+  },
+  "nivel-03|fija_128_solape_25": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1042,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.79
+    },
+    "veredicto": {
+      "veredicto": "incorrecta",
+      "alucinacion": false,
+      "motivo": "Se abstiene pese a que las fuentes indican que while y for se enseñan en el Nivel 3."
+    }
+  },
+  "nivel-04|fija_128_solape_25": {
+    "respuesta": "Las tuplas y las matrices se ven en el nivel 4 (N4). [1][2]",
+    "uso": {
+      "tokens_entrada": 1024,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 26,
+      "segundos": 1.1
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que las tuplas y las matrices se ven en el nivel 4."
+    }
+  },
+  "nores-01|fija_128_solape_25": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 963,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.1
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "El asistente indica correctamente que las fuentes no proporcionan información suficiente para determinar la fecha."
+    }
+  },
+  "nores-02|fija_128_solape_25": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 972,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.85
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta indica correctamente que las fuentes no permiten determinar un máximo semanal de tutorías."
+    }
+  },
+  "nores-03|fija_128_solape_25": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 946,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.06
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "El asistente indica correctamente que las fuentes no ofrecen información suficiente."
+    }
+  },
+  "nores-04|fija_128_solape_25": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 961,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.98
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "El asistente indica correctamente que las fuentes no ofrecen información suficiente para identificar a la persona coordinadora."
+    }
+  },
+  "prog-01|fija_256_solape_15": {
+    "respuesta": "El Nivel 2 corresponde al 20% de la nota final del curso. [1]",
+    "uso": {
+      "tokens_entrada": 1624,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 23,
+      "segundos": 1.18
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que el Nivel 2 representa el 20 % de la nota final."
+    }
+  },
+  "prog-02|fija_256_solape_15": {
+    "respuesta": "No podrá aprobar el curso por inasistencia. En ese caso, su nota final será el menor valor entre 2.5 y su nota real. [1]",
+    "uso": {
+      "tokens_entrada": 1602,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 38,
+      "segundos": 1.25
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que no puede aprobar y que su nota final será el menor valor entre 2.5 y la nota real."
+    }
+  },
+  "prog-03|fija_256_solape_15": {
+    "respuesta": "No. Los tutores no solucionan tareas ni proyectos. [2][3]",
+    "uso": {
+      "tokens_entrada": 1565,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 21,
+      "segundos": 1.43
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta coincide con la esperada: los tutores no solucionan tareas ni proyectos."
+    }
+  },
+  "prog-04|fija_256_solape_15": {
+    "respuesta": "senecode contiene más de 200 ejercicios, clasificados en cuatro dificultades: básica, intermedia, avanzada y extrema. [1]",
+    "uso": {
+      "tokens_entrada": 1584,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 31,
+      "segundos": 1.5
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica más de 200 ejercicios y las cuatro dificultades esperadas."
+    }
+  },
+  "prog-05|fija_256_solape_15": {
+    "respuesta": "El estudiante tiene cuatro días hábiles desde la publicación de la nota para presentar el reclamo por escrito y debidamente sustentado. El profesor tiene cinco días hábiles para resolverlo. [1]",
+    "uso": {
+      "tokens_entrada": 1655,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 46,
+      "segundos": 1.21
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente los cuatro días hábiles del estudiante desde la publicación de la nota y los cinco días hábiles del profesor para resolver."
+    }
+  },
+  "prog-06|fija_256_solape_15": {
+    "respuesta": "El quiz de ética se realiza durante el Nivel 1, vale el 1% de la nota del curso y trata sobre el módulo «Uso Responsable de la IA Generativa: Lineamientos y Principios Éticos». [1]",
+    "uso": {
+      "tokens_entrada": 1575,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 51,
+      "segundos": 1.31
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Indica el nivel, el valor y el tema, pero omite que el módulo pertenece al curso de Coursera de la Universidad."
+    }
+  },
+  "prog-07|fija_256_solape_15": {
+    "respuesta": "Desde la tercera semana de clases. [1]",
+    "uso": {
+      "tokens_entrada": 1557,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 14,
+      "segundos": 1.04
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Indica correctamente la tercera semana, pero omite que las invitaciones llegan por correo electrónico cada semana."
+    }
+  },
+  "texto-01|fija_256_solape_15": {
+    "respuesta": "El método `get` permite consultar un valor en un diccionario sin provocar un error si la llave no existe; en ese caso, devuelve el valor por defecto indicado. [2][3]\n\nSu sintaxis es: `diccionario.get(llave, valor si no existe)`. [2]",
+    "uso": {
+      "tokens_entrada": 1585,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 64,
+      "segundos": 1.27
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Explica que get consulta una llave sin error si no existe y da la sintaxis esperada."
+    }
+  },
+  "texto-02|fija_256_solape_15": {
+    "respuesta": "En Python, se separan las palabras con `_` y los identificadores se escriben en minúscula, usando el alfabeto inglés. Para las variables, se recomiendan nombres claros y no demasiado cortos; para las funciones, nombres que indiquen lo que hacen. [1]",
+    "uso": {
+      "tokens_entrada": 1610,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 65,
+      "segundos": 1.37
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye los tres estándares esperados: guion bajo, minúsculas y alfabeto inglés."
+    }
+  },
+  "texto-03|fija_256_solape_15": {
+    "respuesta": "Se clona con el operador de corte: `b = a[:]`. Así se obtiene una copia de la lista con el mismo contenido, pero que no referencia a la misma lista; sirve para modificar una lista y conservar la original. [1][2]",
+    "uso": {
+      "tokens_entrada": 1682,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 56,
+      "segundos": 1.38
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Explica el clonado mediante corte y que permite modificar la copia conservando la lista original."
+    }
+  },
+  "texto-04|fija_256_solape_15": {
+    "respuesta": "El curso enseña el **recorrido total**, que se usa cuando es necesario recorrer toda la lista, y el **recorrido parcial**, que se usa cuando no hace falta recorrerla completa y una condición permite detener el ciclo antes. [1][4]\n\nEl recorrido total puede implementarse con `while`, `for-in range` o `for-in`; el parcial se enseña con centinela o sin centinela, y requiere verificar una condición en cada iteración. [1][2][3][4]",
+    "uso": {
+      "tokens_entrada": 1588,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 110,
+      "segundos": 1.54
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Identifica ambos patrones de recorrido y explica correctamente cuándo se usa cada uno."
+    }
+  },
+  "texto-05|fija_256_solape_15": {
+    "respuesta": "El curso usa *type-hints* porque hacen que el código sea más legible y fácil de usar, y preparan para utilizar otros lenguajes. [1]",
+    "uso": {
+      "tokens_entrada": 1508,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 39,
+      "segundos": 1.22
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye ambas razones esperadas sin contradecirlas."
+    }
+  },
+  "imagen-01|fija_256_solape_15": {
+    "respuesta": "Se escribe el elemento seguido de una coma dentro de paréntesis, por ejemplo: `(5,)`. Sin la coma, Python lo interpreta como un valor simple entre paréntesis. [2]",
+    "uso": {
+      "tokens_entrada": 1779,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 44,
+      "segundos": 1.36
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que se necesita una coma tras el único elemento y da el ejemplo (5,)."
+    }
+  },
+  "imagen-02|fija_256_solape_15": {
+    "respuesta": "La introducción presenta **NumPy** y **SciPy**. [3]",
+    "uso": {
+      "tokens_entrada": 1395,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 21,
+      "segundos": 1.57
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Menciona NumPy y SciPy, pero omite matplotlib, SymPy y pandas."
+    }
+  },
+  "imagen-03|fija_256_solape_15": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1544,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.08
+    },
+    "veredicto": {
+      "veredicto": "incorrecta",
+      "alucinacion": false,
+      "motivo": "Afirma que no hay información suficiente, aunque se esperaba que indicara que se eliminan los bananos con del inventario[\"bananos\"]."
+    }
+  },
+  "imagen-04|fija_256_solape_15": {
+    "respuesta": "En el Nivel 4 se aprenderá a usar tuplas para agrupar y organizar datos, estructuras de datos compuestas, matrices como estructuras de dos dimensiones y librerías especializadas de gráficas y procesamiento numérico. [1]",
+    "uso": {
+      "tokens_entrada": 1415,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 51,
+      "segundos": 1.18
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye todos los temas esperados para el Nivel 4 sin contradecirlos."
+    }
+  },
+  "imagen-05|fija_256_solape_15": {
+    "respuesta": "Devuelve `'esa fruta no existe en el inventario'`, el valor por defecto indicado en la consulta. [1]",
+    "uso": {
+      "tokens_entrada": 1587,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 29,
+      "segundos": 1.01
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que la consulta devuelve el valor por defecto esperado, lo que implica que no produce un error."
+    }
+  },
+  "imagen-06|fija_256_solape_15": {
+    "respuesta": "`esquina` queda con `(2, 3)`, `dimension` con `(7, 4)` y `color` con `'rojo'`. [1]",
+    "uso": {
+      "tokens_entrada": 1677,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 40,
+      "segundos": 1.1
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Asigna a cada variable el valor esperado."
+    }
+  },
+  "nivel-01|fija_256_solape_15": {
+    "respuesta": "Los diccionarios se introducen en el nivel 2. [1]",
+    "uso": {
+      "tokens_entrada": 1491,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 20,
+      "segundos": 1.21
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que los diccionarios se introducen en el Nivel 2."
+    }
+  },
+  "nivel-02|fija_256_solape_15": {
+    "respuesta": "Las listas se introducen en el nivel 3 del curso [1].",
+    "uso": {
+      "tokens_entrada": 1663,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 19,
+      "segundos": 1.07
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que las listas se introducen en el nivel 3."
+    }
+  },
+  "nivel-03|fija_256_solape_15": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1678,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.96
+    },
+    "veredicto": {
+      "veredicto": "incorrecta",
+      "alucinacion": false,
+      "motivo": "Afirma que no hay información suficiente, aunque los documentos indican que while y for se enseñan en el Nivel 3."
+    }
+  },
+  "nivel-04|fija_256_solape_15": {
+    "respuesta": "Las tuplas y las matrices se ven en el Nivel 4 [1].",
+    "uso": {
+      "tokens_entrada": 1480,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 20,
+      "segundos": 1.13
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que las tuplas y las matrices se ven en el Nivel 4."
+    }
+  },
+  "nores-01|fija_256_solape_15": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1581,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.98
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "El asistente indica correctamente que las fuentes no contienen información suficiente para determinar la fecha."
+    }
+  },
+  "nores-02|fija_256_solape_15": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1493,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.07
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "El asistente indica que las fuentes no ofrecen información suficiente para determinar un máximo semanal."
+    }
+  },
+  "nores-03|fija_256_solape_15": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1558,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.07
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta indica correctamente que las fuentes no contienen información suficiente."
+    }
+  },
+  "nores-04|fija_256_solape_15": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1572,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.86
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "El asistente indica que las fuentes no proporcionan información suficiente para identificar a quien coordina el curso."
+    }
+  },
+  "prog-01|fija_256_solape_25": {
+    "respuesta": "El Nivel 2 corresponde al 20% de la nota final del curso. [1]",
+    "uso": {
+      "tokens_entrada": 1619,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 23,
+      "segundos": 1.39
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que el Nivel 2 corresponde al 20 % de la nota final."
+    }
+  },
+  "prog-02|fija_256_solape_25": {
+    "respuesta": "No podrá aprobar el curso. Si lo pierde por inasistencia, su nota final será el menor valor entre 2.5 y la nota real. [1]",
+    "uso": {
+      "tokens_entrada": 1570,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 38,
+      "segundos": 1.43
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que no podrá aprobar y que la nota final será el menor valor entre 2.5 y la nota real."
+    }
+  },
+  "prog-03|fija_256_solape_25": {
+    "respuesta": "No. Los tutores de CupiTaller no resuelven tareas, quices ni proyectos. [2]",
+    "uso": {
+      "tokens_entrada": 1566,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 28,
+      "segundos": 1.44
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Afirma que los tutores no resuelven tareas ni proyectos, tal como indica la respuesta esperada."
+    }
+  },
+  "prog-04|fija_256_solape_25": {
+    "respuesta": "senecode tiene más de 200 ejercicios, clasificados en cuatro dificultades: básica, intermedia, avanzada y extrema. [1]",
+    "uso": {
+      "tokens_entrada": 1644,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 31,
+      "segundos": 1.39
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye la cantidad y las cuatro dificultades indicadas en la respuesta esperada."
+    }
+  },
+  "prog-05|fija_256_solape_25": {
+    "respuesta": "El estudiante tiene cuatro (4) días hábiles desde la publicación de la nota para presentar el reclamo por escrito y debidamente sustentado. El profesor tiene cinco (5) días hábiles para resolverlo. [1]",
+    "uso": {
+      "tokens_entrada": 1647,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 52,
+      "segundos": 1.52
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente los cuatro días hábiles del estudiante y los cinco días hábiles del profesor."
+    }
+  },
+  "prog-06|fija_256_solape_25": {
+    "respuesta": "Se realiza durante el Nivel 1, equivale al 1% de la nota del curso y trata sobre el módulo «Uso Responsable de la IA Generativa: Lineamientos y Principios Éticos». [1]",
+    "uso": {
+      "tokens_entrada": 1592,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 48,
+      "segundos": 1.37
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Indica el nivel, el valor y el tema, pero omite que el módulo pertenece al curso de Coursera de la Universidad."
+    }
+  },
+  "prog-07|fija_256_solape_25": {
+    "respuesta": "Desde la tercera semana de clases, los estudiantes reciben invitaciones semanales por correo electrónico para agendar tutorías en CupiTaller. [1]",
+    "uso": {
+      "tokens_entrada": 1565,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 35,
+      "segundos": 1.61
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que las invitaciones llegan desde la tercera semana, semanalmente y por correo electrónico."
+    }
+  },
+  "texto-01|fija_256_solape_25": {
+    "respuesta": "El método `get` sirve para consultar el valor asociado a una llave sin que se produzca un error si esta no existe; en ese caso, devuelve el valor por defecto indicado. [2][3]\n\nSu sintaxis es: `diccionario.get(llave, valor si no existe)`. [1][2]",
+    "uso": {
+      "tokens_entrada": 1575,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 69,
+      "segundos": 2.05
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Explica que get consulta una llave sin error si no existe y da la sintaxis esperada."
+    }
+  },
+  "texto-02|fija_256_solape_25": {
+    "respuesta": "En Python, se separan las palabras con guion bajo (`_`), los identificadores se escriben en minúscula y se usa el alfabeto inglés. Para las funciones, se eligen nombres claros que indiquen lo que hacen; para las variables, nombres claros sobre lo que guardan y no demasiado cortos. [2]",
+    "uso": {
+      "tokens_entrada": 1577,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 75,
+      "segundos": 2.68
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye los tres estándares esperados sin contradecirlos."
+    }
+  },
+  "texto-03|fija_256_solape_25": {
+    "respuesta": "Se clona con el operador de corte, por ejemplo `b = a[:]`. Se hace para conservar una copia de la lista original al modificar la lista; así ambas tienen el mismo contenido, pero no son la misma lista. [1][2]",
+    "uso": {
+      "tokens_entrada": 1654,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 55,
+      "segundos": 2.76
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Explica correctamente cómo clonar una lista y por qué se hace."
+    }
+  },
+  "texto-04|fija_256_solape_25": {
+    "respuesta": "El curso enseña dos patrones: el **recorrido total**, que se usa cuando es necesario recorrer toda la lista, y el **recorrido parcial**, que se usa cuando no hace falta recorrerla completa y se detiene al cumplirse una condición, por ejemplo, al encontrar un valor. [1][2]\n\nEl recorrido parcial puede implementarse **con centinela** o **sin centinela**; en ambos casos se busca un elemento y se retorna su posición, o `-1` si no se encuentra. [3][5]",
+    "uso": {
+      "tokens_entrada": 1551,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 116,
+      "segundos": 1.89
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Identifica ambos patrones y explica correctamente cuándo se usa cada uno."
+    }
+  },
+  "texto-05|fija_256_solape_25": {
+    "respuesta": "El curso usa *type-hints* porque hacen que el código sea más legible y fácil de usar, y porque preparan para utilizar otros lenguajes. [1]",
+    "uso": {
+      "tokens_entrada": 1464,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 40,
+      "segundos": 1.59
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye ambas razones esperadas: mejor legibilidad y facilidad de uso, y preparación para otros lenguajes."
+    }
+  },
+  "imagen-01|fija_256_solape_25": {
+    "respuesta": "Se crea poniendo una coma después del único elemento, por ejemplo: `tupla = (5,)`. Sin la coma, `(5)` es un entero, no una tupla. [2]",
+    "uso": {
+      "tokens_entrada": 1793,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 44,
+      "segundos": 1.43
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que se necesita una coma tras el único elemento y da el ejemplo esperado."
+    }
+  },
+  "imagen-02|fija_256_solape_25": {
+    "respuesta": "La introducción presenta NumPy y SciPy. [5]",
+    "uso": {
+      "tokens_entrada": 1374,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 17,
+      "segundos": 1.07
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Menciona NumPy y SciPy, pero omite matplotlib, SymPy y pandas."
+    }
+  },
+  "imagen-03|fija_256_solape_25": {
+    "respuesta": "Se elimina «bananos» con la instrucción `del inventario[\"bananos\"]`. [5]",
+    "uso": {
+      "tokens_entrada": 1553,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 26,
+      "segundos": 1.06
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Identifica los bananos y la instrucción de borrado esperada."
+    }
+  },
+  "imagen-04|fija_256_solape_25": {
+    "respuesta": "En el Nivel 4 se aprenderán tuplas para agrupar y organizar datos, estructuras de datos compuestas, matrices de dos dimensiones y librerías especializadas de gráficas y procesamiento numérico. [1]",
+    "uso": {
+      "tokens_entrada": 1411,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 47,
+      "segundos": 1.56
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye todos los temas esperados sin contradecir la respuesta de referencia."
+    }
+  },
+  "imagen-05|fija_256_solape_25": {
+    "respuesta": "Devuelve el valor por defecto: `'esa fruta no existe en el inventario'` [2].",
+    "uso": {
+      "tokens_entrada": 1551,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 25,
+      "segundos": 1.05
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que devuelve el valor por defecto esperado, lo que implica que no produce un error."
+    }
+  },
+  "imagen-06|fija_256_solape_25": {
+    "respuesta": "`esquina` queda con `(2, 3)`, `dimension` con `(7, 4)` y `color` con `'rojo'`. [1]",
+    "uso": {
+      "tokens_entrada": 1687,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 40,
+      "segundos": 1.35
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta asigna a cada variable exactamente el valor esperado."
+    }
+  },
+  "nivel-01|fija_256_solape_25": {
+    "respuesta": "Los diccionarios se introducen en el Nivel 2. [2]",
+    "uso": {
+      "tokens_entrada": 1487,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 20,
+      "segundos": 1.05
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta indica correctamente que los diccionarios se introducen en el Nivel 2."
+    }
+  },
+  "nivel-02|fija_256_solape_25": {
+    "respuesta": "Las listas se introducen en el nivel 3 del curso [2].",
+    "uso": {
+      "tokens_entrada": 1541,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 19,
+      "segundos": 1.12
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que las listas se introducen en el nivel 3."
+    }
+  },
+  "nivel-03|fija_256_solape_25": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1680,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 2.64
+    },
+    "veredicto": {
+      "veredicto": "incorrecta",
+      "alucinacion": false,
+      "motivo": "La respuesta se abstiene pese a que los documentos indican que while y for se enseñan en el Nivel 3."
+    }
+  },
+  "nivel-04|fija_256_solape_25": {
+    "respuesta": "Las tuplas y las matrices se ven en el Nivel 4 [1][2][5].",
+    "uso": {
+      "tokens_entrada": 1606,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 24,
+      "segundos": 2.18
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta indica correctamente que las tuplas y las matrices se ven en el Nivel 4."
+    }
+  },
+  "nores-01|fija_256_solape_25": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1587,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.08
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "El asistente indica correctamente que las fuentes no permiten determinar la fecha del examen."
+    }
+  },
+  "nores-02|fija_256_solape_25": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1493,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.54
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que las fuentes no ofrecen información suficiente para determinar un máximo semanal."
+    }
+  },
+  "nores-03|fija_256_solape_25": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1580,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 2.13
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta reconoce que las fuentes no ofrecen información suficiente para responder."
+    }
+  },
+  "nores-04|fija_256_solape_25": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1598,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 2.66
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "El asistente indica correctamente que las fuentes no ofrecen información suficiente para identificar a quien coordina el curso."
+    }
+  },
+  "prog-01|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "El Nivel 2 corresponde al 20% de la nota final del curso. [1]",
+    "uso": {
+      "tokens_entrada": 7071,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 23,
+      "segundos": 9.07
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que el Nivel 2 corresponde al 20 % de la nota final."
+    }
+  },
+  "prog-02|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "No podrá aprobar el curso; si lo pierde por inasistencia, su nota final será el menor valor entre 2.5 y su nota real. [1]",
+    "uso": {
+      "tokens_entrada": 6460,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 38,
+      "segundos": 6.92
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que no puede aprobar y que la nota final será el menor valor entre 2.5 y la nota real."
+    }
+  },
+  "prog-03|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "No. Los tutores de CupiTaller no solucionan tareas, quices ni proyectos. [2]",
+    "uso": {
+      "tokens_entrada": 4098,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 27,
+      "segundos": 5.11
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que los tutores no resuelven tareas ni proyectos."
+    }
+  },
+  "prog-04|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "*senecode* contiene más de 200 ejercicios, clasificados en cuatro dificultades: básica, intermedia, avanzada y extrema. [1]",
+    "uso": {
+      "tokens_entrada": 3432,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 33,
+      "segundos": 1.85
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye la cantidad de ejercicios y las cuatro dificultades esperadas."
+    }
+  },
+  "prog-05|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "El estudiante debe presentar el reclamo por escrito y debidamente sustentado dentro de los cuatro días hábiles siguientes a la publicación de la nota. El profesor dispone de cinco días hábiles para resolverlo. [2]",
+    "uso": {
+      "tokens_entrada": 7257,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 50,
+      "segundos": 2.3
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente los cuatro días hábiles para reclamar desde la publicación de la nota y los cinco días hábiles del profesor para resolver."
+    }
+  },
+  "prog-06|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "El quiz de ética se desarrolla durante el Nivel 1, vale el 1% de la nota del curso y trata sobre el módulo «Uso Responsable de la IA Generativa: Lineamientos y Principios Éticos» del curso «Fundamentos del uso de IA generativa». [1]",
+    "uso": {
+      "tokens_entrada": 4838,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 63,
+      "segundos": 2.25
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Indica correctamente el nivel, el valor y el tema, pero no identifica que el módulo pertenece al curso de Coursera de la Universidad."
+    }
+  },
+  "prog-07|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "Desde la tercera semana de clases, los estudiantes reciben invitaciones semanales por correo electrónico para agendar tutorías en CupiTaller. [1]",
+    "uso": {
+      "tokens_entrada": 7280,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 35,
+      "segundos": 1.18
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que las invitaciones llegan por correo electrónico semanalmente desde la tercera semana de clases."
+    }
+  },
+  "texto-01|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "El método `get` sirve para consultar una llave cuando no se sabe si existe: si existe, devuelve su valor; si no, devuelve el valor por defecto sin producir un error. Su sintaxis es `diccionario.get(llave, valor si no existe)`. [1][3]",
+    "uso": {
+      "tokens_entrada": 1747,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 63,
+      "segundos": 1.86
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Explica que get consulta una llave sin causar error si no existe y da la sintaxis esperada."
+    }
+  },
+  "texto-02|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "En Python, los nombres usan `_` para separar palabras, se escriben en minúscula y emplean el alfabeto inglés. Además, deben ser claros: evite nombres muy cortos y elija nombres de funciones que indiquen lo que hacen. [1]",
+    "uso": {
+      "tokens_entrada": 2056,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 60,
+      "segundos": 1.69
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye los tres estándares esperados y no los contradice."
+    }
+  },
+  "texto-03|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "Se clona con el operador de corte (slice), por ejemplo `b = a[:]`. Se hace para modificar una lista y conservar una copia de la original; la copia tiene el mismo contenido, pero no referencia a la misma lista. [1]",
+    "uso": {
+      "tokens_entrada": 2049,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 55,
+      "segundos": 1.45
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Explica el uso de slicing para clonar la lista y conservar la original al modificarla."
+    }
+  },
+  "texto-04|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "El curso enseña dos patrones: **recorrido total**, para recorrer toda la lista (o cadena), y **recorrido parcial**, cuando no se necesita recorrerla completa y se detiene o repite el ciclo según una condición. [1][3][5]",
+    "uso": {
+      "tokens_entrada": 1326,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 58,
+      "segundos": 1.39
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Identifica ambos patrones y explica correctamente cuándo se utiliza cada uno."
+    }
+  },
+  "texto-05|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "El curso usa *type-hints* porque hacen que el código sea más legible y fácil de usar, y preparan para utilizar otros lenguajes. [1]",
+    "uso": {
+      "tokens_entrada": 1764,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 39,
+      "segundos": 1.37
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye ambas razones esperadas: mejorar la legibilidad y facilidad de uso del código, y preparar para otros lenguajes."
+    }
+  },
+  "imagen-01|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "Se crea incluyendo una coma al final del único elemento: `tupla = (5,)`. Sin la coma, `(5)` se interpreta como un entero, no como una tupla. [3]",
+    "uso": {
+      "tokens_entrada": 1945,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 45,
+      "segundos": 1.3
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Explica que se necesita una coma final y proporciona el ejemplo esperado."
+    }
+  },
+  "imagen-02|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "La introducción presenta NumPy y su estructura `ndarray`. [4]",
+    "uso": {
+      "tokens_entrada": 3828,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 20,
+      "segundos": 1.38
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Menciona NumPy, pero omite SciPy, matplotlib, SymPy y pandas."
+    }
+  },
+  "imagen-03|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "Se elimina la fruta «bananos» con la instrucción `del inventario[\"bananos\"]`. [1]",
+    "uso": {
+      "tokens_entrada": 1865,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 28,
+      "segundos": 1.14
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Identifica los bananos y la instrucción `del inventario[\"bananos\"]`."
+    }
+  },
+  "imagen-04|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "En el Nivel 4 se aprenderán tuplas y estructuras de datos compuestas, matrices como estructuras de dos dimensiones, y librerías especializadas de gráficos y procesamiento numérico. [1]",
+    "uso": {
+      "tokens_entrada": 2315,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 43,
+      "segundos": 1.29
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye todos los temas esperados del Nivel 4 sin contradecirlos."
+    }
+  },
+  "imagen-05|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "Devuelve `'esa fruta no existe en el inventario'`, el valor por defecto indicado en la consulta [1].",
+    "uso": {
+      "tokens_entrada": 1955,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 28,
+      "segundos": 1.19
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que devuelve el valor por defecto, lo que implica que no produce un error."
+    }
+  },
+  "imagen-06|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "`esquina` queda con `(2, 3)`, `dimension` con `(7, 4)` y `color` con `'rojo'`. [1]",
+    "uso": {
+      "tokens_entrada": 1865,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 40,
+      "segundos": 1.16
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta asigna a cada variable exactamente el valor esperado."
+    }
+  },
+  "nivel-01|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "Los diccionarios se introducen en el Nivel 2 del curso. [1]",
+    "uso": {
+      "tokens_entrada": 1273,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 22,
+      "segundos": 3.12
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que los diccionarios se introducen en el Nivel 2."
+    }
+  },
+  "nivel-02|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "Las listas se introducen en el nivel 3 del curso. [1]",
+    "uso": {
+      "tokens_entrada": 1666,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 20,
+      "segundos": 2.25
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que las listas se introducen en el nivel 3."
+    }
+  },
+  "nivel-03|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "No. Las instrucciones iterativas `while` y `for-in` aparecen en los materiales del Nivel 3, así que las fuentes no indican que un estudiante de Nivel 2 ya las haya visto en clase. [1][3][5]",
+    "uso": {
+      "tokens_entrada": 1346,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 54,
+      "segundos": 1.64
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que las instrucciones iterativas corresponden al Nivel 3 y que un estudiante de Nivel 2 aún no las ha visto."
+    }
+  },
+  "nivel-04|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "Las tuplas y las matrices se ven en el Nivel 4. [1][2][3][5]",
+    "uso": {
+      "tokens_entrada": 1238,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 27,
+      "segundos": 2.66
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que las tuplas y las matrices se ven en el Nivel 4."
+    }
+  },
+  "nores-01|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 5742,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.99
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que las fuentes no proporcionan información suficiente para determinar la fecha."
+    }
+  },
+  "nores-02|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 7252,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.1
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que las fuentes no proporcionan información suficiente para establecer un máximo semanal."
+    }
+  },
+  "nores-03|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 5091,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.05
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "El asistente indica que las fuentes no contienen información suficiente y no inventa datos."
+    }
+  },
+  "nores-04|pagina_con_vecina (solape de 1 página)": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 6715,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.04
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "El asistente indica que las fuentes no aportan información suficiente para identificar a la persona coordinadora."
+    }
+  },
+  "prog-01|semantico_variable": {
+    "respuesta": "El Nivel 2 corresponde al 20% de la nota final del curso. [1]",
+    "uso": {
+      "tokens_entrada": 2257,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 23,
+      "segundos": 1.34
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que el Nivel 2 representa el 20 % de la nota final."
+    }
+  },
+  "prog-02|semantico_variable": {
+    "respuesta": "No podrá aprobar el curso. Si lo pierde por inasistencia, su nota final será el menor valor entre 2.5 y su nota real. [1]",
+    "uso": {
+      "tokens_entrada": 2038,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 38,
+      "segundos": 1.11
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que no puede aprobar y que su nota final será el menor valor entre 2.5 y su nota real."
+    }
+  },
+  "prog-03|semantico_variable": {
+    "respuesta": "No. Los tutores de CupiTaller no solucionan tareas ni proyectos; la tutoría busca fortalecer las habilidades del estudiante para analizar problemas y programar. [1][2]",
+    "uso": {
+      "tokens_entrada": 1858,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 42,
+      "segundos": 1.31
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Afirma correctamente que los tutores no resuelven tareas ni proyectos."
+    }
+  },
+  "prog-04|semantico_variable": {
+    "respuesta": "*senecode* contiene más de 200 ejercicios, clasificados en cuatro dificultades: básica, intermedia, avanzada y extrema. [1]",
+    "uso": {
+      "tokens_entrada": 1901,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 33,
+      "segundos": 1.06
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica más de 200 ejercicios y las cuatro dificultades esperadas."
+    }
+  },
+  "prog-05|semantico_variable": {
+    "respuesta": "El estudiante tiene cuatro días hábiles desde la publicación de la nota para presentar el reclamo por escrito y debidamente sustentado. El profesor tiene cinco días hábiles para resolverlo. [1]",
+    "uso": {
+      "tokens_entrada": 2018,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 46,
+      "segundos": 2.12
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente los cuatro días hábiles para reclamar desde la publicación de la nota y los cinco días hábiles del profesor para resolver."
+    }
+  },
+  "prog-06|semantico_variable": {
+    "respuesta": "El quiz de ética se desarrolla durante el Nivel 1, equivale al 1% de la nota del curso y trata sobre el módulo “Uso Responsable de la IA Generativa: Lineamientos y Principios Éticos” del curso “Fundamentos del uso de IA generativa” de la Universidad de los Andes. [1]",
+    "uso": {
+      "tokens_entrada": 1950,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 71,
+      "segundos": 1.78
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": false,
+      "motivo": "Indica correctamente el nivel, el valor y el tema del módulo, pero no menciona que pertenece a un curso de Coursera."
+    }
+  },
+  "prog-07|semantico_variable": {
+    "respuesta": "Desde la tercera semana de clases; las invitaciones se envían semanalmente por correo electrónico. [1]",
+    "uso": {
+      "tokens_entrada": 1842,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 26,
+      "segundos": 1.51
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que las invitaciones llegan desde la tercera semana, semanalmente y por correo electrónico."
+    }
+  },
+  "texto-01|semantico_variable": {
+    "respuesta": "El método `get` sirve para consultar el valor asociado a una llave sin generar un error si esta no existe; en ese caso, devuelve el valor por defecto indicado. [1]\n\nSu sintaxis es: `diccionario.get(llave, valor si no existe)` [1]",
+    "uso": {
+      "tokens_entrada": 1971,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 61,
+      "segundos": 3.82
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Explica que get consulta una llave sin error si no existe y proporciona la sintaxis esperada."
+    }
+  },
+  "texto-02|semantico_variable": {
+    "respuesta": "En Python se separan las palabras con guion bajo (`_`), los identificadores se escriben en minúscula y se usa el alfabeto inglés para evitar problemas de codificación. Para las funciones, se recomienda elegir nombres que indiquen lo que hacen. [1]",
+    "uso": {
+      "tokens_entrada": 2042,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 62,
+      "segundos": 4.63
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye los tres estándares esperados sin contradecirlos."
+    }
+  },
+  "texto-03|semantico_variable": {
+    "respuesta": "Se clona una lista usando el operador de corte: `b = a[:]`. Así se obtiene una copia independiente, con el mismo contenido, para poder modificar la lista sin alterar la original. [1]",
+    "uso": {
+      "tokens_entrada": 1946,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 46,
+      "segundos": 4.65
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Explica el clonado con `b = a[:]` y su utilidad para modificar una lista conservando la original."
+    }
+  },
+  "texto-04|semantico_variable": {
+    "respuesta": "El curso enseña dos patrones de recorrido de listas:\n\n- **Recorrido total:** se usa cuando se necesita recorrer toda la lista, por ejemplo, para sumar sus valores o encontrar el menor. Puede implementarse con `while`, `for-in range` o `for-in`. [1][2]\n- **Recorrido parcial:** se usa cuando no hace falta recorrer toda la lista y se puede detener el ciclo al cumplirse una condición, por ejemplo, al buscar un valor. Se implementa con `while`, con centinela o sin él; no se puede implementar con `for-in` porque se necesita interrumpir el ciclo al encontrar lo buscado. [2]",
+    "uso": {
+      "tokens_entrada": 1818,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 142,
+      "segundos": 3.18
+    },
+    "veredicto": {
+      "veredicto": "parcial",
+      "alucinacion": true,
+      "motivo": "Identifica correctamente ambos patrones y cuándo se usan, pero afirma erróneamente que el recorrido parcial no puede implementarse con `for-in`."
+    }
+  },
+  "texto-05|semantico_variable": {
+    "respuesta": "El curso usa *type-hints* porque hacen que el código sea más legible y fácil de usar, y preparan a los estudiantes para utilizar otros lenguajes. [1]",
+    "uso": {
+      "tokens_entrada": 1568,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 42,
+      "segundos": 1.48
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye ambas razones esperadas sin contradecirlas."
+    }
+  },
+  "imagen-01|semantico_variable": {
+    "respuesta": "Se escribe el elemento seguido de una coma dentro de paréntesis: `tupla = (5,)`. Sin la coma, Python lo interpreta como un valor simple, no como una tupla. [2]",
+    "uso": {
+      "tokens_entrada": 2300,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 47,
+      "segundos": 1.3
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que la coma tras el elemento crea una tupla de un solo elemento y da el ejemplo esperado."
+    }
+  },
+  "imagen-02|semantico_variable": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1290,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.94
+    },
+    "veredicto": {
+      "veredicto": "incorrecta",
+      "alucinacion": false,
+      "motivo": "La respuesta se abstiene aunque los documentos sí permiten identificar NumPy, SciPy, matplotlib, SymPy y pandas."
+    }
+  },
+  "imagen-03|semantico_variable": {
+    "respuesta": "Se elimina `\"bananos\"` con la instrucción `del inventario[\"bananos\"]`. [3]",
+    "uso": {
+      "tokens_entrada": 1960,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 26,
+      "segundos": 1.18
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Identifica los bananos y la instrucción exacta para eliminarlos."
+    }
+  },
+  "imagen-04|semantico_variable": {
+    "respuesta": "Según la presentación de introducción, en el Nivel 4 se aprenderán tuplas, estructuras de datos compuestas, matrices como estructuras de dos dimensiones y librerías especializadas para gráficas y procesamiento numérico. [1]",
+    "uso": {
+      "tokens_entrada": 1236,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 50,
+      "segundos": 1.41
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Incluye todos los temas esperados sin contradecir la respuesta de referencia."
+    }
+  },
+  "imagen-05|semantico_variable": {
+    "respuesta": "Devuelve `'esa fruta no existe en el inventario'`, el valor por defecto indicado en la consulta. [1]",
+    "uso": {
+      "tokens_entrada": 1907,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 29,
+      "segundos": 1.57
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica que la consulta devuelve el valor por defecto esperado, sin señalar ningún error."
+    }
+  },
+  "imagen-06|semantico_variable": {
+    "respuesta": "`esquina` queda con `(2, 3)`, `dimension` con `(7, 4)` y `color` con `'rojo'`. [1]",
+    "uso": {
+      "tokens_entrada": 2200,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 40,
+      "segundos": 1.25
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta asigna a cada variable exactamente el valor esperado."
+    }
+  },
+  "nivel-01|semantico_variable": {
+    "respuesta": "Los diccionarios se introducen en el nivel 2. [2]",
+    "uso": {
+      "tokens_entrada": 1655,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 20,
+      "segundos": 1.61
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que los diccionarios se introducen en el nivel 2."
+    }
+  },
+  "nivel-02|semantico_variable": {
+    "respuesta": "Las listas se introducen en el nivel 3 del curso. [1] [2]",
+    "uso": {
+      "tokens_entrada": 2008,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 23,
+      "segundos": 1.34
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta indica correctamente que las listas se introducen en el Nivel 3."
+    }
+  },
+  "nivel-03|semantico_variable": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1913,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 0.85
+    },
+    "veredicto": {
+      "veredicto": "incorrecta",
+      "alucinacion": false,
+      "motivo": "Afirma que no hay información suficiente, aunque los documentos indican que while y for se enseñan en el Nivel 3."
+    }
+  },
+  "nivel-04|semantico_variable": {
+    "respuesta": "Las tuplas y las matrices se ven en el Nivel 4. [1]",
+    "uso": {
+      "tokens_entrada": 2016,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 21,
+      "segundos": 1.17
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Indica correctamente que las tuplas y las matrices se ven en el Nivel 4."
+    }
+  },
+  "nores-01|semantico_variable": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1834,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.1
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "El asistente indica correctamente que las fuentes no proporcionan información suficiente para determinar la fecha."
+    }
+  },
+  "nores-02|semantico_variable": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 1855,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.08
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "Reconoce que las fuentes no proporcionan información suficiente para determinar un máximo semanal."
+    }
+  },
+  "nores-03|semantico_variable": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 2096,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.65
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "La respuesta reconoce que las fuentes no ofrecen información suficiente para responder."
+    }
+  },
+  "nores-04|semantico_variable": {
+    "respuesta": "No hay información suficiente en las fuentes.",
+    "uso": {
+      "tokens_entrada": 2097,
+      "tokens_en_cache": 0,
+      "tokens_escritos_en_cache": 0,
+      "tokens_salida": 12,
+      "segundos": 1.28
+    },
+    "veredicto": {
+      "veredicto": "correcta",
+      "alucinacion": false,
+      "motivo": "El asistente indica correctamente que las fuentes no proporcionan información suficiente."
+    }
+  }
+}

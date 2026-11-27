@@ -1,0 +1,2602 @@
+[
+  {
+    "id": "sint-2026-20_n1_05_conversion-de-tipos-p3",
+    "pregunta": "¿Qué ocurre si convierto un número decimal negativo a entero con `int()`?",
+    "respuesta_esperada": "`int()` elimina la parte decimal y devuelve el entero; por ejemplo, `int(-2.9)` devuelve `-2`.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_05_conversion-de-tipos",
+        "paginas": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_04_mas-sobre-strings-p15",
+    "pregunta": "¿La función que cuenta caracteres distingue entre mayúsculas y minúsculas?",
+    "respuesta_esperada": "Sí; por ejemplo, al buscar «A» en «La Casa Blanca» devuelve 0, mientras que al buscar «a» devuelve 5.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_04_mas-sobre-strings",
+        "paginas": [
+          15
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_07_operaciones-sobre-listas-p23",
+    "pregunta": "¿Qué hace el método `split` cuando se le indica una coma como separador?",
+    "respuesta_esperada": "Divide la cadena en una lista de partes separadas por comas.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_07_operaciones-sobre-listas",
+        "paginas": [
+          23
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_05_leyes-de-de-morgan-p6",
+    "pregunta": "¿Cómo se puede expresar `not ((carga_sable >= 90) and (energia_escudo >= 100))` usando la ley de De Morgan?",
+    "respuesta_esperada": "Se puede expresar como `(carga_sable < 90) or (energia_escudo < 100)`. ",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_05_leyes-de-de-morgan",
+        "paginas": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_07_operaciones-sobre-cadenas-de-caracteres-p10",
+    "pregunta": "¿Qué hace el método `replace` con una cadena?",
+    "respuesta_esperada": "Busca todas las apariciones de un patrón en la cadena y las sustituye por la cadena de reemplazo.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_07_operaciones-sobre-cadenas-de-caracteres",
+        "paginas": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_07_operaciones-sobre-listas-p4",
+    "pregunta": "¿Se puede cambiar un elemento de una lista después de crearla?",
+    "respuesta_esperada": "Sí, las listas son mutables y podemos asignar valores a sus elementos mediante el operador de indexación, siempre dentro de los límites de la lista.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_07_operaciones-sobre-listas",
+        "paginas": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_04_matrices-p6",
+    "pregunta": "¿Qué resultado imprime el programa al sumar todos los elementos de la matriz y dividir el total entre 9?",
+    "respuesta_esperada": "Imprime 0.3333333333333333.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_04_matrices",
+        "paginas": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_02_instrucciones-iterativas-while-p8",
+    "pregunta": "¿Qué debería hacer el programa si el usuario introduce un número negativo al calcular una raíz cuadrada?",
+    "respuesta_esperada": "Debe informar del error y volver a solicitar un número hasta que el usuario introduzca uno positivo.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_02_instrucciones-iterativas-while",
+        "paginas": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_05_instrucciones-iterativas-for-p8",
+    "pregunta": "¿Qué condición permite reemplazar un ciclo `while` por uno `for` que recorre un rango?",
+    "respuesta_esperada": "Se puede usar `for` cuando el `while` empieza en un valor inicial, repite hasta un valor final inclusive e incrementa el contador de uno en uno en cada iteración.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_05_instrucciones-iterativas-for",
+        "paginas": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_08_ejercicios-de-funciones-p17",
+    "pregunta": "¿Cómo se convierten los grados Fahrenheit a grados centígrados?",
+    "respuesta_esperada": "Se resta 32 a los grados Fahrenheit y se multiplica el resultado por cinco novenos.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_08_ejercicios-de-funciones",
+        "paginas": [
+          17
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_07_operaciones-sobre-cadenas-de-caracteres-p5",
+    "pregunta": "¿Qué significa que un carácter no aparezca en una cadena al usar `not in`?",
+    "respuesta_esperada": "`not in` es el opuesto lógico de `in`.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_07_operaciones-sobre-cadenas-de-caracteres",
+        "paginas": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_09_dataframes-p12",
+    "pregunta": "¿Qué tipo de objeto se obtiene al seleccionar una sola columna de un DataFrame?",
+    "respuesta_esperada": "Al seleccionar una sola columna, se obtiene una Serie de pandas.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_09_dataframes",
+        "paginas": [
+          12
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_04_expresiones-operadores-aritmeticos-y-operaciones-sobre-strings-p9",
+    "pregunta": "¿Qué cadena se obtiene al combinar varias repeticiones de texto con el operador `+`?",
+    "respuesta_esperada": "Se obtiene `aaa/*/*/*/*/*abcabcabc+`.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_04_expresiones-operadores-aritmeticos-y-operaciones-sobre-strings",
+        "paginas": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_07_operaciones-sobre-cadenas-de-caracteres-p7",
+    "pregunta": "¿Qué hacen los métodos `upper()` y `lower()` cuando se aplican a una cadena?",
+    "respuesta_esperada": "`upper()` devuelve una nueva cadena con los caracteres en mayúscula y `lower()` devuelve una nueva cadena con los caracteres en minúscula.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_07_operaciones-sobre-cadenas-de-caracteres",
+        "paginas": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_10_ejercicio-ocurrencias-de-cada-digito-en-un-numero-usando-diccionarios-p1",
+    "pregunta": "¿Qué se debe contar en este ejercicio usando diccionarios?",
+    "respuesta_esperada": "Se deben contar las ocurrencias de cada dígito en un número.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_10_ejercicio-ocurrencias-de-cada-digito-en-un-numero-usando-diccionarios",
+        "paginas": [
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_03_declaracion-de-variables-instruccion-de-asignacion-y-tipado-dinamico-p3",
+    "pregunta": "¿Cómo puedo comprobar el valor actual de una variable en la terminal?",
+    "respuesta_esperada": "Basta con escribir y evaluar una expresión que contenga la variable.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_03_declaracion-de-variables-instruccion-de-asignacion-y-tipado-dinamico",
+        "paginas": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_07_operaciones-sobre-listas-p13",
+    "pregunta": "¿Qué ocurre con la lista original cuando se pasa como parámetro a una función que modifica sus elementos?",
+    "respuesta_esperada": "La lista original queda modificada, porque el parámetro de tipo lista es una referencia a esa lista.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_07_operaciones-sobre-listas",
+        "paginas": [
+          13
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_10_visualizacion-con-pandas-p11",
+    "pregunta": "¿Cómo se puede representar la cantidad de películas por idioma original usando una escala logarítmica en el eje vertical?",
+    "respuesta_esperada": "Se cuentan las películas por idioma original con `value_counts()` y se crea un gráfico de barras indicando `logy=True`.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_10_visualizacion-con-pandas",
+        "paginas": [
+          11
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_02_tuplas-p2",
+    "pregunta": "¿Qué significa que una lista sea mutable?",
+    "respuesta_esperada": "Significa que se pueden agregar, eliminar o modificar sus elementos.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_02_tuplas",
+        "paginas": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_09_recorrido-de-diccionarios-p6",
+    "pregunta": "¿Cómo puedo recorrer e imprimir todos los valores almacenados en un diccionario?",
+    "respuesta_esperada": "Usando `d.values()` en un bucle `for` para obtener e imprimir cada valor.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_09_recorrido-de-diccionarios",
+        "paginas": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_03_uso-del-centinela-p9",
+    "pregunta": "¿Cómo se utiliza el centinela para detener la búsqueda del máximo común divisor?",
+    "respuesta_esperada": "Cuando se encuentra un número que divide a ambos valores, se cambia el centinela a `True` para que termine el ciclo.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_03_uso-del-centinela",
+        "paginas": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_08_ejercicios-de-funciones-p5",
+    "pregunta": "¿Cómo se puede calcular la diferencia entre el área de un cuadrado y la de un círculo inscrito usando funciones?",
+    "respuesta_esperada": "Se puede definir una función que reste el área del círculo, calculada con la mitad del lado como radio, del área del cuadrado.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_08_ejercicios-de-funciones",
+        "paginas": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_11_estructura-de-datos-compuestos-p27",
+    "pregunta": "¿Qué información guarda el diccionario asociado al vuelo XE2679?",
+    "respuesta_esperada": "Guarda la aerolínea XE, el origen EWR, el destino MYR, la distancia 550, la salida 1110, la duración 113 y el retraso 18.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_11_estructura-de-datos-compuestos",
+        "paginas": [
+          27
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_11_estructura-de-datos-compuestos-p25",
+    "pregunta": "¿Cómo se organiza la información de cada vuelo al leer el archivo CSV?",
+    "respuesta_esperada": "Cada vuelo se guarda como un diccionario con datos como aerolínea, origen, destino, distancia, salida, duración y retraso, y se almacena en otro diccionario usando su código de vuelo como clave.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_11_estructura-de-datos-compuestos",
+        "paginas": [
+          25
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_04_matrices-p12",
+    "pregunta": "Al crear una matriz repitiendo una lista como filas, ¿cada fila es una lista independiente?",
+    "respuesta_esperada": "No, las filas apuntan a la misma lista porque se repite la referencia a ella.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_04_matrices",
+        "paginas": [
+          12
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_07_introduccion-a-visualizaciones-con-matplotlib-p4",
+    "pregunta": "¿Qué significa visualizar datos?",
+    "respuesta_esperada": "Es presentar información de forma gráfica.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_07_introduccion-a-visualizaciones-con-matplotlib",
+        "paginas": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_02_valores-y-tipos-de-dato-p3",
+    "pregunta": "¿Qué tipo de dato representa el valor -4.5?",
+    "respuesta_esperada": "-4.5 es un decimal.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_02_valores-y-tipos-de-dato",
+        "paginas": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_04_expresiones-operadores-aritmeticos-y-operaciones-sobre-strings-p2",
+    "pregunta": "¿En qué se diferencian una expresión y una asignación en Python?",
+    "respuesta_esperada": "Una expresión se evalúa y devuelve un valor, mientras que una asignación se ejecuta y no devuelve nada.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_04_expresiones-operadores-aritmeticos-y-operaciones-sobre-strings",
+        "paginas": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas-p12",
+    "pregunta": "¿Es necesario comparar una variable booleana con `True` para usarla en una condición `if`?",
+    "respuesta_esperada": "No, una variable booleana se puede usar directamente en el `if`, sin escribir `== True`.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas",
+        "paginas": [
+          12
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_07_introduccion-a-visualizaciones-con-matplotlib-p15",
+    "pregunta": "¿Qué elementos se pueden identificar en una gráfica creada con Matplotlib?",
+    "respuesta_esperada": "Se pueden identificar el título, la figura, los marcadores, la etiqueta del eje Y, la gráfica y el texto.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_07_introduccion-a-visualizaciones-con-matplotlib",
+        "paginas": [
+          15
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_09_dataframes-p15",
+    "pregunta": "¿Qué promedio tiene la duración de las películas en estos datos?",
+    "respuesta_esperada": "La duración promedio es de aproximadamente 94,13 minutos.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_09_dataframes",
+        "paginas": [
+          15
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_04_mas-sobre-strings-p12",
+    "pregunta": "¿Qué valores se obtienen al extraer de una cadena con pasos de avance de 1, 2 y −1?",
+    "respuesta_esperada": "Para `fruta = \"manzana\"`, `cadena1` es `\"manzana\"`, `cadena2` es `\"mnzn\"` y `cadena3` es `\"anaznam\"`.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_04_mas-sobre-strings",
+        "paginas": [
+          12
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_08_pandas-series-y-operaciones-sobre-series-p3",
+    "pregunta": "¿Para qué se utiliza principalmente Pandas en Python?",
+    "respuesta_esperada": "Se utiliza para limpiar, organizar y analizar datos, incluyendo tareas como comparar conjuntos, fusionarlos y gestionar datos perdidos.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_08_pandas-series-y-operaciones-sobre-series",
+        "paginas": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_07_operaciones-sobre-listas-p9",
+    "pregunta": "¿Qué resultado se obtiene al comparar con `==` las listas `a`, `b` y `c` del ejemplo?",
+    "respuesta_esperada": "Las tres comparaciones con `==` dan `True`, porque las listas tienen el mismo contenido.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_07_operaciones-sobre-listas",
+        "paginas": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_12_ejericicios-p7",
+    "pregunta": "¿Cómo determina esta solución qué aerolínea tiene más vuelos?",
+    "respuesta_esperada": "Cuenta los vuelos de cada aerolínea en un histograma y devuelve la que tiene la frecuencia más alta.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_12_ejericicios",
+        "paginas": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_09_recorrido-de-diccionarios-p4",
+    "pregunta": "¿Qué recorre un ciclo `for-in` cuando se usa directamente sobre un diccionario?",
+    "respuesta_esperada": "Recorre las llaves del diccionario.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_09_recorrido-de-diccionarios",
+        "paginas": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_11_estructura-de-datos-compuestos-p7",
+    "pregunta": "¿Qué significa que el retraso de un vuelo tenga un valor negativo?",
+    "respuesta_esperada": "Significa que el vuelo llegó antes de lo previsto.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_11_estructura-de-datos-compuestos",
+        "paginas": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_06_introduccion-a-listas-p2",
+    "pregunta": "¿Qué tipos de valores puede contener una lista en Python?",
+    "respuesta_esperada": "Puede contener valores de cualquier tipo, como enteros, flotantes o cadenas.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_06_introduccion-a-listas",
+        "paginas": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_02_tuplas-p5",
+    "pregunta": "¿Para qué sirve una tupla?",
+    "respuesta_esperada": "Sirve para agrupar una cantidad fija de datos en un solo valor compuesto.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_02_tuplas",
+        "paginas": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_04_condicionales-p17",
+    "pregunta": "¿Cómo encuentra esta estrategia el valor más grande entre varios números?",
+    "respuesta_esperada": "Supone que el primero es el mayor y lo reemplaza cada vez que encuentra un número más grande.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_04_condicionales",
+        "paginas": [
+          17
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_10_visualizacion-con-pandas-p22",
+    "pregunta": "¿Qué tipo de gráficos muestra una matriz de dispersión al comparar varias variables numéricas?",
+    "respuesta_esperada": "Muestra histogramas en la diagonal y gráficos de dispersión entre cada par de variables.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_10_visualizacion-con-pandas",
+        "paginas": [
+          22
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_11_estructura-de-datos-compuestos-p16",
+    "pregunta": "¿Qué información se usa como clave para identificar cada vuelo en el diccionario?",
+    "respuesta_esperada": "Se usa el código del vuelo como clave.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_11_estructura-de-datos-compuestos",
+        "paginas": [
+          16
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_02_valores-y-tipos-de-dato-p6",
+    "pregunta": "¿Qué función de Python permite averiguar el tipo de un valor?",
+    "respuesta_esperada": "La función `type` permite conocer el tipo de un valor.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_02_valores-y-tipos-de-dato",
+        "paginas": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_05_instrucciones-iterativas-for-p3",
+    "pregunta": "¿Qué hace una instrucción for-in y cuántas acciones puede incluir su bloque?",
+    "respuesta_esperada": "Ejecuta las acciones del bloque para cada elemento de una secuencia o serie de valores, y el bloque puede contener cualquier cantidad de instrucciones.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_05_instrucciones-iterativas-for",
+        "paginas": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_02_valores-y-tipos-de-dato-p5",
+    "pregunta": "¿Cómo se pueden escribir cadenas de texto en Python y para qué sirven las comillas triples?",
+    "respuesta_esperada": "Las cadenas pueden escribirse entre comillas simples, dobles o triples, y las triples se usan cuando pueden tener cambios de línea.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_02_valores-y-tipos-de-dato",
+        "paginas": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_03_uso-del-centinela-p2",
+    "pregunta": "¿Cómo se puede encontrar el máximo común divisor de dos números mediante búsqueda exhaustiva?",
+    "respuesta_esperada": "Se empieza con el menor de los dos números y se comprueba si divide a ambos; si no, se reduce en uno y se repite hasta encontrar un divisor común.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_03_uso-del-centinela",
+        "paginas": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_04_matrices-p5",
+    "pregunta": "¿Qué valores imprime el programa al acceder a los elementos de la matriz y recorrerla?",
+    "respuesta_esperada": "Imprime primero `0` y `1`, luego un guion, cada fila de la matriz, otro guion y, finalmente, todos sus elementos en orden: `1`, `0`, `0`, `0`, `1`, `0`, `0`, `0`, `1`. ",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_04_matrices",
+        "paginas": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_03_tablas-de-verdad-y-algebra-booleana-p5",
+    "pregunta": "¿Qué ley relaciona una expresión con su negación al combinarla con `and` y con `or`?",
+    "respuesta_esperada": "Con `and`, `x and not x` siempre es `False`; con `or`, `x or not x` siempre es `True`.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_03_tablas-de-verdad-y-algebra-booleana",
+        "paginas": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_09_dataframes-p16",
+    "pregunta": "¿Qué métodos de pandas permiten obtener promedios, valores extremos e índices donde aparecen esos extremos en un DataFrame?",
+    "respuesta_esperada": "`mean()` calcula promedios, `max()` y `min()` obtienen valores extremos, e `idxmax()` e `idxmin()` devuelven los índices donde aparecen.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_09_dataframes",
+        "paginas": [
+          16
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_04_mas-sobre-strings-p9",
+    "pregunta": "¿Qué valor devuelve `find` cuando la cadena que se busca no aparece?",
+    "respuesta_esperada": "Devuelve −1.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_04_mas-sobre-strings",
+        "paginas": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_08_ejercicios-de-funciones-p14",
+    "pregunta": "¿Por qué el programa produce un error al intentar mostrar el área de las esquinas?",
+    "respuesta_esperada": "Porque al llamar a la función se usa `lado`, que no está definido; debe usarse `lado_cuadrado`, donde se guardó el valor ingresado.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_08_ejercicios-de-funciones",
+        "paginas": [
+          14
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_09_diccionarios-mutabilidad-borrado-de-datos-y-parametros-por-referencia-p1",
+    "pregunta": "¿Qué temas se abordan en este nivel sobre los diccionarios?",
+    "respuesta_esperada": "Se abordan la mutabilidad de los diccionarios, el borrado de datos y los parámetros por referencia.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_09_diccionarios-mutabilidad-borrado-de-datos-y-parametros-por-referencia",
+        "paginas": [
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_04_condicionales-p6",
+    "pregunta": "¿Qué ocurre en el programa si se ingresa un número negativo?",
+    "respuesta_esperada": "El programa avisa que el número negativo no es válido, lo reemplaza por 42 y muestra la raíz cuadrada de 42.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_04_condicionales",
+        "paginas": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_05_mas-sobre-matrices-p6",
+    "pregunta": "¿Cómo se representa una imagen en una matriz de 16 × 16?",
+    "respuesta_esperada": "Se representa como una cuadrícula de 16 × 16 celdas, cuyos índices van del 0 al 15 en ambos ejes y que pueden tener distintos colores.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_05_mas-sobre-matrices",
+        "paginas": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_09_dataframes-p2",
+    "pregunta": "¿Qué características tiene un DataFrame?",
+    "respuesta_esperada": "Un DataFrame contiene muchos registros ordenados según algún criterio, varias columnas con nombre y puede tener distintos tipos de datos en cada columna.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_09_dataframes",
+        "paginas": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_08_ejercicios-de-funciones-p7",
+    "pregunta": "¿Qué ocurre si se imprime el nombre de una función en vez de guardar e imprimir el valor que devuelve?",
+    "respuesta_esperada": "Se muestra una referencia a la función en lugar del resultado que esta calcula.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_08_ejercicios-de-funciones",
+        "paginas": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_09_dataframes-p24",
+    "pregunta": "¿Por qué una selección con `.loc[10:19]` puede devolver un DataFrame vacío?",
+    "respuesta_esperada": "Porque no hay registros entre esas etiquetas; la etiqueta 10 aparece después de la etiqueta 19.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_09_dataframes",
+        "paginas": [
+          24
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_11_estructura-de-datos-compuestos-p26",
+    "pregunta": "¿Cómo se organizan los datos de cada vuelo en el diccionario que devuelve la función?",
+    "respuesta_esperada": "Cada vuelo se identifica por su código y se asocia con un diccionario que contiene datos como la aerolínea, el origen, el destino, la distancia, la salida, la duración y el retraso.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_11_estructura-de-datos-compuestos",
+        "paginas": [
+          26
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_10_ejercicio-ocurrencias-de-cada-digito-en-un-numero-usando-diccionarios-p2",
+    "pregunta": "¿Cuántas veces aparece cada dígito en el número 8384724289?",
+    "respuesta_esperada": "El 8 aparece 3 veces, el 3 aparece 1 vez, el 4 aparece 2 veces, el 7 aparece 1 vez, el 2 aparece 2 veces y el 9 aparece 1 vez.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_10_ejercicio-ocurrencias-de-cada-digito-en-un-numero-usando-diccionarios",
+        "paginas": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_09_dataframes-p13",
+    "pregunta": "¿Qué función de pandas permite contar cuántas veces aparece cada categoría en una columna?",
+    "respuesta_esperada": "La función `value_counts()` cuenta cuántas veces aparece cada categoría en una columna.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_09_dataframes",
+        "paginas": [
+          13
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_07_funciones-y-variables-locales-p21",
+    "pregunta": "¿Qué papel cumple `area_base` dentro del cálculo del volumen del cilindro?",
+    "respuesta_esperada": "`area_base` es una variable local de la función `volumen_cilindro`.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_07_funciones-y-variables-locales",
+        "paginas": [
+          21
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_01_introduccion-al-modulo-p3",
+    "pregunta": "¿Qué ocurre si se ingresa una opción distinta de a, b o c?",
+    "respuesta_esperada": "El programa indica que solo hay tres opciones y muestra la letra que se ingresó.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_01_introduccion-al-modulo",
+        "paginas": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_08_patrones-de-recorrido-p7",
+    "pregunta": "¿Qué resultado se obtiene al sumar todos los elementos de la lista mostrada usando cualquiera de los recorridos?",
+    "respuesta_esperada": "Los cuatro recorridos obtienen la suma 221.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_08_patrones-de-recorrido",
+        "paginas": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_08_pandas-series-y-operaciones-sobre-series-p10",
+    "pregunta": "¿Qué información muestra la salida de una serie de Pandas?",
+    "respuesta_esperada": "Muestra los índices, los datos, el nombre de la serie y el tipo de los datos.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_08_pandas-series-y-operaciones-sobre-series",
+        "paginas": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_03_tablas-de-verdad-y-algebra-booleana-p2",
+    "pregunta": "¿Cuántas combinaciones de entradas se muestran en una tabla de verdad para los operadores lógicos `and` y `or`?",
+    "respuesta_esperada": "Se muestran cuatro combinaciones, porque ambos operadores tienen dos operandos.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_03_tablas-de-verdad-y-algebra-booleana",
+        "paginas": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_04_condicionales-p21",
+    "pregunta": "¿Qué condición permite obtener el mismo resultado que negar que la edad sea al menos 16 años?",
+    "respuesta_esperada": "La condición equivalente es que la edad sea menor que 16 años.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_04_condicionales",
+        "paginas": [
+          21
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_03_estructuras-de-datos-con-tuplas-p5",
+    "pregunta": "¿Qué valores predeterminados reciben los atributos de una figura al crearla?",
+    "respuesta_esperada": "La esquina se inicializa en (0, 0), el grosor en 3, el color interno en None, el color de línea en (0, 0, 0) y la rotación en (0, 0, 0).",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_03_estructuras-de-datos-con-tuplas",
+        "paginas": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_04_mas-sobre-strings-p8",
+    "pregunta": "¿Qué índice negativo permite acceder al primer carácter de una cadena?",
+    "respuesta_esperada": "El índice negativo equivalente a la longitud de la cadena con signo menos permite acceder al primer carácter.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_04_mas-sobre-strings",
+        "paginas": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_09_dataframes-p19",
+    "pregunta": "¿Qué operaciones agregadas se muestran y qué efecto tiene dividir el DataFrame por 1000?",
+    "respuesta_esperada": "Se muestran la suma (`sum`), el producto (`prod`) y la división (`div`); dividir el DataFrame por 1000 divide por ese valor cada elemento de sus columnas.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_09_dataframes",
+        "paginas": [
+          19
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_07_funciones-y-variables-locales-p5",
+    "pregunta": "¿Qué valor imprime el programa al final?",
+    "respuesta_esperada": "Imprime 225.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_07_funciones-y-variables-locales",
+        "paginas": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_10_manejo-de-archivos-p10",
+    "pregunta": "¿Qué texto contiene el archivo que se crea en el ejemplo de escritura con Python?",
+    "respuesta_esperada": "El archivo contiene «Mi primer archivo escrito desde Python», una línea de guiones y «Hola mundo!».",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_10_manejo-de-archivos",
+        "paginas": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_11_estructura-de-datos-compuestos-p20",
+    "pregunta": "¿Cómo se usa el código de cada vuelo para organizar la información leída del archivo?",
+    "respuesta_esperada": "Se toma de la posición 1 de cada fila y se usa como clave del diccionario que contiene los datos del vuelo.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_11_estructura-de-datos-compuestos",
+        "paginas": [
+          20
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_08_pandas-series-y-operaciones-sobre-series-p7",
+    "pregunta": "¿Qué características tiene una serie en Pandas?",
+    "respuesta_esperada": "Una serie reúne muchos registros ordenados según un criterio, contiene datos del mismo tipo y tiene un nombre que la describe.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_08_pandas-series-y-operaciones-sobre-series",
+        "paginas": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_11_estructura-de-datos-compuestos-p3",
+    "pregunta": "¿Cómo se pueden organizar los datos de varios contactos, como su celular, correo y cumpleaños?",
+    "respuesta_esperada": "Se puede usar un diccionario de diccionarios, con el nombre de cada contacto como llave y otro diccionario con sus datos como valor.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_11_estructura-de-datos-compuestos",
+        "paginas": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_04_condicionales-p13",
+    "pregunta": "¿Cómo se puede contar cuántos de tres números ingresados son pares?",
+    "respuesta_esperada": "Se inicializa un contador en cero y se incrementa cada vez que uno de los tres números es divisible por dos.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_04_condicionales",
+        "paginas": [
+          13
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_06_funciones-de-python-matematicas-y-de-entrada-salida-p10",
+    "pregunta": "¿Cómo deben quedar los valores de tres variables después de rotarlos hacia la derecha?",
+    "respuesta_esperada": "Al final, la segunda variable debe tener el valor inicial de la primera, la tercera el de la segunda y la primera el de la tercera.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_06_funciones-de-python-matematicas-y-de-entrada-salida",
+        "paginas": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_07_introduccion-a-visualizaciones-con-matplotlib-p12",
+    "pregunta": "¿Qué tipo de estructura utiliza Matplotlib para representar imágenes?",
+    "respuesta_esperada": "Matplotlib representa las imágenes mediante matrices tridimensionales, que son ndarrays de NumPy.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_07_introduccion-a-visualizaciones-con-matplotlib",
+        "paginas": [
+          12
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_08_pandas-series-y-operaciones-sobre-series-p20",
+    "pregunta": "¿Qué tipos de operaciones se pueden realizar con una serie de pandas?",
+    "respuesta_esperada": "Se pueden realizar operaciones aritméticas y binarias, conversiones, iteraciones, aplicar funciones, cálculos estadísticos, ajustar índices, manejar datos faltantes, mezclar series y crear gráficas.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_08_pandas-series-y-operaciones-sobre-series",
+        "paginas": [
+          20
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_06_cadenas-de-caracteres-p7",
+    "pregunta": "¿Qué caracteres de escape se pueden usar para insertar saltos de línea y tabulaciones en una cadena de Python?",
+    "respuesta_esperada": "Se puede usar `\\n` para insertar saltos de línea y `\\t` para insertar tabulaciones.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_06_cadenas-de-caracteres",
+        "paginas": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_09_dataframes-p27",
+    "pregunta": "¿Qué operadores se usan para combinar condiciones con «y» o «o» al filtrar un DataFrame?",
+    "respuesta_esperada": "Se usa `&` para «y» y `|` para «o», poniendo cada condición entre paréntesis.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_09_dataframes",
+        "paginas": [
+          27
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_06_funciones-de-python-matematicas-y-de-entrada-salida-p1",
+    "pregunta": "¿Qué temas de funciones de Python se presentan en este material?",
+    "respuesta_esperada": "Se presentan funciones matemáticas, de cadenas y de entrada y salida.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_06_funciones-de-python-matematicas-y-de-entrada-salida",
+        "paginas": [
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_03_uso-del-centinela-p8",
+    "pregunta": "¿Cuándo termina el ciclo que busca el máximo común divisor?",
+    "respuesta_esperada": "Termina cuando encuentra un número que divide exactamente a ambos valores y cambia el centinela de False a True.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_03_uso-del-centinela",
+        "paginas": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_10_visualizacion-con-pandas-p18",
+    "pregunta": "¿Qué tipo de gráfico se usa para representar la relación entre dos columnas, y cómo se especifican las columnas de los ejes?",
+    "respuesta_esperada": "Se usa un diagrama de dispersión con `kind=\"scatter\"`, indicando la columna del eje X con `x` y la del eje Y con `y`.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_10_visualizacion-con-pandas",
+        "paginas": [
+          18
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_07_operaciones-sobre-listas-p8",
+    "pregunta": "¿Cómo se puede borrar un elemento específico de una lista en Python?",
+    "respuesta_esperada": "Se puede usar la instrucción `del` con el índice del elemento que se desea eliminar.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_07_operaciones-sobre-listas",
+        "paginas": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_06_funciones-de-python-matematicas-y-de-entrada-salida-p3",
+    "pregunta": "¿Qué funciones integradas de Python se mencionan como ejemplos?",
+    "respuesta_esperada": "Se mencionan `int()`, `float()`, `str()` y `type()`.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_06_funciones-de-python-matematicas-y-de-entrada-salida",
+        "paginas": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_05_conversion-de-tipos-p2",
+    "pregunta": "¿Qué funciones predefinidas de Python permiten convertir valores a otros tipos?",
+    "respuesta_esperada": "Las funciones `int()`, `float()` y `str()` permiten convertir valores a diferentes tipos.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_05_conversion-de-tipos",
+        "paginas": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_01_descubriendo-el-mundo-de-la-programacion-p13",
+    "pregunta": "¿Se puede determinar a qué tribu pertenece el primer nativo?",
+    "respuesta_esperada": "No se puede saber a qué tribu pertenece el primer nativo.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_01_descubriendo-el-mundo-de-la-programacion",
+        "paginas": [
+          13
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_11_estructura-de-datos-compuestos-p2",
+    "pregunta": "¿Qué limitación tiene el diccionario del ejemplo para almacenar la información de los contactos?",
+    "respuesta_esperada": "Solo permite guardar el número telefónico de cada contacto, no otros datos como su dirección, correo electrónico o fecha de nacimiento.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_11_estructura-de-datos-compuestos",
+        "paginas": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_06_introduccion-a-librerias-p5",
+    "pregunta": "¿Qué tipos de visualizaciones se pueden crear con matplotlib?",
+    "respuesta_esperada": "Con matplotlib se pueden crear imágenes con escalas de colores, gráficas de temperatura y precipitación, campos de flujo, diagramas de dispersión tridimensionales y diagramas de caja.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_06_introduccion-a-librerias",
+        "paginas": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_07_operaciones-sobre-listas-p21",
+    "pregunta": "¿Qué conversiones entre tipos de datos suelen ser útiles en Python?",
+    "respuesta_esperada": "Convertir cadenas en listas y listas en cadenas.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_07_operaciones-sobre-listas",
+        "paginas": [
+          21
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_11_estructura-de-datos-compuestos-p18",
+    "pregunta": "¿Cómo se organiza la información de cada vuelo al cargarla desde un archivo CSV?",
+    "respuesta_esperada": "Cada vuelo se almacena como un diccionario con datos como aerolínea, origen, destino, distancia, salida, duración y retraso, y se guarda en el diccionario principal usando su código de vuelo como clave.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_11_estructura-de-datos-compuestos",
+        "paginas": [
+          18
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_10_visualizacion-con-pandas-p14",
+    "pregunta": "¿Cómo se puede crear un diagrama de cajas de la puntuación media agrupado por idioma original?",
+    "respuesta_esperada": "Se puede usar `boxplot` sobre las columnas `original_language` y `vote_average`, agrupando por `original_language` y rotando las etiquetas 45 grados.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_10_visualizacion-con-pandas",
+        "paginas": [
+          14
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_05_mas-sobre-matrices-p5",
+    "pregunta": "¿Cómo se puede representar una imagen en Python usando una matriz?",
+    "respuesta_esperada": "Una imagen puede representarse como una cuadrícula de 16 × 16 con índices de 0 a 15 en ambos ejes y una franja horizontal negra en la fila superior.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_05_mas-sobre-matrices",
+        "paginas": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_05_leyes-de-de-morgan-p7",
+    "pregunta": "¿Qué condiciones deben cumplirse para que la misión permita rescatar a la princesa?",
+    "respuesta_esperada": "La carga del sable debe ser de al menos 90 y la energía del escudo debe ser de al menos 100.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_05_leyes-de-de-morgan",
+        "paginas": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_02_booleanos-y-sus-operadores-p4",
+    "pregunta": "¿Qué elementos forman una expresión relacional?",
+    "respuesta_esperada": "Una expresión relacional se forma con dos operandos, que pueden ser valores, variables, parámetros, llamadas a funciones u otras expresiones, separados por un operador relacional.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_02_booleanos-y-sus-operadores",
+        "paginas": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_04_condicionales-p19",
+    "pregunta": "¿Qué condiciones debe cumplir un número entero para considerarse positivo y de un solo dígito?",
+    "respuesta_esperada": "Debe ser mayor que 0 y menor que 10.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_04_condicionales",
+        "paginas": [
+          19
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_07_operaciones-sobre-cadenas-de-caracteres-p9",
+    "pregunta": "¿Qué ocurre si intento modificar una cadena de texto en Python?",
+    "respuesta_esperada": "Las cadenas son inmutables: Python no cambia su contenido, sino que crea una nueva cadena con los cambios.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_07_operaciones-sobre-cadenas-de-caracteres",
+        "paginas": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas-p11",
+    "pregunta": "¿Qué condiciones debe cumplir una estudiante para que la función indique que hay una mujer pila?",
+    "respuesta_esperada": "Debe tener el género registrado como femenino y un promedio de al menos 4.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas",
+        "paginas": [
+          11
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_08_patrones-de-recorrido-p5",
+    "pregunta": "¿Cómo se recorren todos los elementos de una lista usando sus posiciones y cómo se accede a cada elemento?",
+    "respuesta_esperada": "Se recorren los índices desde 0 hasta la longitud de la lista menos 1 con `range`, y se accede a cada elemento usando el operador `[]`.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_08_patrones-de-recorrido",
+        "paginas": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_09_dataframes-p10",
+    "pregunta": "¿Qué métodos permiten ver las primeras y las últimas filas de un DataFrame?",
+    "respuesta_esperada": "`head()` muestra las primeras filas y `tail()` muestra las últimas.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_09_dataframes",
+        "paginas": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_04_condicionales-p2",
+    "pregunta": "¿Para qué sirven las instrucciones condicionales en un programa?",
+    "respuesta_esperada": "Sirven para resolver un problema considerando distintos casos y ejecutar una acción diferente según la condición de cada caso.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_04_condicionales",
+        "paginas": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_01_descubriendo-el-mundo-de-la-programacion-p7",
+    "pregunta": "¿Qué es un algoritmo y de qué maneras puede llevarse a cabo?",
+    "respuesta_esperada": "Un algoritmo es una secuencia de instrucciones para resolver un problema; puede implementarse en un lenguaje de programación o ejecutarse a mano con lápiz y papel o con una calculadora.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_01_descubriendo-el-mundo-de-la-programacion",
+        "paginas": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_06_funciones-de-python-matematicas-y-de-entrada-salida-p8",
+    "pregunta": "¿Qué debo hacer para usar como número un dato que el usuario escribe con `input()`?",
+    "respuesta_esperada": "Debo convertir el texto que devuelve `input()` a un tipo numérico, por ejemplo, usando `float()`. ",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_06_funciones-de-python-matematicas-y-de-entrada-salida",
+        "paginas": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_07_operaciones-sobre-listas-p25",
+    "pregunta": "¿Qué ocurre al convertir una cadena de caracteres en una lista usando `list()`?",
+    "respuesta_esperada": "La cadena se convierte en una lista cuyos elementos son sus caracteres individuales, incluidos los espacios.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_07_operaciones-sobre-listas",
+        "paginas": [
+          25
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_07_introduccion-a-visualizaciones-con-matplotlib-p19",
+    "pregunta": "¿Qué información presenta el diagrama de caja y bigotes sobre la precipitación?",
+    "respuesta_esperada": "Muestra la variación de la precipitación promedio mensual a lo largo del año, de enero a diciembre, e indica valores atípicos y promedios.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_07_introduccion-a-visualizaciones-con-matplotlib",
+        "paginas": [
+          19
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_07_funciones-y-variables-locales-p8",
+    "pregunta": "¿Qué diferencia hay entre un parámetro y un argumento al llamar a una función?",
+    "respuesta_esperada": "El argumento es el valor que damos al parámetro cuando llamamos a la función.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_07_funciones-y-variables-locales",
+        "paginas": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_03_estructuras-de-datos-con-tuplas-p3",
+    "pregunta": "¿Qué valores de color tienen el relleno y el borde del rectángulo?",
+    "respuesta_esperada": "El relleno es verde y su tupla de color es (16, 116, 61), mientras que el borde es morado y su tupla es (135, 4, 241).",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_03_estructuras-de-datos-con-tuplas",
+        "paginas": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_03_estructuras-de-datos-con-tuplas-p7",
+    "pregunta": "¿Cómo se representan las propiedades de cada figura en la lista?",
+    "respuesta_esperada": "Cada figura se representa mediante un diccionario con propiedades como posición, tamaño, grosor, colores y rotación.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_03_estructuras-de-datos-con-tuplas",
+        "paginas": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_07_introduccion-a-visualizaciones-con-matplotlib-p16",
+    "pregunta": "¿Qué variables compara el diagrama de líneas de Bogotá?",
+    "respuesta_esperada": "Compara la temperatura y la precipitación promedio de Bogotá por mes entre 1970 y 2000.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_07_introduccion-a-visualizaciones-con-matplotlib",
+        "paginas": [
+          16
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_02_tuplas-p10",
+    "pregunta": "¿Qué operaciones se pueden usar para consultar elementos y el tamaño de una tupla?",
+    "respuesta_esperada": "Se puede usar la indexación con `[]`, los slices y la función `len` para obtener su tamaño.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_02_tuplas",
+        "paginas": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_04_matrices-p2",
+    "pregunta": "¿Cómo se describe la dimensión de una matriz?",
+    "respuesta_esperada": "Se indica primero la cantidad de filas y luego la cantidad de columnas; por ejemplo, una matriz con 4 filas y 3 columnas tiene dimensión 4 × 3.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_04_matrices",
+        "paginas": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_05_instrucciones-iterativas-for-p6",
+    "pregunta": "¿Qué elementos forman el patrón habitual de un ciclo que recorre valores en orden?",
+    "respuesta_esperada": "Se inicializa un índice, se ejecutan acciones mientras este no supere el valor final y se incrementa en cada iteración.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_05_instrucciones-iterativas-for",
+        "paginas": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_04_mas-sobre-strings-p11",
+    "pregunta": "¿Qué ocurre al omitir el índice inicial o el índice final al extraer una subcadena?",
+    "respuesta_esperada": "Si se omite el índice inicial, la subcadena comienza al principio de la cadena; si se omite el índice final, va desde el índice indicado hasta el final de la cadena.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_04_mas-sobre-strings",
+        "paginas": [
+          11
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_02_instrucciones-iterativas-while-p6",
+    "pregunta": "¿Qué ciclo suma los números enteros del 1 al 1000, ambos incluidos?",
+    "respuesta_esperada": "El ciclo que comienza con i en 1 y continúa mientras i sea menor o igual que 1000.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_02_instrucciones-iterativas-while",
+        "paginas": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_04_matrices-p9",
+    "pregunta": "¿Cómo puedo crear en Python una matriz de 3 filas y 6 columnas con ceros?",
+    "respuesta_esperada": "Se crea primero una lista de seis ceros y luego se repite tres veces dentro de otra lista.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_04_matrices",
+        "paginas": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_09_dataframes-p22",
+    "pregunta": "¿Qué ocurre con los índices al ordenar un DataFrame por los valores de una columna?",
+    "respuesta_esperada": "El ordenamiento conserva los valores del índice original, por lo que no necesariamente coinciden con las nuevas posiciones de las filas.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_09_dataframes",
+        "paginas": [
+          22
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_07_introduccion-a-visualizaciones-con-matplotlib-p2",
+    "pregunta": "¿Qué tipos de visualizaciones se pueden crear con Matplotlib?",
+    "respuesta_esperada": "Matplotlib permite crear gráficos, como diagramas de puntos, líneas, barras y circulares, además de imágenes.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_07_introduccion-a-visualizaciones-con-matplotlib",
+        "paginas": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_10_visualizacion-con-pandas-p20",
+    "pregunta": "¿Qué muestra una matriz de dispersión en su diagonal y en las demás celdas?",
+    "respuesta_esperada": "En la diagonal muestra histogramas o gráficos KDE y, en las demás celdas, gráficos de dispersión entre pares de variables.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_10_visualizacion-con-pandas",
+        "paginas": [
+          20
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas-p2",
+    "pregunta": "¿Para qué pueden ser útiles los diccionarios al organizar información sobre personas o elementos similares?",
+    "respuesta_esperada": "Permiten manejar fácilmente elementos que comparten las mismas características, como estudiantes de quienes se guarda el nombre, código, género, carrera, promedio y semestre según créditos.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas",
+        "paginas": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_02_booleanos-y-sus-operadores-p8",
+    "pregunta": "¿Qué elementos pueden combinarse para formar una expresión lógica?",
+    "respuesta_esperada": "Puede componerse de expresiones relacionales o de valores, variables, parámetros o funciones de tipo boolean.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_02_booleanos-y-sus-operadores",
+        "paginas": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_04_condicionales-p8",
+    "pregunta": "¿Qué ocurre si el usuario ingresa una opción que no aparece en el menú?",
+    "respuesta_esperada": "El programa muestra el mensaje «Selección inválida».",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_04_condicionales",
+        "paginas": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_07_funciones-y-variables-locales-p2",
+    "pregunta": "¿Para qué sirve definir funciones propias en Python?",
+    "respuesta_esperada": "Sirve para extender el lenguaje y enseñarle a Python a realizar cálculos que inicialmente no sabe hacer.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_07_funciones-y-variables-locales",
+        "paginas": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_06_funciones-de-python-matematicas-y-de-entrada-salida-p11",
+    "pregunta": "¿Cuánto valen 10,000 pesos después de 20 años con un interés anual del 4.5 %?",
+    "respuesta_esperada": "Se convierten en 24,117.14 pesos.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_06_funciones-de-python-matematicas-y-de-entrada-salida",
+        "paginas": [
+          11
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_07_operaciones-sobre-cadenas-de-caracteres-p6",
+    "pregunta": "¿Qué función permite cambiar las mayúsculas por minúsculas y las minúsculas por mayúsculas en una cadena?",
+    "respuesta_esperada": "`swapcase()` devuelve una nueva cadena con los caracteres en minúscula convertidos a mayúscula y viceversa.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_07_operaciones-sobre-cadenas-de-caracteres",
+        "paginas": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_10_visualizacion-con-pandas-p3",
+    "pregunta": "¿Qué información muestra un histograma en el ejemplo de las calificaciones de películas?",
+    "respuesta_esperada": "Muestra cuántas películas hay según su promedio de votación.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_10_visualizacion-con-pandas",
+        "paginas": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_11_estructura-de-datos-compuestos-p14",
+    "pregunta": "¿Cómo se organiza la información de cada vuelo en el diccionario principal?",
+    "respuesta_esperada": "Cada código de vuelo se usa como clave y se asocia con un diccionario que contiene datos como la aerolínea, el origen, el destino, la distancia, la salida, la duración y el retraso.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_11_estructura-de-datos-compuestos",
+        "paginas": [
+          14
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_11_estructura-de-datos-compuestos-p24",
+    "pregunta": "¿Cómo se organiza cada vuelo en el diccionario que se construye al leer el archivo?",
+    "respuesta_esperada": "Cada vuelo se guarda bajo su código como clave, y su valor es un diccionario con datos como la aerolínea, el origen, el destino, la distancia, la salida, la duración y el retraso.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_11_estructura-de-datos-compuestos",
+        "paginas": [
+          24
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_07_operaciones-sobre-listas-p27",
+    "pregunta": "¿Qué debe calcular la función `promedio_lista`?",
+    "respuesta_esperada": "Debe retornar el promedio de los números positivos de la lista recibida.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_07_operaciones-sobre-listas",
+        "paginas": [
+          27
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_05_leyes-de-de-morgan-p2",
+    "pregunta": "¿Cómo se transforma la negación de una expresión con «and» usando las leyes de De Morgan?",
+    "respuesta_esperada": "La negación de «x and y» equivale a «(not x) or (not y)».",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_05_leyes-de-de-morgan",
+        "paginas": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_03_declaracion-de-variables-instruccion-de-asignacion-y-tipado-dinamico-p4",
+    "pregunta": "¿Qué significa que Python tenga tipado dinámico respecto a una variable?",
+    "respuesta_esperada": "Significa que una misma variable puede recibir valores de distintos tipos y conserva el último valor que se le asignó.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_03_declaracion-de-variables-instruccion-de-asignacion-y-tipado-dinamico",
+        "paginas": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_07_operaciones-sobre-listas-p16",
+    "pregunta": "¿Qué hacen los métodos `count` y `extend` cuando se usan con una lista?",
+    "respuesta_esperada": "`count` cuenta cuántas veces aparece un elemento en la lista y `extend` agrega otra lista completa al final.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_07_operaciones-sobre-listas",
+        "paginas": [
+          16
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_05_conversion-de-tipos-p5",
+    "pregunta": "¿Qué hace la función `str()` cuando recibe un número?",
+    "respuesta_esperada": "Devuelve una representación del número como una cadena de caracteres.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_05_conversion-de-tipos",
+        "paginas": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_09_estilo-de-programacion-p5",
+    "pregunta": "¿Qué características debería tener una función bien diseñada?",
+    "respuesta_esperada": "Debería tener un único objetivo, ser fácil de explicar y servir para agrupar código que se repite.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_09_estilo-de-programacion",
+        "paginas": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_10_manejo-de-archivos-p5",
+    "pregunta": "¿Por qué es importante cerrar un archivo después de trabajar con él?",
+    "respuesta_esperada": "Porque, si no se cierra, los cambios realizados podrían perderse o el archivo podría dañarse.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_10_manejo-de-archivos",
+        "paginas": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_04_expresiones-operadores-aritmeticos-y-operaciones-sobre-strings-p3",
+    "pregunta": "¿Cómo se determina el resultado de una división entera cuando alguno de los valores es negativo?",
+    "respuesta_esperada": "Devuelve el mayor número entero menor o igual al resultado de la división.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_04_expresiones-operadores-aritmeticos-y-operaciones-sobre-strings",
+        "paginas": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_09_dataframes-p29",
+    "pregunta": "¿Cómo se filtran las filas de un DataFrame cuyo estado es «Planned» o «Post Production»?",
+    "respuesta_esperada": "Se usa `isin` sobre la columna de estado con la lista `['Planned', 'Post Production']` y se filtra el DataFrame con el resultado.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_09_dataframes",
+        "paginas": [
+          29
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_06_introduccion-a-listas-p8",
+    "pregunta": "¿Cómo puedo obtener los últimos elementos de una lista usando un corte?",
+    "respuesta_esperada": "Puedes usar `a[1:]` para obtener una lista con todos los elementos desde el índice 1 hasta el final.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_06_introduccion-a-listas",
+        "paginas": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_02_booleanos-y-sus-operadores-p5",
+    "pregunta": "¿Qué operador relacional permite comprobar si un valor es menor o igual que otro?",
+    "respuesta_esperada": "El operador `<=` comprueba si un valor es menor o igual que otro.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_02_booleanos-y-sus-operadores",
+        "paginas": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_07_operaciones-sobre-listas-p6",
+    "pregunta": "¿Cómo se pueden quitar varios elementos consecutivos de una lista en Python?",
+    "respuesta_esperada": "Se asigna una lista vacía al segmento que se quiere eliminar.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_07_operaciones-sobre-listas",
+        "paginas": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_08_pandas-series-y-operaciones-sobre-series-p13",
+    "pregunta": "¿Qué ocurre con el índice de una serie al reconstruirlo con `reset_index(drop=True)`?",
+    "respuesta_esperada": "El índice de fechas se reemplaza por números consecutivos que comienzan en 0.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_08_pandas-series-y-operaciones-sobre-series",
+        "paginas": [
+          13
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_04_condicionales-p14",
+    "pregunta": "¿Qué debe hacer la función con los cuatro números enteros que recibe?",
+    "respuesta_esperada": "Debe retornar el mayor de los cuatro números, y si hay varios iguales que son los mayores, puede retornar cualquiera de ellos.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_04_condicionales",
+        "paginas": [
+          14
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_09_diccionarios-mutabilidad-borrado-de-datos-y-parametros-por-referencia-p10",
+    "pregunta": "¿Qué ocurre con una variable entera después de pasarla a una función que aumenta en uno el parámetro recibido?",
+    "respuesta_esperada": "La variable original conserva su valor, aunque el parámetro aumente en uno dentro de la función.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_09_diccionarios-mutabilidad-borrado-de-datos-y-parametros-por-referencia",
+        "paginas": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_programa-p3",
+    "pregunta": "¿Qué condiciones debe cumplir un estudiante para presentar el examen de un nivel?",
+    "respuesta_esperada": "Debe estar presente en clase y firmar la hoja inicial que contiene las instrucciones y reglas del examen.",
+    "fuentes": [
+      {
+        "clave": "2026-20_programa",
+        "paginas": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_03_declaracion-de-variables-instruccion-de-asignacion-y-tipado-dinamico-p9",
+    "pregunta": "¿Qué ocurre si intento usar una variable antes de asignarle un valor en Python?",
+    "respuesta_esperada": "Python produce un error NameError porque la variable no está definida.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_03_declaracion-de-variables-instruccion-de-asignacion-y-tipado-dinamico",
+        "paginas": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_09_dataframes-p23",
+    "pregunta": "¿Cómo puedo seleccionar registros de un DataFrame según su posición numérica?",
+    "respuesta_esperada": "Se usa `iloc`; por ejemplo, `ordenados.iloc[5]` selecciona el registro en la posición 5 y `ordenados.iloc[5:10]` selecciona los registros de las posiciones 5 a 9.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_09_dataframes",
+        "paginas": [
+          23
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_04_expresiones-operadores-aritmeticos-y-operaciones-sobre-strings-p4",
+    "pregunta": "¿Qué resultados se obtienen al evaluar las expresiones aritméticas indicadas en Python?",
+    "respuesta_esperada": "Se obtienen, respectivamente: 8, 7, 7, 15, -6, -6, -2.5 y -3.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_04_expresiones-operadores-aritmeticos-y-operaciones-sobre-strings",
+        "paginas": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_09_dataframes-p5",
+    "pregunta": "¿Qué función de pandas se utiliza para importar un archivo CSV como DataFrame?",
+    "respuesta_esperada": "Se utiliza `pd.read_csv()` indicando el nombre del archivo CSV.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_09_dataframes",
+        "paginas": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_11_estructura-de-datos-compuestos-p15",
+    "pregunta": "¿Qué ocurre con cada línea de datos del archivo al construir el diccionario de vuelos?",
+    "respuesta_esperada": "Se separa por punto y coma, se guardan sus datos en un diccionario asociado al código del vuelo y se añade al diccionario de vuelos.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_11_estructura-de-datos-compuestos",
+        "paginas": [
+          15
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_02_tuplas-p8",
+    "pregunta": "¿Cómo se puede representar una figura con su posición, dimensiones y color usando tuplas?",
+    "respuesta_esperada": "Se puede usar una tupla que contenga una tupla con la posición, otra con las dimensiones y un valor de texto para el color.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_02_tuplas",
+        "paginas": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_07_operaciones-sobre-listas-p17",
+    "pregunta": "¿Qué hacen los métodos `index` y `reverse` al trabajar con una lista?",
+    "respuesta_esperada": "`index` busca la posición de un elemento en la lista y `reverse` invierte el orden de sus elementos.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_07_operaciones-sobre-listas",
+        "paginas": [
+          17
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_07_funciones-y-variables-locales-p25",
+    "pregunta": "Si una función cambia el valor de un parámetro, ¿qué ocurre con la variable que se usó como argumento al terminar la función?",
+    "respuesta_esperada": "La variable usada como argumento conserva su valor original.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_07_funciones-y-variables-locales",
+        "paginas": [
+          25
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_09_diccionarios-mutabilidad-borrado-de-datos-y-parametros-por-referencia-p3",
+    "pregunta": "¿Qué ocurre si modifico un diccionario mediante otra variable que apunta a él?",
+    "respuesta_esperada": "También cambia el diccionario original, porque ambas variables referencian al mismo objeto.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_09_diccionarios-mutabilidad-borrado-de-datos-y-parametros-por-referencia",
+        "paginas": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_09_diccionarios-mutabilidad-borrado-de-datos-y-parametros-por-referencia-p5",
+    "pregunta": "¿Qué ocurre con un diccionario y su alias cuando se modifica un elemento mediante el alias?",
+    "respuesta_esperada": "La modificación también aparece en el diccionario original, mientras que una copia independiente no se ve afectada.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_09_diccionarios-mutabilidad-borrado-de-datos-y-parametros-por-referencia",
+        "paginas": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_05_leyes-de-de-morgan-p9",
+    "pregunta": "¿Cómo se puede determinar si tres puntos están alineados usando sus coordenadas?",
+    "respuesta_esperada": "Están alineados si las pendientes entre el primer y el segundo punto y entre el segundo y el tercero son iguales.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_05_leyes-de-de-morgan",
+        "paginas": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_04_expresiones-operadores-aritmeticos-y-operaciones-sobre-strings-p8",
+    "pregunta": "¿Cómo puedo repetir una cadena varias veces en Python?",
+    "respuesta_esperada": "Se usa el operador `*` entre la cadena y un número entero, y la cadena se concatena consigo misma esa cantidad de veces.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_04_expresiones-operadores-aritmeticos-y-operaciones-sobre-strings",
+        "paginas": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_05_instrucciones-iterativas-for-p9",
+    "pregunta": "¿Qué rango se debe usar para sumar los primeros 1000 números con un bucle `for`?",
+    "respuesta_esperada": "Se debe usar `range(1, 1001)`, porque el límite superior del rango no se incluye.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_05_instrucciones-iterativas-for",
+        "paginas": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_05_leyes-de-de-morgan-p8",
+    "pregunta": "Una vez que un programa funciona, ¿qué aspectos conviene revisar para mejorarlo?",
+    "respuesta_esperada": "Conviene documentarlo, evaluar si necesita nombres de variables más claros y preguntarse si puede hacerse más elegante, usando una función o simplificando los condicionales.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_05_leyes-de-de-morgan",
+        "paginas": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_02_instrucciones-iterativas-while-p5",
+    "pregunta": "¿Qué puede ocurrir si un ciclo while no modifica la variable que controla su condición?",
+    "respuesta_esperada": "Si no se modifica esa variable, la condición puede seguir siendo verdadera y el ciclo ejecutarse infinitamente.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_02_instrucciones-iterativas-while",
+        "paginas": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_07_operaciones-sobre-listas-p7",
+    "pregunta": "¿Cómo puedo insertar varios elementos en una lista en una posición específica?",
+    "respuesta_esperada": "Se pueden asignar los elementos al pedazo de la lista que empieza y termina en esa posición.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_07_operaciones-sobre-listas",
+        "paginas": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_09_recorrido-de-diccionarios-p5",
+    "pregunta": "¿Cómo puedo recorrer las llaves de un diccionario para mostrar cada llave junto con su valor?",
+    "respuesta_esperada": "Usa `for cada_llave in d.keys()` y muestra cada llave junto con `d[cada_llave]`.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_09_recorrido-de-diccionarios",
+        "paginas": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_09_dataframes-p18",
+    "pregunta": "¿Qué hace `quantile()` cuando se aplica a un DataFrame numérico?",
+    "respuesta_esperada": "Calcula el valor del cuantil indicado para cada columna numérica del DataFrame.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_09_dataframes",
+        "paginas": [
+          18
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_10_ejercicio-ocurrencias-de-cada-digito-en-un-numero-usando-diccionarios-p6",
+    "pregunta": "¿Cómo se actualiza el diccionario para contar cada dígito del número?",
+    "respuesta_esperada": "La función extrae el último dígito, incrementa su conteo si ya está en el diccionario o lo agrega con valor 1, y retorna el diccionario modificado.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_10_ejercicio-ocurrencias-de-cada-digito-en-un-numero-usando-diccionarios",
+        "paginas": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_10_visualizacion-con-pandas-p23",
+    "pregunta": "¿Qué opción permite que los histogramas compartan el eje vertical?",
+    "respuesta_esperada": "La opción `sharey=True` indica que se debe compartir el eje Y.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_10_visualizacion-con-pandas",
+        "paginas": [
+          23
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_08_ejercicios-de-funciones-p12",
+    "pregunta": "¿Por qué ocurre un `NameError` al intentar calcular la diferencia entre las áreas en el programa?",
+    "respuesta_esperada": "Porque `areaCua` y `areaCir` se crean dentro de sus funciones y no están definidas en el programa principal.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_08_ejercicios-de-funciones",
+        "paginas": [
+          12
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_06_cadenas-de-caracteres-p8",
+    "pregunta": "¿Qué cuenta la función `len` cuando se aplica a una cadena?",
+    "respuesta_esperada": "Devuelve el número de caracteres que forman la cadena, incluidos los espacios y los saltos de línea.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_06_cadenas-de-caracteres",
+        "paginas": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_08_ejercicios-de-funciones-p13",
+    "pregunta": "¿Por qué el programa principal produce un error al intentar restar las áreas calculadas por las funciones?",
+    "respuesta_esperada": "Porque las variables que almacenan esas áreas son locales y solo existen dentro de sus respectivas funciones.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_08_ejercicios-de-funciones",
+        "paginas": [
+          13
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_04_matrices-p19",
+    "pregunta": "¿Cómo se obtiene el número de filas y columnas de una matriz en Python?",
+    "respuesta_esperada": "El número de filas se obtiene con `len(a)` y el de columnas con `len(a[0])`.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_04_matrices",
+        "paginas": [
+          19
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_11_estructura-de-datos-compuestos-p11",
+    "pregunta": "¿Qué contiene cada línea de un archivo CSV de vuelos?",
+    "respuesta_esperada": "La primera línea contiene las etiquetas de las columnas y cada línea a partir de la segunda contiene la información de un vuelo.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_11_estructura-de-datos-compuestos",
+        "paginas": [
+          11
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_08_diccionarios-operaciones-basicas-p6",
+    "pregunta": "¿Cómo se agrega una pareja de llave y valor a un diccionario en Python?",
+    "respuesta_esperada": "Se asigna un valor a una llave entre corchetes, por ejemplo: `directorio[\"Juan\"] = \"311 286 25 27\"`.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_08_diccionarios-operaciones-basicas",
+        "paginas": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_10_visualizacion-con-pandas-p7",
+    "pregunta": "¿Cómo puedo crear un histograma del promedio de votación de las películas y cambiar su estilo?",
+    "respuesta_esperada": "Se puede usar `promedio.plot(kind=\"hist\", figsize=(10,4), xlim=(0,10), ylim=(0,15000), bins=10, title=\"Promedio votación\")` y aplicar un estilo de Matplotlib con `matplotlib.style.use('seaborn-colorblind')`.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_10_visualizacion-con-pandas",
+        "paginas": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_11_estructura-de-datos-compuestos-p28",
+    "pregunta": "¿Cómo se puede encontrar en un solo recorrido la aerolínea con más vuelos usando un diccionario?",
+    "respuesta_esperada": "Se cuenta cada vuelo por aerolínea en un diccionario y, cada vez que se actualiza el conteo, se compara con el máximo registrado para guardar la aerolínea que lo supera.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_11_estructura-de-datos-compuestos",
+        "paginas": [
+          28
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas-p9",
+    "pregunta": "¿Por qué se usan condiciones `if` independientes al contar cuántas estudiantes hay?",
+    "respuesta_esperada": "Porque hay que consultar el valor de la clave «género» en los cuatro diccionarios.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas",
+        "paginas": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_03_uso-del-centinela-p5",
+    "pregunta": "¿Cómo se expresa con un «mientras» la condición de iterar hasta que un número sea divisor de otros dos a la vez?",
+    "respuesta_esperada": "Se itera mientras el número no sea divisor de uno u otro de los dos números.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_03_uso-del-centinela",
+        "paginas": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_09_dataframes-p36",
+    "pregunta": "¿Cuántos grupos distintos se forman al agrupar los datos por estado y por idioma original?",
+    "respuesta_esperada": "Se forman 157 grupos distintos.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_09_dataframes",
+        "paginas": [
+          36
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_06_introduccion-a-listas-p4",
+    "pregunta": "¿Se pueden usar operaciones matemáticas para calcular los elementos al crear una lista?",
+    "respuesta_esperada": "Sí, se pueden usar expresiones para calcular cada elemento de una lista.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_06_introduccion-a-listas",
+        "paginas": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_04_matrices-p17",
+    "pregunta": "¿Qué valores debe tener cada celda de una matriz identidad de tamaño n × n?",
+    "respuesta_esperada": "Debe tener unos en la diagonal principal y ceros en el resto de las celdas.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_04_matrices",
+        "paginas": [
+          17
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_11_estructura-de-datos-compuestos-p8",
+    "pregunta": "¿Cómo se organiza la información de los vuelos en esta estructura de datos?",
+    "respuesta_esperada": "Se usa un diccionario cuyas llaves son los códigos de los vuelos y cuyos valores son diccionarios con el resto de la información de cada vuelo.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_11_estructura-de-datos-compuestos",
+        "paginas": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas-p8",
+    "pregunta": "¿Qué información se muestra al ejecutar el programa con el estudiante que obtuvo el promedio más alto?",
+    "respuesta_esperada": "Se muestra el nombre del estudiante con mayor promedio y su promedio; en el ejemplo, Ana Gavalda con 4.25.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas",
+        "paginas": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_06_cadenas-de-caracteres-p3",
+    "pregunta": "¿Qué diferencia hay entre ASCII, ISO-8859-1 y Unicode?",
+    "respuesta_esperada": "ASCII contiene 127 caracteres, ISO-8859-1 incluye caracteres frecuentes en lenguas de Europa occidental y Unicode abarca muchos más, incluidos los emoticones.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_06_cadenas-de-caracteres",
+        "paginas": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_08_diccionarios-operaciones-basicas-p12",
+    "pregunta": "¿Qué ocurre al consultar con `get` una llave que existe en un diccionario?",
+    "respuesta_esperada": "Se obtiene el valor asociado a esa llave.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_08_diccionarios-operaciones-basicas",
+        "paginas": [
+          12
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_07_funciones-y-variables-locales-p19",
+    "pregunta": "¿Qué diferencia hay entre imprimir un resultado y devolverlo desde una función?",
+    "respuesta_esperada": "Imprimir muestra información por pantalla, mientras que devolverla entrega un valor mediante `return`; mostrar algo no equivale a devolverlo.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_07_funciones-y-variables-locales",
+        "paginas": [
+          19
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_02_valores-y-tipos-de-dato-p4",
+    "pregunta": "¿Qué tipo de dato permite representar números positivos o negativos con decimales?",
+    "respuesta_esperada": "El tipo `float` permite representar números positivos o negativos con decimales.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_02_valores-y-tipos-de-dato",
+        "paginas": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_03_uso-del-centinela-p11",
+    "pregunta": "¿Qué debe hacer el programa para calcular el factorial de un número ingresado por el usuario?",
+    "respuesta_esperada": "Debe pedir un entero positivo y calcular el factorial multiplicando los números desde 1 hasta ese valor, considerando que 0! = 1.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_03_uso-del-centinela",
+        "paginas": [
+          11
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_10_construccion-e-importacion-de-modulos-p2",
+    "pregunta": "¿Qué ventaja tiene usar módulos en varios programas?",
+    "respuesta_esperada": "Permiten reutilizar funciones y valores, ahorrando el tiempo de escribir las mismas funciones en distintos programas.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_10_construccion-e-importacion-de-modulos",
+        "paginas": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_04_mas-sobre-strings-p14",
+    "pregunta": "¿Cómo se puede corregir una cadena de texto si no se puede modificar directamente?",
+    "respuesta_esperada": "Hay que crear una nueva cadena a partir de la original con los cambios deseados.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_04_mas-sobre-strings",
+        "paginas": [
+          14
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_03_estructuras-de-datos-con-tuplas-p8",
+    "pregunta": "¿Qué tipo de archivo es una imagen SVG y dónde se puede abrir?",
+    "respuesta_esperada": "Una imagen SVG es un archivo de texto que puede abrirse en un navegador.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_03_estructuras-de-datos-con-tuplas",
+        "paginas": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_04_condicionales-p4",
+    "pregunta": "¿Qué información muestra el programa cuando el número ingresado es impar?",
+    "respuesta_esperada": "Muestra que el número es impar y que multiplicar dos números impares siempre da un resultado impar.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_04_condicionales",
+        "paginas": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_02_booleanos-y-sus-operadores-p9",
+    "pregunta": "¿Cuándo es verdadera una expresión que combina dos condiciones con el operador «or»?",
+    "respuesta_esperada": "Es verdadera si cualquiera de los dos operandos es verdadero.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_02_booleanos-y-sus-operadores",
+        "paginas": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_08_pandas-series-y-operaciones-sobre-series-p12",
+    "pregunta": "¿Qué estructura de Pandas se crea al convertir un diccionario de fechas y temperaturas con `pd.Series`?",
+    "respuesta_esperada": "Se crea una serie de Pandas que usa las fechas como índices y las temperaturas como valores.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_08_pandas-series-y-operaciones-sobre-series",
+        "paginas": [
+          12
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_02_instrucciones-iterativas-while-p3",
+    "pregunta": "¿Qué sucede mientras la condición de un bucle se cumple?",
+    "respuesta_esperada": "Se ejecutan las acciones que componen el cuerpo del bucle.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_02_instrucciones-iterativas-while",
+        "paginas": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_05_mas-sobre-matrices-p7",
+    "pregunta": "¿Cómo se organiza una imagen de 16 × 16 píxeles para representarla en Python?",
+    "respuesta_esperada": "Se representa como una cuadrícula de filas y columnas, numeradas de 0 a 15, donde cada fila es una secuencia de celdas.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_05_mas-sobre-matrices",
+        "paginas": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_06_funciones-de-python-matematicas-y-de-entrada-salida-p6",
+    "pregunta": "¿Qué hay que verificar antes de usar el resultado de una función en una operación?",
+    "respuesta_esperada": "Hay que garantizar que el tipo de dato del resultado sea compatible con la operación que se va a aplicar.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_06_funciones-de-python-matematicas-y-de-entrada-salida",
+        "paginas": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_08_ejercicios-de-funciones-p4",
+    "pregunta": "¿Qué pasos se siguen para calcular la diferencia entre el área de un cuadrado y la de un círculo?",
+    "respuesta_esperada": "Se pide al usuario el lado del cuadrado, se calcula el área del cuadrado, luego la del círculo y finalmente se calcula la diferencia.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_08_ejercicios-de-funciones",
+        "paginas": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_programa-p5",
+    "pregunta": "¿Qué debe hacer un estudiante para recibir una tutoría en CupiTaller?",
+    "respuesta_esperada": "Debe agendarla con antelación; las tutorías son gratuitas.",
+    "fuentes": [
+      {
+        "clave": "2026-20_programa",
+        "paginas": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_10_visualizacion-con-pandas-p17",
+    "pregunta": "¿Qué dos películas se destacan en la gráfica que compara ingresos y duración?",
+    "respuesta_esperada": "Se señalan la película de mayores ganancias y la película de mayor duración.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_10_visualizacion-con-pandas",
+        "paginas": [
+          17
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n3_02_instrucciones-iterativas-while-p7",
+    "pregunta": "¿Qué diferencia hay entre sumar los números del 0 al 999 y sumar los del 1 al 1000 usando un ciclo `while`?",
+    "respuesta_esperada": "Ambos ciclos realizan 1000 iteraciones, pero el primero suma 499500 y termina con `i` en 1000, mientras que el segundo suma 500500 y termina con `i` en 1001.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n3_02_instrucciones-iterativas-while",
+        "paginas": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n1_07_funciones-y-variables-locales-p24",
+    "pregunta": "¿Qué volúmenes se obtienen para el cilindro y el paralelepípedo con los valores ingresados?",
+    "respuesta_esperada": "El cilindro tiene un volumen de 107.75688 y el paralelepípedo, de 72.0.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n1_07_funciones-y-variables-locales",
+        "paginas": [
+          24
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_10_visualizacion-con-pandas-p13",
+    "pregunta": "¿Cómo puedo generar diagramas de caja para las columnas de duración y puntuación de una muestra?",
+    "respuesta_esperada": "Selecciona las columnas `runtime` y `vote_average` de la muestra y usa `plot(kind=\"box\")`.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_10_visualizacion-con-pandas",
+        "paginas": [
+          13
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n2_04_condicionales-p15",
+    "pregunta": "¿Qué valor devuelve la función al recibir los números 8, 12, 12 y 5?",
+    "respuesta_esperada": "Devuelve 12.",
+    "fuentes": [
+      {
+        "clave": "2026-20_n2_04_condicionales",
+        "paginas": [
+          15
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sint-2026-20_n4_06_introduccion-a-librerias-p6",
+    "pregunta": "¿Qué expresión matemática define la transformada de Laplace de una función?",
+    "respuesta_esperada": "Se define como la integral de cero a infinito de \\(e^{-st}f(t)\\) respecto de \\(t\\), es decir, \\(F(s)=\\int_0^\\infty e^{-st}f(t)\\,dt\\).",
+    "fuentes": [
+      {
+        "clave": "2026-20_n4_06_introduccion-a-librerias",
+        "paginas": [
+          6
+        ]
+      }
+    ]
+  }
+]

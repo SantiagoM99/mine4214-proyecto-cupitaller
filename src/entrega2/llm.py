@@ -8,7 +8,7 @@ from typing import Any
 
 from openai import OpenAI
 
-from config import ARCHIVO_LLAVE, MODELO_LLM
+from config import ARCHIVO_LLAVE, MODELO_LLM, URL_OLLAMA
 
 
 @dataclass(frozen=True)
@@ -28,6 +28,15 @@ class Respuesta:
             'tokens_escritos_en_cache': self.tokens_escritos_en_cache,
             'tokens_salida': self.tokens_salida, 'segundos': round(self.segundos, 2),
         }
+
+
+def es_local(modelo: str) -> bool:
+    """Los modelos de pesos abiertos corren en Ollama, que expone la misma API Responses."""
+    return modelo.startswith('qwen3')
+
+
+def cliente_local() -> OpenAI:
+    return OpenAI(base_url=URL_OLLAMA, api_key='ollama', timeout=900)
 
 
 def cliente() -> OpenAI:
@@ -57,17 +66,21 @@ def imagen_como_entrada(ruta: Path) -> dict[str, str]:
 
 def generar(api: OpenAI, instrucciones: str, entrada: Any, *, modelo: str = MODELO_LLM, **extra: Any) -> Respuesta:
     """Una llamada a la API Responses. `entrada` es texto o la lista de mensajes de la API."""
+    if es_local(modelo):
+        # Ollama no implementa la caché explícita de OpenAI.
+        extra.pop('extra_body', None)
     inicio = time.perf_counter()
     crudo = api.responses.create(
         model=modelo, instructions=instrucciones, input=entrada, **opciones_del_modelo(modelo), **extra,
     )
     segundos = time.perf_counter() - inicio
     uso = crudo.usage
+    detalles = uso.input_tokens_details
     return Respuesta(
         texto=crudo.output_text,
         tokens_entrada=uso.input_tokens,
-        tokens_en_cache=uso.input_tokens_details.cached_tokens,
-        tokens_escritos_en_cache=getattr(uso.input_tokens_details, 'cache_write_tokens', 0) or 0,
+        tokens_en_cache=(detalles.cached_tokens or 0) if detalles else 0,
+        tokens_escritos_en_cache=getattr(detalles, 'cache_write_tokens', 0) or 0,
         tokens_salida=uso.output_tokens,
         segundos=segundos,
         crudo=crudo,

@@ -16,6 +16,7 @@ from openai import OpenAI
 from base_vectorial import Fragmento, buscar
 from catalogo import Documento
 from indexar import FUENTE_DE_TEXTO
+from config import MODELO_LLM
 from llm import CACHE_EXPLICITA, PUNTO_DE_CORTE_DE_CACHE, generar
 from transcribir import paginas_del_documento
 
@@ -59,6 +60,7 @@ def contexto_de_fragmentos(fragmentos: list[Fragmento], *, con_vigencia: bool) -
 def responder_rag(
     api: OpenAI, conexion: psycopg.Connection, pregunta: str, *,
     coleccion: str = 'visual', k: int = 5, solo_vigentes: bool = True, con_vigencia: bool = True,
+    modelo: str = MODELO_LLM,
 ) -> Resultado:
     """RAG: recupera k fragmentos y responde con ellos.
 
@@ -71,7 +73,7 @@ def responder_rag(
     segundos_busqueda = time.perf_counter() - inicio
     instrucciones = '\n'.join([REGLAS, *([REGLA_DE_VIGENCIA] if con_vigencia else []), CITA_RAG])
     entrada = f'Fuentes:\n{contexto_de_fragmentos(fragmentos, con_vigencia=con_vigencia)}\n\nPregunta: {pregunta}'
-    respuesta = generar(api, instrucciones, entrada, **CACHE_EXPLICITA)
+    respuesta = generar(api, instrucciones, entrada, modelo=modelo, **CACHE_EXPLICITA)
     return Resultado(
         respuesta=respuesta.texto,
         uso={**respuesta.uso, 'segundos': round(respuesta.segundos + segundos_busqueda, 2),

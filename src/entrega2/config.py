@@ -41,6 +41,11 @@ PERIODO_VIGENTE = '2026-20'
 
 MODELO_JUEZ = os.getenv('OPENAI_JUDGE_MODEL', 'gpt-6-sol')
 
+# Modelo de pesos abiertos para los experimentos que no pueden salir del equipo (Ollama).
+URL_OLLAMA = os.getenv('OLLAMA_URL', 'http://localhost:11434/v1')
+MODELO_LOCAL = os.getenv('MODELO_LOCAL', 'qwen3:30b-a3b-instruct-2507-q4_K_M')
+MODELO_LOCAL_RAZONADOR = os.getenv('MODELO_LOCAL_RAZONADOR', 'qwen3:30b-a3b')
+
 # Precio de lista de gpt-6-luna en USD por millón de tokens, consultado el 2026-11-24 en
 # rastreadores de precios que citan la página oficial de OpenAI. La lectura de caché cuesta
 # 0,1 veces la entrada y la escritura (retención de 30 minutos) 1,25 veces, según la guía

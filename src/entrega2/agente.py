@@ -19,6 +19,7 @@ from base_vectorial import buscar, conectar
 from bodega import consultar, descripcion
 from catalogo import cargar_catalogo
 from enfoques import contexto_de_fragmentos
+from config import MODELO_LLM
 from llm import cliente, generar
 
 MAX_PASOS = 8
@@ -139,12 +140,12 @@ def _acumular(total: dict[str, float], uso: dict[str, float]) -> None:
         total[clave] = round(total.get(clave, 0) + valor, 2)
 
 
-def preguntar(api: OpenAI, conexion: psycopg.Connection, pregunta: str) -> RespuestaAgente:
+def preguntar(api: OpenAI, conexion: psycopg.Connection, pregunta: str, modelo: str = MODELO_LLM) -> RespuestaAgente:
     instrucciones = INSTRUCCIONES + descripcion()
     conversacion: list = [{'role': 'user', 'content': pregunta}]
     resultado = RespuestaAgente(respuesta='')
     for _ in range(MAX_PASOS):
-        turno = generar(api, instrucciones, conversacion, tools=HERRAMIENTAS)
+        turno = generar(api, instrucciones, conversacion, modelo=modelo, tools=HERRAMIENTAS)
         _acumular(resultado.uso, turno.uso)
         llamadas = [item for item in turno.crudo.output if item.type == 'function_call']
         if not llamadas:

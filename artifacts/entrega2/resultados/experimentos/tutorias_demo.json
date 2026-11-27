@@ -1,0 +1,59 @@
+{
+  "fecha": "2026-02-09",
+  "nivel": 2,
+  "modelo": "qwen3:30b-a3b-instruct-2507-q4_K_M",
+  "preparaciones": [
+    {
+      "estudiante": "Pepito (ficticio)",
+      "proposito": "Desarrollar un ejercicio en senecode",
+      "historia": [
+        {
+          "en qué usó la tutoría": "Resolver dudas puntuales de los conceptos de la clase",
+          "comprensión del tema actual (1 a 5)": "2",
+          "comentario sobre el curso y sus contenidos": "Me confundo cuando hay varios if seguidos y no sé cuándo usar elif."
+        },
+        {
+          "en qué usó la tutoría": "Desarrollar un laboratorio",
+          "comprensión del tema actual (1 a 5)": "3",
+          "comentario sobre el tutor y la tutoría": "El tutor me mostró un ciclo for para contar letras pero no lo entendí.",
+          "sugerencias": "Más ejercicios de contar cosas dentro de un texto."
+        }
+      ],
+      "propuesta": {
+        "fuera_de_nivel": [],
+        "pregunta_para_empezar": "¿Qué parte del ejercicio en senecode te está costando más? ¿Te gustaría revisar cómo usar condicionales en cascada o cómo contar ocurrencias con diccionarios?",
+        "resumen": "Se proponen tres temas clave para la tutoría, todos alineados con el nivel actual (Nivel 2) y con el propósito de la reserva: desarrollar un ejercicio en senecode. Cada tema se basa en comentarios del estudiante y en pasajes del material.",
+        "temas": [
+          {
+            "motivo": "El estudiante menciona confusión con varios if seguidos y no sabe cuándo usar elif. Esto indica que necesita claridad sobre el funcionamiento de condicionales en cascada.",
+            "nivel": 2,
+            "presentacion": "Condicionales",
+            "tema": "Entender cómo funcionan los condicionales en cascada (if-elif-else) y cuándo usar cada uno"
+          },
+          {
+            "motivo": "El estudiante pidió más ejercicios de contar cosas en un texto. El ejercicio de ocurrencias de dígitos con diccionarios es una aplicación directa de contar elementos, ideal para reforzar este concepto.",
+            "nivel": 2,
+            "presentacion": "Ejercicio: Ocurrencias de cada dígito en un número usando diccionarios",
+            "tema": "Contar ocurrencias de elementos usando diccionarios y actualizarlos en cada paso"
+          },
+          {
+            "motivo": "El estudiante no entendió el uso de ciclo for para contar letras. Aunque el material usa un ciclo for, en este caso el enfoque será en el uso de funciones y diccionarios, más cercano al nivel y a los ejercicios que puede enfrentar en senecode.",
+            "nivel": 2,
+            "presentacion": "Diccionarios para manejar elementos con las mismas características",
+            "tema": "Usar diccionarios para agrupar y contar elementos con características comunes"
+          }
+        ]
+      },
+      "pasajes": [
+        "2026-20_programa p. 3",
+        "2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas p. 11",
+        "2026-20_n2_10_ejercicio-ocurrencias-de-cada-digito-en-un-numero-usando-diccionarios p. 7",
+        "2026-20_n2_04_condicionales p. 8",
+        "2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas p. 4"
+      ],
+      "temas_dentro_del_nivel": 3,
+      "temas_propuestos": 3,
+      "segundos": 74.7
+    }
+  ]
+}
