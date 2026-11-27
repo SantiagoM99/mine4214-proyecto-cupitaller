@@ -311,10 +311,69 @@ def recortes() -> None:
         miniatura.save(DIR_POSTER / nombre)
 
 
+DIR_EXPERIMENTOS = ARTIFACTS / 'resultados' / 'experimentos'
+PRODUCCION = 'pagina_200_palabras (producción)'
+RECOMENDADA = 'pagina_450_tokens'
+NOMBRES_DE_VARIANTE = {
+    PRODUCCION: 'Página, 200 palabras (hoy)', RECOMENDADA: 'Página, 450 tokens',
+    'fija_128': 'Fija 128', 'fija_256': 'Fija 256', 'fija_512': 'Fija 512',
+    'fija_128_solape_25': 'Fija 128, solape 25 %', 'fija_256_solape_15': 'Fija 256, solape 15 %',
+    'fija_256_solape_25': 'Fija 256, solape 25 %', 'pagina_con_vecina (solape de 1 página)': 'Página + la siguiente',
+    'semantico_variable': 'Semántica, variable',
+}
+
+
+def grafica_chunking() -> None:
+    """Recuperación sintética y respuestas correctas por variante: ninguna se separa de producción."""
+    variantes = leer_json(DIR_EXPERIMENTOS / 'chunking.json', {})
+    nombres = list(NOMBRES_DE_VARIANTE)
+    figura, ejes = lienzo(112)
+    for fila, clave in enumerate(nombres):
+        datos = variantes[clave]
+        color = AMARILLO if clave == RECOMENDADA else TINTA if clave == PRODUCCION else GRIS
+        ejes.barh(fila, datos['sinteticas']['recuperacion_k5_pct'], 0.66, color=color)
+        ejes.text(datos['sinteticas']['recuperacion_k5_pct'] + 0.25, fila, numero(datos['sinteticas']['recuperacion_k5_pct'], 1),
+                  va='center', fontsize=15)
+        ejes.text(91.2, fila, f"{datos['respuestas']['correctas']}", va='center', ha='center', fontsize=16, fontweight='bold')
+    ejes.text(91.2, -1.05, 'correctas\nde 26', ha='center', va='bottom', fontsize=13.5, linespacing=1.0)
+    ejes.text(70.2, -1.05, 'R@5, 200 preguntas sintéticas (%)', ha='left', va='bottom', fontsize=13.5)
+    ejes.set_yticks(range(len(nombres)), [NOMBRES_DE_VARIANTE[clave] for clave in nombres], fontsize=15)
+    ejes.invert_yaxis()
+    ejes.set_xlim(70, 93)
+    ejes.set_xticks([])
+    ejes.spines['bottom'].set_visible(False)
+    guardar(figura, 'chunking')
+
+
+def grafica_indices() -> None:
+    """Latencia de búsqueda por tamaño de la colección, sin índice y con HNSW, con el recall en cada punto."""
+    filas = leer_json(DIR_EXPERIMENTOS / 'indices.json', [])
+    series = (('Sin índice', 'Sin índice', TINTA, '-'), ('HNSW', 'HNSW (m=16, ef_construction=64), ef_search=40', '#b38f00', '-'),
+              )
+    figura, ejes = lienzo(88)
+    for nombre, prefijo, color, estilo in series:
+        puntos = [f for f in filas if f['configuracion'].startswith(prefijo) and not f['configuracion'].endswith('probes=1')]
+        puntos.sort(key=lambda f: f['vectores'])
+        x, y = [f['vectores'] for f in puntos], [f['latencia_p50_ms'] for f in puntos]
+        ejes.plot(x, y, estilo, color=color, linewidth=3, marker='o', markersize=8)
+        ejes.text(x[-1] * 1.35, y[-1], f"{nombre}\n{numero(y[-1], 1)} ms · recall {numero(puntos[-1]['recall_k5'], 2)}",
+                  va='center', fontsize=14.5, fontweight='bold', linespacing=1.05)
+    ejes.set_xscale('log')
+    ejes.set_yscale('log')
+    ejes.set_xticks([753, 1e4, 1e5, 1e6], ['753\n(hoy)', '10 mil', '100 mil', '1 millón'])
+    ejes.set_yticks([0.3, 1, 10, 100], ['0,3', '1', '10', '100 ms'])
+    ejes.minorticks_off()
+    ejes.set_xlim(500, 2.2e7)
+    ejes.yaxis.grid(True)
+    ejes.set_axisbelow(True)
+    ejes.spines['left'].set_visible(False)
+    guardar(figura, 'indices')
+
+
 def main() -> None:
     for grafica in (grafica_grupales, grafica_aciertos_por_pregunta, grafica_costo,
-                    grafica_analisis_entrega1,
-                    grafica_ocupacion_por_semestre, grafica_temas_por_nivel):
+                    grafica_analisis_entrega1, grafica_ocupacion_por_semestre, grafica_temas_por_nivel,
+                    grafica_chunking, grafica_indices):
         grafica()
         print(f'  {grafica.__name__}')
     recortes()

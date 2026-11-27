@@ -2,6 +2,7 @@
 # Mide cuántos milímetros sobran (+) o faltan (-) en cada columna del póster.
 # Sirve para ajustar el contenido sin adivinar a partir de una imagen.
 set -euo pipefail
+export NOMBRE="${1:-poster}"
 # El póster vive en docs/entregables/e2_poster/; este script está en src/auxiliar/.
 cd "$(dirname "$0")/../../docs/entregables/e2_poster"
 cat > .medir.js <<'JS'
@@ -19,8 +20,9 @@ window.addEventListener('load', () => {
 });
 JS
 python3 - <<'PY'
+import os
 from pathlib import Path
-html = Path('poster.html').read_text(encoding='utf-8')
+html = Path(os.environ['NOMBRE'] + '.html').read_text(encoding='utf-8')
 Path('.medir.html').write_text(html.replace('</body>', f"<script>{Path('.medir.js').read_text()}</script></body>"), encoding='utf-8')
 PY
 "${CHROME:-/Applications/Google Chrome.app/Contents/MacOS/Google Chrome}" --headless=new --disable-gpu --allow-file-access-from-files \
