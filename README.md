@@ -24,7 +24,6 @@ Todo vive en una sola estructura: `data/`, `docs/`, `src/`, `sql/`, `notebooks/`
     - [Pasos](#pasos)
   - [Datos de la Entrega 2](#datos-de-la-entrega-2)
   - [Decisiones de diseño](#decisiones-de-diseño)
-  - [Recompilar informes y póster](#recompilar-informes-y-póster)
 - [Estructura del repositorio](#estructura-del-repositorio)
 
 
@@ -250,17 +249,6 @@ Las trazas de los tres primeros intentos del caso 8 del agente, que el código a
 - **El agente consulta vistas, no las tablas del modelo dimensional.** Las vistas resuelven los joins y nombran las columnas de forma que el modelo escriba SQL correcto. La conexión es de solo lectura, admite una sola sentencia `SELECT` y corta las consultas largas.
 - **Lo que sale hacia el modelo externo no lleva datos personales.** La copia de la bodega no tiene los comentarios abiertos de las encuestas, `dim_programa` está vedada y las portadas de las presentaciones históricas (nombre y correo de quien dictó la sección) se omiten.
 
-## Recompilar informes y póster
-
-Los PDF ya están versionados; solo hace falta recompilarlos si cambias el texto o los datos.
-
-| Producto | Requisitos | Comando |
-|---|---|---|
-| Informe y anexos de la Entrega 1 | TeX Live o MacTeX (distribución completa) | `cd docs/entregables/e1_informe && pdflatex informe_latex.tex` (dos veces, para las referencias); igual con `anexos_latex.tex`. Las imágenes están en `img/` |
-| Informe de la Entrega 2 | TeX Live o MacTeX; usa `fontspec`, así que se compila con **XeLaTeX o LuaLaTeX**, no con `pdflatex` | Antes, generar figuras y tabla: `python3 src/main.py --entrega 2 --solo update_documentation` (las partes `figuras` y `poster` necesitan los resultados de `evaluar`, `entropia` y Postgres; ver arriba). Luego `cd docs/entregables/e2_informe && xelatex informe.tex` (dos veces). Lee `artifacts/entrega2/figuras/` y `artifacts/entrega2/tablas/` |
-| Póster de la Entrega 2 | Chrome o Chromium y `pdfinfo` (poppler: `brew install poppler`) | `python3 src/main.py --entrega 2 --solo update_documentation` (la parte `poster` necesita las páginas renderizadas por `transcribir` y los resultados de `evaluar`), luego `src/auxiliar/e2_exportar_poster.sh` (fuera de macOS, `CHROME=/ruta/al/navegador src/auxiliar/e2_exportar_poster.sh`). `src/auxiliar/e2_medir_poster.sh` dice cuántos milímetros sobran o faltan en cada columna |
-
-La fuente Helvetica Neue, con la que se miden las cajas del diagrama del modelo, solo existe en macOS; en otros sistemas el paso `modelo` usa una medida aproximada y el diagrama puede variar un poco.
 
 # Estructura del repositorio
 

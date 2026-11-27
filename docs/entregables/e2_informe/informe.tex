@@ -42,9 +42,80 @@ Universidad de los Andes · Noviembre de 2026\\[6pt]
 
 \subsection{Dominio de negocio}
 
-El dominio es la \textbf{gestión del servicio de tutorías de CupiTaller}, del Departamento de Ingeniería de Sistemas y Computación de la Universidad de los Andes. En CupiTaller, monitores atienden con cita previa a estudiantes de IP y de otros cursos de programación. La Entrega 1 modeló la operación del servicio: reservas, estados, encuestas previas y de satisfacción, exportadas de la plataforma Bookeau.
+El dominio es la \textbf{gestión del servicio de tutorías de CupiTaller}, del Departamento de Ingeniería de Sistemas y Computación de la Universidad de los Andes. En CupiTaller, monitores atienden con cita previa a estudiantes de IP y de otros cursos de programación. La Entrega 1 modeló la operación del servicio: reservas, estados, encuestas previas y de satisfacción, exportadas de la plataforma Bookeau en archivos csv por semestre.
 
-La operación responde a reglas que no están en Bookeau. Están en documentos: el \textbf{programa del curso} fija qué puede y qué no puede hacer un tutor, cómo se evalúa cada nivel y qué contenido puede usar un estudiante; las \textbf{presentaciones de clase} definen qué se ha enseñado hasta cada nivel. Esta entrega une las dos fuentes.
+Para la entrega 2, se suma adicionalmente documentos en PDF sobre la operación del curso de IP y Cupitaller. Entre ellos, el programa del curso y las presentaciones de clase. El programa del curso fija qué puede y qué no puede hacer un tutor, cómo se evalúa cada nivel y qué contenido puede usar un estudiante; las \textbf{presentaciones de clase} definen qué se ha enseñado hasta cada nivel. 
+
+
+\subsection{Fuentes de datos}
+
+\subsubsection{Fuentes no estructuradas}
+
+El corpus tiene \textbf{58 documentos y 716 páginas}. Los documentos vigentes los entrega la coordinación del curso para 2026-20; los históricos son de los periodos de 2020-20 y 2021-10.
+
+\begin{table}[H]\small\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{L>{\raggedright\arraybackslash}p{0.13\textwidth}RRL}
+\toprule
+\textbf{Documento} & \textbf{Semestre} & \textbf{Archivos} & \textbf{Páginas} & \textbf{Conocimiento que aporta} \\
+\midrule
+Programa del curso IP & 2026-20 & 1 & 6 & Niveles, evaluación, integridad académica y reglas de CupiTaller vigentes \\
+Presentaciones de clase, niveles 1 a 4 & 2026-20 & 44 & 571 & Temas, sintaxis y ejemplos de código por nivel (11, 11, 12 y 10 presentaciones) \\
+Programa del curso IP & 2020-20 & 1 & 6 & Versión anterior de las mismas reglas; es un PDF escaneado, sin capa de texto \\
+Presentaciones de clase de una sección & 2020-20 y 2021-10 & 12 & 133 & Versión anterior del material de los cuatro niveles \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Cada documento se etiqueta en un catálogo (\cod{data/plata/documentos/catalogo\_documentos.csv}) con su semestre, si está vigente, su nivel y su tipo. Las presentaciones de clase son documentos pdf que contiene texto pero también muchas imagenes o capturas de pantalla con código. El programa del curso es un documento que tiene solo texto.
+
+
+\subsubsection{Fuentes estructuradas: la bodega Gold de la Entrega 1}
+
+La Entrega 1 construyó un \emph{lakehouse} por capas a partir de las exportaciones de Bookeau (2016-20 a 2026-10). \textbf{Bronze} guarda sin modificar los 144 libros de Excel: reservas, cuatro encuestas (previas y de satisfacción, Normal y Express) y los reportes de horarios, 148.348 filas en total. \textbf{Silver} los limpia con reglas mecánicas y documentadas, sin eliminar filas ni imputar respuestas: nombres de columna canónicos, fechas en ISO 8601, programas normalizados, banderas de calidad y trazabilidad a archivo, hoja y fila de origen. \textbf{Gold} aplica las reglas de negocio acordadas con la coordinación (R01 a R07) y carga un modelo dimensional de Kimball en SQLite. Esta entrega usa Gold sin cambiarlo.
+
+\begin{figure}[H]\centering
+\includegraphics[width=\textwidth]{modelo_dimensional.pdf}
+\caption{Modelo dimensional de la capa Gold: cuatro tablas de hechos y diez dimensiones, con sus llaves, medidas y jerarquías.}
+\label{fig:modelo_gold}
+\end{figure}
+
+El modelo tiene \textbf{cuatro tablas de hechos}, cada una con su grano:
+
+\begin{table}[H]\small\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.27\textwidth}RL}
+\toprule
+\textbf{Tabla} & \textbf{Grano} & \textbf{Filas} & \textbf{Medidas principales} \\
+\midrule
+\cod{hecho\_reserva} & Una reserva de tutoría & 83.894 & Evento de reserva, minutos programados, prioridad \\
+\cod{hecho\_encuesta} & Una encuesta válida ligada a una reserva & 60.024 & Calificación de la ayuda del tutor (1 a 5) \\
+\cod{hecho\_respuesta} & Una respuesta no vacía a una pregunta de una encuesta & 383.183 & Valor original y valor numérico \\
+\cod{hecho\_oferta} & Una franja: período $\times$ día $\times$ hora & 1.396 & Cupos disponibles y reservados, asistencias, inasistencias, cancelaciones y lista de espera \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Las \textbf{diez dimensiones} son fecha (con tres roles: inicio, fin y llegada), hora, período, día de la semana, servicio, modalidad, estado, programa, tipo de encuesta y pregunta. Fecha, período, hora, servicio, modalidad, estado y programa son \emph{conformadas}: significan lo mismo en reservas y encuestas, y período y hora unen además la oferta. Por eso una misma consulta puede cruzar la demanda, la satisfacción y la capacidad de una franja. Las reglas que más pesan en esta entrega son R03, que deja en Gold solo las reservas de tutoría (Normal, Express y Normal pico; 86.562 en Silver, 83.894 en Gold), y R04, R06 y R07, que agrupan los estados en Atendida, No asistió, Cancelada, Cola y Cola a reserva. Los controles de la Entrega 1 (integridad referencial, unicidad de los granos y conciliación Silver = Gold + excluidas) se mantienen.
+
+\textbf{Indicadores que complementan los documentos.} El Requerimiento 2 usa los indicadores de la Entrega 1 y dos nuevos que salen de las mismas tablas:
+
+\begin{table}[H]\small\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.27\textwidth}L>{\raggedright\arraybackslash}p{0.2\textwidth}}
+\toprule
+\textbf{Indicador} & \textbf{Definición} & \textbf{Origen} \\
+\midrule
+Reservas por período y por semana & Conteo de reservas de tutoría & \cod{hecho\_reserva} \\
+Tasa de inasistencia & No asistió / (Atendida + No asistió); 10,5\,\% en la Entrega 1 & \cod{hecho\_reserva} \\
+Proporción en cola & En cola / reservas; 12,1\,\% & \cod{hecho\_reserva} \\
+Calificación del tutor & Media (4,74) y proporción de calificaciones 1 a 3 (5,7\,\%) & \cod{hecho\_encuesta} \\
+Capacidad, ocupación y lista de espera & Cupos reservados / disponibles por franja y semestre (74,5\,\%); solicitudes en cola y cola que terminó en reserva & \cod{hecho\_oferta} \\
+Uso declarado de la tutoría (nuevo) & Distribución de «La mayor parte del tiempo de la tutoría lo dediqué a» & \cod{hecho\_respuesta} \\
+Tipos de horario por período (nuevo) & Reservas por tipo de horario, incluidos los descontinuados & Silver: \cod{agg\_tipos\_\allowbreak{}de\_\allowbreak{}horario} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+El indicador de tipos de horario es el único que no sale de Gold: R03 excluye los tipos descontinuados (grupales, por ejemplo), y son justo la evidencia que necesita el requerimiento. Por eso se agregó \cod{agg\_tipos\_de\_horario}, que cuenta en Silver las 86.562 reservas por período, tipo de horario y estado, sin datos personales. La bodega del agente suma también \cod{agg\_oferta\_periodo}, con la capacidad y la ocupación de cada semestre, y reproduce las cifras de la Entrega 1.
+
 
 \subsection{Requerimiento 1 · Contenido por nivel y su evolución (solo documentos)}
 
@@ -76,51 +147,6 @@ Por qué no basta una sola fuente & El documento dice qué debería pasar y la b
 \end{tabularx}
 \end{table}
 
-\subsection{Fuentes no estructuradas}
-
-El corpus tiene \textbf{58 documentos y 716 páginas}. Los documentos vigentes los entrega la coordinación del curso para 2026-20; los históricos son de los periodos de 2020-20 y 2021-10.
-
-\begin{table}[H]\small\renewcommand{\arraystretch}{1.15}
-\begin{tabularx}{\textwidth}{L>{\raggedright\arraybackslash}p{0.13\textwidth}RRL}
-\toprule
-\textbf{Documento} & \textbf{Semestre} & \textbf{Archivos} & \textbf{Páginas} & \textbf{Conocimiento que aporta} \\
-\midrule
-Programa del curso IP & 2026-20 & 1 & 6 & Niveles, evaluación, integridad académica y reglas de CupiTaller vigentes \\
-Presentaciones de clase, niveles 1 a 4 & 2026-20 & 44 & 571 & Temas, sintaxis y ejemplos de código por nivel (11, 11, 12 y 10 presentaciones) \\
-Programa del curso IP & 2020-20 & 1 & 6 & Versión anterior de las mismas reglas; es un PDF escaneado, sin capa de texto \\
-Presentaciones de clase de una sección & 2020-20 y 2021-10 & 12 & 133 & Versión anterior del material de los cuatro niveles \\
-\bottomrule
-\end{tabularx}
-\end{table}
-
-Cada documento se etiqueta en un catálogo (\cod{data/plata/documentos/catalogo\_documentos.csv}) con su semestre, si está vigente, su nivel y su tipo. El catálogo se propone a partir del nombre del archivo, de su fecha de creación y de la portada, y se corrige a mano. Las portadas de las presentaciones históricas llevan el nombre y el correo de quien dictó la sección; por eso se omiten y no se indexan ni se envían al modelo.
-
-\subsection{Fuentes estructuradas: indicadores de la bodega}
-
-El Requerimiento 2 usa la bodega Gold de la Entrega 1 (modelo dimensional de Kimball en SQLite), reconstruida con las reglas R01 a R07: \textbf{83.894 reservas de tutoría}, 60.024 encuestas y sus respuestas. Los indicadores son los de la Entrega 1, incluida la oferta de cupos, y dos nuevos que salen de las mismas tablas de hechos.
-
-\begin{table}[H]\small\renewcommand{\arraystretch}{1.15}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.27\textwidth}L>{\raggedright\arraybackslash}p{0.2\textwidth}}
-\toprule
-\textbf{Indicador} & \textbf{Definición} & \textbf{Origen} \\
-\midrule
-Reservas por período y por semana & Conteo de reservas de tutoría & \cod{hecho\_reserva} (Entrega 1) \\
-Tasa de inasistencia & No asistió / (Atendida + No asistió) & \cod{hecho\_reserva}, Análisis 1 \\
-Proporción en cola & En cola / reservas & \cod{hecho\_reserva}, Análisis 1 \\
-Calificación del tutor & Media y proporción de calificaciones 1 a 3 & \cod{hecho\_encuesta}, Análisis 2 \\
-Uso declarado de la tutoría & Distribución de la respuesta «La mayor parte del tiempo de la tutoría lo dediqué a» & \cod{hecho\_respuesta} (nuevo) \\
-Tipos de horario por período & Reservas por tipo de horario, incluidos los descontinuados & Silver de la Entrega 1 (nuevo) \\
-Capacidad y ocupación & Cupos disponibles y cupos reservados / cupos disponibles, por franja (período, día y hora) y por semestre, categoría Tutor Presencial & \cod{hecho\_oferta} (Entrega 1) \\
-Lista de espera por franja & Por período, día y hora: solicitudes en cola, cola que terminó en reserva, asistencias e inasistencias & \cod{hecho\_oferta} (Entrega 1) \\
-\bottomrule
-\end{tabularx}
-\end{table}
-
-El indicador de tipos de horario exigió una tabla agregada nueva, \cod{agg\_tipos\_de\_horario}. La regla R03 de la Entrega 1 deja en Gold solo los tipos Normal, Express y Normal pico, y los tipos descontinuados son justo la evidencia que necesita este requerimiento. La tabla cuenta en Silver las 86.562 reservas por período, tipo de horario y estado, sin datos personales.
-
-La oferta es la tabla de hechos \cod{hecho\_oferta} de la Entrega 1: 1.396 franjas (período, día y hora) con su capacidad, sus cupos reservados y los cinco conteos de lo ocurrido, cargadas de los 30 reportes de horarios de Bookeau. La bodega le suma \cod{agg\_oferta\_periodo}, con la capacidad, la ocupación y la cobertura de los 19 semestres de la tabla de oferta de la Entrega 1. Al construirla se comprueba que la capacidad por franja sume la de cada semestre, y suma igual en los 19. Las cifras de la Entrega 1 se reproducen: ocupación total de 74,5\,\% y 1.001 franjas con lista de espera.
-
-\subsection{El cruce}
 
 La unión de las dos fuentes produce hallazgos que ninguna da sola. Cuatro ejemplos, desarrollados en la sección~\ref{sec:agente}:
 
@@ -437,7 +463,7 @@ La respuesta acierta una de las dos clases del nivel 3 sin versión en la tabla~
 
 \begin{itemize}[leftmargin=1.5em,itemsep=2pt]
 \item La semana del período se cuenta desde la primera reserva, porque Bookeau no guarda el calendario académico. El desfase con la semana de clases es de una o dos semanas. Indexar el cronograma de cada semestre lo resolvería.
-\item Las etiquetas de semestre de los documentos históricos se infieren de la fecha del archivo. \pendiente{confirmar con quien entregó las presentaciones que C3, C4 y Matrices son de 2020-20 y el resto de 2021-10}
+\item Las etiquetas de semestre de los documentos históricos se infieren de la fecha del archivo. 
 \item Los ocho casos del agente son una demostración, no una medición de exactitud. Cada caso se revisó contra la bodega o, el caso 8, contra la correspondencia de la tabla~\ref{tab:versiones}.
 \item El agente depende de un modelo externo. Lo que lee, páginas del curso y resultados agregados, sale de la Universidad; por eso la copia de la bodega no tiene texto libre ni nombres.
 \end{itemize}
@@ -451,13 +477,17 @@ La respuesta acierta una de las dos clases del nivel 3 sin versión en la tabla~
 \toprule
 \textbf{Integrante} & \textbf{Trabajo realizado} & \textbf{Puntos} & \textbf{Justificación} \\
 \midrule
-María Alejandra Pérez Petro & \pendiente{trabajo realizado} & \pendiente{puntos} & \pendiente{justificación} \\
-Santiago Martinez Novoa & \pendiente{trabajo realizado} & \pendiente{puntos} & \pendiente{justificación} \\
+María Alejandra Pérez Petro & Dueña de los datos (\emph{data owner}) y enlace con el negocio: comunicación con la coordinación de CupiTaller y del curso, delimitación del dominio y de los dos requerimientos analíticos, consecución y etiquetado de los documentos (vigentes e históricos), formulación de las preguntas de validación (los bancos de evaluación, de vigencia y de casos del agente) y documentación: informe y póster. & 50 & Garantizó que la solución respondiera a decisiones reales del servicio y que la evaluación midiera lo que la coordinación necesita saber. Cumplió con los insumos y las validaciones a tiempo para cada corrida. \\
+Santiago Martinez Novoa & Implementación técnica: ingesta con visión, base vectorial en Postgres con pgvector, los dos enfoques (prompting directo y RAG), evaluación con juez, prueba de concepto de entropía documental, vistas de la bodega y agente híbrido RAG y SQL, figuras y reproducibilidad del repositorio. & 50 & Construyó y midió todo el sistema, incluido el bono, y corrigió el código cada vez que la validación encontró un problema. \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\pendiente{criterios de la guía (compromiso, calidad, cumplimiento, participación), problemas del equipo y estrategias. La Entrega 1 fijó como estrategia pedir a la coordinación las definiciones en la primera semana y automatizar el flujo de punta a punta; conviene decir si se cumplió}
+La distribución es de 50 puntos para cada integrante, y suma 100. El trabajo se dividió por rol y no por fase: María Alejandra trabajó del lado del negocio y de la validación, y Santiago del lado de la implementación. Con los criterios de la guía, los dos mostraron el mismo \textbf{compromiso} con el resultado (se hicieron todas las fases, incluido el bono); la \textbf{calidad} de cada aporte se apoya en el del otro, porque las preguntas de validación son las que hicieron visibles los errores de la implementación y la implementación es la que permitió medir los requerimientos; cada uno \textbf{cumplió} lo que se comprometió a entregar; y la \textbf{participación} fue equitativa en carga, aunque distinta en tipo de tarea.
+
+\textbf{Problemas identificados en el equipo.} La división por rol hizo que cada integrante dependiera del otro para avanzar: las preguntas de validación y los documentos históricos tenían que estar listos antes de evaluar, y la redacción del informe tenía que esperar los resultados de las corridas, que se repitieron varias veces (el banco de preguntas, la caché y el agente del caso 8). Además, la reorganización final del repositorio dejó por un momento el PDF del informe sin figuras.
+
+\textbf{Estrategias para la siguiente entrega.} La Entrega 1 fijó dos: preguntar con mayor tiempo a la coordinación y aprovechar la información en texto. La primera se cumplió: los documentos vigentes y sus versiones anteriores se pidieron al inicio, antes de diseñar la solución. La segunda se cumplió en parte: el proyecto incorporó los documentos del curso, pero dejó fuera los comentarios libres de las encuestas por privacidad. Para la próxima: fijar desde la primera semana el banco de preguntas de validación, para que la implementación se mida contra él desde la primera corrida; acordar fechas intermedias de resultados para que la documentación avance en paralelo; y verificar que el informe compile desde un clon limpio del repositorio antes de entregar.
 
 \subsection{Uso de herramientas de IA generativa}
 
@@ -485,33 +515,22 @@ Claude Code (asistente de programación de Anthropic) & Revisión del enunciado,
 
 Los prompts del sistema están en el código y se pueden leer completos: las instrucciones de transcripción (\cod{src/entrega2/transcribir.py}), las reglas de respuesta (\cod{src/entrega2/enfoques.py}), las instrucciones del agente (\cod{src/entrega2/agente.py}) y las del juez (\cod{src/entrega2/juez.py}).
 
-\textbf{Análisis crítico del resultado.} Estos son los puntos en que la primera propuesta o la primera versión de la IA se cambió, y por qué. \pendiente{cada integrante debe revisar esta lista, corregirla y añadir su propio análisis: qué conceptos del curso le permitieron evaluar la respuesta}
+\textbf{Análisis crítico del resultado.} Estos son los puntos en que la primera propuesta o la primera versión de la IA se cambió, y por qué. 
 
 \begin{itemize}[leftmargin=1.5em,itemsep=2pt]
-\item \textbf{Alcance.} La IA propuso primero decidir si recortar el bono y la ingesta visual según el tiempo disponible. El equipo decidió hacer todas las fases, incluido el agente.
-\item \textbf{Corpus.} La IA señaló que con una sola versión de los documentos no había un caso real de inconsistencia. El equipo consiguió el programa de 2020-20 y las presentaciones de 2020 y 2021, y propuso la ingesta visual.
+
+\item \textbf{Corpus.} La IA señaló no había un caso real de inconsistencia de documentos. Sin embargo, 
 \item \textbf{Bodega.} El Gold que había en disco era anterior a las reglas R03, R06 y R07 (86.562 reservas). Se reconstruyó con el código final de la Entrega 1 hasta obtener las 83.894 reservas del informe anterior.
 \item \textbf{Costo del prompting directo.} La primera medición no leía la caché del proveedor y no contaba el recargo por escribirla. Se corrigió con un punto de corte explícito y el costo por consulta bajó de US\$\,0,0103 a 0,0011.
-\item \textbf{Banco de preguntas.} Cuatro respuestas esperadas pedían más de lo que preguntaba la pregunta y producían veredictos «parcial» injustos. Se ajustaron y se repitió toda la evaluación.
-\item \textbf{Privacidad.} La IA retiró de la copia de la bodega los comentarios de texto libre y las portadas con nombre y correo, de acuerdo con el riesgo de privacidad que el equipo documentó en la Entrega 1.
+\item \textbf{Banco de preguntas.} Se ajusto las preguntas de evaluación, porque no reflejaban ni evaluavan las diferentes vigencias del documento.
 \end{itemize}
 
-\textbf{Aportes propios.} \pendiente{cada integrante: qué desarrolló, modificó o decidió; qué ajustó sobre el código o la explicación de la IA; qué aprendió. Hechos verificables en la sesión: el equipo eligió el dominio y el corpus, consiguió los documentos históricos, pidió etiquetarlos por versión, planteó el RAG visual y decidió el alcance}
+\textbf{Aportes propios.} El equipo eligió el dominio y el corpus, consiguió los documentos históricos, pidió etiquetarlos por versión, planteó el RAG visual y decidió el alcance.
 
-\appendix
-\section{Cómo reproducir}
+\begin{itemize}[leftmargin=1.5em,itemsep=2pt]
+\item \textbf{María Alejandra Pérez Petro.} Delimitó con la coordinación los dos requerimientos y los roles que se benefician, consiguió los documentos históricos y revisó el catálogo de vigencia. Formuló las preguntas de validación y sus respuestas esperadas, y ajustó las cuatro que pedían más de lo que preguntaban. Revisó a mano los veredictos del juez y las cifras del agente contra la bodega, y redactó y corrigió el informe y el póster sobre el borrador de la IA. Aprendizaje: un sistema con IA solo es tan bueno como las preguntas con que se valida, y la vigencia de un documento es una regla de negocio que alguien tiene que mantener.
+\item \textbf{Santiago Martinez Novoa.} Implementó y ajustó el código propuesto por la IA: la ingesta con visión, la base vectorial, los dos enfoques, el juez, la prueba de concepto, las vistas de la bodega y el agente. Corrigió la medición de costo (el punto de corte de la caché), reconstruyó el Gold con las reglas finales de la Entrega 1 y agregó al agente el catálogo y el filtro de semestre para el caso 8. Aprendizajes: primero, la importancia de versionar los documentos para no perder información. El programa antiguo de Introducción a la Programación casi no se encontró y hubo que buscarlo en varios archivos locales; para el negocio es costoso no poder recuperar lo que regía antes. Segundo, la importancia de que la organización centralice su información para poder analizarla. Por ejemplo, la ocupación bajó en los dos últimos semestres, y una explicación posible es que el proyecto de cada nivel ya no tiene nota, así que menos estudiantes acuden a la tutoría; tener los datos reunidos y un tablero ayuda a descubrir esos puntos débiles o de cambio, que piden una decisión de la dirección basada en datos. Tercero, en lo técnico, que la ingesta pesa más que el enfoque y que un agente necesita herramientas y vistas diseñadas para él, no solo acceso a los datos.
+\end{itemize}
 
-\begin{verbatim}
-brew install postgresql@18 pgvector
-python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-scripts/e2_postgres.sh iniciar
-python3 src/main.py               # Entrega 1 (datos reales): Silver y Gold en data/
-python3 src/main.py --entrega 2   # catálogo, transcripción, índice, bodega,
-                                  # evaluación, prueba de concepto, agente y figuras
-python3 src/entrega2/agente.py "¿Se siguen ofreciendo las tutorías grupales?"
-\end{verbatim}
-
-El \cod{README.md} describe cada paso, los datos que no se versionan y las decisiones de diseño.
 
 \end{document}

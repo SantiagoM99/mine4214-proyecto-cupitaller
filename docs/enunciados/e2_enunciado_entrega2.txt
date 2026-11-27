@@ -1,0 +1,103 @@
+DESCRIPCIÓN GENERAL
+En el entorno corporativo actual, las decisiones estratégicas rara vez dependen de una sola fuente
+de datos y en muchos casos, las fuentes no son solo estructuradas o con información tabular. Este
+proyecto busca desarrollar competencias en el diseño de soluciones analíticas integrando el
+procesamiento de lenguaje natural (NLP- Natural Language Processing) sobre documentos no
+estructurados (PDFs) con métricas estructuradas o indicadores de inteligencia de negocios (Data
+Warehouse).
+DESCRIPCIÓN ENTREGA 2
+Fase 1: Ideación y Definición de Requerimientos Analíticos (10 Puntos)
+Seleccionen un dominio de negocio dentro de su empresa (e.g. Gestión de Proveedores, Auditoría
+Financiera, Recursos Humanos) y definan dos (2) requerimientos analíticos complejos, donde uno
+de ellos no pueda resolverse únicamente con datos no estructurados.
+• Descripción del requerimiento analítico: Expliquen qué decisión de negocio se busca
+apoyar y el rol dentro de la empresa que se va a ver beneficiado con la solución a plantear.
+• Fuentes No Estructuradas (PDFs): Identifiquen en la empresa o fuera de ella, qué
+documentos específicos contienen el conocimiento cualitativo necesario (e.g. contratos,
+manuales de cumplimiento, normativas ISO, reportes de auditoría).
+• En el caso de requerimiento analítico que incluye los dos tipos de fuentes
+o Fuentes Estructuradas (Bodega de Datos): Especifiquen qué indicadores (KPIs) en
+su Data Warehouse complementan el análisis (e.g. tiempos de entrega, tasas de
+rotación, márgenes de rentabilidad histórica). Se espera, que lo conecten con la
+entrega 1 del proyecto.
+o El Cruce: Expliquen cómo la unión de ambas fuentes genera mejores hallazgos para
+resolver un requerimiento.
+Fase 2: Análisis diseño de la solución - IA Generativa Directa vs. RAG (30 Puntos)
+Realicen una evaluación técnica exhaustiva comparando dos enfoques para extraer valor de
+los documentos PDF identificados en la Fase 1:
+1. Enfoque 1 - Prompting Directo (LLM Context Window): Cargar los documentos completos
+directamente en el prompt del modelo generativo.
+2. Enfoque 2 - Generación Aumentada por Recuperación (RAG): Construir una base de datos
+vectorial mediante la ingesta, chunking y creación de incrustraciones (embeddings) de los
+documentos.
+Actividades:
+• Matriz Comparativa: Evalúen ambos enfoques según criterios aplicados al contexto de su
+empresa: Costos de inferencia, Latencia, Riesgo de Alucinación, Límite de Tokens, y
+Mantenimiento de la base de conocimiento. Si lo consideran puedan incluir nuevos criterios.
+Recuerde dar una definición de estos.
+• Definición de Casos de Uso: Establezcan lineamientos corporativos claros indicando en qué
+escenarios la empresa debe usar el enfoque 1 y cuándo invertir en el enfoque 2.
+• Desarrollo del enfoque: Diseña e implementa cada uno de los enfoques.
+• Selección y Justificación: Tomen uno de los requerimientos de la Fase 1, elijan la
+arquitectura sugerida para resolverlo y justifiquen su decisión con argumentos de
+escalabilidad y costo-beneficio usando la implementación realizada.
+Fase 3: Gestión de Retos Documentales e Integración Híbrida (30 Puntos)
+Las empresas sufren de "entropía documental" (políticas desactualizadas, cláusulas
+contradictorias entre versiones, documentos regionales vs. globales).
+Actividades:
+• Identificación del Reto: Describan un problema real de inconsistencia documental en su
+empresa.
+• Prueba de Concepto (Caso Teórico/Práctico): Evidencien cómo un sistema RAG podría fallar
+al recuperar una política desactualizada (e.g. un PDF que indica "Pago a proveedores en 30
+días").
+• Solución Híbrida (Agentes): Diseñen un flujo donde el LLM no solo consulte el RAG (PDFs),
+sino que actúe como un Agente que ejecute una consulta SQL sobre la Bodega de Datos.
+Ejemplo de salida esperada del agente: "Según la política X (PDF), el pago debe ser en 30
+días, pero al consultar la tabla Fact_Pagos (DWH), el promedio real de pago a este proveedor
+en el último trimestre es de 45 días, evidenciando un incumplimiento normativo."
+• Bono (10/100 Puntos) – Implementación de la solución híbrida donde el agente pueda
+conectarse al RAG y al Datawarehouse.
+Fase 4: Evaluación de Pares y Co-creación (20 Puntos) – durante la sesión de sustentación
+La revisión crítica de la solución de sus colegas.
+• Revisión: Analicen los proyectos de 3 grupos de colegas.
+• Retroalimentación: Proporcionen al menos un riesgo en la solución presentada no
+contemplado y una sugerencia de mejora para cada grupo.
+• Ranking y Registro: Ordenen los 3 proyectos del 1 al 3 basándose en su innovación,
+viabilidad técnica y aporte al negocio. Registren este ranking junto con sus comentarios
+constructivos en el tablero colaborativo de Padlet asignado para la clase.
+Fase 5: Gestión del proyecto (10 Puntos)
+o Describir el trabajo de cada miembro del equipo y la distribución de 100 puntos
+entre los integrantes del grupo. Justifiquen su respuesta. Tengan en cuenta: el
+compromiso en el logro de resultados, la calidad de la contribución, el
+cumplimiento de compromisos adquiridos con el grupo y la participación equitativa
+en el trabajo del equipo. Identifique problemas al interior de grupo y diseñe
+estrategias para mejorar en la siguiente entrega.
+o Describir el uso dado a la inteligencia artificial generativa. “Uso de herramientas
+de IA generativa”. Esta sección deberá contener:
+o Declaración del uso. Nombre de la herramienta utilizada y tipo de uso (ayuda
+conceptual, generación inicial de código, explicación teórica, depuración,
+redacción, etc.).
+o Prompts utilizados. Se deben documentar los prompts principales, de forma
+textual o resumida. No es necesario incluir interacciones menores, pero sí
+aquellas que influyeron directamente en el resultado entregado.
+o Análisis crítico del resultado. El estudiante deberá responder, al menos, a una
+de las siguientes preguntas: ¿Qué decisiones técnicas fueron modificadas
+respecto a la respuesta de la IAG y por qué? ¿Qué conceptos adquiridos durante
+la maestría permitieron evaluar o mejorar la respuesta generada?
+o Aportes propios del estudiante. Debe explicitarse claramente: ¿Qué fue
+desarrollado, modificado o decidido por el estudiante? ¿Qué ajustes se
+realizaron sobre el código o la explicación original? ¿Qué aprendizajes se
+obtuvieron del proceso?
+ENTREGABLES
+1. El reporte final con los elementos solicitados en la descripción de la entrega
+2. El poster debe estar impreso para la sustentación el último día de clase. El tamaño del poster
+es de un pliego (70 x 100 cm). Se espera una presentación de máximo 8 minutos por grupo.
+Esta presentación se repite durante la sesión un mínimo de 5 veces.
+3. Los archivos fuente para crear las incrustaciones y el RAG. Además de archivos adicionales
+que son importantes para la solución entregada.
+RESTRICCIONES
+* Los datos a trabajar en el proyecto deben incluir datos tabulares y de otros formatos como textos.
+* Se espera un mínimo de 10 documentos (que representen las fuentes no estructuradas).
+* El proyecto se realiza en grupos de entre 3 y 4 estudiantes.
+* La evaluación tiene un componente grupal (75%) y otro individual (25%). La evaluación individual
+utiliza la respuesta dada al punto 7

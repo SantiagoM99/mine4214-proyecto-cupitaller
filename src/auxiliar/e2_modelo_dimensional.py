@@ -44,6 +44,10 @@ ORO = GOLD_ENTREGA1
 LINAJE = {'archivo_origen', 'hoja_origen', 'fila_excel', 'banderas_calidad_json', 'diferencias_con_reserva_json'}
 LINEA_DE_LINAJE = ('+', 'linaje y banderas de calidad')
 DIVISOR = ('—', '')
+# Rótulos de sección bajo el divisor: separan las medidas de los atributos degenerados
+# (columnas descriptivas que viven en el hecho porque no tienen dimensión propia).
+MEDIDAS = ('§', 'medidas')
+DEGENERADOS = ('§', 'atributos degenerados')
 
 ALTO_DE_LINEA = 6.9
 ALTO_CABECERA_HECHO = 16
@@ -73,23 +77,25 @@ HECHOS = {
         ('PK', 'id_reserva'), ('FK', 'sk_fecha_inicio'), ('FK', 'sk_fecha_fin'), ('FK', 'sk_fecha_llegada'),
         ('FK', 'sk_servicio'), ('FK', 'sk_modalidad'), ('FK', 'sk_estado'), ('FK', 'sk_programa'),
         ('FK', 'sk_periodo'), ('FK', 'sk_hora_inicio'), DIVISOR,
-        ('', 'evento_reserva = 1'), ('', 'duracion_programada_minutos'), ('', 'es_prioritaria'),
-        ('', 'fecha_inicio · fecha_fin'), ('', 'fecha_llegada'), LINEA_DE_LINAJE,
+        MEDIDAS, ('', 'evento_reserva = 1'), ('', 'duracion_programada_minutos'), DIVISOR,
+        DEGENERADOS, ('', 'fecha_inicio · fecha_fin (con hora)'), ('', 'fecha_llegada (con hora)'), ('', 'es_prioritaria'),
+        LINEA_DE_LINAJE,
     ]),
     'hecho_oferta': ('período × día × hora', [
         ('PK FK', 'sk_periodo'), ('PK FK', 'sk_hora_inicio'), ('PK FK', 'sk_dia_semana'), DIVISOR,
-        ('', 'cupos_disponibles'), ('', 'cupos_reservados'), ('', 'asistencias'), ('', 'cancelaciones'),
+        MEDIDAS, ('', 'cupos_disponibles'), ('', 'cupos_reservados'), ('', 'asistencias'), ('', 'cancelaciones'),
         ('', 'inasistencias'), ('', 'en_lista_espera'), ('', 'reservaron_luego_de_lista'), LINEA_DE_LINAJE,
     ]),
     'hecho_encuesta': ('una encuesta respondida', [
         ('PK', 'id_encuesta'), ('FK', 'id_reserva'), ('FK', 'sk_tipo_encuesta'), ('FK', 'sk_fecha_inicio'),
         ('FK', 'sk_servicio'), ('FK', 'sk_modalidad'), ('FK', 'sk_estado'), ('FK', 'sk_programa'),
         ('FK', 'sk_periodo'), ('FK', 'sk_hora_inicio'), DIVISOR,
-        ('', 'respuesta_encuesta = 1'), ('', 'calificacion_ayuda_tutor'), LINEA_DE_LINAJE,
+        MEDIDAS, ('', 'respuesta_encuesta = 1'), ('', 'calificacion_ayuda_tutor'), LINEA_DE_LINAJE,
     ]),
     'hecho_respuesta': ('una pregunta respondida', [
         ('PK FK', 'id_encuesta'), ('PK FK', 'sk_pregunta'), DIVISOR,
-        ('', 'respuesta_item = 1'), ('', 'valor_numerico'), ('', 'valor_original'),
+        MEDIDAS, ('', 'respuesta_item = 1'), ('', 'valor_numerico'), DIVISOR,
+        DEGENERADOS, ('', 'valor_original'),
     ]),
 }
 
@@ -435,6 +441,9 @@ def _caja(caja: Caja) -> list[str]:
             y += ALTO_DE_LINEA / 2
             continue
         y += ALTO_DE_LINEA
+        if etiqueta == '§':
+            partes.append(_texto(caja.x + 3.5, y - 1.6, contenido.upper(), 4.4, peso='bold', color=GRIS))
+            continue
         partes.append(_texto(caja.x + 3.5, y - 1.6, etiqueta, 4.4, peso='bold', color=GRIS))
         partes.append(_texto(caja.x + SANGRIA_COLUMNA, y - 1.6, contenido, TAMANO_COLUMNA, color=GRIS if etiqueta == '+' else TINTA))
     return partes

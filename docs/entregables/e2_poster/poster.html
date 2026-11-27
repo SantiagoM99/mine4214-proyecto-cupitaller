@@ -47,6 +47,9 @@
   .lead { font-size: 21pt; }
 
   .grafica { display: block; width: 100%; }
+  /* El diagrama del modelo creció al separar medidas y atributos degenerados; a todo el
+     ancho empuja la fila 2 sobre el cuadro final. Se limita su alto y se centra. */
+  .modelo { max-height: 280mm; width: auto; max-width: 100%; margin: 0 auto; }
   .pie { font-size: 16pt; color: var(--gris); margin-top: 1.5mm; line-height: 1.2; }
   .rotulo { font-size: 17.5pt; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; margin-bottom: 1.5mm; }
   .rotulo span { font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--gris); }
@@ -190,7 +193,7 @@
   <section class="tarjeta entrega1">
     <h2><span class="etapa">Entrega 1</span><b>Modelo dimensional</b> en la capa oro</h2>
     <div class="cuerpo">
-      <img class="grafica" src="../../../artifacts/entrega2/poster/modelo_dimensional.svg" alt="Modelo dimensional: cuatro tablas de hechos (oferta, reserva, encuesta y respuesta) y diez dimensiones con sus llaves y atributos">
+      <img class="grafica modelo" src="../../../artifacts/entrega2/poster/modelo_dimensional.svg" alt="Modelo dimensional: cuatro tablas de hechos (oferta, reserva, encuesta y respuesta) y diez dimensiones con sus llaves y atributos">
       <p class="pie">Fig. 1. Constelación de 4 hechos y 10 dimensiones, tal como está en el DDL de la Entrega 1. Cada línea va de la PK a la fila de la FK que la usa.</p>
     </div>
   </section>
