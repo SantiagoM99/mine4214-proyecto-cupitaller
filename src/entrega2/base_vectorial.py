@@ -96,9 +96,13 @@ def reemplazar_fragmentos(
 
 def buscar(
     conexion: psycopg.Connection, pregunta: str, *, coleccion: str, k: int = 5, solo_vigentes: bool = False,
-    semestre: str | None = None,
+    semestre: str | None = None, hasta_nivel: int | None = None,
 ) -> list[Fragmento]:
-    """Los k fragmentos más parecidos a la pregunta dentro de una colección, opcionalmente de un solo semestre."""
+    """Los k fragmentos más parecidos a la pregunta dentro de una colección.
+
+    Filtros opcionales: un solo semestre, y documentos sin nivel (programas) o de nivel
+    menor o igual a `hasta_nivel`.
+    """
     vector = embedding_de_pregunta(pregunta)
     with conexion.transaction(), conexion.cursor() as cursor:
         # Con filtros (colección, vigencia) el índice HNSW puede devolver menos de k filas
@@ -113,10 +117,11 @@ def buscar(
             JOIN documentos d ON d.id = f.documento_id
             WHERE f.coleccion = %(coleccion)s AND (d.vigente OR NOT %(solo_vigentes)s)
               AND (%(semestre)s::text IS NULL OR d.periodo = %(semestre)s)
+              AND (%(hasta_nivel)s::int IS NULL OR d.nivel IS NULL OR d.nivel <= %(hasta_nivel)s)
             ORDER BY f.embedding <=> %(vector)s
             LIMIT %(k)s
             """,
-            {'vector': vector, 'coleccion': coleccion, 'solo_vigentes': solo_vigentes, 'semestre': semestre, 'k': k},
+            {'vector': vector, 'coleccion': coleccion, 'solo_vigentes': solo_vigentes, 'semestre': semestre, 'hasta_nivel': hasta_nivel, 'k': k},
         )
         return [Fragmento(*fila) for fila in cursor.fetchall()]
 

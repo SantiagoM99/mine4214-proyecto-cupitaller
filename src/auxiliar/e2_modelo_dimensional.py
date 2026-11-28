@@ -17,6 +17,7 @@ cruces produce entre todas sus permutaciones.
 """
 
 import itertools
+from collections import Counter
 import re
 import sqlite3
 from contextlib import closing
@@ -61,6 +62,8 @@ SEPARACION_LATERAL = 12
 PASO_DE_CARRIL = 3.2
 # Tramo junto al borde de una caja reservado a la barra o la pata de gallo; los carriles empiezan después.
 ZONA_DE_MARCA = 6.5
+SEPARADOR_DE_ROL = "·"
+SEPARACION_DE_ROLES = 5.4  # alto, en la dimensión, entre las barras de dos roles de la misma FK
 # Cada caja se dimensiona según su línea más larga, medida con la fuente con que se
 # imprime el póster. Sin ella se usa el ancho medio de un carácter de Helvetica, que
 # sobrestima hasta un 15 %.
@@ -309,8 +312,11 @@ def _columna_de(tabla: str) -> int:
 def _redes_por_canal(lista: list[Relacion]) -> dict[int, dict[str, list[tuple[str, str, str | None]]]]:
     """Para cada canal (el canal k queda a la izquierda de la columna k), las redes que lo
     usan y sus pines abstractos: (tabla, columna, marca). Una dimensión forma una sola red
-    por canal, con una barra y tantas patas de gallo como FK le llegan por ese lado."""
+    por canal, con una barra y tantas patas de gallo como FK le llegan por ese lado, salvo
+    los roles: cada FK de un hecho que apunta varias veces a la misma dimensión (las tres
+    fechas de la reserva) es una relación propia y lleva su propia red."""
     canales: dict[int, dict[str, list]] = {}
+    por_par = Counter((r.muchos, r.uno) for r in lista)
 
     def agregar(canal: int, clave: str, *pines):
         red = canales.setdefault(canal, {}).setdefault(clave, [])
@@ -329,7 +335,12 @@ def _redes_por_canal(lista: list[Relacion]) -> dict[int, dict[str, list[tuple[st
             canal = uno if LADO_PROPIO[relacion.uno] == 'izquierda' else uno + 1
             agregar(canal, relacion.uno, pin_uno, pin_muchos)
         elif abs(uno - muchos) == 1:
-            clave = relacion.uno if relacion.uno in DIMENSIONES else f'{relacion.muchos}>{relacion.uno}'
+            if relacion.uno not in DIMENSIONES:
+                clave = f'{relacion.muchos}>{relacion.uno}'
+            elif por_par[relacion.muchos, relacion.uno] > 1:
+                clave = f'{relacion.uno}{SEPARADOR_DE_ROL}{relacion.columna_muchos}'
+            else:
+                clave = relacion.uno
             agregar(max(uno, muchos), clave, pin_uno, pin_muchos)
         else:
             # Llave entre hechos separados por la columna central: sube y pasa por encima.
@@ -382,6 +393,13 @@ def _asignar_carriles(canal: Canal) -> None:
 
 # ---- Disposición ----
 
+def _desfase_de_rol(clave: str, redes: dict[str, list], tabla: str) -> float:
+    """Separa en la dimensión las barras de los roles, para que cada relación llegue por su propia línea."""
+    if SEPARADOR_DE_ROL not in clave or tabla not in DIMENSIONES:
+        return 0.0
+    roles = [c for c in redes if c.split(SEPARADOR_DE_ROL)[0] == clave.split(SEPARADOR_DE_ROL)[0] and SEPARADOR_DE_ROL in c]
+    return (roles.index(clave) - (len(roles) - 1) / 2) * SEPARACION_DE_ROLES
+
 def disponer(lista: list[Relacion]) -> tuple[dict[str, Caja], list[Canal]]:
     abstractas = _redes_por_canal(lista)
     anchos_de_columna = [max(_ancho_necesario(t) for t in columna) for columna in COLUMNAS]
@@ -402,14 +420,14 @@ def disponer(lista: list[Relacion]) -> tuple[dict[str, Caja], list[Canal]]:
     for indice, redes in abstractas.items():
         canal = canales[indice]
         for clave, pines in redes.items():
-            red = canal.redes.setdefault(clave, Red(punteada=clave not in DIMENSIONES))
+            red = canal.redes.setdefault(clave, Red(punteada=clave.split(SEPARADOR_DE_ROL)[0] not in DIMENSIONES))
             for tabla, columna, marca in pines:
                 if tabla == TOPE:
                     lado = 'derecha' if any(t != TOPE and _columna_de(t) == indice - 1 for t, _, _ in pines) else 'izquierda'
                     red.pines.append(Pin(lado, MARGEN_SUPERIOR / 2, None))
                     continue
                 lado = 'izquierda' if _columna_de(tabla) == indice - 1 else 'derecha'
-                red.pines.append(Pin(lado, _y_de_fila(cajas[tabla], columna), marca))
+                red.pines.append(Pin(lado, _y_de_fila(cajas[tabla], columna) + _desfase_de_rol(clave, redes, tabla), marca))
         _asignar_carriles(canal)
     return cajas, canales
 

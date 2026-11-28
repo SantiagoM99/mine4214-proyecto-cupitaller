@@ -45,33 +45,33 @@
   },
   "agente": {
     "gpt-6-luna": {
-      "casos": 8,
-      "fundamentada": 11,
-      "responde": 14,
-      "cita": 10,
-      "maximo_por_criterio": 16,
-      "pasos_promedio": 3.8,
-      "segundos_mediana": 7.4,
+      "casos": 9,
+      "fundamentada": 15,
+      "responde": 16,
+      "cita": 13,
+      "maximo_por_criterio": 18,
+      "pasos_promedio": 3.9,
+      "segundos_mediana": 7.6,
       "sin_respuesta": 0
     },
     "qwen3-instruct": {
-      "casos": 8,
+      "casos": 9,
       "fundamentada": 1,
-      "responde": 11,
-      "cita": 6,
-      "maximo_por_criterio": 16,
-      "pasos_promedio": 2.4,
-      "segundos_mediana": 34.3,
+      "responde": 8,
+      "cita": 5,
+      "maximo_por_criterio": 18,
+      "pasos_promedio": 2.8,
+      "segundos_mediana": 18.5,
       "sin_respuesta": 0
     },
     "qwen3-razonador": {
-      "casos": 8,
+      "casos": 9,
       "fundamentada": 2,
-      "responde": 9,
-      "cita": 8,
-      "maximo_por_criterio": 16,
-      "pasos_promedio": 1.8,
-      "segundos_mediana": 200.2,
+      "responde": 10,
+      "cita": 6,
+      "maximo_por_criterio": 18,
+      "pasos_promedio": 2,
+      "segundos_mediana": 85.7,
       "sin_respuesta": 0
     }
   }

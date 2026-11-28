@@ -33,7 +33,7 @@ Universidad de los Andes · Noviembre de 2026\\[6pt]
 \textbf{Integrantes:} \emph{María Alejandra Pérez Petro}, \emph{Santiago Martinez Novoa}
 \end{center}
 
-\textbf{Resumen.} CupiTaller es el centro de tutorías del curso Introducción a la Programación (IP). Su conocimiento cualitativo está en 58 documentos (dos versiones del programa del curso y 56 presentaciones de clase) y su operación en la bodega de la Entrega 1 (83.894 reservas y 60.024 encuestas, de 2016-20 a 2026-10). Implementamos dos formas de responder con los documentos y las medimos con 26 preguntas: el prompting directo acertó 26, un RAG sobre transcripciones con visión 23 y un RAG sobre la capa de texto de los PDF 18, porque el código de las presentaciones está en capturas de pantalla. El prompting directo cuesta entre 7 y 71 veces más por consulta que el RAG y ocupa el 10\,\% de la ventana de contexto con un solo semestre de documentos. Cuando el corpus mezcla el programa de 2020-20 con el vigente, un RAG sin etiquetas responde con la regla antigua en 3 de 6 preguntas; un filtro de vigencia lo corrige. Un agente que consulta el RAG y ejecuta SQL sobre la bodega muestra, por ejemplo, que las tutorías grupales que anuncia el programa de 2020-20 no registran reservas desde 2021-20.
+\textbf{Resumen.} CupiTaller es el centro de tutorías del curso Introducción a la Programación (IP). Su conocimiento cualitativo está en 58 documentos (dos versiones del programa del curso y 56 presentaciones de clase) y su operación en la bodega de la Entrega 1 (83.894 reservas y 60.024 encuestas, de 2016-20 a 2026-10). Con 26 preguntas medimos dos formas de responder con los documentos: el prompting directo acertó 26, un RAG sobre transcripciones con visión 23 y un RAG sobre la capa de texto de los PDF 18, porque el código de las presentaciones está en capturas de pantalla. El prompting directo cuesta entre 7 y 71 veces más por consulta y ocupa el 10\,\% de la ventana de contexto con un solo semestre, así que elegimos el RAG visual. Ninguna de nueve formas alternativas de fragmentar supera a la página, y con un millón de vectores HNSW busca en 1,4 ms frente a 286 ms sin índice. Cuando el corpus mezcla el programa de 2020-20 con el vigente, un RAG sin etiquetas responde con la regla antigua en 3 de 6 preguntas; un filtro de vigencia lo corrige. Un solo agente híbrido atiende los tres requerimientos con cinco herramientas sobre los documentos, la bodega y las reservas del día. Muestra, por ejemplo, que las tutorías grupales que anuncia el programa de 2020-20 no registran reservas después de 2021-20, y preparó las 37 tutorías de un día real en 4,5 minutos, con 106 temas dentro del nivel del curso. Los comentarios de las encuestas no salen del equipo: los lee un modelo abierto local, Qwen3-30B.
 
 \tableofcontents
 \bigskip
@@ -44,7 +44,7 @@ Universidad de los Andes · Noviembre de 2026\\[6pt]
 
 El dominio es la \textbf{gestión del servicio de tutorías de CupiTaller}, del Departamento de Ingeniería de Sistemas y Computación de la Universidad de los Andes. En CupiTaller, monitores atienden con cita previa a estudiantes de IP y de otros cursos de programación. La Entrega 1 modeló la operación del servicio: reservas, estados, encuestas previas y de satisfacción, exportadas de la plataforma Bookeau en archivos csv por semestre.
 
-Para la entrega 2, se suma adicionalmente documentos en PDF sobre la operación del curso de IP y Cupitaller. Entre ellos, el programa del curso y las presentaciones de clase. El programa del curso fija qué puede y qué no puede hacer un tutor, cómo se evalúa cada nivel y qué contenido puede usar un estudiante; las \textbf{presentaciones de clase} definen qué se ha enseñado hasta cada nivel. 
+La Entrega 2 suma los documentos del curso de IP. El \textbf{programa del curso} fija qué puede y qué no puede hacer un tutor, cómo se evalúa cada nivel y qué contenido puede usar un estudiante; las \textbf{presentaciones de clase} definen qué se ha enseñado hasta cada nivel.
 
 
 \subsection{Fuentes de datos}
@@ -66,7 +66,7 @@ Presentaciones de clase de una sección & 2020-20 y 2021-10 & 12 & 133 & Versió
 \end{tabularx}
 \end{table}
 
-Cada documento se etiqueta en un catálogo (\cod{data/plata/documentos/catalogo\_documentos.csv}) con su semestre, si está vigente, su nivel y su tipo. Las presentaciones de clase son documentos pdf que contiene texto pero también muchas imagenes o capturas de pantalla con código. El programa del curso es un documento que tiene solo texto.
+Cada documento se etiqueta en un catálogo (\cod{data/plata/documentos/catalogo\_documentos.csv}) con su semestre, si está vigente, su nivel y su tipo. Las presentaciones mezclan texto con capturas de pantalla de código; el programa vigente es solo texto y el de 2020-20, un escaneo.
 
 
 \subsubsection{Fuentes estructuradas: la bodega Gold de la Entrega 1}
@@ -75,7 +75,7 @@ La Entrega 1 construyó un \emph{lakehouse} por capas a partir de las exportacio
 
 \begin{figure}[H]\centering
 \includegraphics[width=\textwidth]{modelo_dimensional.pdf}
-\caption{Modelo dimensional de la capa Gold: cuatro tablas de hechos y diez dimensiones, con sus llaves, medidas y jerarquías.}
+\caption{Modelo dimensional de la capa Gold: cuatro tablas de hechos y diez dimensiones, con sus llaves, medidas y jerarquías. Cada rol de la fecha en la reserva (inicio, fin y llegada) es una relación propia con \cod{dim\_fecha}.}
 \label{fig:modelo_gold}
 \end{figure}
 
@@ -157,7 +157,7 @@ La unión de las dos fuentes produce hallazgos que ninguna da sola. Cuatro ejemp
 \item La capacidad no siguió a la demanda: 2.616 cupos tanto en 2025-20 como en 2026-10, con ocupación de 54 y 55\,\%. En 2026-10 la lista de espera se concentra en los miércoles: a las 14:00 hubo 8 solicitudes con 44 de 55 cupos reservados. Ningún documento del corpus fija una regla de cupos, así que la decisión de reasignarlos es de la coordinación y estos datos le dicen dónde.
 \end{itemize}
 
-\subsection{Requerimiento 3 · Preparar las tutorías del día (documentos, bodega y modelo local)}
+\subsection{Requerimiento 3 · Preparar la siguiente tutoría (documentos, bodega y modelo local)}
 \label{sec:req3}
 
 \begin{table}[H]\small\renewcommand{\arraystretch}{1.2}
@@ -165,12 +165,12 @@ La unión de las dos fuentes produce hallazgos que ninguna da sola. Cuatro ejemp
 \toprule
 \textbf{Elemento} & \textbf{Definición} \\
 \midrule
-Decisión que apoya & Qué temas trabajar con cada estudiante que reservó una tutoría hoy, sin salirse del contenido autorizado. Ejemplo: «Tengo tutoría con Pepito. Según lo que ha escrito en sus encuestas y lo que el curso ya vio, ¿de qué hablamos?». \\
-Rol beneficiado & \textbf{Monitores de CupiTaller}, antes de su turno. Hoy llegan a la tutoría sin saber para qué viene el estudiante ni qué le costó en tutorías anteriores. \\
+Decisión que apoya & Qué temas preparar para la siguiente tutoría con un estudiante, sin salirse del contenido autorizado. Ejemplo: «Mañana tengo tutoría con Pepito y el curso va en el Nivel 2. ¿Qué temas preparo?». La respuesta exige mirar la reserva (para qué viene), lo que el estudiante escribió en tutorías anteriores y lo que cubre su nivel. \\
+Rol beneficiado & \textbf{Monitores de CupiTaller}, antes de su turno. Hoy llegan sin saber para qué viene el estudiante ni qué le costó en tutorías anteriores. \\
 Preguntas & ¿Para qué reservó? ¿Qué dijo en sus encuestas anteriores sobre el curso y la tutoría, y cómo calificó su comprensión del tema? ¿Qué presentaciones ya vio en el nivel en que va el curso? ¿Qué de lo que pide aún no se ha enseñado? \\
 Fuentes & Bodega (Silver): reservas del día, encuesta previa (propósito de la reserva) y las 5 encuestas de satisfacción anteriores del mismo estudiante. Documentos: catálogo de presentaciones vigentes por nivel y la colección visual, filtrada al nivel del curso. \\
 Por qué es híbrido & Ninguna fuente sola responde. La bodega sabe quién viene y qué escribió, pero no qué cubre cada nivel; los documentos saben qué cubre cada nivel, pero no quién viene. La restricción es incremental: un tema del Nivel 3 no se puede proponer a un estudiante de Nivel 2 aunque lo pida. \\
-Restricción de privacidad & Los comentarios de las encuestas son texto libre que nombra a estudiantes y tutores. No pueden salir de la Universidad, así que este requerimiento corre completo en un equipo local: embeddings e5, Postgres y un modelo abierto (sección~\ref{sec:abierto}). \\
+Restricción de privacidad & Los comentarios de las encuestas son texto libre que nombra a estudiantes y tutores y no pueden salir de la Universidad. Los lee un modelo abierto que corre en el equipo (sección~\ref{sec:abierto}); al agente solo le llegan los temas que menciona cada estudiante (sección~\ref{sec:agente}). \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -232,7 +232,7 @@ Para medir el efecto de la ingesta hay dos colecciones sobre los mismos document
 
 \subsection{Evaluación}
 
-Un banco de \textbf{26 preguntas} con respuesta esperada y página de origen (\cod{data/bronce/evaluacion/preguntas.json}) cubre cinco tipos: 7 sobre el programa, 5 sobre contenido que está en el texto de una diapositiva, 6 sobre contenido que solo está en una imagen, 4 sobre el nivel en que se enseña un tema y 4 que el corpus no responde. Tres sistemas responden cada pregunta una vez con los documentos vigentes: prompting directo, RAG de texto y RAG visual.
+Un banco de \textbf{26 preguntas} con respuesta esperada y página de origen (\cod{data/\allowbreak{}bronce/\allowbreak{}evaluacion/\allowbreak{}preguntas.json}) cubre cinco tipos: 7 sobre el programa, 5 sobre contenido que está en el texto de una diapositiva, 6 sobre contenido que solo está en una imagen, 4 sobre el nivel en que se enseña un tema y 4 que el corpus no responde. Tres sistemas responden cada pregunta una vez con los documentos vigentes: prompting directo, RAG de texto y RAG visual.
 
 Un modelo distinto del generador, \cod{gpt-6-sol}, califica cada respuesta contra la esperada como correcta, parcial o incorrecta, y marca si afirma un hecho que contradice lo esperado (\cod{src/entrega2/juez.py}). Revisamos a mano todos los veredictos distintos de «correcta». Una primera corrida mostró que cuatro respuestas esperadas pedían más de lo que preguntaba la pregunta; las ajustamos y volvimos a responder y a calificar todo.
 
@@ -289,7 +289,7 @@ Para saber si otra forma de partir los documentos mejora el RAG, comparamos diez
 
 El banco de 26 preguntas es pequeño para medir recuperación, así que construimos un banco sintético (\cod{src/entrega2/exp\_preguntas\_sinteticas.py}): 200 páginas vigentes con al menos 25 palabras, elegidas al azar con semilla fija, y para cada una \cod{gpt-6-luna} escribió una pregunta que parafrasea la página sin copiar sus frases. La recuperación cuenta un acierto si algún fragmento de los 5 primeros contiene la página de origen. La búsqueda es exacta, en memoria, para que el índice no influya. La calidad de respuesta se midió con las 26 preguntas, generando con \cod{gpt-6-luna} y calificando con \cod{gpt-6-sol}. Comparamos cada variante con producción con la prueba exacta de McNemar sobre los pares de preguntas.
 
-\begin{table}[H]\small\renewcommand{\arraystretch}{1.12}\centering
+\begin{table}[H]\footnotesize\renewcommand{\arraystretch}{1.12}\centering
 \begin{tabular}{lrrrrrr}
 \toprule
 \textbf{Variante} & \textbf{Fragm.} & \textbf{Trunc.} & \textbf{Tokens top 5} & \textbf{R@5 sint.} & \textbf{R@1 sint.} & \textbf{Correctas} \\
@@ -378,7 +378,7 @@ Para el Requerimiento 1 (contenido autorizado por nivel, para monitores) recomen
 
 \textbf{Escalabilidad.} Hoy el prompting directo es el más exacto (26 de 26 frente a 23) porque el corpus de un semestre cabe en la ventana. No se sostiene: CupiTaller atiende también EDA e IP Honores, y conservar las versiones anteriores para saber con qué material cursó cada monitor multiplica el corpus por el número de semestres. Cada versión semestral de IP añade unos 100.000 tokens al prompt de \emph{todas} las consultas; el RAG mantiene 1.255 tokens por consulta y solo crece el índice.
 
-\textbf{Costo-beneficio.} A la escala actual el costo no decide: 10.000 consultas por semestre cuestan US\$\,1,45 con RAG y entre US\$\,10,6 y 103 con prompting directo, según la caché. La transcripción, el paso más costoso, es común a los dos enfoques (US\$\,0,21 por todo el corpus). Deciden tres capacidades que solo tiene el RAG: filtrar por vigencia, sin lo cual el sistema responde con reglas antiguas; devolver la diapositiva exacta que el monitor puede mostrar al estudiante; y servir de herramienta al agente del Requerimiento 2. El costo del RAG es operativo: una base Postgres y un catálogo que alguien mantiene.
+\textbf{Costo-beneficio.} A la escala actual el costo no decide: 10.000 consultas por semestre cuestan US\$\,1,45 con RAG y entre US\$\,10,6 y 103 con prompting directo, según la caché. La transcripción, el paso más costoso, es común a los dos enfoques (US\$\,0,21 por todo el corpus). Deciden tres capacidades que solo tiene el RAG: filtrar por vigencia, sin lo cual el sistema responde con reglas antiguas; devolver la diapositiva exacta que el monitor puede mostrar al estudiante; y servir de herramienta al agente de los tres requerimientos. El costo del RAG es operativo: una base Postgres y un catálogo que alguien mantiene.
 
 \textbf{Lo que se pierde y cómo se compensa.} El RAG falló dos preguntas de conjunto. Para ese tipo de pregunta, el prompting directo con las presentaciones de un solo nivel (cerca de una cuarta parte del corpus) da la visión completa a una fracción del costo.
 
@@ -408,7 +408,7 @@ El corpus tiene otras tres fuentes de inconsistencia. Los archivos no dicen su v
 \subsection{Prueba de concepto: el RAG recupera la regla desactualizada}
 \label{sec:poc}
 
-Seis preguntas cuya respuesta cambió entre las dos versiones (\cod{data/bronce/evaluacion/preguntas\_vigencia.json}) se respondieron con cinco configuraciones (\cod{src/entrega2/poc\_entropia.py}). El «RAG ingenuo» indexa los 58 documentos sin usar ninguna etiqueta del catálogo, como queda un RAG al indexar una carpeta de PDF.
+Seis preguntas cuya respuesta cambió entre las dos versiones (\cod{data/\allowbreak{}bronce/\allowbreak{}evaluacion/\allowbreak{}preguntas\_\allowbreak{}vigencia.json}) se respondieron con cinco configuraciones (\cod{src/\allowbreak{}entrega2/\allowbreak{}poc\_entropia.py}). El «RAG ingenuo» indexa los 58 documentos sin usar ninguna etiqueta del catálogo, como queda un RAG al indexar una carpeta de PDF.
 
 \begin{figure}[H]\centering
 \includegraphics[width=\textwidth]{entropia_poc.pdf}
@@ -448,72 +448,81 @@ La comparación tiene un límite: de 2020-21 hay 12 presentaciones, no el curso 
 {\small\renewcommand{\arraystretch}{1.1}
 \input{../../../artifacts/entrega2/tablas/tabla_temas_por_nivel}}
 
-\subsection{Solución híbrida: un agente que contrasta documentos y bodega}
+\subsection{Solución híbrida: un agente para los tres requerimientos}
 \label{sec:agente}
 
-El filtro de vigencia depende de que alguien etiquete bien cada documento. La bodega ofrece una comprobación independiente: si un documento describe un servicio, los datos dicen si ese servicio opera. El agente (\cod{src/entrega2/agente.py}) hace ese contraste.
+Los tres requerimientos cruzan fuentes: R1, documentos de varias versiones; R2, documentos y bodega; R3, documentos, bodega y las reservas del día. Un solo agente (\cod{src/entrega2/agente.py}) los atiende: recibe la pregunta y decide qué fuente consultar en cada paso. La coordinación, un profesor y un monitor usan el mismo sistema; cambia la pregunta, no el flujo.
 
 \begin{figure}[H]\centering
-\begin{tikzpicture}[node distance=0.6cm and 0.9cm]
-\node[caja] (q) {Pregunta de la coordinación};
-\node[modelo, right=0.6cm of q, text width=3.0cm, minimum height=1.6cm] (ag) {Agente\\gpt-6-luna con llamadas a funciones\\(hasta 8 pasos)};
-\node[caja, above right=0.15cm and 0.9cm of ag, text width=3.6cm] (t1) {\cod{buscar\_documentos}\\(consulta, vigencia, semestre)};
-\node[caja, right=0.9cm of ag, text width=3.6cm] (t3) {\cod{listar\_presentaciones}\\(semestre, nivel)};
-\node[caja, below right=0.15cm and 0.9cm of ag, text width=3.1cm] (t2) {\cod{consultar\_bodega}\\(sql)};
-\node[dato, right=0.45cm of t1, text width=3.0cm] (pg) {pgvector, colección visual:\\5 fragmentos con semestre y vigencia};
-\node[dato, right=0.45cm of t2, text width=3.0cm] (dw) {Bodega Gold (SQLite):\\vistas de solo lectura};
-\node[caja, below=1.0cm of ag, text width=3.4cm] (r) {Respuesta: documento citado, cifras de la bodega y conclusión};
-\draw[flecha] (q)--(ag);
-\draw[flecha, {Stealth[length=5pt]}-{Stealth[length=5pt]}] (ag.east) -- ++(0.45,0) |- (t1.west);
-\draw[flecha, {Stealth[length=5pt]}-{Stealth[length=5pt]}] (ag.east) -- ++(0.45,0) |- (t2.west);
-\node[dato, right=0.45cm of t3, text width=3.0cm] (ct) {Catálogo:\\título, semestre y nivel};
-\draw[flecha, {Stealth[length=5pt]}-{Stealth[length=5pt]}] (ag.east) -- (t3.west);
-\draw[flecha] (t1)--(pg); \draw[flecha] (t3)--(ct); \draw[flecha] (t2)--(dw); \draw[flecha] (ag)--(r);
+\begin{tikzpicture}[node distance=0.32cm and 0.7cm]
+\node[modelo, text width=2.9cm, minimum height=1.6cm] (ag) {Agente\\gpt-6-luna con llamadas a funciones\\(hasta 12 pasos)};
+\node[caja, left=0.5cm of ag, text width=2.2cm] (q) {Pregunta de la coordinación, un profesor o un monitor};
+\node[caja, right=1.0cm of ag, text width=3.9cm] (t3) {\cod{consultar\_bodega}\\(sql)};
+\node[caja, above=of t3, text width=3.9cm] (t2) {\cod{listar\_presentaciones}\\(semestre, nivel)};
+\node[caja, above=of t2, text width=3.9cm] (t1) {\cod{buscar\_documentos}\\(consulta, vigencia, semestre, nivel)};
+\node[caja, below=of t3, text width=3.9cm] (t4) {\cod{reservas\_del\_dia}\\(fecha)};
+\node[caja, below=of t4, text width=3.9cm] (t5) {\cod{temas\_del\_estudiante}\\(fecha, estudiante)};
+\node[dato, right=0.45cm of t1, text width=2.7cm] (pg) {pgvector, colección visual};
+\node[dato, right=0.45cm of t2, text width=2.7cm] (ct) {Catálogo: título, semestre y nivel};
+\node[dato, right=0.45cm of t3, text width=2.7cm] (dw) {Bodega Gold: vistas de solo lectura};
+\node[dato, right=0.45cm of t4, text width=2.7cm] (sv) {Silver: reservas y encuesta previa};
+\node[modelo, right=0.45cm of t5, text width=2.7cm] (qw) {Qwen3-30B local lee los comentarios};
+\node[caja, below=0.9cm of ag, text width=2.9cm] (r) {Respuesta con fuentes citadas};
+\draw[flecha] (q)--(ag); \draw[flecha] (ag)--(r);
+\foreach \t in {t1,t2,t3,t4,t5} {\draw[flecha, {Stealth[length=5pt]}-{Stealth[length=5pt]}] (ag.east) -- ++(0.5,0) |- (\t.west);}
+\draw[flecha] (t1)--(pg); \draw[flecha] (t2)--(ct); \draw[flecha] (t3)--(dw); \draw[flecha] (t4)--(sv); \draw[flecha] (t5)--(qw);
 \end{tikzpicture}
-\caption{Flujo del agente. El modelo decide en cada paso qué herramienta usar y con qué argumentos.}
+\caption{Flujo del agente. En cada paso el modelo decide qué herramienta usar y con qué argumentos. Las dos últimas atienden R3.}
 \label{fig:agente}
 \end{figure}
 
-\textbf{Herramientas.} \cod{buscar\_documentos} consulta la colección visual y devuelve 5 fragmentos, cada uno con su semestre y su vigencia; el agente decide si incluye versiones anteriores o si busca en un solo semestre. \cod{listar\_presentaciones} devuelve del catálogo los títulos de las presentaciones de un semestre y un nivel, en orden de clase. \cod{consultar\_bodega} ejecuta una sentencia SQL sobre la bodega. La lista del catálogo y el filtro de semestre se agregaron por el caso 8 (sección~\ref{sec:caso8}); los casos 1 a 7 se ejecutaron sin ellos.
+\textbf{Herramientas.} \cod{buscar\_documentos} consulta la colección visual y devuelve 5 fragmentos con su semestre y su vigencia; el agente decide si incluye versiones anteriores, si busca en un solo semestre y hasta qué nivel. \cod{listar\_presentaciones} devuelve del catálogo los títulos de un semestre y un nivel, en orden de clase. \cod{consultar\_bodega} ejecuta una sentencia SQL sobre la bodega. \cod{reservas\_del\_dia} devuelve las reservas de IP de una fecha: seudónimo, hora y propósito, que es una de las siete opciones cerradas de la encuesta previa. \cod{temas\_del\_estudiante} lee los comentarios de las 5 encuestas anteriores del estudiante y devuelve los temas del curso que menciona y su comprensión promedio (1 a 5).
 
-\textbf{La bodega que ve el agente} (\cod{src/entrega2/bodega.py}, \cod{sql/e2\_bodega\_vistas.sql}) es una copia del Gold con cuatro vistas y dos tablas agregadas, los tipos de horario y la oferta por semestre. Las vistas resuelven los joins del modelo dimensional y nombran las columnas de forma que el modelo escriba SQL correcto: \cod{v\_reservas} (una fila por reserva, con período, semana, tipo de tutoría y estado), \cod{v\_encuestas}, \cod{v\_respuestas} y \cod{v\_oferta\_franja} (capacidad, ocupación y lista de espera de cada franja). Su descripción va en las instrucciones del agente. Tres controles limitan lo que puede hacer: la conexión es de solo lectura; se admite una sola sentencia \cod{SELECT}, de hasta 200 filas y con un límite de trabajo; y la copia no contiene los 25.256 comentarios de texto libre de las encuestas ni permite leer \cod{dim\_programa}, donde la fuente trae nombres de personas.
+\textbf{Qué ve cada modelo.} Los comentarios de las encuestas nombran a estudiantes y tutores y no pueden salir de la Universidad. Por eso los lee Qwen3-30B en el equipo (sección~\ref{sec:abierto}), dentro de \cod{temas\_del\_estudiante} (\cod{src/entrega2/reservas.py}), que solo devuelve nombres de temas como «condicionales anidados». \cod{gpt-6-luna} recibe páginas del curso, resultados agregados, un seudónimo, el propósito de la reserva y esos temas; nunca un comentario, un nombre o un código de estudiante.
 
-\textbf{Instrucciones.} El agente debe buscar la regla en los documentos, identificar la versión vigente, comprobarla con una consulta agregada, comparar versiones listando el nivel en cada semestre y buscando en el semestre viejo los temas que difieren, no afirmar nada que no venga de una herramienta y cerrar con tres partes: qué dice el documento, qué muestra la bodega y si coinciden.
+\textbf{La bodega que ve el agente} (\cod{src/entrega2/bodega.py}, \cod{sql/e2\_bodega\_vistas.sql}) es una copia del Gold con cuatro vistas y dos tablas agregadas, los tipos de horario y la oferta por semestre. Las vistas resuelven los joins del modelo dimensional y nombran las columnas para que el modelo escriba SQL correcto: \cod{v\_reservas} (una fila por reserva, con período, semana, tipo de tutoría y estado), \cod{v\_encuestas}, \cod{v\_respuestas} y \cod{v\_oferta\_franja} (capacidad, ocupación y lista de espera de cada franja). Su descripción va en las instrucciones del agente. Tres controles limitan lo que puede hacer: la conexión es de solo lectura; se admite una sola sentencia \cod{SELECT}, de hasta 200 filas y con un límite de trabajo; y la copia no contiene los 25.256 comentarios de texto libre de las encuestas ni permite leer \cod{dim\_programa}, donde la fuente trae nombres de personas.
+
+\textbf{Instrucciones.} Para una regla: buscarla en los documentos, identificar la versión vigente y comprobarla con una consulta agregada. Para comparar versiones del curso: listar el nivel en cada semestre y buscar en el semestre viejo los temas que difieren. Para preparar una tutoría: buscar al estudiante en las reservas, pedir sus temas, listar las presentaciones vigentes hasta el nivel en que va el curso y proponer de 1 a 3 títulos exactos de ese nivel o de uno anterior; lo que el estudiante pida de un nivel posterior se nombra y no se propone. El nivel del curso lo indica quien pregunta, porque la bodega no lo registra. En todos los casos, no afirmar nada que no venga de una herramienta.
+
+\textbf{Límite de pasos.} Preparar una tutoría toma hasta 9 llamadas: la reserva, los temas, una lista por nivel hasta el 4 (para ubicar lo que el estudiante pide de niveles posteriores) y las búsquedas. Con el límite de 8 pasos que bastaba para R1 y R2, el agente agotó los pasos en 4 de 5 corridas del caso de Pepito; con 12, respondió en las 5. Todos los resultados de esta sección son de la versión final, con las cinco herramientas y 12 pasos.
 
 \subsection{Resultados del agente}
 
-Ocho casos (\cod{data/bronce/evaluacion/preguntas\_agente.json}) prueban el agente; sus trazas completas están en \cod{artifacts/entrega2/resultados/agente/casos.json}.
+Nueve casos (\cod{data/bronce/evaluacion/preguntas\_agente.json}) prueban el agente: cuatro híbridos de R2, dos solo de la bodega, dos solo de documentos (uno de ellos de R1) y uno de R3. Sus trazas completas están en \cod{artifacts/entrega2/resultados/agente/casos.json}. \cod{gpt-6-sol} calificó cada respuesta de 0 a 2 en tres criterios, contra lo que devolvieron las herramientas: si está fundamentada, si responde y si cita.
 
 \begin{table}[H]\small\renewcommand{\arraystretch}{1.15}
-\begin{tabularx}{\textwidth}{L>{\raggedright\arraybackslash}p{0.24\textwidth}RRR}
+\begin{tabularx}{\textwidth}{L>{\raggedright\arraybackslash}p{0.25\textwidth}RRRc}
 \toprule
-\textbf{Caso} & \textbf{Herramientas usadas} & \textbf{Pasos} & \textbf{Tiempo (s)} & \textbf{USD} \\
+\textbf{Caso} & \textbf{Herramientas usadas} & \textbf{Pasos} & \textbf{s} & \textbf{USD} & \textbf{F / R / C} \\
 \midrule
-¿Se siguen ofreciendo las tutorías grupales del programa? & documentos, bodega & 2 & 4,9 & 0,0004 \\
-Qué no deben hacer los tutores y a qué se dedica la tutoría & documentos, bodega (3) & 4 & 7,5 & 0,0006 \\
-Semanas de mayor demanda frente al cierre de los niveles & documentos, bodega (3) & 4 & 9,0 & 0,0009 \\
-Uso de IA por los tutores según las encuestas & documentos (2), bodega (4) & 6 & 11,4 & 0,0011 \\
-Reservas e inasistencia por semestre desde 2023 & bodega & 1 & 4,5 & 0,0003 \\
-Cómo explica el curso el recorrido parcial con centinela & documentos & 1 & 3,5 & 0,0003 \\
-¿Se ajustó la oferta de cupos a la caída de las reservas? & documentos, bodega (7) & 8 & 15,5 & 0,0017 \\
-Qué se dicta hoy en el nivel 3 que no está en el material de 2021-10 & catálogo (2), documentos (2) & 4 & 7,3 & 0,0007 \\
+¿Se siguen ofreciendo las tutorías grupales del programa? (R2) & documentos, bodega & 2 & 5,5 & 0,0004 & 1 / 2 / 2 \\
+Qué no deben hacer los tutores y a qué se dedica la tutoría (R2) & documentos, bodega (2) & 3 & 5,3 & 0,0005 & 2 / 2 / 2 \\
+Semanas de mayor demanda frente al cierre de los niveles (R2) & documentos (2), bodega (3) & 5 & 13,1 & 0,0014 & 2 / 2 / 2 \\
+Uso de IA por los tutores según las encuestas (R2) & documentos (2), bodega (4) & 6 & 15,1 & 0,0012 & 0 / 1 / 2 \\
+Reservas e inasistencia por semestre desde 2023 & bodega & 1 & 5,0 & 0,0004 & 2 / 2 / 1 \\
+Cómo explica el curso el recorrido parcial con centinela (R1) & documentos & 1 & 3,6 & 0,0003 & 2 / 2 / 2 \\
+¿Se ajustó la oferta de cupos a la caída de las reservas? & bodega (6) & 6 & 10,7 & 0,0013 & 2 / 2 / 1 \\
+Qué se dicta hoy en el nivel 3 que no está en el material de 2021-10 (R1) & catálogo (2), documentos (3) & 5 & 7,8 & 0,0008 & 2 / 1 / 0 \\
+Preparar la tutoría de Pepito (R3) & reservas, temas, catálogo (2), documentos (2) & 6 & 7,6 & 0,0005 & 2 / 2 / 1 \\
 \bottomrule
 \end{tabularx}
+\caption{Los nueve casos del agente. F / R / C: fundamentada, responde y cita, de 0 a 2 cada uno.}
+\label{tab:agente}
 \end{table}
 
-El agente eligió bien las herramientas: usó solo la bodega en la pregunta numérica, solo documentos en las dos de contenido (en el caso 8, también el catálogo) y documentos y bodega en las cuatro híbridas. En la pregunta de oferta buscó primero una regla de cupos en los documentos; no la hay, y lo dijo. Ninguna consulta SQL falló por sintaxis.
+El agente eligió bien las fuentes: solo la bodega en las dos preguntas numéricas, solo documentos en las dos de contenido (en el caso 8, también el catálogo), documentos y bodega en las cuatro híbridas, y reservas, catálogo y documentos en la tutoría. Ninguna consulta SQL falló.
 
-\textbf{Caso 1, la salida que pide el enunciado.} Pregunta: «El programa del curso menciona tutorías grupales en CupiTaller. ¿Se siguen ofreciendo?». El agente buscó en todas las versiones, ejecutó \cod{SELECT periodo, tipo\_horario, SUM(reservas) FROM agg\_tipos\_de\_horario WHERE tipo\_horario LIKE '\%Grupal\%' GROUP BY periodo, tipo\_horario} y respondió:
+\textbf{Caso 1, la salida que pide el enunciado.} Pregunta: «El programa del curso menciona tutorías grupales en CupiTaller. ¿Se siguen ofreciendo?». El agente buscó en todas las versiones del programa, sumó por período las reservas de los tipos grupales en \cod{agg\_tipos\_de\_horario} y respondió:
 
 \begin{quote}\small
-El programa vigente que aparece en la búsqueda no especifica si hay tutorías grupales; la mención explícita encontrada dice que existen tutorías individuales, grupales y express, pero corresponde a [Programa del curso IP, semestre 2020-20, p. 5], \textbf{no vigente}. [...] La bodega muestra registros de «Deprecated, Grupal» hasta el período \textbf{202120} (118 reservas) y de «Deprecated, Express grupal» en \textbf{201910} (157). No aparecen registros de tipos grupales después de 202120 en \cod{agg\_tipos\_de\_horario}. \textbf{Conclusión:} la evidencia disponible no indica que las tutorías grupales se sigan ofreciendo; la última actividad registrada bajo esos tipos fue en 2021-20.
+El programa vigente (2026-20) no confirma que se ofrezcan tutorías grupales: su sección «No te pierdas CupiTaller» describe límites de las tutorías, pero no enumera sus modalidades [Programa del curso IP, 2026-20, p. 5; vigente]. El programa anterior sí las mencionaba explícitamente, junto con las individuales y express [Programa del curso IP, 2020-20, p. 5; no vigente]. En la bodega, \cod{agg\_tipos\_de\_horario} registra reservas grupales hasta 2021-20: 118 bajo «Deprecated, Grupal». [\ldots] No hay registros posteriores de esos tipos.
 \end{quote}
 
-Las cifras coinciden con la bodega: 777 reservas grupales entre 2017-10 y 2021-20, y ninguna después.
+Las cifras coinciden con la bodega: 777 reservas grupales entre 2017-10 y 2021-20, y ninguna después. Un detalle falla: el título «No te pierdas CupiTaller» viene de la página 5 del programa de 2020-20, no del vigente, y la rúbrica le quitó un punto por eso.
 
-\textbf{Caso 2, regla frente a uso.} El agente citó la regla vigente (los tutores no solucionan proyectos) y encontró que «Resolver un problema en mi proyecto» es la respuesta más frecuente sobre el uso de la tutoría: 10.236 de 19.672 (52\,\%). Concluyó que hay una tensión, y que la encuesta no dice quién resolvió el problema, de modo que no prueba un incumplimiento. Es la lectura correcta de un dato de encuesta.
+\textbf{Caso 2, regla frente a uso.} El agente citó la regla vigente (los tutores no solucionan proyectos) y encontró que «Resolver un problema en mi proyecto» es la respuesta más frecuente sobre el uso de la tutoría: 10.236 de 19.672 (52\,\%). Advirtió que la encuesta no dice quién resolvió el problema, así que no prueba un incumplimiento.
 
-\textbf{Caso 3, demanda y niveles.} El agente derivó del programa que los niveles, de 9, 12, 15 y 12 sesiones a tres por semana, cierran cerca de las semanas 3, 7, 12 y 16, y comparó con las reservas por semana. Reportó una coincidencia parcial y advirtió que la semana de la bodega es aproximada. La figura~\ref{fig:demanda} muestra el patrón completo: cuatro olas por semestre, cada una con una caída después del pico (en 2024-20, de 356 a 56 reservas, de 622 a 128, de 443 a 67 y de 589 a 201). El programa explica la forma: cada nivel termina con un proyecto y un examen basado en él, y el proyecto es el uso principal de la tutoría.
+\textbf{Caso 3, demanda y niveles.} El agente derivó del programa que los niveles, de 9, 12, 15 y 12 sesiones a tres por semana, cierran cerca de las semanas 3, 7, 12 y 16, y comparó con las reservas por semana. Reportó una coincidencia aproximada y advirtió que la semana de la bodega tiene un desfase de una o dos semanas. La figura~\ref{fig:demanda} muestra el patrón completo: cuatro olas por semestre, cada una con una caída después del pico (en 2024-20, de 356 a 56 reservas, de 622 a 128, de 443 a 67 y de 589 a 201). El programa explica la forma: cada nivel termina con un proyecto y un examen basado en él, y el proyecto es el uso principal de la tutoría.
 
 \begin{figure}[H]\centering
 \includegraphics[width=0.9\textwidth]{demanda_semanal.pdf}
@@ -521,29 +530,36 @@ Las cifras coinciden con la bodega: 777 reservas grupales entre 2017-10 y 2021-2
 \label{fig:demanda}
 \end{figure}
 
-\textbf{Caso 4, IA en las tutorías.} El agente distinguió el alcance de la regla: el programa prohíbe el contenido de chatbots en los entregables del estudiante y no regula el uso de IA por el tutor. En las encuestas, 362 respuestas dicen que el tutor usó una herramienta de IA y 8.321 que no. No concluyó un incumplimiento. Para la coordinación, el hallazgo es que falta una regla escrita para ese caso.
+\textbf{Caso 4, IA en las tutorías: un error de suma.} El agente distinguió bien el alcance de la regla: el programa prohíbe al estudiante entregar contenido de chatbots y no regula el uso de IA por el tutor. Dio bien las cifras de 2026-10 (17 «Sí» en 959 respuestas), pero inventó los totales: escribió 12.708 respuestas, 12.626 «No» y 724 «Sí», cifras que no suman. La consulta había devuelto 8.712: 8.321 «No», 362 «Sí» y 29 con las dos opciones. Es el único caso con una cifra que no viene de una herramienta, y la rúbrica lo detectó.
 
-\textbf{Caso 5, oferta frente a demanda.} Con \cod{agg\_oferta\_periodo}, el agente encontró que la capacidad pasó de 2.703 cupos en 2024-20 a 2.797 en 2025-10 y a 2.616 en 2025-20 y 2026-10, mientras la ocupación bajó de 81,2 a 54,1 y 55,0\,\%. Con \cod{v\_oferta\_franja} ubicó la lista de espera de cada semestre junto con la capacidad de esa franja: martes a las 8:00 en 2025-10 (17 solicitudes, 26 de 29 cupos reservados), miércoles a las 14:00 en 2025-20 (11 solicitudes, 46 de 60) y en 2026-10 (8 solicitudes, 44 de 55). Concluyó que la capacidad bajó menos que las reservas y que ningún documento fija una regla de cupos con la cual contrastarlo. La capacidad es del semestre completo, así que una franja puede tener cupos libres en el total y lista de espera en semanas puntuales: el viernes a las 12:30 de 2026-10 tuvo 26 de 50 cupos reservados y 4 solicitudes en lista. Las cifras coinciden con la bodega.
+\textbf{Caso 7, oferta frente a demanda.} Con \cod{agg\_oferta\_periodo}, el agente encontró que la capacidad bajó de 2.797 cupos en 2025-10 a 2.616 en 2025-20 y se mantuvo en 2026-10, mientras las reservas de IP bajaron de 3.088 a 2.151 y a 1.789. Con \cod{v\_oferta\_franja} ubicó la lista de espera: martes a las 8:00 y a las 11:00 en 2025-10 (17 solicitudes cada una) y miércoles a las 14:00 en 2025-20 (11) y en 2026-10 (8). Concluyó que hubo un ajuste a la baja en 2025-20 y ninguno después. Ningún documento del corpus fija una regla de cupos: la decisión es de la coordinación, y estos datos le dicen dónde.
 
-\textbf{Caso 8, qué cambió en el nivel 3.}\label{sec:caso8} Pregunta: «Soy profesor del nivel 3 de IP y tengo las presentaciones de 2021-10. ¿Qué temas se dictan hoy en el nivel 3 que no aparecen en ese material?». Es una pregunta de inventario, y la búsqueda por similitud no la resuelve sola: cada búsqueda trae 5 fragmentos sueltos. El agente respondió al cuarto intento. La traza final está en \cod{artifacts/entrega2/resultados/agente/casos.json} y las tres anteriores en \cod{docs/entregables/e2\_informe/ag-08\_intentos\_previos.json}; esas no se pueden reproducir con el código actual, que ya tiene los tres cambios.
+\textbf{Caso 8, R1: qué cambió en el nivel 3.}\label{sec:caso8} Pregunta: «Soy profesor del nivel 3 de IP y tengo las presentaciones de 2021-10. ¿Qué temas se dictan hoy en el nivel 3 que no aparecen en ese material?». Es una pregunta de inventario: cada búsqueda trae 5 fragmentos sueltos, así que la búsqueda sola no la resuelve. Este caso definió dos herramientas. Con las dos originales el agente hizo 8 búsquedas y agotó los pasos; con \cod{listar\_presentaciones} listó solo el nivel de 2021-10; con una instrucción para comparar versiones listó los dos semestres, pero las 44 presentaciones vigentes tapaban a las 12 viejas en la búsqueda; con el filtro de semestre respondió. Esas trazas están en \cod{docs/entregables/e2\_informe/ag-08\_intentos\_previos.json}.
 
-\begin{enumerate}[leftmargin=1.8em,itemsep=2pt]
-\item Con las dos herramientas originales hizo 8 búsquedas y agotó los pasos sin responder.
-\item Con \cod{listar\_presentaciones} listó solo el nivel 3 de 2021-10 y concluyó que no podía comparar.
-\item Con una instrucción para comparar versiones (listar el nivel en cada semestre y comprobar con búsquedas los temas que solo aparezcan en la lista nueva) listó los dos semestres, pero volvió a agotar los pasos: la búsqueda solo distinguía vigente de no vigente, y sobre todo el corpus las 44 presentaciones vigentes tapan a las 12 viejas.
-\item Con un filtro de semestre en \cod{buscar\_documentos} respondió en 4 pasos, 7,3 s y US\$ 0,0007: listó las 4 presentaciones de 2021-10 y las 12 de 2026-20, y buscó solo en 2021-10 los temas que difieren.
-\end{enumerate}
+En la corrida final listó el nivel 3 de los dos semestres y buscó tres veces. Nombró tres títulos vigentes que no están en la lista de 2021-10: «Uso del centinela», «Recorrido de diccionarios» y «Estructura de datos compuestos». Frente a la tabla~\ref{tab:versiones} acierta uno (el recorrido de diccionarios), omite «Más sobre strings» y nombra dos cuyo contenido sí estaba en 2021-10. Advirtió que un título nuevo no prueba un tema nuevo y que no tenía el curso completo de 2021-10. Las dos búsquedas en 2021-10 juntaron todos los temas en una sola consulta y se limitaron al nivel 3; en 2021-10 las estructuras compuestas eran del nivel 4 (Tuplas), así que el propio filtro de nivel dejó fuera la evidencia. Una pregunta de inventario sigue siendo el punto débil del agente; la tabla de versiones, construida a mano, es la respuesta fiable para R1.
+
+\textbf{Caso 9, R3: preparar la tutoría de Pepito.} Pepito es un estudiante ficticio. Reservó para «desarrollar un ejercicio en Senecode», y en encuestas anteriores escribió que se confunde con varios \cod{if} seguidos, que no entendió un ciclo \cod{for} para contar letras y que quiere más ejercicios de contar cosas en un texto. Pregunta: «Soy monitor. El 30 de noviembre de 2026 tengo tutoría con Pepito a las 10:00 y el curso va en el Nivel 2. ¿Qué temas preparo?». El agente llamó a \cod{reservas\_del\_dia}, a \cod{temas\_del\_estudiante} (que devolvió «condicionales anidados», «ciclo for sobre strings» y «contar caracteres en texto», con comprensión de 2,5), listó los niveles 1 y 2 y buscó dos veces hasta el Nivel 2:
 
 \begin{quote}\small
-El material vigente de nivel 3 incluye \textbf{Recorrido de diccionarios} como tema explícito [\emph{Recorrido de diccionarios}, 2026-20, p. no indicada; vigente]. [\ldots] el material disponible de 2021-10 sí trata diccionarios en nivel 2 [\ldots]. Por eso, \textbf{el tema que destaca como nuevo en la secuencia actual de nivel 3 es el recorrido de diccionarios}; no puedo concluir que los diccionarios no aparecieran en el curso anterior. La comparación es limitada: no tenemos aquí el curso completo de 2021-10, y las listas de presentaciones solo indican títulos, no todo el contenido.
+1. \textbf{Condicionales} [nivel 2]. Repasa condicionales simples y compuestas para trabajar los condicionales anidados que mencionó.
+2. \textbf{Operaciones sobre cadenas de caracteres} [nivel 2]. Es la presentación vigente más pertinente para practicar el recorrido de strings y el conteo de caracteres.
+
+No propongo un tema de ciclos \cod{for}: no aparece como título de presentación vigente hasta el nivel 2.
 \end{quote}
 
-La respuesta acierta una de las dos clases del nivel 3 sin versión en la tabla~\ref{tab:versiones}, el recorrido de diccionarios, y omite la otra: «Más sobre strings». Al buscar strings en 2021-10 recuperó páginas de Diccionarios, Instrucciones cíclicas y Listas, no la de Cadenas, y no volvió a la clase. No tomó por nuevas «Uso del centinela» ni «Estructura de datos compuestos», que tienen títulos nuevos pero contenido que ya estaba en 2021-10. Llama «nuevo» al tema, una palabra que este informe evita porque el material de 2021-10 está incompleto; el propio agente lo advierte en la misma respuesta. Tiene dos defectos de cita: atribuye la lista de títulos a «[Diccionarios, 2021-10, p. 2]», cuando vino del catálogo, y no indica la página de la clase vigente. El agente se ajustó sobre este mismo caso, así que su resultado sobreestima el desempeño en preguntas parecidas; repetir la pregunta para los niveles 1, 2 y 4 es la prueba que falta.
+Los dos temas son del Nivel 2 y el \cod{for}, que es del Nivel 3, quedó fuera. En 5 corridas más del mismo caso propuso 15 presentaciones, todas de los niveles 1 o 2, con una mediana de 6 pasos y 9 s.
+
+\subsection{Requerimiento 3 en un día real}
+\label{sec:tutorias}
+
+\cod{src/entrega2/tutorias\_del\_dia.py} le hace al agente, para cada estudiante con reserva de IP en una fecha, la pregunta del monitor: «El [fecha] tengo tutoría con [seudónimo] a las [hora] y el curso va en el Nivel [n]. ¿Qué temas preparo?». Una métrica automática cuenta las presentaciones vigentes que la respuesta propone en su lista numerada, dentro del nivel del curso o de un nivel posterior. La salida con datos reales se escribe en una carpeta que no se versiona; por consola solo salen métricas agregadas.
+
+El 9 de febrero de 2026, con el curso en el Nivel 1, hubo 37 estudiantes con tutoría de IP; 14 tenían comentarios en encuestas anteriores. El agente preparó las 37 tutorías en 4,5 minutos, con una mediana de 5 pasos y 6,8 s por estudiante y US\$\,0,024 en total. Todas las respuestas usaron la reserva y los documentos, y todas pidieron los temas del estudiante. Propusieron 106 presentaciones, todas del Nivel 1; ninguna de un nivel posterior. No revisamos el contenido de las propuestas: contienen lo que escribieron los estudiantes, y leerlas exige el mismo cuidado que el resto del flujo. La evaluación que falta es una revisión por un monitor sobre una muestra.
 
 \subsection{Un modelo abierto en local}
 \label{sec:abierto}
 
-El Requerimiento 3 lee comentarios de encuestas, que no pueden ir a un modelo externo. Para saber qué se pierde al cambiar de modelo, probamos un modelo abierto en las tres tareas del proyecto: generar respuestas RAG, calificar respuestas y operar el agente (\cod{src/entrega2/exp\_modelo\_abierto.py}). El modelo es Qwen3-30B-A3B (licencia Apache 2.0; 30.500 millones de parámetros, de los que 3.300 millones se activan por token), cuantizado a 4 bits (18 GB), servido con Ollama en un portátil Apple M5 de 32 GB. Ollama expone la misma API que usa el proyecto, así que el código solo cambia la URL y el nombre del modelo. Probamos dos variantes: \emph{instruct}, que responde directo, y \emph{razonador}, que piensa antes de responder y no permite desactivarlo.
+El Requerimiento 3 lee comentarios de encuestas, que no pueden ir a un modelo externo. Para decidir qué parte del sistema puede correr en el equipo, probamos un modelo abierto en las tres tareas del proyecto: generar respuestas RAG, calificar respuestas y operar el agente (\cod{src/entrega2/exp\_modelo\_abierto.py}). El modelo es Qwen3-30B-A3B (licencia Apache 2.0; 30.500 millones de parámetros, de los que 3.300 millones se activan por token), cuantizado a 4 bits (18 GB), servido con Ollama en un portátil Apple M5 de 32 GB. Ollama expone la misma API que usa el proyecto, así que el código solo cambia la URL y el nombre del modelo. Probamos dos variantes: \emph{instruct}, que responde directo, y \emph{razonador}, que piensa antes de responder y no permite desactivarlo.
 
 \begin{table}[H]\small\renewcommand{\arraystretch}{1.12}\centering
 \begin{tabular}{lrrr}
@@ -555,43 +571,24 @@ Respuestas con un hecho inventado & 0 & 3 & 1 \\
 Tokens de salida por respuesta & 38 & 58 & 624 \\
 Latencia mediana / máxima (s) & 1,1 / 1,8 & 9,5 / 29,9 & 27,7 / 59,6 \\
 \midrule
-\textbf{Agente (8 casos; rúbrica de 0 a 16)} & & & \\
+\textbf{Agente (9 casos; rúbrica de 0 a 18)} & & & \\
 \midrule
-Fundamentada / responde / cita & 11 / 14 / 10 & 1 / 11 / 6 & 2 / 9 / 8 \\
-Pasos promedio & 3,8 & 2,4 & 1,8 \\
-Tiempo mediano por caso (s) & 7,4 & 34 & 200 \\
+Fundamentada / responde / cita & 15 / 16 / 13 & 1 / 8 / 5 & 2 / 10 / 6 \\
+Pasos promedio & 3,9 & 2,8 & 2,0 \\
+Tiempo mediano por caso (s) & 7,6 & 19 & 86 \\
 \bottomrule
 \end{tabular}
-\caption{Modelo abierto local frente a \cod{gpt-6-luna}. RAG visual con los mismos 5 fragmentos e instrucciones; calificó \cod{gpt-6-sol}. En el agente, \cod{gpt-6-sol} puntuó cada respuesta de 0 a 2 en tres criterios contra las salidas de las herramientas.}
+\caption{Modelo abierto local frente a \cod{gpt-6-luna}. RAG visual con los mismos 5 fragmentos e instrucciones; calificó \cod{gpt-6-sol}. En el agente, \cod{gpt-6-sol} puntuó cada respuesta de 0 a 2 en tres criterios contra las salidas de las herramientas y la descripción de la bodega.}
 \label{tab:abierto}
 \end{table}
 
-\textbf{Como generador RAG, el razonador iguala a \cod{gpt-6-luna} en aciertos, pero es 25 veces más lento.} Acertó 23 de 26 y no tuvo incorrectas; inventó un hecho en una respuesta. El instruct es más rápido y peor: 18 correctas y 3 respuestas con hechos inventados. Dos son preguntas que el corpus no responde: en lugar de abstenerse, afirmó un límite de una tutoría por semana que ningún documento fija y atribuyó al curso una definición que no está documentada. La tercera presentó las mayúsculas como parte de la convención de nombres del curso, que pide minúsculas. Para una tarea por lotes, como preparar tutorías la noche anterior, 28 s por respuesta son aceptables; para un monitor esperando en la tutoría, no.
+\textbf{Como generador RAG, el razonador iguala a \cod{gpt-6-luna} en aciertos, pero es 25 veces más lento.} Acertó 23 de 26 y no tuvo incorrectas; inventó un hecho en una respuesta. El instruct es más rápido y peor: 18 correctas y 3 respuestas con hechos inventados. Dos son preguntas que el corpus no responde: en lugar de abstenerse, afirmó un límite de una tutoría por semana que ningún documento fija y atribuyó al curso una definición que no está documentada. La tercera presentó las mayúsculas como parte de la convención de nombres del curso, que pide minúsculas. Para una tarea por lotes, 28 s por respuesta son aceptables; para un monitor que espera la respuesta, no.
 
 \textbf{Como juez, el instruct sustituye a \cod{gpt-6-sol}.} Volvió a calificar las 52 respuestas del RAG de texto y del RAG visual y coincidió en 51 (98,1\,\%, kappa de Cohen 0,94). La única diferencia: una respuesta que \cod{gpt-6-sol} calificó parcial y Qwen correcta. La mediana fue 5,9 s por calificación.
 
-\textbf{Como agente, ninguna variante sirve.} Las dos usan menos herramientas que \cod{gpt-6-luna} (2,4 y 1,8 pasos frente a 3,8) y responden con cifras que no aparecen en las salidas de las herramientas: 1 y 2 de 16 en fundamentación frente a 11. En el caso 1, el instruct respondió sin llamar a ninguna herramienta. La rúbrica tiene un sesgo que afecta a los tres modelos por igual: el juez ve las salidas de las herramientas cortadas a 3.000 caracteres, de modo que una cifra que sí salió de la bodega puede parecer inventada. Ese sesgo no explica una diferencia de 11 a 1.
+\textbf{Como agente, ninguna variante sirve.} Las dos usan menos herramientas que \cod{gpt-6-luna} (2,8 y 2,0 pasos frente a 3,9) y responden con cifras o hechos que no salieron de ellas: 1 y 2 de 18 en fundamentación, frente a 15. En el caso 7, las consultas del instruct a \cod{v\_oferta\_franja} fallaron y aun así respondió con días, horas y conteos de lista de espera. En el caso de Pepito, el instruct excluyó los condicionales anidados como si fueran del Nivel 3; son del Nivel 2. El juez recibe las salidas completas de las herramientas y la descripción de la bodega que el agente tiene en sus instrucciones: con salidas cortadas a 3.000 caracteres y sin esa descripción, marcaba como inventadas afirmaciones que sí tenían respaldo.
 
-\textbf{Conclusión.} Un modelo abierto de 30.000 millones de parámetros, en un portátil, alcanza para generar sobre fragmentos recuperados y para calificar, si se acepta la latencia; no alcanza para decidir qué herramienta usar y escribir el SQL. Esto define la arquitectura del Requerimiento 3: el código decide qué datos reunir y el modelo local solo redacta sobre ellos.
-
-\subsection{Requerimiento 3: las tutorías del día con el modelo local}
-\label{sec:tutorias}
-
-\cod{src/entrega2/tutorias\_del\_dia.py} prepara todas las tutorías de IP de una fecha. El monitor indica la fecha y el nivel en que va el curso. Para cada estudiante con reserva atendida ese día, el script:
-
-\begin{enumerate}[leftmargin=1.8em,itemsep=2pt]
-\item lee de la bodega Silver el propósito de la reserva (encuesta previa) y las 5 encuestas de satisfacción anteriores del mismo estudiante: en qué usó la tutoría, cómo calificó su comprensión del tema y sus comentarios sobre el curso, el tutor y las sugerencias;
-\item lista del catálogo las presentaciones vigentes de los niveles 1 hasta el actual;
-\item busca en la colección visual con el propósito y los comentarios como consulta, y conserva los 5 primeros fragmentos de nivel menor o igual al actual;
-\item pide al modelo local de 1 a 3 temas, cada uno con el título exacto de una presentación permitida, su nivel y el motivo tomado de lo que escribió el estudiante; lo que el estudiante pida y el curso aún no haya visto va aparte, en \cod{fuera\_de\_nivel}, con una pregunta para abrir la tutoría. La salida tiene un esquema JSON fijo;
-\item comprueba en código que cada título propuesto esté en el catálogo permitido.
-\end{enumerate}
-
-Los estudiantes se identifican con un seudónimo («Estudiante 3»). La salida con datos reales se escribe en una carpeta que no se versiona, y por consola solo salen métricas agregadas. Las decisiones que pueden fallar sin ser visibles (qué datos leer, qué fragmentos están en el nivel, qué títulos están permitidos) las toma el código; el modelo solo redacta, que es lo que la sección~\ref{sec:abierto} mostró que hace bien.
-
-\textbf{Ejemplo con un estudiante ficticio.} Pepito reservó para «desarrollar un ejercicio en Senecode». En encuestas anteriores escribió que se confunde «cuando hay varios if seguidos y no sé cuándo usar elif», que el tutor le mostró «un ciclo for para contar letras» y no lo entendió, y pidió «más ejercicios de contar cosas dentro de un texto». Con el curso en el Nivel 2, el modelo propuso tres temas del Nivel 2: condicionales en cascada (\cod{if}, \cod{elif}, \cod{else}), contar ocurrencias con diccionarios (la clase de ejercicio «Ocurrencias de cada dígito en un número usando diccionarios») y diccionarios para agrupar elementos. No propuso el ciclo \cod{for}, que es del Nivel 3, pero tampoco lo anotó en \cod{fuera\_de\_nivel}: cumplió la mitad de la regla. Tardó 75 s, incluida la carga del modelo en memoria.
-
-\textbf{Un día real.} El 9 de febrero de 2026, con el curso en el Nivel 1, hubo 37 estudiantes con tutoría de IP. 14 tenían encuestas anteriores y 16 no llenaron la encuesta previa, así que para ellos el modelo solo contó con el temario del nivel. El modelo propuso 94 temas; 90 tienen el título exacto de una presentación permitida y 4 usan títulos inventados, como «Análisis» o «Diseño», que la comprobación del paso 5 marca. Ningún estudiante quedó con temas fuera de nivel. La mediana fue 25 s por estudiante y el día completo tomó 18 minutos, que se pueden correr la noche anterior. No revisamos el contenido de las 37 propuestas: contienen los comentarios de los estudiantes, y leerlos para evaluar exigiría el mismo cuidado que el resto del flujo. Una revisión por un monitor sobre una muestra es la evaluación que falta.
+\textbf{Conclusión.} Un modelo abierto de 30.000 millones de parámetros, en un portátil, alcanza para generar sobre fragmentos recuperados y para calificar, si se acepta la latencia; no alcanza para decidir qué herramienta usar y escribir el SQL. Por eso el agente usa \cod{gpt-6-luna}, y el modelo local hace la única tarea que no puede salir del equipo: leer los comentarios y devolver los temas que mencionan (sección~\ref{sec:agente}). Es una tarea de extracción, como calificar, y no requiere elegir herramientas; con Pepito devolvió los tres temas que el estudiante había escrito.
 
 \subsection{Trabajo futuro: Senecode}
 \label{sec:senecode}
@@ -603,9 +600,9 @@ En la encuesta previa de IP, 6.132 de 23.437 reservas (26\,\%) declaran que el t
 \begin{itemize}[leftmargin=1.5em,itemsep=2pt]
 \item La semana del período se cuenta desde la primera reserva, porque Bookeau no guarda el calendario académico. El desfase con la semana de clases es de una o dos semanas. Indexar el cronograma de cada semestre lo resolvería.
 \item Las etiquetas de semestre de los documentos históricos se infieren de la fecha del archivo. 
-\item Los ocho casos del agente son una demostración, no una medición de exactitud. Cada caso se revisó contra la bodega o, el caso 8, contra la correspondencia de la tabla~\ref{tab:versiones}.
-\item El agente depende de un modelo externo. Lo que lee, páginas del curso y resultados agregados, sale de la Universidad; por eso la copia de la bodega no tiene texto libre ni nombres.
-\item Ni la bodega ni el programa dicen en qué nivel va el curso cada semana, así que el monitor lo indica al preparar las tutorías. Con el cronograma del semestre en el corpus, el sistema lo deduciría de la fecha.
+\item Los nueve casos del agente son una demostración, no una medición de exactitud, y el agente varía entre corridas: el caso 8 nombró temas distintos en cada versión. Cada caso se revisó contra las salidas de las herramientas y la bodega o, el caso 8, contra la tabla~\ref{tab:versiones}.
+\item El agente depende de un modelo externo. Lo que lee (páginas del curso, resultados agregados, seudónimos y nombres de temas) sale de la Universidad; por eso la copia de la bodega no tiene texto libre ni nombres y los comentarios los lee el modelo local.
+\item Ni la bodega ni el programa dicen en qué nivel va el curso cada semana, así que el monitor lo indica en la pregunta. Con el cronograma del semestre en el corpus, el agente lo deduciría de la fecha.
 \item El banco sintético de fragmentación lo escribió el mismo proveedor que genera las respuestas, y cada pregunta sale de una sola página: favorece las variantes de una página y no mide preguntas que reúnen varias.
 \item Los conjuntos de 10 mil a 1 millón de vectores son sintéticos, derivados de los reales con ruido. Miden la latencia y el recall del índice, no la calidad de búsqueda en un corpus real de ese tamaño.
 \end{itemize}
@@ -619,17 +616,17 @@ En la encuesta previa de IP, 6.132 de 23.437 reservas (26\,\%) declaran que el t
 \toprule
 \textbf{Integrante} & \textbf{Trabajo realizado} & \textbf{Puntos} & \textbf{Justificación} \\
 \midrule
-María Alejandra Pérez Petro & Dueña de los datos (\emph{data owner}) y enlace con el negocio: comunicación con la coordinación de CupiTaller y del curso, delimitación del dominio y de los dos requerimientos analíticos, consecución y etiquetado de los documentos (vigentes e históricos), formulación de las preguntas de validación (los bancos de evaluación, de vigencia y de casos del agente) y documentación: informe y póster. & 50 & Garantizó que la solución respondiera a decisiones reales del servicio y que la evaluación midiera lo que la coordinación necesita saber. Cumplió con los insumos y las validaciones a tiempo para cada corrida. \\
-Santiago Martinez Novoa & Implementación técnica: ingesta con visión, base vectorial en Postgres con pgvector, los dos enfoques (prompting directo y RAG), evaluación con juez, prueba de concepto de entropía documental, vistas de la bodega y agente híbrido RAG y SQL, figuras y reproducibilidad del repositorio. & 50 & Construyó y midió todo el sistema, incluido el bono, y corrigió el código cada vez que la validación encontró un problema. \\
+María Alejandra Pérez Petro & Dueña de los datos (\emph{data owner}) y enlace con el negocio: comunicación con la coordinación de CupiTaller y del curso, delimitación del dominio y de los tres requerimientos analíticos, consecución y etiquetado de los documentos (vigentes e históricos), formulación de las preguntas de validación (los bancos de evaluación, de vigencia y de casos del agente) y documentación: informe y póster. & 50 & Garantizó que la solución respondiera a decisiones reales del servicio y que la evaluación midiera lo que la coordinación necesita saber. Cumplió con los insumos y las validaciones a tiempo para cada corrida. \\
+Santiago Martinez Novoa & Implementación técnica: ingesta con visión, base vectorial en Postgres con pgvector, los dos enfoques (prompting directo y RAG), evaluación con juez, prueba de concepto de entropía documental, vistas de la bodega, agente híbrido para los tres requerimientos, modelo local, experimentos de fragmentación e índices, figuras y reproducibilidad del repositorio. & 50 & Construyó y midió todo el sistema, incluido el bono, y corrigió el código cada vez que la validación encontró un problema. \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
 La distribución es de 50 puntos para cada integrante, y suma 100. El trabajo se dividió por rol y no por fase: María Alejandra trabajó del lado del negocio y de la validación, y Santiago del lado de la implementación. Con los criterios de la guía, los dos mostraron el mismo \textbf{compromiso} con el resultado (se hicieron todas las fases, incluido el bono); la \textbf{calidad} de cada aporte se apoya en el del otro, porque las preguntas de validación son las que hicieron visibles los errores de la implementación y la implementación es la que permitió medir los requerimientos; cada uno \textbf{cumplió} lo que se comprometió a entregar; y la \textbf{participación} fue equitativa en carga, aunque distinta en tipo de tarea.
 
-\textbf{Problemas identificados en el equipo.} La división por rol hizo que cada integrante dependiera del otro para avanzar: las preguntas de validación y los documentos históricos tenían que estar listos antes de evaluar, y la redacción del informe tenía que esperar los resultados de las corridas, que se repitieron varias veces (el banco de preguntas, la caché y el agente del caso 8). Además, la reorganización final del repositorio dejó por un momento el PDF del informe sin figuras.
+\textbf{Problemas identificados en el equipo.} La división por rol hizo que cada integrante dependiera del otro para avanzar: las preguntas de validación y los documentos históricos tenían que estar listos antes de evaluar, y la redacción del informe tenía que esperar los resultados de las corridas, que se repitieron varias veces (el banco de preguntas, la caché y el agente del caso 8). Además, la reorganización final del repositorio dejó por un momento el PDF del informe sin figuras, y al cierre la llave del proveedor dejó de funcionar y hubo que reemplazarla antes de repetir las corridas del agente.
 
-\textbf{Estrategias para la siguiente entrega.} La Entrega 1 fijó dos: preguntar con mayor tiempo a la coordinación y aprovechar la información en texto. La primera se cumplió: los documentos vigentes y sus versiones anteriores se pidieron al inicio, antes de diseñar la solución. La segunda se cumplió en parte: el proyecto incorporó los documentos del curso, pero dejó fuera los comentarios libres de las encuestas por privacidad. Para la próxima: fijar desde la primera semana el banco de preguntas de validación, para que la implementación se mida contra él desde la primera corrida; acordar fechas intermedias de resultados para que la documentación avance en paralelo; y verificar que el informe compile desde un clon limpio del repositorio antes de entregar.
+\textbf{Estrategias para la siguiente entrega.} La Entrega 1 fijó dos: preguntar con mayor tiempo a la coordinación y aprovechar la información en texto. La primera se cumplió: los documentos vigentes y sus versiones anteriores se pidieron al inicio, antes de diseñar la solución. La segunda se cumplió: el proyecto incorporó los documentos del curso y, con un modelo local, los comentarios libres de las encuestas, sin que salgan del equipo. Para la próxima: fijar desde la primera semana el banco de preguntas de validación, para que la implementación se mida contra él desde la primera corrida; acordar fechas intermedias de resultados para que la documentación avance en paralelo; y verificar que el informe compile desde un clon limpio del repositorio antes de entregar.
 
 \subsection{Uso de herramientas de IA generativa}
 
@@ -642,36 +639,47 @@ La distribución es de 50 puntos para cada integrante, y suma 100. El trabajo se
 \midrule
 Claude Code (asistente de programación de Anthropic) & Revisión del enunciado, de la Entrega 1 y del corpus; propuesta de los requerimientos y de la arquitectura; generación del código de ingesta, RAG, prompting directo, agente, evaluación y gráficas; ejecución de las corridas; depuración; redacción del borrador de este informe y del póster. \\
 \cod{gpt-6-luna} (OpenAI) & Componente del sistema: transcribe las páginas, responde en los dos enfoques y es el modelo del agente. \\
+Qwen3-30B-A3B (pesos abiertos, en Ollama) & Componente del sistema: lee los comentarios de las encuestas dentro de \cod{temas\_del\_estudiante}. Experimento: generador, juez y agente frente a \cod{gpt-6-luna}. \\
 \cod{gpt-6-sol} (OpenAI) & Componente de la evaluación: juez de las respuestas. \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\textbf{Prompts utilizados.} Se resumen los tres encargos principales al asistente de programación. Cada uno reúne en un solo texto lo que se le pidió en varios mensajes de la sesión.
+\textbf{Prompts utilizados.} Se resumen los cuatro encargos principales al asistente de programación. Cada uno reúne en un solo texto lo que se le pidió en varios mensajes de la sesión.
 
 \begin{enumerate}[leftmargin=1.5em,itemsep=4pt]
 \item \textbf{Artefactos del póster.} «Ayúdame a generar los artefactos del póster de la Entrega 2: 70\,×\,100 cm, impreso, con el amarillo y el negro de Uniandes. Quiero que se lea con este flujo: los actores de CupiTaller, los requerimientos de la Entrega 1, los datos y el modelo dimensional, los documentos del curso, el RAG, la entropía documental y el agente, y al final la respuesta para cada actor. Las figuras deben pesar más que el texto. Necesito estas figuras: el modelo dimensional completo tal como está en la bodega, con notación pata de gallo para las relaciones uno a muchos y líneas que muestren a qué llave llega cada una; la ocupación por semestre con un eje de tiempo continuo que deje ver los semestres sin datos; los temas de cada nivel, comparando el material de 2020-21 con el de 2026-20; los aciertos por pregunta de los tres sistemas; el costo por mil consultas; y las respuestas con y sin filtro de vigencia. Genera cada figura con código a partir de los datos y verifica que nada se desborde al exportar el PDF en tamaño real.»
 \item \textbf{Extracción de texto a partir de imágenes.} «Desarrolla el código para extraer el texto de los documentos del curso a partir de imágenes. Las presentaciones tienen el código en capturas de pantalla y el programa de 2020-20 no tiene capa de texto, así que la extracción directa del PDF pierde contenido. Renderiza cada página como imagen y pide a un modelo con visión que la transcriba a Markdown: el título, el texto en orden de lectura, el código exacto con su indentación (también el que está dentro de capturas), las tablas y una línea que describa cada figura, sin agregar nada que no esté en la página. Guarda cada transcripción en disco para no pagar dos veces la misma página, registra el costo de cada llamada y compara cuántas palabras recupera frente a la capa de texto del PDF. Etiqueta cada documento con su semestre y su vigencia, porque los de 2020-20 y 2021-10 no deben responder como si fueran los vigentes.»
 \item \textbf{Revisión de la escritura y de la consistencia.} «Revisa completos el informe y el póster como lo haría un evaluador estricto. Verifica que cada número del texto coincida con los resultados guardados de la evaluación, de la entropía y del agente; que las cifras sean las mismas en el resumen, el cuerpo, las tablas, las figuras y el póster; que los archivos, funciones y tablas que se citan existan en el código; y que ninguna afirmación vaya más allá de lo que mostró la evaluación. Señala cada inconsistencia con su ubicación y propón la corrección. Corrige también la redacción, las tildes, la numeración de las figuras y las referencias cruzadas.»
+\item \textbf{Un solo agente para los tres requerimientos.} «El caso de Pepito también es del agente híbrido: un tutor dice “quiero preparar la siguiente tutoría”, y para eso hay que mirar la bodega, la reserva y lo que el estudiante escribió, saber en qué nivel va y con eso decir qué temas preparar. No quiero un flujo aparte: debe ser el mismo agente que responde R1 y R2. Reimplementa, vuelve a correr todo y actualiza el informe y el póster.»
 \end{enumerate}
 
-Los prompts del sistema están en el código y se pueden leer completos: las instrucciones de transcripción (\cod{src/entrega2/transcribir.py}), las reglas de respuesta (\cod{src/entrega2/enfoques.py}), las instrucciones del agente (\cod{src/entrega2/agente.py}) y las del juez (\cod{src/entrega2/juez.py}).
+Los prompts del sistema están en el código y se pueden leer completos: las instrucciones de transcripción (\cod{src/entrega2/transcribir.py}), las reglas de respuesta (\cod{src/entrega2/enfoques.py}), las instrucciones del agente (\cod{src/entrega2/agente.py}), las del modelo local que extrae los temas (\cod{src/\allowbreak{}entrega2/\allowbreak{}reservas.py}) y las del juez (\cod{src/entrega2/juez.py}).
 
-\textbf{Análisis crítico del resultado.} Estos son los puntos en que la primera propuesta o la primera versión de la IA se cambió, y por qué. 
+\textbf{Análisis crítico del resultado.} Estas son las decisiones en que el equipo cambió la propuesta de la IA, y el concepto del curso que sustentó cada cambio.
+
+\begin{table}[H]\footnotesize\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.13\textwidth}>{\raggedright\arraybackslash}p{0.2\textwidth}LL}
+\toprule
+\textbf{Decisión} & \textbf{Propuesta de la IA} & \textbf{Lo que decidió el equipo y por qué} & \textbf{Concepto del curso} \\
+\midrule
+Corpus & Usar solo los programas del curso, que son texto. & Incluir también las 56 presentaciones de clase: lo que un monitor puede explicar depende de lo que se ha enseñado en cada nivel (R1 y R3). Eso obligó a leer las imágenes con visión, porque el código está en capturas: con la capa de texto el RAG acertó 0 de 6 preguntas de imagen; con visión, 5 de 6. & Datos no estructurados y calidad de la ingesta: la capa bronce debe capturar todo el contenido de la fuente antes de modelarlo. \\
+Enfoque para R1 & Elegir el prompting directo, que acertó 26 de 26. & Elegir el RAG visual (23 de 26). Cuesta 71 veces menos por consulta sin caché y 7 con caché, mantiene 1.255 tokens por consulta aunque el corpus crezca y permite filtrar por vigencia y nivel. Para el negocio, tres preguntas de diferencia no pagan ese costo ni ese límite de crecimiento. & Matriz de decisión costo-beneficio y escalabilidad: ventana de contexto frente a recuperación. \\
+Índice vectorial & Usar otro tipo de índice. & Mantener HNSW: con un millón de vectores responde en 1,4 ms con recall de 0,97, sin entrenar el índice sobre los datos, como exige IVFFlat. IVFFlat necesitó 57 ms para el mismo recall y la cuantización binaria perdió la mitad de los vecinos (sección~\ref{sec:indices}). & Índices de vecinos aproximados en pgvector: la relación entre latencia, recall y memoria. \\
+R3 & Un flujo aparte para preparar las tutorías, con pasos fijos y el modelo local redactando. & Un solo agente para los tres requerimientos: todos cruzan fuentes, y preparar una tutoría es otra pregunta al mismo sistema. El modelo local queda dentro de una herramienta, solo para leer los comentarios, porque no pueden salir del equipo (sección~\ref{sec:agente}). & Arquitectura híbrida con agentes que usan herramientas sobre el RAG y la bodega; lineamientos de privacidad sobre datos personales. \\
+Póster & Reducir el contexto del negocio y de la bodega a una franja para dar espacio a los resultados. & Mantener los actores, las fuentes y la estructura del modelo dimensional: sin ellos no se entiende qué cruza el agente. & El modelo dimensional como base común: las dimensiones conformadas permiten cruzar reservas, encuestas y oferta. \\
+Bodega & Usar el Gold que había en disco. & Era anterior a las reglas R03, R06 y R07 (86.562 reservas). Se reconstruyó con el código final de la Entrega 1 hasta obtener las 83.894 reservas del informe anterior. & Reglas de negocio aplicadas en la transición Silver a Gold y conciliación entre capas. \\
+Costo del prompting directo & Medir el costo con la caché por defecto del proveedor. & La caché nunca se leía y la escritura tenía recargo. Con un punto de corte explícito el costo por consulta bajó de US\$\,0,0103 a 0,0011. & Costo de inferencia por tokens de entrada, de caché y de salida. \\
+Banco de preguntas & Preguntas sobre el contenido vigente. & Agregar preguntas cuya respuesta cambió entre versiones, para medir la vigencia (sección~\ref{sec:poc}). & Entropía documental: versiones que se contradicen. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{Aportes propios.} El equipo eligió el dominio y el corpus, consiguió los documentos históricos, pidió etiquetarlos por versión, planteó el RAG visual, decidió que un solo agente atendiera los tres requerimientos y fijó el alcance.
 
 \begin{itemize}[leftmargin=1.5em,itemsep=2pt]
-
-\item \textbf{Corpus.} La IA señaló no había un caso real de inconsistencia de documentos. Sin embargo, 
-\item \textbf{Bodega.} El Gold que había en disco era anterior a las reglas R03, R06 y R07 (86.562 reservas). Se reconstruyó con el código final de la Entrega 1 hasta obtener las 83.894 reservas del informe anterior.
-\item \textbf{Costo del prompting directo.} La primera medición no leía la caché del proveedor y no contaba el recargo por escribirla. Se corrigió con un punto de corte explícito y el costo por consulta bajó de US\$\,0,0103 a 0,0011.
-\item \textbf{Banco de preguntas.} Se ajusto las preguntas de evaluación, porque no reflejaban ni evaluavan las diferentes vigencias del documento.
-\end{itemize}
-
-\textbf{Aportes propios.} El equipo eligió el dominio y el corpus, consiguió los documentos históricos, pidió etiquetarlos por versión, planteó el RAG visual y decidió el alcance.
-
-\begin{itemize}[leftmargin=1.5em,itemsep=2pt]
-\item \textbf{María Alejandra Pérez Petro.} Delimitó con la coordinación los dos requerimientos y los roles que se benefician, consiguió los documentos históricos y revisó el catálogo de vigencia. Formuló las preguntas de validación y sus respuestas esperadas, y ajustó las cuatro que pedían más de lo que preguntaban. Revisó a mano los veredictos del juez y las cifras del agente contra la bodega, y redactó y corrigió el informe y el póster sobre el borrador de la IA. Aprendizaje: un sistema con IA solo es tan bueno como las preguntas con que se valida, y la vigencia de un documento es una regla de negocio que alguien tiene que mantener.
-\item \textbf{Santiago Martinez Novoa.} Implementó y ajustó el código propuesto por la IA: la ingesta con visión, la base vectorial, los dos enfoques, el juez, la prueba de concepto, las vistas de la bodega y el agente. Corrigió la medición de costo (el punto de corte de la caché), reconstruyó el Gold con las reglas finales de la Entrega 1 y agregó al agente el catálogo y el filtro de semestre para el caso 8. Aprendizajes: primero, la importancia de versionar los documentos para no perder información. El programa antiguo de Introducción a la Programación casi no se encontró y hubo que buscarlo en varios archivos locales; para el negocio es costoso no poder recuperar lo que regía antes. Segundo, la importancia de que la organización centralice su información para poder analizarla. Por ejemplo, la ocupación bajó en los dos últimos semestres, y una explicación posible es que el proyecto de cada nivel ya no tiene nota, así que menos estudiantes acuden a la tutoría; tener los datos reunidos y un tablero ayuda a descubrir esos puntos débiles o de cambio, que piden una decisión de la dirección basada en datos. Tercero, en lo técnico, que la ingesta pesa más que el enfoque y que un agente necesita herramientas y vistas diseñadas para él, no solo acceso a los datos.
+\item \textbf{María Alejandra Pérez Petro.} Delimitó con la coordinación los tres requerimientos y los roles que se benefician, consiguió los documentos históricos y revisó el catálogo de vigencia. Formuló las preguntas de validación y sus respuestas esperadas, y ajustó las cuatro que pedían más de lo que preguntaban. Revisó a mano los veredictos del juez y las cifras del agente contra la bodega, y redactó y corrigió el informe y el póster sobre el borrador de la IA. Aprendizaje: un sistema con IA solo es tan bueno como las preguntas con que se valida, y la vigencia de un documento es una regla de negocio que alguien tiene que mantener.
+\item \textbf{Santiago Martinez Novoa.} Implementó y ajustó el código propuesto por la IA: la ingesta con visión, la base vectorial, los dos enfoques, el juez, la prueba de concepto, las vistas de la bodega y el agente. Corrigió la medición de costo (el punto de corte de la caché), reconstruyó el Gold con las reglas finales de la Entrega 1 agregó al agente el catálogo y el filtro de semestre para el caso 8, y las herramientas de reservas y temas para R3, con el modelo local para los comentarios. Aprendizajes: primero, la importancia de versionar los documentos para no perder información. El programa antiguo de Introducción a la Programación casi no se encontró y hubo que buscarlo en varios archivos locales; para el negocio es costoso no poder recuperar lo que regía antes. Segundo, la importancia de que la organización centralice su información para poder analizarla. Por ejemplo, la ocupación bajó en los dos últimos semestres, y una explicación posible es que el proyecto de cada nivel ya no tiene nota, así que menos estudiantes acuden a la tutoría; tener los datos reunidos y un tablero ayuda a descubrir esos puntos débiles o de cambio, que piden una decisión de la dirección basada en datos. Tercero, en lo técnico, que la ingesta pesa más que el enfoque y que un agente necesita herramientas y vistas diseñadas para él, no solo acceso a los datos.
 \end{itemize}
 
 

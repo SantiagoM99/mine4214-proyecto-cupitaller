@@ -314,34 +314,74 @@ def recortes() -> None:
 DIR_EXPERIMENTOS = ARTIFACTS / 'resultados' / 'experimentos'
 PRODUCCION = 'pagina_200_palabras (producción)'
 RECOMENDADA = 'pagina_450_tokens'
-NOMBRES_DE_VARIANTE = {
-    PRODUCCION: 'Página, 200 palabras (hoy)', RECOMENDADA: 'Página, 450 tokens',
-    'fija_128': 'Fija 128', 'fija_256': 'Fija 256', 'fija_512': 'Fija 512',
-    'fija_128_solape_25': 'Fija 128, solape 25 %', 'fija_256_solape_15': 'Fija 256, solape 15 %',
-    'fija_256_solape_25': 'Fija 256, solape 25 %', 'pagina_con_vecina (solape de 1 página)': 'Página + la siguiente',
-    'semantico_variable': 'Semántica, variable',
-}
+# Familias en el orden en que se leen; dentro de cada una, la variante y su nombre en el póster.
+FAMILIAS_DE_FRAGMENTACION = (
+    ('Por página', ((PRODUCCION, '200 palabras (hoy)'), (RECOMENDADA, '450 tokens'),
+                    ('pagina_con_vecina (solape de 1 página)', 'con la siguiente'))),
+    ('Tamaño fijo', (('fija_128', '128 tokens'), ('fija_256', '256 tokens'), ('fija_512', '512 tokens'))),
+    ('Fijo con solape', (('fija_128_solape_25', '128, solape 25 %'), ('fija_256_solape_15', '256, solape 15 %'),
+                         ('fija_256_solape_25', '256, solape 25 %'))),
+    ('Variable', (('semantico_variable', 'por tema'),)),
+)
+
+
+def _correctas_por_repeticion(ruido: dict[str, str]) -> dict[str, list[int]]:
+    """Respuestas correctas de cada repetición, por variante, a partir de los veredictos de `chunking_ruido.json`."""
+    conteo: dict[str, dict[str, int]] = {}
+    for clave, veredicto in ruido.items():
+        variante, repeticion, _ = clave.split('|')
+        conteo.setdefault(variante, {}).setdefault(repeticion, 0)
+        conteo[variante][repeticion] += veredicto == 'correcta'
+    return {variante: list(por_repeticion.values()) for variante, por_repeticion in conteo.items()}
 
 
 def grafica_chunking() -> None:
-    """Recuperación sintética y respuestas correctas por variante: ninguna se separa de producción."""
+    """Cada variante frente a la de hoy, por familia: recuperación y respuestas correctas.
+
+    La banda es lo que se mueve la variante de hoy con solo repetirla, así se ve que
+    todas las diferencias caben en ese ruido.
+    """
     variantes = leer_json(DIR_EXPERIMENTOS / 'chunking.json', {})
-    nombres = list(NOMBRES_DE_VARIANTE)
-    figura, ejes = lienzo(112)
-    for fila, clave in enumerate(nombres):
+    repeticiones = _correctas_por_repeticion(leer_json(DIR_EXPERIMENTOS / 'chunking_ruido.json', {}))
+    hoy = variantes[PRODUCCION]
+    correctas_de_hoy = [hoy['respuestas']['correctas'], *repeticiones[PRODUCCION]]
+
+    filas, rotulos, y = [], [], 0.0
+    for familia, miembros in FAMILIAS_DE_FRAGMENTACION:
+        rotulos.append((y, familia))
+        y += 0.85
+        for clave, nombre in miembros:
+            filas.append((y, clave, nombre))
+            y += 1
+        y += 0.35
+
+    figura, (recuperacion, correctas) = lienzo(118, 1, 2, sharey=True, gridspec_kw={'wspace': 0.12, 'left': 0.3, 'right': 0.97})
+    recuperacion.axvline(hoy['sinteticas']['recuperacion_k5_pct'], color=TINTA, linewidth=1.2, linestyle=(0, (3, 2)))
+    correctas.axvspan(min(correctas_de_hoy) - 0.15, max(correctas_de_hoy) + 0.15, color=GRIS_CLARO, zorder=0)
+    correctas.text(max(correctas_de_hoy) + 0.3, y - 1.35, 'la de hoy,\nrepetida', ha='left', va='center',
+                   fontsize=13, color='#6e6e6e', linespacing=1.0)
+    for fila, clave, _ in filas:
         datos = variantes[clave]
         color = AMARILLO if clave == RECOMENDADA else TINTA if clave == PRODUCCION else GRIS
-        ejes.barh(fila, datos['sinteticas']['recuperacion_k5_pct'], 0.66, color=color)
-        ejes.text(datos['sinteticas']['recuperacion_k5_pct'] + 0.25, fila, numero(datos['sinteticas']['recuperacion_k5_pct'], 1),
-                  va='center', fontsize=15)
-        ejes.text(91.2, fila, f"{datos['respuestas']['correctas']}", va='center', ha='center', fontsize=16, fontweight='bold')
-    ejes.text(91.2, -1.05, 'correctas\nde 26', ha='center', va='bottom', fontsize=13.5, linespacing=1.0)
-    ejes.text(70.2, -1.05, 'R@5, 200 preguntas sintéticas (%)', ha='left', va='bottom', fontsize=13.5)
-    ejes.set_yticks(range(len(nombres)), [NOMBRES_DE_VARIANTE[clave] for clave in nombres], fontsize=15)
-    ejes.invert_yaxis()
-    ejes.set_xlim(70, 93)
-    ejes.set_xticks([])
-    ejes.spines['bottom'].set_visible(False)
+        borde = TINTA if clave == RECOMENDADA else color
+        r5 = datos['sinteticas']['recuperacion_k5_pct']
+        recuperacion.plot(r5, fila, 'o', markersize=13, color=color, markeredgecolor=borde, markeredgewidth=1.5)
+        recuperacion.text(r5 + 0.35, fila, numero(r5, 1), va='center', fontsize=14)
+        correctas.plot(datos['respuestas']['correctas'], fila, 'o', markersize=13, color=color, markeredgecolor=borde, markeredgewidth=1.5)
+
+    for ejes, titulo, limites, marcas in ((recuperacion, 'Recuperación en 5 (%)', (76.5, 84.5), (78, 80, 82, 84)),
+                                          (correctas, 'Correctas de 26', (19.3, 26.6), (20, 22, 24, 26))):
+        ejes.set_title(titulo, fontsize=15, fontweight='bold', loc='left')
+        ejes.set_xlim(*limites)
+        ejes.set_xticks(marcas, [str(m) for m in marcas])
+        ejes.xaxis.grid(True)
+        ejes.set_axisbelow(True)
+        ejes.spines['left'].set_visible(False)
+    recuperacion.set_yticks([f for f, _, _ in filas], [n for _, _, n in filas], fontsize=14.5)
+    for fila, familia in rotulos:
+        recuperacion.text(-0.02, fila + 0.1, familia, transform=recuperacion.get_yaxis_transform(),
+                          ha='right', va='center', fontsize=14.5, fontweight='bold')
+    recuperacion.set_ylim(y - 0.2, -0.7)
     guardar(figura, 'chunking')
 
 

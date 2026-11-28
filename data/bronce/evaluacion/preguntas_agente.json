@@ -38,5 +38,10 @@
     "id": "ag-08",
     "tipo": "solo_documentos",
     "pregunta": "Soy profesor del nivel 3 de IP y tengo las presentaciones de 2021-10. ¿Qué temas se dictan hoy en el nivel 3 que no aparecen en ese material?"
+  },
+  {
+    "id": "ag-09",
+    "tipo": "tutoria",
+    "pregunta": "Soy monitor. El 30 de noviembre de 2026 tengo tutoría con Pepito a las 10:00 y el curso va en el Nivel 2. ¿Qué temas preparo?"
   }
 ]

@@ -3,7 +3,8 @@
 Tres pruebas, con el mismo código de la evaluación y del agente:
   rag      el banco a mano (26 preguntas) con RAG visual; califica gpt-6-sol, como en evaluar.py
   juez     Qwen3 como juez de las respuestas ya calificadas por gpt-6-sol: acuerdo entre jueces
-  agente   los 8 casos del agente; una rúbrica de gpt-6-sol califica cada traza
+  agente   los casos del agente; una rúbrica de gpt-6-sol califica cada traza
+  rubrica  vuelve a calificar las trazas guardadas del agente
 
 Se prueban dos variantes del mismo modelo: la instruct (responde sin razonar) y la que
 razona antes de responder. gpt-6-luna se toma de las corridas ya guardadas.
@@ -11,7 +12,7 @@ razona antes de responder. gpt-6-luna se toma de las corridas ya guardadas.
 El enfoque directo no se prueba: su prompt tiene 103 mil tokens y la caché de atención
 de ese contexto (unos 10 GB) más los pesos (18 GB) no caben en los 32 GB del equipo.
 
-    python3 src/entrega2/exp_modelo_abierto.py [rag] [juez] [agente]
+    python3 src/entrega2/exp_modelo_abierto.py [rag] [juez] [agente] [rubrica]
 """
 
 import argparse
@@ -22,6 +23,7 @@ from dataclasses import asdict
 
 from agente import preguntar
 from base_vectorial import conectar, embedding_de_pregunta
+from bodega import descripcion
 from config import DIR_RESULTADOS, MODELO_JUEZ, MODELO_LOCAL, MODELO_LOCAL_RAZONADOR, PREGUNTAS
 from enfoques import responder_rag
 from juez import FORMATO, INSTRUCCIONES as INSTRUCCIONES_JUEZ, juzgar
@@ -34,12 +36,14 @@ EVALUACION = DIR_RESULTADOS / 'evaluacion'
 CASOS_AGENTE = PREGUNTAS.with_name('preguntas_agente.json')
 TRAZAS_GPT = DIR_RESULTADOS / 'agente' / 'casos.json'
 MODELOS_LOCALES = {'qwen3-instruct': MODELO_LOCAL, 'qwen3-razonador': MODELO_LOCAL_RAZONADOR}
-MAX_CARACTERES_POR_HERRAMIENTA = 3000
+# Con 3.000 el juez no veía el 4.º y 5.º fragmento de una búsqueda (unos 5.000 caracteres) y marcaba
+# como inventadas citas que sí estaban en la salida, como en el caso 1.
+MAX_CARACTERES_POR_HERRAMIENTA = 12000
 
-RUBRICA = """Calificas la respuesta final de un agente de análisis que usa herramientas (búsqueda en documentos del curso y SQL sobre una bodega de datos).
-Recibes la pregunta, lo que devolvió cada herramienta y la respuesta final. Califica tres criterios de 0 a 2:
+RUBRICA = """Calificas la respuesta final de un agente de análisis que usa herramientas (búsqueda en documentos del curso, SQL sobre una bodega de datos y reservas del día).
+Recibes la pregunta, la descripción de la bodega que el agente tenía en sus instrucciones, lo que devolvió cada herramienta y la respuesta final. Califica tres criterios de 0 a 2:
 
-- fundamentada: 2 si toda cifra y afirmación de la respuesta aparece en las salidas de las herramientas; 1 si hay alguna afirmación sin respaldo menor; 0 si inventa cifras o hechos.
+- fundamentada: 2 si toda cifra y afirmación de la respuesta aparece en las salidas de las herramientas o en la descripción de la bodega; 1 si hay alguna afirmación sin respaldo menor; 0 si inventa cifras o hechos.
 - responde: 2 si responde la pregunta de forma completa; 1 si la responde a medias; 0 si no la responde.
 - cita: 2 si cita el documento y la vista o tabla de donde sale cada dato; 1 si cita parcialmente; 0 si no cita.
 
@@ -108,8 +112,8 @@ def prueba_juez(resultados: dict) -> None:
 def _traza_para_rubrica(caso: dict, traza: dict) -> str:
     pasos = [{'herramienta': p['herramienta'], 'argumentos': p['argumentos'],
               'salida': p['resultado'][:MAX_CARACTERES_POR_HERRAMIENTA]} for p in traza['pasos']]
-    return json.dumps({'pregunta': caso['pregunta'], 'herramientas': pasos, 'respuesta_final': traza['respuesta']},
-                      ensure_ascii=False, indent=2)
+    return json.dumps({'pregunta': caso['pregunta'], 'descripcion_de_la_bodega': descripcion(),
+                       'herramientas': pasos, 'respuesta_final': traza['respuesta']}, ensure_ascii=False, indent=2)
 
 
 def prueba_agente(resultados: dict) -> None:
@@ -132,6 +136,19 @@ def prueba_agente(resultados: dict) -> None:
                 _guardar(ARCHIVO, resultados)
                 print(f"{clave}: {len(traza['pasos'])} pasos, {traza['uso'].get('segundos')} s, "
                       f"rúbrica {rubrica['fundamentada']}/{rubrica['responde']}/{rubrica['cita']}", flush=True)
+
+
+def recalificar_agente(resultados: dict) -> None:
+    """Vuelve a calificar las trazas guardadas del agente, sin volver a correr los modelos."""
+    casos = {caso['id']: caso for caso in json.loads(CASOS_AGENTE.read_text(encoding='utf-8'))}
+    api = cliente()
+    for clave, registro in resultados.items():
+        if clave.startswith('agente|'):
+            caso = casos[clave.split('|')[1]]
+            registro['rubrica'] = json.loads(generar(api, RUBRICA, _traza_para_rubrica(caso, registro['traza']),
+                                                     modelo=MODELO_JUEZ, text=FORMATO_RUBRICA).texto)
+            _guardar(ARCHIVO, resultados)
+            print(f"{clave}: rúbrica {registro['rubrica']['fundamentada']}/{registro['rubrica']['responde']}/{registro['rubrica']['cita']}", flush=True)
 
 
 def kappa(a: list[str], b: list[str]) -> float:
@@ -194,7 +211,7 @@ def main() -> None:
     pruebas = argumentos.parse_args().pruebas
     resultados = _leer(ARCHIVO, {})
     for prueba in pruebas:
-        {'rag': prueba_rag, 'juez': prueba_juez, 'agente': prueba_agente}[prueba](resultados)
+        {'rag': prueba_rag, 'juez': prueba_juez, 'agente': prueba_agente, 'rubrica': recalificar_agente}[prueba](resultados)
     print(json.dumps(resumir(resultados), ensure_ascii=False, indent=2))
 
 

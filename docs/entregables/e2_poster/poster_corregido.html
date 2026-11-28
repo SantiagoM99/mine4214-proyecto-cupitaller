@@ -8,7 +8,7 @@
      Uniandes; el argumento lo llevan las figuras y cada diagrama usa pocas palabras.
      Se lee en el orden de la historia: contexto y requerimientos, documentos y RAG,
      experimentos, agente híbrido, tutorías con el modelo local y lo que se respondió.
-     La Entrega 1 (bodega) queda solo como contexto, en la primera tarjeta. */
+     La Entrega 1 queda como contexto en la primera fila: actores, fuentes y la forma de la bodega. */
   @page { size: 700mm 1000mm; margin: 0; }
   :root {
     --tinta: #1c1c1c; --gris: #6e6e6e; --gris-claro: #dedede; --amarillo: #ffd200; --fondo: #f2f1ee;
@@ -28,7 +28,7 @@
   header .autores { font-size: 27pt; margin-top: 4mm; font-weight: 500; }
   header .curso { font-size: 19pt; margin-top: 1mm; }
 
-  /* Fila 1: contexto y requerimientos. Fila 2: tres columnas. Luego dos bandas a todo el ancho. */
+  /* Fila 1: contexto, bodega y requerimientos. Fila 2: tres columnas. Luego dos bandas a todo el ancho. */
   main { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: auto minmax(0, 1fr); gap: 6mm 9mm; padding: 6mm 14mm 0; }
   .columna { display: flex; flex-direction: column; gap: 6mm; min-height: 0; }
   .dos-columnas { grid-column: span 2; }
@@ -58,15 +58,19 @@
   svg .tenue { fill: none; stroke: #b5b5b5; stroke-width: 0.5; stroke-dasharray: 2 1.6; }
   svg .icono { fill: none; stroke: var(--tinta); stroke-width: 1.15; stroke-linecap: round; stroke-linejoin: round; }
   svg .gris { fill: var(--gris); }
+  svg .hecho { fill: var(--tinta); }
+  svg .dim { fill: #fff; stroke: var(--tinta); stroke-width: 0.6; }
+  svg .rayo { fill: none; stroke: #8a8a8a; stroke-width: 0.45; }
+  svg .blanco { fill: #fff; }
+  svg .dato { fill: var(--amarillo); }
   .mono, svg .mono { font-family: Menlo, "SF Mono", monospace; }
 
-  /* Requerimientos: tres columnas iguales, cada una con su actor y sus fuentes. */
-  .requerimientos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7mm; }
+  /* Requerimientos apilados: la clave a la izquierda; pregunta, actor y fuentes a la derecha. */
+  .requerimiento { display: grid; grid-template-columns: 19mm 1fr; align-items: start; }
   .requerimiento .clave { font-size: 34pt; font-weight: 700; line-height: 1; }
-  .requerimiento h3 { font-size: 23pt; line-height: 1.12; margin: 1.5mm 0 2mm; }
-  .requerimiento .actor { font-size: 17pt; color: var(--gris); display: flex; align-items: center; gap: 2mm; }
+  .requerimiento h3 { font-size: 24pt; line-height: 1.12; margin-bottom: 1.8mm; }
+  .requerimiento .actor { font-size: 17pt; color: var(--gris); display: flex; flex-wrap: wrap; align-items: center; gap: 2mm; }
   .requerimiento .actor svg { width: 9mm; height: 9mm; flex: none; }
-  .fuentes { margin-top: 2.5mm; display: flex; flex-wrap: wrap; gap: 1.8mm; }
   .fuente { font-size: 15pt; font-weight: 700; padding: 0.5mm 2.2mm; border: 0.5mm solid var(--tinta); }
   .fuente.llena { background: var(--tinta); color: #fff; }
   .fuente.local { background: var(--amarillo); border-color: var(--amarillo); }
@@ -84,24 +88,21 @@
   .vigencia td:last-child { font-size: 18pt; text-align: right; }
   .si { color: var(--verde); } .no { color: var(--rojo); } .abs { color: #9a9a9a; }
 
-  /* Banda del Requerimiento 3: flujo a la izquierda, modelo abierto a la derecha. */
+  /* Banda de trazas: un requerimiento por columna y, al final, el día real y el modelo abierto. */
   .banda { margin: 6mm 14mm 0; }
-  .banda > .cuerpo { display: grid; grid-template-columns: 2fr 1fr; gap: 9mm; align-items: stretch; }
-  .flujo { display: grid; grid-template-columns: 1.15fr 13mm 0.75fr 13mm 1.25fr; align-items: center; }
-  .flecha { font-size: 40pt; text-align: center; line-height: 1; }
-  .entrada { border: 0.5mm solid var(--gris-claro); padding: 2.5mm 3.5mm; margin: 2mm 0; }
-  .entrada .rotulo { margin-bottom: 0.8mm; }
-  .entrada p { font-size: 17pt; line-height: 1.2; }
-  .cita { font-style: italic; }
-  .modelo-local { background: var(--tinta); color: #fff; text-align: center; padding: 5mm 3mm; }
-  .modelo-local b { color: var(--amarillo); font-size: 23pt; display: block; line-height: 1.1; }
-  .modelo-local span { font-size: 16pt; display: block; margin-top: 2mm; line-height: 1.2; }
-  .propuesta { border-left: 2.2mm solid var(--amarillo); background: #f6f6f4; padding: 3mm 4mm; }
-  .propuesta ol { margin-left: 7mm; font-size: 18.5pt; line-height: 1.22; }
-  .propuesta li { margin: 1mm 0; }
-  .propuesta li small { color: var(--gris); font-size: 15pt; }
-  .propuesta .fuera { font-size: 16.5pt; margin-top: 2mm; color: var(--gris); }
-  .dia-real { margin-top: 3mm; font-size: 18pt; }
+  .trazas { display: grid; grid-template-columns: 1fr 1fr 1.15fr 1.1fr; gap: 9mm; align-items: start; }
+  .traza .pregunta { font-style: italic; font-size: 19pt; line-height: 1.2; margin-bottom: 2mm; }
+  .traza ol { margin-left: 7mm; font-size: 17pt; line-height: 1.2; }
+  .traza li { margin: 1.2mm 0; }
+  .traza li small { display: block; color: var(--gris); font-size: 15.5pt; }
+  .traza mark { font-size: 13pt; padding: 0 1mm; }
+  .respuesta-agente { border-left: 2.2mm solid var(--amarillo); background: #f6f6f4; padding: 2.5mm 3.5mm; margin-top: 2.5mm; font-size: 18pt; line-height: 1.25; font-weight: 700; }
+  .respuesta-agente small { font-weight: 400; color: var(--gris); font-size: 15pt; }
+  pre.respuesta-agente { font-family: Menlo, "SF Mono", monospace; font-size: 12.5pt; font-weight: 400; white-space: pre; }
+  .meta { font-size: 15pt; color: var(--gris); margin-top: 1.5mm; }
+  .cifras { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; }
+  .cifras b { display: block; font-size: 30pt; line-height: 1.05; }
+  .cifras span { display: block; font-size: 15pt; color: var(--gris); line-height: 1.15; }
   .abierto th, .abierto td { font-size: 16.5pt; padding: 1.1mm 1.5mm; border-top: 0.3mm solid var(--gris-claro); text-align: right; }
   .abierto th { font-weight: 700; border-top: none; vertical-align: bottom; line-height: 1.1; }
   .abierto td:first-child, .abierto th:first-child { text-align: left; }
@@ -152,13 +153,31 @@
 
 <main>
 
-<!-- ============================ FILA 1 · CONTEXTO Y REQUERIMIENTOS ============================ -->
+<!-- ============================ FILA 1 · CONTEXTO, BODEGA Y REQUERIMIENTOS ============================ -->
 <div class="columna">
   <section class="tarjeta entrega1">
-    <h2><b>CupiTaller</b> y sus datos</h2>
+    <h2><b>CupiTaller:</b> actores y datos</h2>
     <div class="cuerpo">
-      <p class="lead">Centro de tutorías de Introducción a la Programación (IP). Monitores, que cambian cada semestre, atienden a los estudiantes que reservan en Bookeau.</p>
-      <svg class="grafica" viewBox="0 0 206 52" role="img" aria-label="De Bookeau a la bodega de la Entrega 1 y, en la Entrega 2, los documentos del curso">
+      <p class="lead">Centro de tutorías de Introducción a la Programación. El curso tiene cuatro niveles y un monitor solo explica lo visto hasta el nivel del estudiante.</p>
+      <svg class="grafica" viewBox="0 0 206 58" role="img" aria-label="Los estudiantes reservan en Bookeau y los monitores atienden la tutoría">
+        <use href="#i-persona" class="icono" x="12" y="1" width="26" height="26" />
+        <use href="#i-calendario" class="icono" x="90" y="1" width="26" height="26" />
+        <use href="#i-grupo" class="icono" x="168" y="1" width="26" height="26" />
+        <path class="linea" d="M42 14 H86" marker-end="url(#punta)" />
+        <path class="linea" d="M120 14 H164" marker-end="url(#punta)" />
+        <text x="64" y="10" text-anchor="middle" font-size="6.6" class="gris">reservan</text>
+        <text x="142" y="10" text-anchor="middle" font-size="6.6" class="gris">asigna la cita</text>
+        <text x="25" y="39" text-anchor="middle" font-size="8.4" font-weight="700">Estudiantes</text>
+        <text x="25" y="48" text-anchor="middle" font-size="6.8" class="gris">asisten y</text>
+        <text x="25" y="56" text-anchor="middle" font-size="6.8" class="gris">califican al tutor</text>
+        <text x="103" y="39" text-anchor="middle" font-size="8.4" font-weight="700">Bookeau</text>
+        <text x="103" y="48" text-anchor="middle" font-size="6.8" class="gris">citas, encuestas</text>
+        <text x="103" y="56" text-anchor="middle" font-size="6.8" class="gris">y horarios</text>
+        <text x="181" y="39" text-anchor="middle" font-size="8.4" font-weight="700">Monitores</text>
+        <text x="181" y="48" text-anchor="middle" font-size="6.8" class="gris">atienden</text>
+        <text x="181" y="56" text-anchor="middle" font-size="6.8" class="gris">la tutoría</text>
+      </svg>
+      <svg class="grafica" viewBox="0 0 206 52" role="img" aria-label="Bookeau alimenta la bodega de la Entrega 1; la Entrega 2 suma los documentos del curso">
         <use href="#i-calendario" class="icono" x="6" y="1" width="22" height="22" />
         <path class="linea" d="M31 12 H47" marker-end="url(#punta)" />
         <rect x="50" y="2" width="20" height="20" fill="#b4825a" />
@@ -167,44 +186,75 @@
         <text x="17" y="32" text-anchor="middle" font-size="7.6" font-weight="700">Bookeau</text>
         <text x="17" y="40" text-anchor="middle" font-size="6.2" class="gris">144 Excel</text>
         <text x="17" y="47" text-anchor="middle" font-size="6.2" class="gris">2016 a 2026</text>
-        <text x="83" y="32" text-anchor="middle" font-size="7.6" font-weight="700">Bodega (Entrega 1)</text>
-        <text x="83" y="40" text-anchor="middle" font-size="6.2" class="gris">86.562 reservas</text>
-        <text x="83" y="47" text-anchor="middle" font-size="6.2" class="gris">y sus encuestas</text>
+        <text x="83" y="32" text-anchor="middle" font-size="7.6" font-weight="700">Bodega</text>
+        <text x="83" y="40" text-anchor="middle" font-size="6.2" class="gris">Entrega 1</text>
+        <text x="83" y="47" text-anchor="middle" font-size="6.2" class="gris">bronce, plata y oro</text>
         <path class="tenue" d="M128 2 V50" style="stroke: #1c1c1c" />
         <use href="#i-doc" class="icono" x="155" y="1" width="22" height="22" />
         <text x="166" y="32" text-anchor="middle" font-size="7.6" font-weight="700">Documentos</text>
-        <text x="166" y="40" text-anchor="middle" font-size="6.2" class="gris">Entrega 2: 58 PDF y PPTX</text>
-        <text x="166" y="47" text-anchor="middle" font-size="6.2" class="gris">programa y clases</text>
+        <text x="166" y="40" text-anchor="middle" font-size="6.2" class="gris">Entrega 2</text>
+        <text x="166" y="47" text-anchor="middle" font-size="6.2" class="gris">58 PDF y PPTX</text>
       </svg>
-      <p class="pie">Las reglas del servicio y lo que se enseña en cada nivel están en los documentos, no en Bookeau. El curso tiene cuatro niveles, y un monitor solo puede explicar lo visto hasta el nivel del estudiante.</p>
     </div>
   </section>
 </div>
 
-<div class="columna dos-columnas">
+<div class="columna">
+  <section class="tarjeta entrega1">
+    <h2><b>La bodega:</b> reservas y encuestas</h2>
+    <div class="cuerpo">
+      <svg class="grafica" viewBox="0 0 226 122" role="img" aria-label="Modelo dimensional: los hechos reserva, encuesta, respuesta y oferta, y las diez dimensiones que comparten">
+        <path class="linea" d="M55 24 V11 H167 V24" marker-end="url(#punta)" />
+        <text x="111" y="8" text-anchor="middle" font-size="6.4" class="gris">cada reserva puede tener una encuesta</text>
+        <text x="84" y="17" text-anchor="middle" font-size="4.8" class="gris">3 fechas</text>
+        <path class="rayo" d="M76 36 L92 19.5 M76 40 L92 22 M76 44 L92 24.5 M76 44 L92 35 M76 44 L92 48 M76 44 L92 61 M76 44 L92 74 M76 44 L92 87 M76 44 L92 100 M146 44 L130 22 M146 44 L130 35 M146 44 L130 48 M146 44 L130 61 M146 44 L130 74 M146 44 L130 87 M146 44 L130 100 M76 92 L92 87 M76 92 L92 100 M28 92 H34 M188 44 H192 M188 92 H192" />
+        <path class="linea" d="M167 64 V81" marker-end="url(#punta)" />
+        <rect x="92" y="17" width="38" height="10" class="dim" /><text x="111.0" y="24.4" text-anchor="middle" font-size="7">fecha</text>
+        <rect x="92" y="30" width="38" height="10" class="dim" /><text x="111.0" y="37.4" text-anchor="middle" font-size="7">servicio</text>
+        <rect x="92" y="43" width="38" height="10" class="dim" /><text x="111.0" y="50.4" text-anchor="middle" font-size="7">modalidad</text>
+        <rect x="92" y="56" width="38" height="10" class="dim" /><text x="111.0" y="63.4" text-anchor="middle" font-size="7">estado</text>
+        <rect x="92" y="69" width="38" height="10" class="dim" /><text x="111.0" y="76.4" text-anchor="middle" font-size="7">programa</text>
+        <rect x="92" y="82" width="38" height="10" class="dim" /><text x="111.0" y="89.4" text-anchor="middle" font-size="7">periodo</text>
+        <rect x="92" y="95" width="38" height="10" class="dim" /><text x="111.0" y="102.4" text-anchor="middle" font-size="7">hora</text>
+        <rect x="34" y="24" width="42" height="40" class="hecho" /><text x="55.0" y="43.5" text-anchor="middle" font-size="8" font-weight="700" class="blanco">reserva</text><text x="55.0" y="51.0" text-anchor="middle" font-size="6.6" class="dato">83.894</text>
+        <rect x="146" y="24" width="42" height="40" class="hecho" /><text x="167.0" y="43.5" text-anchor="middle" font-size="8" font-weight="700" class="blanco">encuesta</text><text x="167.0" y="51.0" text-anchor="middle" font-size="6.6" class="dato">60.024</text>
+        <rect x="34" y="82" width="42" height="21" class="hecho" /><text x="55.0" y="92.0" text-anchor="middle" font-size="7.6" font-weight="700" class="blanco">oferta</text><text x="55.0" y="99.5" text-anchor="middle" font-size="6.6" class="dato">1.396</text>
+        <rect x="146" y="82" width="42" height="21" class="hecho" /><text x="167.0" y="92.0" text-anchor="middle" font-size="7.6" font-weight="700" class="blanco">respuesta</text><text x="167.0" y="99.5" text-anchor="middle" font-size="6.6" class="dato">383.183</text>
+        <rect x="0" y="86" width="28" height="12" class="dim" /><text x="14" y="91" text-anchor="middle" font-size="6">día de la</text><text x="14" y="96.5" text-anchor="middle" font-size="6">semana</text>
+        <rect x="192" y="38" width="34" height="12" class="dim" /><text x="209" y="43" text-anchor="middle" font-size="6">tipo de</text><text x="209" y="48.5" text-anchor="middle" font-size="6">encuesta</text>
+        <rect x="192" y="87" width="34" height="10" class="dim" /><text x="209" y="94.4" text-anchor="middle" font-size="7">pregunta</text>
+        <rect x="58" y="113" width="8" height="7" class="hecho" /><text x="69" y="119" font-size="6.6">hecho (filas)</text>
+        <rect x="122" y="113" width="8" height="7" class="dim" /><text x="133" y="119" font-size="6.6">dimensión</text>
+      </svg>
+      <p class="pie">Constelación de 4 hechos y 10 dimensiones, sin atributos. La consulta el agente en R2 y R3.</p>
+    </div>
+  </section>
+</div>
+
+<div class="columna">
   <section class="tarjeta">
     <h2><b>Tres requerimientos</b> sobre los documentos</h2>
     <div class="cuerpo requerimientos">
       <div class="requerimiento">
         <span class="clave">R1</span>
-        <h3>¿Qué se dicta hoy en cada nivel y qué cambió?</h3>
-        <p class="actor"><svg viewBox="0 0 24 24"><use href="#i-grupo" class="icono" x="0" y="0" width="24" height="24" /></svg>monitores y profesores</p>
-        <div class="fuentes"><span class="fuente llena">documentos</span></div>
-        <p class="pie">Un monitor de Nivel 2 no debe explicar con un <span class="mono">for</span>, que se enseña en el Nivel 3.</p>
+        <div>
+          <h3>¿Qué se dicta hoy en cada nivel y qué cambió?</h3>
+          <p class="actor"><svg viewBox="0 0 24 24"><use href="#i-grupo" class="icono" x="0" y="0" width="24" height="24" /></svg>monitores y profesores<span class="fuente llena">documentos</span></p>
+        </div>
       </div>
       <div class="requerimiento">
         <span class="clave">R2</span>
-        <h3>¿Las reglas escritas siguen vigentes y se cumplen?</h3>
-        <p class="actor"><svg viewBox="0 0 24 24"><use href="#i-persona" class="icono" x="0" y="0" width="24" height="24" /></svg>coordinación de CupiTaller</p>
-        <div class="fuentes"><span class="fuente llena">documentos</span><span class="fuente">bodega</span></div>
-        <p class="pie">El documento dice qué debería pasar; la bodega, qué pasó.</p>
+        <div>
+          <h3>¿Las reglas escritas siguen vigentes y se cumplen?</h3>
+          <p class="actor"><svg viewBox="0 0 24 24"><use href="#i-persona" class="icono" x="0" y="0" width="24" height="24" /></svg>coordinación<span class="fuente llena">documentos</span><span class="fuente">bodega</span></p>
+        </div>
       </div>
       <div class="requerimiento">
         <span class="clave">R3</span>
-        <h3>¿Qué temas trabajo hoy con cada estudiante que reservó?</h3>
-        <p class="actor"><svg viewBox="0 0 24 24"><use href="#i-grupo" class="icono" x="0" y="0" width="24" height="24" /></svg>monitores, antes del turno</p>
-        <div class="fuentes"><span class="fuente llena">documentos</span><span class="fuente">bodega</span><span class="fuente local">modelo local</span></div>
-        <p class="pie">La bodega sabe quién viene y qué escribió; los documentos, qué cubre cada nivel.</p>
+        <div>
+          <h3>¿Qué temas preparo para la siguiente tutoría?</h3>
+          <p class="actor"><svg viewBox="0 0 24 24"><use href="#i-grupo" class="icono" x="0" y="0" width="24" height="24" /></svg>monitores<span class="fuente llena">documentos</span><span class="fuente">bodega</span><span class="fuente local">modelo local</span></p>
+        </div>
       </div>
     </div>
   </section>
@@ -232,7 +282,7 @@
       </svg>
       <div>
         <img class="grafica" src="../../../artifacts/entrega2/poster/temas_por_nivel.svg" alt="Clases de 2026-20 por nivel con y sin versión en el material de 2020-21: nivel 1, 8 y 2; nivel 2, 8 y 1; nivel 3, 8 y 2; nivel 4, 4 y 5">
-        <p class="pie">Fig. 1. R1: 10 de las 38 clases de hoy no tienen versión en el material de 2020-21; 5 son del nivel 4.</p>
+        <p class="pie">Fig. 1. 10 de las 38 clases de hoy no existían en 2020-21.</p>
       </div>
     </div>
   </section>
@@ -252,7 +302,7 @@
         suma += lista[i]
     return suma</pre>
         </div>
-        <p class="pie">Fig. 2. Con visión se indexan 49.673 palabras; sin ella, 23.203. Transcribir las 716 páginas costó US$ 0,21.</p>
+        <p class="pie">Fig. 2. Palabras indexadas: 49.673 con visión, 23.203 sin ella.</p>
       </div>
     </div>
   </section>
@@ -283,7 +333,7 @@
         <rect x="126" y="81" width="56" height="17" fill="#ffd200" />
         <text x="154" y="94.4" text-anchor="middle" font-size="13.5" font-weight="700">1.255</text>
       </svg>
-      <p class="pie">Fig. 3. Mismo modelo (gpt-6-luna) y mismas reglas; cambia el contexto. Tokens de entrada por consulta.</p>
+      <p class="pie">Fig. 3. Tokens de entrada por consulta, con gpt-6-luna.</p>
     </div>
   </section>
 
@@ -297,11 +347,11 @@
     <div class="cuerpo">
       <div>
         <img class="grafica" src="../../../artifacts/entrega2/poster/aciertos_por_pregunta.svg" alt="Un cuadro por pregunta: directo 26 de 26, RAG visual 23, RAG de texto 18">
-        <p class="pie">Fig. 4. Cada cuadro es una pregunta. Sin visión, el RAG no acierta ninguna cuyo contenido está en una imagen.</p>
+        <p class="pie">Fig. 4. Cada cuadro es una pregunta.</p>
       </div>
       <div>
         <img class="grafica" src="../../../artifacts/entrega2/poster/costo_por_mil_consultas.svg" alt="Costo por mil consultas: directo sin caché 10,34 dólares, con caché 1,06, RAG visual 0,14">
-        <p class="pie">Fig. 5. Costo por 1.000 consultas. Para R1: <b>RAG visual con filtro de vigencia</b>; un semestre ya ocupa el 10 % de la ventana.</p>
+        <p class="pie">Fig. 5. Costo por 1.000 consultas. Para R1: <b>RAG visual</b>.</p>
       </div>
     </div>
   </section>
@@ -310,8 +360,8 @@
     <h2><b>Fragmentación:</b> diez formas de partir</h2>
     <div class="cuerpo">
       <div>
-        <img class="grafica" src="../../../artifacts/entrega2/poster/chunking.svg" alt="Recuperación en 5 y respuestas correctas para diez variantes de fragmentación; todas entre 78,5 y 82,5 por ciento y entre 20 y 24 correctas">
-        <p class="pie">Fig. 6. Tamaño fijo, variable, por diapositiva y con solape. Ninguna supera a la de hoy (McNemar, p ≥ 0,21), y repetir la misma variante ya mueve 1 o 2 respuestas. <b>Recomendación: página partida a 450 tokens</b>: rinde igual y ningún fragmento pasa el límite de 512 tokens del modelo de embeddings.</p>
+        <img class="grafica" src="../../../artifacts/entrega2/poster/chunking.svg" alt="Diez variantes de fragmentación agrupadas por familia frente a la de hoy: recuperación entre 78,5 y 82,5 por ciento y entre 20 y 24 correctas, dentro de lo que varía la de hoy al repetirla">
+        <p class="pie">Fig. 6. Ninguna supera a la de hoy (McNemar, p ≥ 0,21). <b>Se recomienda 450 tokens</b>: rinde igual y no trunca fragmentos.</p>
       </div>
     </div>
   </section>
@@ -321,7 +371,7 @@
     <div class="cuerpo">
       <div>
         <img class="grafica" src="../../../artifacts/entrega2/poster/indices.svg" alt="Latencia de búsqueda por tamaño: sin índice sube a 286 ms con un millón de vectores; HNSW se queda en 1,4 ms">
-        <p class="pie">Fig. 7. Búsqueda de 5 vecinos en pgvector. Hoy (753 fragmentos) el índice no importa: generar la respuesta toma 1,1 s. Con un millón, HNSW es 200 veces más rápido y recupera el 97 % de los vecinos exactos. IVFFlat necesita 57 ms para igualar ese recall, y la cuantización binaria pierde la mitad de los vecinos.</p>
+        <p class="pie">Fig. 7. 5 vecinos en pgvector. Con un millón, HNSW es 200 veces más rápido.</p>
       </div>
     </div>
   </section>
@@ -369,109 +419,107 @@
           <tr><td>Sin etiquetas</td><td class="marcas"><span class="no">✗</span><span class="si">✓</span><span class="no">✗</span><span class="si">✓</span><span class="no">✗</span><span class="si">✓</span></td><td><b>3 de 6</b> con la regla antigua</td></tr>
           <tr><td>Con filtro</td><td class="marcas"><span class="si">✓✓✓✓</span><span class="abs">–</span><span class="si">✓</span></td><td><b>0 de 6</b></td></tr>
         </table>
-        <p class="pie">Fig. 8. Seis reglas que cambiaron entre versiones, sin y con filtro de vigencia.</p>
+        <p class="pie">Fig. 8. Seis reglas que cambiaron entre versiones.</p>
       </div>
     </div>
   </section>
 
   <section class="tarjeta">
-    <h2><b>Agente híbrido:</b> documentos y SQL</h2>
+    <h2><b>Un agente híbrido</b> para los tres requerimientos</h2>
     <div class="cuerpo">
-      <svg class="grafica" viewBox="0 0 206 151" role="img" aria-label="El agente busca en los documentos, consulta la bodega con SQL y responde">
-        <text x="103" y="9" text-anchor="middle" font-size="8.6" font-style="italic">«¿Se siguen ofreciendo las tutorías grupales?»</text>
-        <path class="linea" d="M103 13 V20" marker-end="url(#punta)" />
-        <use href="#i-modelo" class="icono" x="90" y="21" width="26" height="26" />
-        <text x="121" y="37" font-size="9.6" font-weight="700">agente</text>
-        <path class="linea" d="M103 49 V55 H52 V62" marker-end="url(#punta)" />
-        <path class="linea" d="M103 55 H154 V62" marker-end="url(#punta)" />
-        <use href="#i-indice" class="icono" x="14" y="64" width="24" height="24" />
-        <text x="43" y="74" font-size="7.2" class="mono">buscar_</text>
-        <text x="43" y="83" font-size="7.2" class="mono">documentos</text>
-        <text x="52" y="97" text-anchor="middle" font-size="8.2">programa 2020-20</text>
-        <rect x="24" y="101" width="56" height="11.5" fill="#d23b3b" />
-        <text x="52" y="109.4" text-anchor="middle" font-size="7.8" font-weight="700" style="fill: #fff">no vigente</text>
-        <use href="#i-tabla" class="icono" x="114" y="64" width="24" height="24" />
-        <text x="143" y="74" font-size="7.2" class="mono">consultar_</text>
-        <text x="143" y="83" font-size="7.2" class="mono">bodega</text>
-        <text x="154" y="97" text-anchor="middle" font-size="8.2">SQL de solo lectura</text>
-        <rect x="111" y="101" width="86" height="11.5" fill="#ffd200" />
-        <text x="154" y="109.4" text-anchor="middle" font-size="7.8" font-weight="700">0 reservas desde 2022</text>
-        <path class="linea" d="M52 115 V121 H154 V115" />
-        <path class="linea" d="M103 121 V128" marker-end="url(#punta)" />
-        <text x="103" y="139" text-anchor="middle" font-size="9" font-weight="700">La regla es de 2020-20 y ya no aplica:</text>
-        <text x="103" y="149" text-anchor="middle" font-size="9" font-weight="700">la última tutoría grupal fue en 2021-20</text>
+      <svg class="grafica" viewBox="0 0 206 130" role="img" aria-label="La coordinación, los profesores y los monitores preguntan al mismo agente, que usa cinco herramientas sobre los documentos, la bodega y las reservas del día">
+        <text x="34" y="8" text-anchor="middle" font-size="7.6" font-weight="700">Profesores</text>
+        <text x="34" y="15.5" text-anchor="middle" font-size="6.2" class="gris">R1</text>
+        <text x="103" y="8" text-anchor="middle" font-size="7.6" font-weight="700">Coordinación</text>
+        <text x="103" y="15.5" text-anchor="middle" font-size="6.2" class="gris">R2</text>
+        <text x="172" y="8" text-anchor="middle" font-size="7.6" font-weight="700">Monitores</text>
+        <text x="172" y="15.5" text-anchor="middle" font-size="6.2" class="gris">R3</text>
+        <path class="linea" d="M34 18 V22 H172 V18 M103 18 V26" marker-end="url(#punta)" />
+        <use href="#i-modelo" class="icono" x="90" y="27" width="22" height="22" />
+        <text x="116" y="37" font-size="8.6" font-weight="700">agente</text>
+        <text x="116" y="45" font-size="6.2" class="gris">gpt-6-luna · hasta 12 pasos</text>
+        <path class="linea" d="M101 50 V53 H26 V120" />
+        <path class="linea" d="M26 60 H33" marker-end="url(#punta)" />
+        <use href="#i-indice" class="icono" x="36" y="54" width="12" height="12" />
+        <text x="52" y="62.4" font-size="6.6" class="mono">buscar_documentos</text>
+        <text x="158" y="62.4" font-size="6.6" class="gris">documentos</text>
+        <path class="linea" d="M26 75 H33" marker-end="url(#punta)" />
+        <use href="#i-doc" class="icono" x="36" y="69" width="12" height="12" />
+        <text x="52" y="77.4" font-size="6.6" class="mono">listar_presentaciones</text>
+        <text x="158" y="77.4" font-size="6.6" class="gris">catálogo</text>
+        <path class="linea" d="M26 90 H33" marker-end="url(#punta)" />
+        <use href="#i-tabla" class="icono" x="36" y="84" width="12" height="12" />
+        <text x="52" y="92.4" font-size="6.6" class="mono">consultar_bodega</text>
+        <text x="158" y="92.4" font-size="6.6" class="gris">bodega (SQL)</text>
+        <path class="linea" d="M26 105 H33" marker-end="url(#punta)" />
+        <use href="#i-calendario" class="icono" x="36" y="99" width="12" height="12" />
+        <text x="52" y="107.4" font-size="6.6" class="mono">reservas_del_dia</text>
+        <text x="158" y="107.4" font-size="6.6" class="gris">reservas</text>
+        <path class="linea" d="M26 120 H33" marker-end="url(#punta)" />
+        <use href="#i-candado" class="icono" x="36" y="114" width="12" height="12" />
+        <text x="52" y="122.4" font-size="6.6" class="mono">temas_del_estudiante</text>
+        <rect x="155" y="114.5" width="51" height="11" fill="#ffd200" />
+        <text x="158" y="122.4" font-size="6.6" font-weight="700">Qwen3 local</text>
       </svg>
-      <p class="pie">Fig. 9. Traza real del agente para R2: 2 pasos, 4,9 s, US$ 0,0004. La bodega del agente no tiene texto libre ni nombres.</p>
-      <svg class="grafica" viewBox="0 0 206 60.5" role="img" aria-label="El agente lista las clases del nivel 3 de 2021-10 y de hoy, busca solo en 2021-10 los temas que difieren y responde con el recorrido de diccionarios">
-        <text x="103" y="8" text-anchor="middle" font-size="8" font-style="italic">«Nivel 3: ¿qué falta en mi material de 2021-10?»</text>
-        <path class="linea" d="M103 12 V16 H52 V21" marker-end="url(#punta)" />
-        <path class="linea" d="M103 16 H154 V21" marker-end="url(#punta)" />
-        <use href="#i-doc" class="icono" x="12" y="22" width="18" height="18" />
-        <text x="34" y="29" font-size="7.2" class="mono">listar_</text>
-        <text x="34" y="37.5" font-size="7.2" class="mono">presentaciones</text>
-        <use href="#i-indice" class="icono" x="116" y="22" width="18" height="18" />
-        <text x="138" y="29" font-size="7.2" class="mono">buscar_</text>
-        <text x="138" y="37.5" font-size="7.2" class="mono">documentos</text>
-        <text x="52" y="45.5" text-anchor="middle" font-size="7.6" class="gris">el nivel 3 en cada semestre</text>
-        <text x="154" y="45.5" text-anchor="middle" font-size="7.6" class="gris">busca solo en 2021-10</text>
-        <rect x="38" y="48.5" width="130" height="11.5" fill="#ffd200" />
-        <text x="103" y="56.9" text-anchor="middle" font-size="8.6" font-weight="700">recorrido de diccionarios</text>
-      </svg>
-      <p class="pie">Fig. 10. R1 con el agente, tras agregar la lista del catálogo y el filtro de semestre: 4 pasos, US$ 0,0007. Omite los índices de strings (Fig. 1).</p>
+      <p class="pie">Fig. 9. Cambia la pregunta, no el flujo. Los comentarios solo los lee el modelo local.</p>
     </div>
   </section>
 
 </div>
 </main>
 
-<!-- ============================ BANDA · R3 CON EL MODELO LOCAL ============================ -->
+<!-- ============================ BANDA · EL AGENTE EN LOS TRES REQUERIMIENTOS ============================ -->
 <section class="tarjeta banda">
-  <h2><b>R3 · Las tutorías del día:</b> encuestas, niveles y un modelo que corre en el equipo</h2>
-  <div class="cuerpo">
-    <div>
-      <div class="flujo">
-        <div>
-          <div class="entrada">
-            <p class="rotulo">Bodega <span>· reserva de hoy y encuestas anteriores</span></p>
-            <p><b>Pepito</b> (ficticio) viene a «desarrollar un ejercicio en Senecode». Escribió: <span class="cita">«me confundo cuando hay varios if seguidos y no sé cuándo usar elif»</span>; <span class="cita">«el tutor me mostró un ciclo for para contar letras pero no lo entendí»</span>.</p>
-          </div>
-          <div class="entrada">
-            <p class="rotulo">Documentos <span>· el curso va en el Nivel 2</span></p>
-            <p>Presentaciones de los niveles 1 y 2 y pasajes filtrados a nivel ≤ 2. El <span class="mono">for</span> es del Nivel 3.</p>
-          </div>
-        </div>
-        <div class="flecha">→</div>
-        <div class="modelo-local">
-          <svg viewBox="0 0 24 24" style="width: 14mm; height: 14mm; display: block; margin: 0 auto 2mm"><use href="#i-candado" class="icono" style="stroke: #ffd200" x="0" y="0" width="24" height="24" /></svg>
-          <b>Qwen3-30B local</b>
-          <span>abierto (Apache 2.0), en Ollama, en un portátil. Los comentarios nombran a estudiantes y tutores: no salen del equipo.</span>
-        </div>
-        <div class="flecha">→</div>
-        <div class="propuesta">
-          <p class="rotulo">Temas propuestos</p>
-          <ol>
-            <li>Condicionales en cascada: <span class="mono">if</span>, <span class="mono">elif</span>, <span class="mono">else</span> <small>Nivel 2</small></li>
-            <li>Contar ocurrencias con diccionarios <small>Nivel 2</small></li>
-            <li>Diccionarios para agrupar elementos <small>Nivel 2</small></li>
-          </ol>
-          <p class="fuera">No propuso el <span class="mono">for</span>, pero tampoco lo anotó como fuera de nivel.</p>
-        </div>
-      </div>
-      <p class="dia-real"><b>Un día real</b> (9 de febrero de 2026, Nivel 1): 37 estudiantes en 18 minutos, para correr la noche anterior. 90 de 94 temas tienen el título exacto de una presentación permitida; el código marca los otros 4. La salida real no se versiona y los estudiantes van con seudónimo.</p>
+  <h2><b>El mismo agente en los tres requerimientos:</b> trazas reales</h2>
+  <div class="cuerpo trazas">
+    <div class="traza">
+      <p class="rotulo">R1 · Profesores <span>· qué se dicta</span></p>
+      <p class="pregunta">«¿Cómo explica el curso el recorrido parcial con centinela?»</p>
+      <ol>
+        <li><span class="mono">buscar_documentos</span><small>«Patrones de recorrido», Nivel 3, 2026-20, vigente, p. 10</small></li>
+      </ol>
+      <pre class="respuesta-agente">while i &lt; len(lista) and ya_encontre == False:
+    if lista[i] == buscado:
+        ya_encontre = True</pre>
+      <p class="meta">1 paso · 3,6 s · cita la página vigente</p>
     </div>
-    <div>
+    <div class="traza">
+      <p class="rotulo">R2 · Coordinación <span>· reglas vigentes</span></p>
+      <p class="pregunta">«El programa menciona tutorías grupales. ¿Se siguen ofreciendo?»</p>
+      <ol>
+        <li><span class="mono">buscar_documentos</span><small>programa 2020-20, <b class="no">no vigente</b>: «individuales, grupales y express»</small></li>
+        <li><span class="mono">consultar_bodega</span><small>última reserva grupal: 2021-20</small></li>
+      </ol>
+      <p class="respuesta-agente">La regla es de 2020-20 y ya no aplica: no hay reservas grupales después de 2021-20.</p>
+      <p class="meta">2 pasos · 5,5 s · US$ 0,0004</p>
+    </div>
+    <div class="traza">
+      <p class="rotulo">R3 · Monitores <span>· la siguiente tutoría</span></p>
+      <p class="pregunta">«Mañana tengo tutoría con Pepito y el curso va en el Nivel 2. ¿Qué preparo?»</p>
+      <ol>
+        <li><span class="mono">reservas_del_dia</span><small>viene a «desarrollar un ejercicio en Senecode»</small></li>
+        <li><span class="mono">temas_del_estudiante</span> <mark>Qwen3 local</mark><small>condicionales anidados, <span class="mono">for</span> sobre strings, contar caracteres</small></li>
+        <li><span class="mono">listar_presentaciones</span><small>niveles 1 y 2</small></li>
+        <li><span class="mono">buscar_documentos</span><small>hasta el Nivel 2</small></li>
+      </ol>
+      <p class="respuesta-agente">1. Condicionales <small>Nivel 2</small><br>2. Operaciones sobre cadenas <small>Nivel 2</small><br>El <span class="mono">for</span> es del Nivel 3: queda fuera.</p>
+      <p class="meta">6 pasos · 7,6 s · Pepito es ficticio</p>
+    </div>
+    <div class="traza">
+      <p class="rotulo">R3 en un día real <span>· 9 feb. 2026, Nivel 1</span></p>
+      <div class="cifras">
+        <div><b>37</b><span>tutorías preparadas</span></div>
+        <div><b>4,5 min</b><span>US$ 0,02 en total</span></div>
+        <div><b>106</b><span>temas, todos del Nivel 1</span></div>
+      </div>
+      <p class="rotulo" style="margin-top: 3mm">Modelo abierto <span>· Qwen3-30B en el portátil</span></p>
       <table class="abierto">
         <tr><th></th><th>gpt-6-luna</th><th>Qwen3 instruct</th><th>Qwen3 razonador</th></tr>
-        <tr class="seccion"><td colspan="4">Responder con RAG (26 preguntas)</td></tr>
-        <tr><td>Correctas</td><td>23</td><td>18</td><td class="mejor">23</td></tr>
-        <tr><td>Con un hecho inventado</td><td>0</td><td>3</td><td>1</td></tr>
-        <tr><td>Latencia mediana</td><td>1,1 s</td><td>9,5 s</td><td>28 s</td></tr>
-        <tr class="seccion"><td colspan="4">Calificar (52 respuestas)</td></tr>
-        <tr><td>Acuerdo con gpt-6-sol</td><td></td><td class="mejor">98 %</td><td></td></tr>
-        <tr class="seccion"><td colspan="4">Agente (8 casos)</td></tr>
-        <tr><td>Respuestas respaldadas, de 16</td><td>11</td><td>1</td><td>2</td></tr>
+        <tr><td>RAG: correctas de 26</td><td>23</td><td>18</td><td class="mejor">23</td></tr>
+        <tr><td>Juez: acuerdo con gpt-6-sol</td><td></td><td class="mejor">98 %</td><td></td></tr>
+        <tr><td>Agente: respaldadas, de 18</td><td class="mejor">15</td><td>1</td><td>2</td></tr>
       </table>
-      <p class="pie">Fig. 11. El modelo abierto redacta y califica, pero no sirve como agente: inventa cifras de la bodega. Por eso en R3 el código decide qué datos reunir y el modelo solo redacta sobre ellos.</p>
+      <p class="pie">Fig. 10. Lee comentarios y califica; como agente inventa cifras.</p>
     </div>
   </div>
 </section>
@@ -481,19 +529,19 @@
   <div class="cuerpo">
     <div>
       <h3><svg viewBox="0 0 24 24"><use href="#i-persona" class="icono" x="0" y="0" width="24" height="24" /></svg><span>Coordinación<small>R2</small></span></h3>
-      <p>No hay tutorías grupales desde 2022 aunque un programa las anuncia. El 52 % usa la tutoría para su proyecto, que el tutor no debe solucionar.</p>
+      <p>Las tutorías grupales que anuncia un programa no existen desde 2022.</p>
     </div>
     <div>
       <h3><svg viewBox="0 0 24 24"><use href="#i-grupo" class="icono" x="0" y="0" width="24" height="24" /></svg><span>Monitores<small>R1 y R3</small></span></h3>
-      <p>Un RAG visual con filtro de vigencia dice qué se dicta en cada nivel (23 de 26 correctas), y cada mañana reciben temas por estudiante dentro de su nivel.</p>
+      <p>Qué se dicta en cada nivel (23 de 26) y los temas de cada tutoría, dentro del nivel del estudiante.</p>
     </div>
     <div>
       <h3><svg viewBox="0 0 24 24"><use href="#i-persona" class="icono" x="0" y="0" width="24" height="24" /></svg><span>Profesores<small>R1</small></span></h3>
-      <p>10 de las 38 clases de hoy no tienen versión en el material de 2020-21; 5 son del nivel 4: librerías, matplotlib y pandas.</p>
+      <p>10 de 38 clases son nuevas; 5 son del nivel 4.</p>
     </div>
     <div>
       <h3><svg viewBox="0 0 24 24"><use href="#i-doc" class="icono" x="0" y="0" width="24" height="24" /></svg><span>Siguiente paso<small>Senecode</small></span></h3>
-      <p>El 26 % de las reservas viene a hacer un ejercicio de Senecode. Con sus enunciados, R3 sabría qué temas pide cada tarea.</p>
+      <p>El 26 % viene por Senecode: con sus enunciados, R3 sabría qué pide cada tarea.</p>
     </div>
   </div>
 </section>

@@ -1,156 +1,77 @@
-"""Preparar las tutorías de un día: qué temas trabajar con cada estudiante que reservó.
+"""R3 a escala: el agente prepara la tutoría de cada estudiante que reservó un día.
 
-Requerimiento que justifica la arquitectura híbrida. Para cada reserva del día cruza:
-  bodega (Silver)  para qué reservó (encuesta previa) y qué dijo en sus encuestas anteriores
-  documentos       los contenidos del curso hasta el nivel en que va el curso esta semana
-y un modelo propone los temas, sin salirse de lo que el estudiante ya vio.
+Por cada reserva se le hace al agente la pregunta de un monitor. La métrica cuenta las
+presentaciones vigentes que la respuesta propone como temas: dentro del nivel (la del
+curso o una anterior) o de un nivel posterior.
 
-Los comentarios de las encuestas son texto libre que puede identificar a estudiantes y
-tutores, así que todo corre en el equipo: embeddings e5, Postgres local y Qwen3 en
-Ollama. El agente de OpenAI sigue sin ver texto libre. La salida con datos reales se
-escribe en artifacts/entrega2/privado/, que no se versiona, y por consola solo salen
-métricas agregadas.
+La salida con datos reales va a artifacts/entrega2/privado/, que no se versiona; por
+consola y en resultados/experimentos solo quedan métricas agregadas. La bodega no
+registra en qué nivel va el curso: lo indica el monitor (--nivel).
 
-La bodega no registra en qué nivel va el curso: lo indica el monitor (--nivel).
-
-    python3 src/entrega2/tutorias_del_dia.py --demo                     # estudiante ficticio
+    python3 src/entrega2/tutorias_del_dia.py --demo --repeticiones 5    # Pepito, ficticio
     python3 src/entrega2/tutorias_del_dia.py --fecha 2026-02-09 --nivel 1
 """
 
 import argparse
-import csv
 import json
+import re
 import statistics
-import time
-from collections import defaultdict
+from dataclasses import asdict
 
-from agente import listar_presentaciones
-from base_vectorial import buscar, conectar
-from config import ARTIFACTS, DATA, DIR_RESULTADOS, MODELO_LOCAL, PERIODO_VIGENTE, SILVER_RESERVAS
-from enfoques import contexto_de_fragmentos
-from llm import cliente_local, generar
+from agente import listar_presentaciones, preguntar
+from base_vectorial import conectar
+from config import ARTIFACTS, DIR_RESULTADOS, PERIODO_VIGENTE, costo_usd
+from llm import cliente
+from reservas import FECHA_DEMO, estudiantes_del_dia
 
 DIR_PRIVADO = ARTIFACTS / 'privado'
-ARCHIVO_DEMO = DIR_RESULTADOS / 'experimentos' / 'tutorias_demo.json'
-SERVICIO_IP = 'ISIS-1221'
-ESTADOS_ATENDIDOS = {'Finalizada', 'Realizada', 'No asistió', 'En ejecución'}
-ENCUESTAS_ANTERIORES = 5
-FRAGMENTOS = 5
-
-PROPOSITO = 'pregunta_e70905bd9b1c'  # encuesta previa: «La mayoría del tiempo de la tutoría que estoy reservando lo usaré para»
-CAMPOS_SATISFACCION = {
-    'pregunta_8644ad182746': 'en qué usó la tutoría',
-    'pregunta_5a7441428672': 'comprensión del tema actual (1 a 5)',
-    'pregunta_16932259e848': 'comentario sobre el curso y sus contenidos',
-    'pregunta_bfe0495fc3c0': 'comentario sobre el tutor y la tutoría',
-    'pregunta_3bcd7ccbdb47': 'sugerencias',
-}
-
-INSTRUCCIONES = """Ayudas a un monitor de CupiTaller (tutorías del curso Introducción a la Programación) a preparar la tutoría con un estudiante.
-
-Recibes:
-- el nivel en que va el curso y las presentaciones vistas hasta ese nivel (lo que el estudiante ya debería conocer);
-- para qué reservó el estudiante y lo que escribió en encuestas de tutorías anteriores;
-- pasajes del material del curso relacionados.
-
-Propón de 1 a 3 temas para la tutoría. Reglas:
-1. Cada tema debe corresponder a una presentación de la lista, copiando su título exacto, y a un nivel menor o igual al del curso.
-2. Si el estudiante pide o menciona algo que el curso todavía no ha visto, no lo propongas como tema: anótalo en fuera_de_nivel y propón en su lugar lo que sí corresponde al nivel.
-3. Justifica cada tema con lo que dijo el estudiante o con el propósito de la reserva. No inventes dificultades que no aparezcan.
-4. Si no hay historia del estudiante, básate en el propósito de la reserva y en los temas del nivel actual.
-5. Escribe en español, con frases cortas. No repitas nombres de personas que aparezcan en los comentarios."""
-
-FORMATO = {'format': {
-    'type': 'json_schema', 'name': 'preparacion', 'strict': True,
-    'schema': {
-        'type': 'object',
-        'properties': {
-            'resumen': {'type': 'string', 'description': 'Una frase sobre qué necesita el estudiante.'},
-            'temas': {'type': 'array', 'items': {
-                'type': 'object',
-                'properties': {'tema': {'type': 'string'}, 'presentacion': {'type': 'string'},
-                               'nivel': {'type': 'integer'}, 'motivo': {'type': 'string'}},
-                'required': ['tema', 'presentacion', 'nivel', 'motivo'], 'additionalProperties': False}},
-            'fuera_de_nivel': {'type': 'array', 'items': {'type': 'string'}},
-            'pregunta_para_empezar': {'type': 'string'},
-        },
-        'required': ['resumen', 'temas', 'fuera_de_nivel', 'pregunta_para_empezar'], 'additionalProperties': False,
-    },
-}}
-
-DEMO = [{
-    'estudiante': 'Pepito (ficticio)',
-    'proposito': 'Desarrollar un ejercicio en senecode',
-    'historia': [
-        {'en qué usó la tutoría': 'Resolver dudas puntuales de los conceptos de la clase', 'comprensión del tema actual (1 a 5)': '2',
-         'comentario sobre el curso y sus contenidos': 'Me confundo cuando hay varios if seguidos y no sé cuándo usar elif.'},
-        {'en qué usó la tutoría': 'Desarrollar un laboratorio', 'comprensión del tema actual (1 a 5)': '3',
-         'comentario sobre el tutor y la tutoría': 'El tutor me mostró un ciclo for para contar letras pero no lo entendí.',
-         'sugerencias': 'Más ejercicios de contar cosas dentro de un texto.'},
-    ],
-}]
+DIR_EXPERIMENTOS = DIR_RESULTADOS / 'experimentos'
+FUENTES_DE_RESERVAS = {'reservas_del_dia', 'temas_del_estudiante'}
+FUENTES_DOCUMENTALES = {'buscar_documentos', 'listar_presentaciones'}
 
 
-def contenidos_hasta(nivel: int) -> dict[int, list[str]]:
-    return {n: listar_presentaciones(PERIODO_VIGENTE, n)['presentaciones'] for n in range(1, nivel + 1)}
+def pregunta_del_monitor(fecha: str, estudiante: dict, nivel: int) -> str:
+    return (f"Soy monitor. El {fecha} tengo tutoría con {estudiante['estudiante']} a las {estudiante['hora']} "
+            f"y el curso va en el Nivel {nivel}. ¿Qué temas preparo?")
 
 
-def _leer_csv(nombre: str) -> list[dict]:
-    with (DATA / 'plata' / f'{nombre}.csv').open(encoding='utf-8') as entrada:
-        return list(csv.DictReader(entrada))
+def presentaciones_nombradas(respuesta: str) -> dict[int, list[str]]:
+    """Presentaciones vigentes nombradas en los temas numerados de la respuesta, por nivel.
+
+    Solo cuentan las líneas numeradas: el agente también nombra, fuera de la lista, lo que
+    deja por fuera por ser de un nivel posterior. Las introducciones de nivel no cuentan:
+    sus títulos («Introducción») aparecen dentro de cualquier frase.
+    """
+    texto = '\n'.join(linea for linea in respuesta.lower().splitlines() if re.match(r'\s*\d+[.)]', linea))
+    return {nivel: [t for t in listar_presentaciones(PERIODO_VIGENTE, nivel)['presentaciones']
+                    if not t.startswith('Introducción') and t.lower() in texto]
+            for nivel in range(1, 5)}
 
 
-def estudiantes_del_dia(fecha: str) -> list[dict]:
-    """Una entrada por estudiante con reserva de IP ese día, con un seudónimo en lugar del código."""
-    with SILVER_RESERVAS.open(encoding='utf-8') as entrada:
-        del_dia = [r for r in csv.DictReader(entrada)
-                   if r['fecha_inicio'][:10] == fecha and r['codigo_servicio'] == SERVICIO_IP and r['estado_reserva'] in ESTADOS_ATENDIDOS]
-    proposito = {e['id_reserva']: e[PROPOSITO] for e in _leer_csv('encuesta_previa_normal_ip')}
-    anteriores = defaultdict(list)
-    for nombre in ('encuesta_satisfaccion_normal', 'encuesta_satisfaccion_express'):
-        for e in _leer_csv(nombre):
-            if e['fecha_inicio'][:10] < fecha:
-                anteriores[e['codigo_usuario']].append(e)
-    estudiantes, vistos = [], set()
-    for reserva in sorted(del_dia, key=lambda r: r['fecha_inicio']):
-        if reserva['codigo_usuario'] in vistos:
-            continue
-        vistos.add(reserva['codigo_usuario'])
-        recientes = sorted(anteriores[reserva['codigo_usuario']], key=lambda e: e['fecha_inicio'])[-ENCUESTAS_ANTERIORES:]
-        historia = [{etiqueta: e[campo] for campo, etiqueta in CAMPOS_SATISFACCION.items() if e.get(campo, '').strip()}
-                    for e in recientes]
-        estudiantes.append({
-            'estudiante': f'Estudiante {len(estudiantes) + 1}', 'hora': reserva['fecha_inicio'][11:16],
-            'proposito': proposito.get(reserva['id_reserva'], 'sin encuesta previa'),
-            'historia': [h for h in historia if h],
-        })
-    return estudiantes
-
-
-def _consulta(estudiante: dict) -> str:
-    textos = [estudiante['proposito']] + [v for h in estudiante['historia'] for k, v in h.items() if k.startswith('comentario') or k == 'sugerencias']
-    return ' '.join(textos)[:1500]
-
-
-def preparar(api, conexion, estudiante: dict, nivel: int, contenidos: dict[int, list[str]]) -> dict:
-    inicio = time.perf_counter()
-    candidatos = buscar(conexion, _consulta(estudiante), coleccion='visual', k=30, solo_vigentes=True)
-    pasajes = [f for f in candidatos if f.nivel is None or f.nivel <= nivel][:FRAGMENTOS]
-    temario = '\n'.join(f'Nivel {n}: ' + '; '.join(titulos) for n, titulos in contenidos.items())
-    entrada = (f'El curso va en el Nivel {nivel}. Presentaciones vistas hasta ahora:\n{temario}\n\n'
-               f'Propósito de la reserva: {estudiante["proposito"]}\n\n'
-               f'Encuestas anteriores del estudiante (de la más antigua a la más reciente):\n'
-               f'{json.dumps(estudiante["historia"], ensure_ascii=False, indent=1) if estudiante["historia"] else "ninguna"}\n\n'
-               f'Pasajes del material:\n{contexto_de_fragmentos(pasajes, con_vigencia=False)}')
-    respuesta = generar(api, INSTRUCCIONES, entrada, modelo=MODELO_LOCAL, text=FORMATO)
-    propuesta = json.loads(respuesta.texto)
-    permitidas = {titulo for titulos in contenidos.values() for titulo in titulos}
+def preparar(api, conexion, fecha: str, estudiante: dict, nivel: int) -> dict:
+    traza = asdict(preguntar(api, conexion, pregunta_del_monitor(fecha, estudiante, nivel)))
+    nombradas = presentaciones_nombradas(traza['respuesta'])
     return {
-        **estudiante, 'propuesta': propuesta,
-        'pasajes': [f.origen for f in pasajes],
-        'temas_dentro_del_nivel': sum(t['presentacion'] in permitidas for t in propuesta['temas']),
-        'temas_propuestos': len(propuesta['temas']),
-        'segundos': round(time.perf_counter() - inicio, 1),
+        'estudiante': estudiante['estudiante'], 'traza': traza,
+        'herramientas': [p['herramienta'] for p in traza['pasos']],
+        'dentro_del_nivel': sum(len(t) for n, t in nombradas.items() if n <= nivel),
+        'de_un_nivel_posterior': sum(len(t) for n, t in nombradas.items() if n > nivel),
+    }
+
+
+def metricas(preparaciones: list[dict]) -> dict:
+    return {
+        'estudiantes': len(preparaciones),
+        'pidieron_temas_del_estudiante': sum('temas_del_estudiante' in p['herramientas'] for p in preparaciones),
+        'sin_respuesta_en_el_limite_de_pasos': sum(p['traza']['respuesta'].startswith('El agente no llegó') for p in preparaciones),
+        'respondieron_con_lista_de_temas': sum(p['dentro_del_nivel'] + p['de_un_nivel_posterior'] > 0 for p in preparaciones),
+        'cruzaron_reserva_y_documentos': sum(bool(set(p['herramientas']) & FUENTES_DE_RESERVAS)
+                                             and bool(set(p['herramientas']) & FUENTES_DOCUMENTALES) for p in preparaciones),
+        'presentaciones_dentro_del_nivel': sum(p['dentro_del_nivel'] for p in preparaciones),
+        'presentaciones_de_un_nivel_posterior': sum(p['de_un_nivel_posterior'] for p in preparaciones),
+        'pasos_mediana': statistics.median(len(p['herramientas']) for p in preparaciones),
+        'segundos_mediana': statistics.median(p['traza']['uso']['segundos'] for p in preparaciones),
+        'costo_total_usd': round(sum(costo_usd(p['traza']['uso']) for p in preparaciones), 4),
     }
 
 
@@ -158,32 +79,24 @@ def main() -> None:
     argumentos = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     argumentos.add_argument('--demo', action='store_true', help='estudiante ficticio; la salida se puede versionar')
     argumentos.add_argument('--fecha', default='2026-02-09')
-    argumentos.add_argument('--nivel', type=int, default=2)
+    argumentos.add_argument('--nivel', type=int, default=1)
+    argumentos.add_argument('--repeticiones', type=int, default=1, help='veces que se prepara cada estudiante')
     a = argumentos.parse_args()
-    estudiantes = DEMO if a.demo else estudiantes_del_dia(a.fecha)
-    contenidos = contenidos_hasta(a.nivel)
-    api = cliente_local()
+    fecha, nivel = (FECHA_DEMO, 2) if a.demo else (a.fecha, a.nivel)
+    api = cliente()
     with conectar() as conexion:
-        preparaciones = [preparar(api, conexion, e, a.nivel, contenidos) for e in estudiantes]
-    salida = ARCHIVO_DEMO if a.demo else DIR_PRIVADO / f'tutorias_{a.fecha}_nivel{a.nivel}.json'
+        preparaciones = []
+        for estudiante in estudiantes_del_dia(fecha) * a.repeticiones:
+            preparaciones.append(preparar(api, conexion, fecha, estudiante, nivel))
+            print(f"{estudiante['estudiante']}: {len(preparaciones[-1]['herramientas'])} pasos", flush=True)
+    resumen = metricas(preparaciones) | {'fecha': fecha, 'nivel': nivel}
+    salida = DIR_EXPERIMENTOS / 'tutorias_demo.json' if a.demo else DIR_PRIVADO / f'tutorias_{fecha}_nivel{nivel}.json'
     salida.parent.mkdir(parents=True, exist_ok=True)
-    salida.write_text(json.dumps({'fecha': a.fecha, 'nivel': a.nivel, 'modelo': MODELO_LOCAL, 'preparaciones': preparaciones},
-                                 ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    metricas = {
-        'estudiantes': len(preparaciones),
-        'con_historia': sum(bool(p['historia']) for p in preparaciones),
-        'temas_propuestos': sum(p['temas_propuestos'] for p in preparaciones),
-        'temas_dentro_del_nivel': sum(p['temas_dentro_del_nivel'] for p in preparaciones),
-        'estudiantes_con_algo_fuera_de_nivel': sum(bool(p['propuesta']['fuera_de_nivel']) for p in preparaciones),
-        'segundos_mediana': statistics.median(p['segundos'] for p in preparaciones),
-        'segundos_total': round(sum(p['segundos'] for p in preparaciones), 1),
-        'salida': str(salida),
-    }
-    print(json.dumps(metricas, ensure_ascii=False, indent=2))
+    salida.write_text(json.dumps({**resumen, 'preparaciones': preparaciones}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     if not a.demo:
-        (DIR_RESULTADOS / 'experimentos' / f'tutorias_{a.fecha}_metricas.json').write_text(
-            json.dumps({k: v for k, v in metricas.items() if k != 'salida'} | {'fecha': a.fecha, 'nivel': a.nivel, 'modelo': MODELO_LOCAL},
-                       ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        (DIR_EXPERIMENTOS / f'tutorias_{fecha}_metricas.json').write_text(
+            json.dumps(resumen, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    print(json.dumps(resumen, ensure_ascii=False, indent=2))
 
 
 if __name__ == '__main__':

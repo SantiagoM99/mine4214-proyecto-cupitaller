@@ -1,59 +1,430 @@
 {
-  "fecha": "2026-02-09",
+  "estudiantes": 5,
+  "pidieron_temas_del_estudiante": 5,
+  "sin_respuesta_en_el_limite_de_pasos": 0,
+  "respondieron_con_lista_de_temas": 5,
+  "cruzaron_reserva_y_documentos": 5,
+  "presentaciones_dentro_del_nivel": 15,
+  "presentaciones_de_un_nivel_posterior": 0,
+  "pasos_mediana": 6,
+  "segundos_mediana": 9.33,
+  "costo_total_usd": 0.0031,
+  "fecha": "2026-11-30",
   "nivel": 2,
-  "modelo": "qwen3:30b-a3b-instruct-2507-q4_K_M",
   "preparaciones": [
     {
-      "estudiante": "Pepito (ficticio)",
-      "proposito": "Desarrollar un ejercicio en senecode",
-      "historia": [
-        {
-          "en qué usó la tutoría": "Resolver dudas puntuales de los conceptos de la clase",
-          "comprensión del tema actual (1 a 5)": "2",
-          "comentario sobre el curso y sus contenidos": "Me confundo cuando hay varios if seguidos y no sé cuándo usar elif."
-        },
-        {
-          "en qué usó la tutoría": "Desarrollar un laboratorio",
-          "comprensión del tema actual (1 a 5)": "3",
-          "comentario sobre el tutor y la tutoría": "El tutor me mostró un ciclo for para contar letras pero no lo entendí.",
-          "sugerencias": "Más ejercicios de contar cosas dentro de un texto."
-        }
-      ],
-      "propuesta": {
-        "fuera_de_nivel": [],
-        "pregunta_para_empezar": "¿Qué parte del ejercicio en senecode te está costando más? ¿Te gustaría revisar cómo usar condicionales en cascada o cómo contar ocurrencias con diccionarios?",
-        "resumen": "Se proponen tres temas clave para la tutoría, todos alineados con el nivel actual (Nivel 2) y con el propósito de la reserva: desarrollar un ejercicio en senecode. Cada tema se basa en comentarios del estudiante y en pasajes del material.",
-        "temas": [
+      "estudiante": "Pepito",
+      "traza": {
+        "respuesta": "Pepito tiene reserva a las 10:00 para **desarrollar un ejercicio en senecode**. Sus temas mencionados anteriormente incluyen condicionales anidados, ciclos `for` sobre strings y conteo de caracteres; su comprensión promedio registrada es 2,5/5.\n\nTe sugiero preparar estos temas del Nivel 2:\n\n1. **Operaciones sobre cadenas de caracteres** — coincide con el conteo de caracteres y el recorrido de strings con `for`.\n2. **Condicionales** — permite repasar la lógica de las condiciones, relacionada con los condicionales anidados que mencionó.\n\nLos dos títulos son presentaciones vigentes del Nivel 2. Las fuentes consultadas no indican a qué nivel del curso pertenece el tema del ciclo `for` sobre strings; por eso no propongo una presentación específica para ese tema.",
+        "pasos": [
           {
-            "motivo": "El estudiante menciona confusión con varios if seguidos y no sabe cuándo usar elif. Esto indica que necesita claridad sobre el funcionamiento de condicionales en cascada.",
-            "nivel": 2,
-            "presentacion": "Condicionales",
-            "tema": "Entender cómo funcionan los condicionales en cascada (if-elif-else) y cuándo usar cada uno"
+            "herramienta": "reservas_del_dia",
+            "argumentos": {
+              "fecha": "2026-11-30"
+            },
+            "resultado": "{\"fecha\": \"2026-11-30\", \"reservas\": [{\"estudiante\": \"Pepito\", \"hora\": \"10:00\", \"proposito\": \"Desarrollar un ejercicio en senecode\", \"comentarios_anteriores\": 3}]}"
           },
           {
-            "motivo": "El estudiante pidió más ejercicios de contar cosas en un texto. El ejercicio de ocurrencias de dígitos con diccionarios es una aplicación directa de contar elementos, ideal para reforzar este concepto.",
-            "nivel": 2,
-            "presentacion": "Ejercicio: Ocurrencias de cada dígito en un número usando diccionarios",
-            "tema": "Contar ocurrencias de elementos usando diccionarios y actualizarlos en cada paso"
+            "herramienta": "temas_del_estudiante",
+            "argumentos": {
+              "fecha": "2026-11-30",
+              "estudiante": "Pepito"
+            },
+            "resultado": "{\"estudiante\": \"Pepito\", \"temas_mencionados\": [\"condicionales anidados\", \"ciclo for sobre strings\", \"contar caracteres en texto\"], \"comprension_promedio_1_a_5\": 2.5, \"comentarios_leidos\": 3}"
           },
           {
-            "motivo": "El estudiante no entendió el uso de ciclo for para contar letras. Aunque el material usa un ciclo for, en este caso el enfoque será en el uso de funciones y diccionarios, más cercano al nivel y a los ejercicios que puede enfrentar en senecode.",
-            "nivel": 2,
-            "presentacion": "Diccionarios para manejar elementos con las mismas características",
-            "tema": "Usar diccionarios para agrupar y contar elementos con características comunes"
+            "herramienta": "listar_presentaciones",
+            "argumentos": {
+              "semestre": "2026-20",
+              "nivel": 1
+            },
+            "resultado": "{\"semestre\": \"2026-20\", \"nivel\": 1, \"vigente\": true, \"presentaciones\": [\"Descubriendo el mundo de la programación\", \"Valores y tipos de dato\", \"Declaración de variables, instrucción de asignación y tipado dinámico\", \"Expresiones, operadores aritméticos y operaciones sobre strings\", \"Conversion de tipos\", \"Funciones de Python (Matemáticas y de entrada-salida)\", \"Funciones y variables locales\", \"Ejercicios de funciones\", \"Estilo de programación\", \"Construcción e importación de módulos\", \"Separación entre interfaz de usuario y lógica del programa\"]}"
+          },
+          {
+            "herramienta": "listar_presentaciones",
+            "argumentos": {
+              "semestre": "2026-20",
+              "nivel": 2
+            },
+            "resultado": "{\"semestre\": \"2026-20\", \"nivel\": 2, \"vigente\": true, \"presentaciones\": [\"Introducción\", \"Booleanos y sus operadores\", \"Tablas de verdad y álgebra booleana\", \"Condicionales\", \"Leyes de De Morgan\", \"Cadenas de caracteres\", \"Operaciones sobre cadenas de caracteres\", \"Diccionarios operaciones básicas\", \"Diccionarios mutabilidad, borrado de datos y parámetros por referencia\", \"Ejercicio: Ocurrencias de cada dígito en un número usando diccionarios\", \"Diccionarios para manejar elementos con las mismas características\"]}"
+          },
+          {
+            "herramienta": "buscar_documentos",
+            "argumentos": {
+              "consulta": "SENecode o desarrollo de ejercicios en SENecode, interfaz del entorno y programación básica",
+              "solo_vigentes": true,
+              "semestre": "2026-20",
+              "hasta_nivel": 2
+            },
+            "resultado": "[1] Programa del curso IP | semestre 2026-20, vigente | página 3\nLas demás tareas son establecidas y calificadas por el profesor, quien comunica a los estudiantes las instrucciones correspondientes, así como el medio y fecha de entrega. Normalmente se asignan de forma semanal e incluyen ejercicios de *senecode* (disponible a partir de la segunda semana de clases). *senecode* es una plataforma que provee ejercicios y tiene un calificador automático de programas escritos en Python que apoya enormemente al estudiante en su recorrido por el curso. Contiene más de 200 ejercicios de programación clasificados en cuatro dificultades: básica, intermedia, avanzada y extrema⁴. Permite enviar soluciones a ejercicios y obtener retroalimentación detallada y casi inmediata. Si la solución enviada no es correcta, permite reenvíos ilimitados sin penalización alguna por reintentos, incentivando al estudiante a mejorar su solución.\n\n> “La programación de computadoras es un arte... Un programador que, de manera subconsciente, se considera un artista, disfrutará más lo que hace y lo hará mejor.” Donald Knuth.\n\n[2] Programa del curso IP | semestre 2026-20, vigente | página 3\nAprender a programar, al igual que aprender a escribir, pintar, componer o actividades similares, requiere de una práctica constante y sostenida para desarrollar un alto nivel de destreza. *senecode* ofrece el medio adecuado para realizar dicha práctica. Además, en forma independiente a las tareas asignadas por el profesor, los ejercicios están siempre disponibles para resolverse por estudiantes curiosos, que se diviertan asumiendo retos intelectuales para mejorar sus habilidades de programación y de resolución de problemas.\n\nExámenes:\n\n[3] Descubriendo el mundo de la programación | Nivel 1 | semestre 2026-20, vigente | página 5\n# PARA ESTO:\n\n## ANÁLISIS\n\n- Leer MUY bien\n- Entender el problema\n- Especificar el problema (qué se quiere resolver, de dónde partimos y a dónde queremos llegar)\n- Resultado: especificación del problema: entradas, salidas y restricciones\n\n## DISEÑO\n\n- Dividir el problema en subproblemas y buscar la solución para cada uno\n- Expresar las soluciones como secuencias de pasos (algoritmo)\n- Resultados: estrategia de solución y algoritmos\n\n[Figura] Un documento con una lista de verificación y un lápiz, junto a la sección de análisis.\n\n[Figura] Un monitor que muestra un documento con un sello, junto a la sección de diseño.\n\n[4] Separación entre interfaz de usuario y lógica del programa | Nivel 1 | semestre 2026-20, vigente | página 8\n# INTERFAZ BASADA EN CONSOLA\n\n- La interfaz de usuario se debe implementar en su propio archivo\n- Todos los `print` o `input` de nuestro programa se harán en dicho\n- Como la lógica o \"inteligencia\" del programa se encuentra en otro módulo (en las funciones definidas en este), desde la interfaz de consola se debe importar dicho módulo y darle un nombre para poder invocar las funciones cuando se necesiten\n- A través del llamado de estas funciones, la interfaz puede procesar los datos recibidos del usuario y luego mostrar los resultados en la consola\n\n```python\nimport libreria as lb\n\ndef ejecutar_convertir_a_dolares(trm: float)->None:\n    pesos = float(input(\"Ingrese la cantidad de pesos: \"))\n    dolares = lb.convertir_a_dolares(pesos, trm)\n    print(pesos, \"pesos son\", round(dolares,2) , \"dólares\")\n\ndef ejecutar_convertir_a_pesos(trm: float)->None:\n    dolares = float(input(\"Ingrese la cantidad de dólares: \"))\n    pesos = lb.convertir_a_pesos(dolares, trm)\n    print(dolares, \"dólares son\", round(pesos,0) , \"pesos\")\n\ndef iniciar_aplicacion ()->None:\n    trm = float(input(\"Ingrese la TRM: \"))\n    ejecutar_convertir_a_dolares(trm)\n    ejecutar_convertir_a_pesos(trm)\n\niniciar_aplicacion()\n```\n\n[5] Programa del curso IP | semestre 2026-20, vigente | página 2\n- Es clave asistir a todas las sesiones para sacar el máximo provecho de las actividades, interactuar con los compañeros y los monitores, resolver dudas, participar en clase, hacer ejercicios, equivocarse y aprender de los errores, así como beneficiarse de los ejemplos adicionales presentados por el profesor.\n\n## Evaluación y aspectos académicos\n\nEn cada nivel existen 3 actividades evaluables: tareas, quices y exámenes. El profesor de la sección del curso es el único autorizado para aclarar a sus estudiantes las reglas que aplican a los evaluables.\n\n<u>Proyectos:</u>\n\nEn cada nivel se publica un proyecto diseñado para que los estudiantes afiancen y practiquen individualmente los temas vistos. El proyecto no tiene una nota asociada, sin embargo, los monitores de la sección revisan las entregas hechas a tiempo y dan *retroalimentación formativa*². Esta retroalimentación es de gran utilidad, pues permite al estudiante analizar su progreso e identificar áreas de mejora. **El desarrollo del proyecto es fundamental, ya que el último quiz del nivel y el examen del nivel incluye preguntas que se basan en este.**\n\n<u>Quices:</u>"
+          },
+          {
+            "herramienta": "buscar_documentos",
+            "argumentos": {
+              "consulta": "Condicionales anidados; ciclo for sobre strings; contar caracteres en texto",
+              "solo_vigentes": true,
+              "semestre": "2026-20",
+              "hasta_nivel": 2
+            },
+            "resultado": "[1] Operaciones sobre cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 1\n# NIVEL 2\nOPERACIONES SOBRE CADENAS DE CARACTERES O STRINGS\n\n[2] Leyes de De Morgan | Nivel 2 | semestre 2026-20, vigente | página 10\n- Determina cuáles son las condiciones sobre los datos de entrada, que intervienen en el cálculo del precio del pasaje\n\n[3] Cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 1\n# NIVEL 2\n\nCADENAS DE CARACTERES O STRINGS\n\n[Figura] Portátil con código en pantalla y una taza al fondo.\n\n[4] Ejercicios de funciones | Nivel 1 | semestre 2026-20, vigente | página 16\n# ¡LISTOS PARA PRACTICAR!\n\n[Figura] Una persona monta en bicicleta dentro de un círculo.\n\n[5] Condicionales | Nivel 2 | semestre 2026-20, vigente | página 1\n# NIVEL 2\nINSTRUCCIONES CONDICIONALES\n\n[Figura] Portátil con código en pantalla, una persona usando el teclado y un ícono naranja."
           }
-        ]
+        ],
+        "uso": {
+          "tokens_entrada": 11975,
+          "tokens_en_cache": 9959,
+          "tokens_escritos_en_cache": 2004,
+          "tokens_salida": 405,
+          "segundos": 6.9
+        }
       },
-      "pasajes": [
-        "2026-20_programa p. 3",
-        "2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas p. 11",
-        "2026-20_n2_10_ejercicio-ocurrencias-de-cada-digito-en-un-numero-usando-diccionarios p. 7",
-        "2026-20_n2_04_condicionales p. 8",
-        "2026-20_n2_11_diccionarios-para-manejar-elementos-con-las-mismas-caracteristicas p. 4"
+      "herramientas": [
+        "reservas_del_dia",
+        "temas_del_estudiante",
+        "listar_presentaciones",
+        "listar_presentaciones",
+        "buscar_documentos",
+        "buscar_documentos"
       ],
-      "temas_dentro_del_nivel": 3,
-      "temas_propuestos": 3,
-      "segundos": 74.7
+      "dentro_del_nivel": 3,
+      "de_un_nivel_posterior": 0
+    },
+    {
+      "estudiante": "Pepito",
+      "traza": {
+        "respuesta": "Pepito reservó a las 10:00 para **desarrollar un ejercicio en Senecode**. En tutorías anteriores mencionó **condicionales anidados**, **ciclo for sobre strings** y **contar caracteres en texto**; su comprensión promedio fue 2,5/5.\n\nPrepararía estos temas, respetando que el curso va en Nivel 2:\n\n1. **Condicionales** [Condicionales, nivel 2]. Repasen cómo separar casos y combinar condiciones en el ejercicio.\n2. **Operaciones sobre cadenas de caracteres** [Operaciones sobre cadenas de caracteres, nivel 2]. Útil para trabajar con texto y contar caracteres; coincide con un tema que mencionó.\n3. **Cadenas de caracteres** [Cadenas de caracteres, nivel 2]. Puede servir como repaso de los datos que manipulará el ejercicio.\n\nEl **ciclo for** sobre strings aparece como presentación de **Nivel 3** («Instrucciones iterativas (for)»), así que no lo propondría para preparar ahora, dado el nivel indicado. Las presentaciones citadas son del semestre vigente **2026-20**.",
+        "pasos": [
+          {
+            "herramienta": "reservas_del_dia",
+            "argumentos": {
+              "fecha": "2026-11-30"
+            },
+            "resultado": "{\"fecha\": \"2026-11-30\", \"reservas\": [{\"estudiante\": \"Pepito\", \"hora\": \"10:00\", \"proposito\": \"Desarrollar un ejercicio en senecode\", \"comentarios_anteriores\": 3}]}"
+          },
+          {
+            "herramienta": "temas_del_estudiante",
+            "argumentos": {
+              "fecha": "2026-11-30",
+              "estudiante": "Pepito"
+            },
+            "resultado": "{\"estudiante\": \"Pepito\", \"temas_mencionados\": [\"condicionales anidados\", \"ciclo for sobre strings\", \"contar caracteres en texto\"], \"comprension_promedio_1_a_5\": 2.5, \"comentarios_leidos\": 3}"
+          },
+          {
+            "herramienta": "listar_presentaciones",
+            "argumentos": {
+              "semestre": "2026-20",
+              "nivel": 1
+            },
+            "resultado": "{\"semestre\": \"2026-20\", \"nivel\": 1, \"vigente\": true, \"presentaciones\": [\"Descubriendo el mundo de la programación\", \"Valores y tipos de dato\", \"Declaración de variables, instrucción de asignación y tipado dinámico\", \"Expresiones, operadores aritméticos y operaciones sobre strings\", \"Conversion de tipos\", \"Funciones de Python (Matemáticas y de entrada-salida)\", \"Funciones y variables locales\", \"Ejercicios de funciones\", \"Estilo de programación\", \"Construcción e importación de módulos\", \"Separación entre interfaz de usuario y lógica del programa\"]}"
+          },
+          {
+            "herramienta": "listar_presentaciones",
+            "argumentos": {
+              "semestre": "2026-20",
+              "nivel": 2
+            },
+            "resultado": "{\"semestre\": \"2026-20\", \"nivel\": 2, \"vigente\": true, \"presentaciones\": [\"Introducción\", \"Booleanos y sus operadores\", \"Tablas de verdad y álgebra booleana\", \"Condicionales\", \"Leyes de De Morgan\", \"Cadenas de caracteres\", \"Operaciones sobre cadenas de caracteres\", \"Diccionarios operaciones básicas\", \"Diccionarios mutabilidad, borrado de datos y parámetros por referencia\", \"Ejercicio: Ocurrencias de cada dígito en un número usando diccionarios\", \"Diccionarios para manejar elementos con las mismas características\"]}"
+          },
+          {
+            "herramienta": "listar_presentaciones",
+            "argumentos": {
+              "semestre": "2026-20",
+              "nivel": 1
+            },
+            "resultado": "{\"semestre\": \"2026-20\", \"nivel\": 1, \"vigente\": true, \"presentaciones\": [\"Descubriendo el mundo de la programación\", \"Valores y tipos de dato\", \"Declaración de variables, instrucción de asignación y tipado dinámico\", \"Expresiones, operadores aritméticos y operaciones sobre strings\", \"Conversion de tipos\", \"Funciones de Python (Matemáticas y de entrada-salida)\", \"Funciones y variables locales\", \"Ejercicios de funciones\", \"Estilo de programación\", \"Construcción e importación de módulos\", \"Separación entre interfaz de usuario y lógica del programa\"]}"
+          },
+          {
+            "herramienta": "buscar_documentos",
+            "argumentos": {
+              "consulta": "Condicionales anidados, ciclo for sobre strings y contar caracteres en texto; fundamentos y ejercicios de cadenas, operaciones sobre cadenas y condicionales para resolver un ejercicio en senecode.",
+              "solo_vigentes": true,
+              "semestre": "2026-20",
+              "hasta_nivel": 2
+            },
+            "resultado": "[1] Operaciones sobre cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 1\n# NIVEL 2\nOPERACIONES SOBRE CADENAS DE CARACTERES O STRINGS\n\n[2] Cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 1\n# NIVEL 2\n\nCADENAS DE CARACTERES O STRINGS\n\n[Figura] Portátil con código en pantalla y una taza al fondo.\n\n[3] Operaciones sobre cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 21\n# MÁS EJEMPLOS\n\nEn caso de necesitar algo más sofisticado teclee  \nhelp('FORMATTING') en la consola de Spyder y ahí  \nencontrará toda la información\n\n[Figura] Ícono de información dentro de un círculo.\n\n[4] Operaciones sobre cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 19\n# F-STRINGS\n\nLas marcas pueden contener también una especificación de formato.\n\nEn este caso van directamente al lado de los argumentos.\n\nLa especificación de formato controla cosas como:\n\n✓ Si el texto es alineado a la izquierda `<`, centrado `^`, o a la derecha `>`\n\n✓ El ancho reservado en la cadena resultante (un número como 10 por ejemplo)\n\n✓ El tipo de conversión (por ejemplo, `f` de float). Si el tipo de conversión es float, se pueden especificar la cantidad de decimales (ejemplo: `.3f` para 3 decimales)\n\n[Figura] Captura de consola con variables `n1` y `n2`, una f-string que calcula una potencia, una multiplicación y muestra el resultado con tres decimales.\n\n```python\nn1 = 4\n\nn2 = 5\n\ns3 = f\"2 ** 10 = {2 ** 10} y {n1} * {n2} = {(n1 * n2):.3f}\"\n\nprint (s3)\n2 ** 10 = 1024 y 4 * 5 = 20.000\n```\n\n[5] Introducción | Nivel 2 | semestre 2026-20, vigente | página 2\n# ¿QUÉ VAMOS A APRENDER EN N2?\n\n- El tipo de dato booleano y sus operadores\n- Expresiones relacionales y lógicas\n- Instrucciones condicionales simples y compuestas (Posibles casos distintos en la solución de un problema)\n- Operaciones sobre cadenas de caracteres\n- Diccionarios como estructura para almacenar y manejar datos"
+          },
+          {
+            "herramienta": "buscar_documentos",
+            "argumentos": {
+              "consulta": "Ciclo for sobre strings: recorrer caracteres de una cadena con for; condicionales anidados.",
+              "solo_vigentes": true,
+              "semestre": "2026-20",
+              "hasta_nivel": 2
+            },
+            "resultado": "[1] Operaciones sobre cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 7\n# MÉTODOS PARA MANIPULAR CADENAS\n\n- Los datos de tipo String permiten invocar unas funciones especiales: los denominados «métodos». Los métodos son funciones especiales, pues se invocan del siguiente modo:\n- String.método(argumento 1, argumento2...)\n\n[Figura] Captura de terminal que muestra la asignación de una cadena a `ss`, su conversión a mayúsculas con `upper()` y luego a minúsculas con `lower()`.\n\n```python\nss = \"Hola, mundo!\"\ntt = ss.upper()\ntt\n```\n\n```text\n'HOLA, MUNDO!'\n```\n\n```python\nll = tt.lower()\nll\n```\n\n```text\n'hola, mundo!'\n```\n\nupper: devuelve una nueva cadena con los caracteres de ss convertidos en mayúscula\n\nlower: devuelve una nueva cadena con los caracteres de tt convertidos en minúscula\n\n[2] Operaciones sobre cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 1\n# NIVEL 2\nOPERACIONES SOBRE CADENAS DE CARACTERES O STRINGS\n\n[3] Cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 1\n# NIVEL 2\n\nCADENAS DE CARACTERES O STRINGS\n\n[Figura] Portátil con código en pantalla y una taza al fondo.\n\n[4] Operaciones sobre cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 8\n# MÉTODOS PARA MANIPULAR CADENAS\n\n```python\nIn [30]: ss = \"Hola, mundo!\"\n\nIn [31]: mm = ss.title()\n\nIn [32]: mm\nOut[32]: \"Hola, Mundo!\"\n\nIn [33]: xx = ss.swapcase()\n\nIn [34]: xx\nOut[34]: 'hOLA, MUNDO!'\n```\n\ntitle: devuelve una nueva cadena en la que toda palabra empieza por mayúscula\n\nswapcase: devuelve una nueva cadena con los caracteres en minúscula convertidos a mayúscula y viceversa\n\n[5] Operaciones sobre cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 4\n# OPERADORES\n\nEl operador `in` comprueba si una cadena forma parte o no de otra cadena\n\n```python\nIn [37]: \"n\" in \"manzana\"\nOut[37]: True\n\nIn [38]: \"p\" in \"manzana\"\nOut[38]: False\n\nIn [39]: \"za\" in \"manzana\"\nOut[39]: True\n\nIn [40]: \"pa\" in \"manzana\"\nOut[40]: False\n\nIn [41]: \"a\" in \"a\"\nOut[41]: True\n\nIn [42]: \"manzana\" in \"manzana\"\nOut[42]: True\n\nIn [43]: \"\" in \"a\"\nOut[43]: True\n\nIn [44]: \"\" in \"manzana\"\nOut[44]: True\n```\n\n[Figura] El operador `in` dentro de un círculo.\n\nUna cadena es subcadena de ella misma\n\nLa cadena vacía es subcadena de cualquier cadena"
+          },
+          {
+            "herramienta": "buscar_documentos",
+            "argumentos": {
+              "consulta": "Contar caracteres en un texto, frecuencia u ocurrencias de caracteres, recorrer una cadena carácter por carácter usando ciclo for.",
+              "solo_vigentes": true,
+              "semestre": "2026-20",
+              "hasta_nivel": 2
+            },
+            "resultado": "[1] Cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 1\n# NIVEL 2\n\nCADENAS DE CARACTERES O STRINGS\n\n[Figura] Portátil con código en pantalla y una taza al fondo.\n\n[2] Operaciones sobre cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 21\n# MÁS EJEMPLOS\n\nEn caso de necesitar algo más sofisticado teclee  \nhelp('FORMATTING') en la consola de Spyder y ahí  \nencontrará toda la información\n\n[Figura] Ícono de información dentro de un círculo.\n\n[3] Operaciones sobre cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 1\n# NIVEL 2\nOPERACIONES SOBRE CADENAS DE CARACTERES O STRINGS\n\n[4] Operaciones sobre cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 19\n# F-STRINGS\n\nLas marcas pueden contener también una especificación de formato.\n\nEn este caso van directamente al lado de los argumentos.\n\nLa especificación de formato controla cosas como:\n\n✓ Si el texto es alineado a la izquierda `<`, centrado `^`, o a la derecha `>`\n\n✓ El ancho reservado en la cadena resultante (un número como 10 por ejemplo)\n\n✓ El tipo de conversión (por ejemplo, `f` de float). Si el tipo de conversión es float, se pueden especificar la cantidad de decimales (ejemplo: `.3f` para 3 decimales)\n\n[Figura] Captura de consola con variables `n1` y `n2`, una f-string que calcula una potencia, una multiplicación y muestra el resultado con tres decimales.\n\n```python\nn1 = 4\n\nn2 = 5\n\ns3 = f\"2 ** 10 = {2 ** 10} y {n1} * {n2} = {(n1 * n2):.3f}\"\n\nprint (s3)\n2 ** 10 = 1024 y 4 * 5 = 20.000\n```\n\n[5] Cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 7\n# EJEMPLOS\n\n```python\na = \"una\\ncadena\"\nprint(a,\"\\n\")\n\nb = \"uno\\tdos\\ttres\"\nprint(b,\"\\n\")\n\nc = \"1\\t2\\t3\"\nprint(c,\"\\n\")\n\nprint(\"aa\\tbb\\tcc\\nxx\\tyy\\tzz\\n\")\n\nprint(\"Una \\\"cosa\\\" rara.\\n\")\n\nprint(\"a\\\\b\\n\")\n\nprint(\"a\\\nb\\n\")\n\nprint(\"a\\\n    b\\n\")\n\nprint(\"Una\\ncadena que\\nocupa varias líneas\\n\")\n\nprint(\"\"\"Una\n     cadena que\n     ocupa varias líneas\\n\"\"\")\n```\n\n```text\nIn [24]: runfile('C:/Users/Mhernandez/Desktop/IP/N2-C3')\nuna\ncadena\n\nuno     dos     tres\n\n1       2       3\n\naa      bb      cc\nxx      yy      zz\n\nUna \"cosa\" rara.\n\na\\b\n\nab\n\na       b\n\nUna\ncadena que\nocupa varias líneas\n\nUna\n     cadena que\n     ocupa varias líneas\n```"
+          },
+          {
+            "herramienta": "listar_presentaciones",
+            "argumentos": {
+              "semestre": "2026-20",
+              "nivel": 3
+            },
+            "resultado": "{\"semestre\": \"2026-20\", \"nivel\": 3, \"vigente\": true, \"presentaciones\": [\"Introducción al módulo\", \"Instrucciones iterativas (while)\", \"Uso del centinela\", \"Mas sobre strings\", \"Instrucciones iterativas (for)\", \"Introducción a listas\", \"Operaciones sobre listas\", \"Patrones de recorrido\", \"Recorrido de diccionarios\", \"Manejo de archivos\", \"Estructura de datos compuestos\", \"Ejericicios\"]}"
+          }
+        ],
+        "uso": {
+          "tokens_entrada": 31454,
+          "tokens_en_cache": 29088,
+          "tokens_escritos_en_cache": 2336,
+          "tokens_salida": 609,
+          "segundos": 14.46
+        }
+      },
+      "herramientas": [
+        "reservas_del_dia",
+        "temas_del_estudiante",
+        "listar_presentaciones",
+        "listar_presentaciones",
+        "listar_presentaciones",
+        "buscar_documentos",
+        "buscar_documentos",
+        "buscar_documentos",
+        "listar_presentaciones"
+      ],
+      "dentro_del_nivel": 3,
+      "de_un_nivel_posterior": 0
+    },
+    {
+      "estudiante": "Pepito",
+      "traza": {
+        "respuesta": "Pepito tiene reserva el **30 de noviembre de 2026 a las 10:00** para desarrollar un ejercicio en *senecode*. Mencionó **condicionales anidados**, **ciclo `for` sobre strings** y **contar caracteres en cadenas**; su comprensión promedio registrada es **2,5/5**.\n\nPrepararía estos temas, todos de presentaciones vigentes del Nivel 2:\n\n1. **Operaciones sobre cadenas de caracteres** — para trabajar el recorrido de strings y el conteo de caracteres que mencionó.\n2. **Condicionales** — para repasar condicionales anidados, otro tema que mencionó.\n3. **Cadenas de caracteres** — como apoyo al ejercicio de *senecode* indicado en el propósito de la reserva.\n\nNo propongo temas de niveles posteriores. La búsqueda de documentos hasta Nivel 2 encontró material sobre cadenas y el programa del curso confirma que *senecode* ofrece ejercicios de programación; no encontré en esos resultados contenido específico sobre el ciclo `for`.",
+        "pasos": [
+          {
+            "herramienta": "reservas_del_dia",
+            "argumentos": {
+              "fecha": "2026-11-30"
+            },
+            "resultado": "{\"fecha\": \"2026-11-30\", \"reservas\": [{\"estudiante\": \"Pepito\", \"hora\": \"10:00\", \"proposito\": \"Desarrollar un ejercicio en senecode\", \"comentarios_anteriores\": 3}]}"
+          },
+          {
+            "herramienta": "temas_del_estudiante",
+            "argumentos": {
+              "fecha": "2026-11-30",
+              "estudiante": "Pepito"
+            },
+            "resultado": "{\"estudiante\": \"Pepito\", \"temas_mencionados\": [\"condicionales anidados\", \"ciclo for sobre strings\", \"contar caracteres en cadenas\"], \"comprension_promedio_1_a_5\": 2.5, \"comentarios_leidos\": 3}"
+          },
+          {
+            "herramienta": "listar_presentaciones",
+            "argumentos": {
+              "semestre": "2026-20",
+              "nivel": 1
+            },
+            "resultado": "{\"semestre\": \"2026-20\", \"nivel\": 1, \"vigente\": true, \"presentaciones\": [\"Descubriendo el mundo de la programación\", \"Valores y tipos de dato\", \"Declaración de variables, instrucción de asignación y tipado dinámico\", \"Expresiones, operadores aritméticos y operaciones sobre strings\", \"Conversion de tipos\", \"Funciones de Python (Matemáticas y de entrada-salida)\", \"Funciones y variables locales\", \"Ejercicios de funciones\", \"Estilo de programación\", \"Construcción e importación de módulos\", \"Separación entre interfaz de usuario y lógica del programa\"]}"
+          },
+          {
+            "herramienta": "listar_presentaciones",
+            "argumentos": {
+              "semestre": "2026-20",
+              "nivel": 2
+            },
+            "resultado": "{\"semestre\": \"2026-20\", \"nivel\": 2, \"vigente\": true, \"presentaciones\": [\"Introducción\", \"Booleanos y sus operadores\", \"Tablas de verdad y álgebra booleana\", \"Condicionales\", \"Leyes de De Morgan\", \"Cadenas de caracteres\", \"Operaciones sobre cadenas de caracteres\", \"Diccionarios operaciones básicas\", \"Diccionarios mutabilidad, borrado de datos y parámetros por referencia\", \"Ejercicio: Ocurrencias de cada dígito en un número usando diccionarios\", \"Diccionarios para manejar elementos con las mismas características\"]}"
+          },
+          {
+            "herramienta": "buscar_documentos",
+            "argumentos": {
+              "consulta": "Ciclos for, recorrido de strings y contar caracteres en cadenas; también ejercicios de programación con senecode. Buscar material vigente hasta nivel 2.",
+              "solo_vigentes": true,
+              "semestre": "2026-20",
+              "hasta_nivel": 2
+            },
+            "resultado": "[1] Operaciones sobre cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 1\n# NIVEL 2\nOPERACIONES SOBRE CADENAS DE CARACTERES O STRINGS\n\n[2] Cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 1\n# NIVEL 2\n\nCADENAS DE CARACTERES O STRINGS\n\n[Figura] Portátil con código en pantalla y una taza al fondo.\n\n[3] Operaciones sobre cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 19\n# F-STRINGS\n\nLas marcas pueden contener también una especificación de formato.\n\nEn este caso van directamente al lado de los argumentos.\n\nLa especificación de formato controla cosas como:\n\n✓ Si el texto es alineado a la izquierda `<`, centrado `^`, o a la derecha `>`\n\n✓ El ancho reservado en la cadena resultante (un número como 10 por ejemplo)\n\n✓ El tipo de conversión (por ejemplo, `f` de float). Si el tipo de conversión es float, se pueden especificar la cantidad de decimales (ejemplo: `.3f` para 3 decimales)\n\n[Figura] Captura de consola con variables `n1` y `n2`, una f-string que calcula una potencia, una multiplicación y muestra el resultado con tres decimales.\n\n```python\nn1 = 4\n\nn2 = 5\n\ns3 = f\"2 ** 10 = {2 ** 10} y {n1} * {n2} = {(n1 * n2):.3f}\"\n\nprint (s3)\n2 ** 10 = 1024 y 4 * 5 = 20.000\n```\n\n[4] Programa del curso IP | semestre 2026-20, vigente | página 3\nLas demás tareas son establecidas y calificadas por el profesor, quien comunica a los estudiantes las instrucciones correspondientes, así como el medio y fecha de entrega. Normalmente se asignan de forma semanal e incluyen ejercicios de *senecode* (disponible a partir de la segunda semana de clases). *senecode* es una plataforma que provee ejercicios y tiene un calificador automático de programas escritos en Python que apoya enormemente al estudiante en su recorrido por el curso. Contiene más de 200 ejercicios de programación clasificados en cuatro dificultades: básica, intermedia, avanzada y extrema⁴. Permite enviar soluciones a ejercicios y obtener retroalimentación detallada y casi inmediata. Si la solución enviada no es correcta, permite reenvíos ilimitados sin penalización alguna por reintentos, incentivando al estudiante a mejorar su solución.\n\n> “La programación de computadoras es un arte... Un programador que, de manera subconsciente, se considera un artista, disfrutará más lo que hace y lo hará mejor.” Donald Knuth.\n\n[5] Operaciones sobre cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 21\n# MÁS EJEMPLOS\n\nEn caso de necesitar algo más sofisticado teclee  \nhelp('FORMATTING') en la consola de Spyder y ahí  \nencontrará toda la información\n\n[Figura] Ícono de información dentro de un círculo."
+          }
+        ],
+        "uso": {
+          "tokens_entrada": 14564,
+          "tokens_en_cache": 13775,
+          "tokens_escritos_en_cache": 771,
+          "tokens_salida": 399,
+          "segundos": 8.33
+        }
+      },
+      "herramientas": [
+        "reservas_del_dia",
+        "temas_del_estudiante",
+        "listar_presentaciones",
+        "listar_presentaciones",
+        "buscar_documentos"
+      ],
+      "dentro_del_nivel": 3,
+      "de_un_nivel_posterior": 0
+    },
+    {
+      "estudiante": "Pepito",
+      "traza": {
+        "respuesta": "Para la tutoría de Pepito (10:00), el propósito es **desarrollar un ejercicio en Senecode**. En sus tutorías anteriores mencionó estos temas con comprensión promedio **2,5/5**. Como el curso va en el Nivel 2, prepararía:\n\n1. **Operaciones sobre cadenas de caracteres** [presentación, nivel 2]: practicar el recorrido o conteo de caracteres en cadenas, relacionado con el tema que mencionó. La presentación vigente incluye material sobre strings [Operaciones sobre cadenas de caracteres, semestre 2026-20, p. 1].\n2. **Condicionales** [presentación, nivel 2]: repasar condicionales anidados, que también mencionó; la presentación vigente explica este patrón [Condicionales, semestre 2026-20, p. 18].\n\n**Ciclo for sobre strings** también fue mencionado, pero corresponde al contenido de Nivel 3, así que no lo propondría como tema para esta tutoría.",
+        "pasos": [
+          {
+            "herramienta": "reservas_del_dia",
+            "argumentos": {
+              "fecha": "2026-11-30"
+            },
+            "resultado": "{\"fecha\": \"2026-11-30\", \"reservas\": [{\"estudiante\": \"Pepito\", \"hora\": \"10:00\", \"proposito\": \"Desarrollar un ejercicio en senecode\", \"comentarios_anteriores\": 3}]}"
+          },
+          {
+            "herramienta": "temas_del_estudiante",
+            "argumentos": {
+              "fecha": "2026-11-30",
+              "estudiante": "Pepito"
+            },
+            "resultado": "{\"estudiante\": \"Pepito\", \"temas_mencionados\": [\"condicionales anidados\", \"ciclo for sobre strings\", \"contar caracteres en cadenas\"], \"comprension_promedio_1_a_5\": 2.5, \"comentarios_leidos\": 3}"
+          },
+          {
+            "herramienta": "listar_presentaciones",
+            "argumentos": {
+              "semestre": "2026-20",
+              "nivel": 1
+            },
+            "resultado": "{\"semestre\": \"2026-20\", \"nivel\": 1, \"vigente\": true, \"presentaciones\": [\"Descubriendo el mundo de la programación\", \"Valores y tipos de dato\", \"Declaración de variables, instrucción de asignación y tipado dinámico\", \"Expresiones, operadores aritméticos y operaciones sobre strings\", \"Conversion de tipos\", \"Funciones de Python (Matemáticas y de entrada-salida)\", \"Funciones y variables locales\", \"Ejercicios de funciones\", \"Estilo de programación\", \"Construcción e importación de módulos\", \"Separación entre interfaz de usuario y lógica del programa\"]}"
+          },
+          {
+            "herramienta": "listar_presentaciones",
+            "argumentos": {
+              "semestre": "2026-20",
+              "nivel": 2
+            },
+            "resultado": "{\"semestre\": \"2026-20\", \"nivel\": 2, \"vigente\": true, \"presentaciones\": [\"Introducción\", \"Booleanos y sus operadores\", \"Tablas de verdad y álgebra booleana\", \"Condicionales\", \"Leyes de De Morgan\", \"Cadenas de caracteres\", \"Operaciones sobre cadenas de caracteres\", \"Diccionarios operaciones básicas\", \"Diccionarios mutabilidad, borrado de datos y parámetros por referencia\", \"Ejercicio: Ocurrencias de cada dígito en un número usando diccionarios\", \"Diccionarios para manejar elementos con las mismas características\"]}"
+          },
+          {
+            "herramienta": "listar_presentaciones",
+            "argumentos": {
+              "semestre": "2026-20",
+              "nivel": 3
+            },
+            "resultado": "{\"semestre\": \"2026-20\", \"nivel\": 3, \"vigente\": true, \"presentaciones\": [\"Introducción al módulo\", \"Instrucciones iterativas (while)\", \"Uso del centinela\", \"Mas sobre strings\", \"Instrucciones iterativas (for)\", \"Introducción a listas\", \"Operaciones sobre listas\", \"Patrones de recorrido\", \"Recorrido de diccionarios\", \"Manejo de archivos\", \"Estructura de datos compuestos\", \"Ejericicios\"]}"
+          },
+          {
+            "herramienta": "buscar_documentos",
+            "argumentos": {
+              "consulta": "Temas y ejercicios de condicionales anidados, ciclo for sobre strings, contar caracteres en cadenas y desarrollar ejercicios en Senecode",
+              "solo_vigentes": true,
+              "semestre": "2026-20",
+              "hasta_nivel": 2
+            },
+            "resultado": "[1] Operaciones sobre cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 1\n# NIVEL 2\nOPERACIONES SOBRE CADENAS DE CARACTERES O STRINGS\n\n[2] Operaciones sobre cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 21\n# MÁS EJEMPLOS\n\nEn caso de necesitar algo más sofisticado teclee  \nhelp('FORMATTING') en la consola de Spyder y ahí  \nencontrará toda la información\n\n[Figura] Ícono de información dentro de un círculo.\n\n[3] Operaciones sobre cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 6\n# CADENAS DE CARACTERES – REPASO Y OTRAS FUNCIONES\n\n✓ Operador `+` (concatenación de cadenas)  \n✓ Operador `*` (repetición de cadena)  \n✓ `int` (conversión de cadena a entero)  \n✓ `float` (conversión de cadena a flotante)  \n✓ `str` (conversión de entero o flotante a cadena)  \n✓ `ord` (conversión de una cadena compuesta de un único carácter a código ascii –entero)  \n✓ `chr` (conversión de un entero a una cadena con el carácter que tiene a dicho entero como código ASCII)\n\n## FUNCIONES PROPIAS\n\nSi `a` es una cadena:\n\n✓ `a.lower()` devuelve una nueva cadena con los caracteres de `a` convertidos en minúscula  \n✓ `a.upper()` devuelve una nueva cadena con los caracteres de `a` convertidos en mayúscula  \n✓ `a.title()` devuelve una cadena en la que toda palabra de `a` empieza por mayúscula  \n✓ `a.swapcase()` devuelve una nueva cadena con los caracteres en minúscula convertidos a mayúscula y viceversa\n\n[4] Operaciones sobre cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 7\n# MÉTODOS PARA MANIPULAR CADENAS\n\n- Los datos de tipo String permiten invocar unas funciones especiales: los denominados «métodos». Los métodos son funciones especiales, pues se invocan del siguiente modo:\n- String.método(argumento 1, argumento2...)\n\n[Figura] Captura de terminal que muestra la asignación de una cadena a `ss`, su conversión a mayúsculas con `upper()` y luego a minúsculas con `lower()`.\n\n```python\nss = \"Hola, mundo!\"\ntt = ss.upper()\ntt\n```\n\n```text\n'HOLA, MUNDO!'\n```\n\n```python\nll = tt.lower()\nll\n```\n\n```text\n'hola, mundo!'\n```\n\nupper: devuelve una nueva cadena con los caracteres de ss convertidos en mayúscula\n\nlower: devuelve una nueva cadena con los caracteres de tt convertidos en minúscula\n\n[5] Operaciones sobre cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 19\n# F-STRINGS\n\nLas marcas pueden contener también una especificación de formato.\n\nEn este caso van directamente al lado de los argumentos.\n\nLa especificación de formato controla cosas como:\n\n✓ Si el texto es alineado a la izquierda `<`, centrado `^`, o a la derecha `>`\n\n✓ El ancho reservado en la cadena resultante (un número como 10 por ejemplo)\n\n✓ El tipo de conversión (por ejemplo, `f` de float). Si el tipo de conversión es float, se pueden especificar la cantidad de decimales (ejemplo: `.3f` para 3 decimales)\n\n[Figura] Captura de consola con variables `n1` y `n2`, una f-string que calcula una potencia, una multiplicación y muestra el resultado con tres decimales.\n\n```python\nn1 = 4\n\nn2 = 5\n\ns3 = f\"2 ** 10 = {2 ** 10} y {n1} * {n2} = {(n1 * n2):.3f}\"\n\nprint (s3)\n2 ** 10 = 1024 y 4 * 5 = 20.000\n```"
+          },
+          {
+            "herramienta": "buscar_documentos",
+            "argumentos": {
+              "consulta": "Condicionales, incluyendo condicionales anidados, y estructuras de control condicional",
+              "solo_vigentes": true,
+              "semestre": "2026-20",
+              "hasta_nivel": 2
+            },
+            "resultado": "[1] Condicionales | Nivel 2 | semestre 2026-20, vigente | página 18\n# INSTRUCCIONES CONDICIONALES ANIDADAS\n\n[Figura] Diagrama de flujo de instrucciones condicionales anidadas: si `x < y` es falso, se ejecutan `instrucciones_c`; si es verdadero, se evalúa `x < z` y se ejecutan `instrucciones_a` o `instrucciones_b`.\n\n```python\nif x < y:\n    if x < z:\n        INSTRUCCIONES_A\n    else:\n        INSTRUCCIONES_B\nelse:\n    INSTRUCCIONES_C\n```\n\nLas instrucciones condicionales pueden anidarse, es decir, aparecer unas «dentro» de otras.\n\n[2] Condicionales | Nivel 2 | semestre 2026-20, vigente | página 12\n# INSTRUCCIONES CONDICIONALES CONSECUTIVAS\n\n[Figura] Diagrama de flujo con dos condiciones consecutivas, Condición_1 y Condición_2, que conducen respectivamente a instrucciones_1 e instrucciones_2 cuando el resultado es True.\n\n```python\nif x < y:\n    INSTRUCCIONES_1\nif x == 0:\n    INSTRUCCIONES_2\n```\n\n[Figura] Dos cuadros conectados por una flecha, que representan instrucciones consecutivas.\n\nLas instrucciones condicionales pueden ser consecutivas, es decir, que se validan todas las condiciones (casos no excluyentes).\n\n[3] Condicionales | Nivel 2 | semestre 2026-20, vigente | página 1\n# NIVEL 2\nINSTRUCCIONES CONDICIONALES\n\n[Figura] Portátil con código en pantalla, una persona usando el teclado y un ícono naranja.\n\n[4] Condicionales | Nivel 2 | semestre 2026-20, vigente | página 2\n# ¿CUÁNDO USAMOS INSTRUCCIONES CONDICIONALES?\n\n- Cuando necesitamos dar una solución a un problema considerando distintos CASOS que se pueden presentar\n\n- Dependiendo del CASO (que se expresa con una CONDICIÓN) se ejecuta una acción diferente\n\n[Figura] Un camino se divide en tres flechas que apuntan en distintas direcciones.\n\n[5] Condicionales | Nivel 2 | semestre 2026-20, vigente | página 7\n# INSTRUCCIONES CONDICIONALES EN CASCADA\n\n```python\nif x < y :\n    INSTRUCCIONES_A\nelif x > y :\n    INSTRUCCIONES_B\nelse:\n    INSTRUCCIONES_C\n```\n\nSe usan cuando hay más de dos posibilidades  \ny necesitamos más de dos ramas de ejecución:\n\n✓ `elif` es una abreviación de «`else if`»\n\n✓ Sólo se ejecuta una rama (la de la primera  \ncondición que se satisfaga)\n\n✓ No hay límite en la cantidad de «`elif`», pero  \ndebe haber un solo «`else`» al final\n\n[Figura] Diagrama de flujo que evalúa primero si `x < y` y ejecuta `instrucciones_a` si es verdadero; si es falso, evalúa si `x > y` y ejecuta `instrucciones_b` si es verdadero o `instrucciones_c` si es falso."
+          },
+          {
+            "herramienta": "listar_presentaciones",
+            "argumentos": {
+              "semestre": "2026-20",
+              "nivel": 4
+            },
+            "resultado": "{\"semestre\": \"2026-20\", \"nivel\": 4, \"vigente\": true, \"presentaciones\": [\"Introduccion\", \"Tuplas\", \"Estructuras de datos con tuplas\", \"Matrices\", \"Mas sobre matrices\", \"Introduccion a librerias\", \"Introduccion a visualizaciones con Matplotlib\", \"Pandas (series y operaciones sobre series)\", \"DataFrames\", \"Visualizacion con pandas\"]}"
+          }
+        ],
+        "uso": {
+          "tokens_entrada": 26676,
+          "tokens_en_cache": 24610,
+          "tokens_escritos_en_cache": 2039,
+          "tokens_salida": 504,
+          "segundos": 12.02
+        }
+      },
+      "herramientas": [
+        "reservas_del_dia",
+        "temas_del_estudiante",
+        "listar_presentaciones",
+        "listar_presentaciones",
+        "listar_presentaciones",
+        "buscar_documentos",
+        "buscar_documentos",
+        "listar_presentaciones"
+      ],
+      "dentro_del_nivel": 3,
+      "de_un_nivel_posterior": 0
+    },
+    {
+      "estudiante": "Pepito",
+      "traza": {
+        "respuesta": "La reserva de Pepito es a las 10:00 y su propósito es **desarrollar un ejercicio en Senecode**. En tutorías anteriores mencionó condicionales anidados, recorrer strings con `for` y contar caracteres en cadenas; su comprensión promedio registrada es 2,5/5.\n\nPrepararía estos temas, todos del **Nivel 2 vigente**:\n\n1. **Condicionales** — para repasar las decisiones del ejercicio y trabajar los condicionales anidados.\n2. **Cadenas de caracteres** — relacionado con contar caracteres en cadenas.\n3. **Operaciones sobre cadenas de caracteres** — también pertinente para manipular y recorrer cadenas.\n\nEl material vigente del Nivel 2 incluye condicionales y operaciones sobre cadenas [*Introducción*, nivel 2, p. 2; vigente]. El curso va en Nivel 2, así que no propongo el ciclo `for`: aparece en la presentación **Instrucciones iterativas (for)**, que es de Nivel 3.",
+        "pasos": [
+          {
+            "herramienta": "reservas_del_dia",
+            "argumentos": {
+              "fecha": "2026-11-30"
+            },
+            "resultado": "{\"fecha\": \"2026-11-30\", \"reservas\": [{\"estudiante\": \"Pepito\", \"hora\": \"10:00\", \"proposito\": \"Desarrollar un ejercicio en senecode\", \"comentarios_anteriores\": 3}]}"
+          },
+          {
+            "herramienta": "temas_del_estudiante",
+            "argumentos": {
+              "fecha": "2026-11-30",
+              "estudiante": "Pepito"
+            },
+            "resultado": "{\"estudiante\": \"Pepito\", \"temas_mencionados\": [\"condicionales anidados\", \"ciclo for sobre strings\", \"contar caracteres en cadenas\"], \"comprension_promedio_1_a_5\": 2.5, \"comentarios_leidos\": 3}"
+          },
+          {
+            "herramienta": "listar_presentaciones",
+            "argumentos": {
+              "semestre": "2026-20",
+              "nivel": 1
+            },
+            "resultado": "{\"semestre\": \"2026-20\", \"nivel\": 1, \"vigente\": true, \"presentaciones\": [\"Descubriendo el mundo de la programación\", \"Valores y tipos de dato\", \"Declaración de variables, instrucción de asignación y tipado dinámico\", \"Expresiones, operadores aritméticos y operaciones sobre strings\", \"Conversion de tipos\", \"Funciones de Python (Matemáticas y de entrada-salida)\", \"Funciones y variables locales\", \"Ejercicios de funciones\", \"Estilo de programación\", \"Construcción e importación de módulos\", \"Separación entre interfaz de usuario y lógica del programa\"]}"
+          },
+          {
+            "herramienta": "listar_presentaciones",
+            "argumentos": {
+              "semestre": "2026-20",
+              "nivel": 2
+            },
+            "resultado": "{\"semestre\": \"2026-20\", \"nivel\": 2, \"vigente\": true, \"presentaciones\": [\"Introducción\", \"Booleanos y sus operadores\", \"Tablas de verdad y álgebra booleana\", \"Condicionales\", \"Leyes de De Morgan\", \"Cadenas de caracteres\", \"Operaciones sobre cadenas de caracteres\", \"Diccionarios operaciones básicas\", \"Diccionarios mutabilidad, borrado de datos y parámetros por referencia\", \"Ejercicio: Ocurrencias de cada dígito en un número usando diccionarios\", \"Diccionarios para manejar elementos con las mismas características\"]}"
+          },
+          {
+            "herramienta": "listar_presentaciones",
+            "argumentos": {
+              "semestre": "2026-20",
+              "nivel": 3
+            },
+            "resultado": "{\"semestre\": \"2026-20\", \"nivel\": 3, \"vigente\": true, \"presentaciones\": [\"Introducción al módulo\", \"Instrucciones iterativas (while)\", \"Uso del centinela\", \"Mas sobre strings\", \"Instrucciones iterativas (for)\", \"Introducción a listas\", \"Operaciones sobre listas\", \"Patrones de recorrido\", \"Recorrido de diccionarios\", \"Manejo de archivos\", \"Estructura de datos compuestos\", \"Ejericicios\"]}"
+          },
+          {
+            "herramienta": "buscar_documentos",
+            "argumentos": {
+              "consulta": "Ejercicios y conceptos de condicionales anidados, ciclo for sobre strings y contar caracteres en cadenas; materiales vigentes para tutoría de nivel 2, sin incluir contenido de nivel posterior.",
+              "solo_vigentes": true,
+              "semestre": "2026-20",
+              "hasta_nivel": 2
+            },
+            "resultado": "[1] Cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 1\n# NIVEL 2\n\nCADENAS DE CARACTERES O STRINGS\n\n[Figura] Portátil con código en pantalla y una taza al fondo.\n\n[2] Operaciones sobre cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 1\n# NIVEL 2\nOPERACIONES SOBRE CADENAS DE CARACTERES O STRINGS\n\n[3] Condicionales | Nivel 2 | semestre 2026-20, vigente | página 1\n# NIVEL 2\nINSTRUCCIONES CONDICIONALES\n\n[Figura] Portátil con código en pantalla, una persona usando el teclado y un ícono naranja.\n\n[4] Introducción | Nivel 2 | semestre 2026-20, vigente | página 2\n# ¿QUÉ VAMOS A APRENDER EN N2?\n\n- El tipo de dato booleano y sus operadores\n- Expresiones relacionales y lógicas\n- Instrucciones condicionales simples y compuestas (Posibles casos distintos en la solución de un problema)\n- Operaciones sobre cadenas de caracteres\n- Diccionarios como estructura para almacenar y manejar datos\n\n[5] Cadenas de caracteres | Nivel 2 | semestre 2026-20, vigente | página 7\n# EJEMPLOS\n\n```python\na = \"una\\ncadena\"\nprint(a,\"\\n\")\n\nb = \"uno\\tdos\\ttres\"\nprint(b,\"\\n\")\n\nc = \"1\\t2\\t3\"\nprint(c,\"\\n\")\n\nprint(\"aa\\tbb\\tcc\\nxx\\tyy\\tzz\\n\")\n\nprint(\"Una \\\"cosa\\\" rara.\\n\")\n\nprint(\"a\\\\b\\n\")\n\nprint(\"a\\\nb\\n\")\n\nprint(\"a\\\n    b\\n\")\n\nprint(\"Una\\ncadena que\\nocupa varias líneas\\n\")\n\nprint(\"\"\"Una\n     cadena que\n     ocupa varias líneas\\n\"\"\")\n```\n\n```text\nIn [24]: runfile('C:/Users/Mhernandez/Desktop/IP/N2-C3')\nuna\ncadena\n\nuno     dos     tres\n\n1       2       3\n\naa      bb      cc\nxx      yy      zz\n\nUna \"cosa\" rara.\n\na\\b\n\nab\n\na       b\n\nUna\ncadena que\nocupa varias líneas\n\nUna\n     cadena que\n     ocupa varias líneas\n```"
+          }
+        ],
+        "uso": {
+          "tokens_entrada": 17249,
+          "tokens_en_cache": 16627,
+          "tokens_escritos_en_cache": 601,
+          "tokens_salida": 432,
+          "segundos": 9.33
+        }
+      },
+      "herramientas": [
+        "reservas_del_dia",
+        "temas_del_estudiante",
+        "listar_presentaciones",
+        "listar_presentaciones",
+        "listar_presentaciones",
+        "buscar_documentos"
+      ],
+      "dentro_del_nivel": 3,
+      "de_un_nivel_posterior": 0
     }
   ]
 }

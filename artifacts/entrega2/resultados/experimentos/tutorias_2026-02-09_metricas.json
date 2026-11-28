@@ -1,12 +1,14 @@
 {
   "estudiantes": 37,
-  "con_historia": 14,
-  "temas_propuestos": 94,
-  "temas_dentro_del_nivel": 90,
-  "estudiantes_con_algo_fuera_de_nivel": 0,
-  "segundos_mediana": 25.3,
-  "segundos_total": 1069.3,
+  "pidieron_temas_del_estudiante": 37,
+  "sin_respuesta_en_el_limite_de_pasos": 0,
+  "respondieron_con_lista_de_temas": 37,
+  "cruzaron_reserva_y_documentos": 37,
+  "presentaciones_dentro_del_nivel": 106,
+  "presentaciones_de_un_nivel_posterior": 0,
+  "pasos_mediana": 5,
+  "segundos_mediana": 6.77,
+  "costo_total_usd": 0.0239,
   "fecha": "2026-02-09",
-  "nivel": 1,
-  "modelo": "qwen3:30b-a3b-instruct-2507-q4_K_M"
+  "nivel": 1
 }
